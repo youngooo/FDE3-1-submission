@@ -1,0 +1,62 @@
+[
+  {
+    "id": "store",
+    "name": "成交门店",
+    "meaning": "订单发生的门店编号"
+  },
+  {
+    "id": "home_store",
+    "name": "会员归属门店",
+    "meaning": "会员账户归属的门店编号"
+  },
+  {
+    "id": "member",
+    "name": "会员账户",
+    "meaning": "本次测试范围的 CRM 会员账户编号"
+  },
+  {
+    "id": "store__region",
+    "name": "成交地区",
+    "meaning": "订单成交门店所在地区"
+  },
+  {
+    "id": "store__store_name",
+    "name": "成交门店名称",
+    "meaning": "订单成交门店的名称"
+  },
+  {
+    "id": "home_store__region",
+    "name": "会员归属地区",
+    "meaning": "会员归属门店所在地区"
+  },
+  {
+    "id": "home_store__store_name",
+    "name": "会员归属门店名称",
+    "meaning": "会员归属门店的名称"
+  },
+  {
+    "id": "order__channel",
+    "name": "订单渠道",
+    "meaning": "订单发生的渠道"
+  },
+  {
+    "id": "order__status",
+    "name": "订单状态",
+    "meaning": "订单记录的状态"
+  },
+  {
+    "id": "member__tier",
+    "name": "会员等级",
+    "meaning": "会员账户登记的等级"
+  },
+  {
+    "id": "metric_time__day",
+    "name": "统计日",
+    "meaning": "按所选指标定义的统计时间逐日展示"
+  },
+  {
+    "id": "metric_time__month",
+    "name": "统计月",
+    "meaning": "按所选指标定义的统计时间逐自然月展示"
+  }
+]

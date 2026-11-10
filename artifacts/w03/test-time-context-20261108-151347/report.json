@@ -1,0 +1,354 @@
+{
+  "kind": "time_context_targeted_regression",
+  "complete": true,
+  "passed": 5,
+  "total": 5,
+  "project": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/build-general32-normalized-20261107-023808/validation-project",
+  "expected_basis": "材料03/05，原始orders.csv独立按账户月统计；不从实际结果反填",
+  "source_sha256": {
+    "orders.csv": "c6e0dee6081e7a6f7782b54de78b3182835c46184c8e7569fc23feab8cf3c4f1"
+  },
+  "script_sha256": "7ce1fe59daaeccc45a900b67fa24cafce3b4b9e95c245e33a8c4627626e01b5a",
+  "prompt_sha256": "281aeb45bef1d6002f97db5ee6930683067ca730143caf3100757d9adf475ba0",
+  "cases": [
+    {
+      "id": "missing_year_empty_history",
+      "question": "青禾7月和8月的月内复购率分别是多少？",
+      "history": [],
+      "expected": {
+        "status": "clarify"
+      },
+      "actual": {
+        "status": "clarify",
+        "reason": "您询问的是“7月和8月”，但未说明具体年份，当前也没有可沿用的年份上下文。请确认要查询哪一年的7月和8月，例如2025年或2026年。月内复购率按整月、全门店口径计算，跨多月时会按月分别展示。",
+        "intent": {
+          "status": "clarify",
+          "reason": "您询问的是“7月和8月”，但未说明具体年份，当前也没有可沿用的年份上下文。请确认要查询哪一年的7月和8月，例如2025年或2026年。月内复购率按整月、全门店口径计算，跨多月时会按月分别展示。",
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "",
+          "end": "",
+          "group_by": [
+            "metric_time__month"
+          ],
+          "filters": []
+        },
+        "question": "青禾7月和8月的月内复购率分别是多少？",
+        "trace_id": "3795bd49-6c46-4128-98da-2803f7e570e7",
+        "elapsed_seconds": 1.953,
+        "model_usage": {
+          "prompt_tokens": 10954,
+          "completion_tokens": 230,
+          "total_tokens": 11184
+        },
+        "model_calls_with_usage": 1
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "assistant_year_is_not_confirmation",
+      "question": "青禾7月和8月的月内复购率分别是多少？",
+      "history": [
+        {
+          "role": "user",
+          "content": "青禾7月和8月的月内复购率分别是多少？"
+        },
+        {
+          "role": "assistant",
+          "content": "2026年7月为9.09%，8月为80.00%。"
+        }
+      ],
+      "expected": {
+        "status": "clarify"
+      },
+      "actual": {
+        "status": "clarify",
+        "reason": "“7月和8月”未提供年份，历史中助手自行选用的 2026 年不视为您已确认的年份，因此需要您确认要查询哪一年的 7 月和 8 月。另需说明，“青禾”是当前数据集对应的客户名称，不按门店筛选处理；月内复购率仅支持完整自然月口径，并会按月分别展示。",
+        "intent": {
+          "status": "clarify",
+          "reason": "“7月和8月”未提供年份，历史中助手自行选用的 2026 年不视为您已确认的年份，因此需要您确认要查询哪一年的 7 月和 8 月。另需说明，“青禾”是当前数据集对应的客户名称，不按门店筛选处理；月内复购率仅支持完整自然月口径，并会按月分别展示。",
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "",
+          "end": "",
+          "group_by": [
+            "metric_time__month"
+          ],
+          "filters": []
+        },
+        "question": "青禾7月和8月的月内复购率分别是多少？",
+        "trace_id": "35f151b3-d824-4b31-a2b8-35982d44aae1",
+        "elapsed_seconds": 3.481,
+        "model_usage": {
+          "prompt_tokens": 11009,
+          "completion_tokens": 396,
+          "total_tokens": 11405
+        },
+        "model_calls_with_usage": 1
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "explicit_year",
+      "question": "青禾2026年7月和8月的月内复购率分别是多少？",
+      "history": [],
+      "expected": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-07-01",
+          "end": "2026-09-01",
+          "group_by": [
+            "metric_time__month"
+          ],
+          "filters": []
+        },
+        "columns": [
+          "metric_time__month",
+          "monthly_repeat_rate"
+        ],
+        "rows": [
+          [
+            "2026-07-01 00:00:00",
+            0.09090909090909091
+          ],
+          [
+            "2026-08-01 00:00:00",
+            0.8
+          ]
+        ],
+        "units": {
+          "monthly_repeat_rate": "ratio"
+        },
+        "data_version": "qinghe-w03-20260923-small"
+      },
+      "actual": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-07-01",
+          "end": "2026-09-01",
+          "group_by": [
+            "metric_time__month"
+          ],
+          "filters": []
+        },
+        "sql": "SELECT\n  metric_time__month\n  , CAST(monthly_repeat_buyer_count AS DOUBLE) / CAST(NULLIF(monthly_buyer_count, 0) AS DOUBLE) AS monthly_repeat_rate\nFROM (\n  SELECT\n    metric_time__month\n    , COUNT(DISTINCT __monthly_repeat_buyer_count) AS monthly_repeat_buyer_count\n    , COUNT(DISTINCT __monthly_buyer_count) AS monthly_buyer_count\n  FROM (\n    SELECT\n      DATE_TRUNC('month', month_date) AS metric_time__month\n      , member_id AS __monthly_buyer_count\n      , CASE WHEN valid_order_count >= 2 THEN member_id ELSE NULL END AS __monthly_repeat_buyer_count\n    FROM \"data\".\"main\".\"member_month_activity\" member_month_activity_semantic_src_10000\n    WHERE DATE_TRUNC('month', month_date) BETWEEN '2026-07-01' AND '2026-08-31'\n  ) subq_6\n  GROUP BY\n    metric_time__month\n) subq_8",
+        "columns": [
+          "metric_time__month",
+          "monthly_repeat_rate"
+        ],
+        "rows": [
+          [
+            "2026-07-01 00:00:00",
+            0.09090909090909091
+          ],
+          [
+            "2026-08-01 00:00:00",
+            0.8
+          ]
+        ],
+        "seconds": 0.082,
+        "units": {
+          "monthly_repeat_rate": "ratio"
+        },
+        "data_version": "qinghe-w03-20260923-small",
+        "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+        "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+        "answer": "2026年7月月内复购率为 0.09090909090909091（小数比例），2026年8月为 0.8。统计口径：月内复购会员数 ÷ 月内购买会员数，按自然月分别统计，仅统计完整自然月，采用全门店口径；本月度查询范围内，7月、8月的分母均不为零，因此这两个值都有定义。以上结果属于青禾当前客户数据范围，来自本周合成测试库。",
+        "question": "青禾2026年7月和8月的月内复购率分别是多少？",
+        "trace_id": "eb12c953-9af4-4a48-b13e-1930afc1b745",
+        "elapsed_seconds": 10.189,
+        "model_usage": {
+          "prompt_tokens": 13142,
+          "completion_tokens": 976,
+          "total_tokens": 14118
+        },
+        "model_calls_with_usage": 2
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "user_year_context",
+      "question": "青禾7月和8月的月内复购率分别是多少？",
+      "history": [
+        {
+          "role": "assistant",
+          "content": "请问查询哪一年？"
+        },
+        {
+          "role": "user",
+          "content": "2026年。"
+        }
+      ],
+      "expected": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-07-01",
+          "end": "2026-09-01",
+          "group_by": [
+            "metric_time__month"
+          ],
+          "filters": []
+        },
+        "columns": [
+          "metric_time__month",
+          "monthly_repeat_rate"
+        ],
+        "rows": [
+          [
+            "2026-07-01 00:00:00",
+            0.09090909090909091
+          ],
+          [
+            "2026-08-01 00:00:00",
+            0.8
+          ]
+        ],
+        "units": {
+          "monthly_repeat_rate": "ratio"
+        },
+        "data_version": "qinghe-w03-20260923-small"
+      },
+      "actual": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-07-01",
+          "end": "2026-09-01",
+          "group_by": [
+            "metric_time__month"
+          ],
+          "filters": []
+        },
+        "sql": "SELECT\n  metric_time__month\n  , CAST(monthly_repeat_buyer_count AS DOUBLE) / CAST(NULLIF(monthly_buyer_count, 0) AS DOUBLE) AS monthly_repeat_rate\nFROM (\n  SELECT\n    metric_time__month\n    , COUNT(DISTINCT __monthly_repeat_buyer_count) AS monthly_repeat_buyer_count\n    , COUNT(DISTINCT __monthly_buyer_count) AS monthly_buyer_count\n  FROM (\n    SELECT\n      DATE_TRUNC('month', month_date) AS metric_time__month\n      , member_id AS __monthly_buyer_count\n      , CASE WHEN valid_order_count >= 2 THEN member_id ELSE NULL END AS __monthly_repeat_buyer_count\n    FROM \"data\".\"main\".\"member_month_activity\" member_month_activity_semantic_src_10000\n    WHERE DATE_TRUNC('month', month_date) BETWEEN '2026-07-01' AND '2026-08-31'\n  ) subq_6\n  GROUP BY\n    metric_time__month\n) subq_8",
+        "columns": [
+          "metric_time__month",
+          "monthly_repeat_rate"
+        ],
+        "rows": [
+          [
+            "2026-07-01 00:00:00",
+            0.09090909090909091
+          ],
+          [
+            "2026-08-01 00:00:00",
+            0.8
+          ]
+        ],
+        "seconds": 0.068,
+        "units": {
+          "monthly_repeat_rate": "ratio"
+        },
+        "data_version": "qinghe-w03-20260923-small",
+        "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+        "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+        "answer": "青禾2026年7月的月内复购率为0.0909（按小数比例展示，已四舍五入），8月为0.8000。该指标按完整自然月、全门店口径统计；月内复购率＝同一自然月的月内复购会员数÷同月月内购买会员数。本次未返回对应人数，因此不推断具体人数；两个月的结果均已定义。",
+        "question": "青禾7月和8月的月内复购率分别是多少？",
+        "trace_id": "32308867-f14d-40a2-88ad-70295f8264ab",
+        "elapsed_seconds": 11.788,
+        "model_usage": {
+          "prompt_tokens": 13169,
+          "completion_tokens": 1292,
+          "total_tokens": 14461
+        },
+        "model_calls_with_usage": 2
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "relative_previous_month",
+      "question": "青禾上个月的月内复购率是多少？",
+      "history": [],
+      "expected": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "columns": [
+          "monthly_repeat_rate"
+        ],
+        "rows": [
+          [
+            0.8
+          ]
+        ],
+        "units": {
+          "monthly_repeat_rate": "ratio"
+        },
+        "data_version": "qinghe-w03-20260923-small"
+      },
+      "actual": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "sql": "SELECT\n  CAST(COUNT(DISTINCT CASE WHEN valid_order_count >= 2 THEN member_id ELSE NULL END) AS DOUBLE) / CAST(NULLIF(COUNT(DISTINCT member_id), 0) AS DOUBLE) AS monthly_repeat_rate\nFROM \"data\".\"main\".\"member_month_activity\" member_month_activity_semantic_src_10000\nWHERE DATE_TRUNC('month', month_date) BETWEEN '2026-08-01' AND '2026-08-31'",
+        "columns": [
+          "monthly_repeat_rate"
+        ],
+        "rows": [
+          [
+            0.8
+          ]
+        ],
+        "seconds": 0.065,
+        "units": {
+          "monthly_repeat_rate": "ratio"
+        },
+        "data_version": "qinghe-w03-20260923-small",
+        "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+        "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+        "answer": "青禾在2026年8月整月的月内复购率为0.8（小数比例）。该口径为全门店：月内复购会员账户数除以同月月内购买会员账户数；本次仅返回该比例，未返回对应的会员账户人数。",
+        "question": "青禾上个月的月内复购率是多少？",
+        "trace_id": "52fcee06-1d9c-4b07-bb79-44d31007643b",
+        "elapsed_seconds": 7.101,
+        "model_usage": {
+          "prompt_tokens": 12922,
+          "completion_tokens": 525,
+          "total_tokens": 13447
+        },
+        "model_calls_with_usage": 2
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    }
+  ]
+}

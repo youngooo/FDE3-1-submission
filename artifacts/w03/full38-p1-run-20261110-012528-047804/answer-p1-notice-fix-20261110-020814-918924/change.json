@@ -1,0 +1,19 @@
+{
+  "status": "applied",
+  "prompt_before_sha256": "d29ef0eccbd8f64aa02eb5aa732669f835d9bff921429452309600e618d98b1e",
+  "prompt_after_sha256": "4a29ed83b4a401f2eb8fef756f16c79fb7356a99310dfe880bc549b322b53405",
+  "protected_sha256": {
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/build/catalog.json": "e0cff6cd4228d52aa8c4c8edafa340fda9b7d46c6c330c30c48395b0d988a21f",
+    "/home/yang/FDE/w03-work/fde-agent-w03/customer/w03/build-metrics/SKILL.md": "fb11e4b176529e89ce52feaf6120b08f4c5fcb3ec22765d10c88a3eaf1d79e48",
+    "/home/yang/FDE/w03-work/fde-agent-w03/docs/w03/business_model.md": "84d1e43aace4b57e49911cc6167bc6022d78ef5d390d9fe9c982be55d834dcf9",
+    "/home/yang/FDE/w03-work/fde-agent-w03/product/w03_intent_prompt.txt": "281aeb45bef1d6002f97db5ee6930683067ca730143caf3100757d9adf475ba0",
+    "/home/yang/FDE/w03-work/fde-agent-w03/customer/w03/judge.py": "33b7eed436f5663f04371ffc2eb456b23451c60b5073d8534e6735a6a466e0fc",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/agent.py": "ddcd3c6042cff81c0e48c66b2700689a6885138fc70f47af63620b39eee4c080",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/engine.py": "e8b39da2517a65f6406da4d261173291c795248ea6c62638137e09ce750a98f3",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/answer_display_facts.py": "a430fe2d2e7926f430bbe93be261623a648c35e541bde60a7d5f86e369fa661b",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-small-smoke-20261110-020403-776221/results/metric_test_report.json": "b7a5cc79a1de7c284a488af2ca32afb8889678a5f2829f1768443126c46a453f"
+  },
+  "model_called": false,
+  "query_executed": false,
+  "retest_required": true
+}

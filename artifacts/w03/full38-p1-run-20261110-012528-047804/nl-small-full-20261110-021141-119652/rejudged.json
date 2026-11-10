@@ -1,0 +1,494 @@
+[
+  {
+    "id": "single_order_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_paid_order_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_valid_order_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_cancelled_order_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_refund_order_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_partial_refund_order_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_full_refund_order_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_payment_cents",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_refund_cents",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_net_sales_cents",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_gross_cents",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_discount_cents",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_buyer_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_refund_buyer_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_selling_store_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_valid_order_items",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_avg_order_value",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_avg_buyer_value",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_purchase_frequency",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_refund_amount_rate",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_cancel_rate",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_refund_order_rate",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_discount_rate",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_items_per_order",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_new_member_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_first_buyer_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_first_order_sales_cents",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_first_order_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_repeat_order_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_monthly_buyer_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_monthly_repeat_buyer_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_monthly_repeat_rate",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_monthly_paid_buyer_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_monthly_paid_order_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_monthly_paid_sales_cents",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_monthly_paid_repeat_buyer_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_monthly_paid_repeat_rate",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_monthly_paid_avg_order_value",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "order_trio",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "order_paraphrase",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "orders_by_store",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "orders_by_home_store",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "orders_by_order__status",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "orders_by_order__channel",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "orders_by_member__tier",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "orders_two_regions",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "orders_store_filter",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "cancelled_zero_denominator",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "first_home_store",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "registration_home_store",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "registration_member__tier",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "monthly_pair",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "paid_pair",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "paid_coverage",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "paid_paraphrase",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "empty_day",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "empty_month",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "paid_zero_month",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "reject_partial_month",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "reject_monthly_store_group",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "reject_paid_partial",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "reject_paid_filter",
+    "comparison": {
+      "passed": false,
+      "differences": [
+        {
+          "kind": "intent_mismatch",
+          "field": "filters",
+          "expected": [
+            "[\"order__channel\", [\"门店\"]]"
+          ],
+          "actual": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "reject_paid_group",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "reject_paid_multimonth",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "reject_outside_coverage",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "reject_undefined_metric",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "nonexistent_filter",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "clarify_time",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "clarify_year",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  }
+]

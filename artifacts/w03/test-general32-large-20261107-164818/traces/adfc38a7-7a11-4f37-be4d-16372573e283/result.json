@@ -1,0 +1,10 @@
+{
+  "status": "error",
+  "code": "MODEL_HTTP_402",
+  "reason": "本次调用未完成，请查看运行记录；不能把失败当成零。",
+  "question": "青禾2026年8月，仅筛选订单状态cancelled（取消），汇总有效订单数、净销售额、有效订单均额及取消率。金额保留分，均额分/单，比率保留小数。",
+  "trace_id": "adfc38a7-7a11-4f37-be4d-16372573e283",
+  "elapsed_seconds": 0.497,
+  "model_usage": {},
+  "model_calls_with_usage": 0
+}

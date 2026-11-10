@@ -1,0 +1,14 @@
+{
+  "status": "failed_before_report",
+  "dataset": "small",
+  "stage": "smoke",
+  "total": 8,
+  "started_at": "2026-11-10T02:02:38.493675+08:00",
+  "business_confirmation": "pending",
+  "answer_review_required": true,
+  "final_acceptance": false,
+  "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-small-smoke-20261110-020238-486799/results/metric_test_report.json",
+  "exit_code": 2,
+  "elapsed_seconds": 1.0,
+  "finished_at": "2026-11-10T02:02:39.494296+08:00"
+}

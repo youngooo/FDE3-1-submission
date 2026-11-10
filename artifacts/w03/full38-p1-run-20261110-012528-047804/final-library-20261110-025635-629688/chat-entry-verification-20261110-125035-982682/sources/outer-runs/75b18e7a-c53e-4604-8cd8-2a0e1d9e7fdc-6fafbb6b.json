@@ -1,0 +1,75 @@
+{
+  "product_version": "0.2.0-w1",
+  "runtime_revision": "w01-runtime-20260922",
+  "session_id": "75b18e7a-c53e-4604-8cd8-2a0e1d9e7fdc",
+  "model_mode": "live",
+  "model_name": "deepseek-flash",
+  "prompt_sha256": "92aac8a6193697f97d947e2c0d368505535733fa2eae434cec7b102495abaddd",
+  "status": "refused",
+  "result": {
+    "status": "refused",
+    "summary": "当前指标目录中没有“净利润”或任何利润类指标（只有净销售额 net_sales_cents、实付金额、退款金额、优惠金额等收入/金额口径指标），无法计算或替代为净销售额。您已明确要利润而非净销售额，因此该查询不支持。可改为按需查询净销售额、退款金额、优惠金额等已有指标。",
+    "recommendations": [],
+    "evidence_ids": [
+      "46dfd3e8-6fa9-4f98-9005-6af4b68b1d2e"
+    ],
+    "metric_query": {
+      "status": "unsupported",
+      "reason": "当前指标目录中没有“净利润”或任何利润类指标（只有净销售额 net_sales_cents、实付金额、退款金额、优惠金额等收入/金额口径指标），无法计算或替代为净销售额。您已明确要利润而非净销售额，因此该查询不支持。可改为按需查询净销售额、退款金额、优惠金额等已有指标。",
+      "intent": {
+        "status": "unsupported",
+        "reason": "当前指标目录中没有“净利润”或任何利润类指标（只有净销售额 net_sales_cents、实付金额、退款金额、优惠金额等收入/金额口径指标），无法计算或替代为净销售额。您已明确要利润而非净销售额，因此该查询不支持。可改为按需查询净销售额、退款金额、优惠金额等已有指标。",
+        "metrics": [],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "group_by": [],
+        "filters": []
+      },
+      "question": "青禾2026年8月的净利润是多少？我要利润，不是净销售额",
+      "trace_id": "46dfd3e8-6fa9-4f98-9005-6af4b68b1d2e",
+      "elapsed_seconds": 2.079,
+      "model_usage": {
+        "prompt_tokens": 15763,
+        "completion_tokens": 210,
+        "total_tokens": 15973
+      },
+      "model_calls_with_usage": 1
+    }
+  },
+  "observations": [
+    {
+      "name": "query_metrics",
+      "result": {
+        "status": "unsupported",
+        "reason": "当前指标目录中没有“净利润”或任何利润类指标（只有净销售额 net_sales_cents、实付金额、退款金额、优惠金额等收入/金额口径指标），无法计算或替代为净销售额。您已明确要利润而非净销售额，因此该查询不支持。可改为按需查询净销售额、退款金额、优惠金额等已有指标。",
+        "intent": {
+          "status": "unsupported",
+          "reason": "当前指标目录中没有“净利润”或任何利润类指标（只有净销售额 net_sales_cents、实付金额、退款金额、优惠金额等收入/金额口径指标），无法计算或替代为净销售额。您已明确要利润而非净销售额，因此该查询不支持。可改为按需查询净销售额、退款金额、优惠金额等已有指标。",
+          "metrics": [],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "question": "青禾2026年8月的净利润是多少？我要利润，不是净销售额",
+        "trace_id": "46dfd3e8-6fa9-4f98-9005-6af4b68b1d2e",
+        "elapsed_seconds": 2.079,
+        "model_usage": {
+          "prompt_tokens": 15763,
+          "completion_tokens": 210,
+          "total_tokens": 15973
+        },
+        "model_calls_with_usage": 1
+      },
+      "call_id": "call_00_0XFV1l5OFbeF4ZFYiJIh9157"
+    }
+  ],
+  "steps": 1,
+  "output_repairs": 0,
+  "usage": {
+    "prompt_tokens": 26608,
+    "completion_tokens": 332,
+    "total_tokens": 26940
+  },
+  "trace_id": "4428217e52716718648145f8d5c1caef"
+}

@@ -1,0 +1,68 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "first_buyer_count",
+      "first_order_sales_cents",
+      "first_order_count",
+      "repeat_order_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "home_store"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  home_store\n  , COUNT(DISTINCT __first_buyer_count) AS first_buyer_count\n  , SUM(__first_order_sales_cents) AS first_order_sales_cents\n  , SUM(__first_order_count) AS first_order_count\n  , SUM(__repeat_order_count) AS repeat_order_count\nFROM (\n  SELECT\n    home_store_id AS home_store\n    , CASE WHEN valid_order_seq = 1 THEN member_id ELSE NULL END AS __first_buyer_count\n    , CASE WHEN valid_order_seq = 1 THEN paid_cents - refund_cents ELSE 0 END AS __first_order_sales_cents\n    , CASE WHEN valid_order_seq = 1 THEN 1 ELSE 0 END AS __first_order_count\n    , CASE WHEN valid_order_seq >= 2 THEN 1 ELSE 0 END AS __repeat_order_count\n  FROM \"data\".\"main\".\"order_fact\" order_model_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_8\nGROUP BY\n  home_store",
+  "columns": [
+    "home_store",
+    "first_buyer_count",
+    "first_order_sales_cents",
+    "first_order_count",
+    "repeat_order_count"
+  ],
+  "rows": [
+    [
+      "S03",
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      "S02",
+      2,
+      5400,
+      2,
+      12
+    ],
+    [
+      "S01",
+      3,
+      7400,
+      3,
+      10
+    ]
+  ],
+  "seconds": 0.081,
+  "units": {
+    "first_buyer_count": "count",
+    "first_order_sales_cents": "cents",
+    "first_order_count": "count",
+    "repeat_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "统计范围：青禾当前合成测试库，查询2026年8月；按会员归属门店编号分组。人数单位为CRM会员账户，订单单位为单，金额单位为分。首购及首单口径为：先在全测试覆盖期（2024-09-01至2026-09-01）的有效订单中，按每个CRM账户的下单日期升序、同日按订单号排序，确定账户首笔有效订单，再筛选其日期落入2026年8月的记录；不代表终身首购。后续购买订单数为上述首笔之后第二笔及以后、且订单日期落入2026年8月的有效订单，不是月内复购会员数。\n\n| 会员归属门店编号 | 观测期首购会员数（个CRM会员账户） | 观测期首单净销售额（分） | 观测期首单数（单） | 观测期后续购买订单数（单） |\n|---|---:|---:|---:|---:|\n| S03 | 0 | 0 | 0 | 0 |\n| S02 | 2 | 5400 | 2 | 12 |\n| S01 | 3 | 7400 | 3 | 10 |\n\n其中S03各项为0，是本次覆盖范围内的零值。",
+  "question": "青禾2026年8月按会员归属门店编号列出观测期首购会员数、观测期首单净销售额、观测期首单数、观测期后续购买订单数；完整有效历史先排序，金额分。",
+  "trace_id": "d2768528-5afa-488c-ad0c-d7619ebe4887",
+  "elapsed_seconds": 12.115,
+  "model_usage": {
+    "prompt_tokens": 16030,
+    "completion_tokens": 1598,
+    "total_tokens": 17628
+  },
+  "model_calls_with_usage": 2
+}

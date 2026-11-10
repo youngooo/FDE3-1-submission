@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "first_buyer_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  COUNT(DISTINCT CASE WHEN valid_order_seq = 1 THEN member_id ELSE NULL END) AS first_buyer_count\nFROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "first_buyer_count"
+  ],
+  "rows": [
+    [
+      5
+    ]
+  ],
+  "seconds": 0.068,
+  "units": {
+    "first_buyer_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+  "answer": "按青禾当前 CRM 会员账户范围统计，查询 2026-08-01（含）至 2026-09-01（不含）的观测期首购会员数，覆盖全门店、不按维度分组。口径为：在完整测试覆盖历史（2024-09-01 至 2026-09-01）内按有效订单确定每个账户的首笔订单，再筛选首单落入 8 月查询窗口的账户数；该指标不代表终身首购。结果为 5 个会员账户。本次统计不涉及金额。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的观测期首购会员数，全门店，不按维度分组。首单在完整测试覆盖历史内按有效订单确定，再筛选到8月；金额保留分。",
+  "trace_id": "edbeb66d-1bf3-43f9-a83b-f088a31df187",
+  "elapsed_seconds": 8.439,
+  "model_usage": {
+    "prompt_tokens": 10539,
+    "completion_tokens": 764,
+    "total_tokens": 11303
+  },
+  "model_calls_with_usage": 2
+}

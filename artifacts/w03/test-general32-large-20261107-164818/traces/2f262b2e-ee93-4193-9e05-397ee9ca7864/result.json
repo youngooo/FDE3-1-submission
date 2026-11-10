@@ -1,0 +1,10 @@
+{
+  "status": "error",
+  "code": "MODEL_HTTP_402",
+  "reason": "本次调用未完成，请查看运行记录；不能把失败当成零。",
+  "question": "青禾2026年8月的创建订单数、有效订单数和净销售额分别是多少？按下单日期统计，全门店汇总，净销售额保留分。",
+  "trace_id": "2f262b2e-ee93-4193-9e05-397ee9ca7864",
+  "elapsed_seconds": 0.525,
+  "model_usage": {},
+  "model_calls_with_usage": 0
+}

@@ -1,0 +1,22 @@
+{
+  "message": {
+    "role": "assistant",
+    "content": "查看老周关于字段与业务规则分工、以及剩余两条待确认内容的原文。",
+    "tool_calls": [
+      {
+        "index": 0,
+        "id": "call_00_JSxkKx6NGeCJzpw7zCJU2232",
+        "type": "function",
+        "function": {
+          "name": "show_evidence",
+          "arguments": "{\"claim_ids\": [\"CLM-001-0013\", \"CLM-001-0014\", \"CLM-001-0008\", \"CLM-001-0030\", \"CLM-001-0031\"]}"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "prompt_tokens": 49090,
+    "completion_tokens": 185,
+    "total_tokens": 49275
+  }
+}

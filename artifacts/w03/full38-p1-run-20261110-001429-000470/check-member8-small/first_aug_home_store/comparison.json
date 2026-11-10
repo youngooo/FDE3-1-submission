@@ -1,0 +1,21 @@
+{
+  "id": "first_aug_home_store",
+  "expected_status": "ok",
+  "passed": false,
+  "checked_metrics": [
+    "first_buyer_count",
+    "first_order_sales_cents",
+    "first_order_count",
+    "repeat_order_count"
+  ],
+  "errors": [
+    {
+      "kind": "group_mismatch",
+      "group": [
+        "S03"
+      ],
+      "expected": true,
+      "actual": false
+    }
+  ]
+}

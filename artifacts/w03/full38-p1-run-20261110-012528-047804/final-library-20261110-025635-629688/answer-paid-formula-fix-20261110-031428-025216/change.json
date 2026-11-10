@@ -1,0 +1,24 @@
+{
+  "status": "applied",
+  "prompt_before_sha256": "2df23fb50a2e1af0ba0eedc525a76db13283ca43e7ab799964803f0973c1e8cc",
+  "prompt_after_sha256": "efdf2213c26abfba3bf6c646361b8fd49cbdabad811ae1c20f09bb9dcfa835c2",
+  "protected_sha256": {
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-small-full-20261110-030115-607746/results/metric_test_report.json": "e138b94e36418215f9245a557b23812f994998519f0f4e2e881ac52508e9e228",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/plan.json": "a45986246c3dd8b9c1bea29786f474cb495e02700b9a4f6a013a591fd9edeb77",
+    "/home/yang/FDE/w03-work/fde-agent-w03/customer/w03/build-metrics/SKILL.md": "fb11e4b176529e89ce52feaf6120b08f4c5fcb3ec22765d10c88a3eaf1d79e48",
+    "/home/yang/FDE/w03-work/fde-agent-w03/docs/w03/business_model.md": "84d1e43aace4b57e49911cc6167bc6022d78ef5d390d9fe9c982be55d834dcf9",
+    "/home/yang/FDE/w03-work/fde-agent-w03/product/w03_intent_prompt.txt": "281aeb45bef1d6002f97db5ee6930683067ca730143caf3100757d9adf475ba0",
+    "/home/yang/FDE/w03-work/fde-agent-w03/customer/w03/judge.py": "33b7eed436f5663f04371ffc2eb456b23451c60b5073d8534e6735a6a466e0fc",
+    "/home/yang/FDE/w03-work/fde-agent-w03/.runtime/product/metrics-binding.json": "ce8c30def20406027621cc23bbe67dc9bb6b5f213387a518f8931d5df54a40f5",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/small/tests.json": "b83b234e4ad1c8f7b24f05bf8f4df0ff14ecdbb1f8a67cb61924eee045494f8d",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/small/tests-smoke.json": "f89d9ee92631411399c7efc1e97aa19b7396ecb026874774baaa007cb9f1fb64",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/large/tests.json": "6df3ade68f736b65b2cebd3d0cda5b9b402d3448c1b3c3456af3ff2a837d34bd",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/large/tests-smoke.json": "5f5b3a62a06fb73820620ee64c1b9c32e226ac005caeeb4542be4158c6f7a2f0"
+  },
+  "old_plan": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/plan.json",
+  "new_plan": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/answer-paid-formula-fix-20261110-031428-025216/plan.json",
+  "model_called": false,
+  "query_executed": false,
+  "library_rebuild_required": false,
+  "retest_required": true
+}

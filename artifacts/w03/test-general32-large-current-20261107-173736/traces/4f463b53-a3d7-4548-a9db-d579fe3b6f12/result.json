@@ -1,0 +1,24 @@
+{
+  "status": "clarify",
+  "reason": "已识别指标为净销售额（net_sales_cents）；「青禾」是当前数据集所属客户，不作为门店筛选条件。但问题未提供统计时间范围，请补充要查询的起止日期（如某月、某季度或某日期区间）。",
+  "intent": {
+    "status": "clarify",
+    "reason": "已识别指标为净销售额（net_sales_cents）；「青禾」是当前数据集所属客户，不作为门店筛选条件。但问题未提供统计时间范围，请补充要查询的起止日期（如某月、某季度或某日期区间）。",
+    "metrics": [
+      "net_sales_cents"
+    ],
+    "start": null,
+    "end": null,
+    "group_by": [],
+    "filters": []
+  },
+  "question": "青禾的净销售额是多少？",
+  "trace_id": "4f463b53-a3d7-4548-a9db-d579fe3b6f12",
+  "elapsed_seconds": 1.646,
+  "model_usage": {
+    "prompt_tokens": 10892,
+    "completion_tokens": 194,
+    "total_tokens": 11086
+  },
+  "model_calls_with_usage": 1
+}

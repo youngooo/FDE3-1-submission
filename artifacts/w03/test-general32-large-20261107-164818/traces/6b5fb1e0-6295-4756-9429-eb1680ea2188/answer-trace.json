@@ -1,0 +1,81 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "你根据本轮真实执行结果回答问题。解释条件时必须使用字段语义：store、store__region、store__store_name 都表示订单成交门店及其地区/名称；home_store 及其地区/名称才表示会员归属门店。返回 intent 中已有字段筛选就是已经应用的查询条件，不能因没有额外中文同名字段而否认已应用的条件。只能引用结果中的数值；金额以分存储，展示元需除100；比例展示百分数需乘100。用简明业务语言解释统计范围、口径及限制，金额保留两位小数、比例适当四舍五入。不要展示内部 status、intent 等字段名。区分零和未定义。聚合返回零是覆盖内的零；未返回某个分组仅说明该分组未列出，不能称为该指标未定义，也不能推断数据覆盖不足。返回 JSON：{\"answer\":\"...\",\"used_metrics\":[],\"citations\":[\"当前执行结果\"]}。\ncustomer_context 指明当前已加载客户与统计单位，data_context 指明本次测试数据版本和覆盖；本轮成功结果已经处于该客户数据范围。问题中的当前客户名称不是门店筛选值，不能因为没有同名门店筛选而否认结果属于该客户。只说明实际应用的筛选和分组；若用户没有要求某维度，不添加假设性的门店歧义。人数按customer_context统计单位表述为账户，不暗示跨系统自然人已去重。用业务词说明范围，不向用户罗列技术字段ID。\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"question\": \"请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的支付订单数，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。\", \"customer_context\": {\"customer\": \"青禾\", \"statistics_unit\": \"CRM 会员账户\", \"scope\": \"本周合成测试库\"}, \"data_context\": {\"seed\": 20260923, \"synthetic\": true, \"counts\": {\"members\": 30000, \"orders\": 300000, \"stores\": 24, \"cards\": 38891}, \"coverage\": [\"2024-09-01\", \"2026-09-01\"], \"sha256\": {\"orders.csv\": \"15fe0a98b1f34f1e2f7ce100a1ebb74d8f2cffa5023d0a93c7d07e959ffdd4b3\", \"cards.csv\": \"2cd90f4f709906c6b0e3c72de5b9347fe1118eabaa0fcdad30cf96951d66622a\", \"members.csv\": \"30835528d521255ce72bda232c1c6090b3dcbb0f6a7872ee230382615f158af7\", \"stores.csv\": \"d392d07b0f447a06fdf183860f040d79341a5daa787bc0fc4b400cda8f3675bd\"}, \"id\": \"qinghe-w03-20260923-large\", \"timezone\": \"Asia/Shanghai\", \"reference_date\": \"2026-09-01\", \"generator_version\": \"qinghe-w03-v1\", \"base_seed\": 20260922, \"library_sha256\": \"2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f\"}, \"result\": {\"status\": \"ok\", \"intent\": {\"metrics\": [\"paid_order_count\"], \"start\": \"2026-08-01\", \"end\": \"2026-09-01\", \"group_by\": [], \"filters\": []}, \"columns\": [\"paid_order_count\"], \"rows\": [[31564]], \"seconds\": 0.127, \"units\": {\"paid_order_count\": \"count\"}, \"data_version\": \"qinghe-w03-20260923-large\", \"data_sha256\": \"0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8\", \"catalog_sha256\": \"2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f\"}, \"definitions\": [{\"id\": \"paid_order_count\", \"name\": \"支付订单数\", \"aliases\": [], \"unit\": \"count\", \"sources\": [{\"file\": \"01_订单日报说明.md\", \"quote\": \"状态为 paid 的订单数，包括后来全部退款的订单。\"}], \"constraints\": [\"包括后来全额退款的 paid 订单\"], \"query_policy\": {\"full_month_only\": false}}]}"
+    }
+  ],
+  "model": "deepseek-flash",
+  "reply": {
+    "role": "assistant",
+    "content": "{\"answer\":\"青禾在 2026 年 8 月（2026-08-01 含至 2026-09-01 不含）全门店的支付订单数为 31,564 单。\\n\\n统计范围与口径：按原订单下单日期归属到该自然月，不限定门店，也不做任何维度拆分；只统计订单状态为“已支付”的订单，并包括此后发生全额退款的已支付订单。本次结果属于青禾当前 CRM 会员账户数据范围，来自本周合成测试库（数据覆盖 2024-09-01 至 2026-09-01）。\\n\\n限制说明：本问题只涉及订单数，不涉及金额或比例；结果未按门店、地区等维度展开，因此不会给出各门店之间的分布。\",\"used_metrics\":[\"paid_order_count\"],\"citations\":[\"当前执行结果\"]}"
+  },
+  "usage": {
+    "prompt_tokens": 1098,
+    "completion_tokens": 345,
+    "total_tokens": 1443,
+    "completion_tokens_details": {
+      "reasoning_tokens": 149
+    }
+  },
+  "seconds": 2.601,
+  "call": {
+    "policy_version": "gateway-stages-20260922",
+    "attempts": [
+      {
+        "attempt": 1,
+        "request": {
+          "model": "deepseek-flash",
+          "messages": [
+            {
+              "role": "system",
+              "content": "你根据本轮真实执行结果回答问题。解释条件时必须使用字段语义：store、store__region、store__store_name 都表示订单成交门店及其地区/名称；home_store 及其地区/名称才表示会员归属门店。返回 intent 中已有字段筛选就是已经应用的查询条件，不能因没有额外中文同名字段而否认已应用的条件。只能引用结果中的数值；金额以分存储，展示元需除100；比例展示百分数需乘100。用简明业务语言解释统计范围、口径及限制，金额保留两位小数、比例适当四舍五入。不要展示内部 status、intent 等字段名。区分零和未定义。聚合返回零是覆盖内的零；未返回某个分组仅说明该分组未列出，不能称为该指标未定义，也不能推断数据覆盖不足。返回 JSON：{\"answer\":\"...\",\"used_metrics\":[],\"citations\":[\"当前执行结果\"]}。\ncustomer_context 指明当前已加载客户与统计单位，data_context 指明本次测试数据版本和覆盖；本轮成功结果已经处于该客户数据范围。问题中的当前客户名称不是门店筛选值，不能因为没有同名门店筛选而否认结果属于该客户。只说明实际应用的筛选和分组；若用户没有要求某维度，不添加假设性的门店歧义。人数按customer_context统计单位表述为账户，不暗示跨系统自然人已去重。用业务词说明范围，不向用户罗列技术字段ID。\n"
+            },
+            {
+              "role": "user",
+              "content": "{\"question\": \"请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的支付订单数，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。\", \"customer_context\": {\"customer\": \"青禾\", \"statistics_unit\": \"CRM 会员账户\", \"scope\": \"本周合成测试库\"}, \"data_context\": {\"seed\": 20260923, \"synthetic\": true, \"counts\": {\"members\": 30000, \"orders\": 300000, \"stores\": 24, \"cards\": 38891}, \"coverage\": [\"2024-09-01\", \"2026-09-01\"], \"sha256\": {\"orders.csv\": \"15fe0a98b1f34f1e2f7ce100a1ebb74d8f2cffa5023d0a93c7d07e959ffdd4b3\", \"cards.csv\": \"2cd90f4f709906c6b0e3c72de5b9347fe1118eabaa0fcdad30cf96951d66622a\", \"members.csv\": \"30835528d521255ce72bda232c1c6090b3dcbb0f6a7872ee230382615f158af7\", \"stores.csv\": \"d392d07b0f447a06fdf183860f040d79341a5daa787bc0fc4b400cda8f3675bd\"}, \"id\": \"qinghe-w03-20260923-large\", \"timezone\": \"Asia/Shanghai\", \"reference_date\": \"2026-09-01\", \"generator_version\": \"qinghe-w03-v1\", \"base_seed\": 20260922, \"library_sha256\": \"2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f\"}, \"result\": {\"status\": \"ok\", \"intent\": {\"metrics\": [\"paid_order_count\"], \"start\": \"2026-08-01\", \"end\": \"2026-09-01\", \"group_by\": [], \"filters\": []}, \"columns\": [\"paid_order_count\"], \"rows\": [[31564]], \"seconds\": 0.127, \"units\": {\"paid_order_count\": \"count\"}, \"data_version\": \"qinghe-w03-20260923-large\", \"data_sha256\": \"0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8\", \"catalog_sha256\": \"2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f\"}, \"definitions\": [{\"id\": \"paid_order_count\", \"name\": \"支付订单数\", \"aliases\": [], \"unit\": \"count\", \"sources\": [{\"file\": \"01_订单日报说明.md\", \"quote\": \"状态为 paid 的订单数，包括后来全部退款的订单。\"}], \"constraints\": [\"包括后来全额退款的 paid 订单\"], \"query_policy\": {\"full_month_only\": false}}]}"
+            }
+          ],
+          "stream": false,
+          "max_tokens": 8192
+        },
+        "timeout_seconds": 180.0,
+        "max_tokens": 8192,
+        "usage": {
+          "prompt_tokens": 1098,
+          "completion_tokens": 345,
+          "total_tokens": 1443,
+          "prompt_tokens_details": {
+            "cached_tokens": 256
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 149
+          },
+          "prompt_cache_hit_tokens": 256,
+          "prompt_cache_miss_tokens": 842
+        },
+        "trace_ids": {},
+        "response_id": "4ce5d70f-f7c5-45bc-bd5c-a9df0762c8a8",
+        "http_status": 200,
+        "finish_reason": "stop",
+        "response": {
+          "role": "assistant",
+          "content": "{\"answer\":\"青禾在 2026 年 8 月（2026-08-01 含至 2026-09-01 不含）全门店的支付订单数为 31,564 单。\\n\\n统计范围与口径：按原订单下单日期归属到该自然月，不限定门店，也不做任何维度拆分；只统计订单状态为“已支付”的订单，并包括此后发生全额退款的已支付订单。本次结果属于青禾当前 CRM 会员账户数据范围，来自本周合成测试库（数据覆盖 2024-09-01 至 2026-09-01）。\\n\\n限制说明：本问题只涉及订单数，不涉及金额或比例；结果未按门店、地区等维度展开，因此不会给出各门店之间的分布。\",\"used_metrics\":[\"paid_order_count\"],\"citations\":[\"当前执行结果\"]}"
+        },
+        "seconds": 2.601
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1098,
+      "completion_tokens": 345,
+      "total_tokens": 1443,
+      "completion_tokens_details": {
+        "reasoning_tokens": 149
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "reject_partial_start",
+  "passed": true,
+  "checked_metrics": [
+    "monthly_paid_buyer_count",
+    "monthly_paid_order_count",
+    "monthly_paid_sales_cents",
+    "monthly_paid_repeat_buyer_count",
+    "monthly_paid_repeat_rate",
+    "monthly_paid_avg_order_value"
+  ],
+  "elapsed_seconds": 4.733,
+  "errors": []
+}

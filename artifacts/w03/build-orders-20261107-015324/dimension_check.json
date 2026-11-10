@@ -1,0 +1,135 @@
+{
+  "passed": true,
+  "items": [
+    {
+      "id": "store",
+      "queryable": true,
+      "unresolved": null,
+      "passed": true
+    },
+    {
+      "id": "home_store",
+      "queryable": true,
+      "unresolved": null,
+      "passed": true
+    },
+    {
+      "id": "member",
+      "queryable": true,
+      "unresolved": null,
+      "passed": true
+    },
+    {
+      "id": "store__region",
+      "queryable": true,
+      "unresolved": null,
+      "passed": true
+    },
+    {
+      "id": "store__store_name",
+      "queryable": true,
+      "unresolved": null,
+      "passed": true
+    },
+    {
+      "id": "home_store__region",
+      "queryable": true,
+      "unresolved": null,
+      "passed": true
+    },
+    {
+      "id": "home_store__store_name",
+      "queryable": true,
+      "unresolved": null,
+      "passed": true
+    },
+    {
+      "id": "order__channel",
+      "queryable": true,
+      "unresolved": null,
+      "passed": true
+    },
+    {
+      "id": "order__status",
+      "queryable": true,
+      "unresolved": null,
+      "passed": true
+    },
+    {
+      "id": "member__tier",
+      "queryable": true,
+      "unresolved": null,
+      "passed": true
+    },
+    {
+      "id": "metric_time__day",
+      "queryable": true,
+      "unresolved": null,
+      "passed": true
+    },
+    {
+      "id": "metric_time__month",
+      "queryable": true,
+      "unresolved": null,
+      "passed": true
+    }
+  ],
+  "available": [
+    "home_store",
+    "home_store__region",
+    "home_store__store_name",
+    "member",
+    "member__tier",
+    "metric_time__day",
+    "metric_time__month",
+    "order__channel",
+    "order__status",
+    "store",
+    "store__region",
+    "store__store_name"
+  ],
+  "per_metric": {
+    "net_sales_cents": {
+      "store": "store",
+      "home_store": "home_store",
+      "member": "member",
+      "store__region": "store__region",
+      "store__store_name": "store__store_name",
+      "home_store__region": "member__home_store__region",
+      "home_store__store_name": "member__home_store__store_name",
+      "order__channel": "order__channel",
+      "order__status": "order__status",
+      "member__tier": "member__tier",
+      "metric_time__day": "metric_time__day",
+      "metric_time__month": "metric_time__month"
+    },
+    "order_count": {
+      "store": "store",
+      "home_store": "home_store",
+      "member": "member",
+      "store__region": "store__region",
+      "store__store_name": "store__store_name",
+      "home_store__region": "member__home_store__region",
+      "home_store__store_name": "member__home_store__store_name",
+      "order__channel": "order__channel",
+      "order__status": "order__status",
+      "member__tier": "member__tier",
+      "metric_time__day": "metric_time__day",
+      "metric_time__month": "metric_time__month"
+    },
+    "valid_order_count": {
+      "store": "store",
+      "home_store": "home_store",
+      "member": "member",
+      "store__region": "store__region",
+      "store__store_name": "store__store_name",
+      "home_store__region": "member__home_store__region",
+      "home_store__store_name": "member__home_store__store_name",
+      "order__channel": "order__channel",
+      "order__status": "order__status",
+      "member__tier": "member__tier",
+      "metric_time__day": "metric_time__day",
+      "metric_time__month": "metric_time__month"
+    }
+  }
+}

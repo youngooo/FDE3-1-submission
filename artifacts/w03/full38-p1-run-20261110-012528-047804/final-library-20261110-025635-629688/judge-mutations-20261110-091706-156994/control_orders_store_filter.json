@@ -1,0 +1,105 @@
+{
+  "id": "control_orders_store_filter",
+  "source_dataset": "large",
+  "source_case": "orders_store_filter",
+  "expected": {
+    "status": "ok",
+    "intent": {
+      "metrics": [
+        "order_count",
+        "valid_order_count",
+        "net_sales_cents"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-07-01",
+      "group_by": [],
+      "filters": [
+        {
+          "field": "store",
+          "op": "eq",
+          "value": "S02"
+        }
+      ]
+    },
+    "columns": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "rows": [
+      [
+        1267,
+        1126,
+        19550510
+      ]
+    ],
+    "units": {
+      "order_count": "count",
+      "valid_order_count": "count",
+      "net_sales_cents": "cents"
+    },
+    "data_version": "qinghe-w03-20260923-large",
+    "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+    "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402"
+  },
+  "actual": {
+    "status": "ok",
+    "intent": {
+      "metrics": [
+        "order_count",
+        "valid_order_count",
+        "net_sales_cents"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-07-01",
+      "group_by": [],
+      "filters": [
+        {
+          "field": "store",
+          "op": "eq",
+          "value": "S02"
+        }
+      ]
+    },
+    "sql": "SELECT\n  SUM(order_count) AS order_count\n  , SUM(valid_order_count) AS valid_order_count\n  , SUM(net_sales_cents) AS net_sales_cents\nFROM (\n  SELECT\n    store_id AS store\n    , 1 AS order_count\n    , CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END AS valid_order_count\n    , CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END AS net_sales_cents\n  FROM \"data\".\"main\".\"order_fact\" order_model_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-06-01' AND '2026-06-30'\n) subq_6\nWHERE store in ('S02')",
+    "columns": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "rows": [
+      [
+        1267,
+        1126,
+        19550510
+      ]
+    ],
+    "seconds": 0.164,
+    "units": {
+      "order_count": "count",
+      "valid_order_count": "count",
+      "net_sales_cents": "cents"
+    },
+    "data_version": "qinghe-w03-20260923-large",
+    "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+    "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+    "answer": "统计2026年6月（按订单下单日期归属）、成交门店编号为S02且客户范围为青禾、不分组的结果：创建订单数1267单；有效订单数1126单；净销售额19550510分。口径上，创建订单数按全部订单逐订单号统计，包含取消单；有效订单数为实付金额减退款金额大于0的已支付订单，取消单和全额退款单不计；净销售额为已支付订单实付减退款后的合计，取消单不计。",
+    "question": "限定青禾成交门店编号S02，查2026年6月创建订单数、有效订单数、净销售额合计，不分组，金额分。",
+    "trace_id": "06b1b4cb-7013-481b-a70a-e750f63fd3b4",
+    "elapsed_seconds": 9.686,
+    "model_usage": {
+      "prompt_tokens": 15495,
+      "completion_tokens": 778,
+      "total_tokens": 16273
+    },
+    "model_calls_with_usage": 2
+  },
+  "should_pass": true,
+  "required_difference": null,
+  "verdict": {
+    "passed": true,
+    "differences": []
+  },
+  "rejection_reason_matches_mutation": true,
+  "passed": true
+}

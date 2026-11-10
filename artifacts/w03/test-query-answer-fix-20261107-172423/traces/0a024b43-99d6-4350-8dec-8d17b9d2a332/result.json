@@ -1,0 +1,56 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "valid_order_count",
+      "net_sales_cents",
+      "avg_order_value",
+      "cancel_rate"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": [
+      {
+        "field": "order__status",
+        "op": "eq",
+        "value": "cancelled"
+      }
+    ]
+  },
+  "sql": "WITH sma_10003_cte AS (\n  SELECT\n    DATE_TRUNC('day', ordered_at) AS metric_time__day\n    , status AS order__status\n    , 1 AS __order_count\n    , CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END AS __valid_order_count\n    , CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END AS __cancelled_order_count\n    , CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END AS __net_sales_cents\n  FROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\n)\n\nSELECT\n  MAX(subq_11.valid_order_count) AS valid_order_count\n  , MAX(subq_11.net_sales_cents) AS net_sales_cents\n  , MAX(subq_19.avg_order_value) AS avg_order_value\n  , MAX(subq_19.cancel_rate) AS cancel_rate\nFROM (\n  SELECT\n    SUM(valid_order_count) AS valid_order_count\n    , SUM(net_sales_cents) AS net_sales_cents\n  FROM (\n    SELECT\n      order__status\n      , __valid_order_count AS valid_order_count\n      , __net_sales_cents AS net_sales_cents\n    FROM sma_10003_cte\n    WHERE metric_time__day BETWEEN '2026-08-01' AND '2026-08-31'\n  ) subq_7\n  WHERE order__status in ('cancelled')\n) subq_11\nCROSS JOIN (\n  SELECT\n    CAST(SUM(net_sales_cents) AS DOUBLE) / CAST(NULLIF(SUM(valid_order_count), 0) AS DOUBLE) AS avg_order_value\n    , CAST(SUM(cancelled_order_count) AS DOUBLE) / CAST(NULLIF(SUM(order_count), 0) AS DOUBLE) AS cancel_rate\n  FROM (\n    SELECT\n      order__status\n      , __order_count AS order_count\n      , __valid_order_count AS valid_order_count\n      , __cancelled_order_count AS cancelled_order_count\n      , __net_sales_cents AS net_sales_cents\n    FROM sma_10003_cte\n    WHERE metric_time__day BETWEEN '2026-08-01' AND '2026-08-31'\n  ) subq_14\n  WHERE order__status in ('cancelled')\n) subq_19",
+  "columns": [
+    "valid_order_count",
+    "net_sales_cents",
+    "avg_order_value",
+    "cancel_rate"
+  ],
+  "rows": [
+    [
+      0,
+      0,
+      null,
+      1.0
+    ]
+  ],
+  "seconds": 0.243,
+  "units": {
+    "valid_order_count": "count",
+    "net_sales_cents": "cents",
+    "avg_order_value": "cents/order",
+    "cancel_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f",
+  "answer": "统计范围：青禾客户2026年8月（2026-08-01至2026-09-01），仅筛选订单状态为取消的订单。结果：有效订单数0单；净销售额0分；有效订单均额未定义（净销售额0分÷有效订单数0单，分母为零）；取消率1.0（小数比例）。说明：有效订单数和净销售额按口径均不计取消单，因此本次取消单筛选下为0；取消率按取消订单数÷创建订单数计算，返回1.0。",
+  "question": "青禾2026年8月，仅筛选订单状态cancelled（取消），汇总有效订单数、净销售额、有效订单均额及取消率。金额保留分，均额分/单，比率保留小数。",
+  "trace_id": "0a024b43-99d6-4350-8dec-8d17b9d2a332",
+  "elapsed_seconds": 16.412,
+  "model_usage": {
+    "prompt_tokens": 12814,
+    "completion_tokens": 1737,
+    "total_tokens": 14551
+  },
+  "model_calls_with_usage": 2
+}

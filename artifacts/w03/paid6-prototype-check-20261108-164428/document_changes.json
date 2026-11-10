@@ -1,0 +1,14 @@
+[
+  {
+    "path": "docs/w03/metric_decisions.md",
+    "before_sha256": "24c79a16f8ee859b0e20ccf7790158b976522067c18255e77f6b247acbc465c6",
+    "after_sha256": "2957aa37749ed535abe02a89d518eab056a394a961dea5ab483279f3dd054e9c",
+    "backup": "artifacts/w03/paid6-prototype-check-20261108-164428/metric_decisions.md.before"
+  },
+  {
+    "path": "docs/w03/model_changes.md",
+    "before_sha256": "f29730f93b5151c8c9f52ff564d71a59048f7a02a565787825ad9131904ebae5",
+    "after_sha256": "897b56fbcd3c1cc412130c17b997eae476ad7c065b293125050ea2a4cc129f81",
+    "backup": "artifacts/w03/paid6-prototype-check-20261108-164428/model_changes.md.before"
+  }
+]

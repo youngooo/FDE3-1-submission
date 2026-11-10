@@ -1,0 +1,65 @@
+[
+  {
+    "id": "paid_pair",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_monthly_repeat_rate",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "monthly_pair",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_monthly_paid_repeat_rate",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_monthly_paid_avg_order_value",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "paid_coverage",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "paid_paraphrase",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_avg_order_value",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "paid_zero_month",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  }
+]

@@ -1,0 +1,59 @@
+W03 作业交付总览：32项阶段成果，六项待确认
+整理日期：2026-11-08
+
+请先阅读本文件。本包不是38项全部完成或验收通过的提交。
+当前阶段库已按课程merge命令生成至artifacts/w03/library，32项，结构/粒度/维度检查通过。
+库版本：b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62
+六项付费月报因总部月报资格日期、结束日期组合及适用依据缺失，仍未构建为可验收指标。
+人工资格聚合原型12/12只验证公式，不确认真实资格、不计入38项完成数。
+
+一、主要交付入口
+docs/w03/business_model.md：W03业务模型v0.6。
+docs/w03/model_changes.md：承接W02、分类复核及本轮修改记录。
+docs/w03/interview_notes.md：实际访谈、原始来源、七组28条核查与后续补访。
+docs/w03/sow.md：v0.11-reviewed，学员已审阅并认可的作业提交版；王经理反馈和修订已有记录，仍非客户合同或正式验收批准。
+docs/w03/metric_decisions.md：指标依据、限制、失败修复及未决项。
+customer/w03/build-metrics/SKILL.md：实际构建方法；原始构建及修正记录在artifacts/w03。
+artifacts/w03/library/：merge生成的32项阶段交付库，不是完整38项定稿库。
+customer/w03/tests.json / tests-large.json：54条小样本、53条规模用例；从原始CSV独立生成。
+customer/w03/test_entrypoints.json：上述用例已绑定本次merge新版本，并对应新执行的小样本54/54、规模53/53报告。
+customer/w03/judge.py：确定性判定器；已有8个正向控制、34个错误变体证据。
+artifacts/w03/runtime-customization-current/：最新六文件运行快照、差异和恢复说明。
+customer/w03/restore_runtime.py：默认只读核对，--apply才备份并恢复。
+artifacts/w03/submission_status.json：当前状态及缺失六项清单。
+
+二、当前交付库的真实回归与解释核查
+小样本54/54、规模53/53结构化通过，均绑定本次merge库。
+小样本原始报告已按字节复制至artifacts/w03/metric_test_report.json；规模原始报告保留。
+107条实际回答经AI辅助逐项阅读，未发现改变查询结论的数值、单位或分组错误，保留5处措辞备注。
+本核查不是自动语义判定或学员逐条签署；原回答未修改。详细证据见artifacts/w03/submission_status.json。
+历史53/54失败、9/9定点修复、旧规模53/53、6条回放、2条复测及年份修复等继续留存，不与本次成绩混淆。
+
+三、当前未完成项
+1. 补齐六项资格依据后实现并验证全部38项；当前仍为32/38。
+2. 增补六项后必须重新merge、加载、生成独立期望，完成相应大小样本回归和解释核查，不能沿用当前32项报告冒充38项。
+3. 老周MSG-04605仍待最新导出核验；已有粘贴来源明确标注，不用作已确认规则。
+费用、正式批准、真实效果基线和历史会员统计可继续列待确认，不编造承诺。
+本周未通过不阻断下周材料开放，核心缺项须在答辩前补齐；本包不声称已满足全部评分要求。
+
+四、解压和复现
+先解压课程原始c16工程，再将本包按原路径放入工作副本；不要覆盖本人W02已提交目录。
+本包不含.venv、.runtime、validation-project、规模数据和密钥。docs/w02的两份原件仅为引用核查附件，未修改。
+恢复运行定制见artifacts/w03/runtime-customization-current/RESTORE.txt。
+以下命令在准备好课程Python3.11环境与数据后、工程根目录执行：
+
+.venv/bin/python customer/w03/restore_runtime.py --workspace .
+.venv/bin/python customer/w03/restore_runtime.py --workspace . --apply
+.venv/bin/python tools/w03.py load --library artifacts/w03/library --data materials/data/small --project .runtime/qinghe-submit-small-v1
+.venv/bin/python customer/w03/make_tests_general32.py --data materials/data/small --project .runtime/qinghe-submit-small-v1 --output artifacts/w03/cases-submit-small-v1
+.venv/bin/python tools/w03.py load --library artifacts/w03/library --data materials/data/large --project .runtime/qinghe-submit-large-v1
+.venv/bin/python customer/w03/make_tests_general32.py --data materials/data/large --project .runtime/qinghe-submit-large-v1 --output artifacts/w03/cases-submit-large-v1
+
+以上新目录需不存在；若重复执行，换版本路径。load和生成期望不调用模型。
+下列为重新复现时的测试命令，需要自行配置模型并产生调用费用；已有当前库真实报告随包提供：
+.venv/bin/python tools/w03.py test --project .runtime/qinghe-submit-small-v1 --cases artifacts/w03/cases-submit-small-v1/tests-general32.json --output artifacts/w03/test-submit-small-v1 --judge-command .venv/bin/python customer/w03/judge.py
+.venv/bin/python tools/w03.py test --project .runtime/qinghe-submit-large-v1 --cases artifacts/w03/cases-submit-large-v1/tests-general32.json --output artifacts/w03/test-submit-large-v1 --judge-command .venv/bin/python customer/w03/judge.py
+
+这两轮仍只有32项，不能补足六项缺口。聊天演示另需activate相应项目再启动服务。
+结构预检：.venv/bin/python tools/w03.py check --workspace 解压目录
+当前预检needs_revision：指标库和测试均只覆盖32/38项。报告文件及新库匹配已通过。详见artifacts/w03/precheck.json。

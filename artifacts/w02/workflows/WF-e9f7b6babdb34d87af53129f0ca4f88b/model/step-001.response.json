@@ -1,0 +1,22 @@
+{
+  "message": {
+    "role": "assistant",
+    "content": "我先读取本轮材料、目标与现有认识。",
+    "tool_calls": [
+      {
+        "index": 0,
+        "id": "call_00_ET_AwibWGnjCeEP14nFHBp83924",
+        "type": "function",
+        "function": {
+          "name": "inspect_materials",
+          "arguments": "{}"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "prompt_tokens": 1684,
+    "completion_tokens": 33,
+    "total_tokens": 1717
+  }
+}

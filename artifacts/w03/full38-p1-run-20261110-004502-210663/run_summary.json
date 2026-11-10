@@ -1,0 +1,17 @@
+{
+  "status": "built_38_pending_independent_validation",
+  "started_at": "2026-11-10T00:45:02.210663+08:00",
+  "build_output": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-004502-210663/build",
+  "target_count": 38,
+  "metric_regression": "not_run",
+  "business_confirmation": "pending",
+  "exit_code": 0,
+  "defined_count": 38,
+  "missing_metric_ids": [],
+  "unexpected_metric_ids": [],
+  "unresolved_metrics": [],
+  "validation_passed": true,
+  "input_changed_during_build": [],
+  "elapsed_seconds": 277.628,
+  "finished_at": "2026-11-10T00:49:44.910942+08:00"
+}

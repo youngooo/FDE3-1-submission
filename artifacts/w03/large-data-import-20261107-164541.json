@@ -1,0 +1,28 @@
+{
+  "status": "ok",
+  "data_version": "qinghe-w03-20260923-large",
+  "counts_verified": {
+    "orders": 300000,
+    "members": 30000,
+    "stores": 24,
+    "cards": 38891
+  },
+  "coverage": [
+    "2024-09-01",
+    "2026-09-01"
+  ],
+  "timezone": "Asia/Shanghai",
+  "archive": "/home/yang/FDE/w03-work/fde-agent-w03/materials/data/qinghe-w03-large-20260923.zip",
+  "archive_sha256": "65cfec01f4091b037e5d9f809d98585593e3303c269aa43fbf395c1ba33d0dcb",
+  "destination": "/home/yang/FDE/w03-work/fde-agent-w03/materials/data/large",
+  "source_sha256": {
+    "orders.csv": "15fe0a98b1f34f1e2f7ce100a1ebb74d8f2cffa5023d0a93c7d07e959ffdd4b3",
+    "members.csv": "30835528d521255ce72bda232c1c6090b3dcbb0f6a7872ee230382615f158af7",
+    "stores.csv": "d392d07b0f447a06fdf183860f040d79341a5daa787bc0fc4b400cda8f3675bd",
+    "cards.csv": "2cd90f4f709906c6b0e3c72de5b9347fe1118eabaa0fcdad30cf96951d66622a"
+  },
+  "manifest_sha256": "1ddf4a9122cfa904d4e87206d8c0216f14515e5167fc4d1540d147b07578f29d",
+  "script_sha256": "fa6abe9ef60fb8ee5ab0e4e0c25126446cfeef23affa5262f2fe11c54ea0b1b8",
+  "model_called": false,
+  "data_generated": false
+}

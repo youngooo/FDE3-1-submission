@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "avg_order_value"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(SUM(CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END) AS DOUBLE) / CAST(NULLIF(SUM(CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END), 0) AS DOUBLE) AS avg_order_value\nFROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "avg_order_value"
+  ],
+  "rows": [
+    [
+      3714.814814814815
+    ]
+  ],
+  "seconds": 0.059,
+  "units": {
+    "avg_order_value": "cents/order"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "answer": "青禾在2026-08-01（含）至2026-09-01（不含）期间，按原订单下单日期归属，统计全门店、不按维度分组汇总的有效订单均额，结果为约 3714.81 分/单。口径为净销售额除以有效订单数。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的有效订单均额，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。",
+  "trace_id": "4b0babab-a424-4143-83c8-4f0883b74f3f",
+  "elapsed_seconds": 8.27,
+  "model_usage": {
+    "prompt_tokens": 13028,
+    "completion_tokens": 676,
+    "total_tokens": 13704
+  },
+  "model_calls_with_usage": 2
+}

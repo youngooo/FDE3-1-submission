@@ -1,0 +1,33 @@
+{
+  "status": "applied",
+  "offline_checks": [
+    "integer_cents_preserved",
+    "exact_yuan_conversion",
+    "first_orders_are_orders",
+    "first_buyers_are_accounts",
+    "stores_are_stores",
+    "items_are_items",
+    "average_native_rounding",
+    "average_yuan_rounding",
+    "unit_aliases",
+    "null_stays_undefined",
+    "zero_stays_zero",
+    "ratio_native",
+    "ratio_percent",
+    "groups_preserved",
+    "source_not_mutated"
+  ],
+  "model_called": false,
+  "query_executed": false,
+  "protected_sha256": {
+    "/home/yang/FDE/w03-work/fde-agent-w03/product/w03_intent_prompt.txt": "9d11fd46a867b92a3cce6c2f6acb69e099bc881192dff36900461542a777217c",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/engine.py": "e8b39da2517a65f6406da4d261173291c795248ea6c62638137e09ce750a98f3",
+    "/home/yang/FDE/w03-work/fde-agent-w03/customer/w03/judge.py": "33b7eed436f5663f04371ffc2eb456b23451c60b5073d8534e6735a6a466e0fc"
+  },
+  "agent_before_sha256": "8007c981b30a628817b1500986295654b5841a16b9cc84e7b89d3fd0c59c434e",
+  "agent_after_sha256": "ddcd3c6042cff81c0e48c66b2700689a6885138fc70f47af63620b39eee4c080",
+  "answer_prompt_before_sha256": "501ab98da7c49f89ddaf23bd1b235715e93d2f2256d915cbdc3e74bf074f38dd",
+  "answer_prompt_after_sha256": "d29ef0eccbd8f64aa02eb5aa732669f835d9bff921429452309600e618d98b1e",
+  "helper_sha256": "a430fe2d2e7926f430bbe93be261623a648c35e541bde60a7d5f86e369fa661b",
+  "script_sha256": "8535210ef8ce40eba192fc2b69fd0120d25ddc90f79d4288386ef270fe9bfc56"
+}

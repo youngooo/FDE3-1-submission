@@ -1,0 +1,10 @@
+{
+  "status": "error",
+  "code": "MODEL_HTTP_402",
+  "reason": "本次调用未完成，请查看运行记录；不能把失败当成零。",
+  "question": "青禾2026年8月只看成交门店编号S01，列出观测期首购会员数、观测期首单数、观测期首单净销售额、观测期后续购买订单数。先在完整覆盖历史内确定各账户首笔有效订单，再按日期和成交门店筛选；金额保留分。",
+  "trace_id": "1810a66c-bc86-4dff-8114-4ebf481eba48",
+  "elapsed_seconds": 0.504,
+  "model_usage": {},
+  "model_calls_with_usage": 0
+}

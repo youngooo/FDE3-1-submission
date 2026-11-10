@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "partial_refund_order_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN status = 'paid' AND refund_cents > 0 AND refund_cents < paid_cents THEN 1 ELSE 0 END) AS partial_refund_order_count\nFROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "partial_refund_order_count"
+  ],
+  "rows": [
+    [
+      3087
+    ]
+  ],
+  "seconds": 0.177,
+  "units": {
+    "partial_refund_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "answer": "青禾在2026年8月（2026-08-01含至2026-09-01不含）的部分退款订单数为3087单。统计覆盖当前客户全部门店，不按门店等维度分组，并按原订单下单日期归属。口径为：已支付且退款金额大于0、小于实付金额的订单计为部分退款订单。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的部分退款订单数，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。",
+  "trace_id": "3d8b6317-c1cf-4498-a5bc-28652b296127",
+  "elapsed_seconds": 8.698,
+  "model_usage": {
+    "prompt_tokens": 13280,
+    "completion_tokens": 640,
+    "total_tokens": 13920
+  },
+  "model_calls_with_usage": 2
+}

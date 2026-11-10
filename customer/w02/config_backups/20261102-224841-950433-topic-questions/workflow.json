@@ -1,0 +1,9 @@
+{
+  "version": "w02-workflow-0.1.0",
+  "goal": "依据青禾七份访谈，梳理会员建议从运营核查到门店交接的业务对象、关系、使用条件和角色职责；保留信息不一致、缺失及范围变化时的处理方式、来源、未知和权限边界，为业务模型提供可核查依据。",
+  "extraction_config": "customer/w02/extraction.json",
+  "skill": "customer/w02/skills/extract-business/SKILL.md",
+  "business_model": "docs/w02/business_model.md",
+  "notes": "docs/w02/interview_notes.md",
+  "max_steps": 24
+}

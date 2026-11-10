@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "refund_order_rate"
+    ],
+    "start": "2026-04-01",
+    "end": "2026-05-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(SUM(CASE WHEN status = 'paid' AND refund_cents > 0 THEN 1 ELSE 0 END) AS DOUBLE) / CAST(NULLIF(SUM(CASE WHEN status = 'paid' THEN 1 ELSE 0 END), 0) AS DOUBLE) AS refund_order_rate\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-04-01' AND '2026-04-30'",
+  "columns": [
+    "refund_order_rate"
+  ],
+  "rows": [
+    [
+      0.14863425029058505
+    ]
+  ],
+  "seconds": 0.098,
+  "units": {
+    "refund_order_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "统计范围：青禾 2026 年 4 月整月的全部门店合计，未按门店、地区或其他维度拆分。退款订单率按“退款订单数÷支付订单数”计算，本次结果为 0.14863425029058505（小数比例）。",
+  "question": "核对青禾2026年4月整月报表：只返回退款订单率的全门店合计，不拆维度。结果使用小数比例。",
+  "trace_id": "8f31f110-a22b-4eca-8cd2-ae81dacf18ee",
+  "elapsed_seconds": 8.465,
+  "model_usage": {
+    "prompt_tokens": 15143,
+    "completion_tokens": 726,
+    "total_tokens": 15869
+  },
+  "model_calls_with_usage": 2
+}

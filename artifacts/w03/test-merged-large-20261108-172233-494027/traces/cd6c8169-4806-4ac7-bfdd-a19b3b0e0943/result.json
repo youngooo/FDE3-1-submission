@@ -1,0 +1,62 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "member__tier"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  members_semantic_src_10000.tier AS member__tier\n  , SUM(subq_5.__order_count) AS order_count\n  , SUM(subq_5.__valid_order_count) AS valid_order_count\n  , SUM(subq_5.__net_sales_cents) AS net_sales_cents\nFROM (\n  SELECT\n    member_id AS member\n    , 1 AS __order_count\n    , CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END AS __valid_order_count\n    , CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END AS __net_sales_cents\n  FROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_5\nLEFT OUTER JOIN\n  \"data\".\"main\".\"members\" members_semantic_src_10000\nON\n  subq_5.member = members_semantic_src_10000.member_id\nGROUP BY\n  members_semantic_src_10000.tier",
+  "columns": [
+    "member__tier",
+    "order_count",
+    "valid_order_count",
+    "net_sales_cents"
+  ],
+  "rows": [
+    [
+      "普通",
+      11488,
+      10009,
+      171553542
+    ],
+    [
+      "银卡",
+      11435,
+      9979,
+      171128836
+    ],
+    [
+      "金卡",
+      11383,
+      9945,
+      171238942
+    ]
+  ],
+  "seconds": 0.225,
+  "units": {
+    "order_count": "count",
+    "valid_order_count": "count",
+    "net_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "answer": "统计范围：青禾当前已加载数据中，按会员等级分组，统计下单日期属于2026年8月的订单；金额按原始单位“分”展示，未换算为元。\n\n| 会员等级 | 创建订单数（单） | 有效订单数（单） | 净销售额（分） |\n|---|---:|---:|---:|\n| 普通 | 11488 | 10009 | 171553542 |\n| 银卡 | 11435 | 9979 | 171128836 |\n| 金卡 | 11383 | 9945 | 171238942 |\n\n口径说明：创建订单数按下单日期统计全部订单，每个订单号计一次，包含取消单；有效订单数为已支付且实付金额减退款金额大于零的订单，取消和全额退款不计；净销售额为已支付订单实付减退款后的合计，取消单不计，并按原订单下单日期归属。上述订单数均按订单计数，单位为单，不是会员账户数。结果仅列出普通、银卡、金卡三个会员等级。",
+  "question": "青禾2026年8月按会员等级分组，分别列出创建订单数、有效订单数、净销售额；按下单日期统计，金额保留分。",
+  "trace_id": "cd6c8169-4806-4ac7-bfdd-a19b3b0e0943",
+  "elapsed_seconds": 19.77,
+  "model_usage": {
+    "prompt_tokens": 14151,
+    "completion_tokens": 2624,
+    "total_tokens": 16775
+  },
+  "model_calls_with_usage": 2
+}

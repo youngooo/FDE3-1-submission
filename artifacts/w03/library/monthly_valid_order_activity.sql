@@ -1,0 +1,1 @@
+select member_id, cast(date_trunc('month', ordered_at) as date) as month_start, count(*) as valid_order_count, sum(paid_cents - refund_cents) as net_sales_cents from {{ ref('orders') }} where status = 'paid' and paid_cents - refund_cents > 0 group by member_id, cast(date_trunc('month', ordered_at) as date)

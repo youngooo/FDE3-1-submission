@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_paid_buyer_count"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(monthly_paid_buyer_count) AS monthly_paid_buyer_count\nFROM \"data\".\"main\".\"monthly_paid_summary\" monthly_paid_model_src_10000\nWHERE DATE_TRUNC('month', month_start) BETWEEN '2026-06-01' AND '2026-06-30'",
+  "columns": [
+    "monthly_paid_buyer_count"
+  ],
+  "rows": [
+    [
+      3386
+    ]
+  ],
+  "seconds": 0.08,
+  "units": {
+    "monthly_paid_buyer_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "2026年6月青禾月末付费会员购买人数为3386个CRM会员账户。统计范围为2026年6月整月、全门店、全渠道汇总，未按门店或渠道拆分；口径为自然月内有至少一笔有效订单、且月末符合总部运营月报付费资格的不同会员账户数。本结果按P1暂定口径试算；门店日期规则用于总部月报仍待书面确认，且仅适用于通过日期前置检查的数据。",
+  "question": "帮我查青禾2026年6月的月末付费会员购买人数，我需要整月全门店总数，不需要分组明细。按现有P1暂定试算口径，月末选账户，统计整月全渠道订单，并注明待确认。",
+  "trace_id": "bb50bb09-9b52-4dfb-9e96-b44ef63007ea",
+  "elapsed_seconds": 10.773,
+  "model_usage": {
+    "prompt_tokens": 14932,
+    "completion_tokens": 1078,
+    "total_tokens": 16010
+  },
+  "model_calls_with_usage": 2
+}

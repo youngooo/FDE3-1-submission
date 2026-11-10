@@ -1,0 +1,116 @@
+"""Deterministic display facts, not a replacement for query validation."""
+from decimal import Decimal, ROUND_HALF_UP, localcontext
+
+ORDER_COUNTS = set('order_count paid_order_count valid_order_count cancelled_order_count refund_order_count partial_refund_order_count full_refund_order_count first_order_count repeat_order_count monthly_paid_order_count'.split())
+ACCOUNT_COUNTS = set('buyer_count refund_buyer_count new_member_count first_buyer_count monthly_buyer_count monthly_repeat_buyer_count monthly_paid_buyer_count monthly_paid_repeat_buyer_count'.split())
+ALIASES = {
+    'cents': '分', 'cents/order': '分/单', 'cents_per_order': '分/单',
+    'cents/account': '分/账户', 'cents_per_account': '分/账户',
+    'orders/account': '单/账户', 'orders_per_account': '单/账户',
+    'items/order': '件/单', 'items_per_order': '件/单', 'ratio': '小数比例',
+}
+
+
+def display_unit(metric, unit):
+    if unit == 'count':
+        if metric in ORDER_COUNTS:
+            return '单'
+        if metric in ACCOUNT_COUNTS:
+            return '个CRM会员账户'
+        if metric == 'selling_store_count':
+            return '家门店'
+        if metric == 'valid_order_items':
+            return '件'
+        return '计数（具体对象须查定义）'
+    return ALIASES.get(unit, unit)
+
+
+def fixed(value, places):
+    with localcontext() as ctx:
+        ctx.prec = max(40, len(value.as_tuple().digits) + abs(value.adjusted()) + places + 5)
+        return format(value.quantize(Decimal(1).scaleb(-places), rounding=ROUND_HALF_UP), 'f')
+
+
+def build_answer_display_facts(result, definitions):
+    names = {x['id']: x.get('name', x['id']) for x in definitions}
+    units = result.get('units', {})
+    columns = result.get('columns', [])
+    rows = []
+    for row in result.get('rows', []):
+        if len(row) != len(columns):
+            raise ValueError('DISPLAY_ROW_WIDTH_MISMATCH')
+        group, metrics = {}, []
+        for key, raw in zip(columns, row):
+            if key not in units:
+                group[key] = raw
+                continue
+            unit = units[key]
+            cell = {'metric_id': key, 'name': names.get(key, key), 'raw_value': raw,
+                    'raw_unit': unit, 'display_unit': display_unit(key, unit)}
+            if raw is None:
+                cell.update(display_value='未定义', is_undefined=True)
+            else:
+                if isinstance(raw, bool):
+                    raise ValueError('DISPLAY_BOOLEAN_IS_NOT_NUMBER')
+                value = Decimal(str(raw))
+                if not value.is_finite():
+                    raise ValueError('DISPLAY_NONFINITE_NUMBER')
+                if unit in ('count', 'cents') and value != value.to_integral_value():
+                    raise ValueError('DISPLAY_NONINTEGER_COUNT_OR_CENTS')
+                if unit in ('count', 'cents'):
+                    shown = str(int(value))
+                elif cell['display_unit'] in ('分/单', '分/账户'):
+                    shown = fixed(value, 2)
+                else:
+                    shown = format(value, 'f')
+                cell.update(display_value=shown, is_undefined=False,
+                            display_rounded=Decimal(shown) != value)
+                if cell['display_unit'] in ('分', '分/单', '分/账户'):
+                    cell['optional_yuan_conversion'] = {
+                        'value': fixed(value / Decimal(100), 2),
+                        'unit': cell['display_unit'].replace('分', '元', 1),
+                        'use_only_if_user_requests_conversion': True,
+                    }
+                if unit == 'ratio':
+                    cell['optional_percent_conversion'] = {
+                        'value': fixed(value * Decimal(100), 2), 'unit': '%',
+                        'use_only_if_user_requests_percent': True,
+                    }
+            metrics.append(cell)
+        rows.append({'group': group, 'metrics': metrics})
+    return {'version': 'answer-display-facts-v1', 'rows': rows,
+            'count_unit_basis': 'W03 materials 01/03/04: count the metric object, not the customer-context entity.',
+            'note': 'These are renderings of the actual result, not newly queried metrics. Preserve grouping and requested units.'}
+
+
+def self_check():
+    checks = []
+    def cell(metric, unit, value):
+        return build_answer_display_facts({'columns': [metric], 'rows': [[value]], 'units': {metric: unit}}, [{'id': metric, 'name': metric}])['rows'][0]['metrics'][0]
+    def check(name, condition):
+        if not condition:
+            raise AssertionError(name)
+        checks.append(name)
+    c = cell('discount_cents', 'cents', 63492599)
+    check('integer_cents_preserved', c['display_value'] == '63492599' and c['display_unit'] == '分')
+    check('exact_yuan_conversion', c['optional_yuan_conversion']['value'] == '634925.99')
+    check('first_orders_are_orders', cell('first_order_count', 'count', 15)['display_unit'] == '单')
+    check('first_buyers_are_accounts', cell('first_buyer_count', 'count', 15)['display_unit'] == '个CRM会员账户')
+    check('stores_are_stores', cell('selling_store_count', 'count', 24)['display_unit'] == '家门店')
+    check('items_are_items', cell('valid_order_items', 'count', 120210)['display_unit'] == '件')
+    c = cell('avg_buyer_value', 'cents/account', 31139.19777023752)
+    check('average_native_rounding', c['display_value'] == '31139.20' and c['display_rounded'])
+    check('average_yuan_rounding', c['optional_yuan_conversion']['value'] == '311.39')
+    check('unit_aliases', cell('avg_buyer_value', 'cents_per_account', 1)['display_unit'] == '分/账户')
+    check('null_stays_undefined', cell('avg_order_value', 'cents/order', None)['display_value'] == '未定义')
+    check('zero_stays_zero', cell('order_count', 'count', 0)['display_value'] == '0')
+    c = cell('monthly_repeat_rate', 'ratio', 0.44243819680077556)
+    check('ratio_native', c['display_value'] == '0.44243819680077556')
+    check('ratio_percent', c['optional_percent_conversion']['value'] == '44.24')
+    r = {'columns': ['store', 'order_count'], 'rows': [['S24', 7], ['S01', 2]], 'units': {'order_count': 'count'}}
+    import copy
+    old = copy.deepcopy(r)
+    f = build_answer_display_facts(r, [])
+    check('groups_preserved', [x['group']['store'] for x in f['rows']] == ['S24', 'S01'])
+    check('source_not_mutated', r == old)
+    return checks

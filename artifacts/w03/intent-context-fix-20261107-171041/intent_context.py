@@ -1,0 +1,82 @@
+"""Bound model-side enum context; full engine-side allowed values stay intact."""
+from copy import deepcopy
+import json
+
+FORMAT_VERSION = 'bounded-enums-v1'
+DEFAULT_ENUM_LIMIT = 128
+
+
+def _ascii_identifier_char(char):
+    return char.isascii() and (char.isalnum() or char == '_')
+
+
+def _literal_match(value, text):
+    """Avoid matching M001 inside M0010/XM001, including Chinese adjacency."""
+    if not value:
+        return False
+    start = 0
+    while True:
+        pos = text.find(value, start)
+        if pos < 0:
+            return False
+        end = pos + len(value)
+        left_ok = not (_ascii_identifier_char(value[0]) and pos > 0 and _ascii_identifier_char(text[pos - 1]))
+        right_ok = not (_ascii_identifier_char(value[-1]) and end < len(text) and _ascii_identifier_char(text[end]))
+        if left_ok and right_ok:
+            return True
+        start = pos + 1
+
+
+def prepare_intent_context(question, history, dimensions, enum_limit=DEFAULT_ENUM_LIMIT):
+    if type(enum_limit) is not int or enum_limit < 1:
+        raise ValueError('ENUM_LIMIT_MUST_BE_POSITIVE_INTEGER')
+    if not isinstance(question, str) or not isinstance(dimensions, dict):
+        raise ValueError('INVALID_INTENT_CONTEXT_INPUT')
+    entries = dimensions.get('dimensions')
+    if not isinstance(entries, dict):
+        raise ValueError('DIMENSION_ENTRIES_REQUIRED')
+    history_text = json.dumps((history or [])[-6:], ensure_ascii=False)
+    compact = {k: deepcopy(v) for k, v in dimensions.items() if k != 'dimensions'}
+    compact['dimensions'] = {}
+    values, field_stats = {}, {}
+    original_values = {}
+    for key, entry in entries.items():
+        if not isinstance(entry, dict):
+            raise ValueError('DIMENSION_ENTRY_MUST_BE_OBJECT')
+        compact['dimensions'][key] = {k: deepcopy(v) for k, v in entry.items() if k != 'values'}
+        if entry.get('kind') == 'time':
+            continue
+        raw = entry.get('values', [])
+        if not isinstance(raw, list) or not all(isinstance(v, str) for v in raw):
+            raise ValueError('DIMENSION_VALUES_MUST_BE_STRINGS: ' + key)
+        original_values[key] = raw
+        unique = list(dict.fromkeys(raw))
+        if len(unique) <= enum_limit:
+            selected = unique
+            complete = True
+            matched_count = None
+            truncated = False
+        else:
+            # Current-question matches take priority over recent history.
+            current = [v for v in unique if _literal_match(v, question)]
+            current_set = set(current)
+            historic = [v for v in unique if v not in current_set and _literal_match(v, history_text)]
+            matches = current + historic
+            selected = matches[:enum_limit]
+            matched_count = len(matches)
+            truncated = len(matches) > enum_limit
+            complete = False
+        values[key] = selected
+        field_stats[key] = {
+            'total_known_values': len(unique), 'supplied_values': len(selected),
+            'enumeration_complete': complete, 'known_literal_matches': matched_count,
+            'selection_truncated': truncated,
+            'selection_method': 'complete_list' if complete else 'literal_question_then_recent_history',
+        }
+    before = {'available_dimensions': dimensions, 'filter_values': original_values}
+    after = {'available_dimensions': compact, 'filter_values': values, 'filter_value_metadata': field_stats}
+    size = lambda value: len(json.dumps(value, ensure_ascii=False))
+    summary = {'format_version': FORMAT_VERSION, 'enum_limit': enum_limit,
+               'context_chars_before': size(before), 'context_chars_after': size(after),
+               'fields': field_stats, 'engine_allowed_values_modified': False}
+    return compact, values, summary

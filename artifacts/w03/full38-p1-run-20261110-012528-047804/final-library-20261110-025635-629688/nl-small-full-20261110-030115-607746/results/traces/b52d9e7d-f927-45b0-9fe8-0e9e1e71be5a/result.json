@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "cancel_rate"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(SUM(CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END) AS DOUBLE) / CAST(NULLIF(SUM(1), 0) AS DOUBLE) AS cancel_rate\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "cancel_rate"
+  ],
+  "rows": [
+    [
+      0.0625
+    ]
+  ],
+  "seconds": 0.055,
+  "units": {
+    "cancel_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "统计范围为青禾2026年8月、全门店汇总且不分组。取消率按“取消订单数 ÷ 创建订单数”计算，本次结果为 0.0625（小数比例）。分母为零时该指标未定义；本次结果已定义。",
+  "question": "请只查询青禾2026年8月的取消率，全门店汇总，不分组。结果使用小数比例。",
+  "trace_id": "b52d9e7d-f927-45b0-9fe8-0e9e1e71be5a",
+  "elapsed_seconds": 6.973,
+  "model_usage": {
+    "prompt_tokens": 14663,
+    "completion_tokens": 546,
+    "total_tokens": 15209
+  },
+  "model_calls_with_usage": 2
+}

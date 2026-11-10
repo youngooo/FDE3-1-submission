@@ -1,0 +1,64 @@
+[
+  {
+    "group": [
+      "小程序"
+    ],
+    "metrics": {
+      "order_count": 17146,
+      "paid_order_count": 15732,
+      "valid_order_count": 14934,
+      "cancelled_order_count": 1414,
+      "refund_order_count": 2350,
+      "partial_refund_order_count": 1552,
+      "full_refund_order_count": 798,
+      "payment_cents": 284187123,
+      "refund_cents": 27325795,
+      "net_sales_cents": 256861328,
+      "gross_cents": 315601302,
+      "discount_cents": 31414179,
+      "buyer_count": 10649,
+      "refund_buyer_count": 2212,
+      "selling_store_count": 24,
+      "valid_order_items": 60014,
+      "avg_order_value": "17199.76751037900093745814919",
+      "avg_buyer_value": "24120.69940839515447459855385",
+      "purchase_frequency": "1.402385200488308761386045638",
+      "refund_amount_rate": "0.09615423356110332979443266330",
+      "cancel_rate": "0.08246821416073719818033360551",
+      "refund_order_rate": "0.1493770658530383930841596745",
+      "discount_rate": "0.09953754563407979856813138242",
+      "items_per_order": "4.018615240391053970804874782"
+    }
+  },
+  {
+    "group": [
+      "门店"
+    ],
+    "metrics": {
+      "order_count": 17160,
+      "paid_order_count": 15832,
+      "valid_order_count": 14999,
+      "cancelled_order_count": 1328,
+      "refund_order_count": 2368,
+      "partial_refund_order_count": 1535,
+      "full_refund_order_count": 833,
+      "payment_cents": 286083523,
+      "refund_cents": 29023531,
+      "net_sales_cents": 257059992,
+      "gross_cents": 318161943,
+      "discount_cents": 32078420,
+      "buyer_count": 10546,
+      "refund_buyer_count": 2225,
+      "selling_store_count": 24,
+      "valid_order_items": 60196,
+      "avg_order_value": "17138.47536502433495566371091",
+      "avg_buyer_value": "24375.11776977052911056324673",
+      "purchase_frequency": "1.422245401099943106391048739",
+      "refund_amount_rate": "0.1014512499554194877556789595",
+      "cancel_rate": "0.07738927738927738927738927739",
+      "refund_order_rate": "0.1495704901465386558868115210",
+      "discount_rate": "0.1008241893971586664593634318",
+      "items_per_order": "4.013334222281485432362157477"
+    }
+  }
+]

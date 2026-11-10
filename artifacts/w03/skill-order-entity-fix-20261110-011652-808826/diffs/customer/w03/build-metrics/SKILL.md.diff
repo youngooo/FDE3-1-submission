@@ -1,0 +1,11 @@
+--- before/customer/w03/build-metrics/SKILL.md
++++ after/customer/w03/build-metrics/SKILL.md
+@@ -30,6 +30,8 @@
+ - primary/unique entity 只用于实际唯一的键。订单表上的 member 是 foreign，不是 primary；账户跨月有多行时不能将 member_id 单独声明为唯一键。
+ - 当前工程中，只有 region、store_name 等维度而没有 measures 的门店模型，同样需要主实体。成交门店模型将 store 声明为 type: primary，expr 指向实际唯一的门店键；归属门店模型将 home_store 声明为 type: primary，expr 指向其实际唯一键。这两个实体名称不同，各自只有一个提供方。不能只使用 type: unique 而省略主实体声明；唯一性仍须通过真实数据粒度检查，不能为消除解析错误把不唯一的列改成 primary。
+ - 每个 foreign entity 都应能连接到唯一一个同名 primary/unique 提供方。避免多个语义模型同时作为同名唯一实体提供方导致歧义。
++- 本次完整38项中，普通订单指标和首购四项共用唯一的订单语义模型：该模型以order为primary，保留member、store、home_store外键以及ordered_at、channel、status维度，并同时承载普通订单及首购/后续购买的measures。其底层SQL为保留全部订单、已带入归属门店、已按order_id左关联全历史有效订单排序的订单粒度结果；各measure仍使用自己的业务条件。订单关联、有效订单排序、回填排序可以是多个model_sql辅助模型，但只有最终订单结果需要作为order实体的语义提供方，不能把普通订单表和首购订单表分别声明成两个以order为primary的semantic_models。
++- 返回前跨semantic_models核对：(主实体名称,维度名称)组合不能重复，尤其order与ordered_at/channel/status的组合只能由同一个订单语义模型提供。不要通过删除所需维度、取消primary、改业务实体名或改统计口径规避冲突；应将同粒度订单measures归到上述共同模型，保持measure名唯一、metric引用正确、grain_keys为真实order_id，且不形成SQL循环依赖。
+ - 保留订单粒度计算订单指标。不要把订单直接与一账户多卡的明细连接后累计金额或单数；资格先形成账户判定结果，再用不放大的关联方式筛选。
+ - 测试库的账户主键不等于跨系统自然人身份。会员等级、购卡金额不得代替付费资格。
+ 

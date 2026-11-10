@@ -1,0 +1,1 @@
+select store_id, region, store_name from {{ ref('stores') }}

@@ -1,0 +1,30 @@
+{
+  "status": "unsupported",
+  "reason": "当前数据集没有成交门店编号 S999999（可查询的成交门店仅有 S01、S02、S03），因此无法按该门店统计 2026 年 8 月的创建订单数，且不能替换为其他门店。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "当前数据集没有成交门店编号 S999999（可查询的成交门店仅有 S01、S02、S03），因此无法按该门店统计 2026 年 8 月的创建订单数，且不能替换为其他门店。",
+    "metrics": [
+      "order_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": [
+      {
+        "field": "store",
+        "op": "eq",
+        "value": "S999999"
+      }
+    ]
+  },
+  "question": "青禾2026年8月仅查成交门店编号S999999的创建订单数，不替换门店。",
+  "trace_id": "c76e382f-bc00-49ac-ab6b-b0a25906a1d9",
+  "elapsed_seconds": 2.785,
+  "model_usage": {
+    "prompt_tokens": 12251,
+    "completion_tokens": 370,
+    "total_tokens": 12621
+  },
+  "model_calls_with_usage": 1
+}

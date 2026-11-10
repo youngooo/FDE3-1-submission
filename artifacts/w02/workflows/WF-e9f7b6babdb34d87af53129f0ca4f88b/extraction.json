@@ -1,0 +1,24 @@
+{
+  "version": "w02-extractor-0.1.0",
+  "scope_id": "qinghe",
+  "sources": [
+    "artifacts/w02/workflows/WF-e9f7b6babdb34d87af53129f0ca4f88b/sources/0.json",
+    "artifacts/w02/workflows/WF-e9f7b6babdb34d87af53129f0ca4f88b/sources/1.json",
+    "artifacts/w02/workflows/WF-e9f7b6babdb34d87af53129f0ca4f88b/sources/2.json",
+    "artifacts/w02/workflows/WF-e9f7b6babdb34d87af53129f0ca4f88b/sources/3.json"
+  ],
+  "prompt": "artifacts/w02/workflows/WF-e9f7b6babdb34d87af53129f0ca4f88b/inputs/prompt.md",
+  "focus_questions": [
+    "本期总部月报纳入和排除哪些卡产品？依据、适用范围及未知是什么？",
+    "会员等级、购卡金额与资格是什么关系？账户多卡的资格、人数和订单如何处理？",
+    "日期字段及有效状态有哪些角色陈述？哪些仅限门店规则，哪些总部月报适用性或组合规则仍未决？",
+    "各角色能确认或配合什么？哪些权益说明、开卡及终止记录尚未取得？",
+    "王经理要求哪些验收、费用、责任和效果记录材料？哪些金额、目标、审批人及权限仍待确认？",
+    "哪些内容是学员草案，王经理具体认可或要求修改了什么？修订如何回应反馈，认可范围有什么限制？",
+    "本轮证据如何补充或修订W02认识？哪些仍需取证，哪些说法只是范围不同、未知或相互转介？"
+  ],
+  "batch_chars": 6000,
+  "max_batches": 24,
+  "reconcile_chars": 96000,
+  "profile": "deepseek-json"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "unsupported",
+  "reason": "当前可查询的成交门店编号仅有 S01、S02、S03，不包含 S999999；按照不替换门店的要求，无法执行该筛选查询。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "当前可查询的成交门店编号仅有 S01、S02、S03，不包含 S999999；按照不替换门店的要求，无法执行该筛选查询。",
+    "metrics": [
+      "order_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "青禾2026年8月仅查成交门店编号S999999的创建订单数，不替换门店。",
+  "trace_id": "645cd0ce-8a3b-41a8-92e0-5155749e6717",
+  "elapsed_seconds": 3.501,
+  "model_usage": {
+    "prompt_tokens": 12251,
+    "completion_tokens": 534,
+    "total_tokens": 12785
+  },
+  "model_calls_with_usage": 1
+}

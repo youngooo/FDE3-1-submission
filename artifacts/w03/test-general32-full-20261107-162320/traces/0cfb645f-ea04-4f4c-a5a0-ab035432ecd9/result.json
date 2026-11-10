@@ -1,0 +1,26 @@
+{
+  "status": "unsupported",
+  "reason": "当前数据覆盖范围截至2026-09-01，不覆盖2026年9月所需的完整查询区间；该区间为2026-09-01至2026-10-01，end不包含。因此无法查询该月全门店汇总。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "当前数据覆盖范围截至2026-09-01，不覆盖2026年9月所需的完整查询区间；该区间为2026-09-01至2026-10-01，end不包含。因此无法查询该月全门店汇总。",
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-09-01",
+    "end": "2026-10-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "青禾2026年9月的创建订单数、有效订单数和净销售额分别是多少？全门店汇总。",
+  "trace_id": "0cfb645f-ea04-4f4c-a5a0-ab035432ecd9",
+  "elapsed_seconds": 33.975,
+  "model_usage": {
+    "prompt_tokens": 9372,
+    "completion_tokens": 4831,
+    "total_tokens": 14203
+  },
+  "model_calls_with_usage": 1
+}

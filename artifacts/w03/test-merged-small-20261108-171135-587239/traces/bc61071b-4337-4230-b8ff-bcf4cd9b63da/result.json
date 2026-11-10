@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "buyer_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  COUNT(DISTINCT CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN member_id ELSE NULL END) AS buyer_count\nFROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "buyer_count"
+  ],
+  "rows": [
+    [
+      15
+    ]
+  ],
+  "seconds": 0.052,
+  "units": {
+    "buyer_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "answer": "按订单下单日期归属，在2026年8月（2026-08-01含至2026-09-01不含）期间，全门店范围、不分组统计，购买会员数为15个CRM会员账户。口径为统计窗口内有有效订单的不同CRM会员账户数，不做跨系统自然人去重。本次未查询金额、均额或比率，因此无相关数值可报告。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的购买会员数，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。",
+  "trace_id": "bc61071b-4337-4230-b8ff-bcf4cd9b63da",
+  "elapsed_seconds": 9.337,
+  "model_usage": {
+    "prompt_tokens": 12979,
+    "completion_tokens": 893,
+    "total_tokens": 13872
+  },
+  "model_calls_with_usage": 2
+}

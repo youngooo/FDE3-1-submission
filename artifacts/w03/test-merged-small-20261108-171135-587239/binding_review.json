@@ -1,0 +1,15 @@
+{
+  "status": "stage_regression_passed",
+  "dataset": "small",
+  "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/test-merged-small-20261108-171135-587239/metric_test_report.json",
+  "complete": true,
+  "passed": 54,
+  "total": 54,
+  "inputs_match": true,
+  "report_matches_current_library": true,
+  "library_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "failed_cases": [],
+  "final_38_acceptance": false,
+  "answer_text_review_required": true,
+  "canonical_report_updated": false
+}

@@ -1,0 +1,134 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "new_member_count"
+    ],
+    "start": "2024-09-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "home_store"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  home_store\n  , SUM(__new_member_count) AS new_member_count\nFROM (\n  SELECT\n    home_store_id AS home_store\n    , 1 AS __new_member_count\n  FROM \"data\".\"main\".\"members\" members_semantic_src_10000\n  WHERE DATE_TRUNC('day', registered_at) BETWEEN '2024-09-01' AND '2026-08-31'\n) subq_5\nGROUP BY\n  home_store",
+  "columns": [
+    "home_store",
+    "new_member_count"
+  ],
+  "rows": [
+    [
+      "S11",
+      1250
+    ],
+    [
+      "S16",
+      1250
+    ],
+    [
+      "S05",
+      1250
+    ],
+    [
+      "S19",
+      1250
+    ],
+    [
+      "S20",
+      1250
+    ],
+    [
+      "S21",
+      1250
+    ],
+    [
+      "S22",
+      1250
+    ],
+    [
+      "S04",
+      1250
+    ],
+    [
+      "S24",
+      1250
+    ],
+    [
+      "S03",
+      1250
+    ],
+    [
+      "S07",
+      1250
+    ],
+    [
+      "S14",
+      1250
+    ],
+    [
+      "S02",
+      1250
+    ],
+    [
+      "S13",
+      1250
+    ],
+    [
+      "S18",
+      1250
+    ],
+    [
+      "S12",
+      1250
+    ],
+    [
+      "S17",
+      1250
+    ],
+    [
+      "S23",
+      1250
+    ],
+    [
+      "S08",
+      1250
+    ],
+    [
+      "S15",
+      1250
+    ],
+    [
+      "S06",
+      1250
+    ],
+    [
+      "S09",
+      1250
+    ],
+    [
+      "S10",
+      1250
+    ],
+    [
+      "S01",
+      1250
+    ]
+  ],
+  "seconds": 0.037,
+  "units": {
+    "new_member_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f",
+  "answer": "青禾在2024-09-01（含）至2026-09-01（不含）期间，按注册日期统计注册会员数，并按会员归属门店编号分组。结果共列出24个归属门店（S01至S24），每个门店的注册会员数均为1250个CRM会员账户，合计30000个账户。注册会员数按CRM账户计数，不等于自然人数。",
+  "question": "青禾在2024-09-01含至2026-09-01不含，按注册日期统计注册会员数，并按会员归属门店编号分组。",
+  "trace_id": "d816037e-05e4-43d6-b283-75cde4c153aa",
+  "elapsed_seconds": 8.318,
+  "model_usage": {
+    "prompt_tokens": 12585,
+    "completion_tokens": 800,
+    "total_tokens": 13385
+  },
+  "model_calls_with_usage": 2
+}

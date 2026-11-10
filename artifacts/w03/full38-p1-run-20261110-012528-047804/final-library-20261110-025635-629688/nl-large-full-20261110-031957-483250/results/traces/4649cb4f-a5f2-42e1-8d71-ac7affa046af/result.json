@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "first_order_sales_cents"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN valid_order_seq = 1 THEN paid_cents - refund_cents ELSE 0 END) AS first_order_sales_cents\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-06-01' AND '2026-06-30'",
+  "columns": [
+    "first_order_sales_cents"
+  ],
+  "rows": [
+    [
+      26191665
+    ]
+  ],
+  "seconds": 0.097,
+  "units": {
+    "first_order_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "青禾客户范围内，2026年6月整月全门店汇总的观测期首单净销售额为 26,191,665 分。首单先在全测试覆盖期的有效订单中，按每个CRM账户的下单日期升序、同一天再按订单号排序确定，再筛选订单日期落在2026年6月的首单并汇总其净销售额；结果未按门店分组。",
+  "question": "帮我查青禾2026年6月的观测期首单净销售额，我需要整月全门店总数，不需要分组明细。金额按分返回。首单先在完整测试覆盖历史的有效订单中确定，再筛选查询月份。",
+  "trace_id": "4649cb4f-a5f2-42e1-8d71-ac7affa046af",
+  "elapsed_seconds": 8.015,
+  "model_usage": {
+    "prompt_tokens": 15206,
+    "completion_tokens": 812,
+    "total_tokens": 16018
+  },
+  "model_calls_with_usage": 2
+}

@@ -1,0 +1,10 @@
+{
+  "status": "error",
+  "code": "MODEL_HTTP_402",
+  "reason": "本次调用未完成，请查看运行记录；不能把失败当成零。",
+  "question": "青禾在2024-09-01含至2026-09-01不含的测试覆盖期内，观测期首购会员数、观测期首单数、观测期首单净销售额、观测期后续购买订单数分别是多少？全门店汇总，金额保留分。",
+  "trace_id": "940ecafe-b0bd-41d9-8722-f9de422322bb",
+  "elapsed_seconds": 0.498,
+  "model_usage": {},
+  "model_calls_with_usage": 0
+}

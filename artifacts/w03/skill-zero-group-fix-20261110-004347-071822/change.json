@@ -1,0 +1,21 @@
+{
+  "evidence_sha256": {
+    "artifacts/w03/full38-p1-run-20261110-001429-000470/check-orders24-small/report.json": "2eb60d07fe670a32d689dccf3f28856b4bd63fe4a286894f9b718cf23aa7fd1f",
+    "artifacts/w03/full38-p1-run-20261110-001429-000470/check-member8-small/report.json": "c0a90ef2d6a1591bd7a12c12c35a2c6c1977f23ca32c17d36512e4818e446fda",
+    "artifacts/w03/full38-p1-run-20261110-001429-000470/check-paid6-small/report.json": "9ea0a79c01a50c28bc8e85f24307d79afe9fa95850fdfb6f27f664a7675a3ace",
+    "materials/data/small/orders.csv": "c6e0dee6081e7a6f7782b54de78b3182835c46184c8e7569fc23feab8cf3c4f1",
+    "materials/data/small/members.csv": "e99b7e82389722b1ae2e4fd267c74dd84bd61dfeabaa161221d7ae44ae955b2f"
+  },
+  "files": [
+    {
+      "path": "customer/w03/build-metrics/SKILL.md",
+      "before_sha256": "75ea413219c6711eb1f88ec1995d398f56c19cd6dafad267d28e0dfa8e3d0e55",
+      "after_sha256": "db38570f3dbe6d27ab50bf5eee114a58723800000a44aac0f1412959656278af"
+    },
+    {
+      "path": "docs/w03/metric_decisions.md",
+      "before_sha256": "2728395b3f7819a2a0c220811311d75df1db153bdda5971c9e6069d5cced2c7d",
+      "after_sha256": "c92a61602ecd22c191128c838da5104ba192494c5ba7a53d4f94cdad77b850ab"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "group": [],
+    "metrics": {
+      "order_count": 13,
+      "paid_order_count": 12,
+      "valid_order_count": 12,
+      "cancelled_order_count": 1,
+      "refund_order_count": 2,
+      "partial_refund_order_count": 2,
+      "full_refund_order_count": 0,
+      "payment_cents": 33000,
+      "refund_cents": 1500,
+      "net_sales_cents": 31500,
+      "gross_cents": 33000,
+      "discount_cents": 0,
+      "buyer_count": 11,
+      "refund_buyer_count": 2,
+      "selling_store_count": 3,
+      "valid_order_items": 17
+    }
+  }
+]

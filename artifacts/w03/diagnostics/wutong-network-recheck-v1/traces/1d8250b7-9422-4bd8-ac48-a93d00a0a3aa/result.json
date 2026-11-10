@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_large_buyer_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN net_receipts_cents >= 10000 THEN 1 ELSE 0 END) AS monthly_large_buyer_count\nFROM \"data\".\"main\".\"monthly_member_receipts\" monthly_member_receipts_src_10000\nWHERE DATE_TRUNC('month', month_start) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "monthly_large_buyer_count"
+  ],
+  "rows": [
+    [
+      0
+    ]
+  ],
+  "seconds": 0.038,
+  "units": {
+    "monthly_large_buyer_count": "count"
+  },
+  "data_version": "wutong-sample-v2",
+  "data_sha256": "6e4f21b3e478cc6fa6b54fe2469267b23f70a7dae3e718db065d6169447ec440",
+  "catalog_sha256": "9b85deabe0f4c035e61f0c48db6ad19033b84c0533652e0e83ef2783e574c788",
+  "answer": "按 2026 年 8 月整月统计梧桐书店范围内的会员：月内大额会员指同一自然月扣退后收入累计达到 100.00 元（即 10000 分，含等于）的账户；仅计已支付订单，退款扣减，取消单不计，并按原订单日期归月。本月达到门槛的会员数为 0 个账户，这是覆盖范围内的零，不是未定义。",
+  "question": "2026 年 8 月梧桐书店月内大额会员数是多少？",
+  "trace_id": "1d8250b7-9422-4bd8-ac48-a93d00a0a3aa",
+  "elapsed_seconds": 13.008,
+  "model_usage": {
+    "prompt_tokens": 4215,
+    "completion_tokens": 913,
+    "total_tokens": 5128
+  },
+  "model_calls_with_usage": 2
+}

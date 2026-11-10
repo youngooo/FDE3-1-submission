@@ -1,0 +1,10 @@
+{
+  "status": "error",
+  "code": "MODEL_HTTP_402",
+  "reason": "本次调用未完成，请查看运行记录；不能把失败当成零。",
+  "question": "青禾在2024-09-01含至2026-09-01不含，按注册日期统计注册会员数，并按会员归属门店编号分组。",
+  "trace_id": "8502ffde-8c6d-4301-b1ee-f01888b496fc",
+  "elapsed_seconds": 0.506,
+  "model_usage": {},
+  "model_calls_with_usage": 0
+}

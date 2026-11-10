@@ -1,0 +1,56 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "first_buyer_count",
+      "first_order_count",
+      "first_order_sales_cents",
+      "repeat_order_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": [
+      {
+        "field": "store",
+        "op": "eq",
+        "value": "S01"
+      }
+    ]
+  },
+  "sql": "SELECT\n  COUNT(DISTINCT first_buyer_count) AS first_buyer_count\n  , SUM(first_order_count) AS first_order_count\n  , SUM(first_order_sales_cents) AS first_order_sales_cents\n  , SUM(repeat_order_count) AS repeat_order_count\nFROM (\n  SELECT\n    store_id AS store\n    , CASE WHEN valid_order_seq = 1 THEN member_id ELSE NULL END AS first_buyer_count\n    , CASE WHEN valid_order_seq = 1 THEN paid_cents - refund_cents ELSE 0 END AS first_order_sales_cents\n    , CASE WHEN valid_order_seq = 1 THEN 1 ELSE 0 END AS first_order_count\n    , CASE WHEN valid_order_seq >= 2 THEN 1 ELSE 0 END AS repeat_order_count\n  FROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_7\nWHERE store in ('S01')",
+  "columns": [
+    "first_buyer_count",
+    "first_order_count",
+    "first_order_sales_cents",
+    "repeat_order_count"
+  ],
+  "rows": [
+    [
+      1,
+      1,
+      23069,
+      1170
+    ]
+  ],
+  "seconds": 0.21,
+  "units": {
+    "first_buyer_count": "count",
+    "first_order_count": "count",
+    "first_order_sales_cents": "cents",
+    "repeat_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f",
+  "answer": "统计范围：青禾当前客户，测试数据覆盖 2024-09-01 至 2026-09-01，查询窗口为 2026 年 8 月；成交门店筛选为 S01。首购和首单均先在完整覆盖历史内按会员账户确定首笔有效订单，再按日期和成交门店落入窗口筛选。结果：观测期首购会员数 1 个账户；观测期首单数 1 单；观测期首单净销售额 23069 分；观测期后续购买订单数 1170 单。口径限制：首购和首单仅指测试覆盖期内，不代表终身首购；后续购买订单数统计第二笔及以后的有效订单，不是月内复购人数。",
+  "question": "青禾2026年8月只看成交门店编号S01，列出观测期首购会员数、观测期首单数、观测期首单净销售额、观测期后续购买订单数。先在完整覆盖历史内确定各账户首笔有效订单，再按日期和成交门店筛选；金额保留分。",
+  "trace_id": "b99cea21-d70a-4918-9d15-fbb36b2c5b3f",
+  "elapsed_seconds": 13.925,
+  "model_usage": {
+    "prompt_tokens": 12932,
+    "completion_tokens": 1754,
+    "total_tokens": 14686
+  },
+  "model_calls_with_usage": 2
+}

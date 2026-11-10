@@ -1,0 +1,50 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "new_member_count"
+    ],
+    "start": "2024-09-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "member__tier"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  member__tier\n  , SUM(__new_member_count) AS new_member_count\nFROM (\n  SELECT\n    tier AS member__tier\n    , 1 AS __new_member_count\n  FROM \"data\".\"main\".\"members\" members_semantic_src_10000\n  WHERE DATE_TRUNC('day', registered_at) BETWEEN '2024-09-01' AND '2026-08-31'\n) subq_5\nGROUP BY\n  member__tier",
+  "columns": [
+    "member__tier",
+    "new_member_count"
+  ],
+  "rows": [
+    [
+      "金卡",
+      6
+    ],
+    [
+      "银卡",
+      3
+    ],
+    [
+      "普通",
+      11
+    ]
+  ],
+  "seconds": 0.03,
+  "units": {
+    "new_member_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+  "answer": "统计范围为青禾当前测试数据中，注册日期在 2024-09-01（含）至 2026-09-01（不含）之间的 CRM 会员账户，按会员等级分组统计注册会员数。结果：金卡 6 个、银卡 3 个、普通 11 个，合计 20 个账户。该口径按 CRM 账户计数，不等于自然人数，也不代表跨系统自然人已去重；数据为合成测试数据。",
+  "question": "青禾在2024-09-01含至2026-09-01不含，按注册日期统计注册会员数，并按会员等级分组。",
+  "trace_id": "6252fd76-a9dc-46a4-bf6c-88683431f4d0",
+  "elapsed_seconds": 8.163,
+  "model_usage": {
+    "prompt_tokens": 10476,
+    "completion_tokens": 702,
+    "total_tokens": 11178
+  },
+  "model_calls_with_usage": 2
+}

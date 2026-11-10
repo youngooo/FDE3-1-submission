@@ -1,0 +1,1 @@
+select card_id, member_id, card_type, valid_from, valid_until, ended_at from {{ ref('cards') }} where card_type in ('悦享年卡','家庭季卡') and (valid_from is null or valid_until is null or valid_from >= valid_until or (ended_at is not null and (ended_at <= valid_from or ended_at >= valid_until)))

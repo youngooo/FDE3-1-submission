@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(1) AS order_count\n  , SUM(CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END) AS valid_order_count\n  , SUM(CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END) AS net_sales_cents\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-06-01' AND '2026-06-30'",
+  "columns": [
+    "order_count",
+    "valid_order_count",
+    "net_sales_cents"
+  ],
+  "rows": [
+    [
+      30376,
+      26590,
+      455045188
+    ]
+  ],
+  "seconds": 0.108,
+  "units": {
+    "order_count": "count",
+    "valid_order_count": "count",
+    "net_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "青禾2026年6月全部门店合并统计结果：创建订单共30376单；已支付且实付金额减退款金额后仍大于零的有效订单共26590单；paid订单实付金额减退款金额后的净销售额合计455045188分。口径：创建订单按订单下单日期统计且包含取消单；有效订单仅计paid且扣退款后仍有余额的订单；净销售额为paid订单实付减退款后的合计，取消单不计，按原订单下单日期归属。",
+  "question": "把青禾2026年6月所有门店订单放在一起看：创建总笔数、已支付且扣退款后仍有余额的笔数，以及paid订单实付减退款之和分别多少？金额按分。",
+  "trace_id": "f7c098f0-84ad-408c-99c6-ecf57b5e2254",
+  "elapsed_seconds": 10.228,
+  "model_usage": {
+    "prompt_tokens": 15107,
+    "completion_tokens": 1002,
+    "total_tokens": 16109
+  },
+  "model_calls_with_usage": 2
+}

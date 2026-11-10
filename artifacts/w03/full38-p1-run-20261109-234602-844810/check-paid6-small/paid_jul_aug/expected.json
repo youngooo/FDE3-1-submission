@@ -1,0 +1,22 @@
+{
+  "status": "ok",
+  "months": {
+    "2026-07-01": {
+      "monthly_paid_buyer_count": 6,
+      "monthly_paid_order_count": 6,
+      "monthly_paid_sales_cents": 15500,
+      "monthly_paid_repeat_buyer_count": 0,
+      "monthly_paid_repeat_rate": "0",
+      "monthly_paid_avg_order_value": "2583.333333333333333333333333"
+    },
+    "2026-08-01": {
+      "monthly_paid_buyer_count": 6,
+      "monthly_paid_order_count": 10,
+      "monthly_paid_sales_cents": 47550,
+      "monthly_paid_repeat_buyer_count": 4,
+      "monthly_paid_repeat_rate": "0.6666666666666666666666666667",
+      "monthly_paid_avg_order_value": "4755"
+    }
+  },
+  "reason_contains": null
+}

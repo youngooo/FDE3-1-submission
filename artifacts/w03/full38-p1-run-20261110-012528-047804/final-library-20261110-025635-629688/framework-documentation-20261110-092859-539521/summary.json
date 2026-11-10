@@ -1,0 +1,33 @@
+{
+  "kind": "framework_explanation_update",
+  "changes": [
+    {
+      "path": "docs/w03/model_changes.md",
+      "before": "cd156599d178d9d133f2dd56eb5dbfbcb36b7582815242363b2c59352904e329",
+      "after": "daeb4970071ff7a3c8d1aa43fceccb6714afcd4d568a763d88cf6ba5c807d647"
+    },
+    {
+      "path": "docs/w03/framework_changes.md",
+      "before": null,
+      "after": "7adda4a308eb322ce5c7cbdf59d9c89af22cefe485f0b7983d14537d6053d0b2"
+    }
+  ],
+  "runtime_hashes": {
+    "platform/fde_product/metrics/agent.py": "ddcd3c6042cff81c0e48c66b2700689a6885138fc70f47af63620b39eee4c080",
+    "platform/fde_product/metrics/integration.py": "4536f8433058f1f08f5a21727c1aedb11b5c5bc7cf2ac4966887e2c27c4c6e0d",
+    "platform/fde_product/metrics/answer_display_facts.py": "a430fe2d2e7926f430bbe93be261623a648c35e541bde60a7d5f86e369fa661b",
+    "platform/fde_product/metrics/intent_context.py": "93a9d9a27566c3c736c2e451e9e275510f9a0c9e996728f0ae1dfc916e87db87",
+    "product/w03_intent_prompt.txt": "281aeb45bef1d6002f97db5ee6930683067ca730143caf3100757d9adf475ba0",
+    "product/w03_answer_prompt.txt": "efdf2213c26abfba3bf6c646361b8fd49cbdabad811ae1c20f09bb9dcfa835c2",
+    "platform/fde_product/metrics/engine.py": "e8b39da2517a65f6406da4d261173291c795248ea6c62638137e09ce750a98f3",
+    "platform/fde_product/metrics/common.py": "0aaf17cb659ff5f21c9414aa7f2be4b7b491f00b52534a88b4c495391a1cb9e0",
+    "platform/fde_product/metrics/builder.py": "f58dad10e5a4b30fbf3029e6b186b5e5104b27f7e2721fab5c58957cb145c900",
+    "tools/w03.py": "c34c139e48b33a09de1db3bec9f2cc2f41166de129984698eb69e98979e467c6",
+    "requirements-w03.txt": "060384c5964ebc203cbe31d8e792c91be50ce265bf535926113a805ad5195311",
+    "requirements.txt": "95d1d286de05bda9af8ee2978a3f951cb521c427c8eb58173ca546127f610167"
+  },
+  "model_called": false,
+  "runtime_changed": false,
+  "runtime_snapshot_refresh_pending": true,
+  "business_confirmation": "pending"
+}

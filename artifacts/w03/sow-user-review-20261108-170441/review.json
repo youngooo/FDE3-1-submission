@@ -1,0 +1,39 @@
+{
+  "kind": "student_sow_text_review",
+  "date": "2026-11-08",
+  "source": "direct user message in homework assistance conversation",
+  "message": "sow我看过  可以批准",
+  "reviewed_version": "v0.10-draft",
+  "resulting_version": "v0.11-reviewed",
+  "reviewed_sow_sha256": "58c9e9ca73dfd05a81c833573b1214fb952e0fb185bc580762e7fef2059be4e9",
+  "business_terms_changed": false,
+  "customer_approval_inferred": false,
+  "remaining_six_metrics_resolved": false,
+  "files": [
+    {
+      "path": "docs/w03/sow.md",
+      "before_sha256": "58c9e9ca73dfd05a81c833573b1214fb952e0fb185bc580762e7fef2059be4e9",
+      "after_sha256": "4d61fa783a5b7bb728381c7969f756af2e63bdc0b7e6a20d8dec10140718f282"
+    },
+    {
+      "path": "docs/w03/sow_review_notes.md",
+      "before_sha256": "0353dcc95eb90fdb54b3e39cef71853160588efac0f032dbe1f2a8ddf25ccf3b",
+      "after_sha256": "93824bcaddf35c49b574543449e90bdcd09ae807a12fd93cc2de26d319c226c0"
+    },
+    {
+      "path": "docs/w03/interview_notes.md",
+      "before_sha256": "f376e9b87513150945ee915e6e4b2c9814c840ddc9a81a177b9a6d27066ac304",
+      "after_sha256": "ea02db19037f33d766f875dc9aae7777223fec05532d8f71b64fc688e8811094"
+    },
+    {
+      "path": "docs/w03/model_changes.md",
+      "before_sha256": "1462f9562643cc80a8d710fb67d07846438618c62df4883e7c3c01bdde7d6e12",
+      "after_sha256": "bd51a4d724eeb86ca988e6446ed5871a0ee334e70c8da066fbaae655e25a0c6a"
+    },
+    {
+      "path": "docs/w03/submission_overview.txt",
+      "before_sha256": "e3ff212e27c4764c0e8b1c9f9686bec3e1ec45f49c188e1015ddd5b124bcb0a2",
+      "after_sha256": "4d72ec8c09a4b048b320aef82b763b4a1873be367cb20426e2d1f2884c7763bb"
+    }
+  ]
+}

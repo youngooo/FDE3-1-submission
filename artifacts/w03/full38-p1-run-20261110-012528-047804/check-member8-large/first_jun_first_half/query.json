@@ -1,0 +1,12 @@
+{
+  "metrics": [
+    "first_buyer_count",
+    "first_order_sales_cents",
+    "first_order_count",
+    "repeat_order_count"
+  ],
+  "start": "2026-06-01",
+  "end": "2026-06-16",
+  "group_by": [],
+  "filters": []
+}

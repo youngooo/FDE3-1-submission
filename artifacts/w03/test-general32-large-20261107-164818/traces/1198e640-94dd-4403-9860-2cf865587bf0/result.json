@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "buyer_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  COUNT(DISTINCT CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN member_id ELSE NULL END) AS buyer_count\nFROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "buyer_count"
+  ],
+  "rows": [
+    [
+      16504
+    ]
+  ],
+  "seconds": 0.2,
+  "units": {
+    "buyer_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f",
+  "answer": "青禾在 2026-08-01（含）至 2026-09-01（不含）期间，按原订单下单日期归属、全门店范围统计，共有 16,504 个 CRM 会员账户发生有效购买。购买会员数按有效订单对应的 CRM 会员账户去重，不做跨系统自然人去重；本次仅查询购买会员数，未查询金额或均额。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的购买会员数，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。",
+  "trace_id": "1198e640-94dd-4403-9860-2cf865587bf0",
+  "elapsed_seconds": 16.476,
+  "model_usage": {
+    "prompt_tokens": 311446,
+    "completion_tokens": 1098,
+    "total_tokens": 312544
+  },
+  "model_calls_with_usage": 2
+}

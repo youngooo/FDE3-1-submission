@@ -1,0 +1,30 @@
+{
+  "status": "unsupported",
+  "reason": "当前数据不支持成交门店编号 S999999：该编号不在可查询的成交门店取值中，且按要求不能替换为其他门店。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "当前数据不支持成交门店编号 S999999：该编号不在可查询的成交门店取值中，且按要求不能替换为其他门店。",
+    "metrics": [
+      "order_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": [
+      {
+        "field": "store",
+        "op": "eq",
+        "value": "S999999"
+      }
+    ]
+  },
+  "question": "青禾2026年8月仅查成交门店编号S999999的创建订单数，不替换门店。",
+  "trace_id": "e4a8a516-9a44-4dba-b091-5dd3f49cdb2a",
+  "elapsed_seconds": 5.458,
+  "model_usage": {
+    "prompt_tokens": 12251,
+    "completion_tokens": 688,
+    "total_tokens": 12939
+  },
+  "model_calls_with_usage": 1
+}

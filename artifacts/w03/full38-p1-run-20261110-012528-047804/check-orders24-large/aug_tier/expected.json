@@ -1,0 +1,95 @@
+[
+  {
+    "group": [
+      "普通"
+    ],
+    "metrics": {
+      "order_count": 11488,
+      "paid_order_count": 10524,
+      "valid_order_count": 10009,
+      "cancelled_order_count": 964,
+      "refund_order_count": 1564,
+      "partial_refund_order_count": 1049,
+      "full_refund_order_count": 515,
+      "payment_cents": 189659120,
+      "refund_cents": 18105578,
+      "net_sales_cents": 171553542,
+      "gross_cents": 210784900,
+      "discount_cents": 21125780,
+      "buyer_count": 5482,
+      "refund_buyer_count": 1379,
+      "selling_store_count": 24,
+      "valid_order_items": 39880,
+      "avg_order_value": "17139.92826456189429513437906",
+      "avg_buyer_value": "31293.96971908062750820868296",
+      "purchase_frequency": "1.825793506019700839109813937",
+      "refund_amount_rate": "0.09546378787373894806640461055",
+      "cancel_rate": "0.08391364902506963788300835655",
+      "refund_order_rate": "0.1486126947928544279741543139",
+      "discount_rate": "0.1002243519341281087971671595",
+      "items_per_order": "3.984414027375362174043360975"
+    }
+  },
+  {
+    "group": [
+      "金卡"
+    ],
+    "metrics": {
+      "order_count": 11383,
+      "paid_order_count": 10519,
+      "valid_order_count": 9945,
+      "cancelled_order_count": 864,
+      "refund_order_count": 1610,
+      "partial_refund_order_count": 1036,
+      "full_refund_order_count": 574,
+      "payment_cents": 190334090,
+      "refund_cents": 19095148,
+      "net_sales_cents": 171238942,
+      "gross_cents": 211514860,
+      "discount_cents": 21180770,
+      "buyer_count": 5509,
+      "refund_buyer_count": 1422,
+      "selling_store_count": 24,
+      "valid_order_items": 40062,
+      "avg_order_value": "17218.59648064353946706887883",
+      "avg_buyer_value": "31083.48919949174078780177891",
+      "purchase_frequency": "1.805227809039753131239789435",
+      "refund_amount_rate": "0.1003243717402384407333441949",
+      "cancel_rate": "0.07590266186418343143283844329",
+      "refund_order_rate": "0.1530563741800551383211331876",
+      "discount_rate": "0.1001384489014152480823333169",
+      "items_per_order": "4.028355957767722473604826546"
+    }
+  },
+  {
+    "group": [
+      "银卡"
+    ],
+    "metrics": {
+      "order_count": 11435,
+      "paid_order_count": 10521,
+      "valid_order_count": 9979,
+      "cancelled_order_count": 914,
+      "refund_order_count": 1544,
+      "partial_refund_order_count": 1002,
+      "full_refund_order_count": 542,
+      "payment_cents": 190277436,
+      "refund_cents": 19148600,
+      "net_sales_cents": 171128836,
+      "gross_cents": 211463485,
+      "discount_cents": 21186049,
+      "buyer_count": 5513,
+      "refund_buyer_count": 1372,
+      "selling_store_count": 24,
+      "valid_order_items": 40268,
+      "avg_order_value": "17148.89628219260446938570999",
+      "avg_buyer_value": "31040.96426627970252131325957",
+      "purchase_frequency": "1.810085253038273172501360421",
+      "refund_amount_rate": "0.1006351588635028695677820674",
+      "cancel_rate": "0.07993003935286401399212942720",
+      "refund_order_rate": "0.1467541108259671133922630929",
+      "discount_rate": "0.1001877416330294565986179600",
+      "items_per_order": "4.035274075558673213748872633"
+    }
+  }
+]

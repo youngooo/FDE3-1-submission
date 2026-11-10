@@ -1,0 +1,42 @@
+{
+  "archive": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/closeout-step2-tests-20261108-165244",
+  "entries": [
+    {
+      "dataset": "small",
+      "cases": 54,
+      "metrics": 32,
+      "historical_input_matches": [
+        {
+          "report": "artifacts/w03/test-general32-full-20261107-162320/metric_test_report.json",
+          "identical": 53,
+          "changed": [
+            "reject_monthly_store_group"
+          ],
+          "absent_count": 0
+        },
+        {
+          "report": "artifacts/w03/test-policy-regression-20261107-164103/metric_test_report.json",
+          "identical": 6,
+          "changed": [],
+          "absent_count": 48
+        }
+      ]
+    },
+    {
+      "dataset": "large",
+      "cases": 53,
+      "metrics": 32,
+      "historical_input_matches": [
+        {
+          "report": "artifacts/w03/test-general32-large-current-20261107-173736/metric_test_report.json",
+          "identical": 53,
+          "changed": [],
+          "absent_count": 0
+        }
+      ]
+    }
+  ],
+  "model_called": false,
+  "query_executed": false,
+  "final_38_acceptance": false
+}

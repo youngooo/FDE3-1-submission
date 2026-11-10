@@ -1,0 +1,4 @@
+当前入口已对应merge交付库：小样本54/54、规模53/53结构化通过。107条实际回答经AI辅助阅读核查，保留5处措辞备注；未修改原回答，不是38项验收。
+版本、实际报告和回答核查见test_entrypoints.json。
+复跑先核对当前库未变化，可使用run_merged_regression.py --dataset small或large；该命令需要模型配置、产生真实调用。
+解压后的重建与独立期望生成见docs/w03/submission_overview.txt。库变化后必须重新加载、生成绑定用例再回归，不复用旧版本期望。

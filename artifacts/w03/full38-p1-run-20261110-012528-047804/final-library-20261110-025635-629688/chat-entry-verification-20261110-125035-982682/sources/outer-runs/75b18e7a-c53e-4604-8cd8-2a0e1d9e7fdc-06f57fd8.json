@@ -1,0 +1,91 @@
+{
+  "product_version": "0.2.0-w1",
+  "runtime_revision": "w01-runtime-20260922",
+  "session_id": "75b18e7a-c53e-4604-8cd8-2a0e1d9e7fdc",
+  "model_mode": "live",
+  "model_name": "deepseek-flash",
+  "prompt_sha256": "92aac8a6193697f97d947e2c0d368505535733fa2eae434cec7b102495abaddd",
+  "status": "refused",
+  "result": {
+    "status": "refused",
+    "summary": "当前数据集中没有成交门店编号 S999999，且您明确要求不替换门店，无法按该门店统计创建订单数。",
+    "recommendations": [],
+    "evidence_ids": [
+      "464b865a-2a1b-4a23-8f4a-50ca2a06735e"
+    ],
+    "metric_query": {
+      "status": "unsupported",
+      "reason": "当前数据集中没有成交门店编号 S999999，且您明确要求不替换门店，无法按该门店统计创建订单数。",
+      "intent": {
+        "status": "unsupported",
+        "reason": "当前数据集中没有成交门店编号 S999999，且您明确要求不替换门店，无法按该门店统计创建订单数。",
+        "metrics": [
+          "order_count"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "group_by": [],
+        "filters": [
+          {
+            "field": "store",
+            "op": "eq",
+            "value": "S999999"
+          }
+        ]
+      },
+      "question": "青禾2026年8月，仅统计成交门店编号S999999的创建订单数，不替换门店。",
+      "trace_id": "464b865a-2a1b-4a23-8f4a-50ca2a06735e",
+      "elapsed_seconds": 4.973,
+      "model_usage": {
+        "prompt_tokens": 16321,
+        "completion_tokens": 662,
+        "total_tokens": 16983
+      },
+      "model_calls_with_usage": 1
+    }
+  },
+  "observations": [
+    {
+      "name": "query_metrics",
+      "result": {
+        "status": "unsupported",
+        "reason": "当前数据集中没有成交门店编号 S999999，且您明确要求不替换门店，无法按该门店统计创建订单数。",
+        "intent": {
+          "status": "unsupported",
+          "reason": "当前数据集中没有成交门店编号 S999999，且您明确要求不替换门店，无法按该门店统计创建订单数。",
+          "metrics": [
+            "order_count"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": [
+            {
+              "field": "store",
+              "op": "eq",
+              "value": "S999999"
+            }
+          ]
+        },
+        "question": "青禾2026年8月，仅统计成交门店编号S999999的创建订单数，不替换门店。",
+        "trace_id": "464b865a-2a1b-4a23-8f4a-50ca2a06735e",
+        "elapsed_seconds": 4.973,
+        "model_usage": {
+          "prompt_tokens": 16321,
+          "completion_tokens": 662,
+          "total_tokens": 16983
+        },
+        "model_calls_with_usage": 1
+      },
+      "call_id": "call_00_IF7TztwbwMexygSFIVoh0736"
+    }
+  ],
+  "steps": 1,
+  "output_repairs": 0,
+  "usage": {
+    "prompt_tokens": 26444,
+    "completion_tokens": 746,
+    "total_tokens": 27190
+  },
+  "trace_id": "530be12b456c1b22669f9653a26846ac"
+}

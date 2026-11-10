@@ -1,0 +1,147 @@
+{
+  "product_version": "0.2.0-w1",
+  "runtime_revision": "w01-runtime-20260922",
+  "session_id": "75b18e7a-c53e-4604-8cd8-2a0e1d9e7fdc",
+  "model_mode": "live",
+  "model_name": "deepseek-flash",
+  "prompt_sha256": "92aac8a6193697f97d947e2c0d368505535733fa2eae434cec7b102495abaddd",
+  "status": "completed",
+  "result": {
+    "status": "completed",
+    "summary": "2026年8月（完整自然月、全渠道、全门店，青禾客户范围）：月末付费会员购买人数6个CRM会员账户，有效订单数10单，净销售额47550分，复购人数4个CRM会员账户，复购率0.6667，订单均额4755.00分/单。\n\n口径：复购率＝月末付费会员复购人数÷月末付费会员购买人数，即4÷6≈0.6667；订单均额＝月末付费会员净销售额÷月末付费会员有效订单数，即47550分÷10单＝4755.00分/单。人数按CRM会员账户计，订单按单计。\n\n本结果按P1暂定口径试算；门店日期规则用于总部月报仍待书面确认。",
+    "recommendations": [],
+    "evidence_ids": [
+      "fd27a899-0be6-4534-87dd-401206b3ed59"
+    ],
+    "metric_query": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "monthly_paid_buyer_count",
+          "monthly_paid_order_count",
+          "monthly_paid_sales_cents",
+          "monthly_paid_repeat_buyer_count",
+          "monthly_paid_repeat_rate",
+          "monthly_paid_avg_order_value"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "group_by": [],
+        "filters": []
+      },
+      "sql": "WITH sma_10003_cte AS (\n  SELECT\n    DATE_TRUNC('month', month_start) AS metric_time__month\n    , monthly_paid_buyer_count AS __monthly_paid_buyer_count\n    , monthly_paid_order_count AS __monthly_paid_order_count\n    , monthly_paid_sales_cents AS __monthly_paid_sales_cents\n    , monthly_paid_repeat_buyer_count AS __monthly_paid_repeat_buyer_count\n  FROM \"data\".\"main\".\"monthly_paid_summary\" monthly_paid_model_src_10000\n)\n\nSELECT\n  MAX(subq_10.monthly_paid_buyer_count) AS monthly_paid_buyer_count\n  , MAX(subq_10.monthly_paid_order_count) AS monthly_paid_order_count\n  , MAX(subq_10.monthly_paid_sales_cents) AS monthly_paid_sales_cents\n  , MAX(subq_10.monthly_paid_repeat_buyer_count) AS monthly_paid_repeat_buyer_count\n  , MAX(subq_17.monthly_paid_repeat_rate) AS monthly_paid_repeat_rate\n  , MAX(subq_17.monthly_paid_avg_order_value) AS monthly_paid_avg_order_value\nFROM (\n  SELECT\n    SUM(__monthly_paid_buyer_count) AS monthly_paid_buyer_count\n    , SUM(__monthly_paid_order_count) AS monthly_paid_order_count\n    , SUM(__monthly_paid_sales_cents) AS monthly_paid_sales_cents\n    , SUM(__monthly_paid_repeat_buyer_count) AS monthly_paid_repeat_buyer_count\n  FROM sma_10003_cte\n  WHERE metric_time__month BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_10\nCROSS JOIN (\n  SELECT\n    CAST(SUM(__monthly_paid_repeat_buyer_count) AS DOUBLE) / CAST(NULLIF(SUM(__monthly_paid_buyer_count), 0) AS DOUBLE) AS monthly_paid_repeat_rate\n    , CAST(SUM(__monthly_paid_sales_cents) AS DOUBLE) / CAST(NULLIF(SUM(__monthly_paid_order_count), 0) AS DOUBLE) AS monthly_paid_avg_order_value\n  FROM sma_10003_cte\n  WHERE metric_time__month BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_17",
+      "columns": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "rows": [
+        [
+          6,
+          10,
+          47550,
+          4,
+          0.6666666666666666,
+          4755.0
+        ]
+      ],
+      "seconds": 0.088,
+      "units": {
+        "monthly_paid_buyer_count": "count",
+        "monthly_paid_order_count": "count",
+        "monthly_paid_sales_cents": "cents",
+        "monthly_paid_repeat_buyer_count": "count",
+        "monthly_paid_repeat_rate": "ratio",
+        "monthly_paid_avg_order_value": "cents_per_order"
+      },
+      "data_version": "qinghe-w03-20260923-small",
+      "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+      "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+      "answer": "2026年8月（完整自然月、全渠道、全门店，青禾客户范围）：月末付费会员购买人数6个CRM会员账户，有效订单数10单，净销售额47550分，复购人数4个CRM会员账户，复购率0.6667，订单均额4755.00分/单。\n\n口径：复购率＝月末付费会员复购人数÷月末付费会员购买人数，即4÷6≈0.6667；订单均额＝月末付费会员净销售额÷月末付费会员有效订单数，即47550分÷10单＝4755.00分/单。人数按CRM会员账户计，订单按单计。\n\n本结果按P1暂定口径试算；门店日期规则用于总部月报仍待书面确认。",
+      "question": "青禾2026年8月，月末付费会员的购买人数、有效订单数、净销售额、复购人数、复购率和订单均额分别是多少？",
+      "trace_id": "fd27a899-0be6-4534-87dd-401206b3ed59",
+      "elapsed_seconds": 15.345,
+      "model_usage": {
+        "prompt_tokens": 19432,
+        "completion_tokens": 1865,
+        "total_tokens": 21297
+      },
+      "model_calls_with_usage": 2
+    }
+  },
+  "observations": [
+    {
+      "name": "query_metrics",
+      "result": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_paid_buyer_count",
+            "monthly_paid_order_count",
+            "monthly_paid_sales_cents",
+            "monthly_paid_repeat_buyer_count",
+            "monthly_paid_repeat_rate",
+            "monthly_paid_avg_order_value"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "sql": "WITH sma_10003_cte AS (\n  SELECT\n    DATE_TRUNC('month', month_start) AS metric_time__month\n    , monthly_paid_buyer_count AS __monthly_paid_buyer_count\n    , monthly_paid_order_count AS __monthly_paid_order_count\n    , monthly_paid_sales_cents AS __monthly_paid_sales_cents\n    , monthly_paid_repeat_buyer_count AS __monthly_paid_repeat_buyer_count\n  FROM \"data\".\"main\".\"monthly_paid_summary\" monthly_paid_model_src_10000\n)\n\nSELECT\n  MAX(subq_10.monthly_paid_buyer_count) AS monthly_paid_buyer_count\n  , MAX(subq_10.monthly_paid_order_count) AS monthly_paid_order_count\n  , MAX(subq_10.monthly_paid_sales_cents) AS monthly_paid_sales_cents\n  , MAX(subq_10.monthly_paid_repeat_buyer_count) AS monthly_paid_repeat_buyer_count\n  , MAX(subq_17.monthly_paid_repeat_rate) AS monthly_paid_repeat_rate\n  , MAX(subq_17.monthly_paid_avg_order_value) AS monthly_paid_avg_order_value\nFROM (\n  SELECT\n    SUM(__monthly_paid_buyer_count) AS monthly_paid_buyer_count\n    , SUM(__monthly_paid_order_count) AS monthly_paid_order_count\n    , SUM(__monthly_paid_sales_cents) AS monthly_paid_sales_cents\n    , SUM(__monthly_paid_repeat_buyer_count) AS monthly_paid_repeat_buyer_count\n  FROM sma_10003_cte\n  WHERE metric_time__month BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_10\nCROSS JOIN (\n  SELECT\n    CAST(SUM(__monthly_paid_repeat_buyer_count) AS DOUBLE) / CAST(NULLIF(SUM(__monthly_paid_buyer_count), 0) AS DOUBLE) AS monthly_paid_repeat_rate\n    , CAST(SUM(__monthly_paid_sales_cents) AS DOUBLE) / CAST(NULLIF(SUM(__monthly_paid_order_count), 0) AS DOUBLE) AS monthly_paid_avg_order_value\n  FROM sma_10003_cte\n  WHERE metric_time__month BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_17",
+        "columns": [
+          "monthly_paid_buyer_count",
+          "monthly_paid_order_count",
+          "monthly_paid_sales_cents",
+          "monthly_paid_repeat_buyer_count",
+          "monthly_paid_repeat_rate",
+          "monthly_paid_avg_order_value"
+        ],
+        "rows": [
+          [
+            6,
+            10,
+            47550,
+            4,
+            0.6666666666666666,
+            4755.0
+          ]
+        ],
+        "seconds": 0.088,
+        "units": {
+          "monthly_paid_buyer_count": "count",
+          "monthly_paid_order_count": "count",
+          "monthly_paid_sales_cents": "cents",
+          "monthly_paid_repeat_buyer_count": "count",
+          "monthly_paid_repeat_rate": "ratio",
+          "monthly_paid_avg_order_value": "cents_per_order"
+        },
+        "data_version": "qinghe-w03-20260923-small",
+        "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+        "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+        "answer": "2026年8月（完整自然月、全渠道、全门店，青禾客户范围）：月末付费会员购买人数6个CRM会员账户，有效订单数10单，净销售额47550分，复购人数4个CRM会员账户，复购率0.6667，订单均额4755.00分/单。\n\n口径：复购率＝月末付费会员复购人数÷月末付费会员购买人数，即4÷6≈0.6667；订单均额＝月末付费会员净销售额÷月末付费会员有效订单数，即47550分÷10单＝4755.00分/单。人数按CRM会员账户计，订单按单计。\n\n本结果按P1暂定口径试算；门店日期规则用于总部月报仍待书面确认。",
+        "question": "青禾2026年8月，月末付费会员的购买人数、有效订单数、净销售额、复购人数、复购率和订单均额分别是多少？",
+        "trace_id": "fd27a899-0be6-4534-87dd-401206b3ed59",
+        "elapsed_seconds": 15.345,
+        "model_usage": {
+          "prompt_tokens": 19432,
+          "completion_tokens": 1865,
+          "total_tokens": 21297
+        },
+        "model_calls_with_usage": 2
+      },
+      "call_id": "call_00_zYAmZdZWiDNRqVYaVZFM8750"
+    }
+  ],
+  "steps": 1,
+  "output_repairs": 0,
+  "usage": {
+    "prompt_tokens": 26663,
+    "completion_tokens": 1949,
+    "total_tokens": 28612
+  },
+  "trace_id": "96fbd3601db44973ad0535bbfd458f45"
+}

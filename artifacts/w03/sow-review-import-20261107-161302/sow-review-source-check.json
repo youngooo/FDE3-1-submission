@@ -1,0 +1,32 @@
+{
+  "transcript_messages": 22,
+  "files": [
+    {
+      "sha256": "d9cc30c11aafb52d38b072a227ed1a81fcfe7bb4fd2c9e2c3bd3171bbd2ac9e8",
+      "name": "W3-interview-6ce5833c-5351-54bc-9fd7-b36474544983-sow-review-transcript.json",
+      "original_path": "D:\\下载\\W3-interview-6ce5833c-5351-54bc-9fd7-b36474544983-transcript (2).json"
+    },
+    {
+      "sha256": "02f21db58d3a918451a24b94892b49d6de273075ce3e1c545da134c1b50767df",
+      "name": "W3-interview-6ce5833c-5351-54bc-9fd7-b36474544983-sow-review-public.json",
+      "original_path": "D:\\下载\\W3-interview-6ce5833c-5351-54bc-9fd7-b36474544983-public (2).json"
+    }
+  ],
+  "role_id": "ROLE-WANG",
+  "meeting_id": "6ce5833c-5351-54bc-9fd7-b36474544983",
+  "contract_version": "w02-0.1.0-draft",
+  "week": 3,
+  "reply_ids": [
+    "MSG-04266",
+    "MSG-04273",
+    "MSG-04277",
+    "MSG-04283",
+    "MSG-04291"
+  ],
+  "state": "active",
+  "non_system_messages_identical": true,
+  "system_message_ids": [
+    "MSG-04271"
+  ],
+  "public_messages": 23
+}

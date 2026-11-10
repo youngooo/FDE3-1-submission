@@ -1,0 +1,198 @@
+{
+  "status": "ok",
+  "months": {
+    "2024-09-01": {
+      "monthly_paid_buyer_count": 10,
+      "monthly_paid_order_count": 10,
+      "monthly_paid_sales_cents": 192661,
+      "monthly_paid_repeat_buyer_count": 0,
+      "monthly_paid_repeat_rate": "0",
+      "monthly_paid_avg_order_value": "19266.1"
+    },
+    "2024-10-01": {
+      "monthly_paid_buyer_count": 60,
+      "monthly_paid_order_count": 73,
+      "monthly_paid_sales_cents": 1249905,
+      "monthly_paid_repeat_buyer_count": 10,
+      "monthly_paid_repeat_rate": "0.1666666666666666666666666667",
+      "monthly_paid_avg_order_value": "17121.98630136986301369863014"
+    },
+    "2024-11-01": {
+      "monthly_paid_buyer_count": 116,
+      "monthly_paid_order_count": 133,
+      "monthly_paid_sales_cents": 2218045,
+      "monthly_paid_repeat_buyer_count": 16,
+      "monthly_paid_repeat_rate": "0.1379310344827586206896551724",
+      "monthly_paid_avg_order_value": "16677.03007518796992481203008"
+    },
+    "2024-12-01": {
+      "monthly_paid_buyer_count": 214,
+      "monthly_paid_order_count": 254,
+      "monthly_paid_sales_cents": 4254526,
+      "monthly_paid_repeat_buyer_count": 34,
+      "monthly_paid_repeat_rate": "0.1588785046728971962616822430",
+      "monthly_paid_avg_order_value": "16750.10236220472440944881890"
+    },
+    "2025-01-01": {
+      "monthly_paid_buyer_count": 315,
+      "monthly_paid_order_count": 374,
+      "monthly_paid_sales_cents": 6418527,
+      "monthly_paid_repeat_buyer_count": 52,
+      "monthly_paid_repeat_rate": "0.1650793650793650793650793651",
+      "monthly_paid_avg_order_value": "17161.83689839572192513368984"
+    },
+    "2025-02-01": {
+      "monthly_paid_buyer_count": 406,
+      "monthly_paid_order_count": 480,
+      "monthly_paid_sales_cents": 7866263,
+      "monthly_paid_repeat_buyer_count": 67,
+      "monthly_paid_repeat_rate": "0.1650246305418719211822660099",
+      "monthly_paid_avg_order_value": "16388.04791666666666666666667"
+    },
+    "2025-03-01": {
+      "monthly_paid_buyer_count": 558,
+      "monthly_paid_order_count": 666,
+      "monthly_paid_sales_cents": 11467583,
+      "monthly_paid_repeat_buyer_count": 96,
+      "monthly_paid_repeat_rate": "0.1720430107526881720430107527",
+      "monthly_paid_avg_order_value": "17218.59309309309309309309309"
+    },
+    "2025-04-01": {
+      "monthly_paid_buyer_count": 733,
+      "monthly_paid_order_count": 899,
+      "monthly_paid_sales_cents": 15731755,
+      "monthly_paid_repeat_buyer_count": 148,
+      "monthly_paid_repeat_rate": "0.2019099590723055934515688950",
+      "monthly_paid_avg_order_value": "17499.17130144605116796440489"
+    },
+    "2025-05-01": {
+      "monthly_paid_buyer_count": 887,
+      "monthly_paid_order_count": 1145,
+      "monthly_paid_sales_cents": 19962841,
+      "monthly_paid_repeat_buyer_count": 213,
+      "monthly_paid_repeat_rate": "0.2401352874859075535512965051",
+      "monthly_paid_avg_order_value": "17434.79563318777292576419214"
+    },
+    "2025-06-01": {
+      "monthly_paid_buyer_count": 1030,
+      "monthly_paid_order_count": 1237,
+      "monthly_paid_sales_cents": 21116007,
+      "monthly_paid_repeat_buyer_count": 179,
+      "monthly_paid_repeat_rate": "0.1737864077669902912621359223",
+      "monthly_paid_avg_order_value": "17070.33710590137429264349232"
+    },
+    "2025-07-01": {
+      "monthly_paid_buyer_count": 1254,
+      "monthly_paid_order_count": 1569,
+      "monthly_paid_sales_cents": 26588427,
+      "monthly_paid_repeat_buyer_count": 277,
+      "monthly_paid_repeat_rate": "0.2208931419457735247208931419",
+      "monthly_paid_avg_order_value": "16946.09751434034416826003824"
+    },
+    "2025-08-01": {
+      "monthly_paid_buyer_count": 1408,
+      "monthly_paid_order_count": 1776,
+      "monthly_paid_sales_cents": 30693408,
+      "monthly_paid_repeat_buyer_count": 308,
+      "monthly_paid_repeat_rate": "0.21875",
+      "monthly_paid_avg_order_value": "17282.32432432432432432432432"
+    },
+    "2025-09-01": {
+      "monthly_paid_buyer_count": 1587,
+      "monthly_paid_order_count": 2004,
+      "monthly_paid_sales_cents": 33234870,
+      "monthly_paid_repeat_buyer_count": 355,
+      "monthly_paid_repeat_rate": "0.2236925015752993068683049779",
+      "monthly_paid_avg_order_value": "16584.26646706586826347305389"
+    },
+    "2025-10-01": {
+      "monthly_paid_buyer_count": 1725,
+      "monthly_paid_order_count": 2205,
+      "monthly_paid_sales_cents": 37910464,
+      "monthly_paid_repeat_buyer_count": 395,
+      "monthly_paid_repeat_rate": "0.2289855072463768115942028986",
+      "monthly_paid_avg_order_value": "17192.95419501133786848072562"
+    },
+    "2025-11-01": {
+      "monthly_paid_buyer_count": 1942,
+      "monthly_paid_order_count": 2470,
+      "monthly_paid_sales_cents": 41089235,
+      "monthly_paid_repeat_buyer_count": 445,
+      "monthly_paid_repeat_rate": "0.2291452111225540679711637487",
+      "monthly_paid_avg_order_value": "16635.31781376518218623481781"
+    },
+    "2025-12-01": {
+      "monthly_paid_buyer_count": 2170,
+      "monthly_paid_order_count": 2803,
+      "monthly_paid_sales_cents": 47772811,
+      "monthly_paid_repeat_buyer_count": 531,
+      "monthly_paid_repeat_rate": "0.2447004608294930875576036866",
+      "monthly_paid_avg_order_value": "17043.45736710667142347484838"
+    },
+    "2026-01-01": {
+      "monthly_paid_buyer_count": 2370,
+      "monthly_paid_order_count": 3135,
+      "monthly_paid_sales_cents": 53183301,
+      "monthly_paid_repeat_buyer_count": 609,
+      "monthly_paid_repeat_rate": "0.2569620253164556962025316456",
+      "monthly_paid_avg_order_value": "16964.37033492822966507177033"
+    },
+    "2026-02-01": {
+      "monthly_paid_buyer_count": 2339,
+      "monthly_paid_order_count": 3113,
+      "monthly_paid_sales_cents": 52800927,
+      "monthly_paid_repeat_buyer_count": 624,
+      "monthly_paid_repeat_rate": "0.2667806755023514322359982899",
+      "monthly_paid_avg_order_value": "16961.42852553806617410857694"
+    },
+    "2026-03-01": {
+      "monthly_paid_buyer_count": 2674,
+      "monthly_paid_order_count": 3836,
+      "monthly_paid_sales_cents": 66884960,
+      "monthly_paid_repeat_buyer_count": 867,
+      "monthly_paid_repeat_rate": "0.3242333582647718773373223635",
+      "monthly_paid_avg_order_value": "17436.12095933263816475495308"
+    },
+    "2026-04-01": {
+      "monthly_paid_buyer_count": 2867,
+      "monthly_paid_order_count": 4127,
+      "monthly_paid_sales_cents": 71123036,
+      "monthly_paid_repeat_buyer_count": 954,
+      "monthly_paid_repeat_rate": "0.3327520055807464248343215905",
+      "monthly_paid_avg_order_value": "17233.59244002907681124303368"
+    },
+    "2026-05-01": {
+      "monthly_paid_buyer_count": 3135,
+      "monthly_paid_order_count": 4735,
+      "monthly_paid_sales_cents": 80383102,
+      "monthly_paid_repeat_buyer_count": 1130,
+      "monthly_paid_repeat_rate": "0.3604465709728867623604465710",
+      "monthly_paid_avg_order_value": "16976.36789862724392819429778"
+    },
+    "2026-06-01": {
+      "monthly_paid_buyer_count": 3386,
+      "monthly_paid_order_count": 5323,
+      "monthly_paid_sales_cents": 90671821,
+      "monthly_paid_repeat_buyer_count": 1276,
+      "monthly_paid_repeat_rate": "0.3768458357944477259303012404",
+      "monthly_paid_avg_order_value": "17033.96975389817771933120421"
+    },
+    "2026-07-01": {
+      "monthly_paid_buyer_count": 3566,
+      "monthly_paid_order_count": 6074,
+      "monthly_paid_sales_cents": 103238748,
+      "monthly_paid_repeat_buyer_count": 1529,
+      "monthly_paid_repeat_rate": "0.4287717330342120022434099832",
+      "monthly_paid_avg_order_value": "16996.83042476127757655581166"
+    },
+    "2026-08-01": {
+      "monthly_paid_buyer_count": 3683,
+      "monthly_paid_order_count": 6565,
+      "monthly_paid_sales_cents": 113027218,
+      "monthly_paid_repeat_buyer_count": 1643,
+      "monthly_paid_repeat_rate": "0.4461037197936464838446918273",
+      "monthly_paid_avg_order_value": "17216.63640517897943640517898"
+    }
+  },
+  "reason_contains": null
+}

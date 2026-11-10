@@ -1,0 +1,23 @@
+{
+  "status": "structured_passed_pending_answer_review",
+  "dataset": "small",
+  "stage": "paid-formula",
+  "total": 9,
+  "started_at": "2026-11-10T03:16:51.695665+08:00",
+  "business_confirmation": "pending",
+  "answer_review_required": true,
+  "final_acceptance": false,
+  "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-small-paid-formula-20261110-031651-683666/results/metric_test_report.json",
+  "official_merged_library": true,
+  "library_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "exit_code": 0,
+  "passed": 9,
+  "complete": true,
+  "inputs_match": true,
+  "result_library_binding": true,
+  "rejudge_consistent": true,
+  "input_changed_during_run": [],
+  "failed_cases": [],
+  "elapsed_seconds": 111.048,
+  "finished_at": "2026-11-10T03:18:46.646902+08:00"
+}

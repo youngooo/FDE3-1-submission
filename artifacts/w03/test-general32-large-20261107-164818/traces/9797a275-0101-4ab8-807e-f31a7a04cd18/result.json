@@ -1,0 +1,10 @@
+{
+  "status": "error",
+  "code": "MODEL_HTTP_402",
+  "reason": "本次调用未完成，请查看运行记录；不能把失败当成零。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的月内复购率，全门店，不按维度分组。按完整自然月统计，人数按CRM账户去重，复购率保留小数比例。",
+  "trace_id": "9797a275-0101-4ab8-807e-f31a7a04cd18",
+  "elapsed_seconds": 0.506,
+  "model_usage": {},
+  "model_calls_with_usage": 0
+}

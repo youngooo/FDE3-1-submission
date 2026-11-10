@@ -1,0 +1,10 @@
+{
+  "status": "error",
+  "code": "MODEL_HTTP_402",
+  "reason": "本次调用未完成，请查看运行记录；不能把失败当成零。",
+  "question": "青禾2026年8月只看订单成交门店编号S01，汇总创建订单数、有效订单数、净销售额，金额保留分，不再分组。",
+  "trace_id": "883811ee-94db-412c-b794-6bd161e9e375",
+  "elapsed_seconds": 0.639,
+  "model_usage": {},
+  "model_calls_with_usage": 0
+}

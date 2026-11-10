@@ -1,0 +1,19 @@
+{
+  "kind": "time_context_prompt_fix",
+  "date": "2026-11-08",
+  "changed_files": {
+    "product/w03_intent_prompt.txt": {
+      "before_sha256": "9d11fd46a867b92a3cce6c2f6acb69e099bc881192dff36900461542a777217c",
+      "after_sha256": "281aeb45bef1d6002f97db5ee6930683067ca730143caf3100757d9adf475ba0"
+    },
+    "platform/fde_product/metrics/integration.py": {
+      "before_sha256": "8741f16bf350ce8e1a12d460f5028643c54479dbec834f9ce72eee8280b5743d",
+      "after_sha256": "4536f8433058f1f08f5a21727c1aedb11b5c5bc7cf2ac4966887e2c27c4c6e0d"
+    }
+  },
+  "static_parse_passed": true,
+  "model_called": false,
+  "live_tests_run": false,
+  "original_followup_had_history": true,
+  "note": "补强日期来源规则及主Agent工具问句忠实性；原失败保留，尚不宣称模型输出已修复。常驻UI需重启加载integration提示词。"
+}

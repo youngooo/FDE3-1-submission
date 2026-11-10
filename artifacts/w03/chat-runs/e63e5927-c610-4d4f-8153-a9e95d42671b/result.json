@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_buyer_count",
+      "monthly_repeat_buyer_count",
+      "monthly_repeat_rate"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "WITH sma_10001_cte AS (\n  SELECT\n    DATE_TRUNC('month', month_date) AS metric_time__month\n    , member_id AS __monthly_buyer_count\n    , CASE WHEN valid_order_count >= 2 THEN member_id ELSE NULL END AS __monthly_repeat_buyer_count\n  FROM \"data\".\"main\".\"member_month_activity\" member_month_activity_semantic_src_10000\n)\n\nSELECT\n  MAX(subq_8.monthly_buyer_count) AS monthly_buyer_count\n  , MAX(subq_8.monthly_repeat_buyer_count) AS monthly_repeat_buyer_count\n  , MAX(subq_15.monthly_repeat_rate) AS monthly_repeat_rate\nFROM (\n  SELECT\n    COUNT(DISTINCT __monthly_buyer_count) AS monthly_buyer_count\n    , COUNT(DISTINCT __monthly_repeat_buyer_count) AS monthly_repeat_buyer_count\n  FROM sma_10001_cte\n  WHERE metric_time__month BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_8\nCROSS JOIN (\n  SELECT\n    CAST(COUNT(DISTINCT __monthly_repeat_buyer_count) AS DOUBLE) / CAST(NULLIF(COUNT(DISTINCT __monthly_buyer_count), 0) AS DOUBLE) AS monthly_repeat_rate\n  FROM sma_10001_cte\n  WHERE metric_time__month BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_15",
+  "columns": [
+    "monthly_buyer_count",
+    "monthly_repeat_buyer_count",
+    "monthly_repeat_rate"
+  ],
+  "rows": [
+    [
+      15,
+      12,
+      0.8
+    ]
+  ],
+  "seconds": 0.069,
+  "units": {
+    "monthly_buyer_count": "count",
+    "monthly_repeat_buyer_count": "count",
+    "monthly_repeat_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+  "answer": "统计范围为青禾当前已加载的 CRM 会员账户，完整自然月 2026-08-01（含）至 2026-09-01（不含），全门店口径，仅统计 8 月单月，不与 7 月合并。结果：月内购买会员数 15 个账户；月内复购会员数 12 个账户；月内复购率 80.00%。复购率分母为同一统计范围内的月内购买会员数，即 15 个账户（12÷15=80.00%）。",
+  "question": "青禾客户 2026 年 8 月（完整自然月 2026-08-01 至 2026-09-01 前，全门店）的月内购买会员数、月内复购会员数和月内复购率分别是多少？只要 8 月单月值，不与 7 月合并，并说明复购率分母。",
+  "trace_id": "e63e5927-c610-4d4f-8153-a9e95d42671b",
+  "elapsed_seconds": 8.148,
+  "model_usage": {
+    "prompt_tokens": 14295,
+    "completion_tokens": 867,
+    "total_tokens": 15162
+  },
+  "model_calls_with_usage": 2
+}

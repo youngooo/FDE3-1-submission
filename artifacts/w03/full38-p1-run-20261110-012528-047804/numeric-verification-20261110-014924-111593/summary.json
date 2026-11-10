@@ -1,0 +1,101 @@
+{
+  "kind": "full38_independent_numeric_verification",
+  "passed": true,
+  "small_cases": 49,
+  "large_cases": 48,
+  "total_cases": 97,
+  "metric_count_per_dataset": 38,
+  "library": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/build",
+  "library_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "suites": [
+    {
+      "suite": "check-orders24-small",
+      "cases": 11,
+      "passed": 11,
+      "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/check-orders24-small/report.json",
+      "report_sha256": "c39b21f054bebdfbca9e05de21c0dcee176e2b7b6a278b493da2e055d847bf06",
+      "elapsed_seconds_recorded": null,
+      "terminal_wall_seconds": 54.553,
+      "terminal_time_source": "user_pasted_terminal_output"
+    },
+    {
+      "suite": "check-member8-small",
+      "cases": 20,
+      "passed": 20,
+      "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/check-member8-small/report.json",
+      "report_sha256": "d9fedabeb5c4403af51ffc96d32e322822916ff8dd9cb1dec731179f97c03bf8",
+      "elapsed_seconds_recorded": null,
+      "terminal_wall_seconds": 84.261,
+      "terminal_time_source": "user_pasted_terminal_output"
+    },
+    {
+      "suite": "check-paid6-small",
+      "cases": 18,
+      "passed": 18,
+      "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/check-paid6-small/report.json",
+      "report_sha256": "808ddc43c6a6c6cc46b775cd3360ba10d66a26bf03161aa45fcd495a3be80d6e",
+      "elapsed_seconds_recorded": 83.775,
+      "terminal_wall_seconds": 86.198,
+      "terminal_time_source": "user_pasted_terminal_output"
+    },
+    {
+      "suite": "check-orders24-large",
+      "cases": 11,
+      "passed": 11,
+      "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/check-orders24-large/report.json",
+      "report_sha256": "fd693f8bee3358aa202151ce81f7ddbe31b799608a249306ea5efabeac97035e",
+      "elapsed_seconds_recorded": null,
+      "terminal_wall_seconds": 60.685,
+      "terminal_time_source": "user_pasted_terminal_output"
+    },
+    {
+      "suite": "check-member8-large",
+      "cases": 20,
+      "passed": 20,
+      "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/check-member8-large/report.json",
+      "report_sha256": "9482dd01094777f9ec7892e5256ae0417f4471e5a5179518df2d572e16a6cfe2",
+      "elapsed_seconds_recorded": 93.22,
+      "terminal_wall_seconds": 95.829,
+      "terminal_time_source": "user_pasted_terminal_output"
+    },
+    {
+      "suite": "check-paid6-large",
+      "cases": 17,
+      "passed": 17,
+      "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/check-paid6-large/report.json",
+      "report_sha256": "ce105f128811aa2d7862a0d887836723de12ceb9531a63a27ab86188d880d7eb",
+      "elapsed_seconds_recorded": 81.22,
+      "terminal_wall_seconds": 83.117,
+      "terminal_time_source": "user_pasted_terminal_output"
+    }
+  ],
+  "build_elapsed_seconds": 150.739,
+  "environment": {
+    "python": "3.11.16 (main, Sep 29 2026, 14:59:26) [Clang 22.1.3 ]",
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "packages": {
+      "dbt-core": "1.12.5",
+      "dbt-duckdb": "1.11.0",
+      "dbt-metricflow": "0.15.0",
+      "metricflow": "0.213.0",
+      "duckdb": "1.5.5",
+      "PyYAML": "6.0.3"
+    }
+  },
+  "business_confirmation": "pending",
+  "natural_language_regression": "not_run_for_this_library",
+  "answer_text_review": "not_run_for_this_library",
+  "final_acceptance": false,
+  "model_called": false,
+  "query_executed": false,
+  "replay_scope": "recompare stored actual results against stored independent CSV expectations; verify source and script hashes; no query rerun",
+  "limitations": [
+    "规模会员无空月份、付费无零购买月份；对应边界由同库小样本覆盖",
+    "未替代自然语言问数、解释核查、课程框架改动说明或SOW整理",
+    "P1总部适用性仍待书面确认；未替换正式交付库或旧问数报告"
+  ],
+  "created_at": "2026-11-10T01:49:25.247132+08:00",
+  "archive": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/numeric-verification-20261110-014924-111593/evidence.tar.gz",
+  "archive_sha256": "131bcdd496bf8e1038316be57df7c856533d62ef4b39abe803e47b2f0aa27847",
+  "archived_file_count": 555
+}

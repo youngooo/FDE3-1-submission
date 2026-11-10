@@ -1,0 +1,854 @@
+{
+  "kind": "final38_judge_mutation_review",
+  "passed": true,
+  "complete": true,
+  "positive_controls_passed": 10,
+  "positive_controls_total": 10,
+  "mutations_rejected": 30,
+  "mutations_total": 30,
+  "reasons_match": true,
+  "library_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "judge": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/scripts/judge_w03_full38_20261110.py",
+  "source_reports": {
+    "small": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-small-paid-formula-20261110-031651-683666/results/metric_test_report.json",
+    "large": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-large-full-20261110-031957-483250/results/metric_test_report.json"
+  },
+  "input_sha256": {
+    "/mnt/e/工作/FDE职位攻关/tmp/run_w03_full38_nl_20261110.py": "178fc46ee179207c86df2fc95933eae43d9ba7e529fbb31e6d17577d1d30aad0",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/answer-paid-formula-fix-20261110-031428-025216/plan.json": "202ec177c61017883e4976a9c6a5085707d20522f682055cb954dff2367b291b",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/large/tests.json": "6df3ade68f736b65b2cebd3d0cda5b9b402d3448c1b3c3456af3ff2a837d34bd",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/scripts/judge_w03_full38_20261110.py": "9e6ac379d902510a3d2f6ba378e2ba45f87b6a4a49d71ca113413968543f7563",
+    "/home/yang/FDE/w03-work/fde-agent-w03/customer/w03/judge.py": "33b7eed436f5663f04371ffc2eb456b23451c60b5073d8534e6735a6a466e0fc",
+    "/home/yang/FDE/w03-work/fde-agent-w03/tools/w03.py": "c34c139e48b33a09de1db3bec9f2cc2f41166de129984698eb69e98979e467c6",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/dataset.json": "47ff885059b0658f7435250922761aecc7961942a0e45ebed085b20515376563",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/catalog.json": "e0cff6cd4228d52aa8c4c8edafa340fda9b7d46c6c330c30c48395b0d988a21f",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/models/metrics.yml": "d241a49720bfa33a32de7101c4f340238d679b04e6423c996c94a33c53c5e7df",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/models/stores.sql": "978e7c79f3b3081b0c1153b38897cf4930aedb95e5291be7cdeedb49c5c6b20e",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/models/cards.sql": "33aaadccc09f60a3b2e138f4e6ce2e440d72bb2f8568d1bbc09ce4097bf72b30",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/models/monthly_member_activity.sql": "3da5a035c4f890c529d9e40e7c21f950d0cd67ce42668d71aa35e10e14d280ca",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/models/valid_order_sequence.sql": "1aa203f8577718141a36c197841d1ed8332a82c9ca926a237baba3e7f099089b",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/models/monthly_valid_order_activity.sql": "cca9ff4a242530e436e3aa5287b27689b98e5997d19a87e19ac0c4b252fd1a61",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/models/monthly_paid_summary.sql": "45c42e8d78490d923bd3e42056a21924d38dc5b6e53570cc5098201b298d4d5f",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/models/selling_store_dim.sql": "c36b3e139554590c08a601eddfbef8522c3b68361de4b704594d0e57726f1c87",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/models/orders.sql": "2b74e3e32048ff33e221121a8326a34a255ec75dfa18b201ccecc219b2a0a13c",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/models/p1_qualified_member_months.sql": "9b4612569ed2889a85bdc3c2a094007d245335646b07230b52bcc6aa3ba54dc0",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/models/time_spine.sql": "27ed91c0947c8b4906c41331bc72e1490b2291ffc04db63893f0f389c1945060",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/models/p1_card_date_exceptions.sql": "37e8003a92a40b96002fe60ae31d95059a26bac9a5640fda06662387c6ec0d29",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/models/members.sql": "200f92bfca81678f2d473b9af35e78976f38f8ae2b27f7a02d1a371373339cee",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/models/order_fact.sql": "d924ebc93f272d7ef74321776e53aed2cb1a0cfd3dfabd78cc7a892df399fb1a",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large/models/home_store_dim.sql": "c36b3e139554590c08a601eddfbef8522c3b68361de4b704594d0e57726f1c87",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/__init__.py": "f687116d6b94a9d5eaf20605eeffcbcea54a2722483a8fd702e8ff37c16bd9ae",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/agent.py": "ddcd3c6042cff81c0e48c66b2700689a6885138fc70f47af63620b39eee4c080",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/answer_display_facts.py": "a430fe2d2e7926f430bbe93be261623a648c35e541bde60a7d5f86e369fa661b",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/builder.py": "f58dad10e5a4b30fbf3029e6b186b5e5104b27f7e2721fab5c58957cb145c900",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/checker.py": "79a571f336266bc52b81910f090630203d4d608493e834f38da6817ab2bb0686",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/common.py": "0aaf17cb659ff5f21c9414aa7f2be4b7b491f00b52534a88b4c495391a1cb9e0",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/engine.py": "e8b39da2517a65f6406da4d261173291c795248ea6c62638137e09ce750a98f3",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/integration.py": "4536f8433058f1f08f5a21727c1aedb11b5c5bc7cf2ac4966887e2c27c4c6e0d",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/intent_context.py": "93a9d9a27566c3c736c2e451e9e275510f9a0c9e996728f0ae1dfc916e87db87",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/validation.py": "2c4aef4c1d165a3aa5d722d953207c2bd8f82b7e39d55edfe5524a3916e32d06",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/validator.py": "4d610c33e4c208783ddacfbbeed4d5877587567d762bec4eaf870f603428af5f",
+    "/home/yang/FDE/w03-work/fde-agent-w03/product/w03_intent_prompt.txt": "281aeb45bef1d6002f97db5ee6930683067ca730143caf3100757d9adf475ba0",
+    "/home/yang/FDE/w03-work/fde-agent-w03/product/w03_answer_prompt.txt": "efdf2213c26abfba3bf6c646361b8fd49cbdabad811ae1c20f09bb9dcfa835c2",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/regression_plan.json": "f35b262b4a57fac12c9455f060bcd98eeee10adc24120fc8658ad1f0f388a4d9",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-small-paid-formula-20261110-031651-683666/results/metric_test_report.json": "b93805c04aa1c1a93dd791dade3e18f8ed2a57b0e839e13e5bac722299f89993",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-large-full-20261110-031957-483250/results/metric_test_report.json": "c6a3487893fd50c040d87a8195a63af1836178d33d1438e2dd39d6e8aa5f2eb5",
+    "/mnt/e/工作/FDE职位攻关/tmp/check_w03_final38_judge_20261110.py": "83e4429a9016138035848191d51f5ae3f6e9e008d620c1ea98d861243c2f0215"
+  },
+  "method": "Each mutation changes only a copy of an actual final-library result; independent expected values unchanged; judge called via stdin/stdout.",
+  "model_called": false,
+  "query_executed": false,
+  "limitations": [
+    "只验证结构化判定；文字语义另行逐条核查",
+    "错误变体不是新的业务问数结果"
+  ],
+  "cases": [
+    {
+      "id": "control_paid_pair",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": true,
+      "required_difference": null,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "passed": true
+    },
+    {
+      "id": "control_paid_coverage",
+      "source_dataset": "large",
+      "source_case": "paid_coverage",
+      "should_pass": true,
+      "required_difference": null,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "passed": true
+    },
+    {
+      "id": "control_paid_zero_month",
+      "source_dataset": "small",
+      "source_case": "paid_zero_month",
+      "should_pass": true,
+      "required_difference": null,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "passed": true
+    },
+    {
+      "id": "control_orders_store_filter",
+      "source_dataset": "large",
+      "source_case": "orders_store_filter",
+      "should_pass": true,
+      "required_difference": null,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "passed": true
+    },
+    {
+      "id": "control_nonexistent_filter",
+      "source_dataset": "large",
+      "source_case": "nonexistent_filter",
+      "should_pass": true,
+      "required_difference": null,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "passed": true
+    },
+    {
+      "id": "control_reject_undefined_metric",
+      "source_dataset": "large",
+      "source_case": "reject_undefined_metric",
+      "should_pass": true,
+      "required_difference": null,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "passed": true
+    },
+    {
+      "id": "control_clarify_year",
+      "source_dataset": "large",
+      "source_case": "clarify_year",
+      "should_pass": true,
+      "required_difference": null,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "passed": true
+    },
+    {
+      "id": "control_reordered_rows",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": true,
+      "required_difference": null,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "passed": true
+    },
+    {
+      "id": "control_equivalent_unit",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": true,
+      "required_difference": null,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "passed": true
+    },
+    {
+      "id": "control_missing_filter_clarify",
+      "source_dataset": "large",
+      "source_case": "nonexistent_filter",
+      "should_pass": true,
+      "required_difference": null,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "passed": true
+    },
+    {
+      "id": "paid_count_plus_one",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "value_mismatch",
+        "metric": "monthly_paid_buyer_count"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "value_mismatch",
+            "group": [
+              "2026-05-01"
+            ],
+            "metric": "monthly_paid_buyer_count",
+            "expected": 3135,
+            "actual": 3136
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "paid_cents_plus_one",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "value_mismatch",
+        "metric": "monthly_paid_sales_cents"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "value_mismatch",
+            "group": [
+              "2026-05-01"
+            ],
+            "metric": "monthly_paid_sales_cents",
+            "expected": 80383102,
+            "actual": 80383103
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "paid_ratio_times_100",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "value_mismatch",
+        "metric": "monthly_paid_repeat_rate"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "value_mismatch",
+            "group": [
+              "2026-05-01"
+            ],
+            "metric": "monthly_paid_repeat_rate",
+            "expected": "0.3604465709728867623604465710",
+            "actual": 36.04465709728867
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "paid_average_divided_100",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "value_mismatch",
+        "metric": "monthly_paid_avg_order_value"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "value_mismatch",
+            "group": [
+              "2026-05-01"
+            ],
+            "metric": "monthly_paid_avg_order_value",
+            "expected": "16976.36789862724392819429778",
+            "actual": 169.76367898627242
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "paid_cents_labelled_yuan",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "invalid_actual_table",
+        "reason": "Unsupported metric unit: monthly_paid_sales_cents"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Unsupported metric unit: monthly_paid_sales_cents"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "paid_ratio_labelled_count",
+      "source_dataset": "large",
+      "source_case": "single_monthly_paid_repeat_rate",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "invalid_actual_table",
+        "reason": "Non-integer count or cents"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Non-integer count or cents"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "paid_average_wrong_supported_unit",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "unit_mismatch",
+        "metric": "monthly_paid_avg_order_value"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "unit_mismatch",
+            "metric": "monthly_paid_avg_order_value",
+            "expected": "cents_per_order",
+            "actual": "cents_per_account"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "zero_ratio_forged",
+      "source_dataset": "small",
+      "source_case": "paid_zero_month",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "value_mismatch",
+        "metric": "monthly_paid_repeat_rate"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "value_mismatch",
+            "group": [],
+            "metric": "monthly_paid_repeat_rate",
+            "expected": null,
+            "actual": 0
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "zero_sales_changed_null",
+      "source_dataset": "small",
+      "source_case": "paid_zero_month",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "value_mismatch",
+        "metric": "monthly_paid_sales_cents"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "value_mismatch",
+            "group": [],
+            "metric": "monthly_paid_sales_cents",
+            "expected": 0,
+            "actual": null
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "count_boolean",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "invalid_actual_table",
+        "reason": "Not a number"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Not a number"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "ratio_nan",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "invalid_actual_table",
+        "reason": "Non-finite number"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Non-finite number"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "cents_fractional",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "invalid_actual_table",
+        "reason": "Non-integer count or cents"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Non-integer count or cents"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "missing_month",
+      "source_dataset": "large",
+      "source_case": "paid_coverage",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "group_mismatch"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "group_mismatch",
+            "group": [
+              "2026-05-01"
+            ],
+            "expected": true,
+            "actual": false
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "duplicate_month",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "invalid_actual_table",
+        "reason": "Duplicate group key"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Duplicate group key"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "invalid_month_day",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "invalid_actual_table",
+        "reason": "Month must be the first day at midnight"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Month must be the first day at midnight"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "wrong_start",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "intent_mismatch",
+        "field": "start"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "intent_mismatch",
+            "field": "start",
+            "expected": "2026-05-01",
+            "actual": "2026-04-01"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "wrong_end",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "intent_mismatch",
+        "field": "end"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "intent_mismatch",
+            "field": "end",
+            "expected": "2026-07-01",
+            "actual": "2026-08-01"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "wrong_metric",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "intent_mismatch",
+        "field": "metrics"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "intent_mismatch",
+            "field": "metrics",
+            "expected": [
+              "monthly_paid_avg_order_value",
+              "monthly_paid_buyer_count",
+              "monthly_paid_order_count",
+              "monthly_paid_repeat_buyer_count",
+              "monthly_paid_repeat_rate",
+              "monthly_paid_sales_cents"
+            ],
+            "actual": [
+              "buyer_count",
+              "monthly_paid_avg_order_value",
+              "monthly_paid_order_count",
+              "monthly_paid_repeat_buyer_count",
+              "monthly_paid_repeat_rate",
+              "monthly_paid_sales_cents"
+            ]
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "wrong_dimension",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "intent_mismatch",
+        "field": "group_by"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "intent_mismatch",
+            "field": "group_by",
+            "expected": [
+              "metric_time__month"
+            ],
+            "actual": [
+              "home_store"
+            ]
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "missing_filter",
+      "source_dataset": "large",
+      "source_case": "orders_store_filter",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "intent_mismatch",
+        "field": "filters"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "intent_mismatch",
+            "field": "filters",
+            "expected": [
+              "[\"store\", [\"S02\"]]"
+            ],
+            "actual": []
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "wrong_filter_value",
+      "source_dataset": "large",
+      "source_case": "orders_store_filter",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "intent_mismatch",
+        "field": "filters"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "intent_mismatch",
+            "field": "filters",
+            "expected": [
+              "[\"store\", [\"S02\"]]"
+            ],
+            "actual": [
+              "[\"store\", [\"S01\"]]"
+            ]
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "wrong_data_version",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "version_mismatch",
+        "field": "data_version"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "version_mismatch",
+            "field": "data_version",
+            "expected": "qinghe-w03-20260923-large",
+            "actual": "injected-wrong-version"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "wrong_data_sha256",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "version_mismatch",
+        "field": "data_sha256"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "version_mismatch",
+            "field": "data_sha256",
+            "expected": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+            "actual": "injected-wrong-version"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "wrong_catalog_sha256",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "version_mismatch",
+        "field": "catalog_sha256"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "version_mismatch",
+            "field": "catalog_sha256",
+            "expected": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+            "actual": "injected-wrong-version"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "query_error",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "status_mismatch"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "status_mismatch",
+            "expected": "ok",
+            "actual": "error"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "error_marker_in_success",
+      "source_dataset": "large",
+      "source_case": "paid_pair",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "error_markers_in_ok_result"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "error_markers_in_ok_result"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "undefined_metric_clarify",
+      "source_dataset": "large",
+      "source_case": "reject_undefined_metric",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "status_mismatch"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "status_mismatch",
+            "expected": "unsupported",
+            "actual": "clarify"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "missing_filter_returns_rows",
+      "source_dataset": "large",
+      "source_case": "nonexistent_filter",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "unexpected_rows_for_non_ok"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "unexpected_rows_for_non_ok"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "missing_filter_no_reason",
+      "source_dataset": "large",
+      "source_case": "nonexistent_filter",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "missing_boundary_reason"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "missing_boundary_reason"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "id": "missing_year_defaulted",
+      "source_dataset": "large",
+      "source_case": "clarify_year",
+      "should_pass": false,
+      "required_difference": {
+        "kind": "status_mismatch"
+      },
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "status_mismatch",
+            "expected": "clarify",
+            "actual": "ok"
+          }
+        ]
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的购买会员人均消费，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。",
+  "customer_context": {
+    "customer": "青禾",
+    "statistics_unit": "CRM 会员账户",
+    "scope": "本周合成测试库"
+  },
+  "data_context": {
+    "seed": 20260923,
+    "synthetic": true,
+    "counts": {
+      "members": 30000,
+      "orders": 300000,
+      "stores": 24,
+      "cards": 38891
+    },
+    "coverage": [
+      "2024-09-01",
+      "2026-09-01"
+    ],
+    "sha256": {
+      "orders.csv": "15fe0a98b1f34f1e2f7ce100a1ebb74d8f2cffa5023d0a93c7d07e959ffdd4b3",
+      "cards.csv": "2cd90f4f709906c6b0e3c72de5b9347fe1118eabaa0fcdad30cf96951d66622a",
+      "members.csv": "30835528d521255ce72bda232c1c6090b3dcbb0f6a7872ee230382615f158af7",
+      "stores.csv": "d392d07b0f447a06fdf183860f040d79341a5daa787bc0fc4b400cda8f3675bd"
+    },
+    "id": "qinghe-w03-20260923-large",
+    "timezone": "Asia/Shanghai",
+    "reference_date": "2026-09-01",
+    "generator_version": "qinghe-w03-v1",
+    "base_seed": 20260922,
+    "library_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+  },
+  "result": {
+    "status": "ok",
+    "intent": {
+      "metrics": [
+        "avg_buyer_value"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [],
+      "filters": []
+    },
+    "columns": [
+      "avg_buyer_value"
+    ],
+    "rows": [
+      [
+        31139.19777023752
+      ]
+    ],
+    "seconds": 0.246,
+    "units": {
+      "avg_buyer_value": "cents/account"
+    },
+    "data_version": "qinghe-w03-20260923-large",
+    "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+    "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+  },
+  "definitions": [
+    {
+      "id": "avg_buyer_value",
+      "name": "购买会员人均消费",
+      "aliases": [],
+      "unit": "cents/account",
+      "sources": [
+        {
+          "file": "02_财务邮件.md",
+          "quote": "净销售额除以购买会员数，单位分／账户；分母零时未定义。"
+        }
+      ],
+      "constraints": [
+        "聚合后的净销售额除以购买会员数",
+        "分母为零时未定义",
+        "底层金额单位为分"
+      ],
+      "query_policy": {
+        "full_month_only": false
+      }
+    }
+  ],
+  "answer_display_facts": {
+    "version": "answer-display-facts-v1",
+    "rows": [
+      {
+        "group": {},
+        "metrics": [
+          {
+            "metric_id": "avg_buyer_value",
+            "name": "购买会员人均消费",
+            "raw_value": 31139.19777023752,
+            "raw_unit": "cents/account",
+            "display_unit": "分/账户",
+            "display_value": "31139.20",
+            "is_undefined": false,
+            "display_rounded": true,
+            "optional_yuan_conversion": {
+              "value": "311.39",
+              "unit": "元/账户",
+              "use_only_if_user_requests_conversion": true
+            }
+          }
+        ]
+      }
+    ],
+    "count_unit_basis": "W03 materials 01/03/04: count the metric object, not the customer-context entity.",
+    "note": "These are renderings of the actual result, not newly queried metrics. Preserve grouping and requested units."
+  }
+}

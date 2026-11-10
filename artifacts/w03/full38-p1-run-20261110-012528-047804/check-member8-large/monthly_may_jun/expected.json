@@ -1,0 +1,26 @@
+{
+  "status": "ok",
+  "groups": [
+    {
+      "group": [
+        "2026-05-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 14792,
+        "monthly_repeat_buyer_count": 5658,
+        "monthly_repeat_rate": "0.3825040562466197944835045971"
+      }
+    },
+    {
+      "group": [
+        "2026-06-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 15981,
+        "monthly_repeat_buyer_count": 6552,
+        "monthly_repeat_rate": "0.4099868593955321944809461235"
+      }
+    }
+  ],
+  "reason_contains": null
+}

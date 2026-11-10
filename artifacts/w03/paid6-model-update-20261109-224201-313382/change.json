@@ -1,0 +1,10 @@
+{
+  "before_sha256": "e9de32a187c67e621f16cca684286467c74ddc57a5527cbf3e45683578db4f8b",
+  "after_sha256": "84d1e43aace4b57e49911cc6167bc6022d78ef5d390d9fe9c982be55d834dcf9",
+  "material_sha256": "19735f62d2a9adcee07f39c81855859a76dd6b2bf9f64e21d0c66160a7ee21c6",
+  "target": "docs/w03/business_model.md",
+  "status": "model_updated_only",
+  "skill_updated": false,
+  "build_run": false,
+  "business_confirmation": "pending"
+}

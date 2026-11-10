@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "metrics_compiled": [
+    "buyer_count",
+    "cancelled_order_count",
+    "discount_cents",
+    "full_refund_order_count",
+    "gross_cents",
+    "net_sales_cents",
+    "order_count",
+    "paid_order_count",
+    "partial_refund_order_count",
+    "payment_cents",
+    "refund_buyer_count",
+    "refund_cents",
+    "refund_order_count",
+    "selling_store_count",
+    "valid_order_count",
+    "valid_order_items"
+  ],
+  "validator": "SemanticManifestValidator; native explain + DuckDB EXPLAIN"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "unsupported",
+  "reason": "“月末付费会员有效订单数”当前仅支持完整自然月、全渠道、全门店口径，不支持按订单渠道拆分或筛选。因此无法查询“仅限门店渠道、排除小程序渠道”的2026年6月数据；可改为查询该月全渠道全门店汇总。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "“月末付费会员有效订单数”当前仅支持完整自然月、全渠道、全门店口径，不支持按订单渠道拆分或筛选。因此无法查询“仅限门店渠道、排除小程序渠道”的2026年6月数据；可改为查询该月全渠道全门店汇总。",
+    "metrics": [
+      "monthly_paid_order_count"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "查询青禾2026年6月P1月末付费会员有效订单数，但仅限门店渠道，排除小程序渠道。",
+  "trace_id": "cd2e86e5-42b5-4c5b-a8c8-e92c925c1584",
+  "elapsed_seconds": 4.658,
+  "model_usage": {
+    "prompt_tokens": 12548,
+    "completion_tokens": 683,
+    "total_tokens": 13231
+  },
+  "model_calls_with_usage": 1
+}

@@ -1,0 +1,323 @@
+[
+  {
+    "id": "order_count",
+    "name": "创建订单数",
+    "aliases": [],
+    "unit": "count",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "按下单日期统计全部订单，每个订单号一次，包含取消单。"
+      }
+    ],
+    "constraints": [
+      "按下单日期归属",
+      "每个订单号计一次",
+      "包含取消单"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "paid_order_count",
+    "name": "支付订单数",
+    "aliases": [],
+    "unit": "count",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "状态为 paid 的订单数，包括后来全部退款的订单。"
+      }
+    ],
+    "constraints": [
+      "仅统计状态为 paid 的订单",
+      "包括后来全部退款的订单"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "valid_order_count",
+    "name": "有效订单数",
+    "aliases": [],
+    "unit": "count",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "状态为 paid 且实付金额减退款金额大于零的订单数；取消和全退不计。"
+      },
+      {
+        "file": "02_财务邮件.md",
+        "quote": "财务确认：有效订单是 paid 状态且实付大于累计退款；取消、全额退款不计有效购买。"
+      }
+    ],
+    "constraints": [
+      "状态为 paid 且实付金额减退款金额大于零",
+      "取消和全退不计"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "cancelled_order_count",
+    "name": "取消订单数",
+    "aliases": [],
+    "unit": "count",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "状态为 cancelled 的订单数。"
+      }
+    ],
+    "constraints": [
+      "状态为 cancelled"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "refund_order_count",
+    "name": "退款订单数",
+    "aliases": [],
+    "unit": "count",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "paid 状态且退款金额大于零的订单数，包括部分退款与全部退款。"
+      }
+    ],
+    "constraints": [
+      "状态为 paid 且退款金额大于零",
+      "包括部分退款与全部退款"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "partial_refund_order_count",
+    "name": "部分退款订单数",
+    "aliases": [],
+    "unit": "count",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "paid 状态且退款大于零、小于实付金额的订单数。"
+      }
+    ],
+    "constraints": [
+      "状态为 paid",
+      "退款大于零且小于实付金额"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "full_refund_order_count",
+    "name": "全额退款订单数",
+    "aliases": [],
+    "unit": "count",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "paid 状态且实付大于零、退款等于实付的订单数。"
+      }
+    ],
+    "constraints": [
+      "状态为 paid",
+      "实付大于零且退款等于实付"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "payment_cents",
+    "name": "实付金额",
+    "aliases": [],
+    "unit": "cents",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "paid 订单实付金额合计，尚未扣退款；单位分。"
+      }
+    ],
+    "constraints": [
+      "仅统计 paid 订单",
+      "尚未扣退款",
+      "底层金额单位为整数分"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "refund_cents",
+    "name": "退款金额",
+    "aliases": [],
+    "unit": "cents",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "paid 订单退款金额合计，按原订单下单日期归属，不是现金退款发生日；单位分。"
+      }
+    ],
+    "constraints": [
+      "仅统计 paid 订单",
+      "按原订单下单日期归属，不是现金退款发生日",
+      "底层金额单位为整数分"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "net_sales_cents",
+    "name": "净销售额",
+    "aliases": [],
+    "unit": "cents",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "paid 订单实付减退款后合计；取消单不计；按原订单下单日期归属；单位分。"
+      }
+    ],
+    "constraints": [
+      "仅统计 paid 订单",
+      "实付减退款后合计",
+      "取消单不计",
+      "按原订单下单日期归属",
+      "底层金额单位为整数分"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "gross_cents",
+    "name": "支付订单原价金额",
+    "aliases": [],
+    "unit": "cents",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "paid 订单折扣前原价金额合计；单位分。"
+      }
+    ],
+    "constraints": [
+      "仅统计 paid 订单",
+      "折扣前原价金额合计",
+      "底层金额单位为整数分"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "discount_cents",
+    "name": "优惠金额",
+    "aliases": [],
+    "unit": "cents",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "paid 订单原价减实付的金额合计；退款不冲减原优惠金额；单位分。"
+      }
+    ],
+    "constraints": [
+      "仅统计 paid 订单",
+      "原价减实付",
+      "退款不冲减原优惠金额",
+      "底层金额单位为整数分"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "buyer_count",
+    "name": "购买会员数",
+    "aliases": [],
+    "unit": "count",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "统计窗口及筛选条件内有有效订单的不同 CRM 会员账户数，不做跨系统自然人去重。"
+      }
+    ],
+    "constraints": [
+      "统计窗口及筛选条件内",
+      "仅统计有有效订单的账户",
+      "按不同 CRM 会员账户去重",
+      "不做跨系统自然人去重"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "refund_buyer_count",
+    "name": "退款会员数",
+    "aliases": [],
+    "unit": "count",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "统计窗口内发生退款的 paid 订单关联的不同 CRM 会员账户数。"
+      }
+    ],
+    "constraints": [
+      "统计窗口内",
+      "发生退款的 paid 订单关联账户",
+      "按不同 CRM 会员账户去重"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "selling_store_count",
+    "name": "成交门店数",
+    "aliases": [],
+    "unit": "count",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "窗口内至少有一笔有效订单的不同订单归属门店数。"
+      }
+    ],
+    "constraints": [
+      "窗口内至少有一笔有效订单",
+      "按订单成交门店去重",
+      "不按会员归属门店"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "valid_order_items",
+    "name": "有效订单商品件数",
+    "aliases": [],
+    "unit": "count",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "有效订单中的原始购买件数合计；退款金额不能推算退货件数，此项不是净商品销量。"
+      }
+    ],
+    "constraints": [
+      "有效订单中的原始购买件数合计",
+      "不是净商品销量",
+      "退款金额不能推算退货件数"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "id": "reject_monthly_day_group",
+  "expected_status": "unsupported",
+  "passed": true,
+  "checked_metrics": [
+    "monthly_buyer_count",
+    "monthly_repeat_buyer_count",
+    "monthly_repeat_rate"
+  ],
+  "errors": []
+}

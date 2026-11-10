@@ -1,0 +1,453 @@
+{
+  "2024-09-01": {
+    "qualification_day": "2024-09-30",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2024-10-01": {
+    "qualification_day": "2024-10-31",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2024-11-01": {
+    "qualification_day": "2024-11-30",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2024-12-01": {
+    "qualification_day": "2024-12-31",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2025-01-01": {
+    "qualification_day": "2025-01-31",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2025-02-01": {
+    "qualification_day": "2025-02-28",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2025-03-01": {
+    "qualification_day": "2025-03-31",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2025-04-01": {
+    "qualification_day": "2025-04-30",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2025-05-01": {
+    "qualification_day": "2025-05-31",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2025-06-01": {
+    "qualification_day": "2025-06-30",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2025-07-01": {
+    "qualification_day": "2025-07-31",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2025-08-01": {
+    "qualification_day": "2025-08-31",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2025-09-01": {
+    "qualification_day": "2025-09-30",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2025-10-01": {
+    "qualification_day": "2025-10-31",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2025-11-01": {
+    "qualification_day": "2025-11-30",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2025-12-01": {
+    "qualification_day": "2025-12-31",
+    "eligible_account_cards": {},
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2026-01-01": {
+    "qualification_day": "2026-01-31",
+    "eligible_account_cards": {
+      "M00001": [
+        "C0000001",
+        "C0000002"
+      ],
+      "M00003": [
+        "C0000004"
+      ],
+      "M00004": [
+        "C0000005"
+      ],
+      "M00005": [
+        "C0000006"
+      ],
+      "M00010": [
+        "C0000011"
+      ],
+      "M00011": [
+        "C0000012"
+      ],
+      "M00012": [
+        "C0000013"
+      ],
+      "M00014": [
+        "C0000015"
+      ],
+      "M00016": [
+        "C0000017"
+      ],
+      "M00017": [
+        "C0000018"
+      ],
+      "M00019": [
+        "C0000021"
+      ]
+    },
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2026-02-01": {
+    "qualification_day": "2026-02-28",
+    "eligible_account_cards": {
+      "M00001": [
+        "C0000001",
+        "C0000002"
+      ],
+      "M00003": [
+        "C0000004"
+      ],
+      "M00004": [
+        "C0000005"
+      ],
+      "M00005": [
+        "C0000006"
+      ],
+      "M00010": [
+        "C0000011"
+      ],
+      "M00011": [
+        "C0000012"
+      ],
+      "M00012": [
+        "C0000013"
+      ],
+      "M00014": [
+        "C0000015"
+      ],
+      "M00016": [
+        "C0000017"
+      ],
+      "M00017": [
+        "C0000018"
+      ],
+      "M00019": [
+        "C0000021"
+      ]
+    },
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2026-03-01": {
+    "qualification_day": "2026-03-31",
+    "eligible_account_cards": {
+      "M00001": [
+        "C0000001",
+        "C0000002"
+      ],
+      "M00003": [
+        "C0000004"
+      ],
+      "M00004": [
+        "C0000005"
+      ],
+      "M00005": [
+        "C0000006"
+      ],
+      "M00010": [
+        "C0000011"
+      ],
+      "M00011": [
+        "C0000012"
+      ],
+      "M00012": [
+        "C0000013"
+      ],
+      "M00014": [
+        "C0000015"
+      ],
+      "M00016": [
+        "C0000017"
+      ],
+      "M00017": [
+        "C0000018"
+      ],
+      "M00019": [
+        "C0000021"
+      ]
+    },
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2026-04-01": {
+    "qualification_day": "2026-04-30",
+    "eligible_account_cards": {
+      "M00001": [
+        "C0000001",
+        "C0000002"
+      ],
+      "M00003": [
+        "C0000004"
+      ],
+      "M00004": [
+        "C0000005"
+      ],
+      "M00005": [
+        "C0000006"
+      ],
+      "M00010": [
+        "C0000011"
+      ],
+      "M00011": [
+        "C0000012"
+      ],
+      "M00012": [
+        "C0000013"
+      ],
+      "M00014": [
+        "C0000015"
+      ],
+      "M00016": [
+        "C0000017"
+      ],
+      "M00017": [
+        "C0000018"
+      ],
+      "M00019": [
+        "C0000021"
+      ]
+    },
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2026-05-01": {
+    "qualification_day": "2026-05-31",
+    "eligible_account_cards": {
+      "M00001": [
+        "C0000001",
+        "C0000002"
+      ],
+      "M00003": [
+        "C0000004"
+      ],
+      "M00004": [
+        "C0000005"
+      ],
+      "M00005": [
+        "C0000006"
+      ],
+      "M00010": [
+        "C0000011"
+      ],
+      "M00011": [
+        "C0000012"
+      ],
+      "M00012": [
+        "C0000013"
+      ],
+      "M00014": [
+        "C0000015"
+      ],
+      "M00016": [
+        "C0000017"
+      ],
+      "M00017": [
+        "C0000018"
+      ],
+      "M00019": [
+        "C0000021"
+      ]
+    },
+    "valid_order_ids": [],
+    "orders_per_buyer": {}
+  },
+  "2026-06-01": {
+    "qualification_day": "2026-06-30",
+    "eligible_account_cards": {
+      "M00001": [
+        "C0000001",
+        "C0000002"
+      ],
+      "M00003": [
+        "C0000004"
+      ],
+      "M00004": [
+        "C0000005"
+      ],
+      "M00005": [
+        "C0000006"
+      ],
+      "M00010": [
+        "C0000011"
+      ],
+      "M00011": [
+        "C0000012"
+      ],
+      "M00012": [
+        "C0000013"
+      ],
+      "M00014": [
+        "C0000015"
+      ],
+      "M00016": [
+        "C0000017"
+      ],
+      "M00017": [
+        "C0000018"
+      ],
+      "M00019": [
+        "C0000021"
+      ]
+    },
+    "valid_order_ids": [
+      "O0000015"
+    ],
+    "orders_per_buyer": {
+      "M00004": 1
+    }
+  },
+  "2026-07-01": {
+    "qualification_day": "2026-07-31",
+    "eligible_account_cards": {
+      "M00001": [
+        "C0000001",
+        "C0000002"
+      ],
+      "M00003": [
+        "C0000004"
+      ],
+      "M00004": [
+        "C0000005"
+      ],
+      "M00005": [
+        "C0000006"
+      ],
+      "M00010": [
+        "C0000011"
+      ],
+      "M00011": [
+        "C0000012"
+      ],
+      "M00012": [
+        "C0000013"
+      ],
+      "M00014": [
+        "C0000015"
+      ],
+      "M00016": [
+        "C0000017"
+      ],
+      "M00017": [
+        "C0000018"
+      ],
+      "M00019": [
+        "C0000021"
+      ]
+    },
+    "valid_order_ids": [
+      "O0000006",
+      "O0000023",
+      "O0000026",
+      "O0000029",
+      "O0000035",
+      "O0000045"
+    ],
+    "orders_per_buyer": {
+      "M00005": 1,
+      "M00010": 1,
+      "M00011": 1,
+      "M00012": 1,
+      "M00014": 1,
+      "M00019": 1
+    }
+  },
+  "2026-08-01": {
+    "qualification_day": "2026-08-31",
+    "eligible_account_cards": {
+      "M00001": [
+        "C0000001",
+        "C0000002"
+      ],
+      "M00003": [
+        "C0000004"
+      ],
+      "M00007": [
+        "C0000008"
+      ],
+      "M00012": [
+        "C0000013"
+      ],
+      "M00013": [
+        "C0000014"
+      ],
+      "M00014": [
+        "C0000016"
+      ],
+      "M00016": [
+        "C0000017"
+      ],
+      "M00017": [
+        "C0000018"
+      ]
+    },
+    "valid_order_ids": [
+      "O0000001",
+      "O0000002",
+      "O0000011",
+      "O0000027",
+      "O0000028",
+      "O0000030",
+      "O0000031",
+      "O0000033",
+      "O0000034",
+      "O0000038"
+    ],
+    "orders_per_buyer": {
+      "M00001": 2,
+      "M00007": 1,
+      "M00012": 2,
+      "M00013": 2,
+      "M00014": 2,
+      "M00016": 1
+    }
+  }
+}

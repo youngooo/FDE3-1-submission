@@ -1,0 +1,37 @@
+--- before/artifacts/w03/submission_status.json
++++ after/artifacts/w03/submission_status.json
+@@ -96,7 +96,9 @@
+   "course_material_request": {
+     "status": "draft_not_sent",
+     "draft": "docs/w03/course_material_request_draft.md",
+-    "reply_received": false
++    "reply_received": false,
++    "purpose": "Clarify remaining end-date combination details/exceptions and anomalous-record handling; not permission to cite interviews",
++    "blocks_provisional_engineering": false
+   },
+   "chat": {
+     "status": "old32_binding_pending_switch_and_fresh_session",
+@@ -104,11 +106,21 @@
+     "service_observed_running": true
+   },
+   "remaining": [
+-    "Send course fact-supplement request and archive actual reply; HQ business confirmation remains pending",
++    "Request remaining rule details and record actual reply; interviews are usable under material04; formal HQ confirmation remains pending without blocking P1 engineering",
+     "Stop chat service before activating validated38 project; restart and verify fresh-session behavior",
+     "Teacher review and final business acceptance are not established by precheck"
+   ],
+   "previous_status_archive": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/submission-reconciliation-20261110-095404-652455/before/artifacts/w03/submission_status.json",
+   "model_called_this_closeout": false,
+-  "query_reexecuted_this_closeout": false
++  "query_reexecuted_this_closeout": false,
++  "source_basis": {
++    "designated_channel": "材料04指定运营与门店确认卡产品范围和有效状态",
++    "interviews_usable_for_report": true,
++    "basis": [
++      "小林确认卡种",
++      "陈姐说明日期、空值、多卡规则"
++    ],
++    "implementation": "P1 provisionally adopted; not a new source-admissibility gate",
++    "formal_confirmation": "pending; preserve respondents reservations"
++  }
+ }

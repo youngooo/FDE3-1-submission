@@ -1,0 +1,19 @@
+{
+  "trace_id": "eecc2294-1d19-4ce0-8438-93a3f6481c00",
+  "review_method": "AI辅助人工核查，非自动语义judge",
+  "independent_new_session": true,
+  "history_only_current_user_question": true,
+  "passed_for_stated_case_criteria": true,
+  "checks": {
+    "no_unconfirmed_threshold": true,
+    "no_fabricated_counts": true,
+    "no_repurchase_substitution": true
+  },
+  "all_unknown_rules_verified": false,
+  "source_sha256": {
+    "result.json": "d833ab04b6c47f606f710d008711f588f3bc320ee75a3be5ba0c0062ce996d7f",
+    "intent-trace.json": "db70d8c172b559faf54b9946e7c152f1db4cb85e7d94055bd1706609f6fbc052",
+    "intent-context-summary.json": "26e39138a50c28d33e053fcf779be71a4e66de645055c11e63439fca92cb8353"
+  },
+  "model_called_by_archiver": false
+}

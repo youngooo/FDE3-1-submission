@@ -1,0 +1,50 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "first_buyer_count",
+      "first_order_count",
+      "first_order_sales_cents",
+      "repeat_order_count"
+    ],
+    "start": "2024-09-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  COUNT(DISTINCT CASE WHEN valid_order_seq = 1 THEN member_id ELSE NULL END) AS first_buyer_count\n  , SUM(CASE WHEN valid_order_seq = 1 THEN 1 ELSE 0 END) AS first_order_count\n  , SUM(CASE WHEN valid_order_seq = 1 THEN paid_cents - refund_cents ELSE 0 END) AS first_order_sales_cents\n  , SUM(CASE WHEN valid_order_seq >= 2 THEN 1 ELSE 0 END) AS repeat_order_count\nFROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2024-09-01' AND '2026-08-31'",
+  "columns": [
+    "first_buyer_count",
+    "first_order_count",
+    "first_order_sales_cents",
+    "repeat_order_count"
+  ],
+  "rows": [
+    [
+      29995,
+      29995,
+      509041734,
+      231900
+    ]
+  ],
+  "seconds": 0.236,
+  "units": {
+    "first_buyer_count": "count",
+    "first_order_count": "count",
+    "first_order_sales_cents": "cents",
+    "repeat_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "answer": "在2024-09-01（含）至2026-09-01（不含）的测试覆盖期内，按全门店汇总：观测期首购会员数为29995个CRM会员账户，观测期首单数为29995单，观测期首单净销售额为509041734分，观测期后续购买订单数为231900单。\n\n口径说明：首购会员数和首单数均先在全部测试覆盖历史中，按账户确定第一笔有效订单，再筛选落在此查询窗口的订单；这类首购仅指测试覆盖期内的首购，不代表终身首购。首单净销售额按上述首单的净销售额归集，金额以分展示。后续购买订单数统计各账户第二笔及以后的有效订单中，订单日期落入窗口的订单，不等同于月内复购人数。",
+  "question": "青禾在2024-09-01含至2026-09-01不含的测试覆盖期内，观测期首购会员数、观测期首单数、观测期首单净销售额、观测期后续购买订单数分别是多少？全门店汇总，金额保留分。",
+  "trace_id": "716a9143-2992-44ed-8b0d-dd04c410c1c4",
+  "elapsed_seconds": 8.492,
+  "model_usage": {
+    "prompt_tokens": 13963,
+    "completion_tokens": 687,
+    "total_tokens": 14650
+  },
+  "model_calls_with_usage": 2
+}

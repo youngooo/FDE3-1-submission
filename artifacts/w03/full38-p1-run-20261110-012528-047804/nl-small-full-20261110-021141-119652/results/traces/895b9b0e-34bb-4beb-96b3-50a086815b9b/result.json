@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "new_member_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  COUNT(DISTINCT member_id) AS new_member_count\nFROM \"data\".\"main\".\"members\" member_model_src_10000\nWHERE DATE_TRUNC('day', registered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "new_member_count"
+  ],
+  "rows": [
+    [
+      0
+    ]
+  ],
+  "seconds": 0.033,
+  "units": {
+    "new_member_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "青禾全门店汇总，按账户注册日期归属到2026年8月统计，注册会员数为0个CRM会员账户。该结果为查询覆盖范围内的实际零值。",
+  "question": "请只查询青禾2026年8月的注册会员数，全门店汇总，不分组。时间按账户注册日期归属。",
+  "trace_id": "895b9b0e-34bb-4beb-96b3-50a086815b9b",
+  "elapsed_seconds": 7.011,
+  "model_usage": {
+    "prompt_tokens": 14387,
+    "completion_tokens": 557,
+    "total_tokens": 14944
+  },
+  "model_calls_with_usage": 2
+}

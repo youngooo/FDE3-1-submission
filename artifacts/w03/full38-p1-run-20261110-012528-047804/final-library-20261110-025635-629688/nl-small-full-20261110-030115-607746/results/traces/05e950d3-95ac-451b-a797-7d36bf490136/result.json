@@ -1,0 +1,22 @@
+{
+  "status": "unsupported",
+  "reason": "当前指标目录没有净利润或利润指标；“净销售额”不等于利润，不能替代计算。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "当前指标目录没有净利润或利润指标；“净销售额”不等于利润，不能替代计算。",
+    "metrics": [],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "青禾2026年8月的净利润是多少？我要利润，不是净销售额。",
+  "trace_id": "05e950d3-95ac-451b-a797-7d36bf490136",
+  "elapsed_seconds": 2.463,
+  "model_usage": {
+    "prompt_tokens": 12242,
+    "completion_tokens": 321,
+    "total_tokens": 12563
+  },
+  "model_calls_with_usage": 1
+}

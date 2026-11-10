@@ -1,0 +1,152 @@
+{
+  "id": "contradictory_intent_status",
+  "category": "wrong_status",
+  "should_pass": false,
+  "expected": {
+    "status": "ok",
+    "intent": {
+      "metrics": [
+        "order_count",
+        "valid_order_count",
+        "net_sales_cents",
+        "avg_order_value",
+        "cancel_rate"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [
+        "store"
+      ],
+      "filters": [
+        {
+          "field": "store__region",
+          "op": "eq",
+          "value": "华东"
+        },
+        {
+          "field": "order__channel",
+          "op": "in",
+          "value": [
+            "门店",
+            "小程序"
+          ]
+        }
+      ]
+    },
+    "columns": [
+      "store",
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents",
+      "avg_order_value",
+      "cancel_rate"
+    ],
+    "rows": [
+      [
+        "S01",
+        4,
+        2,
+        10000,
+        5000,
+        0.25
+      ],
+      [
+        "S02",
+        2,
+        0,
+        0,
+        null,
+        1.0
+      ]
+    ],
+    "units": {
+      "order_count": "count",
+      "valid_order_count": "count",
+      "net_sales_cents": "cents",
+      "avg_order_value": "cents_per_order",
+      "cancel_rate": "ratio"
+    },
+    "data_version": "judge-fixture-only",
+    "data_sha256": "fixture-data",
+    "catalog_sha256": "fixture-catalog"
+  },
+  "actual": {
+    "status": "ok",
+    "intent": {
+      "metrics": [
+        "order_count",
+        "valid_order_count",
+        "net_sales_cents",
+        "avg_order_value",
+        "cancel_rate"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [
+        "store"
+      ],
+      "filters": [
+        {
+          "field": "store__region",
+          "op": "eq",
+          "value": "华东"
+        },
+        {
+          "field": "order__channel",
+          "op": "in",
+          "value": [
+            "门店",
+            "小程序"
+          ]
+        }
+      ],
+      "status": "unsupported"
+    },
+    "columns": [
+      "store",
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents",
+      "avg_order_value",
+      "cancel_rate"
+    ],
+    "rows": [
+      [
+        "S01",
+        4,
+        2,
+        10000,
+        5000,
+        0.25
+      ],
+      [
+        "S02",
+        2,
+        0,
+        0,
+        null,
+        1.0
+      ]
+    ],
+    "units": {
+      "order_count": "count",
+      "valid_order_count": "count",
+      "net_sales_cents": "cents",
+      "avg_order_value": "cents_per_order",
+      "cancel_rate": "ratio"
+    },
+    "data_version": "judge-fixture-only",
+    "data_sha256": "fixture-data",
+    "catalog_sha256": "fixture-catalog"
+  },
+  "verdict": {
+    "passed": false,
+    "differences": [
+      {
+        "kind": "contradictory_intent_status"
+      }
+    ]
+  },
+  "harness_error": null,
+  "passed": true
+}

@@ -1,0 +1,343 @@
+[
+  {
+    "id": "paid_aug",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "paid_jul",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "start": "2026-07-01",
+      "end": "2026-08-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "paid_jun",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-07-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "paid_jul_aug",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "start": "2026-07-01",
+      "end": "2026-09-01",
+      "group_by": [
+        "metric_time__month"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "paid_all_covered_months",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "start": "2024-09-01",
+      "end": "2026-09-01",
+      "group_by": [
+        "metric_time__month"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_partial_start",
+    "expected_status": "unsupported",
+    "reason_contains": "完整自然月",
+    "intent": {
+      "metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "start": "2026-08-02",
+      "end": "2026-09-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_partial_end",
+    "expected_status": "unsupported",
+    "reason_contains": "完整自然月",
+    "intent": {
+      "metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-08-31",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_group_day",
+    "expected_status": "unsupported",
+    "reason_contains": "完整自然月",
+    "intent": {
+      "metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [
+        "metric_time__day"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_group_store",
+    "expected_status": "unsupported",
+    "reason_contains": "完整自然月",
+    "intent": {
+      "metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [
+        "store"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_group_channel",
+    "expected_status": "unsupported",
+    "reason_contains": "完整自然月",
+    "intent": {
+      "metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [
+        "order__channel"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_paid_filter_store",
+    "expected_status": "unsupported",
+    "reason_contains": "全门店全渠道",
+    "intent": {
+      "metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [],
+      "filters": [
+        {
+          "field": "store",
+          "op": "eq",
+          "value": "S01"
+        }
+      ]
+    }
+  },
+  {
+    "id": "reject_paid_filter_channel",
+    "expected_status": "unsupported",
+    "reason_contains": "全门店全渠道",
+    "intent": {
+      "metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [],
+      "filters": [
+        {
+          "field": "order__channel",
+          "op": "eq",
+          "value": "门店"
+        }
+      ]
+    }
+  },
+  {
+    "id": "reject_multimonth_total",
+    "expected_status": "unsupported",
+    "reason_contains": "按月展示",
+    "intent": {
+      "metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "start": "2026-07-01",
+      "end": "2026-09-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_outside_coverage",
+    "expected_status": "unsupported",
+    "reason_contains": "超出数据覆盖",
+    "intent": {
+      "metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "start": "2024-08-01",
+      "end": "2024-09-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "clarify_missing_start",
+    "expected_status": "clarify",
+    "reason_contains": "明确时间范围",
+    "intent": {
+      "metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "start": null,
+      "end": "2026-09-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_undefined_metric",
+    "expected_status": "unsupported",
+    "reason_contains": "指标未定义",
+    "intent": {
+      "metrics": [
+        "w03_undefined_metric_probe"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_nonexistent_filter_value",
+    "expected_status": "unsupported",
+    "reason_contains": "筛选值不在",
+    "intent": {
+      "metrics": [
+        "order_count"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [],
+      "filters": [
+        {
+          "field": "store",
+          "op": "eq",
+          "value": "__W03_NONEXISTENT_STORE__"
+        }
+      ]
+    }
+  }
+]

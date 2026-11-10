@@ -1,0 +1,25 @@
+{
+  "status": "ok",
+  "archive": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/document-status-cleanup-20261108-155229",
+  "model_version": "v0.6",
+  "documents": {
+    "business_model.md": {
+      "before": "8d78f4806f24ab575fef66a54d424f5fa17e8dafcd887c62487a2e52f2c0e66b",
+      "after": "e9de32a187c67e621f16cca684286467c74ddc57a5527cbf3e45683578db4f8b"
+    },
+    "interview_notes.md": {
+      "before": "243c0532af055d01807f6d3483ab59684992487133c4f56e628cd5d2c6c811ef",
+      "after": "382d1e4eeca7d75c2b48806e9b1b31def514e5161a641552633ea4bc98d97cc9"
+    },
+    "model_changes.md": {
+      "before": "d80eb930b3a2f9c4897a8d7cf5f7e815a1094bb629dbca49dd464989cfbfcb04",
+      "after": "de6ad4b4524a35de0ed5ecc423e8339a1bd59b90314fb1ba3c822c78c37d49f4"
+    },
+    "metric_decisions.md": {
+      "before": "ce82cdfa2c3abc0d39ae70a3bc5889935b5c5f4a605484cff73a05b13287d419",
+      "after": "24c79a16f8ee859b0e20ccf7790158b976522067c18255e77f6b247acbc465c6"
+    }
+  },
+  "model_called": false,
+  "library_rebuilt": false
+}

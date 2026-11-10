@@ -1,0 +1,205 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "first_buyer_count",
+      "first_order_sales_cents",
+      "first_order_count",
+      "repeat_order_count"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [
+      "store"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  store\n  , COUNT(DISTINCT __first_buyer_count) AS first_buyer_count\n  , SUM(__first_order_sales_cents) AS first_order_sales_cents\n  , SUM(__first_order_count) AS first_order_count\n  , SUM(__repeat_order_count) AS repeat_order_count\nFROM (\n  SELECT\n    store_id AS store\n    , CASE WHEN valid_order_seq = 1 THEN member_id ELSE NULL END AS __first_buyer_count\n    , CASE WHEN valid_order_seq = 1 THEN paid_cents - refund_cents ELSE 0 END AS __first_order_sales_cents\n    , CASE WHEN valid_order_seq = 1 THEN 1 ELSE 0 END AS __first_order_count\n    , CASE WHEN valid_order_seq >= 2 THEN 1 ELSE 0 END AS __repeat_order_count\n  FROM \"data\".\"main\".\"order_fact\" order_model_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-06-01' AND '2026-06-30'\n) subq_8\nGROUP BY\n  store",
+  "columns": [
+    "store",
+    "first_buyer_count",
+    "first_order_sales_cents",
+    "first_order_count",
+    "repeat_order_count"
+  ],
+  "rows": [
+    [
+      "S05",
+      73,
+      1287395,
+      73,
+      1049
+    ],
+    [
+      "S19",
+      71,
+      1153638,
+      71,
+      1109
+    ],
+    [
+      "S24",
+      66,
+      1083626,
+      66,
+      999
+    ],
+    [
+      "S01",
+      72,
+      1139919,
+      72,
+      1006
+    ],
+    [
+      "S15",
+      52,
+      885162,
+      52,
+      1004
+    ],
+    [
+      "S08",
+      50,
+      800796,
+      50,
+      1012
+    ],
+    [
+      "S14",
+      76,
+      1271774,
+      76,
+      1043
+    ],
+    [
+      "S17",
+      51,
+      683539,
+      51,
+      1023
+    ],
+    [
+      "S12",
+      62,
+      1048726,
+      62,
+      1032
+    ],
+    [
+      "S23",
+      59,
+      1003224,
+      59,
+      1029
+    ],
+    [
+      "S03",
+      69,
+      1236195,
+      69,
+      1054
+    ],
+    [
+      "S07",
+      60,
+      1040956,
+      60,
+      1039
+    ],
+    [
+      "S11",
+      69,
+      1133234,
+      69,
+      1108
+    ],
+    [
+      "S16",
+      63,
+      995086,
+      63,
+      1044
+    ],
+    [
+      "S20",
+      65,
+      1144205,
+      65,
+      1052
+    ],
+    [
+      "S21",
+      54,
+      894932,
+      54,
+      1006
+    ],
+    [
+      "S22",
+      55,
+      956437,
+      55,
+      1003
+    ],
+    [
+      "S13",
+      64,
+      1134727,
+      64,
+      1022
+    ],
+    [
+      "S02",
+      71,
+      1281353,
+      71,
+      1055
+    ],
+    [
+      "S18",
+      72,
+      1273217,
+      72,
+      1079
+    ],
+    [
+      "S10",
+      65,
+      1132634,
+      65,
+      1025
+    ],
+    [
+      "S06",
+      54,
+      1110701,
+      54,
+      1103
+    ],
+    [
+      "S09",
+      65,
+      1225979,
+      65,
+      1112
+    ],
+    [
+      "S04",
+      73,
+      1274210,
+      73,
+      1051
+    ]
+  ],
+  "seconds": 0.203,
+  "units": {
+    "first_buyer_count": "count",
+    "first_order_sales_cents": "cents",
+    "first_order_count": "count",
+    "repeat_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39"
+}

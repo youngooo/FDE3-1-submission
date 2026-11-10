@@ -1,0 +1,101 @@
+version: 2
+semantic_models:
+- name: order_events
+  model: ref('order_metric_base')
+  defaults:
+    agg_time_dimension: ordered_at
+  entities:
+  - name: order
+    type: primary
+    expr: order_id
+  - name: member
+    type: foreign
+    expr: member_id
+  - name: store
+    type: foreign
+    expr: store_id
+  dimensions:
+  - name: ordered_at
+    type: time
+    type_params:
+      time_granularity: day
+  - name: channel
+    type: categorical
+    expr: channel
+  - name: status
+    type: categorical
+    expr: status
+  measures:
+  - name: order_count_measure
+    expr: '1'
+    agg: sum
+  - name: valid_order_count_measure
+    expr: is_valid_order
+    agg: sum
+  - name: net_sales_cents_measure
+    expr: net_sales_cents
+    agg: sum
+- name: member_accounts
+  model: ref('members')
+  defaults:
+    agg_time_dimension: registered_at
+  entities:
+  - name: member
+    type: primary
+    expr: member_id
+  - name: home_store
+    type: foreign
+    expr: home_store_id
+  dimensions:
+  - name: registered_at
+    type: time
+    type_params:
+      time_granularity: day
+  - name: tier
+    type: categorical
+    expr: tier
+- name: order_stores
+  model: ref('order_stores')
+  entities:
+  - name: store
+    type: primary
+    expr: store_id
+  dimensions:
+  - name: region
+    type: categorical
+    expr: region
+  - name: store_name
+    type: categorical
+    expr: store_name
+- name: member_home_stores
+  model: ref('member_home_stores')
+  entities:
+  - name: home_store
+    type: primary
+    expr: store_id
+  dimensions:
+  - name: region
+    type: categorical
+    expr: region
+  - name: store_name
+    type: categorical
+    expr: store_name
+metrics:
+- name: order_count
+  label: 创建订单数
+  description: 按下单日期统计全部订单，每个订单号一次，包含取消单。
+  type: simple
+  type_params:
+    measure: order_count_measure
+- name: valid_order_count
+  label: 有效订单数
+  description: 状态为 paid 且实付金额减退款金额大于零的订单数；取消和全退不计。
+  type: simple
+  type_params:
+    measure: valid_order_count_measure
+- name: net_sales_cents
+  label: 净销售额
+  description: paid 订单实付减退款后合计；取消单不计；按原订单下单日期归属；单位分。
+  type: simple
+  type_params:
+    measure: net_sales_cents_measure

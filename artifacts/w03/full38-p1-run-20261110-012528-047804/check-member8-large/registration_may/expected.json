@@ -1,0 +1,12 @@
+{
+  "status": "ok",
+  "groups": [
+    {
+      "group": [],
+      "metrics": {
+        "new_member_count": 1331
+      }
+    }
+  ],
+  "reason_contains": null
+}

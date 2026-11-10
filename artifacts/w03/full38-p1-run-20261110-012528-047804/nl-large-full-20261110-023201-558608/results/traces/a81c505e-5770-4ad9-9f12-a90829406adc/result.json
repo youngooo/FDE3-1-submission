@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "selling_store_count"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  COUNT(DISTINCT CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN store_id ELSE NULL END) AS selling_store_count\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-06-01' AND '2026-06-30'",
+  "columns": [
+    "selling_store_count"
+  ],
+  "rows": [
+    [
+      24
+    ]
+  ],
+  "seconds": 0.131,
+  "units": {
+    "selling_store_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "青禾2026年6月整月、全门店汇总口径下，成交门店数为24家门店。统计口径为：窗口内至少有一笔有效订单的不同订单归属门店数；未按门店分组展示明细。",
+  "question": "帮我查青禾2026年6月的成交门店数，我需要整月全门店总数，不需要分组明细。",
+  "trace_id": "a81c505e-5770-4ad9-9f12-a90829406adc",
+  "elapsed_seconds": 7.385,
+  "model_usage": {
+    "prompt_tokens": 14670,
+    "completion_tokens": 557,
+    "total_tokens": 15227
+  },
+  "model_calls_with_usage": 2
+}

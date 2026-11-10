@@ -1,0 +1,249 @@
+{
+  "kind": "incremental_member8_csv_check",
+  "expected_basis": "Customer materials 03/05; original CSV; first valid orders determined before filtering",
+  "project": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small",
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "72fe4a5533b72533cadbeab87fcf2c89b32a7b1bd03b9d648cea1f63fb70a0f9",
+  "source_sha256": {
+    "orders.csv": "c6e0dee6081e7a6f7782b54de78b3182835c46184c8e7569fc23feab8cf3c4f1",
+    "cards.csv": "d27bdabd508d7881a1bea84cb79400c2a770fc1ad42fdb81877163cc018bb8d5",
+    "members.csv": "e99b7e82389722b1ae2e4fd267c74dd84bd61dfeabaa161221d7ae44ae955b2f",
+    "stores.csv": "e8160804fd485853f6c75d9a095b1ee6f05bbbd40ba851cac84def35488aa41d"
+  },
+  "script_sha256": {
+    "check_member8.py": "97b9155e00cc0790460b8edeae19311f584185ea3ac52aeb180e5b0e7a0a2787",
+    "check_base16.py": "6654a383173cfb8b00d251482698ed12b88f1fc6fa79f334f31b40579750381a",
+    "check_orders24.py": "ec32f57a64052448c48bb64dc50b196106c0c1a71200b789b47c1a27cec979f4"
+  },
+  "comparison_policy": {
+    "counts_and_cents": "exact",
+    "null": "strict",
+    "month_keys": "first-of-month ISO date or midnight timestamp",
+    "ratio_abs_tolerance": "1E-8",
+    "ratio_rel_tolerance": "1E-9"
+  },
+  "cases": [
+    {
+      "id": "first_aug",
+      "expected_status": "ok",
+      "passed": true,
+      "checked_metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "errors": []
+    },
+    {
+      "id": "first_jul",
+      "expected_status": "ok",
+      "passed": true,
+      "checked_metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "errors": []
+    },
+    {
+      "id": "first_coverage",
+      "expected_status": "ok",
+      "passed": true,
+      "checked_metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "errors": []
+    },
+    {
+      "id": "first_aug_first_half",
+      "expected_status": "ok",
+      "passed": true,
+      "checked_metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "errors": []
+    },
+    {
+      "id": "first_aug_store",
+      "expected_status": "ok",
+      "passed": true,
+      "checked_metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "errors": []
+    },
+    {
+      "id": "first_aug_home_store",
+      "expected_status": "ok",
+      "passed": true,
+      "checked_metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "errors": []
+    },
+    {
+      "id": "first_aug_filtered_store",
+      "expected_status": "ok",
+      "passed": true,
+      "checked_metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "errors": []
+    },
+    {
+      "id": "registration_aug",
+      "expected_status": "ok",
+      "passed": true,
+      "checked_metrics": [
+        "new_member_count"
+      ],
+      "errors": []
+    },
+    {
+      "id": "registration_coverage",
+      "expected_status": "ok",
+      "passed": true,
+      "checked_metrics": [
+        "new_member_count"
+      ],
+      "errors": []
+    },
+    {
+      "id": "registration_home_store",
+      "expected_status": "ok",
+      "passed": true,
+      "checked_metrics": [
+        "new_member_count"
+      ],
+      "errors": []
+    },
+    {
+      "id": "registration_tier",
+      "expected_status": "ok",
+      "passed": true,
+      "checked_metrics": [
+        "new_member_count"
+      ],
+      "errors": []
+    },
+    {
+      "id": "monthly_aug",
+      "expected_status": "ok",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": []
+    },
+    {
+      "id": "monthly_jul",
+      "expected_status": "ok",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": []
+    },
+    {
+      "id": "monthly_jul_aug",
+      "expected_status": "ok",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": []
+    },
+    {
+      "id": "monthly_empty",
+      "expected_status": "ok",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": []
+    },
+    {
+      "id": "reject_partial_month",
+      "expected_status": "unsupported",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": []
+    },
+    {
+      "id": "reject_monthly_day_group",
+      "expected_status": "unsupported",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": []
+    },
+    {
+      "id": "reject_monthly_store_group",
+      "expected_status": "unsupported",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": []
+    },
+    {
+      "id": "reject_monthly_store_filter",
+      "expected_status": "unsupported",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": []
+    },
+    {
+      "id": "reject_multimonth_total",
+      "expected_status": "unsupported",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": []
+    }
+  ],
+  "passed": true,
+  "complete": true
+}

@@ -1,0 +1,9 @@
+正式入口：38项官方merge库，六项付费指标为P1暂定试算，总部适用性待书面确认。
+tests.json与tests-large.json均为规模集67条；tests-small.json为小样本69条。两套各覆盖38项，问句和月份有变化。
+artifacts/w03/metric_test_report.json原样复制最新提示下的规模集67/67报告；原始文件及回答未改写。
+小样本原始69/69报告中发现一处付费复购率公式解释错误，修正提示后9/9定向复测通过；原报告与补充复测分别保留，不拼接。
+具体版本、项目、时间和报告见test_entrypoints.json及merged_regression_plan.json。
+只读预检：.venv/bin/python -B customer/w03/run_merged_regression.py --dataset small（或large）
+真实复跑：上面命令加 --run，将调用模型；输出新目录，不覆盖历史报告。
+更换工作目录后，先依课程README用正式库和对应CSV加载新项目，再更新计划的项目路径；不能沿用不匹配的项目或数据。
+框架说明、最新恢复快照与SOW客户正文已整理。聊天绑定及6项代表性检查已完成，缺年题在独立新会话澄清。总部确认及课程补充材料申请发送仍待完成。预检通过不是客户验收。

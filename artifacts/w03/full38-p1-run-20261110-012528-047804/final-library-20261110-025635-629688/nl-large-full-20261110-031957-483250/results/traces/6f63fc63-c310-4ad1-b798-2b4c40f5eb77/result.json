@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_repeat_rate"
+    ],
+    "start": "2026-05-01",
+    "end": "2026-06-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(SUM(CASE WHEN valid_order_count >= 2 THEN 1 ELSE 0 END) AS DOUBLE) / CAST(NULLIF(SUM(CASE WHEN valid_order_count >= 1 THEN 1 ELSE 0 END), 0) AS DOUBLE) AS monthly_repeat_rate\nFROM \"data\".\"main\".\"monthly_member_activity\" monthly_member_model_src_10000\nWHERE DATE_TRUNC('month', month_start) BETWEEN '2026-05-01' AND '2026-05-31'",
+  "columns": [
+    "monthly_repeat_rate"
+  ],
+  "rows": [
+    [
+      0.3825040562466198
+    ]
+  ],
+  "seconds": 0.069,
+  "units": {
+    "monthly_repeat_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "青禾2026年5月全门店的月内复购率为 0.3825040562466198（小数比例）。统计范围为2026年5月完整自然月、汇总全部门店；口径为月内复购会员数除以同月月内购买会员数，会员按CRM账户统计。",
+  "question": "青禾2026年5月，月内复购率是多少？仅这一项，汇总全部门店。结果使用小数比例。",
+  "trace_id": "6f63fc63-c310-4ad1-b798-2b4c40f5eb77",
+  "elapsed_seconds": 6.576,
+  "model_usage": {
+    "prompt_tokens": 15193,
+    "completion_tokens": 518,
+    "total_tokens": 15711
+  },
+  "model_calls_with_usage": 2
+}

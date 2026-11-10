@@ -1,0 +1,36 @@
+{
+  "source_sha256": {
+    "01_订单日报说明.md": "976fa129493e6bd2861a58d74df2ba3ad4448ea01a2d25651124222a61cebb67",
+    "02_财务邮件.md": "f81e0ddb5c03dd4eb2d01094816716d8375d03fe883b947ec8297edf8d525557",
+    "03_会员运营周报.md": "25ab933556bf34bef21b528d4c7838c9baad33ae289d59f09501e765080bb492",
+    "04_本期统计确认邮件.md": "c4f847fd90fd0765d37ad22f20d4a4eb0bab90f8543ae0f05d7a3cbee104c4be",
+    "09_付费月报补访原文.md": "19735f62d2a9adcee07f39c81855859a76dd6b2bf9f64e21d0c66160a7ee21c6",
+    "business_model.md": "84d1e43aace4b57e49911cc6167bc6022d78ef5d390d9fe9c982be55d834dcf9"
+  },
+  "target_sha256": "1582ad85ecd77fe7a9230571a30f0bae62fc77ea587b56d29cd860de4830d3df",
+  "template_count": 38,
+  "all_quotes_exact": true,
+  "discount_source": [
+    {
+      "file": "01_订单日报说明.md",
+      "quote": "paid 订单原价减实付的金额合计；退款不冲减原优惠金额；单位分。"
+    }
+  ],
+  "files": [
+    {
+      "path": "customer/w03/build-metrics/SKILL.md",
+      "before_sha256": "419a5a6d449da1baf6147cfaa9ada34fe053af76a153e561e487201e9f817315",
+      "after_sha256": "ae9c7422b3a44e6d5577edb4339d578e7db5ace7fe06de9ac208ac9054c69b6d"
+    },
+    {
+      "path": "docs/w03/metric_decisions.md",
+      "before_sha256": "429744c45c53d8d75b99b201d376d906eb23861b94cb3384b8e3add57b86b2e7",
+      "after_sha256": "fc150e32bf5c3f1c7d1677f43591a24998de49d7541655581d93d65dc276910d"
+    },
+    {
+      "path": "materials/w03/10_指标来源引用清单.md",
+      "before_sha256": null,
+      "after_sha256": "d4a8adf64eef3e9539f4619708714081fe4e9782143ec590dc9ff5807e2c327f"
+    }
+  ]
+}

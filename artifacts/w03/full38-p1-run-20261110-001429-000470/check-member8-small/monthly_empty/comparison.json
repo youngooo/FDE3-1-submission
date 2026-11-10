@@ -1,0 +1,11 @@
+{
+  "id": "monthly_empty",
+  "expected_status": "ok",
+  "passed": true,
+  "checked_metrics": [
+    "monthly_buyer_count",
+    "monthly_repeat_buyer_count",
+    "monthly_repeat_rate"
+  ],
+  "errors": []
+}

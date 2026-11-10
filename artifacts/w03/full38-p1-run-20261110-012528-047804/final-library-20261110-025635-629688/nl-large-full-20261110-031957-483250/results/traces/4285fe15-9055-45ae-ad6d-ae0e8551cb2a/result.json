@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "buyer_count"
+    ],
+    "start": "2026-04-01",
+    "end": "2026-05-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  COUNT(DISTINCT CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN member_id ELSE NULL END) AS buyer_count\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-04-01' AND '2026-04-30'",
+  "columns": [
+    "buyer_count"
+  ],
+  "rows": [
+    [
+      13265
+    ]
+  ],
+  "seconds": 0.111,
+  "units": {
+    "buyer_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "青禾2026年4月整月全门店合计购买会员数为13265个CRM会员账户。口径为统计窗口内产生有效订单的不同CRM会员账户数；全门店汇总，不拆分门店或地区，也不做跨系统自然人去重。",
+  "question": "核对青禾2026年4月整月报表：只返回购买会员数的全门店合计，不拆维度。",
+  "trace_id": "4285fe15-9055-45ae-ad6d-ae0e8551cb2a",
+  "elapsed_seconds": 8.497,
+  "model_usage": {
+    "prompt_tokens": 15083,
+    "completion_tokens": 703,
+    "total_tokens": 15786
+  },
+  "model_calls_with_usage": 2
+}

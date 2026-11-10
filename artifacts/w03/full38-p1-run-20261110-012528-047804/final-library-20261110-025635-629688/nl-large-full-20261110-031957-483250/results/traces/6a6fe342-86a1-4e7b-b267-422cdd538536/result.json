@@ -1,0 +1,22 @@
+{
+  "status": "unsupported",
+  "reason": "当前指标目录没有“扣除所有成本后的净利润”或成本类指标，无法核对净利润金额；净销售额不等同于净利润，不能替代。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "当前指标目录没有“扣除所有成本后的净利润”或成本类指标，无法核对净利润金额；净销售额不等同于净利润，不能替代。",
+    "metrics": [],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "核对青禾2026年6月扣除所有成本后的净利润金额，不能用销售额代替。",
+  "trace_id": "6a6fe342-86a1-4e7b-b267-422cdd538536",
+  "elapsed_seconds": 2.652,
+  "model_usage": {
+    "prompt_tokens": 12540,
+    "completion_tokens": 256,
+    "total_tokens": 12796
+  },
+  "model_calls_with_usage": 1
+}

@@ -1,0 +1,2 @@
+SELECT store_id, region, store_name
+FROM {{ ref('stores') }}

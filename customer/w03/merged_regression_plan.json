@@ -1,0 +1,48 @@
+{
+  "kind": "official_merged38_regression_plan",
+  "library": "artifacts/w03/library",
+  "library_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "metrics": 38,
+  "default_dataset": "large",
+  "canonical_cases": "customer/w03/tests.json",
+  "canonical_report": "artifacts/w03/metric_test_report.json",
+  "judge": "customer/w03/judge_full38.py",
+  "judge_sha256": "19227fe14ed8c3c0abf2258f353ae0c4e5cb106efb0fe5a3dd4e7c2422ca6600",
+  "base_judge_sha256": "33b7eed436f5663f04371ffc2eb456b23451c60b5073d8534e6735a6a466e0fc",
+  "answer_prompt_sha256": "efdf2213c26abfba3bf6c646361b8fd49cbdabad811ae1c20f09bb9dcfa835c2",
+  "intent_prompt_sha256": "281aeb45bef1d6002f97db5ee6930683067ca730143caf3100757d9adf475ba0",
+  "entries": [
+    {
+      "dataset": "small",
+      "cases": "customer/w03/tests-small.json",
+      "cases_sha256": "b83b234e4ad1c8f7b24f05bf8f4df0ff14ecdbb1f8a67cb61924eee045494f8d",
+      "cases_total": 69,
+      "project": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-small",
+      "execution_report": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-small-full-20261110-030115-607746/results/metric_test_report.json",
+      "execution_report_sha256": "e138b94e36418215f9245a557b23812f994998519f0f4e2e881ac52508e9e228",
+      "execution_passed": 69,
+      "data_version": "qinghe-w03-20260923-small",
+      "answer_review": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/regression-verification-20261110-090359-069796/answer_reviews.json",
+      "answer_state": "one_original_formula_explanation_corrected_and_retested",
+      "correction_retest": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-small-paid-formula-20261110-031651-683666/results/metric_test_report.json",
+      "status": "executed"
+    },
+    {
+      "dataset": "large",
+      "cases": "customer/w03/tests-large.json",
+      "cases_sha256": "6df3ade68f736b65b2cebd3d0cda5b9b402d3448c1b3c3456af3ff2a837d34bd",
+      "cases_total": 67,
+      "project": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large",
+      "execution_report": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-large-full-20261110-031957-483250/results/metric_test_report.json",
+      "execution_report_sha256": "c6a3487893fd50c040d87a8195a63af1836178d33d1438e2dd39d6e8aa5f2eb5",
+      "execution_passed": 67,
+      "data_version": "qinghe-w03-20260923-large",
+      "answer_review": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/regression-verification-20261110-090359-069796/answer_reviews.json",
+      "answer_state": "full_review_passed_with_notes",
+      "correction_retest": null,
+      "status": "executed"
+    }
+  ],
+  "business_confirmation": "pending",
+  "final_38_acceptance": false
+}

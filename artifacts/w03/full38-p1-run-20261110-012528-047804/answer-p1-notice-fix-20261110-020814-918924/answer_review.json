@@ -1,0 +1,65 @@
+{
+  "kind": "ai_assisted_answer_review",
+  "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-small-smoke-20261110-020403-776221/results/metric_test_report.json",
+  "report_sha256": "b7a5cc79a1de7c284a488af2ca32afb8889678a5f2829f1768443126c46a453f",
+  "structured_passed": 8,
+  "structured_total": 8,
+  "answer_passed": 7,
+  "answer_needs_wording_fix": 1,
+  "reviewed_by": "assistant after reading all eight actual answers/reasons and structured results",
+  "human_signoff": false,
+  "final_acceptance": false,
+  "business_confirmation": "pending",
+  "cases": [
+    {
+      "id": "single_valid_order_items",
+      "status": "pass",
+      "note": "33件与结果一致，区分原始购买件数与净商品销量。",
+      "actual_text_sha256": "58088e1e245ee6dd41d8e49cdc77613831606b9f8954f710ecf0f7ee1da56044"
+    },
+    {
+      "id": "first_home_store",
+      "status": "pass",
+      "note": "S01/S02/S03三组及四项数值一致，S03保留零值，首购使用全覆盖有效历史。",
+      "actual_text_sha256": "76d60a9c47c77114038e48c1822bb3825dc6751d4623fd735dd74ed980988cb4"
+    },
+    {
+      "id": "paid_coverage",
+      "status": "needs_wording_fix",
+      "note": "24个月份、单位和数值一致，零分母为未定义；写了P1暂定试算，但遗漏总部适用性仍待书面确认。",
+      "actual_text_sha256": "75ea18f58eed851a72abc322c14c0112768eeac7997e61bfb5a303705c6610c6"
+    },
+    {
+      "id": "paid_paraphrase",
+      "status": "pass",
+      "note": "6账户、10单、47550分、4复购账户、复购率及4755分/单一致，并保留需书面确认说明。",
+      "actual_text_sha256": "dbec897fece7e86fd80747df7446b3c5885024e9bbdfc41bfc8fd93034df4926"
+    },
+    {
+      "id": "reject_paid_group",
+      "status": "pass",
+      "note": "正确说明不支持归属门店拆分，没有推荐另一种禁止分组。",
+      "actual_text_sha256": "84032e9a8d095a33b521fa8b30a62bf0d61bd6d37c7f408b1e8e7e197b515345"
+    },
+    {
+      "id": "reject_undefined_metric",
+      "status": "pass",
+      "note": "明确净利润未定义，没有拿净销售额替代。",
+      "actual_text_sha256": "cd16d3ded4204eedaf75f71bbf22d26fe19671bc24e637b1071d732528c7d191"
+    },
+    {
+      "id": "nonexistent_filter",
+      "status": "pass",
+      "note": "说明S999999不在可查询范围，没有猜门店或返回零。",
+      "actual_text_sha256": "1b60870b208c8e762912d027c926a01d16d9ab8cc6d2f122d7bdbae99f295b19"
+    },
+    {
+      "id": "clarify_year",
+      "status": "pass",
+      "note": "明确询问年份，没有从参考日期擅自补年。",
+      "actual_text_sha256": "e915459a8496528b98c197b528ecf636db0b4a80c09d2b0fb3dcd5849bb677e8"
+    }
+  ],
+  "fix_scope": "Only answer prompt: preserve existing definitions.constraints. No metric, numeric oracle, judge or historical answer edits.",
+  "validation": "Offline source checks only; corrected generated wording must be verified in a new real run."
+}

@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "metrics_compiled": [
+    "avg_buyer_value",
+    "avg_order_value",
+    "buyer_count",
+    "cancel_rate",
+    "cancelled_order_count",
+    "discount_cents",
+    "discount_rate",
+    "full_refund_order_count",
+    "gross_cents",
+    "items_per_order",
+    "net_sales_cents",
+    "order_count",
+    "paid_order_count",
+    "partial_refund_order_count",
+    "payment_cents",
+    "purchase_frequency",
+    "refund_amount_rate",
+    "refund_buyer_count",
+    "refund_cents",
+    "refund_order_count",
+    "refund_order_rate",
+    "selling_store_count",
+    "valid_order_count",
+    "valid_order_items"
+  ],
+  "validator": "SemanticManifestValidator; native explain + DuckDB EXPLAIN"
+}

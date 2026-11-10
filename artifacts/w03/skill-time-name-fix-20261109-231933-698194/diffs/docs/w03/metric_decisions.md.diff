@@ -1,0 +1,17 @@
+--- before/docs/w03/metric_decisions.md
++++ after/docs/w03/metric_decisions.md
+@@ -173,3 +173,14 @@
+ 学员已在当前merge库（`b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62`）加载的项目上完成真实问数：小样本54/54、规模53/53结构化通过。已逐例复核报告输入与独立用例、重新执行确定性判定并核对库版本。107条实际回答经AI辅助逐项阅读，未发现改变查询结论的数值、单位或分组错误，保留5处措辞备注；原回答未改。这不是学员已逐条签署的文字验收结论。
+ 
+ 小样本原始报告按字节复制至 `artifacts/w03/metric_test_report.json`；规模报告保留原目录。两份用例入口已换成实际执行的版本。证据与回答核查见 `artifacts/w03/merged-regression-review-20261108-173356/answer_review.json`。本次归档没有新增模型调用。此前“最终报告缺失／新库未回归”是旧阶段状态，现已补齐32项对应报告；六项付费月报仍缺依据，38项覆盖仍未完成。
++
++
++## 2026-11-09 全量38项构建失败：时间维度保留名
++
++本轮使用业务模型v0.7及P1 Skill调用模型，首次180秒请求超时；随后经独立构建入口调用原有generate接口，将首次/内部重试超时设为600/900秒，未修改课程框架。第二轮总耗时445.621秒，生成38项候选定义，unresolved为空，来源引用检查通过，但dbt语义清单解析失败，未形成可加载指标库。
++
++失败候选的order_facts、member_accounts、monthly_member_orders、paid_monthly_member_orders四个语义模型将时间维度声明为metric_time。实际dbt日志明确指出该名称为MetricFlow保留名。修正位置为构建Skill：采用ordered_at、registered_at、month_start等真实时间维度名称，并同步defaults.agg_time_dimension；查询层统一时间接口的名字不变。
++
++原失败输入、响应、候选和日志保持原样：[构建日志](../../artifacts/w03/full38-p1-run-20261109-230916-522467/build/validation-project/build.log)、[来源检查](../../artifacts/w03/full38-p1-run-20261109-230916-522467/build/source_check.json)。未执行的粒度、维度和MetricFlow校验不记为通过。此问题属于生成定义使用了保留名，不据此认定课程框架存在缺陷。
++
++当前仅修正上游Skill，未修补生成YAML/SQL，尚未重新构建或回归。Skill变更后需重新记录前置检查与输入版本，再完整重建38项；P1总部适用性仍待书面确认。原32项库与报告不变。

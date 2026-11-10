@@ -1,0 +1,22 @@
+{
+  "message": {
+    "role": "assistant",
+    "content": "查看小林侧关于日期端点、月末口径与实现理解的原文。",
+    "tool_calls": [
+      {
+        "index": 0,
+        "id": "call_00_r8MGdlnHYoLVflCLO6vj9099",
+        "type": "function",
+        "function": {
+          "name": "show_evidence",
+          "arguments": "{\"claim_ids\": [\"CLM-001-0006\", \"CLM-001-0007\", \"CLM-001-0008\", \"CLM-001-0010\", \"CLM-001-0011\"]}"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "prompt_tokens": 45279,
+    "completion_tokens": 227,
+    "total_tokens": 45506
+  }
+}

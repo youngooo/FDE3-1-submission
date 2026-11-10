@@ -1,0 +1,89 @@
+{
+  "format_version": "bounded-enums-v1",
+  "enum_limit": 128,
+  "context_chars_before": 618377,
+  "context_chars_after": 19327,
+  "fields": {
+    "store": {
+      "total_known_values": 24,
+      "supplied_values": 24,
+      "enumeration_complete": true,
+      "known_literal_matches": null,
+      "selection_truncated": false,
+      "selection_method": "complete_list"
+    },
+    "home_store": {
+      "total_known_values": 24,
+      "supplied_values": 24,
+      "enumeration_complete": true,
+      "known_literal_matches": null,
+      "selection_truncated": false,
+      "selection_method": "complete_list"
+    },
+    "member": {
+      "total_known_values": 30000,
+      "supplied_values": 0,
+      "enumeration_complete": false,
+      "known_literal_matches": 0,
+      "selection_truncated": false,
+      "selection_method": "literal_question_then_recent_history"
+    },
+    "store__region": {
+      "total_known_values": 3,
+      "supplied_values": 3,
+      "enumeration_complete": true,
+      "known_literal_matches": null,
+      "selection_truncated": false,
+      "selection_method": "complete_list"
+    },
+    "store__store_name": {
+      "total_known_values": 24,
+      "supplied_values": 24,
+      "enumeration_complete": true,
+      "known_literal_matches": null,
+      "selection_truncated": false,
+      "selection_method": "complete_list"
+    },
+    "home_store__region": {
+      "total_known_values": 3,
+      "supplied_values": 3,
+      "enumeration_complete": true,
+      "known_literal_matches": null,
+      "selection_truncated": false,
+      "selection_method": "complete_list"
+    },
+    "home_store__store_name": {
+      "total_known_values": 24,
+      "supplied_values": 24,
+      "enumeration_complete": true,
+      "known_literal_matches": null,
+      "selection_truncated": false,
+      "selection_method": "complete_list"
+    },
+    "order__channel": {
+      "total_known_values": 2,
+      "supplied_values": 2,
+      "enumeration_complete": true,
+      "known_literal_matches": null,
+      "selection_truncated": false,
+      "selection_method": "complete_list"
+    },
+    "order__status": {
+      "total_known_values": 2,
+      "supplied_values": 2,
+      "enumeration_complete": true,
+      "known_literal_matches": null,
+      "selection_truncated": false,
+      "selection_method": "complete_list"
+    },
+    "member__tier": {
+      "total_known_values": 3,
+      "supplied_values": 3,
+      "enumeration_complete": true,
+      "known_literal_matches": null,
+      "selection_truncated": false,
+      "selection_method": "complete_list"
+    }
+  },
+  "engine_allowed_values_modified": false
+}

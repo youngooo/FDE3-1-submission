@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "repeat_order_count"
+    ],
+    "start": "2026-05-01",
+    "end": "2026-06-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN valid_order_seq >= 2 THEN 1 ELSE 0 END) AS repeat_order_count\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-05-01' AND '2026-05-31'",
+  "columns": [
+    "repeat_order_count"
+  ],
+  "rows": [
+    [
+      21704
+    ]
+  ],
+  "seconds": 0.104,
+  "units": {
+    "repeat_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "在青禾当前已加载数据范围内，汇总全部门店，2026年5月观测期后续购买订单数为 21704 单。口径为：先在全测试覆盖期的有效订单中确定会员账户的第二笔及以后有效订单，再按订单日期落入2026年5月计数；统计对象是订单，不是月内复购人数。",
+  "question": "青禾2026年5月，观测期后续购买订单数是多少？仅这一项，汇总全部门店。首单先在完整测试覆盖历史的有效订单中确定，再筛选查询月份。",
+  "trace_id": "2d20a4f6-f0cb-494a-83b8-2c1b93cf4beb",
+  "elapsed_seconds": 8.298,
+  "model_usage": {
+    "prompt_tokens": 14736,
+    "completion_tokens": 773,
+    "total_tokens": 15509
+  },
+  "model_calls_with_usage": 2
+}

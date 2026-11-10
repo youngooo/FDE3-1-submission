@@ -1,0 +1,9 @@
+{
+  "version": "w02-workflow-0.1.0",
+  "goal": "依据本轮W03四份实际访谈，补充付费资格的卡产品范围、等级与金额的作用、账户多卡关系和指定日期判断原则；区分门店规则与总部月报口径，保留日期端点适用性及两个结束日期组合的未决状态，不把访谈者提出的算法当作确认。整理王经理对验收材料、责任草案、费用依据、效果记录及确认权限的要求，并在核查记录中保留草案反馈和修订过程。沿用仍适用的W02业务认识，按新证据更新相应未知；区分客户陈述、学员草案和角色对文字的意见。不得把草案认可写成实际运行通过、合同批准或业务收益实现。SOW条款及费用明细的起草依据记入核查记录，不将其全部混入会员业务对象和计算规则。",
+  "extraction_config": "customer/w02/extraction.json",
+  "skill": "customer/w02/skills/extract-business/SKILL.md",
+  "business_model": "docs/w03/business_model.md",
+  "notes": "docs/w03/interview_notes.md",
+  "max_steps": 24
+}

@@ -1,0 +1,14 @@
+{
+  "order_facts": [
+    "order_id"
+  ],
+  "member_accounts": [
+    "member_id"
+  ],
+  "order_store_dim": [
+    "store_id"
+  ],
+  "member_home_store_dim": [
+    "home_store_id"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "first_aug_filtered_store",
+  "expected_status": "ok",
+  "passed": true,
+  "checked_metrics": [
+    "first_buyer_count",
+    "first_order_sales_cents",
+    "first_order_count",
+    "repeat_order_count"
+  ],
+  "errors": []
+}

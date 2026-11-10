@@ -1,0 +1,29 @@
+[0m18:23:00  Running with dbt=1.12.5
+[0m18:23:00  Registered adapter: duckdb=1.11.0
+[0m18:23:00  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m18:23:04  Found 8 models, 24 metrics, 500 macros, 4 semantic models
+[0m18:23:04  
+[0m18:23:04  Concurrency: 1 threads (target='dev')
+[0m18:23:04  
+[0m18:23:04  1 of 8 START sql view model main.cards ......................................... [RUN]
+[0m18:23:04  1 of 8 OK created sql view model main.cards .................................... [[32mOK[0m in 0.06s]
+[0m18:23:04  2 of 8 START sql view model main.members ....................................... [RUN]
+[0m18:23:04  2 of 8 OK created sql view model main.members .................................. [[32mOK[0m in 0.02s]
+[0m18:23:04  3 of 8 START sql view model main.orders ........................................ [RUN]
+[0m18:23:04  3 of 8 OK created sql view model main.orders ................................... [[32mOK[0m in 0.02s]
+[0m18:23:04  4 of 8 START sql view model main.stores ........................................ [RUN]
+[0m18:23:04  4 of 8 OK created sql view model main.stores ................................... [[32mOK[0m in 0.02s]
+[0m18:23:04  5 of 8 START sql view model main.time_spine .................................... [RUN]
+[0m18:23:04  5 of 8 OK created sql view model main.time_spine ............................... [[32mOK[0m in 0.02s]
+[0m18:23:04  6 of 8 START sql view model main.order_facts ................................... [RUN]
+[0m18:23:04  6 of 8 OK created sql view model main.order_facts .............................. [[32mOK[0m in 0.02s]
+[0m18:23:04  7 of 8 START sql view model main.home_store_profile ............................ [RUN]
+[0m18:23:04  7 of 8 OK created sql view model main.home_store_profile ....................... [[32mOK[0m in 0.05s]
+[0m18:23:04  8 of 8 START sql view model main.store_profile ................................. [RUN]
+[0m18:23:04  8 of 8 OK created sql view model main.store_profile ............................ [[32mOK[0m in 0.02s]
+[0m18:23:04  
+[0m18:23:04  Finished running 8 view models in 0 hours 0 minutes and 0.35 seconds (0.35s).
+[0m18:23:04  
+[0m18:23:04  [32mCompleted successfully[0m
+[0m18:23:04  
+[0m18:23:04  Done. PASS=8 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=8

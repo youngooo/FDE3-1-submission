@@ -1,0 +1,114 @@
+{
+  "skill_sha256": "ae9c7422b3a44e6d5577edb4339d578e7db5ace7fe06de9ac208ac9054c69b6d",
+  "input_hashes": {
+    "business_model.md": "84d1e43aace4b57e49911cc6167bc6022d78ef5d390d9fe9c982be55d834dcf9",
+    "00_材料说明.md": "c60776a6a1c030b02b1ce89f773327871c80bb34dca9c486df43c9acb0a6dc28",
+    "01_订单日报说明.md": "976fa129493e6bd2861a58d74df2ba3ad4448ea01a2d25651124222a61cebb67",
+    "02_财务邮件.md": "f81e0ddb5c03dd4eb2d01094816716d8375d03fe883b947ec8297edf8d525557",
+    "03_会员运营周报.md": "25ab933556bf34bef21b528d4c7838c9baad33ae289d59f09501e765080bb492",
+    "04_本期统计确认邮件.md": "c4f847fd90fd0765d37ad22f20d4a4eb0bab90f8543ae0f05d7a3cbee104c4be",
+    "05_数据字典.md": "b4c905ae6d2f4c08e139c695a2868b66ee5047b2b8ea94d6eccba55aebb79c16",
+    "06_任务清单.md": "ed414526217320c5e9ef049cfc1cfb56b670a5af57a57a9450a1e264cd71904d",
+    "07_客户内部沟通.md": "916d0f6d78033aff30dc6053cb58d774bfdefe5e3aa9a4e36ca54f143af3b425",
+    "08_业务目标与工作清单.md": "de9d737c423cc31b2f9d60c9ba8693b9d4257a3aa69b9efedb52674aeb2efe97",
+    "09_付费月报补访原文.md": "19735f62d2a9adcee07f39c81855859a76dd6b2bf9f64e21d0c66160a7ee21c6",
+    "10_指标来源引用清单.md": "d4a8adf64eef3e9539f4619708714081fe4e9782143ec590dc9ff5807e2c327f"
+  },
+  "defined": [
+    "order_count",
+    "paid_order_count",
+    "valid_order_count",
+    "cancelled_order_count",
+    "refund_order_count",
+    "partial_refund_order_count",
+    "full_refund_order_count",
+    "payment_cents",
+    "refund_cents",
+    "net_sales_cents",
+    "gross_cents",
+    "discount_cents",
+    "buyer_count",
+    "refund_buyer_count",
+    "selling_store_count",
+    "valid_order_items",
+    "avg_order_value",
+    "avg_buyer_value",
+    "purchase_frequency",
+    "refund_amount_rate",
+    "cancel_rate",
+    "refund_order_rate",
+    "discount_rate",
+    "items_per_order",
+    "new_member_count",
+    "first_buyer_count",
+    "first_order_sales_cents",
+    "first_order_count",
+    "repeat_order_count",
+    "monthly_buyer_count",
+    "monthly_repeat_buyer_count",
+    "monthly_repeat_rate",
+    "monthly_paid_buyer_count",
+    "monthly_paid_order_count",
+    "monthly_paid_sales_cents",
+    "monthly_paid_repeat_buyer_count",
+    "monthly_paid_repeat_rate",
+    "monthly_paid_avg_order_value"
+  ],
+  "unresolved": [],
+  "business_model_usage": [
+    {
+      "quote": "为完成本期合成测试库的六项工程实现，本轮显式暂定沿用陈姐的门店规则。该选择是学员工程方案，不是客户新增确认，不用于生产或正式验收；业务确认与技术实现、测试结果分别记录。",
+      "used_for": [
+        {
+          "kind": "derived_model",
+          "name": "monthly_paid_summary"
+        }
+      ]
+    },
+    {
+      "quote": "生效日期不晚于D，即 valid_from <= D。",
+      "used_for": [
+        {
+          "kind": "derived_model",
+          "name": "monthly_paid_summary"
+        }
+      ]
+    },
+    {
+      "quote": "D早于计划到期日期，即 D < valid_until。",
+      "used_for": [
+        {
+          "kind": "derived_model",
+          "name": "monthly_paid_summary"
+        }
+      ]
+    },
+    {
+      "quote": "提前终止日期为空，或D早于提前终止日期，即 ended_at为空或 D < ended_at。",
+      "used_for": [
+        {
+          "kind": "derived_model",
+          "name": "monthly_paid_summary"
+        }
+      ]
+    },
+    {
+      "quote": "本期总部运营月报的付费资格只纳入悦享年卡与家庭季卡；异业联名卡与体验卡不纳入",
+      "used_for": [
+        {
+          "kind": "derived_model",
+          "name": "monthly_paid_summary"
+        }
+      ]
+    },
+    {
+      "quote": "材料04已明确先判断月末资格，再统计这些账户当月全渠道、全门店的有效订单。",
+      "used_for": [
+        {
+          "kind": "derived_model",
+          "name": "monthly_paid_summary"
+        }
+      ]
+    }
+  ]
+}

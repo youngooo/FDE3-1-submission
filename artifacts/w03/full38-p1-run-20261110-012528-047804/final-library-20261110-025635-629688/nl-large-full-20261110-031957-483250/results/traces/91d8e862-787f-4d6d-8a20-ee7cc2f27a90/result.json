@@ -1,0 +1,109 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [
+      "store__region",
+      "home_store__region"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  home_store_model_src_10000.region AS home_store__region\n  , selling_store_model_src_10000.region AS store__region\n  , SUM(subq_5.__order_count) AS order_count\n  , SUM(subq_5.__valid_order_count) AS valid_order_count\n  , SUM(subq_5.__net_sales_cents) AS net_sales_cents\nFROM (\n  SELECT\n    store_id AS store\n    , home_store_id AS home_store\n    , 1 AS __order_count\n    , CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END AS __valid_order_count\n    , CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END AS __net_sales_cents\n  FROM \"data\".\"main\".\"order_fact\" order_model_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-06-01' AND '2026-06-30'\n) subq_5\nLEFT OUTER JOIN\n  \"data\".\"main\".\"home_store_dim\" home_store_model_src_10000\nON\n  subq_5.home_store = home_store_model_src_10000.store_id\nLEFT OUTER JOIN\n  \"data\".\"main\".\"selling_store_dim\" selling_store_model_src_10000\nON\n  subq_5.store = selling_store_model_src_10000.store_id\nGROUP BY\n  home_store_model_src_10000.region\n  , selling_store_model_src_10000.region",
+  "columns": [
+    "home_store__region",
+    "store__region",
+    "order_count",
+    "valid_order_count",
+    "net_sales_cents"
+  ],
+  "rows": [
+    [
+      "华南",
+      "华东",
+      3474,
+      3040,
+      51619030
+    ],
+    [
+      "华北",
+      "华南",
+      3298,
+      2854,
+      48386968
+    ],
+    [
+      "华东",
+      "华北",
+      3395,
+      3002,
+      51054499
+    ],
+    [
+      "华东",
+      "华南",
+      3483,
+      3040,
+      52708444
+    ],
+    [
+      "华南",
+      "华南",
+      3395,
+      2991,
+      51075602
+    ],
+    [
+      "华北",
+      "华东",
+      3307,
+      2893,
+      49393793
+    ],
+    [
+      "华东",
+      "华东",
+      3314,
+      2889,
+      49594357
+    ],
+    [
+      "华北",
+      "华北",
+      3328,
+      2925,
+      49585383
+    ],
+    [
+      "华南",
+      "华北",
+      3382,
+      2956,
+      51627112
+    ]
+  ],
+  "seconds": 0.177,
+  "units": {
+    "order_count": "count",
+    "valid_order_count": "count",
+    "net_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "统计范围：青禾客户在本周合成测试库中2026年6月的订单；按成交门店地区与会员归属门店地区交叉分组，未添加其他筛选。\n\n| 成交门店地区 | 会员归属门店地区 | 创建订单数（单） | 有效订单数（单） | 净销售额（分） |\n|---|---|---:|---:|---:|\n| 华东 | 华南 | 3474 | 3040 | 51619030 |\n| 华南 | 华北 | 3298 | 2854 | 48386968 |\n| 华北 | 华东 | 3395 | 3002 | 51054499 |\n| 华南 | 华东 | 3483 | 3040 | 52708444 |\n| 华南 | 华南 | 3395 | 2991 | 51075602 |\n| 华东 | 华北 | 3307 | 2893 | 49393793 |\n| 华东 | 华东 | 3314 | 2889 | 49594357 |\n| 华北 | 华北 | 3328 | 2925 | 49585383 |\n| 华北 | 华南 | 3382 | 2956 | 51627112 |\n\n口径说明：创建订单数按下单日期统计全部订单，每个订单号计一次，包含取消单；有效订单数为已支付且实付金额减退款金额大于零的订单数，取消和全额退款不计；净销售额为已支付订单实付减退款后的合计，取消单不计，按原订单下单日期归属，单位为分。表中仅列出实际出现的地区组合，未列组合不据此推断为零或未定义。",
+  "question": "给青禾2026年6月做交叉明细，以成交门店地区和会员归属门店地区同时分组，三项分别为创建订单数、有效订单数、净销售额（分）。",
+  "trace_id": "91d8e862-787f-4d6d-8a20-ee7cc2f27a90",
+  "elapsed_seconds": 15.775,
+  "model_usage": {
+    "prompt_tokens": 17641,
+    "completion_tokens": 2152,
+    "total_tokens": 19793
+  },
+  "model_calls_with_usage": 2
+}

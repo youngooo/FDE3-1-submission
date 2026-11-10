@@ -1,0 +1,442 @@
+{
+  "source_report": "artifacts/w03/test-general32-large-current-20261107-173736/metric_test_report.json",
+  "source_attachment_sha256": "938d1b181d416b19f5e0d399da30a7fd08300cfecaaf798582a2352f99ff3193",
+  "review_method": "AI-assisted manual review of all 53 exported answers against question, intent, rows, units and supplied W03 materials; four Markdown tables also checked cell-by-cell by code.",
+  "structured_passed": 53,
+  "structured_total": 53,
+  "answer_review_status": "changes_required",
+  "material_issue_cases": 2,
+  "additional_format_or_wording_cases": 2,
+  "no_additional_material_issue_found_cases": 51,
+  "cases": [
+    {
+      "id": "single_order_count",
+      "trace_id": "4028e1a7-9a31-4b50-97f7-51fe4eb1d8b7",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_paid_order_count",
+      "trace_id": "1ca29d97-5c23-49ef-8479-c3ca43015d72",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_valid_order_count",
+      "trace_id": "fc27b39c-5646-4dee-8ed4-2336ab363e04",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_cancelled_order_count",
+      "trace_id": "9aed5dfa-face-4734-8de6-909775ba8d4a",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_refund_order_count",
+      "trace_id": "bf280090-4bef-4986-a06f-bdcfb152b9ac",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_partial_refund_order_count",
+      "trace_id": "5ae78491-6f44-4725-8a9f-7228dd41a63d",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_full_refund_order_count",
+      "trace_id": "78c362b2-b059-4f49-a53c-a5e46e15161a",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_payment_cents",
+      "trace_id": "d0e5dc83-fc4e-43ec-a03b-0fd7dba74e38",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_refund_cents",
+      "trace_id": "27ee3f4e-fa3b-43ed-a308-751b4c1eb44f",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_net_sales_cents",
+      "trace_id": "8908f453-1846-4c21-a480-ada798581ef9",
+      "review": {
+        "severity": "format",
+        "finding": "原始分值和额外元值均正确，但额外换算未遵守当前提示词的原单位展示约束。"
+      }
+    },
+    {
+      "id": "single_gross_cents",
+      "trace_id": "a60db658-1bfa-4b1c-b103-466b91f29800",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_discount_cents",
+      "trace_id": "00a6da51-9c1d-4818-ad94-903af9d8809d",
+      "review": {
+        "severity": "material",
+        "finding": "原值63492599分正确；附加634929.99元错误，应为634925.99元。用户要求保留分，附加换算也非必要。"
+      }
+    },
+    {
+      "id": "single_buyer_count",
+      "trace_id": "4bb97161-54ac-4d59-8c5e-1b8e74d1fb96",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_refund_buyer_count",
+      "trace_id": "e1ddb823-2dca-458b-bef1-ea8d317b152f",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_selling_store_count",
+      "trace_id": "4ec7cda7-6b99-43fb-9c99-44a750033bc9",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_valid_order_items",
+      "trace_id": "f663fae9-8fe3-4c6b-b0f9-6cf43780114d",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_avg_order_value",
+      "trace_id": "715b894d-4899-47b4-8cf3-dad9715c1de2",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_avg_buyer_value",
+      "trace_id": "76d7ee43-2add-48dd-b084-c139b388d874",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_purchase_frequency",
+      "trace_id": "2bda8777-4781-490f-ada9-61de6dd03867",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_refund_amount_rate",
+      "trace_id": "a02d48a1-88a8-4f29-af68-eaf4182a7f51",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_cancel_rate",
+      "trace_id": "26ea144b-47c9-4c89-ba3f-b937fecbd1fe",
+      "review": {
+        "severity": "wording",
+        "finding": "小数比例与附加百分数均正确，但“未另作单位换算”与附加百分数表述不一致。"
+      }
+    },
+    {
+      "id": "single_refund_order_rate",
+      "trace_id": "125a48db-0195-4004-b3f7-c6a90bff90ad",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_discount_rate",
+      "trace_id": "8b24175a-0d29-4752-86ff-b5aa5b58f1f0",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_items_per_order",
+      "trace_id": "03a77a83-9306-4cc6-822f-8182c984ce7b",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_new_member_count",
+      "trace_id": "023592dc-319d-4460-b306-70aedbd726d3",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_first_buyer_count",
+      "trace_id": "d5c79a84-151f-4604-8a50-9ceb3e1896c6",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_first_order_sales_cents",
+      "trace_id": "6ecad247-d277-4740-be1a-589b5a2811a7",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_first_order_count",
+      "trace_id": "1e80ce53-db86-405c-b677-9a370686df97",
+      "review": {
+        "severity": "material",
+        "finding": "数值15正确；回答称统计单位为账户，应为订单（15单）。不能因一账户一首单而混用计数对象。"
+      }
+    },
+    {
+      "id": "single_repeat_order_count",
+      "trace_id": "1001123c-cee1-43fe-8a95-94bfa413d0d9",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_monthly_buyer_count",
+      "trace_id": "7ce95882-729a-45fe-8241-9dfe74a0ba91",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_monthly_repeat_buyer_count",
+      "trace_id": "825fe870-a2a9-4ed0-a0f5-8875b29f85c2",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "single_monthly_repeat_rate",
+      "trace_id": "b85d950a-365b-433a-8896-ab30c90b08db",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "aug_order_trio",
+      "trace_id": "aa78fab7-ecb0-4b55-b058-05a17648cfea",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "aug_order_trio_paraphrase",
+      "trace_id": "392680cb-47b8-4ba7-b3a2-0b80a3e94293",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "aug_trio_by_store",
+      "trace_id": "7f7789c2-db1d-499c-8a3b-e64993bfbb3c",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "aug_trio_by_home_store",
+      "trace_id": "e203e779-3375-4cf2-aad2-93d8879be222",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "aug_trio_by_order__status",
+      "trace_id": "878c38fb-d724-44d0-a11c-572e7307cf59",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "aug_trio_by_order__channel",
+      "trace_id": "be9412fb-3f5c-4b6c-b008-c2d811651f49",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "aug_trio_by_member__tier",
+      "trace_id": "10209a70-a899-4143-bbed-e3591ba02a06",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "aug_two_region_groups",
+      "trace_id": "7524cdd1-a245-4ba3-857c-4fbf0b9e54c3",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "aug_store_s01_filter",
+      "trace_id": "cf093b36-d22f-4449-83dd-02513ddbb628",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "aug_cancelled_zero_denominator",
+      "trace_id": "2c700295-7eef-4fca-b85b-bee687f65788",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "covered_empty_day",
+      "trace_id": "f730267d-3e38-4044-b135-315097c04842",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "first_aug_store_filter",
+      "trace_id": "b99cea21-d70a-4918-9d15-fbb36b2c5b3f",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "first_full_coverage",
+      "trace_id": "9e15d077-687b-4eb9-bc7a-047ea1c3c938",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "registration_by_home_store",
+      "trace_id": "d816037e-05e4-43d6-b283-75cde4c153aa",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "registration_by_member__tier",
+      "trace_id": "915e88e3-de54-4fdf-a44f-7ad3d3726bbf",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "monthly_jul_aug",
+      "trace_id": "12704d7e-cb90-4208-a48a-48cff0feb37a",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "monthly_aug_paraphrase",
+      "trace_id": "d9752093-5300-4f9a-9244-53659214ee24",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "reject_partial_month",
+      "trace_id": "af93e0c9-54ac-432e-9ff5-0949381b55a3",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "reject_monthly_store_group",
+      "trace_id": "53087867-3967-43f2-a7f3-94873b17ac43",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "reject_outside_coverage",
+      "trace_id": "952a937c-acc0-4db1-b127-05f0fe74d1ea",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    },
+    {
+      "id": "clarify_missing_time",
+      "trace_id": "4f463b53-a3d7-4548-a9db-d579fe3b6f12",
+      "review": {
+        "severity": "none_found",
+        "finding": "本次核对未发现实质性数值、单位、公式或范围错误。"
+      }
+    }
+  ],
+  "limitations": [
+    "本次审阅不是通用自动语义判定器。",
+    "不覆盖六项未构建的付费会员指标，不构成整体验收。",
+    "不得覆盖原报告或把后续回答回放写成重新执行查询。"
+  ]
+}

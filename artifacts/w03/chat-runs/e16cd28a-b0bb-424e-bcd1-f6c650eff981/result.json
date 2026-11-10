@@ -1,0 +1,26 @@
+{
+  "status": "unsupported",
+  "reason": "数据覆盖截至 2026-09-01，无法覆盖完整 2026 年 9 月（2026-09-01 至 2026-10-01 前），因此无法给出该月创建订单数、有效订单数和净销售额。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "数据覆盖截至 2026-09-01，无法覆盖完整 2026 年 9 月（2026-09-01 至 2026-10-01 前），因此无法给出该月创建订单数、有效订单数和净销售额。",
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-09-01",
+    "end": "2026-10-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "青禾客户 2026 年 9 月的创建订单数、有效订单数和净销售额分别是多少？",
+  "trace_id": "e16cd28a-b0bb-424e-bcd1-f6c650eff981",
+  "elapsed_seconds": 5.432,
+  "model_usage": {
+    "prompt_tokens": 12797,
+    "completion_tokens": 924,
+    "total_tokens": 13721
+  },
+  "model_calls_with_usage": 1
+}

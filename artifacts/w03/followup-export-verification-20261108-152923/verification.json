@@ -1,0 +1,69 @@
+{
+  "status": "ok",
+  "archive": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/followup-export-verification-20261108-152923",
+  "sources": [
+    {
+      "role": "小林",
+      "role_id": "ROLE-LIN",
+      "meeting_id": "6a832f80-2ad2-570d-81ca-498c37232f54",
+      "source": "/mnt/d/下载/W3-interview-6a832f80-2ad2-570d-81ca-498c37232f54-transcript (1).json",
+      "filename": "W3-interview-6a832f80-2ad2-570d-81ca-498c37232f54-transcript (1).json",
+      "sha256": "05255d0171c10a5415ea54d3417331c87341741ac66bedc55bd904a07a406de0",
+      "messages": 15,
+      "previous_messages": 9,
+      "previous_messages_preserved": true,
+      "new_message_ids": [
+        "MSG-04483",
+        "MSG-04484",
+        "MSG-04598",
+        "MSG-04599",
+        "MSG-04600",
+        "MSG-04601"
+      ],
+      "reviewed_reply_ids": [
+        "MSG-04484",
+        "MSG-04599",
+        "MSG-04601"
+      ]
+    },
+    {
+      "role": "老周",
+      "role_id": "ROLE-ZHOU",
+      "meeting_id": "cbdcc091-2cd3-5097-9f2f-6dc11bed9da9",
+      "source": "/mnt/d/下载/W3-interview-cbdcc091-2cd3-5097-9f2f-6dc11bed9da9-transcript (1).json",
+      "filename": "W3-interview-cbdcc091-2cd3-5097-9f2f-6dc11bed9da9-transcript (1).json",
+      "sha256": "7b01b2550c86040293ad73ffabb82db68ee0e35be2c0145a42e711b984e5697c",
+      "messages": 9,
+      "previous_messages": 5,
+      "previous_messages_preserved": true,
+      "new_message_ids": [
+        "MSG-04485",
+        "MSG-04486",
+        "MSG-04602",
+        "MSG-04603"
+      ],
+      "reviewed_reply_ids": [
+        "MSG-04486",
+        "MSG-04603"
+      ]
+    }
+  ],
+  "pasted_replies_match": true,
+  "documents": {
+    "interview_notes.md": {
+      "before": "a24c14dcd98003972ec750cb2de929ea6294107020c24477198cdb9c2aa208a3",
+      "after": "81a2fe920c95e9327e5809afff604656fa0cda98dece29a658108eff29301709"
+    },
+    "model_changes.md": {
+      "before": "7c2bcddf1e80893fe6ec025470cbddae4e253fd64dc5411003a348815940c455",
+      "after": "189b997a9af8656d1dbac1e07fd5cbd17e4bf6dba16e918a6fa3dd847edcdf75"
+    },
+    "metric_decisions.md": {
+      "before": "1c1fe80df37d3e45ca82e013a1078cb0e2bcd15ca67c43c029f9df8e53e7ed29",
+      "after": "ce82cdfa2c3abc0d39ae70a3bc5889935b5c5f4a605484cff73a05b13287d419"
+    }
+  },
+  "model_called": false,
+  "workflow_restarted": false,
+  "business_claims_verified": false
+}

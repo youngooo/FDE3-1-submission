@@ -1,0 +1,380 @@
+{
+  "kind": "incremental_orders24_csv_check",
+  "expected_basis": "Customer materials 01/02/05; original CSV; no generated SQL used",
+  "script_sha256": {
+    "check_orders24.py": "e01fbbe7424488abc17aac7b4d3199578ef0107f5c55058d60ed8b6a7ea57b39",
+    "check_base16.py": "6654a383173cfb8b00d251482698ed12b88f1fc6fa79f334f31b40579750381a"
+  },
+  "source_sha256": {
+    "orders.csv": "c6e0dee6081e7a6f7782b54de78b3182835c46184c8e7569fc23feab8cf3c4f1",
+    "cards.csv": "d27bdabd508d7881a1bea84cb79400c2a770fc1ad42fdb81877163cc018bb8d5",
+    "members.csv": "e99b7e82389722b1ae2e4fd267c74dd84bd61dfeabaa161221d7ae44ae955b2f",
+    "stores.csv": "e8160804fd485853f6c75d9a095b1ee6f05bbbd40ba851cac84def35488aa41d"
+  },
+  "project": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/build-general32-normalized-20261107-023808/validation-project",
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+  "comparison_policy": {
+    "integers": "exact",
+    "null": "strict",
+    "ratio_abs_tolerance": "1E-8",
+    "ratio_rel_tolerance": "1E-9"
+  },
+  "cases": [
+    {
+      "id": "aug_total",
+      "passed": false,
+      "expected_groups": 1,
+      "checked_metrics": 24,
+      "errors": [
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_order_value",
+          "expected": "cents_per_order",
+          "actual": "cents/order"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_buyer_value",
+          "expected": "cents_per_account",
+          "actual": "cents/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "purchase_frequency",
+          "expected": "orders_per_account",
+          "actual": "orders/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "items_per_order",
+          "expected": "items_per_order",
+          "actual": "items/order"
+        }
+      ]
+    },
+    {
+      "id": "jul_total",
+      "passed": false,
+      "expected_groups": 1,
+      "checked_metrics": 24,
+      "errors": [
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_order_value",
+          "expected": "cents_per_order",
+          "actual": "cents/order"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_buyer_value",
+          "expected": "cents_per_account",
+          "actual": "cents/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "purchase_frequency",
+          "expected": "orders_per_account",
+          "actual": "orders/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "items_per_order",
+          "expected": "items_per_order",
+          "actual": "items/order"
+        }
+      ]
+    },
+    {
+      "id": "coverage_total",
+      "passed": false,
+      "expected_groups": 1,
+      "checked_metrics": 24,
+      "errors": [
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_order_value",
+          "expected": "cents_per_order",
+          "actual": "cents/order"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_buyer_value",
+          "expected": "cents_per_account",
+          "actual": "cents/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "purchase_frequency",
+          "expected": "orders_per_account",
+          "actual": "orders/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "items_per_order",
+          "expected": "items_per_order",
+          "actual": "items/order"
+        }
+      ]
+    },
+    {
+      "id": "aug_store",
+      "passed": false,
+      "expected_groups": 2,
+      "checked_metrics": 24,
+      "errors": [
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_order_value",
+          "expected": "cents_per_order",
+          "actual": "cents/order"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_buyer_value",
+          "expected": "cents_per_account",
+          "actual": "cents/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "purchase_frequency",
+          "expected": "orders_per_account",
+          "actual": "orders/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "items_per_order",
+          "expected": "items_per_order",
+          "actual": "items/order"
+        }
+      ]
+    },
+    {
+      "id": "aug_home_store",
+      "passed": false,
+      "expected_groups": 3,
+      "checked_metrics": 24,
+      "errors": [
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_order_value",
+          "expected": "cents_per_order",
+          "actual": "cents/order"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_buyer_value",
+          "expected": "cents_per_account",
+          "actual": "cents/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "purchase_frequency",
+          "expected": "orders_per_account",
+          "actual": "orders/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "items_per_order",
+          "expected": "items_per_order",
+          "actual": "items/order"
+        }
+      ]
+    },
+    {
+      "id": "aug_status",
+      "passed": false,
+      "expected_groups": 2,
+      "checked_metrics": 24,
+      "errors": [
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_order_value",
+          "expected": "cents_per_order",
+          "actual": "cents/order"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_buyer_value",
+          "expected": "cents_per_account",
+          "actual": "cents/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "purchase_frequency",
+          "expected": "orders_per_account",
+          "actual": "orders/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "items_per_order",
+          "expected": "items_per_order",
+          "actual": "items/order"
+        }
+      ]
+    },
+    {
+      "id": "aug_channel",
+      "passed": false,
+      "expected_groups": 2,
+      "checked_metrics": 24,
+      "errors": [
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_order_value",
+          "expected": "cents_per_order",
+          "actual": "cents/order"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_buyer_value",
+          "expected": "cents_per_account",
+          "actual": "cents/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "purchase_frequency",
+          "expected": "orders_per_account",
+          "actual": "orders/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "items_per_order",
+          "expected": "items_per_order",
+          "actual": "items/order"
+        }
+      ]
+    },
+    {
+      "id": "aug_tier",
+      "passed": false,
+      "expected_groups": 3,
+      "checked_metrics": 24,
+      "errors": [
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_order_value",
+          "expected": "cents_per_order",
+          "actual": "cents/order"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_buyer_value",
+          "expected": "cents_per_account",
+          "actual": "cents/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "purchase_frequency",
+          "expected": "orders_per_account",
+          "actual": "orders/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "items_per_order",
+          "expected": "items_per_order",
+          "actual": "items/order"
+        }
+      ]
+    },
+    {
+      "id": "aug_two_regions",
+      "passed": false,
+      "expected_groups": 3,
+      "checked_metrics": 24,
+      "errors": [
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_order_value",
+          "expected": "cents_per_order",
+          "actual": "cents/order"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_buyer_value",
+          "expected": "cents_per_account",
+          "actual": "cents/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "purchase_frequency",
+          "expected": "orders_per_account",
+          "actual": "orders/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "items_per_order",
+          "expected": "items_per_order",
+          "actual": "items/order"
+        }
+      ]
+    },
+    {
+      "id": "aug_cancelled_only",
+      "passed": false,
+      "expected_groups": 1,
+      "checked_metrics": 24,
+      "errors": [
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_order_value",
+          "expected": "cents_per_order",
+          "actual": "cents/order"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_buyer_value",
+          "expected": "cents_per_account",
+          "actual": "cents/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "purchase_frequency",
+          "expected": "orders_per_account",
+          "actual": "orders/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "items_per_order",
+          "expected": "items_per_order",
+          "actual": "items/order"
+        }
+      ]
+    },
+    {
+      "id": "covered_empty_day",
+      "passed": false,
+      "expected_groups": 1,
+      "checked_metrics": 24,
+      "errors": [
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_order_value",
+          "expected": "cents_per_order",
+          "actual": "cents/order"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "avg_buyer_value",
+          "expected": "cents_per_account",
+          "actual": "cents/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "purchase_frequency",
+          "expected": "orders_per_account",
+          "actual": "orders/account"
+        },
+        {
+          "kind": "unit_mismatch",
+          "metric_id": "items_per_order",
+          "expected": "items_per_order",
+          "actual": "items/order"
+        }
+      ]
+    }
+  ],
+  "passed": false,
+  "complete": true
+}

@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_repeat_rate"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(COUNT(DISTINCT CASE WHEN valid_order_count >= 2 THEN member_id ELSE NULL END) AS DOUBLE) / CAST(NULLIF(COUNT(DISTINCT member_id), 0) AS DOUBLE) AS monthly_repeat_rate\nFROM \"data\".\"main\".\"member_month_activity\" member_month_activity_semantic_src_10000\nWHERE DATE_TRUNC('month', month_date) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "monthly_repeat_rate"
+  ],
+  "rows": [
+    [
+      0.44243819680077556
+    ]
+  ],
+  "seconds": 0.216,
+  "units": {
+    "monthly_repeat_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f",
+  "answer": "按完整自然月口径统计青禾2026年8月（2026-08-01含至2026-09-01不含）的月内复购率，范围为全门店、不按维度分组；人数按CRM会员账户去重。本次月内复购率为44.24%（0.442438）。该结果已按整月、全门店口径计算；本次未提供复购账户数与月内购买账户数的明细，因此不额外拆分分子分母。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的月内复购率，全门店，不按维度分组。按完整自然月统计，人数按CRM账户去重，复购率保留小数比例。",
+  "trace_id": "6db3b03f-3845-49a9-9924-7f4d2d4f5efa",
+  "elapsed_seconds": 9.159,
+  "model_usage": {
+    "prompt_tokens": 11784,
+    "completion_tokens": 622,
+    "total_tokens": 12406
+  },
+  "model_calls_with_usage": 2
+}

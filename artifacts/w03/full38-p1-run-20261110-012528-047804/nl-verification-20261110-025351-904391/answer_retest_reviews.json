@@ -1,0 +1,112 @@
+{
+  "small": {
+    "kind": "ai_assisted_answer_review",
+    "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-small-first-order-20261110-024946-733532/results/metric_test_report.json",
+    "report_sha256": "2fa5886bb5baa2dd4996f2ff715d086ca14da4757536f8b9ade4684a21ad0bd9",
+    "reviewed_count": 8,
+    "passed": 8,
+    "human_signoff": false,
+    "display_table_rows_verified": {
+      "first_home_store": 3,
+      "paid_coverage": 24
+    },
+    "scope": "All eight actual answers read; numeric values, units, scope, first-order chronology, P1 notice and zero/null reviewed.",
+    "cases": [
+      {
+        "id": "single_first_order_sales_cents",
+        "status": "pass",
+        "actual_text_sha256": "1a65384bce0254038e53312b67496bd85e0a04b2e2cf308d8eb02bccb5af41fd"
+      },
+      {
+        "id": "single_first_buyer_count",
+        "status": "pass",
+        "actual_text_sha256": "38b6346577ed8c07442543787fc2120ed67c1d1c1a6ab6796b1bc44c61c84270"
+      },
+      {
+        "id": "single_first_order_count",
+        "status": "pass",
+        "actual_text_sha256": "1afd60850c9c31588033b6a573702f5cb55071f035da4fb74c17f0257015efa3"
+      },
+      {
+        "id": "single_repeat_order_count",
+        "status": "pass",
+        "actual_text_sha256": "86530f6d4c7cf8abdfe1b4c0e86873da52dcb00bc041498c1d7ef54ed5678dab"
+      },
+      {
+        "id": "first_home_store",
+        "status": "pass",
+        "actual_text_sha256": "e293ed6b8fc001fad1e171d65686ca9357808779495cfb2a851793d1034991cb"
+      },
+      {
+        "id": "single_valid_order_items",
+        "status": "pass",
+        "actual_text_sha256": "e772671982e442b91d99e4cc382c076ea7cff3dc178e525e6d0bd2a3a35b1176"
+      },
+      {
+        "id": "paid_coverage",
+        "status": "pass",
+        "actual_text_sha256": "4d1480e2ad9fb2cc21a5c280e03c5af21b51b39dd2083d932964150af697b018"
+      },
+      {
+        "id": "paid_paraphrase",
+        "status": "pass",
+        "actual_text_sha256": "16b56becb2508ff1ae0fde23abea7946930299eec289251be6b4aa16058ac084"
+      }
+    ]
+  },
+  "large": {
+    "kind": "ai_assisted_answer_review",
+    "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-large-first-order-20261110-024636-578620/results/metric_test_report.json",
+    "report_sha256": "43a50f2468b189ea57cd16e120deb64c674884582d23bd526053f364d46e82dc",
+    "reviewed_count": 8,
+    "passed": 8,
+    "human_signoff": false,
+    "display_table_rows_verified": {
+      "first_home_store": 24,
+      "paid_coverage": 24
+    },
+    "scope": "All eight actual answers read; numeric values, units, scope, first-order chronology, P1 notice and zero/null reviewed.",
+    "cases": [
+      {
+        "id": "single_first_order_sales_cents",
+        "status": "pass",
+        "actual_text_sha256": "165156aa81122983d724c6f2a76ad6d812e6dc4da4c70c837c039a581ad1aaef"
+      },
+      {
+        "id": "single_first_buyer_count",
+        "status": "pass",
+        "actual_text_sha256": "5388bba865307c5c003e2466d1e1b3ce51a1f199d4e8ea352be2e8aa25e496fd"
+      },
+      {
+        "id": "single_first_order_count",
+        "status": "pass",
+        "actual_text_sha256": "797d8ea4c95ed3d1e0907416ead4f16fd2db7be7cb34ee87fc813f40ac26ac3c"
+      },
+      {
+        "id": "single_repeat_order_count",
+        "status": "pass",
+        "actual_text_sha256": "6e1e6afeb0241f658868201b421318598fa47c221ed05d64986fae01e1c1cecb"
+      },
+      {
+        "id": "first_home_store",
+        "status": "pass",
+        "actual_text_sha256": "94d18060738e9a1bc8879d38d61fbe065036ba8427690aad3eda701f4bce73aa"
+      },
+      {
+        "id": "single_valid_order_items",
+        "status": "pass",
+        "actual_text_sha256": "bf591b0adf3f7079ad6a914c65ff92edae2cce758410883ce0f412a49b348556"
+      },
+      {
+        "id": "paid_coverage",
+        "status": "pass",
+        "actual_text_sha256": "acbb8aad65fbac78e59f49cbf17596bbee17665aa11719f6034ea08f7b4b5247"
+      },
+      {
+        "id": "paid_paraphrase",
+        "status": "pass",
+        "actual_text_sha256": "8ba7d5c92eec711b0e54a04adcf472a88dd92889e3ea28df7e4095fc4d1895df"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "status": "build_failed",
+  "started_at": "2026-11-09T23:31:31.416404+08:00",
+  "build_output": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-233131-416404/build",
+  "target_count": 38,
+  "metric_regression": "not_run",
+  "business_confirmation": "pending",
+  "exit_code": 2,
+  "elapsed_seconds": 403.036,
+  "finished_at": "2026-11-09T23:38:14.497000+08:00"
+}

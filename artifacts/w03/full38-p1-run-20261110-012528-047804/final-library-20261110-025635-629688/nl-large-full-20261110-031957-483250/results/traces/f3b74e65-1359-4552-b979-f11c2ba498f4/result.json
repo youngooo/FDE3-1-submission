@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "first_order_count"
+    ],
+    "start": "2026-04-01",
+    "end": "2026-05-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN valid_order_seq = 1 THEN 1 ELSE 0 END) AS first_order_count\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-04-01' AND '2026-04-30'",
+  "columns": [
+    "first_order_count"
+  ],
+  "rows": [
+    [
+      1508
+    ]
+  ],
+  "seconds": 0.1,
+  "units": {
+    "first_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "青禾2026年4月整月全门店合计的观测期首单数为1508单。口径为：先在全测试覆盖期内按每个CRM会员账户的下单日期升序、同日按订单号排序，确定各账户第一笔有效订单，再筛选这些首单中订单日期落在2026年4月的记录进行汇总；本次不拆分门店或地区维度。",
+  "question": "核对青禾2026年4月整月报表：只返回观测期首单数的全门店合计，不拆维度。首单先在完整测试覆盖历史的有效订单中确定，再筛选查询月份。",
+  "trace_id": "f3b74e65-1359-4552-b979-f11c2ba498f4",
+  "elapsed_seconds": 8.746,
+  "model_usage": {
+    "prompt_tokens": 15146,
+    "completion_tokens": 793,
+    "total_tokens": 15939
+  },
+  "model_calls_with_usage": 2
+}

@@ -1,0 +1,104 @@
+{
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的观测期首购会员数，全门店，不按维度分组。首单在完整测试覆盖历史内按有效订单确定，再筛选到8月；金额保留分。",
+  "customer_context": {
+    "customer": "青禾",
+    "statistics_unit": "CRM 会员账户",
+    "scope": "本周合成测试库"
+  },
+  "data_context": {
+    "seed": 20260923,
+    "synthetic": true,
+    "counts": {
+      "members": 30000,
+      "orders": 300000,
+      "stores": 24,
+      "cards": 38891
+    },
+    "coverage": [
+      "2024-09-01",
+      "2026-09-01"
+    ],
+    "sha256": {
+      "orders.csv": "15fe0a98b1f34f1e2f7ce100a1ebb74d8f2cffa5023d0a93c7d07e959ffdd4b3",
+      "cards.csv": "2cd90f4f709906c6b0e3c72de5b9347fe1118eabaa0fcdad30cf96951d66622a",
+      "members.csv": "30835528d521255ce72bda232c1c6090b3dcbb0f6a7872ee230382615f158af7",
+      "stores.csv": "d392d07b0f447a06fdf183860f040d79341a5daa787bc0fc4b400cda8f3675bd"
+    },
+    "id": "qinghe-w03-20260923-large",
+    "timezone": "Asia/Shanghai",
+    "reference_date": "2026-09-01",
+    "generator_version": "qinghe-w03-v1",
+    "base_seed": 20260922,
+    "library_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+  },
+  "result": {
+    "status": "ok",
+    "intent": {
+      "metrics": [
+        "first_buyer_count"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [],
+      "filters": []
+    },
+    "columns": [
+      "first_buyer_count"
+    ],
+    "rows": [
+      [
+        15
+      ]
+    ],
+    "seconds": 0.149,
+    "units": {
+      "first_buyer_count": "count"
+    },
+    "data_version": "qinghe-w03-20260923-large",
+    "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+    "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+  },
+  "definitions": [
+    {
+      "id": "first_buyer_count",
+      "name": "观测期首购会员数",
+      "aliases": [],
+      "unit": "count",
+      "sources": [
+        {
+          "file": "03_会员运营周报.md",
+          "quote": "在测试覆盖期内首次有效订单落入查询窗口的不同 CRM 账户数；不代表终身首购。先用全覆盖历史确定首次，再按窗口筛选。"
+        }
+      ],
+      "constraints": [
+        "先在全测试覆盖历史确定每个账户第一笔有效订单，再按查询窗口筛选",
+        "不代表终身首购"
+      ],
+      "query_policy": {
+        "full_month_only": false
+      }
+    }
+  ],
+  "answer_display_facts": {
+    "version": "answer-display-facts-v1",
+    "rows": [
+      {
+        "group": {},
+        "metrics": [
+          {
+            "metric_id": "first_buyer_count",
+            "name": "观测期首购会员数",
+            "raw_value": 15,
+            "raw_unit": "count",
+            "display_unit": "个CRM会员账户",
+            "display_value": "15",
+            "is_undefined": false,
+            "display_rounded": false
+          }
+        ]
+      }
+    ],
+    "count_unit_basis": "W03 materials 01/03/04: count the metric object, not the customer-context entity.",
+    "note": "These are renderings of the actual result, not newly queried metrics. Preserve grouping and requested units."
+  }
+}

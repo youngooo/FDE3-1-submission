@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(1) AS order_count\n  , SUM(CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END) AS valid_order_count\n  , SUM(CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END) AS net_sales_cents\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "order_count",
+    "valid_order_count",
+    "net_sales_cents"
+  ],
+  "rows": [
+    [
+      32,
+      27,
+      100300
+    ]
+  ],
+  "seconds": 0.06,
+  "units": {
+    "order_count": "count",
+    "valid_order_count": "count",
+    "net_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "青禾2026年8月（按下单日期）全门店汇总：创建订单数32单；有效订单数27单；净销售额100300分。口径：创建订单数按下单日期统计全部订单，每个订单号计一次，包含取消单；有效订单数为状态为paid且实付金额减退款金额大于零的订单数，取消和全退不计；净销售额为paid订单实付减退款后合计，取消单不计，按原订单下单日期归属，单位分。本次结果未出现未定义值。",
+  "question": "青禾2026年8月创建订单数、有效订单数、净销售额各是多少？全门店汇总，金额保留分。",
+  "trace_id": "c42f7010-a6f2-4bc9-9465-d6bb83447c89",
+  "elapsed_seconds": 9.216,
+  "model_usage": {
+    "prompt_tokens": 14750,
+    "completion_tokens": 1010,
+    "total_tokens": 15760
+  },
+  "model_calls_with_usage": 2
+}

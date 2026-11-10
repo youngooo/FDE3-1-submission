@@ -1,0 +1,182 @@
+{
+  "skill_sha256": "27265ba9f5cdcf648085d3a2c6215d06963485d77f8e1df0f637b1d9fa9f19e5",
+  "input_hashes": {
+    "business_model.md": "5cadd6aa55a0dc02a4a193d0e00f95686e7067e0ad9cb877b4fca950538bacbf",
+    "00_材料说明.md": "c60776a6a1c030b02b1ce89f773327871c80bb34dca9c486df43c9acb0a6dc28",
+    "01_订单日报说明.md": "976fa129493e6bd2861a58d74df2ba3ad4448ea01a2d25651124222a61cebb67",
+    "02_财务邮件.md": "f81e0ddb5c03dd4eb2d01094816716d8375d03fe883b947ec8297edf8d525557",
+    "03_会员运营周报.md": "25ab933556bf34bef21b528d4c7838c9baad33ae289d59f09501e765080bb492",
+    "04_本期统计确认邮件.md": "c4f847fd90fd0765d37ad22f20d4a4eb0bab90f8543ae0f05d7a3cbee104c4be",
+    "05_数据字典.md": "b4c905ae6d2f4c08e139c695a2868b66ee5047b2b8ea94d6eccba55aebb79c16",
+    "06_任务清单.md": "ed414526217320c5e9ef049cfc1cfb56b670a5af57a57a9450a1e264cd71904d",
+    "07_客户内部沟通.md": "916d0f6d78033aff30dc6053cb58d774bfdefe5e3aa9a4e36ca54f143af3b425",
+    "08_业务目标与工作清单.md": "de9d737c423cc31b2f9d60c9ba8693b9d4257a3aa69b9efedb52674aeb2efe97"
+  },
+  "defined": [
+    "order_count",
+    "paid_order_count",
+    "valid_order_count",
+    "cancelled_order_count",
+    "refund_order_count",
+    "partial_refund_order_count",
+    "full_refund_order_count",
+    "payment_cents",
+    "refund_cents",
+    "net_sales_cents",
+    "gross_cents",
+    "discount_cents",
+    "buyer_count",
+    "refund_buyer_count",
+    "selling_store_count",
+    "valid_order_items",
+    "avg_order_value",
+    "avg_buyer_value",
+    "purchase_frequency",
+    "refund_amount_rate",
+    "cancel_rate",
+    "refund_order_rate",
+    "discount_rate",
+    "items_per_order",
+    "new_member_count",
+    "first_buyer_count",
+    "first_order_sales_cents",
+    "first_order_count",
+    "repeat_order_count",
+    "monthly_buyer_count",
+    "monthly_repeat_buyer_count",
+    "monthly_repeat_rate"
+  ],
+  "unresolved": [],
+  "business_model_usage": [
+    {
+      "quote": "| 有效购买 | 订单为 paid，且实付减累计退款大于零；取消与全额退款不计 | 01、02 |",
+      "used_for": [
+        {
+          "kind": "semantic_model",
+          "name": "orders_semantic"
+        },
+        {
+          "kind": "metric",
+          "name": "valid_order_count"
+        },
+        {
+          "kind": "metric",
+          "name": "net_sales_cents"
+        },
+        {
+          "kind": "metric",
+          "name": "buyer_count"
+        }
+      ]
+    },
+    {
+      "quote": "| 金额与件数 | 金额用整数分；退款按原订单下单日期归属；商品件数为有效订单的原始件数 | 01、02 |",
+      "used_for": [
+        {
+          "kind": "semantic_model",
+          "name": "orders_semantic"
+        },
+        {
+          "kind": "metric",
+          "name": "refund_cents"
+        },
+        {
+          "kind": "metric",
+          "name": "valid_order_items"
+        }
+      ]
+    },
+    {
+      "quote": "| 首购观察范围 | 先在全测试覆盖历史内，对有效订单按日期、订单号排序确定每个账户的第一笔，再按查询窗口筛选；不能理解为全部订单中的第一笔，也不代表终身首购 | 03 |",
+      "used_for": [
+        {
+          "kind": "semantic_model",
+          "name": "orders_semantic"
+        },
+        {
+          "kind": "derived_model",
+          "name": "orders_enriched"
+        },
+        {
+          "kind": "metric",
+          "name": "first_buyer_count"
+        },
+        {
+          "kind": "metric",
+          "name": "first_order_count"
+        }
+      ]
+    },
+    {
+      "quote": "| 月内购买与复购 | 月内购买会员数为同月至少一笔有效订单的账户数；月内复购会员数为同月至少两笔有效订单的账户数；月内复购率为后者除以前者，分母为零时未定义。适用限制：仅支持完整自然月、全门店；连续多月按月分别展示，不将每月去重人数相加为跨月人数 | 03 |",
+      "used_for": [
+        {
+          "kind": "semantic_model",
+          "name": "member_month_activity_semantic"
+        },
+        {
+          "kind": "derived_model",
+          "name": "member_month_activity"
+        },
+        {
+          "kind": "dimension",
+          "name": "metric_time__month"
+        },
+        {
+          "kind": "metric",
+          "name": "monthly_buyer_count"
+        },
+        {
+          "kind": "metric",
+          "name": "monthly_repeat_buyer_count"
+        },
+        {
+          "kind": "metric",
+          "name": "monthly_repeat_rate"
+        }
+      ]
+    },
+    {
+      "quote": "本期合成测试库中 `cards.member_id` 与 `orders.member_id` 均关联 `members.member_id`（05 数据字典），这是本期已知的关联结构",
+      "used_for": [
+        {
+          "kind": "semantic_model",
+          "name": "orders_semantic"
+        },
+        {
+          "kind": "semantic_model",
+          "name": "members_semantic"
+        },
+        {
+          "kind": "derived_model",
+          "name": "orders_enriched"
+        }
+      ]
+    },
+    {
+      "quote": "成交门店与会员归属门店不同，见 05",
+      "used_for": [
+        {
+          "kind": "derived_model",
+          "name": "orders_enriched"
+        },
+        {
+          "kind": "dimension",
+          "name": "store"
+        },
+        {
+          "kind": "dimension",
+          "name": "home_store"
+        },
+        {
+          "kind": "dimension",
+          "name": "home_store__region"
+        },
+        {
+          "kind": "dimension",
+          "name": "home_store__store_name"
+        }
+      ]
+    }
+  ]
+}

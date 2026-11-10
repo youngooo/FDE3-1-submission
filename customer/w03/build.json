@@ -1,0 +1,14 @@
+{
+  "skill": "build-metrics/SKILL.md",
+  "business_model": "../../docs/w03/business_model.md",
+  "materials": [
+    "../../materials/w03"
+  ],
+  "targets": "targets.json",
+  "scope": {
+    "customer": "青禾",
+    "statistics_unit": "CRM 会员账户",
+    "scope": "本周合成测试库"
+  },
+  "data": "../../materials/data/small"
+}

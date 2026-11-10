@@ -1,0 +1,9 @@
+{
+  "version": "w02-workflow-0.1.0",
+  "goal": "围绕会员运营助手如何提供有依据、可审核的人群与动作建议，并减少运营二次整理，梳理青禾会员运营的对象定义、实际流程、角色职责、建议采用条件和执行协作要求，形成有来源的业务模型，保留不同说法、权限边界及待核问题。",
+  "extraction_config": "customer/w02/extraction.json",
+  "skill": "customer/w02/skills/extract-business/SKILL.md",
+  "business_model": "docs/w02/business_model.md",
+  "notes": "docs/w02/interview_notes.md",
+  "max_steps": 24
+}

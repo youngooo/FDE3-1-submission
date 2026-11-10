@@ -1,0 +1,178 @@
+{
+  "kind": "incremental_orders24_csv_check",
+  "expected_basis": "Customer materials 01/02/05; original CSV; no generated SQL used",
+  "source_sha256": {
+    "orders.csv": "c6e0dee6081e7a6f7782b54de78b3182835c46184c8e7569fc23feab8cf3c4f1",
+    "cards.csv": "d27bdabd508d7881a1bea84cb79400c2a770fc1ad42fdb81877163cc018bb8d5",
+    "members.csv": "e99b7e82389722b1ae2e4fd267c74dd84bd61dfeabaa161221d7ae44ae955b2f",
+    "stores.csv": "e8160804fd485853f6c75d9a095b1ee6f05bbbd40ba851cac84def35488aa41d"
+  },
+  "project": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/build-general32-normalized-20261107-023808/validation-project",
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+  "cases": [
+    {
+      "id": "aug_total",
+      "passed": true,
+      "expected_groups": 1,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "jul_total",
+      "passed": true,
+      "expected_groups": 1,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "coverage_total",
+      "passed": true,
+      "expected_groups": 1,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "aug_store",
+      "passed": true,
+      "expected_groups": 2,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "aug_home_store",
+      "passed": true,
+      "expected_groups": 3,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "aug_status",
+      "passed": true,
+      "expected_groups": 2,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "aug_channel",
+      "passed": true,
+      "expected_groups": 2,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "aug_tier",
+      "passed": true,
+      "expected_groups": 3,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "aug_two_regions",
+      "passed": true,
+      "expected_groups": 3,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "aug_cancelled_only",
+      "passed": true,
+      "expected_groups": 1,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "covered_empty_day",
+      "passed": true,
+      "expected_groups": 1,
+      "checked_metrics": 24,
+      "errors": []
+    }
+  ],
+  "source_report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/check-general32-base24-20261107-024420/report.json",
+  "source_report_sha256": "e8ba23b1729df98baa12612384d2ef607f24e82d6e2a0b518e3bb3b9de8a5066",
+  "query_run_script_sha256": {
+    "check_orders24.py": "e01fbbe7424488abc17aac7b4d3199578ef0107f5c55058d60ed8b6a7ea57b39",
+    "check_base16.py": "6654a383173cfb8b00d251482698ed12b88f1fc6fa79f334f31b40579750381a"
+  },
+  "script_sha256": {
+    "rejudge_orders24.py": "0f91e84efdc78463a4a405772e62a4f759b6ac6b9d58fd32dc4acf1cab779584",
+    "check_orders24.py": "ec32f57a64052448c48bb64dc50b196106c0c1a71200b789b47c1a27cec979f4",
+    "check_base16.py": "6654a383173cfb8b00d251482698ed12b88f1fc6fa79f334f31b40579750381a"
+  },
+  "query_reexecuted": false,
+  "model_called": false,
+  "revision_reason": "Accept four explicitly equivalent unit spellings; all value, null, intent, group and scale checks retained",
+  "comparison_policy": {
+    "integers": "exact",
+    "null": "strict",
+    "ratio_abs_tolerance": "1E-8",
+    "ratio_rel_tolerance": "1E-9",
+    "unit_spelling_aliases": {
+      "cents/order": "cents_per_order",
+      "cents/account": "cents_per_account",
+      "orders/account": "orders_per_account",
+      "items/order": "items_per_order"
+    }
+  },
+  "evidence_sha256": {
+    "aug_total": {
+      "query.json": "d7c67d20032bd8bfdbd4e4aef20fc56189f368a33943e1e7f156281d142695fd",
+      "expected.json": "7f2e53190acef99469a2936cbb2f9ee080815497142483991365cdd2824ee9ba",
+      "actual.json": "727d514c3f87d2e917e9a46f43605a824125f4f24a47846dcd07d786f785d9b3"
+    },
+    "jul_total": {
+      "query.json": "35f270b7538005737db1addffd3ee28b4296e9acc3b81fa7c0e168eae61c144f",
+      "expected.json": "6924af4f3773f1e91e2d354a09c7b636ca073d249654041b8f2d20751a2779eb",
+      "actual.json": "f45022fda0840799e142a9c3ed38bd55ba1666bbba4aa9be75b90453b189b4ad"
+    },
+    "coverage_total": {
+      "query.json": "8ff2750f380ccfd1ce331eb3037a2eeb2f19c1a49d265df86304d8331e1357a3",
+      "expected.json": "e7557decb961def5ab64785c4062a7372fd9a385921c33e5e2adc38b6622a280",
+      "actual.json": "d8e515f3927c8e709f8a96d1fbf4514d5af8bd2179588ba0a88d9a76104d6f37"
+    },
+    "aug_store": {
+      "query.json": "eac9de40af2da49b26087a04134ca44dd6785f13067a213f9554290020a80ec1",
+      "expected.json": "8b47ea1532a16e478bae1890897a4a5255f1bcc8194b888fe2060579c7557012",
+      "actual.json": "634c412f2bbf862e75a6c6d4cdaf9554455f103e2d912f5ff330a900b394e9d6"
+    },
+    "aug_home_store": {
+      "query.json": "3de292e5ba2dc9742a5b6ab629b281025f259b000d61c922ae099a014b3e412e",
+      "expected.json": "13217a09f1de17e80c5f77c6f454734a0c2467809d2abaa80630ff91dfbaaa5f",
+      "actual.json": "e0f7dfe2986057d6db9ad98e041548e2b5ee376da085cdbe46523a324f2e69c8"
+    },
+    "aug_status": {
+      "query.json": "9b2120d067ca4af63cf2890b01f3ed0856a813e51ef941990d49893ec335e432",
+      "expected.json": "8fb1d6f1ec68dda7749e44c76373f8932b2c800cb0731aa4f526f73f7aebaed1",
+      "actual.json": "d8166239bb9a5d20c86d3bf5aa67bed9bfeed04797312eb39b0df4df5acef528"
+    },
+    "aug_channel": {
+      "query.json": "41a05e18d16a91fdc1337e0d46926ad438ef1cf6ba50711179b6ed0f28c43b84",
+      "expected.json": "81812d604b8469d78bdd2deadd249652ec8f2368afdb2395206ca8b6c65bab02",
+      "actual.json": "a9212d24fc90ff2c9735bc111549d738fa61c3b483616acd021c7a8c20995e1a"
+    },
+    "aug_tier": {
+      "query.json": "a648fedc313fdbdb7ea77b978face7811f1df3431970d75b09aa96f1fad85a78",
+      "expected.json": "e51901c09b699e2a65d0f6cb3056a6709ceb531292d3d87b0a981bcda9004370",
+      "actual.json": "a980fe3840311bf8f4e3a43a0cbf3e5d6eccc1e0d4f07de32f61d4c7e2fd7c36"
+    },
+    "aug_two_regions": {
+      "query.json": "87ee188b6580051667774dc94e079d7c559b27977085ff423ee076d35cacc851",
+      "expected.json": "9596a0ce6916e3ef848031970c5fe6543065bfbd1a81c683081395e97de653c4",
+      "actual.json": "02c5af195783cd2848070d4ff3c4f50ff7114a9cec6c5efd515fe8e295e34c35"
+    },
+    "aug_cancelled_only": {
+      "query.json": "3098ccb11caa5122ba934afc6b70bbc092be4fdf325b472dfb19e69873a38b18",
+      "expected.json": "0f1d5eb9d08c5938ccab63ae52e653f5c939b7dcc8da05120227431f42305e64",
+      "actual.json": "31192c36c22ff50f4b78f22cbf0d200784ebda5d3f08440a56da1ed6be0834ca"
+    },
+    "covered_empty_day": {
+      "query.json": "a0534355a41dde5de36c7de36647cc74015b7e42d8204d755f14dfe6828d73bd",
+      "expected.json": "353d4bb35cad724362471fd605b7ef61284d7fdc7caeeb18bc3554246435a4f3",
+      "actual.json": "17f476690ac9b4970925c9a47b4b2380c6d0f8a1a08c1202801c521c596f27cd"
+    }
+  },
+  "passed": true,
+  "complete": true
+}

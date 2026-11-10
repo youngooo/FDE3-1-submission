@@ -1,0 +1,24 @@
+{
+  "status": "clarify",
+  "reason": "请提供净销售额的统计时间范围（开始日期和结束日期，结束日期不包含）。客户“青禾”仅为当前数据集名称，不会自动作为门店筛选条件。",
+  "intent": {
+    "status": "clarify",
+    "reason": "请提供净销售额的统计时间范围（开始日期和结束日期，结束日期不包含）。客户“青禾”仅为当前数据集名称，不会自动作为门店筛选条件。",
+    "metrics": [
+      "net_sales_cents"
+    ],
+    "start": null,
+    "end": null,
+    "group_by": [],
+    "filters": []
+  },
+  "question": "青禾的净销售额是多少？",
+  "trace_id": "cbb36c67-0123-405e-93b1-7216a27ba31a",
+  "elapsed_seconds": 3.315,
+  "model_usage": {
+    "prompt_tokens": 9356,
+    "completion_tokens": 409,
+    "total_tokens": 9765
+  },
+  "model_calls_with_usage": 1
+}

@@ -1,0 +1,17 @@
+{
+  "status": "skill_and_decisions_updated",
+  "build_run": false,
+  "business_confirmation": "pending",
+  "files": [
+    {
+      "path": "customer/w03/build-metrics/SKILL.md",
+      "before_sha256": "3bc05c0aeeca0b1d105b584e33f1f1c085bb47f37932849854eba68fcb102076",
+      "after_sha256": "07567e47adedaaf27c9c67a2ea3ed3aa8cfee6114a87a523a40732de29f4795f"
+    },
+    {
+      "path": "docs/w03/metric_decisions.md",
+      "before_sha256": "a6dbc8eaa4b6dfed47df5cfbf68ee55a42bd92ebdf54fea04fc565dff287498a",
+      "after_sha256": "1c81d9626900e5de65bbb4d8f48f60f6c49ffd17901f83d9158176d5ebf84241"
+    }
+  ]
+}

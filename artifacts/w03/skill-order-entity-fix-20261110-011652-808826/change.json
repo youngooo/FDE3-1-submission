@@ -1,0 +1,20 @@
+{
+  "evidence_sha256": {
+    "artifacts/w03/full38-p1-run-20261110-010844-438195/run_summary.json": "db5e3afaf6fdbfb0271a0d730594a87ef212e02d3839e250ef2275987d589fea",
+    "artifacts/w03/full38-p1-run-20261110-010844-438195/build/source_check.json": "76aa3b58148d89cc797ae408eba304f008308b708476e2db124fcf4e5d1c7a2e",
+    "artifacts/w03/full38-p1-run-20261110-010844-438195/build/response.json": "06a43ca98e408bed5a82d71a87204fb593ebe32c3f12919032c8b7a5be93daa1",
+    "artifacts/w03/full38-p1-run-20261110-010844-438195/build/validation-project/build.log": "a0b71ad3ae9ce458c17c188828fee897cb6e6a782867fdf6fc6bd4d31c3d9c65"
+  },
+  "files": [
+    {
+      "path": "customer/w03/build-metrics/SKILL.md",
+      "before_sha256": "676233ac030604921b0b9a46ad18275e4576beddac46e1eb5a53d0f59baf1329",
+      "after_sha256": "4401b0e2f35e5b3f3b3beac0ec8062302c0edb6391a045e238a10583ba8a71f6"
+    },
+    {
+      "path": "docs/w03/metric_decisions.md",
+      "before_sha256": "5913a4e2415ed5770dddacb3ad5be981d0880d15756221144b1c10210fb8d4db",
+      "after_sha256": "8c3df770ef951b6a214cc62890905fcbfad83658569f621a21a162bca2805de4"
+    }
+  ]
+}

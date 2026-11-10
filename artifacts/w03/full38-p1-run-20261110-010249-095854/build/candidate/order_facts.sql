@@ -1,0 +1,1 @@
+SELECT o.order_id, o.member_id, o.store_id, m.home_store_id, o.ordered_at, o.status, o.gross_cents, o.paid_cents, o.refund_cents, o.quantity, o.channel FROM {{ ref('orders') }} o LEFT JOIN {{ ref('members') }} m ON o.member_id = m.member_id

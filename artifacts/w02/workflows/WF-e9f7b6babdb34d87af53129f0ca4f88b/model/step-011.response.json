@@ -1,0 +1,22 @@
+{
+  "message": {
+    "role": "assistant",
+    "content": "查看老周侧关于配合核查与待补材料的原文。",
+    "tool_calls": [
+      {
+        "index": 0,
+        "id": "call_00_OaSHU1dr9gdeocOjOkgV0086",
+        "type": "function",
+        "function": {
+          "name": "show_evidence",
+          "arguments": "{\"claim_ids\": [\"CLM-001-0015\", \"CLM-001-0016\", \"CLM-001-0017\", \"CLM-001-0018\", \"CLM-001-0019\"]}"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "prompt_tokens": 41186,
+    "completion_tokens": 325,
+    "total_tokens": 41511
+  }
+}

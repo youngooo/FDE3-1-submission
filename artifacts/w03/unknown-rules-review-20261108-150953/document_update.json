@@ -1,0 +1,10 @@
+{
+  "docs/w03/interview_notes.md": {
+    "before_sha256": "42ca28abd8a0028460e2f0ccf0c61abf966417abce51771d82406a5d839e5f42",
+    "after_sha256": "71d3a79e52ecc3b0387aa9931a783312e416a8a61fa8fa381e7e5b42683e65c6"
+  },
+  "docs/w03/model_changes.md": {
+    "before_sha256": "dba20f8b1cce0144c30f47e347a8cfd2eb758da3e242adabba09a4aa0a45906f",
+    "after_sha256": "aae1a6ecf9b2b269b9f91a70f78541f7dc0d11ff1cba07d9e212dd383a6fc883"
+  }
+}

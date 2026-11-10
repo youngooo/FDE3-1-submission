@@ -1,0 +1,26 @@
+{
+  "status": "clarify",
+  "reason": "需要确认“5月与6月”对应的年份，才能查询月内复购率。请提供年份，例如2025年5月和6月；该指标会按完整自然月分别展示。",
+  "intent": {
+    "status": "clarify",
+    "reason": "需要确认“5月与6月”对应的年份，才能查询月内复购率。请提供年份，例如2025年5月和6月；该指标会按完整自然月分别展示。",
+    "metrics": [
+      "monthly_repeat_rate"
+    ],
+    "start": "",
+    "end": "",
+    "group_by": [
+      "metric_time__month"
+    ],
+    "filters": []
+  },
+  "question": "青禾5月与6月的月内复购率分别是多少？",
+  "trace_id": "04c8df78-269d-4731-a3fd-c74da82eafc0",
+  "elapsed_seconds": 2.563,
+  "model_usage": {
+    "prompt_tokens": 12536,
+    "completion_tokens": 319,
+    "total_tokens": 12855
+  },
+  "model_calls_with_usage": 1
+}

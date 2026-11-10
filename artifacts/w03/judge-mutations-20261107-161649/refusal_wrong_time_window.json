@@ -1,0 +1,44 @@
+{
+  "id": "refusal_wrong_time_window",
+  "category": "wrong_date",
+  "should_pass": false,
+  "expected": {
+    "status": "unsupported",
+    "intent": {
+      "metrics": [
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-08-16",
+      "group_by": [],
+      "filters": []
+    },
+    "reason": "Fixture partial month"
+  },
+  "actual": {
+    "status": "unsupported",
+    "intent": {
+      "metrics": [
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [],
+      "filters": []
+    },
+    "reason": "Fixture partial month"
+  },
+  "verdict": {
+    "passed": false,
+    "differences": [
+      {
+        "kind": "intent_mismatch",
+        "field": "end",
+        "expected": "2026-08-16",
+        "actual": "2026-09-01"
+      }
+    ]
+  },
+  "harness_error": null,
+  "passed": true
+}

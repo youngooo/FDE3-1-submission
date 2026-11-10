@@ -1,0 +1,79 @@
+{
+  "contract_version": "w03-0.1.0",
+  "status": "needs_revision",
+  "items": [
+    {
+      "path": "docs/w03/business_model.md",
+      "passed": true
+    },
+    {
+      "path": "docs/w03/model_changes.md",
+      "passed": true
+    },
+    {
+      "path": "docs/w03/interview_notes.md",
+      "passed": true
+    },
+    {
+      "path": "docs/w03/sow.md",
+      "passed": true
+    },
+    {
+      "path": "docs/w03/metric_decisions.md",
+      "passed": true
+    },
+    {
+      "path": "customer/w03/build-metrics/SKILL.md",
+      "passed": true
+    },
+    {
+      "path": "customer/w03/tests.json",
+      "passed": true
+    },
+    {
+      "path": "artifacts/w03/library/metrics.yml",
+      "passed": true
+    },
+    {
+      "path": "artifacts/w03/metric_test_report.json",
+      "passed": true
+    },
+    {
+      "check": "building_skill_implemented",
+      "passed": true
+    },
+    {
+      "check": "metric_coverage",
+      "passed": false
+    },
+    {
+      "check": "library_validation",
+      "passed": true
+    },
+    {
+      "check": "dimension_target_coverage",
+      "passed": true
+    },
+    {
+      "check": "test_coverage",
+      "passed": false
+    },
+    {
+      "check": "self_reported_results",
+      "passed": true,
+      "limitation": "仅检查自报；教师独立复核另行进行"
+    },
+    {
+      "check": "report_matches_library",
+      "passed": true,
+      "library_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62"
+    }
+  ],
+  "manual_review_required": [
+    "业务模型更新与来源",
+    "构建和判定是否实际开发",
+    "独立期望与错误注入",
+    "自然语言解释",
+    "王经理访谈及 SOW 边界"
+  ]
+}

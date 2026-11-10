@@ -1,0 +1,369 @@
+[
+  {
+    "id": "first_jun",
+    "family": "first",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-07-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "first_may",
+    "family": "first",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "start": "2026-05-01",
+      "end": "2026-06-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "first_coverage",
+    "family": "first",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "start": "2024-09-01",
+      "end": "2026-09-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "first_jun_first_half",
+    "family": "first",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-06-16",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "first_jun_store",
+    "family": "first",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-07-01",
+      "group_by": [
+        "store"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "first_jun_home_store",
+    "family": "first",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-07-01",
+      "group_by": [
+        "home_store"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "first_jun_filtered_store",
+    "family": "first",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-07-01",
+      "group_by": [],
+      "filters": [
+        {
+          "field": "store",
+          "op": "eq",
+          "value": "S01"
+        }
+      ]
+    }
+  },
+  {
+    "id": "registration_may",
+    "family": "registration",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "new_member_count"
+      ],
+      "start": "2026-05-01",
+      "end": "2026-06-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "registration_coverage",
+    "family": "registration",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "new_member_count"
+      ],
+      "start": "2024-09-01",
+      "end": "2026-09-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "registration_home_store",
+    "family": "registration",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "new_member_count"
+      ],
+      "start": "2024-09-01",
+      "end": "2026-09-01",
+      "group_by": [
+        "home_store"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "registration_tier",
+    "family": "registration",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "new_member_count"
+      ],
+      "start": "2024-09-01",
+      "end": "2026-09-01",
+      "group_by": [
+        "member__tier"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "monthly_jun",
+    "family": "monthly",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-07-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "monthly_may",
+    "family": "monthly",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-05-01",
+      "end": "2026-06-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "monthly_may_jun",
+    "family": "monthly",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-05-01",
+      "end": "2026-07-01",
+      "group_by": [
+        "metric_time__month"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "monthly_all_covered",
+    "family": "monthly",
+    "expected_status": "ok",
+    "reason_contains": null,
+    "intent": {
+      "metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "start": "2024-09-01",
+      "end": "2026-09-01",
+      "group_by": [
+        "metric_time__month"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_partial_month",
+    "family": "monthly",
+    "expected_status": "unsupported",
+    "reason_contains": "完整自然月",
+    "intent": {
+      "metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-06-02",
+      "end": "2026-07-01",
+      "group_by": [],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_monthly_day_group",
+    "family": "monthly",
+    "expected_status": "unsupported",
+    "reason_contains": "完整自然月",
+    "intent": {
+      "metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-07-01",
+      "group_by": [
+        "metric_time__day"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_monthly_store_group",
+    "family": "monthly",
+    "expected_status": "unsupported",
+    "reason_contains": "完整自然月",
+    "intent": {
+      "metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-07-01",
+      "group_by": [
+        "store"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_monthly_store_filter",
+    "family": "monthly",
+    "expected_status": "unsupported",
+    "reason_contains": "完整自然月",
+    "intent": {
+      "metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-07-01",
+      "group_by": [],
+      "filters": [
+        {
+          "field": "store",
+          "op": "eq",
+          "value": "S01"
+        }
+      ]
+    }
+  },
+  {
+    "id": "reject_multimonth_total",
+    "family": "monthly",
+    "expected_status": "unsupported",
+    "reason_contains": "按月展示",
+    "intent": {
+      "metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-05-01",
+      "end": "2026-07-01",
+      "group_by": [],
+      "filters": []
+    }
+  }
+]

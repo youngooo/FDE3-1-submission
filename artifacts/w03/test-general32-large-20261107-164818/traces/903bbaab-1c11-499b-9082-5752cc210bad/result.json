@@ -1,0 +1,14 @@
+{
+  "status": "error",
+  "code": "MODEL_HTTP_402",
+  "reason": "本次调用未完成，请查看运行记录；不能把失败当成零。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的有效订单商品件数，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。",
+  "trace_id": "903bbaab-1c11-499b-9082-5752cc210bad",
+  "elapsed_seconds": 9.129,
+  "model_usage": {
+    "prompt_tokens": 310326,
+    "completion_tokens": 240,
+    "total_tokens": 310566
+  },
+  "model_calls_with_usage": 1
+}

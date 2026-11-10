@@ -1,0 +1,24 @@
+{
+  "status": "unsupported",
+  "reason": "月内复购率仅支持完整自然月的全门店口径汇总或按月展示，不支持按会员账户拆分。可改为查询2026年8月全门店月内复购率汇总。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "月内复购率仅支持完整自然月的全门店口径汇总或按月展示，不支持按会员账户拆分。可改为查询2026年8月全门店月内复购率汇总。",
+    "metrics": [
+      "monthly_repeat_rate"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "请将青禾2026年8月完整自然月的月内复购率按会员账户ID分组返回。",
+  "trace_id": "665cdfd5-e17e-4b1d-8135-8c3d573f8172",
+  "elapsed_seconds": 2.505,
+  "model_usage": {
+    "prompt_tokens": 9713,
+    "completion_tokens": 270,
+    "total_tokens": 9983
+  },
+  "model_calls_with_usage": 1
+}

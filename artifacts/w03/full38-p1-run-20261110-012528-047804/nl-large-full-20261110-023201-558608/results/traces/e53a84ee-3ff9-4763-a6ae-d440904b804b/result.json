@@ -1,0 +1,24 @@
+{
+  "status": "clarify",
+  "reason": "已识别指标为净销售额（net_sales_cents），但本次问题没有指定查询时间。请补充查询时间范围（如某个完整月份、某连续几个月或具体起止日期，结束日期不含当天）；数据覆盖范围为 2024-09-01 至 2026-09-01。",
+  "intent": {
+    "status": "clarify",
+    "reason": "已识别指标为净销售额（net_sales_cents），但本次问题没有指定查询时间。请补充查询时间范围（如某个完整月份、某连续几个月或具体起止日期，结束日期不含当天）；数据覆盖范围为 2024-09-01 至 2026-09-01。",
+    "metrics": [
+      "net_sales_cents"
+    ],
+    "start": "",
+    "end": "",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "帮我查一下青禾净销售额，时间还没指定。",
+  "trace_id": "e53a84ee-3ff9-4763-a6ae-d440904b804b",
+  "elapsed_seconds": 1.862,
+  "model_usage": {
+    "prompt_tokens": 12535,
+    "completion_tokens": 165,
+    "total_tokens": 12700
+  },
+  "model_calls_with_usage": 1
+}

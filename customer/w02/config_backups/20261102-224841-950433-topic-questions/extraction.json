@@ -1,0 +1,25 @@
+{
+  "version": "w02-extractor-0.1.0",
+  "scope_id": "qinghe",
+  "sources": [
+    "artifacts/w02/sources/normalized/W2-interview-0ac9a30f-ce42-5f90-a554-c3cd3be3571e.json",
+    "artifacts/w02/sources/normalized/W2-interview-19d444c3-ee75-5654-84e4-1c34ca969c3d.json",
+    "artifacts/w02/sources/normalized/W2-interview-c297647c-e335-5192-8006-0b0298d5bb76.json",
+    "artifacts/w02/sources/normalized/W2-interview-cdef2a0f-ad90-56da-b84f-7126dc14a9b6.json",
+    "artifacts/w02/sources/normalized/W2-interview-d543ba35-ebf1-5408-85cc-ae8ea36e387b.json",
+    "artifacts/w02/sources/normalized/W2-interview-ef8c42cf-f2ea-5e92-b3c0-a2ec29b571db.json",
+    "artifacts/w02/sources/normalized/W2-interview-f8399402-ba0f-5cef-9282-66aa2f992125.json"
+  ],
+  "prompt": "customer/w02/extraction_prompt.txt",
+  "focus_questions": [
+    "运营希望助手优先帮助什么工作，会员建议在什么条件下可以纳入任务？",
+    "会员建议怎样转成门店活动安排，哪些信息与执行条件需要确认？",
+    "小林、陈姐、门店人员和老周分别负责什么，权限边界是什么？",
+    "建议不匹配、信息缺失或业务范围变化时，各角色怎样处理？",
+    "哪些说法已得到跨角色确认，哪些仍有分歧、限定或缺少依据？"
+  ],
+  "batch_chars": 6000,
+  "max_batches": 24,
+  "reconcile_chars": 96000,
+  "profile": "deepseek-json"
+}

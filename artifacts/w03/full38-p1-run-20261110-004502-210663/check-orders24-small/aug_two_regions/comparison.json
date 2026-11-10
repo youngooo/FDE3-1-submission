@@ -1,0 +1,7 @@
+{
+  "id": "aug_two_regions",
+  "passed": true,
+  "expected_groups": 3,
+  "checked_metrics": 24,
+  "errors": []
+}

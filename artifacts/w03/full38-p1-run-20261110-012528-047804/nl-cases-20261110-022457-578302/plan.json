@@ -1,0 +1,39 @@
+{
+  "kind": "full38_natural_language_regression_plan",
+  "library": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/build",
+  "library_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "entries": [
+    {
+      "dataset": "small",
+      "project": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-small",
+      "cases": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-cases-20261110-022457-578302/small/tests.json",
+      "cases_sha256": "cd77e5c705b1b8e64f515e9ffeb00175f65ae97027df45b48aab64b271c3fdc9",
+      "smoke": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-cases-20261110-022457-578302/small/tests-smoke.json",
+      "smoke_sha256": "e3e9ad168d1067ba1a6321d6bbbf12b7dfbe8b293b4d05d45eb801a3e8766fb8",
+      "cases_total": 69,
+      "smoke_total": 8
+    },
+    {
+      "dataset": "large",
+      "project": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large",
+      "cases": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-cases-20261110-022457-578302/large/tests.json",
+      "cases_sha256": "48ebe736cf134070915bf4d603e5a0157325de9836a7b3bb73c9902150478102",
+      "smoke": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-cases-20261110-022457-578302/large/tests-smoke.json",
+      "smoke_sha256": "cd31caf73c85383fe3bedc1cd7029cdcdd3bee52056b4ac449bd744abc8c570d",
+      "cases_total": 67,
+      "smoke_total": 8
+    }
+  ],
+  "judge_script": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-cases-20261110-022457-578302/scripts/judge_w03_full38_20261110.py",
+  "judge_sha256": "9e6ac379d902510a3d2f6ba378e2ba45f87b6a4a49d71ca113413968543f7563",
+  "base_judge_sha256": "33b7eed436f5663f04371ffc2eb456b23451c60b5073d8534e6735a6a466e0fc",
+  "judge_self_checks": 8,
+  "cross_dataset_identical_questions": 0,
+  "model_called": false,
+  "query_executed": false,
+  "actual_results_read": true,
+  "actual_results_used_to_compute_expectations": false,
+  "business_confirmation": "pending",
+  "execution_status": "not_run",
+  "answer_review_required": true
+}

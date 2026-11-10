@@ -1,0 +1,286 @@
+{
+  "kind": "member8_large_independent_csv",
+  "project": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large",
+  "library": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/build",
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "expected_basis": "existing member8 Oracle from original CSV and materials03/05; no generated SQL used for expectations",
+  "input_sha256": {
+    "/mnt/e/工作/FDE职位攻关/tmp/check_w03_member8_large_20261110.py": "1d46f4093fd0ffb773e140d25eb762e066d9673be5ab51830db63ca8bb5d1698",
+    "/home/yang/FDE/w03-work/fde-agent-w03/customer/w03/check_member8.py": "97b9155e00cc0790460b8edeae19311f584185ea3ac52aeb180e5b0e7a0a2787",
+    "/home/yang/FDE/w03-work/fde-agent-w03/customer/w03/check_base16.py": "6654a383173cfb8b00d251482698ed12b88f1fc6fa79f334f31b40579750381a",
+    "/home/yang/FDE/w03-work/fde-agent-w03/customer/w03/check_orders24.py": "ec32f57a64052448c48bb64dc50b196106c0c1a71200b789b47c1a27cec979f4",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/check-member8-small/report.json": "d9fedabeb5c4403af51ffc96d32e322822916ff8dd9cb1dec731179f97c03bf8",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/dataset.json": "103232b6f24ce87c6dd96dd10390b2db98214f1154410b173f9a8e9fb2202125",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/catalog.json": "e0cff6cd4228d52aa8c4c8edafa340fda9b7d46c6c330c30c48395b0d988a21f",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/models/metrics.yml": "d241a49720bfa33a32de7101c4f340238d679b04e6423c996c94a33c53c5e7df",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/models/stores.sql": "978e7c79f3b3081b0c1153b38897cf4930aedb95e5291be7cdeedb49c5c6b20e",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/models/cards.sql": "33aaadccc09f60a3b2e138f4e6ce2e440d72bb2f8568d1bbc09ce4097bf72b30",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/models/monthly_member_activity.sql": "3da5a035c4f890c529d9e40e7c21f950d0cd67ce42668d71aa35e10e14d280ca",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/models/valid_order_sequence.sql": "1aa203f8577718141a36c197841d1ed8332a82c9ca926a237baba3e7f099089b",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/models/monthly_valid_order_activity.sql": "cca9ff4a242530e436e3aa5287b27689b98e5997d19a87e19ac0c4b252fd1a61",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/models/monthly_paid_summary.sql": "45c42e8d78490d923bd3e42056a21924d38dc5b6e53570cc5098201b298d4d5f",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/models/selling_store_dim.sql": "c36b3e139554590c08a601eddfbef8522c3b68361de4b704594d0e57726f1c87",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/models/orders.sql": "2b74e3e32048ff33e221121a8326a34a255ec75dfa18b201ccecc219b2a0a13c",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/models/p1_qualified_member_months.sql": "9b4612569ed2889a85bdc3c2a094007d245335646b07230b52bcc6aa3ba54dc0",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/models/time_spine.sql": "27ed91c0947c8b4906c41331bc72e1490b2291ffc04db63893f0f389c1945060",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/models/p1_card_date_exceptions.sql": "37e8003a92a40b96002fe60ae31d95059a26bac9a5640fda06662387c6ec0d29",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/models/members.sql": "200f92bfca81678f2d473b9af35e78976f38f8ae2b27f7a02d1a371373339cee",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/models/order_fact.sql": "d924ebc93f272d7ef74321776e53aed2cb1a0cfd3dfabd78cc7a892df399fb1a",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-large/models/home_store_dim.sql": "c36b3e139554590c08a601eddfbef8522c3b68361de4b704594d0e57726f1c87",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/data/large/manifest.json": "1ddf4a9122cfa904d4e87206d8c0216f14515e5167fc4d1540d147b07578f29d",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/data/large/cards.csv": "2cd90f4f709906c6b0e3c72de5b9347fe1118eabaa0fcdad30cf96951d66622a",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/data/large/orders.csv": "15fe0a98b1f34f1e2f7ce100a1ebb74d8f2cffa5023d0a93c7d07e959ffdd4b3",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/data/large/members.csv": "30835528d521255ce72bda232c1c6090b3dcbb0f6a7872ee230382615f158af7",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/data/large/stores.csv": "d392d07b0f447a06fdf183860f040d79341a5daa787bc0fc4b400cda8f3675bd",
+    "/home/yang/FDE/w03-work/fde-agent-w03/tools/w03.py": "c34c139e48b33a09de1db3bec9f2cc2f41166de129984698eb69e98979e467c6",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/engine.py": "e8b39da2517a65f6406da4d261173291c795248ea6c62638137e09ce750a98f3"
+  },
+  "small_empty_month_evidence": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/check-member8-small/report.json",
+  "large_empty_month_case": "not_applicable_no_empty_month",
+  "covered_month_count": 24,
+  "model_called": false,
+  "complete": true,
+  "passed": true,
+  "cases": [
+    {
+      "id": "first_jun",
+      "passed": true,
+      "checked_metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "errors": [],
+      "elapsed_seconds": 5.761
+    },
+    {
+      "id": "first_may",
+      "passed": true,
+      "checked_metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.824
+    },
+    {
+      "id": "first_coverage",
+      "passed": true,
+      "checked_metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "errors": [],
+      "elapsed_seconds": 5.083
+    },
+    {
+      "id": "first_jun_first_half",
+      "passed": true,
+      "checked_metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.702
+    },
+    {
+      "id": "first_jun_store",
+      "passed": true,
+      "checked_metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.847
+    },
+    {
+      "id": "first_jun_home_store",
+      "passed": true,
+      "checked_metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.633
+    },
+    {
+      "id": "first_jun_filtered_store",
+      "passed": true,
+      "checked_metrics": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.443
+    },
+    {
+      "id": "registration_may",
+      "passed": true,
+      "checked_metrics": [
+        "new_member_count"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.47
+    },
+    {
+      "id": "registration_coverage",
+      "passed": true,
+      "checked_metrics": [
+        "new_member_count"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.27
+    },
+    {
+      "id": "registration_home_store",
+      "passed": true,
+      "checked_metrics": [
+        "new_member_count"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.115
+    },
+    {
+      "id": "registration_tier",
+      "passed": true,
+      "checked_metrics": [
+        "new_member_count"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.152
+    },
+    {
+      "id": "monthly_jun",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.197
+    },
+    {
+      "id": "monthly_may",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.113
+    },
+    {
+      "id": "monthly_may_jun",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.622
+    },
+    {
+      "id": "monthly_all_covered",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.388
+    },
+    {
+      "id": "reject_partial_month",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.554
+    },
+    {
+      "id": "reject_monthly_day_group",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.014
+    },
+    {
+      "id": "reject_monthly_store_group",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.067
+    },
+    {
+      "id": "reject_monthly_store_filter",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.46
+    },
+    {
+      "id": "reject_multimonth_total",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "errors": [],
+      "elapsed_seconds": 4.324
+    }
+  ],
+  "started_at": "2026-11-10T01:42:59.603217+08:00",
+  "environment": {
+    "python": "3.11.16 (main, Sep 29 2026, 14:59:26) [Clang 22.1.3 ]",
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "packages": {
+      "duckdb": "1.5.5",
+      "dbt-core": "1.12.5",
+      "dbt-metricflow": "0.15.0"
+    }
+  },
+  "comparison_policy": {
+    "counts_and_cents": "exact",
+    "null": "strict",
+    "ratio_abs_tolerance": "1E-8",
+    "ratio_rel_tolerance": "1E-9"
+  },
+  "elapsed_seconds": 93.22,
+  "input_changed_during_run": [],
+  "finished_at": "2026-11-10T01:44:32.046865+08:00"
+}

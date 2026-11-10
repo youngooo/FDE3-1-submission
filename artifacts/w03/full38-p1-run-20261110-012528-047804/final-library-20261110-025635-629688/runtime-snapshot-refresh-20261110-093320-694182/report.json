@@ -1,0 +1,37 @@
+{
+  "kind": "runtime_restore_offline_check",
+  "passed": true,
+  "cases": [
+    {
+      "id": "baseline_dry_run_no_writes",
+      "passed": true
+    },
+    {
+      "id": "unknown_version_rejected_before_any_write",
+      "passed": true
+    },
+    {
+      "id": "baseline_guard_rejected_before_any_write",
+      "passed": true
+    },
+    {
+      "id": "restore_exact_snapshot_with_backups",
+      "passed": true
+    },
+    {
+      "id": "repeat_apply_idempotent",
+      "passed": true
+    },
+    {
+      "id": "live_runtime_matches_snapshot_read_only",
+      "passed": true
+    }
+  ],
+  "cases_passed": 6,
+  "installer_sha256": "f25af69bf09811cc19f072c3d792bb836b4082e4d0e2f9c6ce4eb3da01506760",
+  "manifest_sha256": "284d9fc30ac406c6513836f868645989c09200f0783c7d30852bfe3fe43d7fa9",
+  "model_called": false,
+  "query_executed": false,
+  "live_runtime_changed": false,
+  "tests_use_temporary_baseline_workspace": true
+}

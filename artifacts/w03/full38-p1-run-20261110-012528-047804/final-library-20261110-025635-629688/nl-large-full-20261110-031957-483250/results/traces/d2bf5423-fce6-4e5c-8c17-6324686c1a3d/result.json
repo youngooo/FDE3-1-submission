@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_paid_order_count"
+    ],
+    "start": "2026-04-01",
+    "end": "2026-05-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(monthly_paid_order_count) AS monthly_paid_order_count\nFROM \"data\".\"main\".\"monthly_paid_summary\" monthly_paid_model_src_10000\nWHERE DATE_TRUNC('month', month_start) BETWEEN '2026-04-01' AND '2026-04-30'",
+  "columns": [
+    "monthly_paid_order_count"
+  ],
+  "rows": [
+    [
+      4127
+    ]
+  ],
+  "seconds": 0.083,
+  "units": {
+    "monthly_paid_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "统计范围：青禾当前客户数据范围内的2026年4月完整自然月，全渠道、全门店合计，不拆门店或渠道。  \n口径：月末付费会员有效订单数，按月末符合付费资格的账户筛选其该自然月全部有效订单；按账户资格筛选，不按卡重复。该指标的计数对象为订单。\n\n| 指标 | 结果 |\n|---|---:|\n| 月末付费会员有效订单数 | 4,127 单 |\n\n本结果按P1暂定口径试算；门店日期规则用于总部月报仍待书面确认。",
+  "question": "核对青禾2026年4月整月报表：只返回月末付费会员有效订单数的全门店合计，不拆维度。按现有P1暂定试算口径，月末选账户，统计整月全渠道订单，并注明待确认。",
+  "trace_id": "d2bf5423-fce6-4e5c-8c17-6324686c1a3d",
+  "elapsed_seconds": 11.002,
+  "model_usage": {
+    "prompt_tokens": 15324,
+    "completion_tokens": 1163,
+    "total_tokens": 16487
+  },
+  "model_calls_with_usage": 2
+}

@@ -1,0 +1,19 @@
+{
+  "report_sha256": {
+    "artifacts/w03/full38-p1-run-20261109-234602-844810/check-orders24-small/report.json": "848a946290f6aa644c6d5e89e1456324a41e34629db748bc99d7a812b14be55e",
+    "artifacts/w03/full38-p1-run-20261109-234602-844810/check-member8-small/report.json": "eaf1d447bf3e38591d658b386a988c0ce1433b9816b7fc23f9fb6ec01998c473",
+    "artifacts/w03/full38-p1-run-20261109-234602-844810/check-paid6-small/report.json": "bc72709e7d2115a44733cb86c29c3c1f2bb0513df59edaaf8b5f93db7a35fe66"
+  },
+  "files": [
+    {
+      "path": "customer/w03/build-metrics/SKILL.md",
+      "before_sha256": "ae9c7422b3a44e6d5577edb4339d578e7db5ace7fe06de9ac208ac9054c69b6d",
+      "after_sha256": "75ea413219c6711eb1f88ec1995d398f56c19cd6dafad267d28e0dfa8e3d0e55"
+    },
+    {
+      "path": "docs/w03/metric_decisions.md",
+      "before_sha256": "fc150e32bf5c3f1c7d1677f43591a24998de49d7541655581d93d65dc276910d",
+      "after_sha256": "2728395b3f7819a2a0c220811311d75df1db153bdda5971c9e6069d5cced2c7d"
+    }
+  ]
+}

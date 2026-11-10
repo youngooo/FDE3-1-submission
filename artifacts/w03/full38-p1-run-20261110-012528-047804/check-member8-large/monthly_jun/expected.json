@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "groups": [
+    {
+      "group": [],
+      "metrics": {
+        "monthly_buyer_count": 15981,
+        "monthly_repeat_buyer_count": 6552,
+        "monthly_repeat_rate": "0.4099868593955321944809461235"
+      }
+    }
+  ],
+  "reason_contains": null
+}

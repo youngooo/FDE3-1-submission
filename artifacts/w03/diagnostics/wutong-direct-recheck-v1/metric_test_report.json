@@ -1,0 +1,215 @@
+{
+  "contract_version": "w03-0.1.0",
+  "complete": true,
+  "passed": 3,
+  "total": 3,
+  "cases": [
+    {
+      "id": "independent-net-income",
+      "question": "2026 年 8 月梧桐书店扣退后收入是多少？",
+      "expected": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "net_receipts_cents"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "columns": [
+          "net_receipts_cents"
+        ],
+        "rows": [
+          [
+            13000
+          ]
+        ],
+        "units": {
+          "net_receipts_cents": "cents"
+        }
+      },
+      "actual": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "net_receipts_cents"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "sql": "SELECT\n  SUM(CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END) AS net_receipts_cents\nFROM \"data\".\"main\".\"orders\" orders_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+        "columns": [
+          "net_receipts_cents"
+        ],
+        "rows": [
+          [
+            13000
+          ]
+        ],
+        "seconds": 0.036,
+        "units": {
+          "net_receipts_cents": "cents"
+        },
+        "data_version": "wutong-sample-v2",
+        "data_sha256": "6e4f21b3e478cc6fa6b54fe2469267b23f70a7dae3e718db065d6169447ec440",
+        "catalog_sha256": "9b85deabe0f4c035e61f0c48db6ad19033b84c0533652e0e83ef2783e574c788",
+        "answer": "2026 年 8 月梧桐书店扣退后收入为 130.00 元。该结果按 2026 年 8 月汇总，扣退后收入口径为到账总额减退回金额；未按门店等其他维度拆分。",
+        "question": "2026 年 8 月梧桐书店扣退后收入是多少？",
+        "trace_id": "fb3a5783-8f35-4333-87d8-5b076982ac43",
+        "elapsed_seconds": 7.898,
+        "model_usage": {
+          "prompt_tokens": 4051,
+          "completion_tokens": 791,
+          "total_tokens": 4842
+        },
+        "model_calls_with_usage": 2
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "monthly-large-07",
+      "question": "2026 年 7 月梧桐书店月内大额会员数是多少？",
+      "expected": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_large_buyer_count"
+          ],
+          "start": "2026-07-01",
+          "end": "2026-08-01",
+          "group_by": [],
+          "filters": []
+        },
+        "columns": [
+          "monthly_large_buyer_count"
+        ],
+        "rows": [
+          [
+            1
+          ]
+        ],
+        "units": {
+          "monthly_large_buyer_count": "count"
+        }
+      },
+      "actual": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_large_buyer_count"
+          ],
+          "start": "2026-07-01",
+          "end": "2026-08-01",
+          "group_by": [],
+          "filters": []
+        },
+        "sql": "SELECT\n  SUM(CASE WHEN net_receipts_cents >= 10000 THEN 1 ELSE 0 END) AS monthly_large_buyer_count\nFROM \"data\".\"main\".\"monthly_member_receipts\" monthly_member_receipts_src_10000\nWHERE DATE_TRUNC('month', month_start) BETWEEN '2026-07-01' AND '2026-07-31'",
+        "columns": [
+          "monthly_large_buyer_count"
+        ],
+        "rows": [
+          [
+            1
+          ]
+        ],
+        "seconds": 0.042,
+        "units": {
+          "monthly_large_buyer_count": "count"
+        },
+        "data_version": "wutong-sample-v2",
+        "data_sha256": "6e4f21b3e478cc6fa6b54fe2469267b23f70a7dae3e718db065d6169447ec440",
+        "catalog_sha256": "9b85deabe0f4c035e61f0c48db6ad19033b84c0533652e0e83ef2783e574c788",
+        "answer": "2026年7月整月，在梧桐书店客户范围内按会员账户统计，月内大额会员数为 1。口径为：同一自然月内仅计已支付订单，按原订单日期归月，扣除退款后的实付收入累计达到月内大额门槛的会员账户；取消单不计。",
+        "question": "2026 年 7 月梧桐书店月内大额会员数是多少？",
+        "trace_id": "c5254795-a36b-4ea6-bb8e-6896fab05630",
+        "elapsed_seconds": 10.549,
+        "model_usage": {
+          "prompt_tokens": 4215,
+          "completion_tokens": 1132,
+          "total_tokens": 5347
+        },
+        "model_calls_with_usage": 2
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "monthly-large-08",
+      "question": "2026 年 8 月梧桐书店月内大额会员数是多少？",
+      "expected": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_large_buyer_count"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "columns": [
+          "monthly_large_buyer_count"
+        ],
+        "rows": [
+          [
+            0
+          ]
+        ],
+        "units": {
+          "monthly_large_buyer_count": "count"
+        }
+      },
+      "actual": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_large_buyer_count"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "sql": "SELECT\n  SUM(CASE WHEN net_receipts_cents >= 10000 THEN 1 ELSE 0 END) AS monthly_large_buyer_count\nFROM \"data\".\"main\".\"monthly_member_receipts\" monthly_member_receipts_src_10000\nWHERE DATE_TRUNC('month', month_start) BETWEEN '2026-08-01' AND '2026-08-31'",
+        "columns": [
+          "monthly_large_buyer_count"
+        ],
+        "rows": [
+          [
+            0
+          ]
+        ],
+        "seconds": 0.034,
+        "units": {
+          "monthly_large_buyer_count": "count"
+        },
+        "data_version": "wutong-sample-v2",
+        "data_sha256": "6e4f21b3e478cc6fa6b54fe2469267b23f70a7dae3e718db065d6169447ec440",
+        "catalog_sha256": "9b85deabe0f4c035e61f0c48db6ad19033b84c0533652e0e83ef2783e574c788",
+        "answer": "2026 年 8 月梧桐书店的月内大额会员数为 0 个账户。统计口径为：同一自然月内，仅计已支付订单，按原订单日期归月，扣退后收入累计达到 100.00 元（含）及以上的会员账户数；取消订单不计。该结果表示在本次客户数据覆盖范围内，当月没有达到门槛的会员账户，属于覆盖内的零，不是未定义。",
+        "question": "2026 年 8 月梧桐书店月内大额会员数是多少？",
+        "trace_id": "887681ce-e6a7-4c04-9913-9dce91bee582",
+        "elapsed_seconds": 8.032,
+        "model_usage": {
+          "prompt_tokens": 4215,
+          "completion_tokens": 848,
+          "total_tokens": 5063
+        },
+        "model_calls_with_usage": 2
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    }
+  ]
+}

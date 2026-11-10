@@ -1,0 +1,51 @@
+{
+  "kind": "w03_submission_gap_reconciliation",
+  "changes": [
+    {
+      "path": "docs/w03/metric_decisions.md",
+      "before": "b2a506820a70280b21f45d26c93a1b977a82e49134157cdf7a52e940a31ee919",
+      "after": "2e66d438a5141b88f1cfa5219d8bff3ce410db28ea6f8ecdfc2d9a9d238bc23b"
+    },
+    {
+      "path": "docs/w03/interview_notes.md",
+      "before": "ea02db19037f33d766f875dc9aae7777223fec05532d8f71b64fc688e8811094",
+      "after": "b0316d5b8c4c5ccedda97e31db02c7b5c7fd5cbb25c9583cd84a602d9a1ddc65"
+    },
+    {
+      "path": "docs/w03/course_material_request_draft.md",
+      "before": null,
+      "after": "4ed17830f619fc7f1e654555ebf17fad119a146163aaf4dd61b97b8a031f0e78"
+    },
+    {
+      "path": "artifacts/w03/submission_status.json",
+      "before": "a500ddbae68d653a58dfbbe0e1d19b03814069e55def660d2f97f594e699c2b4",
+      "after": "762e9a876e3490c989bc04a45e868c3582992c8feef36ff2293b9f4728cfac59"
+    },
+    {
+      "path": "docs/w03/submission_overview.txt",
+      "before": "397371a20f88e071696d590438cc131dcff939a4a3588f4a5e0cdbd922df79c7",
+      "after": "a5f66b3ce2459c432cd9b53cc69290c7eeddba6626b4bd03a09a6ec649ff5a54"
+    },
+    {
+      "path": "customer/w03/test_entrypoints.txt",
+      "before": "312397960dd8d7df8fc1125e0a56102d061d81d78292c400ca09e9985faef9c6",
+      "after": "cd806624dcc89b2b4081e4f002288b5679cb8f082d7a36702131311c5a17b59a"
+    },
+    {
+      "path": "docs/w03/model_changes.md",
+      "before": "d317eb6a0417c4e4f35c0642c4fd4d1e6dc9c9448f712f1ce4cd0e49bc9d28c0",
+      "after": "dd7a393451330c65b15530079a2d3fe32f3a3649f924abc202207411a3e88486"
+    },
+    {
+      "path": "docs/w03/teacher_feedback_check.md",
+      "before": null,
+      "after": "32fb0ef21ab573e88ff3e12240675d46dfe0bae17abe1fc03b2bbf26c8b634cc"
+    }
+  ],
+  "model_called": false,
+  "query_executed": false,
+  "business_confirmation": "pending",
+  "course_request_sent": false,
+  "chat_binding_changed": false,
+  "protected_files_unchanged": true
+}

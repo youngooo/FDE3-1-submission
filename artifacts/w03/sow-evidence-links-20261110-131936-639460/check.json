@@ -1,0 +1,24 @@
+{
+  "change": "append three evidence links only",
+  "before_sha256": "c6299d7b29ce588d82eafc60587fc03096313ad43685ca5b7f60c36b5a9a91e0",
+  "after_sha256": "9f4490631ae81db8c5c7be370d88c204ef78b2fe2df3e68fe8bf55f1b4a746ed",
+  "links": [
+    {
+      "target": "../../artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/chat-entry-verification-20261110-125035-982682/review.json",
+      "exists": true,
+      "sha256": "f9a1f812d12b36a23cb801701190f5262e2e0b390616468dae1388756b14325e"
+    },
+    {
+      "target": "../../artifacts/w02/sources/W3-interview-6ce5833c-5351-54bc-9fd7-b36474544983-sow-review-transcript.json",
+      "exists": true,
+      "sha256": "d9cc30c11aafb52d38b072a227ed1a81fcfe7bb4fd2c9e2c3bd3171bbd2ac9e8"
+    },
+    {
+      "target": "sow_review_notes.md",
+      "exists": true,
+      "sha256": "1f7170cc33089e861ce31e3f6b50efe71167c5549bf12c494c4e1aab05e5da79"
+    }
+  ],
+  "business_approval_changed": false,
+  "model_called": false
+}

@@ -1,0 +1,15 @@
+{
+  "status": "skill_quote_fixed_rebuild_pending",
+  "files": [
+    {
+      "path": "customer/w03/build-metrics/SKILL.md",
+      "before_sha256": "f9dff1dfe81662a7bef04caac6f779e07226ff65515ce857311dab3b9ce5a02e",
+      "after_sha256": "419a5a6d449da1baf6147cfaa9ada34fe053af76a153e561e487201e9f817315"
+    },
+    {
+      "path": "docs/w03/metric_decisions.md",
+      "before_sha256": "3e3c6fff2049e9b258f6a2d4c1932d03b5db068a24db4f0e715b47a43b9e3861",
+      "after_sha256": "429744c45c53d8d75b99b201d376d906eb23861b94cb3384b8e3add57b86b2e7"
+    }
+  ]
+}

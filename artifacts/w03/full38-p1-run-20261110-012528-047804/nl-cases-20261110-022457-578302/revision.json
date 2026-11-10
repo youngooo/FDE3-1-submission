@@ -1,0 +1,121 @@
+{
+  "original_plan": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-cases-20261110-015853-130933/plan.json",
+  "original_plan_sha256": "c0efe9ecabdfc31d00d579bbe07b6730fafd06039bf76d30a3a6d5914e06a2cc",
+  "reason": "Unsupported policy refusal need not serialize an unexecuted prohibited filter; requested filter retained separately for answer review. Successful query checks unchanged.",
+  "contract": "docs/w03/contract.md: successful results require full intent; non-ok results must not supply numeric rows",
+  "changed_cases": [
+    {
+      "dataset": "small",
+      "id": "reject_paid_filter",
+      "removed_nonexecuted_filter_assertion": [
+        {
+          "field": "order__channel",
+          "op": "eq",
+          "value": "门店"
+        }
+      ],
+      "expected_before": {
+        "status": "unsupported",
+        "intent": {
+          "metrics": [
+            "monthly_paid_order_count"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": [
+            {
+              "field": "order__channel",
+              "op": "eq",
+              "value": "门店"
+            }
+          ]
+        }
+      },
+      "expected_after": {
+        "status": "unsupported",
+        "intent": {
+          "metrics": [
+            "monthly_paid_order_count"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": []
+        }
+      },
+      "requested_intent": {
+        "metrics": [
+          "monthly_paid_order_count"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "group_by": [],
+        "filters": [
+          {
+            "field": "order__channel",
+            "op": "eq",
+            "value": "门店"
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "large",
+      "id": "reject_paid_filter",
+      "removed_nonexecuted_filter_assertion": [
+        {
+          "field": "order__channel",
+          "op": "eq",
+          "value": "门店"
+        }
+      ],
+      "expected_before": {
+        "status": "unsupported",
+        "intent": {
+          "metrics": [
+            "monthly_paid_order_count"
+          ],
+          "start": "2026-06-01",
+          "end": "2026-07-01",
+          "group_by": [],
+          "filters": [
+            {
+              "field": "order__channel",
+              "op": "eq",
+              "value": "门店"
+            }
+          ]
+        }
+      },
+      "expected_after": {
+        "status": "unsupported",
+        "intent": {
+          "metrics": [
+            "monthly_paid_order_count"
+          ],
+          "start": "2026-06-01",
+          "end": "2026-07-01",
+          "group_by": []
+        }
+      },
+      "requested_intent": {
+        "metrics": [
+          "monthly_paid_order_count"
+        ],
+        "start": "2026-06-01",
+        "end": "2026-07-01",
+        "group_by": [],
+        "filters": [
+          {
+            "field": "order__channel",
+            "op": "eq",
+            "value": "门店"
+          }
+        ]
+      }
+    }
+  ],
+  "model_called": false,
+  "query_executed": false,
+  "new_plan": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-cases-20261110-022457-578302/plan.json"
+}

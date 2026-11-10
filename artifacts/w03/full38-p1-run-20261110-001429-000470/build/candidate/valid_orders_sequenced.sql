@@ -1,0 +1,1 @@
+WITH valid_orders AS (SELECT *, paid_cents - refund_cents AS net_sales_cents FROM {{ ref('orders_enriched') }} WHERE status = 'paid' AND paid_cents - refund_cents > 0), sequenced AS (SELECT *, ROW_NUMBER() OVER (PARTITION BY member_id ORDER BY ordered_at, order_id) AS order_rank FROM valid_orders) SELECT * FROM sequenced

@@ -1,0 +1,138 @@
+{
+  "kind": "deterministic_ratio_reference_normalization",
+  "created_at": "2026-11-06T18:38:08.189765+00:00",
+  "source_build": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/build-general32-20261107-022839",
+  "source_response_sha256": "b5f71a485a5e39ae4f436d4b34daa578de802e95876405c53d1c5e9d0c498a58",
+  "normalized_response_sha256": "ac49c5d4a111ef965778657d72a1b87eeeb2e626804c00c13cdeeb23f27401b8",
+  "script_sha256": "abf8fbd83480d8a02c7ff80924aaeb6780dde3e2ef8bfd23bee10d30f650551d",
+  "changes": [
+    {
+      "metric_id": "avg_order_value",
+      "field": "numerator",
+      "before": "m_net_sales_cents",
+      "after": "net_sales_cents",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "avg_order_value",
+      "field": "denominator",
+      "before": "m_valid_order_count",
+      "after": "valid_order_count",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "avg_buyer_value",
+      "field": "numerator",
+      "before": "m_net_sales_cents",
+      "after": "net_sales_cents",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "avg_buyer_value",
+      "field": "denominator",
+      "before": "m_buyer_count_distinct",
+      "after": "buyer_count",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "purchase_frequency",
+      "field": "numerator",
+      "before": "m_valid_order_count",
+      "after": "valid_order_count",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "purchase_frequency",
+      "field": "denominator",
+      "before": "m_buyer_count_distinct",
+      "after": "buyer_count",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "refund_amount_rate",
+      "field": "numerator",
+      "before": "m_refund_cents",
+      "after": "refund_cents",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "refund_amount_rate",
+      "field": "denominator",
+      "before": "m_payment_cents",
+      "after": "payment_cents",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "cancel_rate",
+      "field": "numerator",
+      "before": "m_cancelled_order_count",
+      "after": "cancelled_order_count",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "cancel_rate",
+      "field": "denominator",
+      "before": "m_order_count",
+      "after": "order_count",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "refund_order_rate",
+      "field": "numerator",
+      "before": "m_refund_order_count",
+      "after": "refund_order_count",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "refund_order_rate",
+      "field": "denominator",
+      "before": "m_paid_order_count",
+      "after": "paid_order_count",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "discount_rate",
+      "field": "numerator",
+      "before": "m_discount_cents",
+      "after": "discount_cents",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "discount_rate",
+      "field": "denominator",
+      "before": "m_gross_cents",
+      "after": "gross_cents",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "items_per_order",
+      "field": "numerator",
+      "before": "m_valid_order_items",
+      "after": "valid_order_items",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "items_per_order",
+      "field": "denominator",
+      "before": "m_valid_order_count",
+      "after": "valid_order_count",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "monthly_repeat_rate",
+      "field": "numerator",
+      "before": "m_monthly_repeat_buyer_count",
+      "after": "monthly_repeat_buyer_count",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    },
+    {
+      "metric_id": "monthly_repeat_rate",
+      "field": "denominator",
+      "before": "m_monthly_buyer_count",
+      "after": "monthly_buyer_count",
+      "basis": "unique unfiltered simple metric referencing this existing measure"
+    }
+  ],
+  "status": "native_validation_passed",
+  "note": "Original model output retained. Only ratio reference names corrected; no business formula or observed result rewritten."
+}

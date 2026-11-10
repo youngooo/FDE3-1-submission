@@ -1,0 +1,26 @@
+{
+  "status": "clarify",
+  "reason": "月内复购率是仅支持完整自然月、全门店口径的按月指标；问题中的“5月与6月”没有年份，历史中也没有可用的年份上下文，因此需要确认是哪一个自然年（例如 2026 年 5 月和 6 月），确认后再按月分别计算。",
+  "intent": {
+    "status": "clarify",
+    "reason": "月内复购率是仅支持完整自然月、全门店口径的按月指标；问题中的“5月与6月”没有年份，历史中也没有可用的年份上下文，因此需要确认是哪一个自然年（例如 2026 年 5 月和 6 月），确认后再按月分别计算。",
+    "metrics": [
+      "monthly_repeat_rate"
+    ],
+    "start": "",
+    "end": "",
+    "group_by": [
+      "metric_time__month"
+    ],
+    "filters": []
+  },
+  "question": "青禾5月与6月的月内复购率分别是多少？",
+  "trace_id": "8aaa3dc8-fef9-42d0-b1b7-19ba379422ae",
+  "elapsed_seconds": 2.302,
+  "model_usage": {
+    "prompt_tokens": 12538,
+    "completion_tokens": 287,
+    "total_tokens": 12825
+  },
+  "model_calls_with_usage": 1
+}

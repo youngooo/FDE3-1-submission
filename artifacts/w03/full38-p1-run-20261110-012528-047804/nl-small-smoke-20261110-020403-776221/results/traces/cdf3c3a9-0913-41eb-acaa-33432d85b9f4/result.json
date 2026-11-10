@@ -1,0 +1,22 @@
+{
+  "status": "unsupported",
+  "reason": "当前指标目录没有净利润或利润类指标，只有净销售额、实付金额、退款金额、优惠金额等交易金额指标；这些都不能等同于利润，因此无法计算青禾 2026 年 8 月的净利润。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "当前指标目录没有净利润或利润类指标，只有净销售额、实付金额、退款金额、优惠金额等交易金额指标；这些都不能等同于利润，因此无法计算青禾 2026 年 8 月的净利润。",
+    "metrics": [],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "青禾2026年8月的净利润是多少？我要利润，不是净销售额。",
+  "trace_id": "cdf3c3a9-0913-41eb-acaa-33432d85b9f4",
+  "elapsed_seconds": 3.004,
+  "model_usage": {
+    "prompt_tokens": 12244,
+    "completion_tokens": 267,
+    "total_tokens": 12511
+  },
+  "model_calls_with_usage": 1
+}

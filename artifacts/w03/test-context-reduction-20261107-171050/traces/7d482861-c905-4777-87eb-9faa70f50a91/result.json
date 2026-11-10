@@ -1,0 +1,52 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": [
+      {
+        "field": "member",
+        "op": "eq",
+        "value": "M29998"
+      }
+    ]
+  },
+  "sql": "SELECT\n  SUM(order_count) AS order_count\n  , SUM(valid_order_count) AS valid_order_count\n  , SUM(net_sales_cents) AS net_sales_cents\nFROM (\n  SELECT\n    member_id AS member\n    , 1 AS order_count\n    , CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END AS valid_order_count\n    , CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END AS net_sales_cents\n  FROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_6\nWHERE member in ('M29998')",
+  "columns": [
+    "order_count",
+    "valid_order_count",
+    "net_sales_cents"
+  ],
+  "rows": [
+    [
+      1,
+      1,
+      23004
+    ]
+  ],
+  "seconds": 0.194,
+  "units": {
+    "order_count": "count",
+    "valid_order_count": "count",
+    "net_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f",
+  "answer": "统计范围：青禾当前客户下，CRM会员账户M29998，在2026-08-01（含）至2026-09-01（不含）内、按下单日期归属的订单；不分组汇总。结果：创建订单数1单，有效订单数1单，净销售额23004分。口径：创建订单数按订单号计全部订单并包含取消单；有效订单数为已支付且实付减退款大于0的订单，取消和全额退款不计；净销售额为已支付订单实付减退款后的合计，取消单不计，金额单位分。",
+  "question": "青禾2026-08-01含至2026-09-01不含，只筛选CRM会员账户ID为M29998的订单，汇总创建订单数、有效订单数和净销售额；金额保留分，不分组。",
+  "trace_id": "7d482861-c905-4777-87eb-9faa70f50a91",
+  "elapsed_seconds": 13.029,
+  "model_usage": {
+    "prompt_tokens": 11991,
+    "completion_tokens": 1377,
+    "total_tokens": 13368
+  },
+  "model_calls_with_usage": 2
+}

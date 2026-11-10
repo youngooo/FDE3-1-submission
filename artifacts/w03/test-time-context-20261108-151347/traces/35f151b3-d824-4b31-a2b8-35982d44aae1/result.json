@@ -1,0 +1,26 @@
+{
+  "status": "clarify",
+  "reason": "“7月和8月”未提供年份，历史中助手自行选用的 2026 年不视为您已确认的年份，因此需要您确认要查询哪一年的 7 月和 8 月。另需说明，“青禾”是当前数据集对应的客户名称，不按门店筛选处理；月内复购率仅支持完整自然月口径，并会按月分别展示。",
+  "intent": {
+    "status": "clarify",
+    "reason": "“7月和8月”未提供年份，历史中助手自行选用的 2026 年不视为您已确认的年份，因此需要您确认要查询哪一年的 7 月和 8 月。另需说明，“青禾”是当前数据集对应的客户名称，不按门店筛选处理；月内复购率仅支持完整自然月口径，并会按月分别展示。",
+    "metrics": [
+      "monthly_repeat_rate"
+    ],
+    "start": "",
+    "end": "",
+    "group_by": [
+      "metric_time__month"
+    ],
+    "filters": []
+  },
+  "question": "青禾7月和8月的月内复购率分别是多少？",
+  "trace_id": "35f151b3-d824-4b31-a2b8-35982d44aae1",
+  "elapsed_seconds": 3.481,
+  "model_usage": {
+    "prompt_tokens": 11009,
+    "completion_tokens": 396,
+    "total_tokens": 11405
+  },
+  "model_calls_with_usage": 1
+}

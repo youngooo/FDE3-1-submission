@@ -1,0 +1,25 @@
+--- agent (before)
++++ agent (after)
+@@ -2,6 +2,7 @@
+ import json,uuid,time,threading
+ from pathlib import Path
+ from .common import read,dump,call_json
++from .intent_context import prepare_intent_context
+ ROOT=Path(__file__).resolve().parents[3]
+ class MetricsAgent:
+  def __init__(self,project,out=None,model=None):
+@@ -11,10 +12,11 @@
+   if not isinstance(question,str) or not question.strip() or len(question)>6000:raise ValueError('QUESTION_INVALID')
+   from .engine import query_worker
+   folder=self.out/str(uuid.uuid4());folder.mkdir(parents=True,exist_ok=False);start=time.monotonic()
+-  dimensions=read(self.project/'dimensions.json')
+-  values={k:v['values'] for k,v in dimensions['dimensions'].items() if v['kind']!='time'}
++  dimensions_full=read(self.project/'dimensions.json')
++  dimensions,values,context_summary=prepare_intent_context(question,(history or [])[-6:],dimensions_full)
++  dump(folder/'intent-context-summary.json',context_summary)
+   try:
+-   intent=call_json((ROOT/'product/w03_intent_prompt.txt').read_text(),{'question':question,'history':(history or [])[-6:],'customer_context':self.scope,'data_context':self.data,'catalog':self.catalog,'filter_values':values,'available_dimensions':dimensions},folder/'intent-trace.json',model=self.model)
++   intent=call_json((ROOT/'product/w03_intent_prompt.txt').read_text(),{'question':question,'history':(history or [])[-6:],'customer_context':self.scope,'data_context':self.data,'catalog':self.catalog,'filter_values':values,'filter_value_metadata':context_summary['fields'],'available_dimensions':dimensions},folder/'intent-trace.json',model=self.model)
+    if intent.get('status') in ['clarify','unsupported']:
+     if not isinstance(intent.get('reason'),str) or not intent['reason'].strip():raise ValueError('INTENT_REASON_REQUIRED')
+     result={'status':intent['status'],'reason':intent['reason'],'intent':intent}

@@ -1,0 +1,56 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "order__channel"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  order__channel\n  , SUM(__order_count) AS order_count\n  , SUM(__valid_order_count) AS valid_order_count\n  , SUM(__net_sales_cents) AS net_sales_cents\nFROM (\n  SELECT\n    channel AS order__channel\n    , 1 AS __order_count\n    , CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END AS __valid_order_count\n    , CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END AS __net_sales_cents\n  FROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_7\nGROUP BY\n  order__channel",
+  "columns": [
+    "order__channel",
+    "order_count",
+    "valid_order_count",
+    "net_sales_cents"
+  ],
+  "rows": [
+    [
+      "门店",
+      16,
+      14,
+      51600
+    ],
+    [
+      "小程序",
+      16,
+      13,
+      48700
+    ]
+  ],
+  "seconds": 0.092,
+  "units": {
+    "order_count": "count",
+    "valid_order_count": "count",
+    "net_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+  "answer": "统计范围：青禾客户下，按下单日期归属的2026年8月订单，按订单渠道分组；数据来自本周合成测试库。口径：创建订单数按订单号计一次并包含取消单；有效订单数为已支付且实付减退款大于零的订单，取消和全退不计；净销售额为已支付订单实付减退款后的合计，取消单不计，金额以分计。结果：门店渠道创建订单16单、有效订单14单、净销售额51,600分（516.00元）；小程序渠道创建订单16单、有效订单13单、净销售额48,700分（487.00元）。金额按要求保留分展示，括号内为元。",
+  "question": "青禾2026年8月按订单渠道分组，分别列出创建订单数、有效订单数、净销售额；按下单日期统计，金额保留分。",
+  "trace_id": "ab1c4453-545d-49ae-a746-94d67bd7b44a",
+  "elapsed_seconds": 13.462,
+  "model_usage": {
+    "prompt_tokens": 10720,
+    "completion_tokens": 1370,
+    "total_tokens": 12090
+  },
+  "model_calls_with_usage": 2
+}

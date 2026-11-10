@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "valid_order_items"
+    ],
+    "start": "2026-04-01",
+    "end": "2026-05-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN quantity ELSE 0 END) AS valid_order_items\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-04-01' AND '2026-04-30'",
+  "columns": [
+    "valid_order_items"
+  ],
+  "rows": [
+    [
+      78119
+    ]
+  ],
+  "seconds": 0.113,
+  "units": {
+    "valid_order_items": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "青禾2026年4月整月报表核对结果：有效订单商品件数全门店合计为78119件。统计范围为2026年4月整月、青禾当前测试数据范围，不拆分门店或地区维度；口径为有效订单中的原始购买件数合计。该指标不是净商品销量，退款金额不能用于推算退货件数。",
+  "question": "核对青禾2026年4月整月报表：只返回有效订单商品件数的全门店合计，不拆维度。",
+  "trace_id": "72ee66e0-5197-48a7-95a5-8a47a9049bd3",
+  "elapsed_seconds": 9.758,
+  "model_usage": {
+    "prompt_tokens": 14692,
+    "completion_tokens": 790,
+    "total_tokens": 15482
+  },
+  "model_calls_with_usage": 2
+}

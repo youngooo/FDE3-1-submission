@@ -1,0 +1,23 @@
+{
+  "evidence_sha256": {
+    "artifacts/w03/full38-p1-run-20261110-004502-210663/check-orders24-small/report.json": "8324b163fdb1c5ee922cfb8044060da459debfa8450a778d82b5d0065fc362fb",
+    "artifacts/w03/full38-p1-run-20261110-004502-210663/check-member8-small/report.json": "145ee4e62a79caba8aec3c1f5f8dd94d838860f886f50ebf145d81a86788509f",
+    "artifacts/w03/full38-p1-run-20261110-004502-210663/check-paid6-small/report.json": "be5cf2ae38ef372529e52771fc1f37b763ce4cb892c832bba962566b922218b9",
+    "artifacts/w03/full38-p1-run-20261110-004502-210663/check-paid6-small/paid_all_covered_months/actual.json": "ed2f72a216edcaa6df852f1f458b8276d7164639dbc76e5c85c8dbc98560e5e6",
+    "artifacts/w03/full38-p1-run-20261110-004502-210663/check-paid6-small/paid_all_covered_months/expected.json": "d52d7e0844b77241a68a8d299eb4ffd1d0d1ffe3a85d22afd82ad570ac28ae25",
+    "artifacts/w03/full38-p1-run-20261110-004502-210663/build/monthly_paid_eligibility.sql": "8d432bb734631f5a03b5cb3998f0dba9de0d968dde5cd86fe47ae43c25e2f939",
+    "artifacts/w03/full38-p1-run-20261110-004502-210663/build/monthly_paid_account.sql": "0628ebe0bbaef44a5a1e343be7f832d6f94dbe547d2e8f579ccffc66d9eef61a"
+  },
+  "files": [
+    {
+      "path": "customer/w03/build-metrics/SKILL.md",
+      "before_sha256": "db38570f3dbe6d27ab50bf5eee114a58723800000a44aac0f1412959656278af",
+      "after_sha256": "676233ac030604921b0b9a46ad18275e4576beddac46e1eb5a53d0f59baf1329"
+    },
+    {
+      "path": "docs/w03/metric_decisions.md",
+      "before_sha256": "c92a61602ecd22c191128c838da5104ba192494c5ba7a53d4f94cdad77b850ab",
+      "after_sha256": "5913a4e2415ed5770dddacb3ad5be981d0880d15756221144b1c10210fb8d4db"
+    }
+  ]
+}

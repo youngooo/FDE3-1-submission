@@ -1,0 +1,41 @@
+[
+  {
+    "id": "single_valid_order_items",
+    "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的有效订单商品件数，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "valid_order_items"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "group_by": [],
+        "filters": []
+      },
+      "columns": [
+        "valid_order_items"
+      ],
+      "rows": [
+        [
+          120210
+        ]
+      ],
+      "units": {
+        "valid_order_items": "count"
+      },
+      "data_version": "qinghe-w03-20260923-large",
+      "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+      "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+    },
+    "expected_source": {
+      "materials": [
+        "materials/w03/01_订单日报说明.md",
+        "materials/w03/02_财务邮件.md",
+        "materials/w03/05_数据字典.md"
+      ],
+      "method": "Filter original orders by requested window/dimensions; calculate distinct accounts/stores, order conditions, cents and ratios independently.",
+      "source_csv": "original CSV only; hashes in generation.json"
+    }
+  }
+]

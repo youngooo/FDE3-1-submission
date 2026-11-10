@@ -1,0 +1,24 @@
+{
+  "status": "unsupported",
+  "reason": "当前指标目录仅定义了“注册会员数”，其口径是按注册日期统计新注册的 CRM 会员账户数，不等于自然人数；目录中没有“付费会员数”或“会员总数”指标，也没有免费/付费会员属性或会员总量的定义，因此无法确认“免费注册会员数＋付费会员数＝会员总数”，不能推断三者关系。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "当前指标目录仅定义了“注册会员数”，其口径是按注册日期统计新注册的 CRM 会员账户数，不等于自然人数；目录中没有“付费会员数”或“会员总数”指标，也没有免费/付费会员属性或会员总量的定义，因此无法确认“免费注册会员数＋付费会员数＝会员总数”，不能推断三者关系。",
+    "metrics": [
+      "new_member_count"
+    ],
+    "start": "",
+    "end": "",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "青禾的免费注册会员数与付费会员数相加，就是会员总数吗？请说明注册会员数、付费会员数、会员总数的口径定义与关系。",
+  "trace_id": "ef323c22-55dc-4dad-98db-3b4a9ed9145c",
+  "elapsed_seconds": 5.018,
+  "model_usage": {
+    "prompt_tokens": 10972,
+    "completion_tokens": 673,
+    "total_tokens": 11645
+  },
+  "model_calls_with_usage": 1
+}

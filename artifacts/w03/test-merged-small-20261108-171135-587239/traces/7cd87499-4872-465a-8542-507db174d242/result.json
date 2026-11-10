@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_buyer_count",
+      "monthly_repeat_buyer_count",
+      "monthly_repeat_rate"
+    ],
+    "start": "2024-10-01",
+    "end": "2024-11-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "WITH sma_10001_cte AS (\n  SELECT\n    DATE_TRUNC('month', month_date) AS metric_time__month\n    , member_id AS __monthly_buyer_count\n    , CASE WHEN valid_order_count >= 2 THEN member_id ELSE NULL END AS __monthly_repeat_buyer_count\n  FROM \"data\".\"main\".\"member_month_activity\" member_month_activity_semantic_src_10000\n)\n\nSELECT\n  MAX(subq_8.monthly_buyer_count) AS monthly_buyer_count\n  , MAX(subq_8.monthly_repeat_buyer_count) AS monthly_repeat_buyer_count\n  , MAX(subq_15.monthly_repeat_rate) AS monthly_repeat_rate\nFROM (\n  SELECT\n    COUNT(DISTINCT __monthly_buyer_count) AS monthly_buyer_count\n    , COUNT(DISTINCT __monthly_repeat_buyer_count) AS monthly_repeat_buyer_count\n  FROM sma_10001_cte\n  WHERE metric_time__month BETWEEN '2024-10-01' AND '2024-10-31'\n) subq_8\nCROSS JOIN (\n  SELECT\n    CAST(COUNT(DISTINCT __monthly_repeat_buyer_count) AS DOUBLE) / CAST(NULLIF(COUNT(DISTINCT __monthly_buyer_count), 0) AS DOUBLE) AS monthly_repeat_rate\n  FROM sma_10001_cte\n  WHERE metric_time__month BETWEEN '2024-10-01' AND '2024-10-31'\n) subq_15",
+  "columns": [
+    "monthly_buyer_count",
+    "monthly_repeat_buyer_count",
+    "monthly_repeat_rate"
+  ],
+  "rows": [
+    [
+      0,
+      0,
+      null
+    ]
+  ],
+  "seconds": 0.07,
+  "units": {
+    "monthly_buyer_count": "count",
+    "monthly_repeat_buyer_count": "count",
+    "monthly_repeat_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "answer": "青禾在2024年10月完整自然月（2024-10-01含至2024-11-01不含）、全门店且不分组的口径下：月内购买会员数为0个CRM会员账户；月内复购会员数为0个CRM会员账户；月内复购率未定义，因为其分母为月内购买会员数，而本次分母为0。上述两个“0”是本次统计范围内的零，并非未返回结果。",
+  "question": "青禾2024年10月完整自然月（2024-10-01含至2024-11-01不含），全门店的月内购买会员数、月内复购会员数及月内复购率分别是多少？不分组，比率保留小数。",
+  "trace_id": "7cd87499-4872-465a-8542-507db174d242",
+  "elapsed_seconds": 9.471,
+  "model_usage": {
+    "prompt_tokens": 13440,
+    "completion_tokens": 758,
+    "total_tokens": 14198
+  },
+  "model_calls_with_usage": 2
+}

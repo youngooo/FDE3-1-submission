@@ -1,0 +1,40 @@
+{
+  "status": "needs_review",
+  "dataset": "small",
+  "stage": "full",
+  "total": 69,
+  "started_at": "2026-11-10T02:11:41.136385+08:00",
+  "business_confirmation": "pending",
+  "answer_review_required": true,
+  "final_acceptance": false,
+  "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-small-full-20261110-021141-119652/results/metric_test_report.json",
+  "exit_code": 0,
+  "passed": 68,
+  "complete": true,
+  "inputs_match": true,
+  "result_library_binding": true,
+  "rejudge_consistent": true,
+  "input_changed_during_run": [],
+  "failed_cases": [
+    {
+      "id": "reject_paid_filter",
+      "status": "unsupported",
+      "code": null,
+      "comparison": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "intent_mismatch",
+            "field": "filters",
+            "expected": [
+              "[\"order__channel\", [\"门店\"]]"
+            ],
+            "actual": []
+          }
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 587.538,
+  "finished_at": "2026-11-10T02:21:44.144892+08:00"
+}

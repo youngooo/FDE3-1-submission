@@ -1,0 +1,81 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "你根据本轮真实执行结果回答问题。解释条件时必须使用字段语义：store、store__region、store__store_name 都表示订单成交门店及其地区/名称；home_store 及其地区/名称才表示会员归属门店。返回 intent 中已有字段筛选就是已经应用的查询条件，不能因没有额外中文同名字段而否认已应用的条件。只能引用结果中的数值；金额以分存储，展示元需除100；比例展示百分数需乘100。用简明业务语言解释统计范围、口径及限制，金额保留两位小数、比例适当四舍五入。不要展示内部 status、intent 等字段名。区分零和未定义。聚合返回零是覆盖内的零；未返回某个分组仅说明该分组未列出，不能称为该指标未定义，也不能推断数据覆盖不足。返回 JSON：{\"answer\":\"...\",\"used_metrics\":[],\"citations\":[\"当前执行结果\"]}。\ncustomer_context 指明当前已加载客户与统计单位，data_context 指明本次测试数据版本和覆盖；本轮成功结果已经处于该客户数据范围。问题中的当前客户名称不是门店筛选值，不能因为没有同名门店筛选而否认结果属于该客户。只说明实际应用的筛选和分组；若用户没有要求某维度，不添加假设性的门店歧义。人数按customer_context统计单位表述为账户，不暗示跨系统自然人已去重。用业务词说明范围，不向用户罗列技术字段ID。\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"question\": \"青禾2026年8月按会员归属门店编号分组，分别列出创建订单数、有效订单数、净销售额；按下单日期统计，金额保留分。\", \"customer_context\": {\"customer\": \"青禾\", \"statistics_unit\": \"CRM 会员账户\", \"scope\": \"本周合成测试库\"}, \"data_context\": {\"seed\": 20260923, \"synthetic\": true, \"counts\": {\"members\": 20, \"orders\": 48, \"stores\": 3, \"cards\": 22}, \"coverage\": [\"2024-09-01\", \"2026-09-01\"], \"sha256\": {\"orders.csv\": \"c6e0dee6081e7a6f7782b54de78b3182835c46184c8e7569fc23feab8cf3c4f1\", \"cards.csv\": \"d27bdabd508d7881a1bea84cb79400c2a770fc1ad42fdb81877163cc018bb8d5\", \"members.csv\": \"e99b7e82389722b1ae2e4fd267c74dd84bd61dfeabaa161221d7ae44ae955b2f\", \"stores.csv\": \"e8160804fd485853f6c75d9a095b1ee6f05bbbd40ba851cac84def35488aa41d\"}, \"id\": \"qinghe-w03-20260923-small\", \"timezone\": \"Asia/Shanghai\", \"reference_date\": \"2026-09-01\", \"generator_version\": \"qinghe-w03-v1\", \"base_seed\": 20260922, \"library_sha256\": \"3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635\"}, \"result\": {\"status\": \"ok\", \"intent\": {\"metrics\": [\"order_count\", \"valid_order_count\", \"net_sales_cents\"], \"start\": \"2026-08-01\", \"end\": \"2026-09-01\", \"group_by\": [\"home_store\"], \"filters\": []}, \"columns\": [\"home_store\", \"order_count\", \"valid_order_count\", \"net_sales_cents\"], \"rows\": [[\"S02\", 15, 14, 45650], [\"S01\", 16, 13, 54650], [\"S03\", 1, 0, 0]], \"seconds\": 0.093, \"units\": {\"order_count\": \"count\", \"valid_order_count\": \"count\", \"net_sales_cents\": \"cents\"}, \"data_version\": \"qinghe-w03-20260923-small\", \"data_sha256\": \"8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6\", \"catalog_sha256\": \"3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635\"}, \"definitions\": [{\"id\": \"order_count\", \"name\": \"创建订单数\", \"aliases\": [], \"unit\": \"count\", \"sources\": [{\"file\": \"01_订单日报说明.md\", \"quote\": \"按下单日期统计全部订单，每个订单号一次，包含取消单。\"}], \"constraints\": [\"包含取消单\", \"每个订单号只计一次\"], \"query_policy\": {\"full_month_only\": false}}, {\"id\": \"valid_order_count\", \"name\": \"有效订单数\", \"aliases\": [], \"unit\": \"count\", \"sources\": [{\"file\": \"01_订单日报说明.md\", \"quote\": \"状态为 paid 且实付金额减退款金额大于零的订单数；取消和全退不计。\"}], \"constraints\": [\"paid 且实付减退款大于零\", \"取消与全额退款不计\"], \"query_policy\": {\"full_month_only\": false}}, {\"id\": \"net_sales_cents\", \"name\": \"净销售额\", \"aliases\": [], \"unit\": \"cents\", \"sources\": [{\"file\": \"01_订单日报说明.md\", \"quote\": \"paid 订单实付减退款后合计；取消单不计；按原订单下单日期归属；单位分。\"}], \"constraints\": [\"paid 订单实付减退款\", \"取消单不计\", \"底层单位为分\"], \"query_policy\": {\"full_month_only\": false}}]}"
+    }
+  ],
+  "model": "deepseek-flash",
+  "reply": {
+    "role": "assistant",
+    "content": "{\"answer\":\"青禾 2026 年 8 月（按下单日期统计）按会员归属门店编号分组的订单与销售结果如下：\\n\\n| 会员归属门店编号 | 创建订单数 | 有效订单数 | 净销售额（分） | 净销售额（元） |\\n|---|---:|---:|---:|---:|\\n| S02 | 15 | 14 | 45,650 | 456.50 |\\n| S01 | 16 | 13 | 54,650 | 546.50 |\\n| S03 | 1 | 0 | 0 | 0.00 |\\n\\n口径说明：创建订单数按订单号去重统计，包含取消单；有效订单数为已支付且实付金额减退款金额大于零的订单数，取消单和全额退款不计；净销售额为已支付订单实付减退款后的合计，取消单不计，按下原订单下单日期归属，金额以分展示。以上结果位于青禾当前数据范围内，按会员归属门店编号分组，非按订单成交门店分组；S03 的有效订单数和净销售额为 0，是统计范围内实际为 0。\",\"used_metrics\":[\"order_count\",\"valid_order_count\",\"net_sales_cents\"],\"citations\":[\"当前执行结果\"]}"
+  },
+  "usage": {
+    "prompt_tokens": 1352,
+    "completion_tokens": 948,
+    "total_tokens": 2300,
+    "completion_tokens_details": {
+      "reasoning_tokens": 660
+    }
+  },
+  "seconds": 6.545,
+  "call": {
+    "policy_version": "gateway-stages-20260922",
+    "attempts": [
+      {
+        "attempt": 1,
+        "request": {
+          "model": "deepseek-flash",
+          "messages": [
+            {
+              "role": "system",
+              "content": "你根据本轮真实执行结果回答问题。解释条件时必须使用字段语义：store、store__region、store__store_name 都表示订单成交门店及其地区/名称；home_store 及其地区/名称才表示会员归属门店。返回 intent 中已有字段筛选就是已经应用的查询条件，不能因没有额外中文同名字段而否认已应用的条件。只能引用结果中的数值；金额以分存储，展示元需除100；比例展示百分数需乘100。用简明业务语言解释统计范围、口径及限制，金额保留两位小数、比例适当四舍五入。不要展示内部 status、intent 等字段名。区分零和未定义。聚合返回零是覆盖内的零；未返回某个分组仅说明该分组未列出，不能称为该指标未定义，也不能推断数据覆盖不足。返回 JSON：{\"answer\":\"...\",\"used_metrics\":[],\"citations\":[\"当前执行结果\"]}。\ncustomer_context 指明当前已加载客户与统计单位，data_context 指明本次测试数据版本和覆盖；本轮成功结果已经处于该客户数据范围。问题中的当前客户名称不是门店筛选值，不能因为没有同名门店筛选而否认结果属于该客户。只说明实际应用的筛选和分组；若用户没有要求某维度，不添加假设性的门店歧义。人数按customer_context统计单位表述为账户，不暗示跨系统自然人已去重。用业务词说明范围，不向用户罗列技术字段ID。\n"
+            },
+            {
+              "role": "user",
+              "content": "{\"question\": \"青禾2026年8月按会员归属门店编号分组，分别列出创建订单数、有效订单数、净销售额；按下单日期统计，金额保留分。\", \"customer_context\": {\"customer\": \"青禾\", \"statistics_unit\": \"CRM 会员账户\", \"scope\": \"本周合成测试库\"}, \"data_context\": {\"seed\": 20260923, \"synthetic\": true, \"counts\": {\"members\": 20, \"orders\": 48, \"stores\": 3, \"cards\": 22}, \"coverage\": [\"2024-09-01\", \"2026-09-01\"], \"sha256\": {\"orders.csv\": \"c6e0dee6081e7a6f7782b54de78b3182835c46184c8e7569fc23feab8cf3c4f1\", \"cards.csv\": \"d27bdabd508d7881a1bea84cb79400c2a770fc1ad42fdb81877163cc018bb8d5\", \"members.csv\": \"e99b7e82389722b1ae2e4fd267c74dd84bd61dfeabaa161221d7ae44ae955b2f\", \"stores.csv\": \"e8160804fd485853f6c75d9a095b1ee6f05bbbd40ba851cac84def35488aa41d\"}, \"id\": \"qinghe-w03-20260923-small\", \"timezone\": \"Asia/Shanghai\", \"reference_date\": \"2026-09-01\", \"generator_version\": \"qinghe-w03-v1\", \"base_seed\": 20260922, \"library_sha256\": \"3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635\"}, \"result\": {\"status\": \"ok\", \"intent\": {\"metrics\": [\"order_count\", \"valid_order_count\", \"net_sales_cents\"], \"start\": \"2026-08-01\", \"end\": \"2026-09-01\", \"group_by\": [\"home_store\"], \"filters\": []}, \"columns\": [\"home_store\", \"order_count\", \"valid_order_count\", \"net_sales_cents\"], \"rows\": [[\"S02\", 15, 14, 45650], [\"S01\", 16, 13, 54650], [\"S03\", 1, 0, 0]], \"seconds\": 0.093, \"units\": {\"order_count\": \"count\", \"valid_order_count\": \"count\", \"net_sales_cents\": \"cents\"}, \"data_version\": \"qinghe-w03-20260923-small\", \"data_sha256\": \"8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6\", \"catalog_sha256\": \"3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635\"}, \"definitions\": [{\"id\": \"order_count\", \"name\": \"创建订单数\", \"aliases\": [], \"unit\": \"count\", \"sources\": [{\"file\": \"01_订单日报说明.md\", \"quote\": \"按下单日期统计全部订单，每个订单号一次，包含取消单。\"}], \"constraints\": [\"包含取消单\", \"每个订单号只计一次\"], \"query_policy\": {\"full_month_only\": false}}, {\"id\": \"valid_order_count\", \"name\": \"有效订单数\", \"aliases\": [], \"unit\": \"count\", \"sources\": [{\"file\": \"01_订单日报说明.md\", \"quote\": \"状态为 paid 且实付金额减退款金额大于零的订单数；取消和全退不计。\"}], \"constraints\": [\"paid 且实付减退款大于零\", \"取消与全额退款不计\"], \"query_policy\": {\"full_month_only\": false}}, {\"id\": \"net_sales_cents\", \"name\": \"净销售额\", \"aliases\": [], \"unit\": \"cents\", \"sources\": [{\"file\": \"01_订单日报说明.md\", \"quote\": \"paid 订单实付减退款后合计；取消单不计；按原订单下单日期归属；单位分。\"}], \"constraints\": [\"paid 订单实付减退款\", \"取消单不计\", \"底层单位为分\"], \"query_policy\": {\"full_month_only\": false}}]}"
+            }
+          ],
+          "stream": false,
+          "max_tokens": 8192
+        },
+        "timeout_seconds": 180.0,
+        "max_tokens": 8192,
+        "usage": {
+          "prompt_tokens": 1352,
+          "completion_tokens": 948,
+          "total_tokens": 2300,
+          "prompt_tokens_details": {
+            "cached_tokens": 128
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 660
+          },
+          "prompt_cache_hit_tokens": 128,
+          "prompt_cache_miss_tokens": 1224
+        },
+        "trace_ids": {},
+        "response_id": "1af8323d-766c-4c64-bf74-ed43cefd96de",
+        "http_status": 200,
+        "finish_reason": "stop",
+        "response": {
+          "role": "assistant",
+          "content": "{\"answer\":\"青禾 2026 年 8 月（按下单日期统计）按会员归属门店编号分组的订单与销售结果如下：\\n\\n| 会员归属门店编号 | 创建订单数 | 有效订单数 | 净销售额（分） | 净销售额（元） |\\n|---|---:|---:|---:|---:|\\n| S02 | 15 | 14 | 45,650 | 456.50 |\\n| S01 | 16 | 13 | 54,650 | 546.50 |\\n| S03 | 1 | 0 | 0 | 0.00 |\\n\\n口径说明：创建订单数按订单号去重统计，包含取消单；有效订单数为已支付且实付金额减退款金额大于零的订单数，取消单和全额退款不计；净销售额为已支付订单实付减退款后的合计，取消单不计，按下原订单下单日期归属，金额以分展示。以上结果位于青禾当前数据范围内，按会员归属门店编号分组，非按订单成交门店分组；S03 的有效订单数和净销售额为 0，是统计范围内实际为 0。\",\"used_metrics\":[\"order_count\",\"valid_order_count\",\"net_sales_cents\"],\"citations\":[\"当前执行结果\"]}"
+        },
+        "seconds": 6.545
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1352,
+      "completion_tokens": 948,
+      "total_tokens": 2300,
+      "completion_tokens_details": {
+        "reasoning_tokens": 660
+      }
+    }
+  }
+}

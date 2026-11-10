@@ -1,0 +1,10 @@
+{
+  "status": "error",
+  "code": "MODEL_HTTP_402",
+  "reason": "本次调用未完成，请查看运行记录；不能把失败当成零。",
+  "question": "青禾2026年8月1日至8月15日（含15日）的月内复购率是多少？全门店，只要这15天的范围。",
+  "trace_id": "a4d7b03b-ba6e-4313-9f3b-8979fec200a7",
+  "elapsed_seconds": 0.488,
+  "model_usage": {},
+  "model_calls_with_usage": 0
+}

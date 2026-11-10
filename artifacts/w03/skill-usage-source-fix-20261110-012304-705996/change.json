@@ -1,0 +1,35 @@
+{
+  "evidence": {
+    "artifacts/w03/full38-p1-run-20261110-011759-345785/build/source_check.json": "4c90d16ebc8cccac9799985df9528f0a0cf650d6fa1ca6b03df64776c82b5bb6",
+    "docs/w03/business_model.md": "84d1e43aace4b57e49911cc6167bc6022d78ef5d390d9fe9c982be55d834dcf9",
+    "quote_option_count": 12,
+    "added_labels": [
+      "环境与范围",
+      "有效购买",
+      "金额与件数",
+      "首购观察范围",
+      "月内购买与复购",
+      "六项付费月报",
+      "空值与覆盖",
+      "阶段边界"
+    ],
+    "all_templates_exact": true
+  },
+  "files": [
+    {
+      "path": "customer/w03/build-metrics/SKILL.md",
+      "before_sha256": "4401b0e2f35e5b3f3b3beac0ec8062302c0edb6391a045e238a10583ba8a71f6",
+      "after_sha256": "fb11e4b176529e89ce52feaf6120b08f4c5fcb3ec22765d10c88a3eaf1d79e48"
+    },
+    {
+      "path": "docs/w03/metric_decisions.md",
+      "before_sha256": "8c3df770ef951b6a214cc62890905fcbfad83658569f621a21a162bca2805de4",
+      "after_sha256": "b2a506820a70280b21f45d26c93a1b977a82e49134157cdf7a52e940a31ee919"
+    },
+    {
+      "path": "materials/w03/10_指标来源引用清单.md",
+      "before_sha256": "d4a8adf64eef3e9539f4619708714081fe4e9782143ec590dc9ff5807e2c327f",
+      "after_sha256": "ee4a05c0440329147aeba28a20705619c3e3034af49c70fc75c14a5cb59c8372"
+    }
+  ]
+}

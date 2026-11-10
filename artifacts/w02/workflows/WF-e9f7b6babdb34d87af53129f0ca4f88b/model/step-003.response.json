@@ -1,0 +1,22 @@
+{
+  "message": {
+    "role": "assistant",
+    "content": "提取完成，共 50 条候选。先查看卡产品范围与等级/金额、多卡关系这一组候选的原文。",
+    "tool_calls": [
+      {
+        "index": 0,
+        "id": "call_00_82NIVhaV3lgEsGzEzqTA3771",
+        "type": "function",
+        "function": {
+          "name": "show_evidence",
+          "arguments": "{\"claim_ids\": [\"CLM-001-0001\", \"CLM-001-0002\", \"CLM-001-0003\", \"CLM-001-0004\", \"CLM-001-0005\"]}"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "prompt_tokens": 25146,
+    "completion_tokens": 150,
+    "total_tokens": 25296
+  }
+}

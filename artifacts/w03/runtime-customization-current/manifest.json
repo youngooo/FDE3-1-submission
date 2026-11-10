@@ -1,0 +1,65 @@
+{
+  "kind": "w03_runtime_snapshot_v1",
+  "date": "2026-11-10",
+  "base_package": "fde-student-w03-0.1.0-c16.zip",
+  "base_package_sha256": "b8a5f58ae404cbc7c2fb3884d923ff94d7820c50d98aa5f51c784ee7eeb5fc7e",
+  "files": [
+    {
+      "path": "platform/fde_product/metrics/agent.py",
+      "sha256": "ddcd3c6042cff81c0e48c66b2700689a6885138fc70f47af63620b39eee4c080",
+      "baseline_sha256": "3ab4718e816c786c29c9a705ca5d05f9207ddbd685e4ab178df1e86b229937b7"
+    },
+    {
+      "path": "platform/fde_product/metrics/integration.py",
+      "sha256": "4536f8433058f1f08f5a21727c1aedb11b5c5bc7cf2ac4966887e2c27c4c6e0d",
+      "baseline_sha256": "8741f16bf350ce8e1a12d460f5028643c54479dbec834f9ce72eee8280b5743d"
+    },
+    {
+      "path": "platform/fde_product/metrics/answer_display_facts.py",
+      "sha256": "a430fe2d2e7926f430bbe93be261623a648c35e541bde60a7d5f86e369fa661b",
+      "baseline_sha256": null
+    },
+    {
+      "path": "platform/fde_product/metrics/intent_context.py",
+      "sha256": "93a9d9a27566c3c736c2e451e9e275510f9a0c9e996728f0ae1dfc916e87db87",
+      "baseline_sha256": null
+    },
+    {
+      "path": "product/w03_intent_prompt.txt",
+      "sha256": "281aeb45bef1d6002f97db5ee6930683067ca730143caf3100757d9adf475ba0",
+      "baseline_sha256": "6778542f185653b6cacc6be192eb27eec4f8cbca6a06685cc7b1dd97d2e36ac7"
+    },
+    {
+      "path": "product/w03_answer_prompt.txt",
+      "sha256": "efdf2213c26abfba3bf6c646361b8fd49cbdabad811ae1c20f09bb9dcfa835c2",
+      "baseline_sha256": "975c0fb6fe47d5cb6a5a99d85a5a884113c5527515453c9ace78d3b8ac3bc006"
+    }
+  ],
+  "baseline_guards": [
+    {
+      "path": "platform/fde_product/metrics/engine.py",
+      "sha256": "e8b39da2517a65f6406da4d261173291c795248ea6c62638137e09ce750a98f3"
+    },
+    {
+      "path": "platform/fde_product/metrics/common.py",
+      "sha256": "0aaf17cb659ff5f21c9414aa7f2be4b7b491f00b52534a88b4c495391a1cb9e0"
+    },
+    {
+      "path": "platform/fde_product/metrics/builder.py",
+      "sha256": "f58dad10e5a4b30fbf3029e6b186b5e5104b27f7e2721fab5c58957cb145c900"
+    },
+    {
+      "path": "tools/w03.py",
+      "sha256": "c34c139e48b33a09de1db3bec9f2cc2f41166de129984698eb69e98979e467c6"
+    },
+    {
+      "path": "requirements-w03.txt",
+      "sha256": "060384c5964ebc203cbe31d8e792c91be50ce265bf535926113a805ad5195311"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "95d1d286de05bda9af8ee2978a3f951cb521c427c8eb58173ca546127f610167"
+    }
+  ],
+  "scope": "six customized runtime files; current validated answer prompt; business confirmation pending"
+}

@@ -1,0 +1,19 @@
+--- agent before
++++ agent after
+@@ -2,6 +2,7 @@
+ import json,uuid,time,threading
+ from pathlib import Path
+ from .common import read,dump,call_json
++from .answer_display_facts import build_answer_display_facts
+ from .intent_context import prepare_intent_context
+ ROOT=Path(__file__).resolve().parents[3]
+ class MetricsAgent:
+@@ -23,7 +24,7 @@
+    elif intent.get('status')=='query':
+     intent={k:intent.get(k,[]) for k in ['metrics','start','end','group_by','filters']};result=query_worker(self.project,intent);result.setdefault('intent',intent)
+     if result['status']=='ok':
+-     answer=call_json((ROOT/'product/w03_answer_prompt.txt').read_text(),{'question':question,'customer_context':self.scope,'data_context':self.data,'result':{k:v for k,v in result.items() if k!='sql'},'definitions':[x for x in self.catalog if x['id'] in intent['metrics']]},folder/'answer-trace.json',model=self.model)
++     answer=call_json((ROOT/'product/w03_answer_prompt.txt').read_text(),{'question':question,'customer_context':self.scope,'data_context':self.data,'result':{k:v for k,v in result.items() if k!='sql'},'definitions':[x for x in self.catalog if x['id'] in intent['metrics']],'answer_display_facts':build_answer_display_facts(result,[x for x in self.catalog if x['id'] in intent['metrics']])},folder/'answer-trace.json',model=self.model)
+      if not isinstance(answer.get('answer'),str):raise ValueError('ANSWER_TEXT_REQUIRED')
+      result['answer']=answer['answer']
+    else:raise ValueError('INTENT_STATUS_INVALID')

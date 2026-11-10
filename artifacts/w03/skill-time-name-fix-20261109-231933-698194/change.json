@@ -1,0 +1,24 @@
+{
+  "failed_response_sha256": "7983a10258651ae6cb8c26797bc18d4fd02e5a5cfc6a0dcb74f666cdc3a81634",
+  "offending_models": [
+    "order_facts",
+    "member_accounts",
+    "monthly_member_orders",
+    "paid_monthly_member_orders"
+  ],
+  "failed_run": "artifacts/w03/full38-p1-run-20261109-230916-522467/build",
+  "source_check_passed": true,
+  "files": [
+    {
+      "path": "customer/w03/build-metrics/SKILL.md",
+      "before_sha256": "07567e47adedaaf27c9c67a2ea3ed3aa8cfee6114a87a523a40732de29f4795f",
+      "after_sha256": "f9dff1dfe81662a7bef04caac6f779e07226ff65515ce857311dab3b9ce5a02e"
+    },
+    {
+      "path": "docs/w03/metric_decisions.md",
+      "before_sha256": "1c81d9626900e5de65bbb4d8f48f60f6c49ffd17901f83d9158176d5ebf84241",
+      "after_sha256": "3e3c6fff2049e9b258f6a2d4c1932d03b5db068a24db4f0e715b47a43b9e3861"
+    }
+  ],
+  "status": "skill_fixed_rebuild_pending"
+}

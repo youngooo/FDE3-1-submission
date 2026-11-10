@@ -1,0 +1,50 @@
+{
+  "status": "applied",
+  "library_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "canonical_dataset": "large",
+  "canonical_report_source": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-large-full-20261110-031957-483250/results/metric_test_report.json",
+  "canonical_report_byte_identical": true,
+  "files": {
+    "customer/w03/tests-small.json": {
+      "before_sha256": null,
+      "after_sha256": "b83b234e4ad1c8f7b24f05bf8f4df0ff14ecdbb1f8a67cb61924eee045494f8d"
+    },
+    "customer/w03/tests-large.json": {
+      "before_sha256": "a072ffd785696c6ee1ab68e8f934a5721e7a51c68956e3c957e89c7afb4abc0c",
+      "after_sha256": "6df3ade68f736b65b2cebd3d0cda5b9b402d3448c1b3c3456af3ff2a837d34bd"
+    },
+    "customer/w03/tests.json": {
+      "before_sha256": "4fc25f5ef2a141dd7bc00990948230f072624ea5c5a5cc09d98865a6c1caf357",
+      "after_sha256": "6df3ade68f736b65b2cebd3d0cda5b9b402d3448c1b3c3456af3ff2a837d34bd"
+    },
+    "customer/w03/judge_full38.py": {
+      "before_sha256": null,
+      "after_sha256": "19227fe14ed8c3c0abf2258f353ae0c4e5cb106efb0fe5a3dd4e7c2422ca6600"
+    },
+    "artifacts/w03/metric_test_report.json": {
+      "before_sha256": "41c7c74698de6f277bb214768c2b16e1e5ae04560691e35cc99d1a3fa65936dd",
+      "after_sha256": "c6a3487893fd50c040d87a8195a63af1836178d33d1438e2dd39d6e8aa5f2eb5"
+    },
+    "customer/w03/merged_regression_plan.json": {
+      "before_sha256": "ad5365eaa58fb86c164a4ebc9cf1e9a31d80b9bf9171000bf9219e62d0963e32",
+      "after_sha256": "64194f3f368b3695569ccf50cb1d0ef65ca9afa8a6e164205e303d0010d9b90d"
+    },
+    "customer/w03/test_entrypoints.json": {
+      "before_sha256": "86f80890c9e7c7d60c2dd305acef362fd8dd8905c9b75e23c01f8d061d9e11e9",
+      "after_sha256": "adf8768eb00557ae23871c5ade51c4bf7fb58654580bc08b4fc2aa1b0d8da299"
+    },
+    "customer/w03/test_entrypoints.txt": {
+      "before_sha256": "f4a13edca894ee87a8baf499db54d6e8e8569f8d5911a084114078f8cfaaf17e",
+      "after_sha256": "312397960dd8d7df8fc1125e0a56102d061d81d78292c400ca09e9985faef9c6"
+    },
+    "customer/w03/run_merged_regression.py": {
+      "before_sha256": "689a82594547a762010fbe71d792804c3450164f978e08d493f507502dc1dccf",
+      "after_sha256": "c89d9d108d7a0ecf4e7b88bc0dd17385ee960a6412adf33c34da605002b94555"
+    }
+  },
+  "model_called": false,
+  "query_executed": false,
+  "chat_binding_changed": false,
+  "business_confirmation": "pending",
+  "final_acceptance": false
+}

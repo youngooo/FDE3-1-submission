@@ -1,0 +1,26 @@
+{
+  "orders_enriched": [
+    "order_id"
+  ],
+  "members": [
+    "member_id"
+  ],
+  "store_dimension": [
+    "store_id"
+  ],
+  "home_store_dimension": [
+    "store_id"
+  ],
+  "first_orders": [
+    "order_id"
+  ],
+  "repeat_orders": [
+    "order_id"
+  ],
+  "monthly_valid_orders": [
+    "member_month_key"
+  ],
+  "monthly_paid_accounts": [
+    "member_month_key"
+  ]
+}

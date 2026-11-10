@@ -1,0 +1,14 @@
+{
+  "order_events": [
+    "order_id"
+  ],
+  "member_accounts": [
+    "member_id"
+  ],
+  "order_stores": [
+    "store_id"
+  ],
+  "member_home_stores": [
+    "store_id"
+  ]
+}

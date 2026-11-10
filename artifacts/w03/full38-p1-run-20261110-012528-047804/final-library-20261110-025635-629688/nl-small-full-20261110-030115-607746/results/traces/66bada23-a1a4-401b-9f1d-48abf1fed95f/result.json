@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_repeat_rate"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(SUM(CASE WHEN valid_order_count >= 2 THEN 1 ELSE 0 END) AS DOUBLE) / CAST(NULLIF(SUM(CASE WHEN valid_order_count >= 1 THEN 1 ELSE 0 END), 0) AS DOUBLE) AS monthly_repeat_rate\nFROM \"data\".\"main\".\"monthly_member_activity\" monthly_member_model_src_10000\nWHERE DATE_TRUNC('month', month_start) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "monthly_repeat_rate"
+  ],
+  "rows": [
+    [
+      0.8
+    ]
+  ],
+  "seconds": 0.043,
+  "units": {
+    "monthly_repeat_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "2026年8月，青禾全门店汇总、不分组计算的月内复购率为 0.8（小数比例）。口径为：同一自然月的月内复购会员数除以月内购买会员数；该指标仅适用于完整自然月、全门店范围，分母为零时未定义。",
+  "question": "请只查询青禾2026年8月的月内复购率，全门店汇总，不分组。结果使用小数比例。",
+  "trace_id": "66bada23-a1a4-401b-9f1d-48abf1fed95f",
+  "elapsed_seconds": 8.433,
+  "model_usage": {
+    "prompt_tokens": 14730,
+    "completion_tokens": 683,
+    "total_tokens": 15413
+  },
+  "model_calls_with_usage": 2
+}

@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "gross_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN status = 'paid' THEN gross_cents ELSE 0 END) AS gross_cents\nFROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "gross_cents"
+  ],
+  "rows": [
+    [
+      124250
+    ]
+  ],
+  "seconds": 0.053,
+  "units": {
+    "gross_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+  "answer": "青禾在2026年8月1日（含）至2026年9月1日（不含）期间，按原订单下单日期归属，全门店、不分组统计的支付订单原价金额合计为124250分，即1242.50元。该口径仅汇总已支付订单的折扣前原价金额。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的支付订单原价金额，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。",
+  "trace_id": "4325b509-6d67-4fc6-8c0e-4b94f875c6c2",
+  "elapsed_seconds": 6.774,
+  "model_usage": {
+    "prompt_tokens": 10520,
+    "completion_tokens": 502,
+    "total_tokens": 11022
+  },
+  "model_calls_with_usage": 2
+}

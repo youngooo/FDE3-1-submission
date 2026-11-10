@@ -1,0 +1,246 @@
+{
+  "status": "ok",
+  "groups": [
+    {
+      "group": [
+        "2024-09-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 216,
+        "monthly_repeat_buyer_count": 22,
+        "monthly_repeat_rate": "0.1018518518518518518518518519"
+      }
+    },
+    {
+      "group": [
+        "2024-10-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 649,
+        "monthly_repeat_buyer_count": 93,
+        "monthly_repeat_rate": "0.1432973805855161787365177196"
+      }
+    },
+    {
+      "group": [
+        "2024-11-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 1104,
+        "monthly_repeat_buyer_count": 164,
+        "monthly_repeat_rate": "0.1485507246376811594202898551"
+      }
+    },
+    {
+      "group": [
+        "2024-12-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 1571,
+        "monthly_repeat_buyer_count": 271,
+        "monthly_repeat_rate": "0.1725015913430935709739019733"
+      }
+    },
+    {
+      "group": [
+        "2025-01-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 2119,
+        "monthly_repeat_buyer_count": 362,
+        "monthly_repeat_rate": "0.1708352996696554978763567721"
+      }
+    },
+    {
+      "group": [
+        "2025-02-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 2429,
+        "monthly_repeat_buyer_count": 397,
+        "monthly_repeat_rate": "0.1634417455743104158089748868"
+      }
+    },
+    {
+      "group": [
+        "2025-03-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 3168,
+        "monthly_repeat_buyer_count": 568,
+        "monthly_repeat_rate": "0.1792929292929292929292929293"
+      }
+    },
+    {
+      "group": [
+        "2025-04-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 3608,
+        "monthly_repeat_buyer_count": 681,
+        "monthly_repeat_rate": "0.1887472283813747228381374723"
+      }
+    },
+    {
+      "group": [
+        "2025-05-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 4229,
+        "monthly_repeat_buyer_count": 887,
+        "monthly_repeat_rate": "0.2097422558524473870891463703"
+      }
+    },
+    {
+      "group": [
+        "2025-06-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 4852,
+        "monthly_repeat_buyer_count": 976,
+        "monthly_repeat_rate": "0.2011541632316570486397361913"
+      }
+    },
+    {
+      "group": [
+        "2025-07-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 5687,
+        "monthly_repeat_buyer_count": 1293,
+        "monthly_repeat_rate": "0.2273606470898540531035695446"
+      }
+    },
+    {
+      "group": [
+        "2025-08-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 6196,
+        "monthly_repeat_buyer_count": 1376,
+        "monthly_repeat_rate": "0.2220787604906391220142027114"
+      }
+    },
+    {
+      "group": [
+        "2025-09-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 6810,
+        "monthly_repeat_buyer_count": 1565,
+        "monthly_repeat_rate": "0.2298091042584434654919236417"
+      }
+    },
+    {
+      "group": [
+        "2025-10-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 7654,
+        "monthly_repeat_buyer_count": 1930,
+        "monthly_repeat_rate": "0.2521557355631042592108701333"
+      }
+    },
+    {
+      "group": [
+        "2025-11-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 8436,
+        "monthly_repeat_buyer_count": 2095,
+        "monthly_repeat_rate": "0.2483404457088667614983404457"
+      }
+    },
+    {
+      "group": [
+        "2025-12-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 9242,
+        "monthly_repeat_buyer_count": 2511,
+        "monthly_repeat_rate": "0.2716944384332395585371131790"
+      }
+    },
+    {
+      "group": [
+        "2026-01-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 10401,
+        "monthly_repeat_buyer_count": 2951,
+        "monthly_repeat_rate": "0.2837227189693298721276800308"
+      }
+    },
+    {
+      "group": [
+        "2026-02-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 10613,
+        "monthly_repeat_buyer_count": 3027,
+        "monthly_repeat_rate": "0.2852162442287760293979082258"
+      }
+    },
+    {
+      "group": [
+        "2026-03-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 12381,
+        "monthly_repeat_buyer_count": 4022,
+        "monthly_repeat_rate": "0.3248525967207818431467571279"
+      }
+    },
+    {
+      "group": [
+        "2026-04-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 13265,
+        "monthly_repeat_buyer_count": 4532,
+        "monthly_repeat_rate": "0.3416509611760271390878251037"
+      }
+    },
+    {
+      "group": [
+        "2026-05-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 14792,
+        "monthly_repeat_buyer_count": 5658,
+        "monthly_repeat_rate": "0.3825040562466197944835045971"
+      }
+    },
+    {
+      "group": [
+        "2026-06-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 15981,
+        "monthly_repeat_buyer_count": 6552,
+        "monthly_repeat_rate": "0.4099868593955321944809461235"
+      }
+    },
+    {
+      "group": [
+        "2026-07-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 16436,
+        "monthly_repeat_buyer_count": 7388,
+        "monthly_repeat_rate": "0.4495010951569724993915794597"
+      }
+    },
+    {
+      "group": [
+        "2026-08-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 16504,
+        "monthly_repeat_buyer_count": 7302,
+        "monthly_repeat_rate": "0.4424381968007755695588948134"
+      }
+    }
+  ],
+  "reason_contains": null
+}

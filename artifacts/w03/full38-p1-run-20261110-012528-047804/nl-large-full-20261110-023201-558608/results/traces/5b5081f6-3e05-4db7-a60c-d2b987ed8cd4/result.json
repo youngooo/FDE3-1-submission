@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "avg_buyer_value"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(SUM(CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END) AS DOUBLE) / CAST(NULLIF(COUNT(DISTINCT CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN member_id ELSE NULL END), 0) AS DOUBLE) AS avg_buyer_value\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-06-01' AND '2026-06-30'",
+  "columns": [
+    "avg_buyer_value"
+  ],
+  "rows": [
+    [
+      28474.137288029535
+    ]
+  ],
+  "seconds": 0.106,
+  "units": {
+    "avg_buyer_value": "cents_per_account"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "青禾2026年6月整月、全门店汇总的购买会员人均消费为28474.14分/账户。口径为净销售额除以购买会员数，按会员账户统计；本次未做门店分组。",
+  "question": "帮我查青禾2026年6月的购买会员人均消费，我需要整月全门店总数，不需要分组明细。结果单位分/账户。",
+  "trace_id": "5b5081f6-3e05-4db7-a60c-d2b987ed8cd4",
+  "elapsed_seconds": 7.579,
+  "model_usage": {
+    "prompt_tokens": 14763,
+    "completion_tokens": 559,
+    "total_tokens": 15322
+  },
+  "model_calls_with_usage": 2
+}

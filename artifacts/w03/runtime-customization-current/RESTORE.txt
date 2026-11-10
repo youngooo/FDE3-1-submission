@@ -1,0 +1,24 @@
+W03 运行定制恢复说明（38项正式库配套，2026-11-10）
+
+用于课程原始 fde-student-w03-0.1.0-c16 工程。只恢复六个运行文件，不包含密钥、原始CSV、虚拟环境或查询数据库。
+精确版本和差异见 manifest.json 与 diffs/；修改理由见 docs/w03/framework_changes.md。
+
+1. 在新目录解压课程c16工程，按课程说明建立Python 3.11环境及依赖。
+2. 将提交的docs、customer、artifacts按相对路径放入工程。使用本次runtime-customization-current，不叠加历史补丁。
+3. 停止待恢复工程的Agent服务，在工程根目录只读检查：
+   .venv/bin/python -B customer/w03/restore_runtime.py --workspace .
+4. 若六文件均为ready或already_current，且基线无错误，再执行：
+   .venv/bin/python -B customer/w03/restore_runtime.py --workspace . --apply
+   工具先校验全部文件，再备份和写入。未知修改或基线不符时停止，不强行覆盖。
+   本恢复器支持原始c16或已经相同的最新版本；不直接覆盖安装过旧定制的工程。旧工程请保留，新建c16目录恢复。
+5. 单独按课程说明配置模型并运行doctor。恢复脚本不读取或写入密钥。
+6. 正式库位于artifacts/w03/library，共38项，六项付费指标为P1暂定试算。
+   使用课程原始small/large CSV分别调用tools/w03.py load，创建两个不同的新项目目录。
+   按customer/w03/test_entrypoints.txt核对用例和复跑入口；更换目录后更新计划中的项目相对路径，并核对版本。
+   不复制旧机器的绝对项目路径、validation-project或.runtime项目来替代重新加载。
+7. 仅在需要聊天演示时，按课程说明activate所选项目后重启服务并用新会话验证；恢复包不自动切换绑定。
+
+本版本通过6项离线检查：基线只读、未知目标拒绝、基线变更拒绝、准确恢复与备份、重复执行、当前工程快照匹配。
+检查只在临时目录执行恢复写入，实际运行文件未改。准确报告见restore_check.json。
+正式库已有小样本69条及规模67条结构化回归；小样本文字修正后的9条复测单列，不能称最新提示完整重跑69条。
+本步骤未调用模型、未查询数据库，也不代表总部业务确认或教师最终验收。

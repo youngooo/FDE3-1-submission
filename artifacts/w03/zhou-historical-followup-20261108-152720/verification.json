@@ -1,0 +1,17 @@
+{
+  "status": "ok",
+  "archive": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/zhou-historical-followup-20261108-152720",
+  "documents": {
+    "interview_notes.md": {
+      "before": "0f0561a7b7d98a69ef32244a0fc22c2b239402c81ad1ae37b6911c0c3ccd4342",
+      "after": "a24c14dcd98003972ec750cb2de929ea6294107020c24477198cdb9c2aa208a3"
+    },
+    "model_changes.md": {
+      "before": "3c0464aebaac98b338f19512f3d65a25f456586d39cfdb227729e48b53ee080e",
+      "after": "7c2bcddf1e80893fe6ec025470cbddae4e253fd64dc5411003a348815940c455"
+    }
+  },
+  "export_verified": false,
+  "model_called": false,
+  "business_numbers_verified": false
+}

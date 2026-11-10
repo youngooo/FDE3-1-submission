@@ -1,0 +1,71 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_paid_buyer_count",
+      "monthly_paid_order_count",
+      "monthly_paid_sales_cents",
+      "monthly_paid_repeat_buyer_count",
+      "monthly_paid_repeat_rate",
+      "monthly_paid_avg_order_value"
+    ],
+    "start": "2026-07-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "metric_time__month"
+    ],
+    "filters": []
+  },
+  "sql": "WITH sma_10003_cte AS (\n  SELECT\n    DATE_TRUNC('month', month_start) AS metric_time__month\n    , monthly_paid_buyer_count AS __monthly_paid_buyer_count\n    , monthly_paid_order_count AS __monthly_paid_order_count\n    , monthly_paid_sales_cents AS __monthly_paid_sales_cents\n    , monthly_paid_repeat_buyer_count AS __monthly_paid_repeat_buyer_count\n  FROM \"data\".\"main\".\"monthly_paid_summary\" monthly_paid_model_src_10000\n)\n\nSELECT\n  COALESCE(subq_10.metric_time__month, subq_16.metric_time__month) AS metric_time__month\n  , MAX(subq_10.monthly_paid_buyer_count) AS monthly_paid_buyer_count\n  , MAX(subq_10.monthly_paid_order_count) AS monthly_paid_order_count\n  , MAX(subq_10.monthly_paid_sales_cents) AS monthly_paid_sales_cents\n  , MAX(subq_10.monthly_paid_repeat_buyer_count) AS monthly_paid_repeat_buyer_count\n  , MAX(CAST(subq_16.monthly_paid_repeat_buyer_count AS DOUBLE) / CAST(NULLIF(subq_16.monthly_paid_buyer_count, 0) AS DOUBLE)) AS monthly_paid_repeat_rate\n  , MAX(CAST(subq_16.monthly_paid_sales_cents AS DOUBLE) / CAST(NULLIF(subq_16.monthly_paid_order_count, 0) AS DOUBLE)) AS monthly_paid_avg_order_value\nFROM (\n  SELECT\n    metric_time__month\n    , SUM(__monthly_paid_buyer_count) AS monthly_paid_buyer_count\n    , SUM(__monthly_paid_order_count) AS monthly_paid_order_count\n    , SUM(__monthly_paid_sales_cents) AS monthly_paid_sales_cents\n    , SUM(__monthly_paid_repeat_buyer_count) AS monthly_paid_repeat_buyer_count\n  FROM sma_10003_cte\n  WHERE metric_time__month BETWEEN '2026-07-01' AND '2026-08-31'\n  GROUP BY\n    metric_time__month\n) subq_10\nFULL OUTER JOIN (\n  SELECT\n    metric_time__month\n    , SUM(__monthly_paid_repeat_buyer_count) AS monthly_paid_repeat_buyer_count\n    , SUM(__monthly_paid_buyer_count) AS monthly_paid_buyer_count\n    , SUM(__monthly_paid_sales_cents) AS monthly_paid_sales_cents\n    , SUM(__monthly_paid_order_count) AS monthly_paid_order_count\n  FROM sma_10003_cte\n  WHERE metric_time__month BETWEEN '2026-07-01' AND '2026-08-31'\n  GROUP BY\n    metric_time__month\n) subq_16\nON\n  subq_10.metric_time__month = subq_16.metric_time__month\nGROUP BY\n  COALESCE(subq_10.metric_time__month, subq_16.metric_time__month)",
+  "columns": [
+    "metric_time__month",
+    "monthly_paid_buyer_count",
+    "monthly_paid_order_count",
+    "monthly_paid_sales_cents",
+    "monthly_paid_repeat_buyer_count",
+    "monthly_paid_repeat_rate",
+    "monthly_paid_avg_order_value"
+  ],
+  "rows": [
+    [
+      "2026-07-01 00:00:00",
+      6,
+      6,
+      15500,
+      0,
+      0.0,
+      2583.3333333333335
+    ],
+    [
+      "2026-08-01 00:00:00",
+      6,
+      10,
+      47550,
+      4,
+      0.6666666666666666,
+      4755.0
+    ]
+  ],
+  "seconds": 0.095,
+  "units": {
+    "monthly_paid_buyer_count": "count",
+    "monthly_paid_order_count": "count",
+    "monthly_paid_sales_cents": "cents",
+    "monthly_paid_repeat_buyer_count": "count",
+    "monthly_paid_repeat_rate": "ratio",
+    "monthly_paid_avg_order_value": "cents_per_order"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "统计范围：青禾当前客户数据，2026年7月、8月两个完整自然月，全渠道、全门店，按自然月分别汇总；购买人数和复购人数按CRM会员账户计，订单按单计。金额按分、订单均额按分/单、复购率按小数比例展示。\n\n| 月份 | 月末付费会员购买人数（个CRM会员账户） | 月末付费会员有效订单数（单） | 月末付费会员净销售额（分） | 月末付费会员复购人数（个CRM会员账户） | 月末付费会员复购率（小数） | 月末付费会员订单均额（分/单） |\n|---|---:|---:|---:|---:|---:|---:|\n| 2026年7月 | 6 | 6 | 15500 | 0 | 0.0 | 约2583.33 |\n| 2026年8月 | 6 | 10 | 47550 | 4 | 0.6666666666666666 | 4755.00 |\n\n口径：月末付费会员复购率为月末付费会员复购人数÷月末付费会员购买人数；月末付费会员订单均额为月末付费会员净销售额÷月末付费会员有效订单数。7月复购人数为0、复购率为0.0，是覆盖范围内的统计零值。\n\n本结果按P1暂定口径试算；门店日期规则用于总部月报仍待书面确认。",
+  "question": "按P1暂定口径查询青禾2026年7月和8月的月末付费会员购买人数、月末付费会员有效订单数、月末付费会员净销售额、月末付费会员复购人数、月末付费会员复购率、月末付费会员订单均额，全渠道全门店，按月分别列出，金额分、均额分/单、比例小数。",
+  "trace_id": "3adf3cc4-8a73-4802-8778-b15441e6b29d",
+  "elapsed_seconds": 15.902,
+  "model_usage": {
+    "prompt_tokens": 17256,
+    "completion_tokens": 2323,
+    "total_tokens": 19579
+  },
+  "model_calls_with_usage": 2
+}

@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_repeat_rate"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(COUNT(DISTINCT CASE WHEN valid_order_count >= 2 THEN member_id ELSE NULL END) AS DOUBLE) / CAST(NULLIF(COUNT(DISTINCT member_id), 0) AS DOUBLE) AS monthly_repeat_rate\nFROM \"data\".\"main\".\"member_month_activity\" member_month_activity_semantic_src_10000\nWHERE DATE_TRUNC('month', month_date) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "monthly_repeat_rate"
+  ],
+  "rows": [
+    [
+      0.8
+    ]
+  ],
+  "seconds": 0.065,
+  "units": {
+    "monthly_repeat_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+  "answer": "青禾在2026年8月整月的月内复购率为0.8（小数比例）。该口径为全门店：月内复购会员账户数除以同月月内购买会员账户数；本次仅返回该比例，未返回对应的会员账户人数。",
+  "question": "青禾上个月的月内复购率是多少？",
+  "trace_id": "52fcee06-1d9c-4b07-bb79-44d31007643b",
+  "elapsed_seconds": 7.101,
+  "model_usage": {
+    "prompt_tokens": 12922,
+    "completion_tokens": 525,
+    "total_tokens": 13447
+  },
+  "model_calls_with_usage": 2
+}

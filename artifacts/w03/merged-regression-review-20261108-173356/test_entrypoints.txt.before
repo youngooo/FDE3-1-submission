@@ -1,0 +1,15 @@
+W03 测试入口（32项阶段交付，不是38项验收）
+
+tests.json：小样本；tests-large.json：规模数据。
+独立期望由make_tests_general32.py与原始CSV计算。版本、源码哈希及未覆盖六项见test_entrypoints.json及其generation_record。
+本次完成生成、结构及期望自检，没有调用模型或重新查询；历史报告原样保留。
+历史报告问题和期望一致只说明输入可对应，不证明当前运行版本已全量通过。
+
+在原WSL工作区执行实际回归时，使用以下对应项目；会调用模型并产生费用，本次未执行：
+.venv/bin/python tools/w03.py test --project artifacts/w03/build-general32-normalized-20261107-023808/validation-project --cases customer/w03/tests.json --output artifacts/w03/test-small-closeout-新编号 --judge-command .venv/bin/python customer/w03/judge.py
+.venv/bin/python tools/w03.py test --project .runtime/qinghe-general32-large-20261107-164548 --cases customer/w03/tests-large.json --output artifacts/w03/test-large-closeout-新编号 --judge-command .venv/bin/python customer/w03/judge.py
+
+解压提交包后，上述可重建项目不随包提供。需按交付复现说明加载相应指标库和原始数据，重新生成绑定新项目版本的用例，再执行。当前尚未生成正式library，因此这些路径只是现有阶段工程入口。
+输出目录必须是不存在的新路径。不要把此处生成记录改名为metric_test_report.json；生成用例不等于执行测试。
+按门店拆分月内复购率的拒答保留requested_intent；不要求拒答输出携带不可执行分组，但必须人工核查其解释没有推荐其他受限维度。
+六项待确认不能通过返回unsupported、人工资格结果或删掉目标冒充成功覆盖。

@@ -1,0 +1,17 @@
+--- before/customer/w03/build-metrics/SKILL.md
++++ after/customer/w03/build-metrics/SKILL.md
+@@ -16,12 +16,8 @@
+ - catalog.sources 的 file 只能用输入 materials 的实际键名或 business_model.md；quote 必须逐字复制对应输入中的非空连续原文，包括原有标点，不改写、不拼接、不用省略号。多份依据分成多个 source。不得引用输入中没有提供全文的访谈文件。
+ - business_model_usage 也必须复制 business_model 的连续原文，used_for 按 contract 指明实际受其影响的语义模型、派生模型、维度或指标。不要为装饰溯源而引用无关段落。
+ - 引文是复制字段，不是解释字段。优先逐字复制一条完整原句；多个不连续依据拆成多条source或usage，解释放在描述或constraints中。尤其不要将“或”替换成“与”、补空格、统一标点或重写枚举。最终逐项对照输入的原始字符串，不用语义近似代替连续子串匹配。
+-- 当前P1的business_model_usage可从以下原句选择并逐字复制，各条单独引用且used_for只填写实际使用它的模型或指标。以下示例仅在当前输入确实含有相同原文时采用，后续版本变化以输入为准：
+-  - 为完成本期合成测试库的六项工程实现，本轮显式暂定沿用陈姐的门店规则。
+-  - 设D为统计自然月最后一天。对卡种属于悦享年卡或家庭季卡、日期完整且顺序正常的卡，暂定同时满足以下条件时在D有效：
+-  - 生效日期不晚于D，即 valid_from <= D。
+-  - D早于计划到期日期，即 D < valid_until。
+-  - 提前终止日期为空，或D早于提前终止日期，即 ended_at为空或 D < ended_at。
++- 输入材料10_指标来源引用清单.md提供38项目标的sources模板。每个catalog条目的sources先复制catalog_sources_by_metric_id中同ID的数组；六项monthly_paid指标再追加清单中共同的门店与P1来源。保持file、quote值逐字一致，尤其保留分号与逗号，不重新概述定义，不将来源file改为清单文件。模板与当前原文仍须一致，不能因有清单就跳过校验。
++- P1的business_model_usage可选择清单中已验证的短句，used_for只填本次实际生成的对象；其它必要规则继续引用实际原文。优先绑定承载该规则的派生模型，避免对同一规则反复列出全部下游指标，或为每个指标重复完整来源说明。每条引用保持可追溯，不以重复次数代替证据质量。
+ - catalog 填写真实名称、有限且无歧义的别名、单位、来源、适用限制。金额底层保留分，unit 使用 cents；数量用 count，比率用 ratio；其他单位准确写明。展示换算不改变底层计算。
+ - 为保持生成批次一致，分／单写 cents_per_order，分／账户写 cents_per_account，单／账户写 orders_per_account，件／单写 items_per_order。这些名称仅规定目录中的单位拼写，不改变计算尺度；分与元、比例与百分数不是同一单位。
+ 

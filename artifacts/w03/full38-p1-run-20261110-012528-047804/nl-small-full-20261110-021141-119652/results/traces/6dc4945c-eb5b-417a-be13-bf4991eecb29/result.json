@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "gross_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN status = 'paid' THEN gross_cents ELSE 0 END) AS gross_cents\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "gross_cents"
+  ],
+  "rows": [
+    [
+      124250
+    ]
+  ],
+  "seconds": 0.051,
+  "units": {
+    "gross_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "青禾2026年8月全门店汇总的支付订单原价金额（已支付订单折扣前原价合计）为 124250 分。统计范围为 2026-08-01 至 2026-09-01 的已支付订单，未按门店分组。",
+  "question": "请只查询青禾2026年8月的支付订单原价金额，全门店汇总，不分组。金额按分返回。",
+  "trace_id": "6dc4945c-eb5b-417a-be13-bf4991eecb29",
+  "elapsed_seconds": 6.102,
+  "model_usage": {
+    "prompt_tokens": 14414,
+    "completion_tokens": 514,
+    "total_tokens": 14928
+  },
+  "model_calls_with_usage": 2
+}

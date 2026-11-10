@@ -1,0 +1,30 @@
+{
+  "status": "ok",
+  "groups": [
+    {
+      "group": [
+        "普通"
+      ],
+      "metrics": {
+        "new_member_count": 10000
+      }
+    },
+    {
+      "group": [
+        "金卡"
+      ],
+      "metrics": {
+        "new_member_count": 10000
+      }
+    },
+    {
+      "group": [
+        "银卡"
+      ],
+      "metrics": {
+        "new_member_count": 10000
+      }
+    }
+  ],
+  "reason_contains": null
+}

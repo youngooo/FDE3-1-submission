@@ -1,0 +1,26 @@
+{
+  "status": "clarify",
+  "reason": "“5月与6月”未提供年份，无法确定查询区间；请确认是2025年还是2026年的5月和6月。",
+  "intent": {
+    "status": "clarify",
+    "reason": "“5月与6月”未提供年份，无法确定查询区间；请确认是2025年还是2026年的5月和6月。",
+    "metrics": [
+      "monthly_repeat_rate"
+    ],
+    "start": "",
+    "end": "",
+    "group_by": [
+      "metric_time__month"
+    ],
+    "filters": []
+  },
+  "question": "青禾5月与6月的月内复购率分别是多少？",
+  "trace_id": "32f75ba7-4c72-41d2-8019-7c67a9701cba",
+  "elapsed_seconds": 3.375,
+  "model_usage": {
+    "prompt_tokens": 12538,
+    "completion_tokens": 530,
+    "total_tokens": 13068
+  },
+  "model_calls_with_usage": 1
+}

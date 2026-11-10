@@ -1,0 +1,11 @@
+{
+  "id": "monthly_all_covered",
+  "passed": true,
+  "checked_metrics": [
+    "monthly_buyer_count",
+    "monthly_repeat_buyer_count",
+    "monthly_repeat_rate"
+  ],
+  "errors": [],
+  "elapsed_seconds": 4.388
+}

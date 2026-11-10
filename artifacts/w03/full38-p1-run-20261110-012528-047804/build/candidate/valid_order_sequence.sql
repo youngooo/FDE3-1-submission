@@ -1,0 +1,1 @@
+select order_id, row_number() over (partition by member_id order by ordered_at, order_id) as valid_order_seq from {{ ref('orders') }} where status = 'paid' and paid_cents - refund_cents > 0

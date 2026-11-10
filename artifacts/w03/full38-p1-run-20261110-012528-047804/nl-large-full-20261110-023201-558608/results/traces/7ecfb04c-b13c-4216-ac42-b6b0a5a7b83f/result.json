@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_paid_repeat_rate"
+    ],
+    "start": "2026-04-01",
+    "end": "2026-05-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(SUM(monthly_paid_repeat_buyer_count) AS DOUBLE) / CAST(NULLIF(SUM(monthly_paid_buyer_count), 0) AS DOUBLE) AS monthly_paid_repeat_rate\nFROM \"data\".\"main\".\"monthly_paid_summary\" monthly_paid_model_src_10000\nWHERE DATE_TRUNC('month', month_start) BETWEEN '2026-04-01' AND '2026-04-30'",
+  "columns": [
+    "monthly_paid_repeat_rate"
+  ],
+  "rows": [
+    [
+      0.3327520055807464
+    ]
+  ],
+  "seconds": 0.076,
+  "units": {
+    "monthly_paid_repeat_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "2026年4月整月、全渠道、全门店合计的月末付费会员复购率为 0.3327520055807464（小数比例，未拆门店或渠道）。该指标按“月末付费会员复购人数 ÷ 月末付费会员购买人数”计算；本次仅返回复购率，未返回人数明细。本结果按P1暂定口径试算；门店日期规则用于总部月报仍待书面确认。",
+  "question": "核对青禾2026年4月整月报表：只返回月末付费会员复购率的全门店合计，不拆维度。结果使用小数比例。按现有P1暂定试算口径，月末选账户，统计整月全渠道订单，并注明待确认。",
+  "trace_id": "7ecfb04c-b13c-4216-ac42-b6b0a5a7b83f",
+  "elapsed_seconds": 10.94,
+  "model_usage": {
+    "prompt_tokens": 14989,
+    "completion_tokens": 1166,
+    "total_tokens": 16155
+  },
+  "model_calls_with_usage": 2
+}

@@ -1,0 +1,78 @@
+{
+  "kind": "full38_natural_language_evidence",
+  "library": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/build",
+  "library_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "datasets": {
+    "small": {
+      "full_report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-small-full-20261110-021141-119652/results/metric_test_report.json",
+      "full_report_sha256": "e8936ce25ba4c6dd6f1964f87cc0d7336d0548498d60394dd6f037f7208bdbb3",
+      "original_execution_passed": 68,
+      "original_execution_total": 69,
+      "rejudged_under_current_test_spec": 69,
+      "rejudgment_is_new_execution": false,
+      "full_elapsed_seconds": 587.538,
+      "targeted_retest_report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-small-first-order-20261110-024946-733532/results/metric_test_report.json",
+      "targeted_retest_sha256": "2fa5886bb5baa2dd4996f2ff715d086ca14da4757536f8b9ade4684a21ad0bd9",
+      "targeted_retest_passed": 8,
+      "targeted_retest_total": 8,
+      "targeted_retest_elapsed_seconds": 98.046,
+      "all_full_cases_rerun_after_latest_prompt": false,
+      "answer_review": "full review plus targeted correction retest",
+      "full_run_prompt_sha256": "4a29ed83b4a401f2eb8fef756f16c79fb7356a99310dfe880bc549b322b53405",
+      "targeted_retest_prompt_sha256": "2df23fb50a2e1af0ba0eedc525a76db13283ca43e7ab799964803f0973c1e8cc"
+    },
+    "large": {
+      "full_report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-large-full-20261110-023201-558608/results/metric_test_report.json",
+      "full_report_sha256": "b28cf9a2a0718a816e9a68752db67a99e8641c0b86571d8fdab6c09d53ceff41",
+      "original_execution_passed": 67,
+      "original_execution_total": 67,
+      "rejudged_under_current_test_spec": 67,
+      "rejudgment_is_new_execution": false,
+      "full_elapsed_seconds": 641.539,
+      "targeted_retest_report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-large-first-order-20261110-024636-578620/results/metric_test_report.json",
+      "targeted_retest_sha256": "43a50f2468b189ea57cd16e120deb64c674884582d23bd526053f364d46e82dc",
+      "targeted_retest_passed": 8,
+      "targeted_retest_total": 8,
+      "targeted_retest_elapsed_seconds": 116.05,
+      "all_full_cases_rerun_after_latest_prompt": false,
+      "answer_review": "full review plus targeted correction retest",
+      "full_run_prompt_sha256": "4a29ed83b4a401f2eb8fef756f16c79fb7356a99310dfe880bc549b322b53405",
+      "targeted_retest_prompt_sha256": "2df23fb50a2e1af0ba0eedc525a76db13283ca43e7ab799964803f0973c1e8cc"
+    }
+  },
+  "metric_count_per_dataset": 38,
+  "cross_dataset_identical_questions": 0,
+  "original_full_execution_totals": {
+    "passed": 135,
+    "total": 136
+  },
+  "current_spec_offline_rejudgment": {
+    "passed": 136,
+    "total": 136
+  },
+  "latest_prompt_targeted_execution": {
+    "passed": 16,
+    "total": 16
+  },
+  "interpretation": "Full suites were run before the latest answer-prompt correction; 8 unchanged cases per dataset were rerun afterward. Offline rejudgment does not constitute new model execution.",
+  "numeric_archive_reference": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/numeric-verification-20261110-014924-111593",
+  "numeric_checks": {
+    "small": "49/49",
+    "large": "48/48"
+  },
+  "model_called": false,
+  "query_executed": false,
+  "human_signoff": false,
+  "business_confirmation": "pending",
+  "final_acceptance": false,
+  "remaining": [
+    "总部P1适用性待书面确认",
+    "正式交付库与聊天绑定尚未切换",
+    "课程框架改动说明及SOW整理尚待完成"
+  ],
+  "answer_review": "Small full 69 reviewed; large full 66 pass plus one explanation defect corrected and retested on both datasets.",
+  "archive": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-verification-20261110-025351-904391/evidence.tar.gz",
+  "archive_sha256": "e7c568698e3b4af14238866f7709d43d429c060037e164aab2856566a1469bd1",
+  "archived_file_count": 821,
+  "created_at": "2026-11-10T02:54:03.840960+08:00"
+}

@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "net_sales_cents"
+    ],
+    "start": "2026-07-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "metric_time__month"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  metric_time__month\n  , SUM(__net_sales_cents) AS net_sales_cents\nFROM (\n  SELECT\n    DATE_TRUNC('month', ordered_at) AS metric_time__month\n    , CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END AS __net_sales_cents\n  FROM \"data\".\"main\".\"order_fact\" order_model_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-07-01' AND '2026-08-31'\n) subq_5\nGROUP BY\n  metric_time__month",
+  "columns": [
+    "metric_time__month",
+    "net_sales_cents"
+  ],
+  "rows": [
+    [
+      "2026-08-01 00:00:00",
+      100300
+    ],
+    [
+      "2026-07-01 00:00:00",
+      31500
+    ]
+  ],
+  "seconds": 0.066,
+  "units": {
+    "net_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "2026年7月净销售额为315.00元，8月净销售额为1003.00元。口径为按原订单下单日期归属月份，统计已支付订单实付金额减退款，取消单不计；范围为青禾当前测试数据，按月汇总。",
+  "question": "青禾7月和8月的净销售额分别是多少？",
+  "trace_id": "9cdb8480-61dc-4d38-93b3-562903fa6785",
+  "elapsed_seconds": 18.775,
+  "model_usage": {
+    "prompt_tokens": 17465,
+    "completion_tokens": 2114,
+    "total_tokens": 19579
+  },
+  "model_calls_with_usage": 2
+}

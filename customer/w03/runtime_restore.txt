@@ -1,0 +1,2 @@
+完整恢复说明见 artifacts/w03/runtime-customization-current/RESTORE.txt。
+默认命令：.venv/bin/python customer/w03/restore_runtime.py --workspace .

@@ -1,0 +1,24 @@
+{
+  "status": "unsupported",
+  "reason": "月内复购率仅支持完整自然月、全门店口径；请求的2026-08-01至2026-08-15不是完整自然月，无法按该15天范围查询。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "月内复购率仅支持完整自然月、全门店口径；请求的2026-08-01至2026-08-15不是完整自然月，无法按该15天范围查询。",
+    "metrics": [
+      "monthly_repeat_rate"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-08-16",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "青禾2026年8月1日至8月15日（含15日）的月内复购率是多少？全门店，只要这15天的范围。",
+  "trace_id": "b24f57b2-e875-43dd-ae9a-069be4727b84",
+  "elapsed_seconds": 2.385,
+  "model_usage": {
+    "prompt_tokens": 9384,
+    "completion_tokens": 324,
+    "total_tokens": 9708
+  },
+  "model_calls_with_usage": 1
+}

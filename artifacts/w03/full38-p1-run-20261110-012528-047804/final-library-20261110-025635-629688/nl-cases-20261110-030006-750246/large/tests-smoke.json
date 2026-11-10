@@ -1,0 +1,683 @@
+[
+  {
+    "id": "single_valid_order_items",
+    "question": "核对青禾2026年4月整月报表：只返回有效订单商品件数的全门店合计，不拆维度。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "valid_order_items"
+        ],
+        "start": "2026-04-01",
+        "end": "2026-05-01",
+        "group_by": [],
+        "filters": []
+      },
+      "columns": [
+        "valid_order_items"
+      ],
+      "rows": [
+        [
+          78119
+        ]
+      ],
+      "units": {
+        "valid_order_items": "count"
+      },
+      "data_version": "qinghe-w03-20260923-large",
+      "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+      "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402"
+    },
+    "expected_source": {
+      "materials": [
+        "01_订单日报说明.md",
+        "02_财务邮件.md",
+        "05_数据字典.md"
+      ],
+      "method": "Original CSV independent oracle; whole-history first-order ranking; paid qualification under provisional P1; no generated SQL or actual results used.",
+      "family": "orders"
+    },
+    "answer_review_requirements": [
+      "回答数值、单位、分组、日期与执行结果一致"
+    ]
+  },
+  {
+    "id": "first_home_store",
+    "question": "比较青禾2026年6月各会员归属门店编号的观测期首购会员数、首单净销售额、首单数、后续购买订单数。先在全覆盖有效历史确定首单，金额使用分。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "first_buyer_count",
+          "first_order_sales_cents",
+          "first_order_count",
+          "repeat_order_count"
+        ],
+        "start": "2026-06-01",
+        "end": "2026-07-01",
+        "group_by": [
+          "home_store"
+        ],
+        "filters": []
+      },
+      "columns": [
+        "home_store",
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "rows": [
+        [
+          "S01",
+          61,
+          1028386,
+          61,
+          1096
+        ],
+        [
+          "S02",
+          74,
+          1213345,
+          74,
+          1057
+        ],
+        [
+          "S03",
+          65,
+          867662,
+          65,
+          951
+        ],
+        [
+          "S04",
+          59,
+          1082933,
+          59,
+          1086
+        ],
+        [
+          "S05",
+          62,
+          1046388,
+          62,
+          1094
+        ],
+        [
+          "S06",
+          69,
+          1142156,
+          69,
+          1027
+        ],
+        [
+          "S07",
+          69,
+          1110778,
+          69,
+          1042
+        ],
+        [
+          "S08",
+          79,
+          1521054,
+          79,
+          1124
+        ],
+        [
+          "S09",
+          68,
+          1247844,
+          68,
+          1049
+        ],
+        [
+          "S10",
+          60,
+          1033250,
+          60,
+          1064
+        ],
+        [
+          "S11",
+          68,
+          1107197,
+          68,
+          1097
+        ],
+        [
+          "S12",
+          52,
+          934191,
+          52,
+          940
+        ],
+        [
+          "S13",
+          51,
+          957051,
+          51,
+          1082
+        ],
+        [
+          "S14",
+          68,
+          1041163,
+          68,
+          1005
+        ],
+        [
+          "S15",
+          61,
+          1027042,
+          61,
+          1072
+        ],
+        [
+          "S16",
+          66,
+          1070857,
+          66,
+          1060
+        ],
+        [
+          "S17",
+          54,
+          1110632,
+          54,
+          1065
+        ],
+        [
+          "S18",
+          58,
+          1111822,
+          58,
+          1052
+        ],
+        [
+          "S19",
+          60,
+          1145747,
+          60,
+          1011
+        ],
+        [
+          "S20",
+          61,
+          1069132,
+          61,
+          1020
+        ],
+        [
+          "S21",
+          65,
+          1009960,
+          65,
+          1070
+        ],
+        [
+          "S22",
+          68,
+          1094955,
+          68,
+          996
+        ],
+        [
+          "S23",
+          61,
+          928580,
+          61,
+          998
+        ],
+        [
+          "S24",
+          72,
+          1289540,
+          72,
+          1001
+        ]
+      ],
+      "units": {
+        "first_buyer_count": "count",
+        "first_order_sales_cents": "cents",
+        "first_order_count": "count",
+        "repeat_order_count": "count"
+      },
+      "data_version": "qinghe-w03-20260923-large",
+      "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+      "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402"
+    },
+    "expected_source": {
+      "materials": [
+        "03_会员运营周报.md",
+        "05_数据字典.md"
+      ],
+      "method": "Original CSV independent oracle; whole-history first-order ranking; paid qualification under provisional P1; no generated SQL or actual results used.",
+      "family": "first"
+    },
+    "answer_review_requirements": [
+      "回答数值、单位、分组、日期与执行结果一致"
+    ]
+  },
+  {
+    "id": "paid_coverage",
+    "question": "把青禾测试覆盖期2024-09-01含至2026-09-01不含做成逐月表：月末付费会员购买人数、月末付费会员有效订单数、月末付费会员净销售额、月末付费会员复购人数、月末付费会员复购率、月末付费会员订单均额。使用现有P1试算规则，全部门店渠道，金额分、均额分/单、比例小数。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "monthly_paid_buyer_count",
+          "monthly_paid_order_count",
+          "monthly_paid_sales_cents",
+          "monthly_paid_repeat_buyer_count",
+          "monthly_paid_repeat_rate",
+          "monthly_paid_avg_order_value"
+        ],
+        "start": "2024-09-01",
+        "end": "2026-09-01",
+        "group_by": [
+          "metric_time__month"
+        ],
+        "filters": []
+      },
+      "columns": [
+        "metric_time__month",
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "rows": [
+        [
+          "2024-09-01",
+          10,
+          10,
+          192661,
+          0,
+          "0",
+          "19266.1"
+        ],
+        [
+          "2024-10-01",
+          60,
+          73,
+          1249905,
+          10,
+          "0.1666666666666666666666666667",
+          "17121.98630136986301369863014"
+        ],
+        [
+          "2024-11-01",
+          116,
+          133,
+          2218045,
+          16,
+          "0.1379310344827586206896551724",
+          "16677.03007518796992481203008"
+        ],
+        [
+          "2024-12-01",
+          214,
+          254,
+          4254526,
+          34,
+          "0.1588785046728971962616822430",
+          "16750.10236220472440944881890"
+        ],
+        [
+          "2025-01-01",
+          315,
+          374,
+          6418527,
+          52,
+          "0.1650793650793650793650793651",
+          "17161.83689839572192513368984"
+        ],
+        [
+          "2025-02-01",
+          406,
+          480,
+          7866263,
+          67,
+          "0.1650246305418719211822660099",
+          "16388.04791666666666666666667"
+        ],
+        [
+          "2025-03-01",
+          558,
+          666,
+          11467583,
+          96,
+          "0.1720430107526881720430107527",
+          "17218.59309309309309309309309"
+        ],
+        [
+          "2025-04-01",
+          733,
+          899,
+          15731755,
+          148,
+          "0.2019099590723055934515688950",
+          "17499.17130144605116796440489"
+        ],
+        [
+          "2025-05-01",
+          887,
+          1145,
+          19962841,
+          213,
+          "0.2401352874859075535512965051",
+          "17434.79563318777292576419214"
+        ],
+        [
+          "2025-06-01",
+          1030,
+          1237,
+          21116007,
+          179,
+          "0.1737864077669902912621359223",
+          "17070.33710590137429264349232"
+        ],
+        [
+          "2025-07-01",
+          1254,
+          1569,
+          26588427,
+          277,
+          "0.2208931419457735247208931419",
+          "16946.09751434034416826003824"
+        ],
+        [
+          "2025-08-01",
+          1408,
+          1776,
+          30693408,
+          308,
+          "0.21875",
+          "17282.32432432432432432432432"
+        ],
+        [
+          "2025-09-01",
+          1587,
+          2004,
+          33234870,
+          355,
+          "0.2236925015752993068683049779",
+          "16584.26646706586826347305389"
+        ],
+        [
+          "2025-10-01",
+          1725,
+          2205,
+          37910464,
+          395,
+          "0.2289855072463768115942028986",
+          "17192.95419501133786848072562"
+        ],
+        [
+          "2025-11-01",
+          1942,
+          2470,
+          41089235,
+          445,
+          "0.2291452111225540679711637487",
+          "16635.31781376518218623481781"
+        ],
+        [
+          "2025-12-01",
+          2170,
+          2803,
+          47772811,
+          531,
+          "0.2447004608294930875576036866",
+          "17043.45736710667142347484838"
+        ],
+        [
+          "2026-01-01",
+          2370,
+          3135,
+          53183301,
+          609,
+          "0.2569620253164556962025316456",
+          "16964.37033492822966507177033"
+        ],
+        [
+          "2026-02-01",
+          2339,
+          3113,
+          52800927,
+          624,
+          "0.2667806755023514322359982899",
+          "16961.42852553806617410857694"
+        ],
+        [
+          "2026-03-01",
+          2674,
+          3836,
+          66884960,
+          867,
+          "0.3242333582647718773373223635",
+          "17436.12095933263816475495308"
+        ],
+        [
+          "2026-04-01",
+          2867,
+          4127,
+          71123036,
+          954,
+          "0.3327520055807464248343215905",
+          "17233.59244002907681124303368"
+        ],
+        [
+          "2026-05-01",
+          3135,
+          4735,
+          80383102,
+          1130,
+          "0.3604465709728867623604465710",
+          "16976.36789862724392819429778"
+        ],
+        [
+          "2026-06-01",
+          3386,
+          5323,
+          90671821,
+          1276,
+          "0.3768458357944477259303012404",
+          "17033.96975389817771933120421"
+        ],
+        [
+          "2026-07-01",
+          3566,
+          6074,
+          103238748,
+          1529,
+          "0.4287717330342120022434099832",
+          "16996.83042476127757655581166"
+        ],
+        [
+          "2026-08-01",
+          3683,
+          6565,
+          113027218,
+          1643,
+          "0.4461037197936464838446918273",
+          "17216.63640517897943640517898"
+        ]
+      ],
+      "units": {
+        "monthly_paid_buyer_count": "count",
+        "monthly_paid_order_count": "count",
+        "monthly_paid_sales_cents": "cents",
+        "monthly_paid_repeat_buyer_count": "count",
+        "monthly_paid_repeat_rate": "ratio",
+        "monthly_paid_avg_order_value": "cents_per_order"
+      },
+      "data_version": "qinghe-w03-20260923-large",
+      "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+      "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402"
+    },
+    "expected_source": {
+      "materials": [
+        "04_本期统计确认邮件.md",
+        "09_付费月报补访原文.md",
+        "business_model.md:R11(P1)"
+      ],
+      "method": "Original CSV independent oracle; whole-history first-order ranking; paid qualification under provisional P1; no generated SQL or actual results used.",
+      "family": "paid"
+    },
+    "answer_review_requirements": [
+      "回答数值、单位、分组、日期与执行结果一致",
+      "保留P1暂定试算及总部适用性待书面确认，不把试算称为已确认总部制度"
+    ]
+  },
+  {
+    "id": "paid_paraphrase",
+    "question": "核对青禾2026年6月P1付费会员月报：用月底资格选账户，回看整月所有渠道门店的有效订单，统计购买账户数、有效单数、净销售额、复购账户数、复购人数占购买人数的比例和每单净额。金额用分，均额分/单。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "monthly_paid_buyer_count",
+          "monthly_paid_order_count",
+          "monthly_paid_sales_cents",
+          "monthly_paid_repeat_buyer_count",
+          "monthly_paid_repeat_rate",
+          "monthly_paid_avg_order_value"
+        ],
+        "start": "2026-06-01",
+        "end": "2026-07-01",
+        "group_by": [],
+        "filters": []
+      },
+      "columns": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "rows": [
+        [
+          3386,
+          5323,
+          90671821,
+          1276,
+          "0.3768458357944477259303012404",
+          "17033.96975389817771933120421"
+        ]
+      ],
+      "units": {
+        "monthly_paid_buyer_count": "count",
+        "monthly_paid_order_count": "count",
+        "monthly_paid_sales_cents": "cents",
+        "monthly_paid_repeat_buyer_count": "count",
+        "monthly_paid_repeat_rate": "ratio",
+        "monthly_paid_avg_order_value": "cents_per_order"
+      },
+      "data_version": "qinghe-w03-20260923-large",
+      "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+      "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402"
+    },
+    "expected_source": {
+      "materials": [
+        "04_本期统计确认邮件.md",
+        "09_付费月报补访原文.md",
+        "business_model.md:R11(P1)"
+      ],
+      "method": "Original CSV independent oracle; whole-history first-order ranking; paid qualification under provisional P1; no generated SQL or actual results used.",
+      "family": "paid"
+    },
+    "answer_review_requirements": [
+      "回答数值、单位、分组、日期与执行结果一致",
+      "保留P1暂定试算及总部适用性待书面确认，不把试算称为已确认总部制度"
+    ]
+  },
+  {
+    "id": "reject_paid_group",
+    "question": "我想比较青禾2026年6月不同会员归属门店的P1月末付费会员复购率，请按归属门店编号列出。",
+    "expected": {
+      "status": "unsupported",
+      "intent": {
+        "metrics": [
+          "monthly_paid_repeat_rate"
+        ],
+        "start": "2026-06-01",
+        "end": "2026-07-01",
+        "filters": []
+      }
+    },
+    "expected_source": {
+      "materials": [
+        "04_本期统计确认邮件.md",
+        "09_付费月报补访原文.md",
+        "business_model.md:R11(P1)"
+      ],
+      "method": "Original CSV independent oracle; whole-history first-order ranking; paid qualification under provisional P1; no generated SQL or actual results used.",
+      "family": "paid"
+    },
+    "answer_review_requirements": [
+      "回答数值、单位、分组、日期与执行结果一致",
+      "保留P1暂定试算及总部适用性待书面确认，不把试算称为已确认总部制度"
+    ],
+    "requested_intent": {
+      "metrics": [
+        "monthly_paid_repeat_rate"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-07-01",
+      "group_by": [
+        "home_store"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_undefined_metric",
+    "question": "核对青禾2026年6月扣除所有成本后的净利润金额，不能用销售额代替。",
+    "expected": {
+      "status": "unsupported"
+    },
+    "expected_source": {
+      "method": "Contract boundary decided before execution; no numeric answer authorized"
+    },
+    "answer_review_requirements": [
+      "指出净利润指标未定义，不替换成净销售额或推算成本"
+    ]
+  },
+  {
+    "id": "nonexistent_filter",
+    "question": "限定青禾成交门店编号S888888，给我2026年6月创建订单数；不要猜成其他编号。",
+    "expected": {
+      "status": "unsupported",
+      "allowed_statuses": [
+        "unsupported",
+        "clarify"
+      ],
+      "boundary_kind": "nonexistent_filter_value",
+      "reason": "编号无法定位"
+    },
+    "expected_source": {
+      "method": "Contract boundary decided before execution; no numeric answer authorized"
+    },
+    "answer_review_requirements": [
+      "说明该门店编号无法定位或不在本次范围，不能返回零或猜ID"
+    ]
+  },
+  {
+    "id": "clarify_year",
+    "question": "青禾5月与6月的月内复购率分别是多少？",
+    "expected": {
+      "status": "clarify"
+    },
+    "expected_source": {
+      "method": "Contract boundary decided before execution; no numeric answer authorized"
+    },
+    "answer_review_requirements": [
+      "新会话没有年份，不能默认参考年"
+    ]
+  }
+]

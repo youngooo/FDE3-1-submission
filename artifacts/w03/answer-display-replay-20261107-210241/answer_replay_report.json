@@ -1,0 +1,592 @@
+{
+  "kind": "answer_only_replay",
+  "source_report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/test-general32-large-current-20261107-173736/metric_test_report.json",
+  "source_report_sha256": "19213bef61e3c17580051f2ceda9e232c3958c4b734f1b39754ccc880b9a4fad",
+  "answer_prompt_sha256": "d29ef0eccbd8f64aa02eb5aa732669f835d9bff921429452309600e618d98b1e",
+  "helper_sha256": "a430fe2d2e7926f430bbe93be261623a648c35e541bde60a7d5f86e369fa661b",
+  "script_sha256": "3180ea88266317cbc064b9620d4397a8af5a37ce3d91a0ddd748e56ea60ab1d8",
+  "query_reexecuted": false,
+  "intent_model_called": false,
+  "answer_model_called": true,
+  "complete": true,
+  "total": 6,
+  "generated": 6,
+  "answer_semantic_review": "pending",
+  "cases": [
+    {
+      "id": "single_discount_cents",
+      "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的优惠金额，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。",
+      "source_trace_id": "00a6da51-9c1d-4818-ad94-903af9d8809d",
+      "source_structured_comparison": {
+        "passed": true,
+        "differences": []
+      },
+      "result": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "discount_cents"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "columns": [
+          "discount_cents"
+        ],
+        "rows": [
+          [
+            63492599
+          ]
+        ],
+        "seconds": 0.198,
+        "units": {
+          "discount_cents": "cents"
+        },
+        "data_version": "qinghe-w03-20260923-large",
+        "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+        "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+      },
+      "answer_display_facts": {
+        "version": "answer-display-facts-v1",
+        "rows": [
+          {
+            "group": {},
+            "metrics": [
+              {
+                "metric_id": "discount_cents",
+                "name": "优惠金额",
+                "raw_value": 63492599,
+                "raw_unit": "cents",
+                "display_unit": "分",
+                "display_value": "63492599",
+                "is_undefined": false,
+                "display_rounded": false,
+                "optional_yuan_conversion": {
+                  "value": "634925.99",
+                  "unit": "元",
+                  "use_only_if_user_requests_conversion": true
+                }
+              }
+            ]
+          }
+        ],
+        "count_unit_basis": "W03 materials 01/03/04: count the metric object, not the customer-context entity.",
+        "note": "These are renderings of the actual result, not newly queried metrics. Preserve grouping and requested units."
+      },
+      "source_answer": "青禾在 2026-08-01（含）至 2026-09-01（不含）期间，全门店、不按维度分组，按原订单下单日期归属统计的优惠金额合计为 63,492,599 分（即 634,929.99 元）。口径为 paid 订单原价减实付的金额合计，退款不冲减原优惠金额。本次结果未返回订单数或账户数，因此未计算分/单或分/账户均额。",
+      "answer_semantic_review": "pending",
+      "generation_status": "ok",
+      "answer": "青禾在 2026 年 8 月（2026-08-01 含至 2026-09-01 不含）的优惠金额为 63,492,599 分。统计范围为全部门店，按原订单下单日期归属；口径为 paid 订单原价减实付的金额合计，退款不冲减原优惠金额。本次未查询均额或比率。",
+      "model_usage": {
+        "prompt_tokens": 2017,
+        "completion_tokens": 261,
+        "total_tokens": 2278,
+        "completion_tokens_details": {
+          "reasoning_tokens": 148
+        }
+      }
+    },
+    {
+      "id": "single_first_order_count",
+      "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的观测期首单数，全门店，不按维度分组。首单在完整测试覆盖历史内按有效订单确定，再筛选到8月；金额保留分。",
+      "source_trace_id": "1e80ce53-db86-405c-b677-9a370686df97",
+      "source_structured_comparison": {
+        "passed": true,
+        "differences": []
+      },
+      "result": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "first_order_count"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "columns": [
+          "first_order_count"
+        ],
+        "rows": [
+          [
+            15
+          ]
+        ],
+        "seconds": 0.172,
+        "units": {
+          "first_order_count": "count"
+        },
+        "data_version": "qinghe-w03-20260923-large",
+        "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+        "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+      },
+      "answer_display_facts": {
+        "version": "answer-display-facts-v1",
+        "rows": [
+          {
+            "group": {},
+            "metrics": [
+              {
+                "metric_id": "first_order_count",
+                "name": "观测期首单数",
+                "raw_value": 15,
+                "raw_unit": "count",
+                "display_unit": "单",
+                "display_value": "15",
+                "is_undefined": false,
+                "display_rounded": false
+              }
+            ]
+          }
+        ],
+        "count_unit_basis": "W03 materials 01/03/04: count the metric object, not the customer-context entity.",
+        "note": "These are renderings of the actual result, not newly queried metrics. Preserve grouping and requested units."
+      },
+      "source_answer": "青禾在2026年8月（2026-08-01含至2026-09-01不含）的观测期首单数为15。统计口径为：先在本轮完整测试覆盖历史（2024-09-01至2026-09-01）内，为每个会员账户确定第一笔有效订单，再筛选首单日期落在8月窗口内的账户；统计单位为账户，且覆盖全门店、不按门店或地区分组。本次查询没有涉及金额指标，因此不适用金额换算；结果基于本周合成测试库。",
+      "answer_semantic_review": "pending",
+      "generation_status": "ok",
+      "answer": "在青禾客户当前测试数据范围内，查询2026-08-01（含）至2026-09-01（不含）、全门店、不按维度分组的观测期首单数：15单。口径为：先在全测试覆盖历史内按日期、订单号排序确定每个账户的首笔有效订单，再筛选首单日期落入2026年8月的订单；计数对象为订单。",
+      "model_usage": {
+        "prompt_tokens": 1968,
+        "completion_tokens": 365,
+        "total_tokens": 2333,
+        "completion_tokens_details": {
+          "reasoning_tokens": 254
+        }
+      }
+    },
+    {
+      "id": "single_first_buyer_count",
+      "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的观测期首购会员数，全门店，不按维度分组。首单在完整测试覆盖历史内按有效订单确定，再筛选到8月；金额保留分。",
+      "source_trace_id": "d5c79a84-151f-4604-8a50-9ceb3e1896c6",
+      "source_structured_comparison": {
+        "passed": true,
+        "differences": []
+      },
+      "result": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "first_buyer_count"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "columns": [
+          "first_buyer_count"
+        ],
+        "rows": [
+          [
+            15
+          ]
+        ],
+        "seconds": 0.149,
+        "units": {
+          "first_buyer_count": "count"
+        },
+        "data_version": "qinghe-w03-20260923-large",
+        "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+        "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+      },
+      "answer_display_facts": {
+        "version": "answer-display-facts-v1",
+        "rows": [
+          {
+            "group": {},
+            "metrics": [
+              {
+                "metric_id": "first_buyer_count",
+                "name": "观测期首购会员数",
+                "raw_value": 15,
+                "raw_unit": "count",
+                "display_unit": "个CRM会员账户",
+                "display_value": "15",
+                "is_undefined": false,
+                "display_rounded": false
+              }
+            ]
+          }
+        ],
+        "count_unit_basis": "W03 materials 01/03/04: count the metric object, not the customer-context entity.",
+        "note": "These are renderings of the actual result, not newly queried metrics. Preserve grouping and requested units."
+      },
+      "source_answer": "2026年8月观测期（2026-08-01含至2026-09-01不含）首购会员数为15个CRM会员账户。统计口径为：在完整测试覆盖历史内先确定每个账户第一笔有效订单，再筛选首次有效订单落入该月的账户；范围为全门店、不按维度分组。该指标不代表终身首购。",
+      "answer_semantic_review": "pending",
+      "generation_status": "ok",
+      "answer": "青禾在2026年8月（2026-08-01含至2026-09-01不含）的观测期首购会员数为15个CRM会员账户。统计范围为全部门店、不按门店或地区分组；口径为先在完整测试覆盖历史内确定每个账户的第一笔有效订单，再筛选落入该8月窗口的账户，不代表终身首购。",
+      "model_usage": {
+        "prompt_tokens": 2000,
+        "completion_tokens": 217,
+        "total_tokens": 2217,
+        "completion_tokens_details": {
+          "reasoning_tokens": 109
+        }
+      }
+    },
+    {
+      "id": "single_avg_buyer_value",
+      "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的购买会员人均消费，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。",
+      "source_trace_id": "76d7ee43-2add-48dd-b084-c139b388d874",
+      "source_structured_comparison": {
+        "passed": true,
+        "differences": []
+      },
+      "result": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "avg_buyer_value"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "columns": [
+          "avg_buyer_value"
+        ],
+        "rows": [
+          [
+            31139.19777023752
+          ]
+        ],
+        "seconds": 0.246,
+        "units": {
+          "avg_buyer_value": "cents/account"
+        },
+        "data_version": "qinghe-w03-20260923-large",
+        "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+        "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+      },
+      "answer_display_facts": {
+        "version": "answer-display-facts-v1",
+        "rows": [
+          {
+            "group": {},
+            "metrics": [
+              {
+                "metric_id": "avg_buyer_value",
+                "name": "购买会员人均消费",
+                "raw_value": 31139.19777023752,
+                "raw_unit": "cents/account",
+                "display_unit": "分/账户",
+                "display_value": "31139.20",
+                "is_undefined": false,
+                "display_rounded": true,
+                "optional_yuan_conversion": {
+                  "value": "311.39",
+                  "unit": "元/账户",
+                  "use_only_if_user_requests_conversion": true
+                }
+              }
+            ]
+          }
+        ],
+        "count_unit_basis": "W03 materials 01/03/04: count the metric object, not the customer-context entity.",
+        "note": "These are renderings of the actual result, not newly queried metrics. Preserve grouping and requested units."
+      },
+      "source_answer": "已按青禾、2026-08-01（含）至2026-09-01（不含）统计，全门店、不按维度分组，并按原订单下单日期归属。购买会员人均消费为 31,139.20 分/账户（执行结果 31,139.19777023752 分/账户），口径为聚合后的净销售额÷购买会员数。结果未返回购买会员数，不推导人数。",
+      "answer_semantic_review": "pending",
+      "generation_status": "ok",
+      "answer": "统计范围：青禾客户数据中，2026-08-01（含）至2026-09-01（不含），按原订单下单日期归属，全门店且不按维度分组。购买会员人均消费为聚合后的净销售额除以购买会员数，单位为分/账户；分母为零时未定义。本次结果为 31139.20 分/账户。",
+      "model_usage": {
+        "prompt_tokens": 2038,
+        "completion_tokens": 653,
+        "total_tokens": 2691,
+        "completion_tokens_details": {
+          "reasoning_tokens": 547
+        }
+      }
+    },
+    {
+      "id": "monthly_jul_aug",
+      "question": "青禾2026年7月和8月两个完整自然月（2026-07-01含至2026-09-01不含），全门店按月分别列出月内购买会员数、月内复购会员数、月内复购率，不合并月份，复购率保留小数比例。",
+      "source_trace_id": "12704d7e-cb90-4208-a48a-48cff0feb37a",
+      "source_structured_comparison": {
+        "passed": true,
+        "differences": []
+      },
+      "result": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_buyer_count",
+            "monthly_repeat_buyer_count",
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-07-01",
+          "end": "2026-09-01",
+          "group_by": [
+            "metric_time__month"
+          ],
+          "filters": []
+        },
+        "columns": [
+          "metric_time__month",
+          "monthly_buyer_count",
+          "monthly_repeat_buyer_count",
+          "monthly_repeat_rate"
+        ],
+        "rows": [
+          [
+            "2026-07-01 00:00:00",
+            16436,
+            7388,
+            0.4495010951569725
+          ],
+          [
+            "2026-08-01 00:00:00",
+            16504,
+            7302,
+            0.44243819680077556
+          ]
+        ],
+        "seconds": 0.392,
+        "units": {
+          "monthly_buyer_count": "count",
+          "monthly_repeat_buyer_count": "count",
+          "monthly_repeat_rate": "ratio"
+        },
+        "data_version": "qinghe-w03-20260923-large",
+        "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+        "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+      },
+      "answer_display_facts": {
+        "version": "answer-display-facts-v1",
+        "rows": [
+          {
+            "group": {
+              "metric_time__month": "2026-07-01 00:00:00"
+            },
+            "metrics": [
+              {
+                "metric_id": "monthly_buyer_count",
+                "name": "月内购买会员数",
+                "raw_value": 16436,
+                "raw_unit": "count",
+                "display_unit": "个CRM会员账户",
+                "display_value": "16436",
+                "is_undefined": false,
+                "display_rounded": false
+              },
+              {
+                "metric_id": "monthly_repeat_buyer_count",
+                "name": "月内复购会员数",
+                "raw_value": 7388,
+                "raw_unit": "count",
+                "display_unit": "个CRM会员账户",
+                "display_value": "7388",
+                "is_undefined": false,
+                "display_rounded": false
+              },
+              {
+                "metric_id": "monthly_repeat_rate",
+                "name": "月内复购率",
+                "raw_value": 0.4495010951569725,
+                "raw_unit": "ratio",
+                "display_unit": "小数比例",
+                "display_value": "0.4495010951569725",
+                "is_undefined": false,
+                "display_rounded": false,
+                "optional_percent_conversion": {
+                  "value": "44.95",
+                  "unit": "%",
+                  "use_only_if_user_requests_percent": true
+                }
+              }
+            ]
+          },
+          {
+            "group": {
+              "metric_time__month": "2026-08-01 00:00:00"
+            },
+            "metrics": [
+              {
+                "metric_id": "monthly_buyer_count",
+                "name": "月内购买会员数",
+                "raw_value": 16504,
+                "raw_unit": "count",
+                "display_unit": "个CRM会员账户",
+                "display_value": "16504",
+                "is_undefined": false,
+                "display_rounded": false
+              },
+              {
+                "metric_id": "monthly_repeat_buyer_count",
+                "name": "月内复购会员数",
+                "raw_value": 7302,
+                "raw_unit": "count",
+                "display_unit": "个CRM会员账户",
+                "display_value": "7302",
+                "is_undefined": false,
+                "display_rounded": false
+              },
+              {
+                "metric_id": "monthly_repeat_rate",
+                "name": "月内复购率",
+                "raw_value": 0.44243819680077556,
+                "raw_unit": "ratio",
+                "display_unit": "小数比例",
+                "display_value": "0.44243819680077556",
+                "is_undefined": false,
+                "display_rounded": false,
+                "optional_percent_conversion": {
+                  "value": "44.24",
+                  "unit": "%",
+                  "use_only_if_user_requests_percent": true
+                }
+              }
+            ]
+          }
+        ],
+        "count_unit_basis": "W03 materials 01/03/04: count the metric object, not the customer-context entity.",
+        "note": "These are renderings of the actual result, not newly queried metrics. Preserve grouping and requested units."
+      },
+      "source_answer": "统计范围为青禾客户、CRM 会员账户、全门店口径，时间覆盖 2026-07-01（含）至 2026-09-01（不含），按完整自然月分别展示，不合并月份。2026年7月：月内购买会员数 16436 个账户，月内复购会员数 7388 个账户，月内复购率（小数比例）约 0.4495。2026年8月：月内购买会员数 16504 个账户，月内复购会员数 7302 个账户，月内复购率（小数比例）约 0.4424。月内复购率的计算口径为：同一自然月的月内复购会员数 ÷ 同月月内购买会员数；两个月分母均非零，因此比率均有定义。上述为按月分别统计，不能将两个月人数直接相加当作跨月人数。",
+      "answer_semantic_review": "pending",
+      "generation_status": "ok",
+      "answer": "2026年7月：月内购买会员数 16436 个CRM会员账户，月内复购会员数 7388 个CRM会员账户，月内复购率 0.4495010951569725（小数比例）。\n2026年8月：月内购买会员数 16504 个CRM会员账户，月内复购会员数 7302 个CRM会员账户，月内复购率 0.44243819680077556（小数比例）。\n口径：统计2026-07-01（含）至2026-09-01（不含）的两个完整自然月，全门店口径，按月分别展示、不合并月份。月内购买会员数指同一自然月有至少一笔有效订单的账户数；月内复购会员数指同一自然月有至少两笔有效订单的账户数；月内复购率=月内复购会员数÷月内购买会员数。人数单位为CRM会员账户。",
+      "model_usage": {
+        "prompt_tokens": 2883,
+        "completion_tokens": 973,
+        "total_tokens": 3856,
+        "completion_tokens_details": {
+          "reasoning_tokens": 722
+        }
+      }
+    },
+    {
+      "id": "aug_cancelled_zero_denominator",
+      "question": "青禾2026年8月，仅筛选订单状态cancelled（取消），汇总有效订单数、净销售额、有效订单均额及取消率。金额保留分，均额分/单，比率保留小数。",
+      "source_trace_id": "2c700295-7eef-4fca-b85b-bee687f65788",
+      "source_structured_comparison": {
+        "passed": true,
+        "differences": []
+      },
+      "result": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "valid_order_count",
+            "net_sales_cents",
+            "avg_order_value",
+            "cancel_rate"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": [
+            {
+              "field": "order__status",
+              "op": "eq",
+              "value": "cancelled"
+            }
+          ]
+        },
+        "columns": [
+          "valid_order_count",
+          "net_sales_cents",
+          "avg_order_value",
+          "cancel_rate"
+        ],
+        "rows": [
+          [
+            0,
+            0,
+            null,
+            1.0
+          ]
+        ],
+        "seconds": 0.235,
+        "units": {
+          "valid_order_count": "count",
+          "net_sales_cents": "cents",
+          "avg_order_value": "cents/order",
+          "cancel_rate": "ratio"
+        },
+        "data_version": "qinghe-w03-20260923-large",
+        "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+        "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+      },
+      "answer_display_facts": {
+        "version": "answer-display-facts-v1",
+        "rows": [
+          {
+            "group": {},
+            "metrics": [
+              {
+                "metric_id": "valid_order_count",
+                "name": "有效订单数",
+                "raw_value": 0,
+                "raw_unit": "count",
+                "display_unit": "单",
+                "display_value": "0",
+                "is_undefined": false,
+                "display_rounded": false
+              },
+              {
+                "metric_id": "net_sales_cents",
+                "name": "净销售额",
+                "raw_value": 0,
+                "raw_unit": "cents",
+                "display_unit": "分",
+                "display_value": "0",
+                "is_undefined": false,
+                "display_rounded": false,
+                "optional_yuan_conversion": {
+                  "value": "0.00",
+                  "unit": "元",
+                  "use_only_if_user_requests_conversion": true
+                }
+              },
+              {
+                "metric_id": "avg_order_value",
+                "name": "有效订单均额",
+                "raw_value": null,
+                "raw_unit": "cents/order",
+                "display_unit": "分/单",
+                "display_value": "未定义",
+                "is_undefined": true
+              },
+              {
+                "metric_id": "cancel_rate",
+                "name": "取消率",
+                "raw_value": 1.0,
+                "raw_unit": "ratio",
+                "display_unit": "小数比例",
+                "display_value": "1.0",
+                "is_undefined": false,
+                "display_rounded": false,
+                "optional_percent_conversion": {
+                  "value": "100.00",
+                  "unit": "%",
+                  "use_only_if_user_requests_percent": true
+                }
+              }
+            ]
+          }
+        ],
+        "count_unit_basis": "W03 materials 01/03/04: count the metric object, not the customer-context entity.",
+        "note": "These are renderings of the actual result, not newly queried metrics. Preserve grouping and requested units."
+      },
+      "source_answer": "在青禾当前客户数据范围内，按2026年8月（统计区间2026-08-01至2026-09-01）且仅筛选订单状态为取消的订单汇总：有效订单数为0；净销售额为0分；有效订单均额未定义，因为有效订单数为0，无法按“净销售额除以有效订单数”计算；取消率为1.0（小数比例，按“取消订单数除以创建订单数”计算）。其中有效订单数和净销售额的0为本次覆盖范围内的零；均额未定义是分母为零导致，并非整次查询失败。",
+      "answer_semantic_review": "pending",
+      "generation_status": "ok",
+      "answer": "青禾2026年8月整月、仅统计已取消订单的范围内：有效订单数0单；净销售额0分；有效订单均额未定义（有效订单数为0，净销售额0分除以0单，分母为零）；取消率1.0（按小数比例展示，口径为取消订单数除以创建订单数）。其中有效订单数和净销售额均按口径排除取消订单，因此为0，属于统计范围内的零结果。",
+      "model_usage": {
+        "prompt_tokens": 2592,
+        "completion_tokens": 688,
+        "total_tokens": 3280,
+        "completion_tokens_details": {
+          "reasoning_tokens": 555
+        }
+      }
+    }
+  ],
+  "source_report_unchanged": true
+}

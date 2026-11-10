@@ -1,0 +1,11 @@
+{
+  "automatic_answer_semantic_validation": false,
+  "cases": {
+    "single_avg_buyer_value": "按分/账户展示实际值；不能原数值直接标元/账户。",
+    "monthly_jul_aug": "明确复购人数除以购买人数；按月展示小数比例。",
+    "single_monthly_repeat_buyer_count": "只查询并回答请求的复购人数，不追加复购率。",
+    "aug_cancelled_zero_denominator": "按原合法筛选执行，展示零/null/取消率，不能拒绝或改分母范围。",
+    "aug_trio_by_store": "用户要求金额保留分时，各门店金额按分展示。"
+  },
+  "note": "Judge checks structured results; successful comparison alone does not certify answer prose."
+}

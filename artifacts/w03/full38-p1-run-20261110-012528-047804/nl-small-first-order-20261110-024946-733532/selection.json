@@ -1,0 +1,18 @@
+{
+  "source_cases": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-cases-20261110-022457-578302/small/tests.json",
+  "source_sha256": "cd77e5c705b1b8e64f515e9ffeb00175f65ae97027df45b48aab64b271c3fdc9",
+  "selected_ids": [
+    "single_first_order_sales_cents",
+    "single_first_buyer_count",
+    "single_first_order_count",
+    "single_repeat_order_count",
+    "first_home_store",
+    "single_valid_order_items",
+    "paid_coverage",
+    "paid_paraphrase"
+  ],
+  "expected_values_changed": false,
+  "purpose": "Retest first-order explanation and existing answer behavior after prompt correction",
+  "prompt_sha256": "2df23fb50a2e1af0ba0eedc525a76db13283ca43e7ab799964803f0973c1e8cc",
+  "full_suite_rerun": false
+}

@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "net_sales_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END) AS net_sales_cents\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "net_sales_cents"
+  ],
+  "rows": [
+    [
+      100300
+    ]
+  ],
+  "seconds": 0.047,
+  "units": {
+    "net_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "青禾2026年8月净销售额（全门店汇总、不分组）为100300分。口径：按原订单下单日期归属，统计已支付订单实付金额减退款后的合计，取消单不计。",
+  "question": "请只查询青禾2026年8月的净销售额，全门店汇总，不分组。金额按分返回。",
+  "trace_id": "aeeac9fa-506a-412c-b521-4a2ae43efce4",
+  "elapsed_seconds": 8.732,
+  "model_usage": {
+    "prompt_tokens": 14678,
+    "completion_tokens": 604,
+    "total_tokens": 15282
+  },
+  "model_calls_with_usage": 2
+}

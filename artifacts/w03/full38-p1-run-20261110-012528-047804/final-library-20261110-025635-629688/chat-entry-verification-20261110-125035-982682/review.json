@@ -1,0 +1,239 @@
+{
+  "kind": "official38_chat_entry_verification",
+  "library_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "project": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-small",
+  "dataset": "small",
+  "primary_checks": [
+    {
+      "case": "store",
+      "trace_id": "9366ae11-cc94-4938-949c-91a17c169787",
+      "comparison": {
+        "passed": true,
+        "differences": []
+      },
+      "expected": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "valid_order_count",
+            "net_sales_cents"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [
+            "store"
+          ],
+          "filters": []
+        },
+        "columns": [
+          "store",
+          "valid_order_count",
+          "net_sales_cents"
+        ],
+        "rows": [
+          [
+            "S01",
+            13,
+            54650
+          ],
+          [
+            "S02",
+            14,
+            45650
+          ]
+        ],
+        "units": {
+          "valid_order_count": "count",
+          "net_sales_cents": "cents"
+        },
+        "data_version": "qinghe-w03-20260923-small",
+        "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+        "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402"
+      }
+    },
+    {
+      "case": "monthly",
+      "trace_id": "03c329f3-ff85-4f69-b367-1da072fb7f83",
+      "comparison": {
+        "passed": true,
+        "differences": []
+      },
+      "expected": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_buyer_count",
+            "monthly_repeat_buyer_count",
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-07-01",
+          "end": "2026-09-01",
+          "group_by": [
+            "metric_time__month"
+          ],
+          "filters": []
+        },
+        "columns": [
+          "metric_time__month",
+          "monthly_buyer_count",
+          "monthly_repeat_buyer_count",
+          "monthly_repeat_rate"
+        ],
+        "rows": [
+          [
+            "2026-07-01",
+            11,
+            1,
+            "0.09090909090909090909090909091"
+          ],
+          [
+            "2026-08-01",
+            15,
+            12,
+            "0.8"
+          ]
+        ],
+        "units": {
+          "monthly_buyer_count": "count",
+          "monthly_repeat_buyer_count": "count",
+          "monthly_repeat_rate": "ratio"
+        },
+        "data_version": "qinghe-w03-20260923-small",
+        "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+        "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402"
+      }
+    },
+    {
+      "case": "paid",
+      "trace_id": "fd27a899-0be6-4534-87dd-401206b3ed59",
+      "comparison": {
+        "passed": true,
+        "differences": []
+      },
+      "expected": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_paid_buyer_count",
+            "monthly_paid_order_count",
+            "monthly_paid_sales_cents",
+            "monthly_paid_repeat_buyer_count",
+            "monthly_paid_repeat_rate",
+            "monthly_paid_avg_order_value"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "columns": [
+          "monthly_paid_buyer_count",
+          "monthly_paid_order_count",
+          "monthly_paid_sales_cents",
+          "monthly_paid_repeat_buyer_count",
+          "monthly_paid_repeat_rate",
+          "monthly_paid_avg_order_value"
+        ],
+        "rows": [
+          [
+            6,
+            10,
+            47550,
+            4,
+            "0.6666666666666666666666666667",
+            "4755"
+          ]
+        ],
+        "units": {
+          "monthly_paid_buyer_count": "count",
+          "monthly_paid_order_count": "count",
+          "monthly_paid_sales_cents": "cents",
+          "monthly_paid_repeat_buyer_count": "count",
+          "monthly_paid_repeat_rate": "ratio",
+          "monthly_paid_avg_order_value": "cents_per_order"
+        },
+        "data_version": "qinghe-w03-20260923-small",
+        "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+        "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402"
+      }
+    },
+    {
+      "case": "nonexistent",
+      "trace_id": "464b865a-2a1b-4a23-8f4a-50ca2a06735e",
+      "comparison": {
+        "passed": true,
+        "differences": []
+      },
+      "expected": {
+        "status": "unsupported",
+        "allowed_statuses": [
+          "unsupported",
+          "clarify"
+        ],
+        "boundary_kind": "nonexistent_filter_value",
+        "reason": "编号无法定位"
+      }
+    },
+    {
+      "case": "undefined",
+      "trace_id": "46dfd3e8-6fa9-4f98-9005-6af4b68b1d2e",
+      "comparison": {
+        "passed": true,
+        "differences": []
+      },
+      "expected": {
+        "status": "unsupported"
+      }
+    },
+    {
+      "case": "fresh_year",
+      "trace_id": "d1a8fd33-702a-49fb-aec1-38898b89a4cf",
+      "comparison": {
+        "passed": true,
+        "differences": []
+      },
+      "expected": {
+        "status": "clarify"
+      }
+    }
+  ],
+  "primary_cases_passed": 6,
+  "primary_cases_total": 6,
+  "fresh_year": {
+    "trace_id": "d1a8fd33-702a-49fb-aec1-38898b89a4cf",
+    "session_id": "aa3517e7-647b-4934-820a-534c871a0801",
+    "history_contains_only_current_question": true,
+    "dates_empty": true,
+    "sql_executed": false
+  },
+  "session_scope": "Six representative UI cases; only fresh_year certified as an isolated new-session test; not all38 full chat regression",
+  "diagnostic_context_runs": [
+    {
+      "trace_id": "9cdb8480-61dc-4d38-93b3-562903fa6785",
+      "status": "ok",
+      "session_id": "75b18e7a-c53e-4604-8cd8-2a0e1d9e7fdc",
+      "history_count": 6,
+      "scope": "Existing-history case, excluded from independent fresh-session verdict"
+    },
+    {
+      "trace_id": "4937aba9-fff8-434b-a65b-8186403b56fa",
+      "status": "clarify",
+      "session_id": "75b18e7a-c53e-4604-8cd8-2a0e1d9e7fdc",
+      "history_count": 6,
+      "scope": "Existing-history case, excluded from independent fresh-session verdict"
+    }
+  ],
+  "answer_review": {
+    "store": "Values, store keys, cents to yuan conversion and scope checked against independent CSV expectations",
+    "monthly": "Counts, numerator/denominator and cross-month distinct limitation correct; redundant rounding note retained",
+    "paid": "All six values, units and formulas correct; P1 written-confirmation notice retained",
+    "nonexistent": "Unknown store refused without substitution or false zero",
+    "undefined": "Undefined profit refused without substitute query; internal metric ID exposed as nonblocking wording note",
+    "fresh_year": "Year requested, no date inferred, no numeric query; only current user message in history"
+  },
+  "model_called_by_archive": false,
+  "query_reexecuted_by_archive": false,
+  "chat_binding_changed_by_archive": false,
+  "business_confirmation": "pending",
+  "final_acceptance": false
+}

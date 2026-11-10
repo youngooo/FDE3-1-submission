@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "discount_cents"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN status = 'paid' THEN gross_cents - paid_cents ELSE 0 END) AS discount_cents\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-06-01' AND '2026-06-30'",
+  "columns": [
+    "discount_cents"
+  ],
+  "rows": [
+    [
+      55842441
+    ]
+  ],
+  "seconds": 0.125,
+  "units": {
+    "discount_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "青禾在2026年6月整月（2026-06-01至2026-07-01前）的全门店优惠金额合计为 55,842,441 分。口径为已支付订单的原价减实付金额合计，退款不冲减原优惠金额；本次不分组、不按门店拆分。",
+  "question": "帮我查青禾2026年6月的优惠金额，我需要整月全门店总数，不需要分组明细。金额按分返回。",
+  "trace_id": "2c90d731-9648-42ae-97bf-c878cd6a48e8",
+  "elapsed_seconds": 9.492,
+  "model_usage": {
+    "prompt_tokens": 14730,
+    "completion_tokens": 784,
+    "total_tokens": 15514
+  },
+  "model_calls_with_usage": 2
+}

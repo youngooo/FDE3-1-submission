@@ -1,0 +1,10 @@
+[0m17:08:20  Running with dbt=1.12.5
+[0m17:08:21  Registered adapter: duckdb=1.11.0
+[0m17:08:21  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m17:08:22  [[33mWARNING[0m]: Invalid name `month` - names cannot match reserved time granularity keywords (['NANOSECOND', 'MICROSECOND', 'MILLISECOND', 'SECOND', 'MINUTE', 'HOUR', 'DAY', 'WEEK', 'MONTH', 'QUARTER', 'YEAR'])
+[0m17:08:22  [[33mWARNING[0m]: Duplicate dimension + primary entity pairing detected, dimension + primary entity pairings must be unique. Semantic model `first_orders_semantic` has a primary entity of `order` and dimension `ordered_at`, but this pairing is already in use on semantic model `orders_semantic`.
+[0m17:08:22  [[33mWARNING[0m]: Duplicate dimension + primary entity pairing detected, dimension + primary entity pairings must be unique. Semantic model `first_orders_semantic` has a primary entity of `order` and dimension `channel`, but this pairing is already in use on semantic model `orders_semantic`.
+[0m17:08:22  [[33mWARNING[0m]: Duplicate dimension + primary entity pairing detected, dimension + primary entity pairings must be unique. Semantic model `first_orders_semantic` has a primary entity of `order` and dimension `status`, but this pairing is already in use on semantic model `orders_semantic`.
+[0m17:08:22  [[31mERROR[0m]: Encountered an error:
+Parsing Error
+  Semantic Manifest validation failed.

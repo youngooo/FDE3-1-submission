@@ -1,0 +1,25 @@
+{
+  "order_semantic": [
+    "order_id"
+  ],
+  "member_semantic": [
+    "member_id"
+  ],
+  "selling_store_semantic": [
+    "store_id"
+  ],
+  "home_store_semantic": [
+    "store_id"
+  ],
+  "first_order_semantic": [
+    "order_id"
+  ],
+  "monthly_member_semantic": [
+    "member_id",
+    "month_start"
+  ],
+  "monthly_paid_semantic": [
+    "member_id",
+    "month_start"
+  ]
+}

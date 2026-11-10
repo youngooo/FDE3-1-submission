@@ -1,0 +1,33 @@
+{
+  "status": "applied",
+  "model_called": false,
+  "query_executed": false,
+  "regression_cases": 9,
+  "expected_values_changed": false,
+  "source_cases": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/large-http402-recovery-20261107-165940/retry-cases.json",
+  "source_cases_sha256": "4464aac2ef4487786c43a02a7ae41c714b90c923fcd962110448cf520e8ba75b",
+  "source_report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/test-large-http402-retry-20261107-171207/metric_test_report.json",
+  "source_report_sha256": "310ec2ca6e9176f33e6867e0d23c7184c94d1b48891203b5c0b647f8bccb7aa7",
+  "source_passed": 35,
+  "source_total": 37,
+  "prompt_changes": [
+    {
+      "file": "/home/yang/FDE/w03-work/fde-agent-w03/product/w03_intent_prompt.txt",
+      "before_sha256": "a7700edf0afca90acd8443c01f4c8d46d8461e02f2a6bdc349f1459dcf499170",
+      "after_sha256": "9d11fd46a867b92a3cce6c2f6acb69e099bc881192dff36900461542a777217c"
+    },
+    {
+      "file": "/home/yang/FDE/w03-work/fde-agent-w03/product/w03_answer_prompt.txt",
+      "before_sha256": "975c0fb6fe47d5cb6a5a99d85a5a884113c5527515453c9ace78d3b8ac3bc006",
+      "after_sha256": "501ab98da7c49f89ddaf23bd1b235715e93d2f2256d915cbdc3e74bf074f38dd"
+    }
+  ],
+  "protected_sha256": {
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/agent.py": "8007c981b30a628817b1500986295654b5841a16b9cc84e7b89d3fd0c59c434e",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/engine.py": "e8b39da2517a65f6406da4d261173291c795248ea6c62638137e09ce750a98f3",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/intent_context.py": "93a9d9a27566c3c736c2e451e9e275510f9a0c9e996728f0ae1dfc916e87db87",
+    "/home/yang/FDE/w03-work/fde-agent-w03/customer/w03/judge.py": "33b7eed436f5663f04371ffc2eb456b23451c60b5073d8534e6735a6a466e0fc"
+  },
+  "script_sha256": "8eaa5a5f0ce89394c3b956503dee6570c315b2a51cdf9b0386ca5eaab0efbf8b",
+  "answer_review_status": "pending_real_regression_and_manual_review"
+}

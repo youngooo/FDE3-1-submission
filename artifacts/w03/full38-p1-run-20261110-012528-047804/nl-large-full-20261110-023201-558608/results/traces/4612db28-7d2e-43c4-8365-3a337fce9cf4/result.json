@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_repeat_buyer_count"
+    ],
+    "start": "2026-04-01",
+    "end": "2026-05-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN valid_order_count >= 2 THEN 1 ELSE 0 END) AS monthly_repeat_buyer_count\nFROM \"data\".\"main\".\"monthly_member_activity\" monthly_member_model_src_10000\nWHERE DATE_TRUNC('month', month_start) BETWEEN '2026-04-01' AND '2026-04-30'",
+  "columns": [
+    "monthly_repeat_buyer_count"
+  ],
+  "rows": [
+    [
+      4532
+    ]
+  ],
+  "seconds": 0.048,
+  "units": {
+    "monthly_repeat_buyer_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "青禾2026年4月整月、全门店口径下，月内复购会员数为4532个CRM会员账户。口径为同一自然月内至少有两笔有效订单的账户数，未按门店或其他维度拆分。",
+  "question": "核对青禾2026年4月整月报表：只返回月内复购会员数的全门店合计，不拆维度。",
+  "trace_id": "4612db28-7d2e-43c4-8365-3a337fce9cf4",
+  "elapsed_seconds": 7.661,
+  "model_usage": {
+    "prompt_tokens": 14761,
+    "completion_tokens": 601,
+    "total_tokens": 15362
+  },
+  "model_calls_with_usage": 2
+}

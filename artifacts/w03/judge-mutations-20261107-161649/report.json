@@ -1,0 +1,778 @@
+{
+  "kind": "deterministic_judge_error_injection",
+  "fixture_basis": "Hand-authored comparator fixtures; not Qinghe business results or query-derived expectations",
+  "judge_path": "/home/yang/FDE/w03-work/fde-agent-w03/customer/w03/judge.py",
+  "judge_sha256": "33b7eed436f5663f04371ffc2eb456b23451c60b5073d8534e6735a6a466e0fc",
+  "harness_sha256": "0c92cef5583df298833fa12d3ea5626a0c442d2b84ca8f3622157631f21e73b6",
+  "python": "3.11.16 (main, Sep 29 2026, 14:59:26) [Clang 22.1.3 ]",
+  "model_called": false,
+  "query_executed": false,
+  "positive_controls_passed": 8,
+  "positive_controls_total": 8,
+  "mutations_rejected": 34,
+  "mutations_total": 34,
+  "required_categories_covered": true,
+  "complete": true,
+  "passed": true,
+  "cases": [
+    {
+      "id": "identity",
+      "category": "positive_control",
+      "should_pass": true,
+      "passed": true,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "harness_error": null
+    },
+    {
+      "id": "rows_columns_metrics_filters_reordered",
+      "category": "positive_control",
+      "should_pass": true,
+      "passed": true,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "harness_error": null
+    },
+    {
+      "id": "equivalent_unit_spelling",
+      "category": "positive_control",
+      "should_pass": true,
+      "passed": true,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "harness_error": null
+    },
+    {
+      "id": "eq_equals_singleton_in",
+      "category": "positive_control",
+      "should_pass": true,
+      "passed": true,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "harness_error": null
+    },
+    {
+      "id": "ratio_within_tolerance",
+      "category": "positive_control",
+      "should_pass": true,
+      "passed": true,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "harness_error": null
+    },
+    {
+      "id": "midnight_month_format",
+      "category": "positive_control",
+      "should_pass": true,
+      "passed": true,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "harness_error": null
+    },
+    {
+      "id": "refusal_reason_not_word_for_word",
+      "category": "positive_control",
+      "should_pass": true,
+      "passed": true,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "harness_error": null
+    },
+    {
+      "id": "expected_error_state",
+      "category": "positive_control",
+      "should_pass": true,
+      "passed": true,
+      "verdict": {
+        "passed": true,
+        "differences": []
+      },
+      "harness_error": null
+    },
+    {
+      "id": "wrong_metric",
+      "category": "wrong_metric",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "intent_mismatch",
+            "field": "metrics",
+            "expected": [
+              "avg_order_value",
+              "cancel_rate",
+              "net_sales_cents",
+              "order_count",
+              "valid_order_count"
+            ],
+            "actual": [
+              "avg_order_value",
+              "cancel_rate",
+              "net_sales_cents",
+              "paid_order_count",
+              "valid_order_count"
+            ]
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "wrong_start",
+      "category": "wrong_date",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "intent_mismatch",
+            "field": "start",
+            "expected": "2026-08-01",
+            "actual": "2026-07-01"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "wrong_end",
+      "category": "wrong_date",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "intent_mismatch",
+            "field": "end",
+            "expected": "2026-09-01",
+            "actual": "2026-08-31"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "wrong_filter_value",
+      "category": "wrong_filter",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "intent_mismatch",
+            "field": "filters",
+            "expected": [
+              "[\"order__channel\", [\"小程序\", \"门店\"]]",
+              "[\"store__region\", [\"华东\"]]"
+            ],
+            "actual": [
+              "[\"order__channel\", [\"小程序\", \"门店\"]]",
+              "[\"store__region\", [\"华南\"]]"
+            ]
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "missing_filter",
+      "category": "wrong_filter",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "intent_mismatch",
+            "field": "filters",
+            "expected": [
+              "[\"order__channel\", [\"小程序\", \"门店\"]]",
+              "[\"store__region\", [\"华东\"]]"
+            ],
+            "actual": [
+              "[\"store__region\", [\"华东\"]]"
+            ]
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "extra_filter",
+      "category": "wrong_filter",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "intent_mismatch",
+            "field": "filters",
+            "expected": [
+              "[\"order__channel\", [\"小程序\", \"门店\"]]",
+              "[\"store__region\", [\"华东\"]]"
+            ],
+            "actual": [
+              "[\"member__tier\", [\"金卡\"]]",
+              "[\"order__channel\", [\"小程序\", \"门店\"]]",
+              "[\"store__region\", [\"华东\"]]"
+            ]
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "wrong_group_dimension",
+      "category": "wrong_group",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "intent_mismatch",
+            "field": "group_by",
+            "expected": [
+              "store"
+            ],
+            "actual": [
+              "home_store"
+            ]
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "missing_group",
+      "category": "missing_group",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "group_mismatch",
+            "group": [
+              "\"S02\""
+            ],
+            "expected": true,
+            "actual": false
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "duplicate_group",
+      "category": "wrong_group",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Duplicate group key"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "extra_group",
+      "category": "wrong_group",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "group_mismatch",
+            "group": [
+              "\"S03\""
+            ],
+            "expected": false,
+            "actual": true
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "wrong_group_key",
+      "category": "wrong_group",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "group_mismatch",
+            "group": [
+              "\"S01\""
+            ],
+            "expected": true,
+            "actual": false
+          },
+          {
+            "kind": "group_mismatch",
+            "group": [
+              "\"S09\""
+            ],
+            "expected": false,
+            "actual": true
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "cents_value_divided_by_100",
+      "category": "yuan_cents",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "value_mismatch",
+            "group": [
+              "\"S01\""
+            ],
+            "metric": "net_sales_cents",
+            "expected": 10000,
+            "actual": 100
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "cents_unit_changed_to_yuan",
+      "category": "yuan_cents",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Unsupported metric unit: net_sales_cents"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "ratio_value_times_100",
+      "category": "ratio_percent",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "value_mismatch",
+            "group": [
+              "\"S01\""
+            ],
+            "metric": "cancel_rate",
+            "expected": 0.25,
+            "actual": 25
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "ratio_unit_changed_to_percent",
+      "category": "ratio_percent",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Unsupported metric unit: cancel_rate"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "null_changed_to_zero",
+      "category": "null_zero",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "value_mismatch",
+            "group": [
+              "\"S02\""
+            ],
+            "metric": "avg_order_value",
+            "expected": null,
+            "actual": 0
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "zero_changed_to_null",
+      "category": "null_zero",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "value_mismatch",
+            "group": [
+              "\"S02\""
+            ],
+            "metric": "net_sales_cents",
+            "expected": 0,
+            "actual": null
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "count_plus_one",
+      "category": "tampered_value",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "value_mismatch",
+            "group": [
+              "\"S01\""
+            ],
+            "metric": "order_count",
+            "expected": 4,
+            "actual": 5
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "ratio_outside_tolerance",
+      "category": "tampered_value",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "value_mismatch",
+            "group": [
+              "\"S01\""
+            ],
+            "metric": "cancel_rate",
+            "expected": 0.25,
+            "actual": 0.2501
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "boolean_as_count",
+      "category": "tampered_value",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Not a number"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "nonfinite_ratio",
+      "category": "tampered_value",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Non-finite number"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "noninteger_cents",
+      "category": "tampered_value",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Non-integer count or cents"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "wrong_data_version",
+      "category": "wrong_version",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "version_mismatch",
+            "field": "data_sha256",
+            "expected": "fixture-data",
+            "actual": "other-data"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "wrong_library_version",
+      "category": "wrong_version",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "version_mismatch",
+            "field": "catalog_sha256",
+            "expected": "fixture-catalog",
+            "actual": "other-catalog"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "query_returns_error",
+      "category": "error_as_ok",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "status_mismatch",
+            "expected": "ok",
+            "actual": "error"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "error_marker_retained_in_ok",
+      "category": "error_as_ok",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "error_markers_in_ok_result"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "error_payload_status_relabelled_ok",
+      "category": "error_as_ok",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "version_mismatch",
+            "field": "data_version",
+            "expected": "judge-fixture-only",
+            "actual": null
+          },
+          {
+            "kind": "version_mismatch",
+            "field": "data_sha256",
+            "expected": "fixture-data",
+            "actual": null
+          },
+          {
+            "kind": "version_mismatch",
+            "field": "catalog_sha256",
+            "expected": "fixture-catalog",
+            "actual": null
+          },
+          {
+            "kind": "invalid_actual_intent",
+            "reason": "Intent must be an object"
+          },
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Expected a list of nonempty names"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "expected_error_forged_as_success",
+      "category": "error_as_ok",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "status_mismatch",
+            "expected": "error",
+            "actual": "ok"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "unsupported_forged_as_success",
+      "category": "wrong_status",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "status_mismatch",
+            "expected": "unsupported",
+            "actual": "ok"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "refusal_wrong_time_window",
+      "category": "wrong_date",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "intent_mismatch",
+            "field": "end",
+            "expected": "2026-08-16",
+            "actual": "2026-09-01"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "contradictory_intent_status",
+      "category": "wrong_status",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "contradictory_intent_status"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "row_width_mismatch",
+      "category": "wrong_group",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Row width mismatch"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "duplicate_column",
+      "category": "wrong_group",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Duplicate names"
+          }
+        ]
+      },
+      "harness_error": null
+    },
+    {
+      "id": "wrong_month_boundary_key",
+      "category": "wrong_group",
+      "should_pass": false,
+      "passed": true,
+      "verdict": {
+        "passed": false,
+        "differences": [
+          {
+            "kind": "invalid_actual_table",
+            "reason": "Month must be the first day at midnight"
+          }
+        ]
+      },
+      "harness_error": null
+    }
+  ]
+}

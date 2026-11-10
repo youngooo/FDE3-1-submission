@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "purchase_frequency"
+    ],
+    "start": "2026-04-01",
+    "end": "2026-05-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(SUM(CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END) AS DOUBLE) / CAST(NULLIF(COUNT(DISTINCT CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN member_id ELSE NULL END), 0) AS DOUBLE) AS purchase_frequency\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-04-01' AND '2026-04-30'",
+  "columns": [
+    "purchase_frequency"
+  ],
+  "rows": [
+    [
+      1.4722955145118735
+    ]
+  ],
+  "seconds": 0.111,
+  "units": {
+    "purchase_frequency": "orders_per_account"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "青禾客户数据范围内，2026年4月整月、全门店合计且不拆门店/地区等维度，购买频次为 1.4722955145118735 单/账户。口径为：有效订单数 ÷ 购买会员数；结果未显示为未定义。",
+  "question": "核对青禾2026年4月整月报表：只返回购买频次的全门店合计，不拆维度。",
+  "trace_id": "92158bae-d417-4154-b5f7-59b00eaa3963",
+  "elapsed_seconds": 11.979,
+  "model_usage": {
+    "prompt_tokens": 15113,
+    "completion_tokens": 1154,
+    "total_tokens": 16267
+  },
+  "model_calls_with_usage": 2
+}

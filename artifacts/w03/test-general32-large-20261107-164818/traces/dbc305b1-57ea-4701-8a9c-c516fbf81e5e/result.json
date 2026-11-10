@@ -1,0 +1,10 @@
+{
+  "status": "error",
+  "code": "MODEL_HTTP_402",
+  "reason": "本次调用未完成，请查看运行记录；不能把失败当成零。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的退款金额占比，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。",
+  "trace_id": "dbc305b1-57ea-4701-8a9c-c516fbf81e5e",
+  "elapsed_seconds": 1.153,
+  "model_usage": {},
+  "model_calls_with_usage": 0
+}

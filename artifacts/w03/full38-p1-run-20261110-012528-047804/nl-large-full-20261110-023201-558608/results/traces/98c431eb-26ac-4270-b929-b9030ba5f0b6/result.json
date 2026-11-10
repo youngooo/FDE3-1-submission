@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "order_count"
+    ],
+    "start": "2026-04-01",
+    "end": "2026-05-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(1) AS order_count\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-04-01' AND '2026-04-30'",
+  "columns": [
+    "order_count"
+  ],
+  "rows": [
+    [
+      22450
+    ]
+  ],
+  "seconds": 0.101,
+  "units": {
+    "order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "青禾2026年4月整月全门店创建订单合计为22450单。统计口径为按下单日期统计全部订单，每个订单号计一次，包含取消单；未拆门店或其他维度。",
+  "question": "核对青禾2026年4月整月报表：只返回创建订单数的全门店合计，不拆维度。",
+  "trace_id": "98c431eb-26ac-4270-b929-b9030ba5f0b6",
+  "elapsed_seconds": 6.702,
+  "model_usage": {
+    "prompt_tokens": 14672,
+    "completion_tokens": 513,
+    "total_tokens": 15185
+  },
+  "model_calls_with_usage": 2
+}

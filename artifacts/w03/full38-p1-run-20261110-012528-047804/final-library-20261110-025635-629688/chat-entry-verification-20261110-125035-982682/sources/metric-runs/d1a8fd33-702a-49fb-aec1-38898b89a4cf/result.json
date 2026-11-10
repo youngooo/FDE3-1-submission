@@ -1,0 +1,26 @@
+{
+  "status": "clarify",
+  "reason": "请确认所指的是哪一年的7月和8月；当前问题只有月份、没有年份，不能默认使用参考日期所在年份。",
+  "intent": {
+    "status": "clarify",
+    "reason": "请确认所指的是哪一年的7月和8月；当前问题只有月份、没有年份，不能默认使用参考日期所在年份。",
+    "metrics": [
+      "net_sales_cents"
+    ],
+    "start": "",
+    "end": "",
+    "group_by": [
+      "metric_time__month"
+    ],
+    "filters": []
+  },
+  "question": "青禾7月和8月的净销售额分别是多少？",
+  "trace_id": "d1a8fd33-702a-49fb-aec1-38898b89a4cf",
+  "elapsed_seconds": 3.813,
+  "model_usage": {
+    "prompt_tokens": 12259,
+    "completion_tokens": 435,
+    "total_tokens": 12694
+  },
+  "model_calls_with_usage": 1
+}

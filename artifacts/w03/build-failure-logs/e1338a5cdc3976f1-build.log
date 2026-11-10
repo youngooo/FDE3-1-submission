@@ -1,0 +1,6 @@
+[0m18:33:19  Running with dbt=1.12.5
+[0m18:33:20  Registered adapter: duckdb=1.11.0
+[0m18:33:20  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m18:33:21  [[31mERROR[0m]: Encountered an error:
+Parsing Error in metric avg_order_value (models/metrics.yml)
+  The metric `m_net_sales_cents` does not exist but was referenced by metric `avg_order_value`.

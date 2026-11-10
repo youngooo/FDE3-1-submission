@@ -1,0 +1,220 @@
+{
+  "question": "青禾2026年8月，仅筛选订单状态cancelled（取消），汇总有效订单数、净销售额、有效订单均额及取消率。金额保留分，均额分/单，比率保留小数。",
+  "customer_context": {
+    "customer": "青禾",
+    "statistics_unit": "CRM 会员账户",
+    "scope": "本周合成测试库"
+  },
+  "data_context": {
+    "seed": 20260923,
+    "synthetic": true,
+    "counts": {
+      "members": 30000,
+      "orders": 300000,
+      "stores": 24,
+      "cards": 38891
+    },
+    "coverage": [
+      "2024-09-01",
+      "2026-09-01"
+    ],
+    "sha256": {
+      "orders.csv": "15fe0a98b1f34f1e2f7ce100a1ebb74d8f2cffa5023d0a93c7d07e959ffdd4b3",
+      "cards.csv": "2cd90f4f709906c6b0e3c72de5b9347fe1118eabaa0fcdad30cf96951d66622a",
+      "members.csv": "30835528d521255ce72bda232c1c6090b3dcbb0f6a7872ee230382615f158af7",
+      "stores.csv": "d392d07b0f447a06fdf183860f040d79341a5daa787bc0fc4b400cda8f3675bd"
+    },
+    "id": "qinghe-w03-20260923-large",
+    "timezone": "Asia/Shanghai",
+    "reference_date": "2026-09-01",
+    "generator_version": "qinghe-w03-v1",
+    "base_seed": 20260922,
+    "library_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+  },
+  "result": {
+    "status": "ok",
+    "intent": {
+      "metrics": [
+        "valid_order_count",
+        "net_sales_cents",
+        "avg_order_value",
+        "cancel_rate"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [],
+      "filters": [
+        {
+          "field": "order__status",
+          "op": "eq",
+          "value": "cancelled"
+        }
+      ]
+    },
+    "columns": [
+      "valid_order_count",
+      "net_sales_cents",
+      "avg_order_value",
+      "cancel_rate"
+    ],
+    "rows": [
+      [
+        0,
+        0,
+        null,
+        1.0
+      ]
+    ],
+    "seconds": 0.235,
+    "units": {
+      "valid_order_count": "count",
+      "net_sales_cents": "cents",
+      "avg_order_value": "cents/order",
+      "cancel_rate": "ratio"
+    },
+    "data_version": "qinghe-w03-20260923-large",
+    "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+    "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+  },
+  "definitions": [
+    {
+      "id": "valid_order_count",
+      "name": "有效订单数",
+      "aliases": [],
+      "unit": "count",
+      "sources": [
+        {
+          "file": "01_订单日报说明.md",
+          "quote": "状态为 paid 且实付金额减退款金额大于零的订单数；取消和全退不计。"
+        }
+      ],
+      "constraints": [
+        "paid 且实付减退款大于零",
+        "取消与全额退款不计"
+      ],
+      "query_policy": {
+        "full_month_only": false
+      }
+    },
+    {
+      "id": "net_sales_cents",
+      "name": "净销售额",
+      "aliases": [],
+      "unit": "cents",
+      "sources": [
+        {
+          "file": "01_订单日报说明.md",
+          "quote": "paid 订单实付减退款后合计；取消单不计；按原订单下单日期归属；单位分。"
+        }
+      ],
+      "constraints": [
+        "paid 订单实付减退款",
+        "取消单不计",
+        "底层单位为分"
+      ],
+      "query_policy": {
+        "full_month_only": false
+      }
+    },
+    {
+      "id": "avg_order_value",
+      "name": "有效订单均额",
+      "aliases": [],
+      "unit": "cents/order",
+      "sources": [
+        {
+          "file": "02_财务邮件.md",
+          "quote": "净销售额除以有效订单数，单位分／单；分母零时未定义。"
+        }
+      ],
+      "constraints": [
+        "聚合后的净销售额除以有效订单数",
+        "分母为零时未定义",
+        "底层金额单位为分"
+      ],
+      "query_policy": {
+        "full_month_only": false
+      }
+    },
+    {
+      "id": "cancel_rate",
+      "name": "取消率",
+      "aliases": [],
+      "unit": "ratio",
+      "sources": [
+        {
+          "file": "02_财务邮件.md",
+          "quote": "取消订单数除以创建订单数；分母零时未定义。"
+        }
+      ],
+      "constraints": [
+        "聚合后取消订单数除以创建订单数",
+        "分母为零时未定义"
+      ],
+      "query_policy": {
+        "full_month_only": false
+      }
+    }
+  ],
+  "answer_display_facts": {
+    "version": "answer-display-facts-v1",
+    "rows": [
+      {
+        "group": {},
+        "metrics": [
+          {
+            "metric_id": "valid_order_count",
+            "name": "有效订单数",
+            "raw_value": 0,
+            "raw_unit": "count",
+            "display_unit": "单",
+            "display_value": "0",
+            "is_undefined": false,
+            "display_rounded": false
+          },
+          {
+            "metric_id": "net_sales_cents",
+            "name": "净销售额",
+            "raw_value": 0,
+            "raw_unit": "cents",
+            "display_unit": "分",
+            "display_value": "0",
+            "is_undefined": false,
+            "display_rounded": false,
+            "optional_yuan_conversion": {
+              "value": "0.00",
+              "unit": "元",
+              "use_only_if_user_requests_conversion": true
+            }
+          },
+          {
+            "metric_id": "avg_order_value",
+            "name": "有效订单均额",
+            "raw_value": null,
+            "raw_unit": "cents/order",
+            "display_unit": "分/单",
+            "display_value": "未定义",
+            "is_undefined": true
+          },
+          {
+            "metric_id": "cancel_rate",
+            "name": "取消率",
+            "raw_value": 1.0,
+            "raw_unit": "ratio",
+            "display_unit": "小数比例",
+            "display_value": "1.0",
+            "is_undefined": false,
+            "display_rounded": false,
+            "optional_percent_conversion": {
+              "value": "100.00",
+              "unit": "%",
+              "use_only_if_user_requests_percent": true
+            }
+          }
+        ]
+      }
+    ],
+    "count_unit_basis": "W03 materials 01/03/04: count the metric object, not the customer-context entity.",
+    "note": "These are renderings of the actual result, not newly queried metrics. Preserve grouping and requested units."
+  }
+}

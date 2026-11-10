@@ -1,0 +1,42 @@
+{
+  "kind": "incomplete_w03_stage_delivery",
+  "date": "2026-11-08",
+  "metrics_defined": 32,
+  "metrics_target": 38,
+  "missing_metrics": [
+    "monthly_paid_avg_order_value",
+    "monthly_paid_buyer_count",
+    "monthly_paid_order_count",
+    "monthly_paid_repeat_buyer_count",
+    "monthly_paid_repeat_rate",
+    "monthly_paid_sales_cents"
+  ],
+  "library": "artifacts/w03/library",
+  "library_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "library_creation": "tools/w03.py merge --inputs artifacts/w03/build-general32-normalized-20261107-023808 --data materials/data/small --output artifacts/w03/library",
+  "library_validation_passed": true,
+  "final_report_available": false,
+  "final_38_acceptance": false,
+  "historical_reports": [
+    {
+      "path": "artifacts/w03/test-general32-full-20261107-162320/metric_test_report.json",
+      "passed": 53,
+      "total": 54,
+      "catalog_hashes": [
+        "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635"
+      ],
+      "matches_merged_library": false
+    },
+    {
+      "path": "artifacts/w03/test-general32-large-current-20261107-173736/metric_test_report.json",
+      "passed": 53,
+      "total": 53,
+      "catalog_hashes": [
+        "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+      ],
+      "matches_merged_library": false
+    }
+  ],
+  "model_called_this_closeout": false,
+  "query_reexecuted_this_closeout": false
+}

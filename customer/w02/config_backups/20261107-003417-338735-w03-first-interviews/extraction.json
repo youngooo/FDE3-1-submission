@@ -1,0 +1,32 @@
+{
+  "version": "w02-extractor-0.1.0",
+  "scope_id": "qinghe",
+  "sources": [
+    "artifacts/w02/sources/normalized/W2-interview-0ac9a30f-ce42-5f90-a554-c3cd3be3571e.json",
+    "artifacts/w02/sources/normalized/W2-interview-19d444c3-ee75-5654-84e4-1c34ca969c3d.json",
+    "artifacts/w02/sources/normalized/W2-interview-c297647c-e335-5192-8006-0b0298d5bb76.json",
+    "artifacts/w02/sources/normalized/W2-interview-cdef2a0f-ad90-56da-b84f-7126dc14a9b6.json",
+    "artifacts/w02/sources/normalized/W2-interview-d543ba35-ebf1-5408-85cc-ae8ea36e387b.json",
+    "artifacts/w02/sources/normalized/W2-interview-ef8c42cf-f2ea-5e92-b3c0-a2ec29b571db.json",
+    "artifacts/w02/sources/normalized/W2-interview-f8399402-ba0f-5cef-9282-66aa2f992125.json"
+  ],
+  "prompt": "customer/w02/extraction_prompt.txt",
+  "focus_questions": [
+    "各角色希望会员运营助手解决什么工作问题？期望的业务结果与当前可以验证的帮助分别是什么？",
+    "会员运营从确定任务、选择人群、形成建议到安排执行和整理反馈，实际怎样开展？各环节由谁负责、与谁协作？",
+    "材料中的会员、会员类型、运营任务、会员建议和活动安排分别指什么？它们怎样联系，有哪些容易混淆的含义？",
+    "候选会员从哪里来，圈选和动作建议需要什么理由与依据？流失、久未回购及消费下降的含义和判断条件是否已明确？",
+    "小林怎样判断建议是否适合本次运营任务？由谁确认是否纳入，不匹配或依据不足时怎样处理？",
+    "各角色希望以什么形式接收和使用建议？目前需要重复整理哪些内容，已有 Excel 或其他材料起什么作用？",
+    "活动交给门店前需要明确哪些信息？参与门店、工作量、现场责任和工作记录怎样确定，缺项或涉及考核时怎样处理？",
+    "业务范围与系统统计怎样核对？范围变化时需要哪些材料、说明和协作，技术接入有哪些前置条件？",
+    "各角色能确认或决定哪些事项，哪些需找其他人核实？业务确认、数据权限与自动动作授权分别有哪些明确陈述和未知？",
+    "复购、优惠券发放与核销、工作效率和业务效果分别怎样理解或衡量？哪些口径已有依据，哪些尚未明确？",
+    "针对同一业务问题，各角色或旧项目材料有哪些不同说法或解释？对齐时间、范围和含义后，哪些仍需交叉核实，哪些只是互补信息？",
+    "哪些关键判断仍缺少依据？分别需要向谁取得什么记录、样例或说明，才能继续判断？"
+  ],
+  "batch_chars": 6000,
+  "max_batches": 24,
+  "reconcile_chars": 96000,
+  "profile": "deepseek-json"
+}

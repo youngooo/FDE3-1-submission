@@ -1,0 +1,391 @@
+{
+  "semantic_models": [
+    {
+      "name": "order_events",
+      "model": "ref('order_metric_base')",
+      "defaults": {
+        "agg_time_dimension": "ordered_at"
+      },
+      "entities": [
+        {
+          "name": "order",
+          "type": "primary",
+          "expr": "order_id"
+        },
+        {
+          "name": "member",
+          "type": "foreign",
+          "expr": "member_id"
+        },
+        {
+          "name": "store",
+          "type": "foreign",
+          "expr": "store_id"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "ordered_at",
+          "type": "time",
+          "type_params": {
+            "time_granularity": "day"
+          }
+        },
+        {
+          "name": "channel",
+          "type": "categorical",
+          "expr": "channel"
+        },
+        {
+          "name": "status",
+          "type": "categorical",
+          "expr": "status"
+        }
+      ],
+      "measures": [
+        {
+          "name": "order_count_measure",
+          "expr": "1",
+          "agg": "sum"
+        },
+        {
+          "name": "valid_order_count_measure",
+          "expr": "is_valid_order",
+          "agg": "sum"
+        },
+        {
+          "name": "net_sales_cents_measure",
+          "expr": "net_sales_cents",
+          "agg": "sum"
+        }
+      ]
+    },
+    {
+      "name": "member_accounts",
+      "model": "ref('members')",
+      "defaults": {
+        "agg_time_dimension": "registered_at"
+      },
+      "entities": [
+        {
+          "name": "member",
+          "type": "primary",
+          "expr": "member_id"
+        },
+        {
+          "name": "home_store",
+          "type": "foreign",
+          "expr": "home_store_id"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "registered_at",
+          "type": "time",
+          "type_params": {
+            "time_granularity": "day"
+          }
+        },
+        {
+          "name": "tier",
+          "type": "categorical",
+          "expr": "tier"
+        }
+      ]
+    },
+    {
+      "name": "order_stores",
+      "model": "ref('order_stores')",
+      "entities": [
+        {
+          "name": "store",
+          "type": "primary",
+          "expr": "store_id"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "region",
+          "type": "categorical",
+          "expr": "region"
+        },
+        {
+          "name": "store_name",
+          "type": "categorical",
+          "expr": "store_name"
+        }
+      ]
+    },
+    {
+      "name": "member_home_stores",
+      "model": "ref('member_home_stores')",
+      "entities": [
+        {
+          "name": "home_store",
+          "type": "primary",
+          "expr": "store_id"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "region",
+          "type": "categorical",
+          "expr": "region"
+        },
+        {
+          "name": "store_name",
+          "type": "categorical",
+          "expr": "store_name"
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "name": "order_count",
+      "label": "创建订单数",
+      "description": "按下单日期统计全部订单，每个订单号一次，包含取消单。",
+      "type": "simple",
+      "type_params": {
+        "measure": "order_count_measure"
+      }
+    },
+    {
+      "name": "valid_order_count",
+      "label": "有效订单数",
+      "description": "状态为 paid 且实付金额减退款金额大于零的订单数；取消和全退不计。",
+      "type": "simple",
+      "type_params": {
+        "measure": "valid_order_count_measure"
+      }
+    },
+    {
+      "name": "net_sales_cents",
+      "label": "净销售额",
+      "description": "paid 订单实付减退款后合计；取消单不计；按原订单下单日期归属；单位分。",
+      "type": "simple",
+      "type_params": {
+        "measure": "net_sales_cents_measure"
+      }
+    }
+  ],
+  "catalog": [
+    {
+      "id": "order_count",
+      "name": "创建订单数",
+      "aliases": [],
+      "unit": "count",
+      "sources": [
+        {
+          "file": "01_订单日报说明.md",
+          "quote": "按下单日期统计全部订单，每个订单号一次，包含取消单。"
+        }
+      ],
+      "constraints": [
+        "统计全部订单，每个订单号一次，包含取消单。"
+      ],
+      "query_policy": {
+        "full_month_only": false
+      }
+    },
+    {
+      "id": "valid_order_count",
+      "name": "有效订单数",
+      "aliases": [],
+      "unit": "count",
+      "sources": [
+        {
+          "file": "01_订单日报说明.md",
+          "quote": "状态为 paid 且实付金额减退款金额大于零的订单数；取消和全退不计。"
+        },
+        {
+          "file": "02_财务邮件.md",
+          "quote": "有效订单是 paid 状态且实付大于累计退款；取消、全额退款不计有效购买。"
+        }
+      ],
+      "constraints": [
+        "状态必须为 paid；实付减退款大于零；取消与全额退款不计。"
+      ],
+      "query_policy": {
+        "full_month_only": false
+      }
+    },
+    {
+      "id": "net_sales_cents",
+      "name": "净销售额",
+      "aliases": [],
+      "unit": "cents",
+      "sources": [
+        {
+          "file": "01_订单日报说明.md",
+          "quote": "paid 订单实付减退款后合计；取消单不计；按原订单下单日期归属；单位分。"
+        },
+        {
+          "file": "02_财务邮件.md",
+          "quote": "退款按原订单日期归属。金额为整数分，展示元需换算。"
+        }
+      ],
+      "constraints": [
+        "仅 paid 订单；取消单不计；退款按原订单下单日期归属；底层金额为整数分。"
+      ],
+      "query_policy": {
+        "full_month_only": false
+      }
+    }
+  ],
+  "model_sql": {
+    "order_metric_base": "SELECT\n  order_id,\n  member_id,\n  store_id,\n  ordered_at,\n  status,\n  gross_cents,\n  paid_cents,\n  refund_cents,\n  quantity,\n  channel,\n  CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END AS is_valid_order,\n  CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END AS net_sales_cents\nFROM {{ ref('orders') }}",
+    "order_stores": "SELECT\n  store_id,\n  region,\n  store_name\nFROM {{ ref('stores') }}",
+    "member_home_stores": "SELECT\n  store_id,\n  region,\n  store_name\nFROM {{ ref('stores') }}"
+  },
+  "unresolved": [],
+  "business_model_usage": [
+    {
+      "quote": "| 环境与范围 | 合成测试数据；CRM 账户粒度；日期时区 Asia/Shanghai；覆盖 `[2024-09-01, 2026-09-01)` | 材料 01～05、08 与本记录既有第 1、3 节 |",
+      "used_for": [
+        {
+          "kind": "semantic_model",
+          "name": "order_events"
+        },
+        {
+          "kind": "metric",
+          "name": "order_count"
+        },
+        {
+          "kind": "metric",
+          "name": "valid_order_count"
+        },
+        {
+          "kind": "metric",
+          "name": "net_sales_cents"
+        },
+        {
+          "kind": "dimension",
+          "name": "metric_time__day"
+        },
+        {
+          "kind": "dimension",
+          "name": "metric_time__month"
+        }
+      ]
+    },
+    {
+      "quote": "| 有效购买 | 订单为 paid，且实付减累计退款大于零；取消与全额退款不计 | 01、02 |",
+      "used_for": [
+        {
+          "kind": "semantic_model",
+          "name": "order_events"
+        },
+        {
+          "kind": "derived_model",
+          "name": "order_metric_base"
+        },
+        {
+          "kind": "metric",
+          "name": "valid_order_count"
+        },
+        {
+          "kind": "metric",
+          "name": "net_sales_cents"
+        }
+      ]
+    },
+    {
+      "quote": "| 金额与件数 | 金额用整数分；退款按原订单下单日期归属；商品件数为有效订单的原始件数 | 01、02 |",
+      "used_for": [
+        {
+          "kind": "derived_model",
+          "name": "order_metric_base"
+        },
+        {
+          "kind": "metric",
+          "name": "net_sales_cents"
+        },
+        {
+          "kind": "dimension",
+          "name": "metric_time__day"
+        }
+      ]
+    },
+    {
+      "quote": "| CRM 账户（members） | 本期会员计数与资格判断的业务粒度；账户可持有多张卡 | 本期合成测试库中 `cards.member_id` 与 `orders.member_id` 均关联 `members.member_id`（05 数据字典），这是本期已知的关联结构 |",
+      "used_for": [
+        {
+          "kind": "semantic_model",
+          "name": "member_accounts"
+        },
+        {
+          "kind": "semantic_model",
+          "name": "order_events"
+        },
+        {
+          "kind": "dimension",
+          "name": "member"
+        },
+        {
+          "kind": "dimension",
+          "name": "member__tier"
+        }
+      ]
+    },
+    {
+      "quote": "关系边界须分清两类：一是本期测试库已知的结构关系（`members`—`cards`、`members`—`orders` 通过 `member_id` 关联，一账户可多卡；成交门店与会员归属门店不同，见 05）；二是旧模型记录的系统关联未知，该未知现限定为未核实的生产库、旧 POS 或跨系统自然人身份关系——不能原样覆盖本期已明确的测试库结构。",
+      "used_for": [
+        {
+          "kind": "semantic_model",
+          "name": "order_events"
+        },
+        {
+          "kind": "semantic_model",
+          "name": "member_accounts"
+        },
+        {
+          "kind": "semantic_model",
+          "name": "order_stores"
+        },
+        {
+          "kind": "semantic_model",
+          "name": "member_home_stores"
+        },
+        {
+          "kind": "dimension",
+          "name": "store"
+        },
+        {
+          "kind": "dimension",
+          "name": "home_store"
+        },
+        {
+          "kind": "dimension",
+          "name": "store__region"
+        },
+        {
+          "kind": "dimension",
+          "name": "store__store_name"
+        },
+        {
+          "kind": "dimension",
+          "name": "home_store__region"
+        },
+        {
+          "kind": "dimension",
+          "name": "home_store__store_name"
+        }
+      ]
+    }
+  ],
+  "grain_keys": {
+    "order_events": [
+      "order_id"
+    ],
+    "member_accounts": [
+      "member_id"
+    ],
+    "order_stores": [
+      "store_id"
+    ],
+    "member_home_stores": [
+      "store_id"
+    ]
+  }
+}

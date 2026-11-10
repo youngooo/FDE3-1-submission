@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "first_buyer_count"
+    ],
+    "start": "2026-05-01",
+    "end": "2026-06-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  COUNT(DISTINCT CASE WHEN valid_order_seq = 1 THEN member_id ELSE NULL END) AS first_buyer_count\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-05-01' AND '2026-05-31'",
+  "columns": [
+    "first_buyer_count"
+  ],
+  "rows": [
+    [
+      1585
+    ]
+  ],
+  "seconds": 0.108,
+  "units": {
+    "first_buyer_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "2026年5月，青禾汇总全部门店的观测期首购会员数为1585个CRM会员账户。口径为：先在全测试覆盖期内按每个CRM账户的有效订单下单日期升序、同日再按订单号排序确定首笔有效订单，再筛选首单日期落在2026年5月的不同CRM账户；该指标不代表终身首购。",
+  "question": "青禾2026年5月，观测期首购会员数是多少？仅这一项，汇总全部门店。首单先在完整测试覆盖历史的有效订单中确定，再筛选查询月份。",
+  "trace_id": "4807496f-2238-45eb-9dd7-a7fbaba6c765",
+  "elapsed_seconds": 8.99,
+  "model_usage": {
+    "prompt_tokens": 15169,
+    "completion_tokens": 915,
+    "total_tokens": 16084
+  },
+  "model_calls_with_usage": 2
+}

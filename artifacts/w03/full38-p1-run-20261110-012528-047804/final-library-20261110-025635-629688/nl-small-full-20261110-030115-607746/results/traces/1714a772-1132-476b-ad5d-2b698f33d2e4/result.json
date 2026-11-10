@@ -1,0 +1,24 @@
+{
+  "status": "unsupported",
+  "reason": "超出数据覆盖或时间范围非法",
+  "intent": {
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-09-01",
+    "end": "2026-10-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "青禾2026年9月创建订单数、有效订单数、净销售额是多少？",
+  "trace_id": "1714a772-1132-476b-ad5d-2b698f33d2e4",
+  "elapsed_seconds": 4.839,
+  "model_usage": {
+    "prompt_tokens": 12244,
+    "completion_tokens": 186,
+    "total_tokens": 12430
+  },
+  "model_calls_with_usage": 1
+}

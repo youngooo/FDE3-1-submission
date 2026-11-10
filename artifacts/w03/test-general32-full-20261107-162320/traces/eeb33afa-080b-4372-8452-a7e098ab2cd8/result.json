@@ -1,0 +1,56 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "order__status"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  order__status\n  , SUM(__order_count) AS order_count\n  , SUM(__valid_order_count) AS valid_order_count\n  , SUM(__net_sales_cents) AS net_sales_cents\nFROM (\n  SELECT\n    status AS order__status\n    , 1 AS __order_count\n    , CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END AS __valid_order_count\n    , CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END AS __net_sales_cents\n  FROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_7\nGROUP BY\n  order__status",
+  "columns": [
+    "order__status",
+    "order_count",
+    "valid_order_count",
+    "net_sales_cents"
+  ],
+  "rows": [
+    [
+      "cancelled",
+      2,
+      0,
+      0
+    ],
+    [
+      "paid",
+      30,
+      27,
+      100300
+    ]
+  ],
+  "seconds": 0.069,
+  "units": {
+    "order_count": "count",
+    "valid_order_count": "count",
+    "net_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+  "answer": "统计范围为青禾当前客户数据范围内、下单日期在2026年8月1日至8月31日（以2026-09-01为开区间截止）的订单，并按订单状态分组。口径：创建订单数按每个订单号计一次且包含取消单；有效订单数仅计已支付且实付减退款大于零的订单，取消和全额退款不计；净销售额为已支付订单实付减退款后的合计，取消单不计，按原订单下单日期归属，金额以分存储并列示，括号内为元。\n\n| 订单状态 | 创建订单数 | 有效订单数 | 净销售额 |\n|---|---:|---:|---:|\n| 已支付 | 30 | 27 | 100300分（1003.00元） |\n| 已取消 | 2 | 0 | 0分（0.00元；覆盖内零值） |\n| 合计 | 32 | 27 | 100300分（1003.00元） |\n\n本次结果列出的状态分组为已支付、已取消；其他状态未在结果中列出，不作推断。数据为合成测试库版本。",
+  "question": "青禾2026年8月按订单状态分组，分别列出创建订单数、有效订单数、净销售额；按下单日期统计，金额保留分。",
+  "trace_id": "eeb33afa-080b-4372-8452-a7e098ab2cd8",
+  "elapsed_seconds": 26.651,
+  "model_usage": {
+    "prompt_tokens": 10721,
+    "completion_tokens": 3196,
+    "total_tokens": 13917
+  },
+  "model_calls_with_usage": 2
+}

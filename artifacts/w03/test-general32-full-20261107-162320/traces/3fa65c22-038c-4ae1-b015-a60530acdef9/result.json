@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "repeat_order_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN valid_order_seq >= 2 THEN 1 ELSE 0 END) AS repeat_order_count\nFROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "repeat_order_count"
+  ],
+  "rows": [
+    [
+      22
+    ]
+  ],
+  "seconds": 0.046,
+  "units": {
+    "repeat_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+  "answer": "统计范围为青禾在2026年8月（2026-08-01含至2026-09-01不含）的观测期后续购买订单数，覆盖全门店、未按门店或地区分组。口径为：在完整测试覆盖历史内按会员账户的有效订单排序确定首单，统计第二笔及以后的有效订单中，订单日期落入8月窗口的订单数。本次结果为22笔。该指标统计的是后续购买订单数，不是月内复购人数或复购账户数；指标为订单计数，不涉及金额，因此无金额可展示。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的观测期后续购买订单数，全门店，不按维度分组。首单在完整测试覆盖历史内按有效订单确定，再筛选到8月；金额保留分。",
+  "trace_id": "3fa65c22-038c-4ae1-b015-a60530acdef9",
+  "elapsed_seconds": 9.733,
+  "model_usage": {
+    "prompt_tokens": 10526,
+    "completion_tokens": 849,
+    "total_tokens": 11375
+  },
+  "model_calls_with_usage": 2
+}

@@ -1,0 +1,50 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "new_member_count"
+    ],
+    "start": "2024-09-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "home_store"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  home_store\n  , SUM(__new_member_count) AS new_member_count\nFROM (\n  SELECT\n    home_store_id AS home_store\n    , 1 AS __new_member_count\n  FROM \"data\".\"main\".\"members\" members_semantic_src_10000\n  WHERE DATE_TRUNC('day', registered_at) BETWEEN '2024-09-01' AND '2026-08-31'\n) subq_5\nGROUP BY\n  home_store",
+  "columns": [
+    "home_store",
+    "new_member_count"
+  ],
+  "rows": [
+    [
+      "S03",
+      2
+    ],
+    [
+      "S01",
+      9
+    ],
+    [
+      "S02",
+      9
+    ]
+  ],
+  "seconds": 0.039,
+  "units": {
+    "new_member_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "answer": "统计范围为青禾在2024-09-01（含）至2026-09-01（不含）期间、按注册日期统计的新注册会员数，按会员归属门店编号分组。结果：S03为2个CRM会员账户，S01为9个CRM会员账户，S02为9个CRM会员账户。该口径按CRM会员账户计数，不等同于自然人数。",
+  "question": "青禾在2024-09-01含至2026-09-01不含，按注册日期统计注册会员数，并按会员归属门店编号分组。",
+  "trace_id": "a771d907-b759-4b0e-820d-5149795ab721",
+  "elapsed_seconds": 6.809,
+  "model_usage": {
+    "prompt_tokens": 13095,
+    "completion_tokens": 600,
+    "total_tokens": 13695
+  },
+  "model_calls_with_usage": 2
+}

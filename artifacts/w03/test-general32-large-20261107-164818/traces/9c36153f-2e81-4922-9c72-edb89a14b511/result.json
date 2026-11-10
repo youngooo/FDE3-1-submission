@@ -1,0 +1,10 @@
+{
+  "status": "error",
+  "code": "MODEL_HTTP_402",
+  "reason": "本次调用未完成，请查看运行记录；不能把失败当成零。",
+  "question": "青禾2026年8月全门店：当月至少买过一次的账户有多少，至少买过两次的有多少，后者占前者的比例是多少？购买仅计有效订单，按完整自然月统计。",
+  "trace_id": "9c36153f-2e81-4922-9c72-edb89a14b511",
+  "elapsed_seconds": 0.545,
+  "model_usage": {},
+  "model_calls_with_usage": 0
+}

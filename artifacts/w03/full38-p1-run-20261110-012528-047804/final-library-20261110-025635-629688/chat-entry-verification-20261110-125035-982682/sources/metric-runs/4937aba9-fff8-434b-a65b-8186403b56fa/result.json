@@ -1,0 +1,26 @@
+{
+  "status": "clarify",
+  "reason": "问题中的“7月和8月”没有年份；历史里只有“2026年8月”的利润查询，不能据此确认这次净销售额的7月和8月都属于2026年。请补充年份，例如“2026年7月和8月”。",
+  "intent": {
+    "status": "clarify",
+    "reason": "问题中的“7月和8月”没有年份；历史里只有“2026年8月”的利润查询，不能据此确认这次净销售额的7月和8月都属于2026年。请补充年份，例如“2026年7月和8月”。",
+    "metrics": [
+      "net_sales_cents"
+    ],
+    "start": "",
+    "end": "",
+    "group_by": [
+      "metric_time__month"
+    ],
+    "filters": []
+  },
+  "question": "青禾7月和8月的净销售额分别是多少？",
+  "trace_id": "4937aba9-fff8-434b-a65b-8186403b56fa",
+  "elapsed_seconds": 13.334,
+  "model_usage": {
+    "prompt_tokens": 13851,
+    "completion_tokens": 2044,
+    "total_tokens": 15895
+  },
+  "model_calls_with_usage": 1
+}

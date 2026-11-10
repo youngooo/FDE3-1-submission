@@ -1,0 +1,26 @@
+{
+  "status": "clarify",
+  "reason": "已识别指标为“月内复购率”。该指标要求使用完整自然月，并且跨多月时按月展示，因此当前请求本身可以执行；但“7月和8月”没有说明年份，历史中也没有已确认的年份上下文，所以需要先确认要查询的是哪一年的7月和8月。",
+  "intent": {
+    "status": "clarify",
+    "reason": "已识别指标为“月内复购率”。该指标要求使用完整自然月，并且跨多月时按月展示，因此当前请求本身可以执行；但“7月和8月”没有说明年份，历史中也没有已确认的年份上下文，所以需要先确认要查询的是哪一年的7月和8月。",
+    "metrics": [
+      "monthly_repeat_rate"
+    ],
+    "start": "",
+    "end": "",
+    "group_by": [
+      "metric_time__month"
+    ],
+    "filters": []
+  },
+  "question": "青禾7月和8月按月列出月内复购率。",
+  "trace_id": "6f3ec98e-c6df-4dac-8934-3b2fd60a2353",
+  "elapsed_seconds": 2.607,
+  "model_usage": {
+    "prompt_tokens": 12239,
+    "completion_tokens": 230,
+    "total_tokens": 12469
+  },
+  "model_calls_with_usage": 1
+}

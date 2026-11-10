@@ -1,0 +1,23 @@
+{
+  "status": "applied",
+  "kind": "product_intent_prompt_policy_explanation_fix",
+  "prompt": "/home/yang/FDE/w03-work/fde-agent-w03/product/w03_intent_prompt.txt",
+  "prompt_before_sha256": "6778542f185653b6cacc6be192eb27eec4f8cbca6a06685cc7b1dd97d2e36ac7",
+  "prompt_after_sha256": "7091a8f4e0ed16278a2471d5321aaeff3008d21ec684d38faf92985867dc7815",
+  "engine_sha256": "e8b39da2517a65f6406da4d261173291c795248ea6c62638137e09ce750a98f3",
+  "agent_sha256": "3ab4718e816c786c29c9a705ca5d05f9207ddbd685e4ab178df1e86b229937b7",
+  "cases_source_sha256": {
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/cases-general32-refusal-v2-20261107-163730/tests-general32.json": "e08ad53c4a6fe8496906fab33094c19421bf25b41d2fa5b5dbcf22db75bf8754",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/cases-general32-refusal-v2-20261107-163730/tests-group-refusal.json": "816318485703682687dea1100e83f1d5143b64fee0e1c97be86673500361662c"
+  },
+  "script_sha256": "c905a3adc4491adf88b41a0d4a580b53e36997ba2eb516d7e9f517cd46729669",
+  "regression_cases": 9,
+  "model_called": false,
+  "query_executed": false,
+  "engine_modified": false,
+  "judge_modified": false,
+  "metric_definitions_modified": false,
+  "regression_status": "not_run",
+  "reason": "Do not advertise structurally reachable dimensions prohibited by full_month_only policy.",
+  "submission_note": "Preserve this product prompt diff and declare the customization; it is not a metric-definition repair."
+}

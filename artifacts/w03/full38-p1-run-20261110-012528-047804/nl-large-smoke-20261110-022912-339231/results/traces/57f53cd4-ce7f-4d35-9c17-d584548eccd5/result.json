@@ -1,0 +1,24 @@
+{
+  "status": "unsupported",
+  "reason": "该指标当前仅支持完整自然月、全渠道、全门店口径的整体汇总或按月展示，不支持按会员归属门店拆分或列出。因此无法比较2026年6月不同会员归属门店的P1月末付费会员复购率。可改为查询2026年6月全门店整体的月末付费会员复购率，或跨多月按月展示。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "该指标当前仅支持完整自然月、全渠道、全门店口径的整体汇总或按月展示，不支持按会员归属门店拆分或列出。因此无法比较2026年6月不同会员归属门店的P1月末付费会员复购率。可改为查询2026年6月全门店整体的月末付费会员复购率，或跨多月按月展示。",
+    "metrics": [
+      "monthly_paid_repeat_rate"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "我想比较青禾2026年6月不同会员归属门店的P1月末付费会员复购率，请按归属门店编号列出。",
+  "trace_id": "57f53cd4-ce7f-4d35-9c17-d584548eccd5",
+  "elapsed_seconds": 3.491,
+  "model_usage": {
+    "prompt_tokens": 12553,
+    "completion_tokens": 451,
+    "total_tokens": 13004
+  },
+  "model_calls_with_usage": 1
+}

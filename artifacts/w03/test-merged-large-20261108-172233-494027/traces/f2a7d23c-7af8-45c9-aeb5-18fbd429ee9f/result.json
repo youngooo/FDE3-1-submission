@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_repeat_buyer_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  COUNT(DISTINCT CASE WHEN valid_order_count >= 2 THEN member_id ELSE NULL END) AS monthly_repeat_buyer_count\nFROM \"data\".\"main\".\"member_month_activity\" member_month_activity_semantic_src_10000\nWHERE DATE_TRUNC('month', month_date) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "monthly_repeat_buyer_count"
+  ],
+  "rows": [
+    [
+      7302
+    ]
+  ],
+  "seconds": 0.226,
+  "units": {
+    "monthly_repeat_buyer_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "answer": "青禾2026年8月（2026-08-01含至2026-09-01不含）完整自然月、全门店口径下，月内复购会员数为 7302 个 CRM 会员账户，即同一账户在当月至少有 2 笔有效订单。本次结果只返回了月内复购会员数，未返回同月月内购买会员数，因此复购率没有可用的分母，未计算，也未给出数值；复购率的定义是“月内复购会员数 ÷ 同月月内购买会员数”，以小数比例展示。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的月内复购会员数，全门店，不按维度分组。按完整自然月统计，人数按CRM账户去重，复购率保留小数比例。",
+  "trace_id": "f2a7d23c-7af8-45c9-aeb5-18fbd429ee9f",
+  "elapsed_seconds": 8.226,
+  "model_usage": {
+    "prompt_tokens": 13314,
+    "completion_tokens": 690,
+    "total_tokens": 14004
+  },
+  "model_calls_with_usage": 2
+}

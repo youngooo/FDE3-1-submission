@@ -1,0 +1,58 @@
+[
+  {
+    "id": "single_first_order_sales_cents",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_first_buyer_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_first_order_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_repeat_order_count",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "first_home_store",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "single_valid_order_items",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "paid_coverage",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  },
+  {
+    "id": "paid_paraphrase",
+    "comparison": {
+      "passed": true,
+      "differences": []
+    }
+  }
+]

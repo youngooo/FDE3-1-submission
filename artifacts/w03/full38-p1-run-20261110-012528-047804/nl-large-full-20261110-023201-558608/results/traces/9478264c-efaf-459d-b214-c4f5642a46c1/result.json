@@ -1,0 +1,24 @@
+{
+  "status": "unsupported",
+  "reason": "成交门店编号 S888888 不在当前可查询的成交门店枚举中（仅有 S01–S24），不能猜测或替换为其他编号，因此无法按该门店查询。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "成交门店编号 S888888 不在当前可查询的成交门店枚举中（仅有 S01–S24），不能猜测或替换为其他编号，因此无法按该门店查询。",
+    "metrics": [
+      "order_count"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "限定青禾成交门店编号S888888，给我2026年6月创建订单数；不要猜成其他编号。",
+  "trace_id": "9478264c-efaf-459d-b214-c4f5642a46c1",
+  "elapsed_seconds": 8.19,
+  "model_usage": {
+    "prompt_tokens": 12549,
+    "completion_tokens": 1242,
+    "total_tokens": 13791
+  },
+  "model_calls_with_usage": 1
+}

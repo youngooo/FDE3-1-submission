@@ -1,0 +1,24 @@
+{
+  "passed": false,
+  "errors": [
+    {
+      "model_usage": {
+        "quote": "观测期首购、首单和后续购买先在全覆盖期的有效订单中，按账户、订单日期、订单号稳定排序，再由查询窗口筛选。",
+        "used_for": [
+          {
+            "kind": "derived_model",
+            "name": "valid_order_ranked"
+          },
+          {
+            "kind": "derived_model",
+            "name": "orders_with_history"
+          },
+          {
+            "kind": "semantic_model",
+            "name": "orders_model"
+          }
+        ]
+      }
+    }
+  ]
+}

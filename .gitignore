@@ -1,0 +1,8 @@
+.venv/
+.runtime/
+__pycache__/
+*.pyc
+*.duckdb
+*.sqlite
+.env
+.env.*

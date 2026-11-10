@@ -1,0 +1,9 @@
+{
+  "id": "registration_coverage",
+  "passed": true,
+  "checked_metrics": [
+    "new_member_count"
+  ],
+  "errors": [],
+  "elapsed_seconds": 4.27
+}

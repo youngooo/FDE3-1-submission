@@ -1,0 +1,37 @@
+{
+  "id": "refusal_reason_not_word_for_word",
+  "category": "positive_control",
+  "should_pass": true,
+  "expected": {
+    "status": "unsupported",
+    "intent": {
+      "metrics": [
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-08-16",
+      "group_by": [],
+      "filters": []
+    },
+    "reason": "Fixture partial month"
+  },
+  "actual": {
+    "status": "unsupported",
+    "intent": {
+      "metrics": [
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-08-16",
+      "group_by": [],
+      "filters": []
+    },
+    "reason": "Different wording, same unsupported intent"
+  },
+  "verdict": {
+    "passed": true,
+    "differences": []
+  },
+  "harness_error": null,
+  "passed": true
+}

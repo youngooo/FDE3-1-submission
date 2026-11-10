@@ -1,0 +1,50 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "new_member_count"
+    ],
+    "start": "2024-09-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "member__tier"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  member__tier\n  , SUM(__new_member_count) AS new_member_count\nFROM (\n  SELECT\n    tier AS member__tier\n    , 1 AS __new_member_count\n  FROM \"data\".\"main\".\"members\" members_semantic_src_10000\n  WHERE DATE_TRUNC('day', registered_at) BETWEEN '2024-09-01' AND '2026-08-31'\n) subq_5\nGROUP BY\n  member__tier",
+  "columns": [
+    "member__tier",
+    "new_member_count"
+  ],
+  "rows": [
+    [
+      "银卡",
+      10000
+    ],
+    [
+      "普通",
+      10000
+    ],
+    [
+      "金卡",
+      10000
+    ]
+  ],
+  "seconds": 0.035,
+  "units": {
+    "new_member_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "answer": "在2024-09-01（含）至2026-09-01（不含）期间，按注册日期统计青禾的注册会员数，并按会员等级分组：银卡10000个CRM会员账户，普通10000个CRM会员账户，金卡10000个CRM会员账户。该指标按CRM账户计数，不等于自然人数；结果仅列出上述会员等级分组。",
+  "question": "青禾在2024-09-01含至2026-09-01不含，按注册日期统计注册会员数，并按会员等级分组。",
+  "trace_id": "e4474895-d622-4db4-b65c-7fcd77874b92",
+  "elapsed_seconds": 7.105,
+  "model_usage": {
+    "prompt_tokens": 13417,
+    "completion_tokens": 529,
+    "total_tokens": 13946
+  },
+  "model_calls_with_usage": 2
+}

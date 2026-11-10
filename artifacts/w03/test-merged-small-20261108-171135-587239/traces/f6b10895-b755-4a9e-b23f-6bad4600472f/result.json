@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "refund_amount_rate"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(SUM(CASE WHEN status = 'paid' THEN refund_cents ELSE 0 END) AS DOUBLE) / CAST(NULLIF(SUM(CASE WHEN status = 'paid' THEN paid_cents ELSE 0 END), 0) AS DOUBLE) AS refund_amount_rate\nFROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "refund_amount_rate"
+  ],
+  "rows": [
+    [
+      0.15749685006299874
+    ]
+  ],
+  "seconds": 0.057,
+  "units": {
+    "refund_amount_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "answer": "已按青禾2026年8月（2026-08-01含至2026-09-01不含）统计，按原订单下单日期归属，覆盖全门店，不按维度分组。退款金额占比按「退款金额除以实付金额」在聚合后计算，结果为小数比例 0.15749685006299874（约 0.1575）。本次仅返回该比率，未返回退款金额、实付金额及订单或账户的具体数量；该指标在分母为零时未定义，本次结果正常有定义。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的退款金额占比，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。",
+  "trace_id": "f6b10895-b755-4a9e-b23f-6bad4600472f",
+  "elapsed_seconds": 7.058,
+  "model_usage": {
+    "prompt_tokens": 13016,
+    "completion_tokens": 569,
+    "total_tokens": 13585
+  },
+  "model_calls_with_usage": 2
+}

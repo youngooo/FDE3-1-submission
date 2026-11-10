@@ -1,0 +1,13 @@
+{
+  "status": "ok",
+  "groups": [
+    {
+      "group": [],
+      "metrics": {
+        "monthly_buyer_count": 11,
+        "monthly_repeat_buyer_count": 1,
+        "monthly_repeat_rate": "0.09090909090909090909090909091"
+      }
+    }
+  ]
+}

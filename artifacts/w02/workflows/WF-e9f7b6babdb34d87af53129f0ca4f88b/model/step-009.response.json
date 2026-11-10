@@ -1,0 +1,22 @@
+{
+  "message": {
+    "role": "assistant",
+    "content": "收到。查看费用草案修订与王经理反馈的原文。",
+    "tool_calls": [
+      {
+        "index": 0,
+        "id": "call_00_0JsqnKWbPN8emRj0TeUz6068",
+        "type": "function",
+        "function": {
+          "name": "show_evidence",
+          "arguments": "{\"claim_ids\": [\"CLM-002-0042\", \"CLM-002-0043\", \"CLM-002-0046\", \"CLM-002-0047\", \"CLM-002-0048\", \"CLM-002-0049\", \"CLM-002-0050\"]}"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "prompt_tokens": 36417,
+    "completion_tokens": 218,
+    "total_tokens": 36635
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_buyer_count"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN valid_order_count >= 1 THEN 1 ELSE 0 END) AS monthly_buyer_count\nFROM \"data\".\"main\".\"monthly_member_activity\" monthly_member_model_src_10000\nWHERE DATE_TRUNC('month', month_start) BETWEEN '2026-06-01' AND '2026-06-30'",
+  "columns": [
+    "monthly_buyer_count"
+  ],
+  "rows": [
+    [
+      15981
+    ]
+  ],
+  "seconds": 0.061,
+  "units": {
+    "monthly_buyer_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "2026年6月整月、全门店口径下，青禾的月内购买会员数为15981个CRM会员账户。统计口径为同一自然月内至少有1笔有效订单的账户数；仅按整月、全门店汇总，未按门店分组，也未跨月加总。",
+  "question": "帮我查青禾2026年6月的月内购买会员数，我需要整月全门店总数，不需要分组明细。",
+  "trace_id": "850a8ba9-2a21-4ebf-8e28-bcfaaf82609e",
+  "elapsed_seconds": 7.06,
+  "model_usage": {
+    "prompt_tokens": 15147,
+    "completion_tokens": 632,
+    "total_tokens": 15779
+  },
+  "model_calls_with_usage": 2
+}

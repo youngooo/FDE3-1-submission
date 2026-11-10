@@ -1,0 +1,45 @@
+{
+  "kind": "final38_natural_language_regression_plan",
+  "library": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/library",
+  "library_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "entries": [
+    {
+      "dataset": "small",
+      "project": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-small",
+      "cases": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/small/tests.json",
+      "cases_sha256": "b83b234e4ad1c8f7b24f05bf8f4df0ff14ecdbb1f8a67cb61924eee045494f8d",
+      "smoke": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/small/tests-smoke.json",
+      "smoke_sha256": "f89d9ee92631411399c7efc1e97aa19b7396ecb026874774baaa007cb9f1fb64",
+      "cases_total": 69,
+      "smoke_total": 8
+    },
+    {
+      "dataset": "large",
+      "project": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large",
+      "cases": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/large/tests.json",
+      "cases_sha256": "6df3ade68f736b65b2cebd3d0cda5b9b402d3448c1b3c3456af3ff2a837d34bd",
+      "smoke": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/large/tests-smoke.json",
+      "smoke_sha256": "5f5b3a62a06fb73820620ee64c1b9c32e226ac005caeeb4542be4158c6f7a2f0",
+      "cases_total": 67,
+      "smoke_total": 8
+    }
+  ],
+  "judge_script": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/scripts/judge_w03_full38_20261110.py",
+  "judge_sha256": "9e6ac379d902510a3d2f6ba378e2ba45f87b6a4a49d71ca113413968543f7563",
+  "base_judge_sha256": "33b7eed436f5663f04371ffc2eb456b23451c60b5073d8534e6735a6a466e0fc",
+  "judge_self_checks": 8,
+  "cross_dataset_identical_questions": 0,
+  "model_called": false,
+  "query_executed": false,
+  "actual_results_read": false,
+  "actual_results_used_to_compute_expectations": false,
+  "answer_prompt_sha256": "2df23fb50a2e1af0ba0eedc525a76db13283ca43e7ab799964803f0973c1e8cc",
+  "intent_prompt_sha256": "281aeb45bef1d6002f97db5ee6930683067ca730143caf3100757d9adf475ba0",
+  "prior_plan": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-cases-20261110-022457-578302/plan.json",
+  "prior_plan_sha256": "2dc395ec36b98ed229ed3a85e46f59ed23f46e263e42380017f3605d49ecbe52",
+  "csv_expectations_recomputed": true,
+  "business_confirmation": "pending",
+  "execution_status": "not_run",
+  "answer_review_required": true,
+  "final_acceptance": false
+}

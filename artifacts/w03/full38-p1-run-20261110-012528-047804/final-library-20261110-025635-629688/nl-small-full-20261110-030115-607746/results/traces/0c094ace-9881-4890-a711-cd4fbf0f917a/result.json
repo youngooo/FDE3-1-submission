@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "refund_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN status = 'paid' THEN refund_cents ELSE 0 END) AS refund_cents\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "refund_cents"
+  ],
+  "rows": [
+    [
+      18750
+    ]
+  ],
+  "seconds": 0.04,
+  "units": {
+    "refund_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "青禾在2026年8月（按原订单下单日期归属）的全门店退款金额合计为 18750 分。统计口径：已支付订单的退款金额合计，按原订单下单日期归属，不按下单后发生退款的实际日期归属。本次结果覆盖青禾全部门店，且不作分组。",
+  "question": "请只查询青禾2026年8月的退款金额，全门店汇总，不分组。金额按分返回。",
+  "trace_id": "0c094ace-9881-4890-a711-cd4fbf0f917a",
+  "elapsed_seconds": 6.763,
+  "model_usage": {
+    "prompt_tokens": 14671,
+    "completion_tokens": 369,
+    "total_tokens": 15040
+  },
+  "model_calls_with_usage": 2
+}

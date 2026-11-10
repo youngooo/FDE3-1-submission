@@ -1,0 +1,21 @@
+{
+  "status": "structured_passed_pending_answer_review",
+  "dataset": "small",
+  "stage": "smoke",
+  "total": 8,
+  "started_at": "2026-11-10T02:08:51.773766+08:00",
+  "business_confirmation": "pending",
+  "answer_review_required": true,
+  "final_acceptance": false,
+  "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-small-smoke-20261110-020851-764544/results/metric_test_report.json",
+  "exit_code": 0,
+  "passed": 8,
+  "complete": true,
+  "inputs_match": true,
+  "result_library_binding": true,
+  "rejudge_consistent": true,
+  "input_changed_during_run": [],
+  "failed_cases": [],
+  "elapsed_seconds": 86.04,
+  "finished_at": "2026-11-10T02:10:19.526467+08:00"
+}

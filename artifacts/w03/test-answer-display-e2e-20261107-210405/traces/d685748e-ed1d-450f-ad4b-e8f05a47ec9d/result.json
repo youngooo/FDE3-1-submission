@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "first_order_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN valid_order_seq = 1 THEN 1 ELSE 0 END) AS first_order_count\nFROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "first_order_count"
+  ],
+  "rows": [
+    [
+      15
+    ]
+  ],
+  "seconds": 0.213,
+  "units": {
+    "first_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f",
+  "answer": "青禾在2026年8月（2026-08-01含至2026-09-01不含）的全门店范围内，观测期首单数为15单。口径为：先在完整测试覆盖历史内按账户确定首笔有效订单，再筛选首单日期落在该月窗口内的订单；本次未按维度分组。该指标为订单数，不涉及金额，因此不涉及分/元换算。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的观测期首单数，全门店，不按维度分组。首单在完整测试覆盖历史内按有效订单确定，再筛选到8月；金额保留分。",
+  "trace_id": "d685748e-ed1d-450f-ad4b-e8f05a47ec9d",
+  "elapsed_seconds": 8.211,
+  "model_usage": {
+    "prompt_tokens": 12918,
+    "completion_tokens": 715,
+    "total_tokens": 13633
+  },
+  "model_calls_with_usage": 2
+}

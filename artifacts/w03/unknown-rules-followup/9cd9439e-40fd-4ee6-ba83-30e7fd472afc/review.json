@@ -1,0 +1,16 @@
+{
+  "trace_id": "9cd9439e-40fd-4ee6-ba83-30e7fd472afc",
+  "review_method": "AI辅助人工核查",
+  "no_prior_other_question_history": true,
+  "internal_output_validation_retry": true,
+  "final_answer_passes_core_criteria": true,
+  "entire_trajectory_error_free": false,
+  "automatic_semantic_judge": false,
+  "source_sha256": {
+    "result.json": "c259297a8350e877d25cd0e921ee682ef1d79f72d05af45a81a40b96ee282cf3",
+    "intent-trace.json": "6e8ce48626e8f7e7a802b498231e280dac0cbda4ece555a849d5619b1cc9c8f5",
+    "intent-context-summary.json": "26e39138a50c28d33e053fcf779be71a4e66de645055c11e63439fca92cb8353"
+  },
+  "model_called_by_archiver": false,
+  "wording_caveat": "CRM账户与账号不应一概对立；假设状态不作为青禾事实"
+}

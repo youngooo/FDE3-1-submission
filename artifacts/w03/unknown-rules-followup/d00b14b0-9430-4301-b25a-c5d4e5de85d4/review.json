@@ -1,0 +1,33 @@
+{
+  "trace_id": "d00b14b0-9430-4301-b25a-c5d4e5de85d4",
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+  "expected_basis": "材料03定义与原始orders.csv独立复算，未使用生成SQL",
+  "orders_csv_sha256": "c6e0dee6081e7a6f7782b54de78b3182835c46184c8e7569fc23feab8cf3c4f1",
+  "expected": {
+    "2026-07": {
+      "monthly_buyer_count": 11,
+      "monthly_repeat_buyer_count": 1,
+      "monthly_repeat_rate": 0.09090909090909091
+    },
+    "2026-08": {
+      "monthly_buyer_count": 15,
+      "monthly_repeat_buyer_count": 12,
+      "monthly_repeat_rate": 0.8
+    }
+  },
+  "numeric_comparison_passed": true,
+  "causal_explanation_core_checks_passed": true,
+  "explanation_review": "AI辅助人工核查",
+  "independent_new_session": false,
+  "history_contains_previous_member_question": true,
+  "source_sha256": {
+    "result.json": "6de9ef197d124a046ed88419af2db80377dfc63c3d09ff9adcbc4504e66c60bf",
+    "intent-trace.json": "148954d600d05a3e9a0d8c10c47ecf26cc61c988606a01ec3d9aee5cc36a0373",
+    "intent-context-summary.json": "26e39138a50c28d33e053fcf779be71a4e66de645055c11e63439fca92cb8353",
+    "answer-trace.json": "a23a4ba481735ec5d444e7d8fb3677746a97921fe8ab65831410d7a51213903e"
+  },
+  "model_called_by_archiver": false,
+  "product_query_reexecuted": false
+}

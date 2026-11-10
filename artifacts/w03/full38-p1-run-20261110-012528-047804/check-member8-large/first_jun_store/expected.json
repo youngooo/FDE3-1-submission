@@ -1,0 +1,270 @@
+{
+  "status": "ok",
+  "groups": [
+    {
+      "group": [
+        "S01"
+      ],
+      "metrics": {
+        "first_buyer_count": 72,
+        "first_order_sales_cents": 1139919,
+        "first_order_count": 72,
+        "repeat_order_count": 1006
+      }
+    },
+    {
+      "group": [
+        "S02"
+      ],
+      "metrics": {
+        "first_buyer_count": 71,
+        "first_order_sales_cents": 1281353,
+        "first_order_count": 71,
+        "repeat_order_count": 1055
+      }
+    },
+    {
+      "group": [
+        "S03"
+      ],
+      "metrics": {
+        "first_buyer_count": 69,
+        "first_order_sales_cents": 1236195,
+        "first_order_count": 69,
+        "repeat_order_count": 1054
+      }
+    },
+    {
+      "group": [
+        "S04"
+      ],
+      "metrics": {
+        "first_buyer_count": 73,
+        "first_order_sales_cents": 1274210,
+        "first_order_count": 73,
+        "repeat_order_count": 1051
+      }
+    },
+    {
+      "group": [
+        "S05"
+      ],
+      "metrics": {
+        "first_buyer_count": 73,
+        "first_order_sales_cents": 1287395,
+        "first_order_count": 73,
+        "repeat_order_count": 1049
+      }
+    },
+    {
+      "group": [
+        "S06"
+      ],
+      "metrics": {
+        "first_buyer_count": 54,
+        "first_order_sales_cents": 1110701,
+        "first_order_count": 54,
+        "repeat_order_count": 1103
+      }
+    },
+    {
+      "group": [
+        "S07"
+      ],
+      "metrics": {
+        "first_buyer_count": 60,
+        "first_order_sales_cents": 1040956,
+        "first_order_count": 60,
+        "repeat_order_count": 1039
+      }
+    },
+    {
+      "group": [
+        "S08"
+      ],
+      "metrics": {
+        "first_buyer_count": 50,
+        "first_order_sales_cents": 800796,
+        "first_order_count": 50,
+        "repeat_order_count": 1012
+      }
+    },
+    {
+      "group": [
+        "S09"
+      ],
+      "metrics": {
+        "first_buyer_count": 65,
+        "first_order_sales_cents": 1225979,
+        "first_order_count": 65,
+        "repeat_order_count": 1112
+      }
+    },
+    {
+      "group": [
+        "S10"
+      ],
+      "metrics": {
+        "first_buyer_count": 65,
+        "first_order_sales_cents": 1132634,
+        "first_order_count": 65,
+        "repeat_order_count": 1025
+      }
+    },
+    {
+      "group": [
+        "S11"
+      ],
+      "metrics": {
+        "first_buyer_count": 69,
+        "first_order_sales_cents": 1133234,
+        "first_order_count": 69,
+        "repeat_order_count": 1108
+      }
+    },
+    {
+      "group": [
+        "S12"
+      ],
+      "metrics": {
+        "first_buyer_count": 62,
+        "first_order_sales_cents": 1048726,
+        "first_order_count": 62,
+        "repeat_order_count": 1032
+      }
+    },
+    {
+      "group": [
+        "S13"
+      ],
+      "metrics": {
+        "first_buyer_count": 64,
+        "first_order_sales_cents": 1134727,
+        "first_order_count": 64,
+        "repeat_order_count": 1022
+      }
+    },
+    {
+      "group": [
+        "S14"
+      ],
+      "metrics": {
+        "first_buyer_count": 76,
+        "first_order_sales_cents": 1271774,
+        "first_order_count": 76,
+        "repeat_order_count": 1043
+      }
+    },
+    {
+      "group": [
+        "S15"
+      ],
+      "metrics": {
+        "first_buyer_count": 52,
+        "first_order_sales_cents": 885162,
+        "first_order_count": 52,
+        "repeat_order_count": 1004
+      }
+    },
+    {
+      "group": [
+        "S16"
+      ],
+      "metrics": {
+        "first_buyer_count": 63,
+        "first_order_sales_cents": 995086,
+        "first_order_count": 63,
+        "repeat_order_count": 1044
+      }
+    },
+    {
+      "group": [
+        "S17"
+      ],
+      "metrics": {
+        "first_buyer_count": 51,
+        "first_order_sales_cents": 683539,
+        "first_order_count": 51,
+        "repeat_order_count": 1023
+      }
+    },
+    {
+      "group": [
+        "S18"
+      ],
+      "metrics": {
+        "first_buyer_count": 72,
+        "first_order_sales_cents": 1273217,
+        "first_order_count": 72,
+        "repeat_order_count": 1079
+      }
+    },
+    {
+      "group": [
+        "S19"
+      ],
+      "metrics": {
+        "first_buyer_count": 71,
+        "first_order_sales_cents": 1153638,
+        "first_order_count": 71,
+        "repeat_order_count": 1109
+      }
+    },
+    {
+      "group": [
+        "S20"
+      ],
+      "metrics": {
+        "first_buyer_count": 65,
+        "first_order_sales_cents": 1144205,
+        "first_order_count": 65,
+        "repeat_order_count": 1052
+      }
+    },
+    {
+      "group": [
+        "S21"
+      ],
+      "metrics": {
+        "first_buyer_count": 54,
+        "first_order_sales_cents": 894932,
+        "first_order_count": 54,
+        "repeat_order_count": 1006
+      }
+    },
+    {
+      "group": [
+        "S22"
+      ],
+      "metrics": {
+        "first_buyer_count": 55,
+        "first_order_sales_cents": 956437,
+        "first_order_count": 55,
+        "repeat_order_count": 1003
+      }
+    },
+    {
+      "group": [
+        "S23"
+      ],
+      "metrics": {
+        "first_buyer_count": 59,
+        "first_order_sales_cents": 1003224,
+        "first_order_count": 59,
+        "repeat_order_count": 1029
+      }
+    },
+    {
+      "group": [
+        "S24"
+      ],
+      "metrics": {
+        "first_buyer_count": 66,
+        "first_order_sales_cents": 1083626,
+        "first_order_count": 66,
+        "repeat_order_count": 999
+      }
+    }
+  ],
+  "reason_contains": null
+}

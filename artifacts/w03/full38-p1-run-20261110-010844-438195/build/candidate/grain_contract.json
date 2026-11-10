@@ -1,0 +1,24 @@
+{
+  "orders_sm": [
+    "order_id"
+  ],
+  "orders_lifecycle_sm": [
+    "order_id"
+  ],
+  "members_sm": [
+    "member_id"
+  ],
+  "selling_stores_sm": [
+    "store_id"
+  ],
+  "home_stores_sm": [
+    "store_id"
+  ],
+  "monthly_activity_sm": [
+    "member_id",
+    "month_start"
+  ],
+  "monthly_paid_sm": [
+    "month_start"
+  ]
+}

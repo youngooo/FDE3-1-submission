@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "items": [
+    {
+      "model": "order",
+      "check": "primary_key",
+      "columns": [
+        "order_id"
+      ],
+      "rows": 48,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "order",
+      "entity": "member",
+      "target": "member",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "order",
+      "entity": "store",
+      "target": "store",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "order",
+      "entity": "home_store",
+      "target": "home_store",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "member",
+      "check": "primary_key",
+      "columns": [
+        "member_id"
+      ],
+      "rows": 20,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "member",
+      "entity": "home_store",
+      "target": "home_store",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "store",
+      "check": "primary_key",
+      "columns": [
+        "store_id"
+      ],
+      "rows": 3,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "home_store",
+      "check": "primary_key",
+      "columns": [
+        "store_id"
+      ],
+      "rows": 3,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "monthly_order_summary",
+      "check": "primary_key",
+      "columns": [
+        "month_start"
+      ],
+      "rows": 24,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "monthly_paid_summary",
+      "check": "primary_key",
+      "columns": [
+        "month_start"
+      ],
+      "rows": 24,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    }
+  ]
+}

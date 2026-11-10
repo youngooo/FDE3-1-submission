@@ -1,0 +1,36 @@
+{
+  "zip_sha256": "97d0f69e26b3e1ecc3a0e7f2a59c2edbaebb27a4ca47a895bd5eeb45b8bbe03f",
+  "crc_ok": true,
+  "files": 5699,
+  "metrics": 38,
+  "targets_match": true,
+  "status_kind": "w03_38_metric_delivery_pending_business_confirmation",
+  "reports": [
+    {
+      "dataset": "small",
+      "hash_matches": true,
+      "passed": 69,
+      "total": 69,
+      "cases_hash_matches": true
+    },
+    {
+      "dataset": "large",
+      "hash_matches": true,
+      "passed": 67,
+      "total": 67,
+      "cases_hash_matches": true
+    }
+  ],
+  "canonical_matches": true,
+  "manifest_valid": true,
+  "forbidden": [],
+  "broken_doc_links": [],
+  "good_sow_links": [
+    "../../artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/chat-entry-verification-20261110-125035-982682/review.json",
+    "../../artifacts/w02/sources/W3-interview-6ce5833c-5351-54bc-9fd7-b36474544983-sow-review-transcript.json",
+    "sow_review_notes.md"
+  ],
+  "required_materials_present": true,
+  "skill_matches_build": true,
+  "extracted_precheck": "precheck_passed"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "control_nonexistent_filter",
+  "source_dataset": "large",
+  "source_case": "nonexistent_filter",
+  "expected": {
+    "status": "unsupported",
+    "allowed_statuses": [
+      "unsupported",
+      "clarify"
+    ],
+    "boundary_kind": "nonexistent_filter_value",
+    "reason": "编号无法定位"
+  },
+  "actual": {
+    "status": "unsupported",
+    "reason": "当前可查询的成交门店编号中不包含 S888888，且不能猜测替换为其他编号，因此无法按该门店执行 2026 年 6 月创建订单数查询。",
+    "intent": {
+      "status": "unsupported",
+      "reason": "当前可查询的成交门店编号中不包含 S888888，且不能猜测替换为其他编号，因此无法按该门店执行 2026 年 6 月创建订单数查询。",
+      "metrics": [
+        "order_count"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-07-01",
+      "group_by": [],
+      "filters": [
+        {
+          "field": "store",
+          "op": "eq",
+          "value": "S888888"
+        }
+      ]
+    },
+    "question": "限定青禾成交门店编号S888888，给我2026年6月创建订单数；不要猜成其他编号。",
+    "trace_id": "a50fdc26-8dca-4e2d-8cb8-86aed8b53c67",
+    "elapsed_seconds": 5.645,
+    "model_usage": {
+      "prompt_tokens": 12547,
+      "completion_tokens": 685,
+      "total_tokens": 13232
+    },
+    "model_calls_with_usage": 1
+  },
+  "should_pass": true,
+  "required_difference": null,
+  "verdict": {
+    "passed": true,
+    "differences": []
+  },
+  "rejection_reason_matches_mutation": true,
+  "passed": true
+}

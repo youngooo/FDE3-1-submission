@@ -1,0 +1,50 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "new_member_count"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [
+      "member__tier"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  tier AS member__tier\n  , COUNT(DISTINCT member_id) AS new_member_count\nFROM \"data\".\"main\".\"members\" member_model_src_10000\nWHERE DATE_TRUNC('day', registered_at) BETWEEN '2026-06-01' AND '2026-06-30'\nGROUP BY\n  tier",
+  "columns": [
+    "member__tier",
+    "new_member_count"
+  ],
+  "rows": [
+    [
+      "金卡",
+      423
+    ],
+    [
+      "普通",
+      431
+    ],
+    [
+      "银卡",
+      462
+    ]
+  ],
+  "seconds": 0.045,
+  "units": {
+    "new_member_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "青禾客户在2026年6月按注册日期统计的新注册CRM会员账户数如下：金卡423个，普通431个，银卡462个。该指标统计的是CRM会员账户数，不等同于自然人数。",
+  "question": "青禾2026年6月新注册CRM账户有多少？以注册日期筛选，分会员等级列出。",
+  "trace_id": "013edd1f-bad9-49a7-8311-047af694b071",
+  "elapsed_seconds": 8.344,
+  "model_usage": {
+    "prompt_tokens": 14885,
+    "completion_tokens": 664,
+    "total_tokens": 15549
+  },
+  "model_calls_with_usage": 2
+}

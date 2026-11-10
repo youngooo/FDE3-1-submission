@@ -1,0 +1,1018 @@
+{
+  "contract_version": "w03-0.1.0",
+  "complete": true,
+  "passed": 8,
+  "total": 8,
+  "cases": [
+    {
+      "id": "single_valid_order_items",
+      "question": "请只查询青禾2026年8月的有效订单商品件数，全门店汇总，不分组。",
+      "expected": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "valid_order_items"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "columns": [
+          "valid_order_items"
+        ],
+        "rows": [
+          [
+            33
+          ]
+        ],
+        "units": {
+          "valid_order_items": "count"
+        },
+        "data_version": "qinghe-w03-20260923-small",
+        "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+        "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39"
+      },
+      "actual": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "valid_order_items"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "sql": "SELECT\n  SUM(CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN quantity ELSE 0 END) AS valid_order_items\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+        "columns": [
+          "valid_order_items"
+        ],
+        "rows": [
+          [
+            33
+          ]
+        ],
+        "seconds": 0.09,
+        "units": {
+          "valid_order_items": "count"
+        },
+        "data_version": "qinghe-w03-20260923-small",
+        "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+        "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+        "answer": "青禾2026年8月有效订单商品件数（全门店汇总、不分组）为33件。统计口径为有效订单中的原始购买件数合计；该指标不是净商品销量，退款金额不能用于推算退货件数。结果基于本周合成测试库。",
+        "question": "请只查询青禾2026年8月的有效订单商品件数，全门店汇总，不分组。",
+        "trace_id": "942465b0-131a-4232-9839-6ccb2326ba2b",
+        "elapsed_seconds": 8.276,
+        "model_usage": {
+          "prompt_tokens": 14372,
+          "completion_tokens": 648,
+          "total_tokens": 15020
+        },
+        "model_calls_with_usage": 2
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "first_home_store",
+      "question": "青禾2026年8月按会员归属门店编号列出观测期首购会员数、观测期首单净销售额、观测期首单数、观测期后续购买订单数；完整有效历史先排序，金额分。",
+      "expected": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "first_buyer_count",
+            "first_order_sales_cents",
+            "first_order_count",
+            "repeat_order_count"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [
+            "home_store"
+          ],
+          "filters": []
+        },
+        "columns": [
+          "home_store",
+          "first_buyer_count",
+          "first_order_sales_cents",
+          "first_order_count",
+          "repeat_order_count"
+        ],
+        "rows": [
+          [
+            "S01",
+            3,
+            7400,
+            3,
+            10
+          ],
+          [
+            "S02",
+            2,
+            5400,
+            2,
+            12
+          ],
+          [
+            "S03",
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "units": {
+          "first_buyer_count": "count",
+          "first_order_sales_cents": "cents",
+          "first_order_count": "count",
+          "repeat_order_count": "count"
+        },
+        "data_version": "qinghe-w03-20260923-small",
+        "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+        "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39"
+      },
+      "actual": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "first_buyer_count",
+            "first_order_sales_cents",
+            "first_order_count",
+            "repeat_order_count"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [
+            "home_store"
+          ],
+          "filters": []
+        },
+        "sql": "SELECT\n  home_store\n  , COUNT(DISTINCT __first_buyer_count) AS first_buyer_count\n  , SUM(__first_order_sales_cents) AS first_order_sales_cents\n  , SUM(__first_order_count) AS first_order_count\n  , SUM(__repeat_order_count) AS repeat_order_count\nFROM (\n  SELECT\n    home_store_id AS home_store\n    , CASE WHEN valid_order_seq = 1 THEN member_id ELSE NULL END AS __first_buyer_count\n    , CASE WHEN valid_order_seq = 1 THEN paid_cents - refund_cents ELSE 0 END AS __first_order_sales_cents\n    , CASE WHEN valid_order_seq = 1 THEN 1 ELSE 0 END AS __first_order_count\n    , CASE WHEN valid_order_seq >= 2 THEN 1 ELSE 0 END AS __repeat_order_count\n  FROM \"data\".\"main\".\"order_fact\" order_model_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_8\nGROUP BY\n  home_store",
+        "columns": [
+          "home_store",
+          "first_buyer_count",
+          "first_order_sales_cents",
+          "first_order_count",
+          "repeat_order_count"
+        ],
+        "rows": [
+          [
+            "S03",
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "S01",
+            3,
+            7400,
+            3,
+            10
+          ],
+          [
+            "S02",
+            2,
+            5400,
+            2,
+            12
+          ]
+        ],
+        "seconds": 0.097,
+        "units": {
+          "first_buyer_count": "count",
+          "first_order_sales_cents": "cents",
+          "first_order_count": "count",
+          "repeat_order_count": "count"
+        },
+        "data_version": "qinghe-w03-20260923-small",
+        "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+        "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+        "answer": "统计范围：青禾本周合成测试库，2026年8月（2026-08-01至2026-09-01，不含结束日），按会员归属门店编号分组。首单相关指标均先用全测试覆盖期有效订单按日期、订单号排序，确定每个CRM会员账户的第一笔有效订单，再筛选其日期落入本月。观测期首购会员数按不同CRM会员账户计数，不代表终身首购；观测期首单净销售额按该第一笔有效订单的净销售额归属，单位分；观测期后续购买订单数为各账户全测试覆盖期内第二笔及以后有效订单中，订单日期落入本月的订单数，不是月内复购会员人数。\n\n| 会员归属门店编号 | 观测期首购会员数（个CRM会员账户） | 观测期首单净销售额（分） | 观测期首单数（单） | 观测期后续购买订单数（单） |\n|---|---:|---:|---:|---:|\n| S03 | 0 | 0 | 0 | 0 |\n| S01 | 3 | 7400 | 3 | 10 |\n| S02 | 2 | 5400 | 2 | 12 |\n\nS03的零为本次窗口覆盖内的零；金额按用户要求以分展示。",
+        "question": "青禾2026年8月按会员归属门店编号列出观测期首购会员数、观测期首单净销售额、观测期首单数、观测期后续购买订单数；完整有效历史先排序，金额分。",
+        "trace_id": "528a7f40-37f6-45d1-a421-f4a0456e0986",
+        "elapsed_seconds": 14.106,
+        "model_usage": {
+          "prompt_tokens": 15764,
+          "completion_tokens": 1909,
+          "total_tokens": 17673
+        },
+        "model_calls_with_usage": 2
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "paid_coverage",
+      "question": "青禾2024年9月至2026年8月，每个自然月分别列出月末付费会员购买人数、月末付费会员有效订单数、月末付费会员净销售额、月末付费会员复购人数、月末付费会员复购率、月末付费会员订单均额，按现有P1暂定试算，全门店全渠道，金额分、均额分/单、比例小数。",
+      "expected": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_paid_buyer_count",
+            "monthly_paid_order_count",
+            "monthly_paid_sales_cents",
+            "monthly_paid_repeat_buyer_count",
+            "monthly_paid_repeat_rate",
+            "monthly_paid_avg_order_value"
+          ],
+          "start": "2024-09-01",
+          "end": "2026-09-01",
+          "group_by": [
+            "metric_time__month"
+          ],
+          "filters": []
+        },
+        "columns": [
+          "metric_time__month",
+          "monthly_paid_buyer_count",
+          "monthly_paid_order_count",
+          "monthly_paid_sales_cents",
+          "monthly_paid_repeat_buyer_count",
+          "monthly_paid_repeat_rate",
+          "monthly_paid_avg_order_value"
+        ],
+        "rows": [
+          [
+            "2024-09-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2024-10-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2024-11-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2024-12-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-01-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-02-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-03-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-04-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-05-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-06-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-07-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-08-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-09-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-10-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-11-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-12-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2026-01-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2026-02-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2026-03-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2026-04-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2026-05-01",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2026-06-01",
+            1,
+            1,
+            2000,
+            0,
+            "0",
+            "2000"
+          ],
+          [
+            "2026-07-01",
+            6,
+            6,
+            15500,
+            0,
+            "0",
+            "2583.333333333333333333333333"
+          ],
+          [
+            "2026-08-01",
+            6,
+            10,
+            47550,
+            4,
+            "0.6666666666666666666666666667",
+            "4755"
+          ]
+        ],
+        "units": {
+          "monthly_paid_buyer_count": "count",
+          "monthly_paid_order_count": "count",
+          "monthly_paid_sales_cents": "cents",
+          "monthly_paid_repeat_buyer_count": "count",
+          "monthly_paid_repeat_rate": "ratio",
+          "monthly_paid_avg_order_value": "cents_per_order"
+        },
+        "data_version": "qinghe-w03-20260923-small",
+        "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+        "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39"
+      },
+      "actual": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_paid_buyer_count",
+            "monthly_paid_order_count",
+            "monthly_paid_sales_cents",
+            "monthly_paid_repeat_buyer_count",
+            "monthly_paid_repeat_rate",
+            "monthly_paid_avg_order_value"
+          ],
+          "start": "2024-09-01",
+          "end": "2026-09-01",
+          "group_by": [
+            "metric_time__month"
+          ],
+          "filters": []
+        },
+        "sql": "WITH sma_10003_cte AS (\n  SELECT\n    DATE_TRUNC('month', month_start) AS metric_time__month\n    , monthly_paid_buyer_count AS __monthly_paid_buyer_count\n    , monthly_paid_order_count AS __monthly_paid_order_count\n    , monthly_paid_sales_cents AS __monthly_paid_sales_cents\n    , monthly_paid_repeat_buyer_count AS __monthly_paid_repeat_buyer_count\n  FROM \"data\".\"main\".\"monthly_paid_summary\" monthly_paid_model_src_10000\n)\n\nSELECT\n  COALESCE(subq_10.metric_time__month, subq_16.metric_time__month) AS metric_time__month\n  , MAX(subq_10.monthly_paid_buyer_count) AS monthly_paid_buyer_count\n  , MAX(subq_10.monthly_paid_order_count) AS monthly_paid_order_count\n  , MAX(subq_10.monthly_paid_sales_cents) AS monthly_paid_sales_cents\n  , MAX(subq_10.monthly_paid_repeat_buyer_count) AS monthly_paid_repeat_buyer_count\n  , MAX(CAST(subq_16.monthly_paid_repeat_buyer_count AS DOUBLE) / CAST(NULLIF(subq_16.monthly_paid_buyer_count, 0) AS DOUBLE)) AS monthly_paid_repeat_rate\n  , MAX(CAST(subq_16.monthly_paid_sales_cents AS DOUBLE) / CAST(NULLIF(subq_16.monthly_paid_order_count, 0) AS DOUBLE)) AS monthly_paid_avg_order_value\nFROM (\n  SELECT\n    metric_time__month\n    , SUM(__monthly_paid_buyer_count) AS monthly_paid_buyer_count\n    , SUM(__monthly_paid_order_count) AS monthly_paid_order_count\n    , SUM(__monthly_paid_sales_cents) AS monthly_paid_sales_cents\n    , SUM(__monthly_paid_repeat_buyer_count) AS monthly_paid_repeat_buyer_count\n  FROM sma_10003_cte\n  WHERE metric_time__month BETWEEN '2024-09-01' AND '2026-08-31'\n  GROUP BY\n    metric_time__month\n) subq_10\nFULL OUTER JOIN (\n  SELECT\n    metric_time__month\n    , SUM(__monthly_paid_repeat_buyer_count) AS monthly_paid_repeat_buyer_count\n    , SUM(__monthly_paid_buyer_count) AS monthly_paid_buyer_count\n    , SUM(__monthly_paid_sales_cents) AS monthly_paid_sales_cents\n    , SUM(__monthly_paid_order_count) AS monthly_paid_order_count\n  FROM sma_10003_cte\n  WHERE metric_time__month BETWEEN '2024-09-01' AND '2026-08-31'\n  GROUP BY\n    metric_time__month\n) subq_16\nON\n  subq_10.metric_time__month = subq_16.metric_time__month\nGROUP BY\n  COALESCE(subq_10.metric_time__month, subq_16.metric_time__month)",
+        "columns": [
+          "metric_time__month",
+          "monthly_paid_buyer_count",
+          "monthly_paid_order_count",
+          "monthly_paid_sales_cents",
+          "monthly_paid_repeat_buyer_count",
+          "monthly_paid_repeat_rate",
+          "monthly_paid_avg_order_value"
+        ],
+        "rows": [
+          [
+            "2026-03-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2026-05-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-12-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2024-11-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-07-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-06-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-01-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-11-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-09-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2026-07-01 00:00:00",
+            6,
+            6,
+            15500,
+            0,
+            0.0,
+            2583.3333333333335
+          ],
+          [
+            "2026-02-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2026-06-01 00:00:00",
+            1,
+            1,
+            2000,
+            0,
+            0.0,
+            2000.0
+          ],
+          [
+            "2025-02-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2026-04-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-10-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2026-01-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-08-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2024-12-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-03-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-05-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2026-08-01 00:00:00",
+            6,
+            10,
+            47550,
+            4,
+            0.6666666666666666,
+            4755.0
+          ],
+          [
+            "2024-10-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2024-09-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "2025-04-01 00:00:00",
+            0,
+            0,
+            0,
+            0,
+            null,
+            null
+          ]
+        ],
+        "seconds": 0.121,
+        "units": {
+          "monthly_paid_buyer_count": "count",
+          "monthly_paid_order_count": "count",
+          "monthly_paid_sales_cents": "cents",
+          "monthly_paid_repeat_buyer_count": "count",
+          "monthly_paid_repeat_rate": "ratio",
+          "monthly_paid_avg_order_value": "cents_per_order"
+        },
+        "data_version": "qinghe-w03-20260923-small",
+        "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+        "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+        "answer": "本结果按P1暂定口径试算；门店日期规则用于总部月报仍待书面确认。\n统计范围：青禾，2024年9月至2026年8月的完整自然月，全门店、全渠道汇总，未按门店或渠道拆分；人数按CRM会员账户统计。金额单位为分，订单均额单位为分/单，复购率为小数比例。\n口径：月末付费会员复购率=月末付费会员复购人数÷月末付费会员购买人数；月末付费会员订单均额=月末付费会员净销售额÷月末付费会员有效订单数。分母为零时，复购率或订单均额未定义，不等同于零。\n\n| 月份 | 购买人数（个CRM会员账户） | 有效订单数（单） | 净销售额（分） | 复购人数（个CRM会员账户） | 复购率（小数） | 订单均额（分/单） |\n|---|---:|---:|---:|---:|---:|---:|\n| 2024-09 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2024-10 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2024-11 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2024-12 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2025-01 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2025-02 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2025-03 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2025-04 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2025-05 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2025-06 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2025-07 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2025-08 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2025-09 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2025-10 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2025-11 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2025-12 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2026-01 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2026-02 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2026-03 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2026-04 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2026-05 | 0 | 0 | 0 | 0 | 未定义 | 未定义 |\n| 2026-06 | 1 | 1 | 2000 | 0 | 0.0 | 2000.00 |\n| 2026-07 | 6 | 6 | 15500 | 0 | 0.0 | 2583.33（约） |\n| 2026-08 | 6 | 10 | 47550 | 4 | 0.6667（约） | 4755.00 |",
+        "question": "青禾2024年9月至2026年8月，每个自然月分别列出月末付费会员购买人数、月末付费会员有效订单数、月末付费会员净销售额、月末付费会员复购人数、月末付费会员复购率、月末付费会员订单均额，按现有P1暂定试算，全门店全渠道，金额分、均额分/单、比例小数。",
+        "trace_id": "adfb7f2e-85d0-42a0-a7f9-95f6df7cfc61",
+        "elapsed_seconds": 31.255,
+        "model_usage": {
+          "prompt_tokens": 28087,
+          "completion_tokens": 5638,
+          "total_tokens": 33725
+        },
+        "model_calls_with_usage": 2
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "paid_paraphrase",
+      "question": "青禾2026年8月，按P1在月末挑出有资格账户，再看他们整月全渠道全门店的有效购买：买过的账户数、订单笔数、净额、至少买两次的账户数、后者占购买账户的比例、每单平均净额是多少？金额分、均额分/单。",
+      "expected": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_paid_buyer_count",
+            "monthly_paid_order_count",
+            "monthly_paid_sales_cents",
+            "monthly_paid_repeat_buyer_count",
+            "monthly_paid_repeat_rate",
+            "monthly_paid_avg_order_value"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "columns": [
+          "monthly_paid_buyer_count",
+          "monthly_paid_order_count",
+          "monthly_paid_sales_cents",
+          "monthly_paid_repeat_buyer_count",
+          "monthly_paid_repeat_rate",
+          "monthly_paid_avg_order_value"
+        ],
+        "rows": [
+          [
+            6,
+            10,
+            47550,
+            4,
+            "0.6666666666666666666666666667",
+            "4755"
+          ]
+        ],
+        "units": {
+          "monthly_paid_buyer_count": "count",
+          "monthly_paid_order_count": "count",
+          "monthly_paid_sales_cents": "cents",
+          "monthly_paid_repeat_buyer_count": "count",
+          "monthly_paid_repeat_rate": "ratio",
+          "monthly_paid_avg_order_value": "cents_per_order"
+        },
+        "data_version": "qinghe-w03-20260923-small",
+        "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+        "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39"
+      },
+      "actual": {
+        "status": "ok",
+        "intent": {
+          "metrics": [
+            "monthly_paid_buyer_count",
+            "monthly_paid_order_count",
+            "monthly_paid_sales_cents",
+            "monthly_paid_repeat_buyer_count",
+            "monthly_paid_repeat_rate",
+            "monthly_paid_avg_order_value"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "sql": "WITH sma_10003_cte AS (\n  SELECT\n    DATE_TRUNC('month', month_start) AS metric_time__month\n    , monthly_paid_buyer_count AS __monthly_paid_buyer_count\n    , monthly_paid_order_count AS __monthly_paid_order_count\n    , monthly_paid_sales_cents AS __monthly_paid_sales_cents\n    , monthly_paid_repeat_buyer_count AS __monthly_paid_repeat_buyer_count\n  FROM \"data\".\"main\".\"monthly_paid_summary\" monthly_paid_model_src_10000\n)\n\nSELECT\n  MAX(subq_10.monthly_paid_buyer_count) AS monthly_paid_buyer_count\n  , MAX(subq_10.monthly_paid_order_count) AS monthly_paid_order_count\n  , MAX(subq_10.monthly_paid_sales_cents) AS monthly_paid_sales_cents\n  , MAX(subq_10.monthly_paid_repeat_buyer_count) AS monthly_paid_repeat_buyer_count\n  , MAX(subq_17.monthly_paid_repeat_rate) AS monthly_paid_repeat_rate\n  , MAX(subq_17.monthly_paid_avg_order_value) AS monthly_paid_avg_order_value\nFROM (\n  SELECT\n    SUM(__monthly_paid_buyer_count) AS monthly_paid_buyer_count\n    , SUM(__monthly_paid_order_count) AS monthly_paid_order_count\n    , SUM(__monthly_paid_sales_cents) AS monthly_paid_sales_cents\n    , SUM(__monthly_paid_repeat_buyer_count) AS monthly_paid_repeat_buyer_count\n  FROM sma_10003_cte\n  WHERE metric_time__month BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_10\nCROSS JOIN (\n  SELECT\n    CAST(SUM(__monthly_paid_repeat_buyer_count) AS DOUBLE) / CAST(NULLIF(SUM(__monthly_paid_buyer_count), 0) AS DOUBLE) AS monthly_paid_repeat_rate\n    , CAST(SUM(__monthly_paid_sales_cents) AS DOUBLE) / CAST(NULLIF(SUM(__monthly_paid_order_count), 0) AS DOUBLE) AS monthly_paid_avg_order_value\n  FROM sma_10003_cte\n  WHERE metric_time__month BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_17",
+        "columns": [
+          "monthly_paid_buyer_count",
+          "monthly_paid_order_count",
+          "monthly_paid_sales_cents",
+          "monthly_paid_repeat_buyer_count",
+          "monthly_paid_repeat_rate",
+          "monthly_paid_avg_order_value"
+        ],
+        "rows": [
+          [
+            6,
+            10,
+            47550,
+            4,
+            0.6666666666666666,
+            4755.0
+          ]
+        ],
+        "seconds": 0.107,
+        "units": {
+          "monthly_paid_buyer_count": "count",
+          "monthly_paid_order_count": "count",
+          "monthly_paid_sales_cents": "cents",
+          "monthly_paid_repeat_buyer_count": "count",
+          "monthly_paid_repeat_rate": "ratio",
+          "monthly_paid_avg_order_value": "cents_per_order"
+        },
+        "data_version": "qinghe-w03-20260923-small",
+        "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+        "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+        "answer": "统计范围：青禾2026年8月整月，全渠道、全门店；按P1在月末筛选有资格的CRM会员账户，再统计这些账户当月全渠道全门店的有效购买。\n\n| 指标 | 结果 |\n|---|---:|\n| 购买账户数 | 6个CRM会员账户 |\n| 有效订单数 | 10单 |\n| 净销售额 | 47550分 |\n| 至少买两次的账户数 | 4个CRM会员账户 |\n| 复购账户占购买账户比例 | 4÷6≈0.6667 |\n| 每单平均净额 | 4755.00分/单 |\n\n复购账户指同一自然月内至少有两笔有效订单的月末付费会员账户。\n\n本结果按P1暂定口径试算；门店日期规则用于总部月报仍待书面确认。",
+        "question": "青禾2026年8月，按P1在月末挑出有资格账户，再看他们整月全渠道全门店的有效购买：买过的账户数、订单笔数、净额、至少买两次的账户数、后者占购买账户的比例、每单平均净额是多少？金额分、均额分/单。",
+        "trace_id": "ebcd9fe6-12e2-4f69-9f32-43a0849c8ed7",
+        "elapsed_seconds": 16.098,
+        "model_usage": {
+          "prompt_tokens": 16602,
+          "completion_tokens": 2295,
+          "total_tokens": 18897
+        },
+        "model_calls_with_usage": 2
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "reject_paid_group",
+      "question": "青禾2026年8月P1月末付费会员复购率按会员归属门店编号分组。",
+      "expected": {
+        "status": "unsupported",
+        "intent": {
+          "metrics": [
+            "monthly_paid_repeat_rate"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "filters": []
+        }
+      },
+      "actual": {
+        "status": "unsupported",
+        "reason": "月末付费会员复购率目前仅支持完整自然月的全门店汇总或按月展示，不支持按会员归属门店编号拆分。可以改为查询2026年8月全门店汇总，或查询连续完整自然月并按月展示。",
+        "intent": {
+          "status": "unsupported",
+          "reason": "月末付费会员复购率目前仅支持完整自然月的全门店汇总或按月展示，不支持按会员归属门店编号拆分。可以改为查询2026年8月全门店汇总，或查询连续完整自然月并按月展示。",
+          "metrics": [
+            "monthly_paid_repeat_rate"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "question": "青禾2026年8月P1月末付费会员复购率按会员归属门店编号分组。",
+        "trace_id": "e39f060e-0901-4597-a715-d78fc2812a65",
+        "elapsed_seconds": 3.477,
+        "model_usage": {
+          "prompt_tokens": 12249,
+          "completion_tokens": 476,
+          "total_tokens": 12725
+        },
+        "model_calls_with_usage": 1
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "reject_undefined_metric",
+      "question": "青禾2026年8月的净利润是多少？我要利润，不是净销售额。",
+      "expected": {
+        "status": "unsupported"
+      },
+      "actual": {
+        "status": "unsupported",
+        "reason": "指标目录中没有“净利润”或利润类指标，无法查询该口径；净销售额是实付减退款，并不等于净利润，且用户已明确不要净销售额。",
+        "intent": {
+          "status": "unsupported",
+          "reason": "指标目录中没有“净利润”或利润类指标，无法查询该口径；净销售额是实付减退款，并不等于净利润，且用户已明确不要净销售额。",
+          "metrics": [],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "question": "青禾2026年8月的净利润是多少？我要利润，不是净销售额。",
+        "trace_id": "d23723e7-bbaf-4888-b597-e7fb3ef060ca",
+        "elapsed_seconds": 2.687,
+        "model_usage": {
+          "prompt_tokens": 12244,
+          "completion_tokens": 287,
+          "total_tokens": 12531
+        },
+        "model_calls_with_usage": 1
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "nonexistent_filter",
+      "question": "青禾2026年8月仅查成交门店编号S999999的创建订单数，不替换门店。",
+      "expected": {
+        "status": "unsupported",
+        "allowed_statuses": [
+          "unsupported",
+          "clarify"
+        ],
+        "boundary_kind": "nonexistent_filter_value",
+        "reason": "编号无法定位"
+      },
+      "actual": {
+        "status": "unsupported",
+        "reason": "当前数据集没有成交门店编号 S999999（可查询的成交门店仅有 S01、S02、S03），因此无法按该门店统计 2026 年 8 月的创建订单数，且不能替换为其他门店。",
+        "intent": {
+          "status": "unsupported",
+          "reason": "当前数据集没有成交门店编号 S999999（可查询的成交门店仅有 S01、S02、S03），因此无法按该门店统计 2026 年 8 月的创建订单数，且不能替换为其他门店。",
+          "metrics": [
+            "order_count"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": [
+            {
+              "field": "store",
+              "op": "eq",
+              "value": "S999999"
+            }
+          ]
+        },
+        "question": "青禾2026年8月仅查成交门店编号S999999的创建订单数，不替换门店。",
+        "trace_id": "c76e382f-bc00-49ac-ab6b-b0a25906a1d9",
+        "elapsed_seconds": 2.785,
+        "model_usage": {
+          "prompt_tokens": 12251,
+          "completion_tokens": 370,
+          "total_tokens": 12621
+        },
+        "model_calls_with_usage": 1
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "clarify_year",
+      "question": "青禾7月和8月按月列出月内复购率。",
+      "expected": {
+        "status": "clarify"
+      },
+      "actual": {
+        "status": "clarify",
+        "reason": "请确认“7月和8月”指哪一年；月内复购率需按完整自然月查询，且跨多月按月展示。",
+        "intent": {
+          "status": "clarify",
+          "reason": "请确认“7月和8月”指哪一年；月内复购率需按完整自然月查询，且跨多月按月展示。",
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "",
+          "end": "",
+          "group_by": [
+            "metric_time__month"
+          ],
+          "filters": []
+        },
+        "question": "青禾7月和8月按月列出月内复购率。",
+        "trace_id": "ff462c56-afdd-4d98-8bec-d84d8be63a52",
+        "elapsed_seconds": 3.488,
+        "model_usage": {
+          "prompt_tokens": 12241,
+          "completion_tokens": 485,
+          "total_tokens": 12726
+        },
+        "model_calls_with_usage": 1
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    }
+  ]
+}

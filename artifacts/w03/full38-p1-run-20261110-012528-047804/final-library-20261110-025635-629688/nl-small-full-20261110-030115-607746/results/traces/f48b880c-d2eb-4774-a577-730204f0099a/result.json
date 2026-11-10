@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "selling_store_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  COUNT(DISTINCT CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN store_id ELSE NULL END) AS selling_store_count\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "selling_store_count"
+  ],
+  "rows": [
+    [
+      2
+    ]
+  ],
+  "seconds": 0.063,
+  "units": {
+    "selling_store_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "在青禾当前测试数据范围内，2026年8月全门店汇总、不分组统计：成交门店数为2家。口径为当月至少有一笔有效订单的不同订单归属门店数；本结果仅反映当前测试库覆盖范围，未展示具体门店明细。",
+  "question": "请只查询青禾2026年8月的成交门店数，全门店汇总，不分组。",
+  "trace_id": "f48b880c-d2eb-4774-a577-730204f0099a",
+  "elapsed_seconds": 8.848,
+  "model_usage": {
+    "prompt_tokens": 14615,
+    "completion_tokens": 641,
+    "total_tokens": 15256
+  },
+  "model_calls_with_usage": 2
+}

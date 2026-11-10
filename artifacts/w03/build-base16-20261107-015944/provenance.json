@@ -1,0 +1,177 @@
+{
+  "skill_sha256": "970aac634f01d8280dafa90c6790b2edc1bd3590d5f2fa143ade7af914c8b35b",
+  "input_hashes": {
+    "business_model.md": "5cadd6aa55a0dc02a4a193d0e00f95686e7067e0ad9cb877b4fca950538bacbf",
+    "00_材料说明.md": "c60776a6a1c030b02b1ce89f773327871c80bb34dca9c486df43c9acb0a6dc28",
+    "01_订单日报说明.md": "976fa129493e6bd2861a58d74df2ba3ad4448ea01a2d25651124222a61cebb67",
+    "02_财务邮件.md": "f81e0ddb5c03dd4eb2d01094816716d8375d03fe883b947ec8297edf8d525557",
+    "03_会员运营周报.md": "25ab933556bf34bef21b528d4c7838c9baad33ae289d59f09501e765080bb492",
+    "04_本期统计确认邮件.md": "c4f847fd90fd0765d37ad22f20d4a4eb0bab90f8543ae0f05d7a3cbee104c4be",
+    "05_数据字典.md": "b4c905ae6d2f4c08e139c695a2868b66ee5047b2b8ea94d6eccba55aebb79c16",
+    "06_任务清单.md": "ed414526217320c5e9ef049cfc1cfb56b670a5af57a57a9450a1e264cd71904d",
+    "07_客户内部沟通.md": "916d0f6d78033aff30dc6053cb58d774bfdefe5e3aa9a4e36ca54f143af3b425",
+    "08_业务目标与工作清单.md": "de9d737c423cc31b2f9d60c9ba8693b9d4257a3aa69b9efedb52674aeb2efe97"
+  },
+  "defined": [
+    "order_count",
+    "paid_order_count",
+    "valid_order_count",
+    "cancelled_order_count",
+    "refund_order_count",
+    "partial_refund_order_count",
+    "full_refund_order_count",
+    "payment_cents",
+    "refund_cents",
+    "net_sales_cents",
+    "gross_cents",
+    "discount_cents",
+    "buyer_count",
+    "refund_buyer_count",
+    "selling_store_count",
+    "valid_order_items"
+  ],
+  "unresolved": [],
+  "business_model_usage": [
+    {
+      "quote": "订单为 paid，且实付减累计退款大于零；取消与全额退款不计",
+      "used_for": [
+        {
+          "kind": "semantic_model",
+          "name": "order"
+        },
+        {
+          "kind": "dimension",
+          "name": "order__status"
+        },
+        {
+          "kind": "metric",
+          "name": "valid_order_count"
+        },
+        {
+          "kind": "metric",
+          "name": "net_sales_cents"
+        },
+        {
+          "kind": "metric",
+          "name": "buyer_count"
+        },
+        {
+          "kind": "metric",
+          "name": "selling_store_count"
+        },
+        {
+          "kind": "metric",
+          "name": "valid_order_items"
+        }
+      ]
+    },
+    {
+      "quote": "金额用整数分；退款按原订单下单日期归属；商品件数为有效订单的原始件数",
+      "used_for": [
+        {
+          "kind": "semantic_model",
+          "name": "order"
+        },
+        {
+          "kind": "dimension",
+          "name": "metric_time__day"
+        },
+        {
+          "kind": "dimension",
+          "name": "metric_time__month"
+        },
+        {
+          "kind": "metric",
+          "name": "payment_cents"
+        },
+        {
+          "kind": "metric",
+          "name": "refund_cents"
+        },
+        {
+          "kind": "metric",
+          "name": "net_sales_cents"
+        },
+        {
+          "kind": "metric",
+          "name": "valid_order_items"
+        }
+      ]
+    },
+    {
+      "quote": "本期会员计数与资格判断的业务粒度；账户可持有多张卡",
+      "used_for": [
+        {
+          "kind": "semantic_model",
+          "name": "member"
+        },
+        {
+          "kind": "metric",
+          "name": "buyer_count"
+        },
+        {
+          "kind": "metric",
+          "name": "refund_buyer_count"
+        }
+      ]
+    },
+    {
+      "quote": "`cards.member_id` 与 `orders.member_id` 均关联 `members.member_id`",
+      "used_for": [
+        {
+          "kind": "semantic_model",
+          "name": "order"
+        },
+        {
+          "kind": "semantic_model",
+          "name": "member"
+        },
+        {
+          "kind": "metric",
+          "name": "buyer_count"
+        },
+        {
+          "kind": "metric",
+          "name": "refund_buyer_count"
+        }
+      ]
+    },
+    {
+      "quote": "成交门店与会员归属门店不同，见 05",
+      "used_for": [
+        {
+          "kind": "derived_model",
+          "name": "store_locations"
+        },
+        {
+          "kind": "derived_model",
+          "name": "home_store_locations"
+        },
+        {
+          "kind": "semantic_model",
+          "name": "store"
+        },
+        {
+          "kind": "semantic_model",
+          "name": "home_store"
+        },
+        {
+          "kind": "dimension",
+          "name": "store__region"
+        },
+        {
+          "kind": "dimension",
+          "name": "store__store_name"
+        },
+        {
+          "kind": "dimension",
+          "name": "home_store__region"
+        },
+        {
+          "kind": "dimension",
+          "name": "home_store__store_name"
+        }
+      ]
+    }
+  ]
+}

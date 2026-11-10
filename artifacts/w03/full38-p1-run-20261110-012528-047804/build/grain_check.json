@@ -1,0 +1,111 @@
+{
+  "passed": true,
+  "items": [
+    {
+      "model": "order_model",
+      "check": "primary_key",
+      "columns": [
+        "order_id"
+      ],
+      "rows": 48,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "order_model",
+      "entity": "member",
+      "target": "member_model",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "order_model",
+      "entity": "store",
+      "target": "selling_store_model",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "order_model",
+      "entity": "home_store",
+      "target": "home_store_model",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "member_model",
+      "check": "primary_key",
+      "columns": [
+        "member_id"
+      ],
+      "rows": 20,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "member_model",
+      "entity": "home_store",
+      "target": "home_store_model",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "selling_store_model",
+      "check": "primary_key",
+      "columns": [
+        "store_id"
+      ],
+      "rows": 3,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "home_store_model",
+      "check": "primary_key",
+      "columns": [
+        "store_id"
+      ],
+      "rows": 3,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "monthly_member_model",
+      "check": "primary_key",
+      "columns": [
+        "member_month_key"
+      ],
+      "rows": 29,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "monthly_member_model",
+      "entity": "member",
+      "target": "member_model",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "monthly_paid_model",
+      "check": "primary_key",
+      "columns": [
+        "month_start"
+      ],
+      "rows": 24,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    }
+  ]
+}

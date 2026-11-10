@@ -1,0 +1,215 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "first_buyer_count",
+      "first_order_sales_cents",
+      "first_order_count",
+      "repeat_order_count"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [
+      "home_store"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  home_store\n  , COUNT(DISTINCT __first_buyer_count) AS first_buyer_count\n  , SUM(__first_order_sales_cents) AS first_order_sales_cents\n  , SUM(__first_order_count) AS first_order_count\n  , SUM(__repeat_order_count) AS repeat_order_count\nFROM (\n  SELECT\n    home_store_id AS home_store\n    , CASE WHEN valid_order_seq = 1 THEN member_id ELSE NULL END AS __first_buyer_count\n    , CASE WHEN valid_order_seq = 1 THEN paid_cents - refund_cents ELSE 0 END AS __first_order_sales_cents\n    , CASE WHEN valid_order_seq = 1 THEN 1 ELSE 0 END AS __first_order_count\n    , CASE WHEN valid_order_seq >= 2 THEN 1 ELSE 0 END AS __repeat_order_count\n  FROM \"data\".\"main\".\"order_fact\" order_model_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-06-01' AND '2026-06-30'\n) subq_8\nGROUP BY\n  home_store",
+  "columns": [
+    "home_store",
+    "first_buyer_count",
+    "first_order_sales_cents",
+    "first_order_count",
+    "repeat_order_count"
+  ],
+  "rows": [
+    [
+      "S05",
+      62,
+      1046388,
+      62,
+      1094
+    ],
+    [
+      "S19",
+      60,
+      1145747,
+      60,
+      1011
+    ],
+    [
+      "S16",
+      66,
+      1070857,
+      66,
+      1060
+    ],
+    [
+      "S11",
+      68,
+      1107197,
+      68,
+      1097
+    ],
+    [
+      "S21",
+      65,
+      1009960,
+      65,
+      1070
+    ],
+    [
+      "S20",
+      61,
+      1069132,
+      61,
+      1020
+    ],
+    [
+      "S22",
+      68,
+      1094955,
+      68,
+      996
+    ],
+    [
+      "S23",
+      61,
+      928580,
+      61,
+      998
+    ],
+    [
+      "S17",
+      54,
+      1110632,
+      54,
+      1065
+    ],
+    [
+      "S12",
+      52,
+      934191,
+      52,
+      940
+    ],
+    [
+      "S15",
+      61,
+      1027042,
+      61,
+      1072
+    ],
+    [
+      "S08",
+      79,
+      1521054,
+      79,
+      1124
+    ],
+    [
+      "S01",
+      61,
+      1028386,
+      61,
+      1096
+    ],
+    [
+      "S03",
+      65,
+      867662,
+      65,
+      951
+    ],
+    [
+      "S07",
+      69,
+      1110778,
+      69,
+      1042
+    ],
+    [
+      "S14",
+      68,
+      1041163,
+      68,
+      1005
+    ],
+    [
+      "S10",
+      60,
+      1033250,
+      60,
+      1064
+    ],
+    [
+      "S09",
+      68,
+      1247844,
+      68,
+      1049
+    ],
+    [
+      "S06",
+      69,
+      1142156,
+      69,
+      1027
+    ],
+    [
+      "S24",
+      72,
+      1289540,
+      72,
+      1001
+    ],
+    [
+      "S18",
+      58,
+      1111822,
+      58,
+      1052
+    ],
+    [
+      "S02",
+      74,
+      1213345,
+      74,
+      1057
+    ],
+    [
+      "S13",
+      51,
+      957051,
+      51,
+      1082
+    ],
+    [
+      "S04",
+      59,
+      1082933,
+      59,
+      1086
+    ]
+  ],
+  "seconds": 0.236,
+  "units": {
+    "first_buyer_count": "count",
+    "first_order_sales_cents": "cents",
+    "first_order_count": "count",
+    "repeat_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "统计范围：青禾当前测试数据范围内，2026年6月，按会员归属门店编号分组。口径：先在全测试覆盖期（2024-09-01至2026-09-01）的有效订单中，按每个CRM会员账户的下单日期升序、同日按订单号排序确定首笔有效订单，再筛选首单日期落入2026年6月的记录；观测期首购会员数为这些账户数，首单净销售额为这些首单的净销售额合计（单位：分），首单数为这些首单的订单数，后续购买订单数为全覆盖期内第二笔及以后、且订单日期落入2026年6月的有效订单数，不是月内复购账户数。\n\n| 会员归属门店编号 | 观测期首购会员数（账户） | 首单净销售额（分） | 首单数（单） | 后续购买订单数（单） |\n|---|---:|---:|---:|---:|\n| S01 | 61 | 1028386 | 61 | 1096 |\n| S02 | 74 | 1213345 | 74 | 1057 |\n| S03 | 65 | 867662 | 65 | 951 |\n| S04 | 59 | 1082933 | 59 | 1086 |\n| S05 | 62 | 1046388 | 62 | 1094 |\n| S06 | 69 | 1142156 | 69 | 1027 |\n| S07 | 69 | 1110778 | 69 | 1042 |\n| S08 | 79 | 1521054 | 79 | 1124 |\n| S09 | 68 | 1247844 | 68 | 1049 |\n| S10 | 60 | 1033250 | 60 | 1064 |\n| S11 | 68 | 1107197 | 68 | 1097 |\n| S12 | 52 | 934191 | 52 | 940 |\n| S13 | 51 | 957051 | 51 | 1082 |\n| S14 | 68 | 1041163 | 68 | 1005 |\n| S15 | 61 | 1027042 | 61 | 1072 |\n| S16 | 66 | 1070857 | 66 | 1060 |\n| S17 | 54 | 1110632 | 54 | 1065 |\n| S18 | 58 | 1111822 | 58 | 1052 |\n| S19 | 60 | 1145747 | 60 | 1011 |\n| S20 | 61 | 1069132 | 61 | 1020 |\n| S21 | 65 | 1009960 | 65 | 1070 |\n| S22 | 68 | 1094955 | 68 | 996 |\n| S23 | 61 | 928580 | 61 | 998 |\n| S24 | 72 | 1289540 | 72 | 1001 |\n\n表中金额均按分展示，未换算为元。",
+  "question": "比较青禾2026年6月各会员归属门店编号的观测期首购会员数、首单净销售额、首单数、后续购买订单数。先在全覆盖有效历史确定首单，金额使用分。",
+  "trace_id": "90a49593-f534-47d1-b9b8-2b4acc06b3f2",
+  "elapsed_seconds": 25.752,
+  "model_usage": {
+    "prompt_tokens": 23398,
+    "completion_tokens": 4049,
+    "total_tokens": 27447
+  },
+  "model_calls_with_usage": 2
+}

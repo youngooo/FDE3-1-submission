@@ -1,0 +1,20 @@
+{
+  "order_facts": [
+    "order_id"
+  ],
+  "member_accounts": [
+    "member_id"
+  ],
+  "selling_store_dimensions": [
+    "store_id"
+  ],
+  "home_store_dimensions": [
+    "store_id"
+  ],
+  "monthly_member_orders": [
+    "member_month_key"
+  ],
+  "paid_monthly_member_orders": [
+    "paid_month_member_key"
+  ]
+}

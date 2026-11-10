@@ -1,0 +1,12 @@
+{
+  "passed": false,
+  "errors": [
+    {
+      "metric_id": "discount_cents",
+      "source": {
+        "file": "01_订单日报说明.md",
+        "quote": "paid 订单原价减实付的金额合计，退款不冲减原优惠金额；单位分。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "status": "unsupported",
+  "reason": "指标目录中没有“净利润”或利润类指标，无法查询该口径；净销售额是实付减退款，并不等于净利润，且用户已明确不要净销售额。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "指标目录中没有“净利润”或利润类指标，无法查询该口径；净销售额是实付减退款，并不等于净利润，且用户已明确不要净销售额。",
+    "metrics": [],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "青禾2026年8月的净利润是多少？我要利润，不是净销售额。",
+  "trace_id": "d23723e7-bbaf-4888-b597-e7fb3ef060ca",
+  "elapsed_seconds": 2.687,
+  "model_usage": {
+    "prompt_tokens": 12244,
+    "completion_tokens": 287,
+    "total_tokens": 12531
+  },
+  "model_calls_with_usage": 1
+}

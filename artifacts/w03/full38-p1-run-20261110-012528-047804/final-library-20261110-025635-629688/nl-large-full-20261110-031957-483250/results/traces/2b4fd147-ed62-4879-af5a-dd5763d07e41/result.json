@@ -1,0 +1,24 @@
+{
+  "status": "clarify",
+  "reason": "查询“净销售额”需要明确统计时间范围，但本次问题尚未指定时间。请补充起止日期或具体月份（例如某个完整月份）；当前数据覆盖 2024-09-01 至 2026-09-01。",
+  "intent": {
+    "status": "clarify",
+    "reason": "查询“净销售额”需要明确统计时间范围，但本次问题尚未指定时间。请补充起止日期或具体月份（例如某个完整月份）；当前数据覆盖 2024-09-01 至 2026-09-01。",
+    "metrics": [
+      "net_sales_cents"
+    ],
+    "start": "",
+    "end": "",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "帮我查一下青禾净销售额，时间还没指定。",
+  "trace_id": "2b4fd147-ed62-4879-af5a-dd5763d07e41",
+  "elapsed_seconds": 1.898,
+  "model_usage": {
+    "prompt_tokens": 12533,
+    "completion_tokens": 148,
+    "total_tokens": 12681
+  },
+  "model_calls_with_usage": 1
+}

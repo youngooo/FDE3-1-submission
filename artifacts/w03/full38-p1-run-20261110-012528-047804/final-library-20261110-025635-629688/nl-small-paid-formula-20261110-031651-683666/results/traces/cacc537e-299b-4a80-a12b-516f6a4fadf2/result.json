@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_paid_avg_order_value"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(SUM(monthly_paid_sales_cents) AS DOUBLE) / CAST(NULLIF(SUM(monthly_paid_order_count), 0) AS DOUBLE) AS monthly_paid_avg_order_value\nFROM \"data\".\"main\".\"monthly_paid_summary\" monthly_paid_model_src_10000\nWHERE DATE_TRUNC('month', month_start) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "monthly_paid_avg_order_value"
+  ],
+  "rows": [
+    [
+      4755.0
+    ]
+  ],
+  "seconds": 0.062,
+  "units": {
+    "monthly_paid_avg_order_value": "cents_per_order"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "查询范围为青禾2026年8月整月、全门店汇总、全渠道订单且不分组。月末付费会员订单均额为4755.00分/单，口径为“月末付费会员净销售额÷月末付费会员有效订单数”。本结果按P1暂定口径试算；门店日期规则用于总部月报仍待书面确认。",
+  "question": "请只查询青禾2026年8月的月末付费会员订单均额，全门店汇总，不分组。结果单位分/单。按现有P1暂定试算口径，月末选账户，统计整月全渠道订单，并注明待确认。",
+  "trace_id": "cacc537e-299b-4a80-a12b-516f6a4fadf2",
+  "elapsed_seconds": 8.963,
+  "model_usage": {
+    "prompt_tokens": 15079,
+    "completion_tokens": 951,
+    "total_tokens": 16030
+  },
+  "model_calls_with_usage": 2
+}

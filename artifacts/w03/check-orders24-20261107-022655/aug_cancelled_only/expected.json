@@ -1,0 +1,31 @@
+[
+  {
+    "group": [],
+    "metrics": {
+      "order_count": 2,
+      "paid_order_count": 0,
+      "valid_order_count": 0,
+      "cancelled_order_count": 2,
+      "refund_order_count": 0,
+      "partial_refund_order_count": 0,
+      "full_refund_order_count": 0,
+      "payment_cents": 0,
+      "refund_cents": 0,
+      "net_sales_cents": 0,
+      "gross_cents": 0,
+      "discount_cents": 0,
+      "buyer_count": 0,
+      "refund_buyer_count": 0,
+      "selling_store_count": 0,
+      "valid_order_items": 0,
+      "avg_order_value": null,
+      "avg_buyer_value": null,
+      "purchase_frequency": null,
+      "refund_amount_rate": null,
+      "cancel_rate": "1",
+      "refund_order_rate": null,
+      "discount_rate": null,
+      "items_per_order": null
+    }
+  }
+]

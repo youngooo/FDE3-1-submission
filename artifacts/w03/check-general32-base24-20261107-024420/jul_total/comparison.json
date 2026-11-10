@@ -1,0 +1,32 @@
+{
+  "id": "jul_total",
+  "passed": false,
+  "expected_groups": 1,
+  "checked_metrics": 24,
+  "errors": [
+    {
+      "kind": "unit_mismatch",
+      "metric_id": "avg_order_value",
+      "expected": "cents_per_order",
+      "actual": "cents/order"
+    },
+    {
+      "kind": "unit_mismatch",
+      "metric_id": "avg_buyer_value",
+      "expected": "cents_per_account",
+      "actual": "cents/account"
+    },
+    {
+      "kind": "unit_mismatch",
+      "metric_id": "purchase_frequency",
+      "expected": "orders_per_account",
+      "actual": "orders/account"
+    },
+    {
+      "kind": "unit_mismatch",
+      "metric_id": "items_per_order",
+      "expected": "items_per_order",
+      "actual": "items/order"
+    }
+  ]
+}

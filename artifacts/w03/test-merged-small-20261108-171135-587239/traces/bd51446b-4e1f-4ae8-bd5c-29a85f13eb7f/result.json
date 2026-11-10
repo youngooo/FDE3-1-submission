@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "paid_order_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN status = 'paid' THEN 1 ELSE 0 END) AS paid_order_count\nFROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "paid_order_count"
+  ],
+  "rows": [
+    [
+      30
+    ]
+  ],
+  "seconds": 0.055,
+  "units": {
+    "paid_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "answer": "青禾2026年8月（2026-08-01含至2026-09-01不含）全门店支付订单数为30单。按原订单下单日期归属统计；统计口径为状态为paid的订单，包含后来发生全额退款的订单。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的支付订单数，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。",
+  "trace_id": "bd51446b-4e1f-4ae8-bd5c-29a85f13eb7f",
+  "elapsed_seconds": 7.401,
+  "model_usage": {
+    "prompt_tokens": 12953,
+    "completion_tokens": 592,
+    "total_tokens": 13545
+  },
+  "model_calls_with_usage": 2
+}

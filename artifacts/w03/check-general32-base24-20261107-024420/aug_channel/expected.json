@@ -1,0 +1,64 @@
+[
+  {
+    "group": [
+      "小程序"
+    ],
+    "metrics": {
+      "order_count": 16,
+      "paid_order_count": 15,
+      "valid_order_count": 13,
+      "cancelled_order_count": 1,
+      "refund_order_count": 2,
+      "partial_refund_order_count": 0,
+      "full_refund_order_count": 2,
+      "payment_cents": 62700,
+      "refund_cents": 14000,
+      "net_sales_cents": 48700,
+      "gross_cents": 65800,
+      "discount_cents": 3100,
+      "buyer_count": 13,
+      "refund_buyer_count": 2,
+      "selling_store_count": 2,
+      "valid_order_items": 15,
+      "avg_order_value": "3746.153846153846153846153846",
+      "avg_buyer_value": "3746.153846153846153846153846",
+      "purchase_frequency": "1",
+      "refund_amount_rate": "0.2232854864433811802232854864",
+      "cancel_rate": "0.0625",
+      "refund_order_rate": "0.1333333333333333333333333333",
+      "discount_rate": "0.04711246200607902735562310030",
+      "items_per_order": "1.153846153846153846153846154"
+    }
+  },
+  {
+    "group": [
+      "门店"
+    ],
+    "metrics": {
+      "order_count": 16,
+      "paid_order_count": 15,
+      "valid_order_count": 14,
+      "cancelled_order_count": 1,
+      "refund_order_count": 2,
+      "partial_refund_order_count": 1,
+      "full_refund_order_count": 1,
+      "payment_cents": 56350,
+      "refund_cents": 4750,
+      "net_sales_cents": 51600,
+      "gross_cents": 58450,
+      "discount_cents": 2100,
+      "buyer_count": 14,
+      "refund_buyer_count": 2,
+      "selling_store_count": 2,
+      "valid_order_items": 18,
+      "avg_order_value": "3685.714285714285714285714286",
+      "avg_buyer_value": "3685.714285714285714285714286",
+      "purchase_frequency": "1",
+      "refund_amount_rate": "0.08429458740017746228926353150",
+      "cancel_rate": "0.0625",
+      "refund_order_rate": "0.1333333333333333333333333333",
+      "discount_rate": "0.03592814371257485029940119760",
+      "items_per_order": "1.285714285714285714285714286"
+    }
+  }
+]

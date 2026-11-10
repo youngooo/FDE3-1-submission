@@ -1,0 +1,142 @@
+[
+  {
+    "id": "reject_monthly_store_group",
+    "question": "请将青禾2026年8月完整自然月的月内复购率按订单成交门店编号分组返回。",
+    "expected": {
+      "status": "unsupported",
+      "intent": {
+        "metrics": [
+          "monthly_repeat_rate"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "filters": []
+      }
+    },
+    "expected_source": {
+      "materials": [
+        "materials/w03/03_会员运营周报.md",
+        "materials/w03/05_数据字典.md"
+      ],
+      "method": "Group original effective orders by month and account; count >=1 and >=2 orders, then divide with strict null denominator. Expected refusal is a rule-based boundary decision, not an empty numeric result.",
+      "source_csv": "original CSV only; hashes in generation.json",
+      "rejection_policy": "Group-by on a full-month-only metric is unsupported. Original requested grouping is retained in requested_intent, but is not required in a non-executed refusal. Judge still checks status, metrics, dates, filters and absence of numeric rows. Human review must check the refusal addresses the requested restriction and does not advertise other prohibited dimensions."
+    },
+    "requested_intent": {
+      "metrics": [
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [
+        "store"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_monthly_home_store_group",
+    "question": "请将青禾2026年8月完整自然月的月内复购率按会员归属门店编号分组返回。",
+    "expected": {
+      "status": "unsupported",
+      "intent": {
+        "metrics": [
+          "monthly_repeat_rate"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "filters": []
+      }
+    },
+    "expected_source": {
+      "materials": [
+        "materials/w03/03_会员运营周报.md",
+        "materials/w03/05_数据字典.md"
+      ],
+      "method": "Group original effective orders by month and account; count >=1 and >=2 orders, then divide with strict null denominator. Expected refusal is a rule-based boundary decision, not an empty numeric result.",
+      "source_csv": "original CSV only; hashes in generation.json",
+      "rejection_policy": "Group-by on a full-month-only metric is unsupported. Original requested grouping is retained in requested_intent, but is not required in a non-executed refusal. Judge still checks status, metrics, dates, filters and absence of numeric rows. Human review must check the refusal addresses the requested restriction and does not advertise other prohibited dimensions."
+    },
+    "requested_intent": {
+      "metrics": [
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [
+        "home_store"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_monthly_member__tier_group",
+    "question": "请将青禾2026年8月完整自然月的月内复购率按会员等级分组返回。",
+    "expected": {
+      "status": "unsupported",
+      "intent": {
+        "metrics": [
+          "monthly_repeat_rate"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "filters": []
+      }
+    },
+    "expected_source": {
+      "materials": [
+        "materials/w03/03_会员运营周报.md",
+        "materials/w03/05_数据字典.md"
+      ],
+      "method": "Group original effective orders by month and account; count >=1 and >=2 orders, then divide with strict null denominator. Expected refusal is a rule-based boundary decision, not an empty numeric result.",
+      "source_csv": "original CSV only; hashes in generation.json",
+      "rejection_policy": "Group-by on a full-month-only metric is unsupported. Original requested grouping is retained in requested_intent, but is not required in a non-executed refusal. Judge still checks status, metrics, dates, filters and absence of numeric rows. Human review must check the refusal addresses the requested restriction and does not advertise other prohibited dimensions."
+    },
+    "requested_intent": {
+      "metrics": [
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [
+        "member__tier"
+      ],
+      "filters": []
+    }
+  },
+  {
+    "id": "reject_monthly_member_group",
+    "question": "请将青禾2026年8月完整自然月的月内复购率按会员账户ID分组返回。",
+    "expected": {
+      "status": "unsupported",
+      "intent": {
+        "metrics": [
+          "monthly_repeat_rate"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "filters": []
+      }
+    },
+    "expected_source": {
+      "materials": [
+        "materials/w03/03_会员运营周报.md",
+        "materials/w03/05_数据字典.md"
+      ],
+      "method": "Group original effective orders by month and account; count >=1 and >=2 orders, then divide with strict null denominator. Expected refusal is a rule-based boundary decision, not an empty numeric result.",
+      "source_csv": "original CSV only; hashes in generation.json",
+      "rejection_policy": "Group-by on a full-month-only metric is unsupported. Original requested grouping is retained in requested_intent, but is not required in a non-executed refusal. Judge still checks status, metrics, dates, filters and absence of numeric rows. Human review must check the refusal addresses the requested restriction and does not advertise other prohibited dimensions."
+    },
+    "requested_intent": {
+      "metrics": [
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "group_by": [
+        "member"
+      ],
+      "filters": []
+    }
+  }
+]

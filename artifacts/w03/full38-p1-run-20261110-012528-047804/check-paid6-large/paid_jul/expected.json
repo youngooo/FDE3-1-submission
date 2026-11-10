@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "months": {
+    "2026-07-01": {
+      "monthly_paid_buyer_count": 3566,
+      "monthly_paid_order_count": 6074,
+      "monthly_paid_sales_cents": 103238748,
+      "monthly_paid_repeat_buyer_count": 1529,
+      "monthly_paid_repeat_rate": "0.4287717330342120022434099832",
+      "monthly_paid_avg_order_value": "16996.83042476127757655581166"
+    }
+  },
+  "reason_contains": null
+}

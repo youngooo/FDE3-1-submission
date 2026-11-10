@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "repeat_order_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN valid_order_seq >= 2 THEN 1 ELSE 0 END) AS repeat_order_count\nFROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "repeat_order_count"
+  ],
+  "rows": [
+    [
+      29918
+    ]
+  ],
+  "seconds": 0.199,
+  "units": {
+    "repeat_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f",
+  "answer": "青禾客户范围内，2026年8月（2026-08-01含至2026-09-01不含）的观测期后续购买订单数为 29,918 单。统计范围覆盖全部门店、不按维度分组，也未额外按门店筛选；这里的门店指订单成交门店，本次没有按会员归属门店作条件。\n\n口径：在完整测试覆盖历史（2024-09-01至2026-09-01）内，按CRM会员账户汇总其有效订单并排序，取首单之后的第二笔及以后有效订单，再按订单日期落入8月窗口计数。该指标是订单数，不是月内复购人数；订单数按“单”计。本次结果未返回金额指标，不涉及元/分换算。\n\n限制：结果仅列出汇总值，未提供门店、地区等分组明细，因此不能据此拆分各门店或地区贡献，也不能据此判断某分组为零。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的观测期后续购买订单数，全门店，不按维度分组。首单在完整测试覆盖历史内按有效订单确定，再筛选到8月；金额保留分。",
+  "trace_id": "d2d9ff10-c0ac-463e-bab0-ece8a5e236a6",
+  "elapsed_seconds": 9.32,
+  "model_usage": {
+    "prompt_tokens": 11769,
+    "completion_tokens": 710,
+    "total_tokens": 12479
+  },
+  "model_calls_with_usage": 2
+}

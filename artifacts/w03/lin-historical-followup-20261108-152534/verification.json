@@ -1,0 +1,17 @@
+{
+  "status": "ok",
+  "archive": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/lin-historical-followup-20261108-152534",
+  "export_verified": false,
+  "business_questions_resolved": false,
+  "model_called": false,
+  "documents": {
+    "interview_notes.md": {
+      "before": "31f75b58697b0db2a3c28031ef3c0174ff9e6a215366df6a8f9cf860558d397e",
+      "after": "0f0561a7b7d98a69ef32244a0fc22c2b239402c81ad1ae37b6911c0c3ccd4342"
+    },
+    "model_changes.md": {
+      "before": "ea9a927f0d3bd66175093ae739319c67b66b5d7da302c42702b31ad48e2c32a9",
+      "after": "3c0464aebaac98b338f19512f3d65a25f456586d39cfdb227729e48b53ee080e"
+    }
+  }
+}

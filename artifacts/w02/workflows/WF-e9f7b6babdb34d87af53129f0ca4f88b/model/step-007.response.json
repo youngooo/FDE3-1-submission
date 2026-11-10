@@ -1,0 +1,22 @@
+{
+  "message": {
+    "role": "assistant",
+    "content": "收到。接下来查看王经理侧候选原文，先看验收材料与权限边界。",
+    "tool_calls": [
+      {
+        "index": 0,
+        "id": "call_00_RFYbBMbMHeJFFBmzsTYt6564",
+        "type": "function",
+        "function": {
+          "name": "show_evidence",
+          "arguments": "{\"claim_ids\": [\"CLM-001-0026\", \"CLM-001-0027\", \"CLM-001-0028\", \"CLM-001-0029\", \"CLM-001-0032\"]}"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "prompt_tokens": 32371,
+    "completion_tokens": 338,
+    "total_tokens": 32709
+  }
+}

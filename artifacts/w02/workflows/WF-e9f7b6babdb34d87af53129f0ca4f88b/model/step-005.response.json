@@ -1,0 +1,22 @@
+{
+  "message": {
+    "role": "assistant",
+    "content": "收到。按 FDE 指示交叉核查陈姐侧的多卡与日期陈述，先看原文。",
+    "tool_calls": [
+      {
+        "index": 0,
+        "id": "call_00_IgfXZKl1QvAu45MghpBz4486",
+        "type": "function",
+        "function": {
+          "name": "show_evidence",
+          "arguments": "{\"claim_ids\": [\"CLM-001-0023\", \"CLM-001-0020\", \"CLM-001-0021\", \"CLM-001-0022\", \"CLM-001-0024\"]}"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "prompt_tokens": 28418,
+    "completion_tokens": 235,
+    "total_tokens": 28653
+  }
+}

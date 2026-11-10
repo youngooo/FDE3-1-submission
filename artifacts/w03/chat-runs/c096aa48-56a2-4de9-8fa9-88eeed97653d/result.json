@@ -1,0 +1,24 @@
+{
+  "status": "unsupported",
+  "reason": "月内复购率（monthly_repeat_rate）的统计口径仅支持完整自然月且为全门店口径，无法按 2026-08-01 至 2026-08-16 前这 15 天的部分区间给出结果。可改为查询完整自然月，例如 2026-08-01 至 2026-09-01 前。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "月内复购率（monthly_repeat_rate）的统计口径仅支持完整自然月且为全门店口径，无法按 2026-08-01 至 2026-08-16 前这 15 天的部分区间给出结果。可改为查询完整自然月，例如 2026-08-01 至 2026-09-01 前。",
+    "metrics": [
+      "monthly_repeat_rate"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-08-16",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "青禾客户 2026 年 8 月 1 日至 8 月 15 日（包含 15 日，即 2026-08-01 至 2026-08-16 前）、全门店的月内复购率是多少？只要这 15 天的结果，不要扩大到整个 8 月。如该指标口径只支持完整自然月，请明确说明无法按 15 天部分区间给出。",
+  "trace_id": "c096aa48-56a2-4de9-8fa9-88eeed97653d",
+  "elapsed_seconds": 2.976,
+  "model_usage": {
+    "prompt_tokens": 13546,
+    "completion_tokens": 385,
+    "total_tokens": 13931
+  },
+  "model_calls_with_usage": 1
+}

@@ -1,0 +1,24 @@
+{
+  "status": "unsupported",
+  "reason": "月末付费会员复购率目前仅支持完整自然月的全门店汇总或按月展示，不支持按会员归属门店编号拆分。可以改为查询2026年8月全门店汇总，或查询连续完整自然月并按月展示。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "月末付费会员复购率目前仅支持完整自然月的全门店汇总或按月展示，不支持按会员归属门店编号拆分。可以改为查询2026年8月全门店汇总，或查询连续完整自然月并按月展示。",
+    "metrics": [
+      "monthly_paid_repeat_rate"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "青禾2026年8月P1月末付费会员复购率按会员归属门店编号分组。",
+  "trace_id": "e39f060e-0901-4597-a715-d78fc2812a65",
+  "elapsed_seconds": 3.477,
+  "model_usage": {
+    "prompt_tokens": 12249,
+    "completion_tokens": 476,
+    "total_tokens": 12725
+  },
+  "model_calls_with_usage": 1
+}

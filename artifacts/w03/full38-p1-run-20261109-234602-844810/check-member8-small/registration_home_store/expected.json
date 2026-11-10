@@ -1,0 +1,29 @@
+{
+  "status": "ok",
+  "groups": [
+    {
+      "group": [
+        "S01"
+      ],
+      "metrics": {
+        "new_member_count": 9
+      }
+    },
+    {
+      "group": [
+        "S02"
+      ],
+      "metrics": {
+        "new_member_count": 9
+      }
+    },
+    {
+      "group": [
+        "S03"
+      ],
+      "metrics": {
+        "new_member_count": 2
+      }
+    }
+  ]
+}

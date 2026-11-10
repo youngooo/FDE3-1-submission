@@ -1,0 +1,56 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [
+      "order__channel"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  order__channel\n  , SUM(__order_count) AS order_count\n  , SUM(__valid_order_count) AS valid_order_count\n  , SUM(__net_sales_cents) AS net_sales_cents\nFROM (\n  SELECT\n    channel AS order__channel\n    , 1 AS __order_count\n    , CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END AS __valid_order_count\n    , CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END AS __net_sales_cents\n  FROM \"data\".\"main\".\"order_fact\" order_model_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-06-01' AND '2026-06-30'\n) subq_7\nGROUP BY\n  order__channel",
+  "columns": [
+    "order__channel",
+    "order_count",
+    "valid_order_count",
+    "net_sales_cents"
+  ],
+  "rows": [
+    [
+      "小程序",
+      15194,
+      13372,
+      229553932
+    ],
+    [
+      "门店",
+      15182,
+      13218,
+      225491256
+    ]
+  ],
+  "seconds": 0.123,
+  "units": {
+    "order_count": "count",
+    "valid_order_count": "count",
+    "net_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "统计范围：青禾客户范围内，按下单日期统计2026年6月订单，并按订单渠道分组；结果列出小程序、门店两个渠道。\n\n| 订单渠道 | 创建订单数（单） | 有效订单数（单） | 净销售额（分） |\n|---|---:|---:|---:|\n| 小程序 | 15194 | 13372 | 229553932 |\n| 门店 | 15182 | 13218 | 225491256 |\n\n口径：创建订单数按全部订单统计、每个订单号计一次，包含取消单；有效订单数为状态为 paid 且实付金额减退款金额大于零的订单数，取消和全退不计；净销售额为 paid 订单实付减退款后的合计，取消单不计，按原订单下单日期归属，金额单位为分。",
+  "question": "我想比较青禾2026年6月不同订单渠道：逐组给出创建订单数、有效订单数、净销售额，金额保持分。",
+  "trace_id": "bf7eaf6b-fb5f-46ea-a9d0-a6e89fd04e8e",
+  "elapsed_seconds": 9.792,
+  "model_usage": {
+    "prompt_tokens": 15745,
+    "completion_tokens": 1083,
+    "total_tokens": 16828
+  },
+  "model_calls_with_usage": 2
+}

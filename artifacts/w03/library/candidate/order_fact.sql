@@ -1,0 +1,1 @@
+select o.order_id, o.member_id, o.store_id, m.home_store_id, o.ordered_at, o.status, o.gross_cents, o.paid_cents, o.refund_cents, o.quantity, o.channel, s.valid_order_seq from {{ ref('orders') }} o left join {{ ref('members') }} m on o.member_id = m.member_id left join {{ ref('valid_order_sequence') }} s on o.order_id = s.order_id

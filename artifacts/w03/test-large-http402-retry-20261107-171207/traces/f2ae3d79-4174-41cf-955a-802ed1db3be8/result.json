@@ -1,0 +1,56 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "order__channel"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  order__channel\n  , SUM(__order_count) AS order_count\n  , SUM(__valid_order_count) AS valid_order_count\n  , SUM(__net_sales_cents) AS net_sales_cents\nFROM (\n  SELECT\n    channel AS order__channel\n    , 1 AS __order_count\n    , CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END AS __valid_order_count\n    , CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END AS __net_sales_cents\n  FROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_7\nGROUP BY\n  order__channel",
+  "columns": [
+    "order__channel",
+    "order_count",
+    "valid_order_count",
+    "net_sales_cents"
+  ],
+  "rows": [
+    [
+      "小程序",
+      17146,
+      14934,
+      256861328
+    ],
+    [
+      "门店",
+      17160,
+      14999,
+      257059992
+    ]
+  ],
+  "seconds": 0.188,
+  "units": {
+    "order_count": "count",
+    "valid_order_count": "count",
+    "net_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f",
+  "answer": "统计范围为青禾当前客户数据中按下单日期归集的2026年8月整月订单，并按订单渠道分组。创建订单数按每个订单号计一次，包含取消单；有效订单数为已支付且实付金额减退款金额大于零的订单数，取消及全额退款不计；净销售额为已支付订单实付减退款后的合计，取消单不计，金额已由分换算为元并保留两位小数。结果：小程序创建订单数17146、有效订单数14934、净销售额2,568,613.28元；门店创建订单数17160、有效订单数14999、净销售额2,570,599.92元。结果仅列出小程序和门店两个渠道分组。",
+  "question": "青禾2026年8月按订单渠道分组，分别列出创建订单数、有效订单数、净销售额；按下单日期统计，金额保留分。",
+  "trace_id": "f2ae3d79-4174-41cf-955a-802ed1db3be8",
+  "elapsed_seconds": 15.244,
+  "model_usage": {
+    "prompt_tokens": 11968,
+    "completion_tokens": 1517,
+    "total_tokens": 13485
+  },
+  "model_calls_with_usage": 2
+}

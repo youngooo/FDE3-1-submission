@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_repeat_rate"
+    ],
+    "start": "2026-07-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "metric_time__month"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  metric_time__month\n  , CAST(monthly_repeat_buyer_count AS DOUBLE) / CAST(NULLIF(monthly_buyer_count, 0) AS DOUBLE) AS monthly_repeat_rate\nFROM (\n  SELECT\n    metric_time__month\n    , COUNT(DISTINCT __monthly_repeat_buyer_count) AS monthly_repeat_buyer_count\n    , COUNT(DISTINCT __monthly_buyer_count) AS monthly_buyer_count\n  FROM (\n    SELECT\n      DATE_TRUNC('month', month_date) AS metric_time__month\n      , member_id AS __monthly_buyer_count\n      , CASE WHEN valid_order_count >= 2 THEN member_id ELSE NULL END AS __monthly_repeat_buyer_count\n    FROM \"data\".\"main\".\"member_month_activity\" member_month_activity_semantic_src_10000\n    WHERE DATE_TRUNC('month', month_date) BETWEEN '2026-07-01' AND '2026-08-31'\n  ) subq_6\n  GROUP BY\n    metric_time__month\n) subq_8",
+  "columns": [
+    "metric_time__month",
+    "monthly_repeat_rate"
+  ],
+  "rows": [
+    [
+      "2026-07-01 00:00:00",
+      0.09090909090909091
+    ],
+    [
+      "2026-08-01 00:00:00",
+      0.8
+    ]
+  ],
+  "seconds": 0.077,
+  "units": {
+    "monthly_repeat_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+  "answer": "按2026年7月和8月分别统计，统计范围为青禾当前客户、全门店口径，统计单位为CRM会员账户。月内复购率的定义为：月内复购会员数 ÷ 同月月内购买会员数；分母为零时未定义。本次结果中，7月月内复购率约为0.0909（小数比例），8月为0.8（小数比例），8月高于7月。\n\n但这不能证明助手提升了青禾的真实复购。依据是：该指标只描述同一自然月内购买会员中发生复购的会员占比，不是助手干预效果的因果指标；仅比较7月与8月，没有对照或实验设计，无法排除季节、促销、样本波动等因素；且当前为合成测试库结果，不能直接等同于真实业务复购的提升。",
+  "question": "青禾2026年7月和8月的月内复购率分别是多少？如果8月高于7月，能否证明这个助手提升了青禾的真实复购？请说明依据。",
+  "trace_id": "d00b14b0-9430-4301-b25a-c5d4e5de85d4",
+  "elapsed_seconds": 18.867,
+  "model_usage": {
+    "prompt_tokens": 14817,
+    "completion_tokens": 2105,
+    "total_tokens": 16922
+  },
+  "model_calls_with_usage": 2
+}

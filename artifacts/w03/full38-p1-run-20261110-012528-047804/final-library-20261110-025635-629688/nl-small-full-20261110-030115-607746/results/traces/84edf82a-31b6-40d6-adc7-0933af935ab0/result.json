@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "payment_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN status = 'paid' THEN paid_cents ELSE 0 END) AS payment_cents\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "payment_cents"
+  ],
+  "rows": [
+    [
+      119050
+    ]
+  ],
+  "seconds": 0.045,
+  "units": {
+    "payment_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "2026年8月、全门店汇总且不分组：实付金额为119050分。口径为paid订单实付金额合计，尚未扣退款；金额按分展示。",
+  "question": "请只查询青禾2026年8月的实付金额，全门店汇总，不分组。金额按分返回。",
+  "trace_id": "84edf82a-31b6-40d6-adc7-0933af935ab0",
+  "elapsed_seconds": 7.339,
+  "model_usage": {
+    "prompt_tokens": 14663,
+    "completion_tokens": 586,
+    "total_tokens": 15249
+  },
+  "model_calls_with_usage": 2
+}

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "checks_total": 18,
+  "checks": [
+    "aggregate_sends_no_member_enumeration",
+    "source_dimensions_unchanged",
+    "dimension_paths_preserved",
+    "small_enums_complete",
+    "chinese_small_enum_preserved",
+    "no_duplicate_value_lists",
+    "time_dimensions_not_filters",
+    "large_enum_marked_incomplete",
+    "large_context_reduced",
+    "explicit_ids_outside_first_128_preserved",
+    "prefix_not_false_match",
+    "chinese_adjacent_identifier_matches",
+    "case_not_silently_changed",
+    "unknown_identifier_not_invented",
+    "recent_history_explicit_id_retained",
+    "matched_enum_size_bounded",
+    "selection_overflow_explicit",
+    "small_dataset_members_stay_complete"
+  ],
+  "model_called": false
+}

@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "net_receipts_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END) AS net_receipts_cents\nFROM \"data\".\"main\".\"orders\" orders_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "net_receipts_cents"
+  ],
+  "rows": [
+    [
+      13000
+    ]
+  ],
+  "seconds": 0.051,
+  "units": {
+    "net_receipts_cents": "cents"
+  },
+  "data_version": "wutong-sample-v2",
+  "data_sha256": "6e4f21b3e478cc6fa6b54fe2469267b23f70a7dae3e718db065d6169447ec440",
+  "catalog_sha256": "9b85deabe0f4c035e61f0c48db6ad19033b84c0533652e0e83ef2783e574c788",
+  "answer": "按当前客户数据范围统计，2026年8月整月（8月1日至9月1日前）的扣退后收入为130.00元。该口径为到账总额减退回金额，本次结果未按门店分组。",
+  "question": "2026 年 8 月梧桐书店扣退后收入是多少？",
+  "trace_id": "d906f795-cfc2-417e-b939-7953564d7cef",
+  "elapsed_seconds": 9.324,
+  "model_usage": {
+    "prompt_tokens": 4051,
+    "completion_tokens": 472,
+    "total_tokens": 4523
+  },
+  "model_calls_with_usage": 2
+}

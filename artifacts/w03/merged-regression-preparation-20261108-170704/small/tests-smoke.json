@@ -1,0 +1,211 @@
+[
+  {
+    "id": "aug_order_trio",
+    "question": "青禾2026年8月的创建订单数、有效订单数和净销售额分别是多少？按下单日期统计，全门店汇总，净销售额保留分。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "order_count",
+          "valid_order_count",
+          "net_sales_cents"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "group_by": [],
+        "filters": []
+      },
+      "columns": [
+        "order_count",
+        "valid_order_count",
+        "net_sales_cents"
+      ],
+      "rows": [
+        [
+          32,
+          27,
+          100300
+        ]
+      ],
+      "units": {
+        "order_count": "count",
+        "valid_order_count": "count",
+        "net_sales_cents": "cents"
+      },
+      "data_version": "qinghe-w03-20260923-small",
+      "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+      "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62"
+    },
+    "expected_source": {
+      "materials": [
+        "materials/w03/01_订单日报说明.md",
+        "materials/w03/02_财务邮件.md",
+        "materials/w03/05_数据字典.md"
+      ],
+      "method": "Filter original orders by requested window/dimensions; calculate distinct accounts/stores, order conditions, cents and ratios independently.",
+      "source_csv": "original CSV only; hashes in generation.json"
+    }
+  },
+  {
+    "id": "first_aug_store_filter",
+    "question": "青禾2026年8月只看成交门店编号S01，列出观测期首购会员数、观测期首单数、观测期首单净销售额、观测期后续购买订单数。先在完整覆盖历史内确定各账户首笔有效订单，再按日期和成交门店筛选；金额保留分。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "first_buyer_count",
+          "first_order_sales_cents",
+          "first_order_count",
+          "repeat_order_count"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "group_by": [],
+        "filters": [
+          {
+            "field": "store",
+            "op": "eq",
+            "value": "S01"
+          }
+        ]
+      },
+      "columns": [
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "rows": [
+        [
+          3,
+          7400,
+          3,
+          10
+        ]
+      ],
+      "units": {
+        "first_buyer_count": "count",
+        "first_order_sales_cents": "cents",
+        "first_order_count": "count",
+        "repeat_order_count": "count"
+      },
+      "data_version": "qinghe-w03-20260923-small",
+      "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+      "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62"
+    },
+    "expected_source": {
+      "materials": [
+        "materials/w03/03_会员运营周报.md",
+        "materials/w03/05_数据字典.md"
+      ],
+      "method": "Rank effective orders over full coverage by ordered_at/order_id per account before applying query window and filters.",
+      "source_csv": "original CSV only; hashes in generation.json"
+    }
+  },
+  {
+    "id": "monthly_jul_aug",
+    "question": "青禾2026年7月和8月两个完整自然月（2026-07-01含至2026-09-01不含），全门店按月分别列出月内购买会员数、月内复购会员数、月内复购率，不合并月份，复购率保留小数比例。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "monthly_buyer_count",
+          "monthly_repeat_buyer_count",
+          "monthly_repeat_rate"
+        ],
+        "start": "2026-07-01",
+        "end": "2026-09-01",
+        "group_by": [
+          "metric_time__month"
+        ],
+        "filters": []
+      },
+      "columns": [
+        "metric_time__month",
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "rows": [
+        [
+          "2026-07-01",
+          11,
+          1,
+          "0.09090909090909090909090909091"
+        ],
+        [
+          "2026-08-01",
+          15,
+          12,
+          "0.8"
+        ]
+      ],
+      "units": {
+        "monthly_buyer_count": "count",
+        "monthly_repeat_buyer_count": "count",
+        "monthly_repeat_rate": "ratio"
+      },
+      "data_version": "qinghe-w03-20260923-small",
+      "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+      "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62"
+    },
+    "expected_source": {
+      "materials": [
+        "materials/w03/03_会员运营周报.md",
+        "materials/w03/05_数据字典.md"
+      ],
+      "method": "Group original effective orders by month and account; count >=1 and >=2 orders, then divide with strict null denominator.",
+      "source_csv": "original CSV only; hashes in generation.json"
+    }
+  },
+  {
+    "id": "reject_partial_month",
+    "question": "青禾2026年8月1日至8月15日（含15日）的月内复购率是多少？全门店，只要这15天的范围。",
+    "expected": {
+      "status": "unsupported",
+      "intent": {
+        "metrics": [
+          "monthly_repeat_rate"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-08-16",
+        "group_by": [],
+        "filters": []
+      }
+    },
+    "expected_source": {
+      "materials": [
+        "materials/w03/03_会员运营周报.md",
+        "materials/w03/05_数据字典.md"
+      ],
+      "method": "Group original effective orders by month and account; count >=1 and >=2 orders, then divide with strict null denominator. Expected refusal is a rule-based boundary decision, not an empty numeric result.",
+      "source_csv": "original CSV only; hashes in generation.json"
+    }
+  },
+  {
+    "id": "reject_outside_coverage",
+    "question": "青禾2026年9月的创建订单数、有效订单数和净销售额分别是多少？全门店汇总。",
+    "expected": {
+      "status": "unsupported",
+      "intent": {
+        "metrics": [
+          "order_count",
+          "valid_order_count",
+          "net_sales_cents"
+        ],
+        "start": "2026-09-01",
+        "end": "2026-10-01",
+        "group_by": [],
+        "filters": []
+      }
+    },
+    "expected_source": {
+      "materials": [
+        "materials/w03/03_会员运营周报.md",
+        "materials/w03/05_数据字典.md"
+      ],
+      "method": "Compare requested half-open dates against manifest coverage; outside coverage is unsupported. Expected refusal is a rule-based boundary decision, not an empty numeric result.",
+      "source_csv": "original CSV only; hashes in generation.json"
+    }
+  }
+]

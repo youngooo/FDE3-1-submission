@@ -1,0 +1,39 @@
+{
+  "status": "ok",
+  "archive": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/shen-priority-review-20261108-154604",
+  "source_sha256": "32ec8356b9664cfedf8e994f5ed04a8844cee2d38259a7641871c6b693dd8c8e",
+  "messages": 9,
+  "reviewed_reply_ids": [
+    "MSG-04608",
+    "MSG-04610",
+    "MSG-04612",
+    "MSG-04614"
+  ],
+  "model_version": "v0.5",
+  "sow_version": "v0.10-draft",
+  "documents": {
+    "business_model.md": {
+      "before": "896c90b9c152a198d9a96a6149008895c76f3a2279672664764ec9ba1f83b8b0",
+      "after": "8d78f4806f24ab575fef66a54d424f5fa17e8dafcd887c62487a2e52f2c0e66b"
+    },
+    "sow.md": {
+      "before": "c0a440d75e0e0aa70316fa7eaed812f0aa14e4ac9abf56cad81bef3c8ae0e81e",
+      "after": "29a9b8a444cbabd10aa9d21783fb06c1e0f1c86d1b1df4a355d857258e648e9f"
+    },
+    "interview_notes.md": {
+      "before": "13a5b137cd4981af202d57a146daa11726120b802eb2e6e9c449f83bf3020c12",
+      "after": "243c0532af055d01807f6d3483ab59684992487133c4f56e628cd5d2c6c811ef"
+    },
+    "model_changes.md": {
+      "before": "ebb82374b994fb92a0d74dccb905d4626034d1f4a2b5030316a7cd22fecce877",
+      "after": "d80eb930b3a2f9c4897a8d7cf5f7e815a1094bb629dbca49dd464989cfbfcb04"
+    },
+    "sow_review_notes.md": {
+      "before": "148a8fa535e6f9a6f908a2fcbede7117093126c87798d664a2d9dffe4baaeca3",
+      "after": "0353dcc95eb90fdb54b3e39cef71853160588efac0f032dbe1f2a8ddf25ccf3b"
+    }
+  },
+  "model_called": false,
+  "workflow_restarted": false,
+  "library_rebuilt": false
+}

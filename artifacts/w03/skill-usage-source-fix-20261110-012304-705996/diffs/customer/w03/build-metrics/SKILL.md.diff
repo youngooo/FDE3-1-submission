@@ -1,0 +1,10 @@
+--- before/customer/w03/build-metrics/SKILL.md
++++ after/customer/w03/build-metrics/SKILL.md
+@@ -15,6 +15,7 @@
+ - 分清已确认口径、门店语境、学员方案、未获确认的规则及历史记录。业务模型中的新证据可以更新旧未知，但不能把试算、建议或财务核查意见当作已批准规则。
+ - catalog.sources 的 file 只能用输入 materials 的实际键名或 business_model.md；quote 必须逐字复制对应输入中的非空连续原文，包括原有标点，不改写、不拼接、不用省略号。多份依据分成多个 source。不得引用输入中没有提供全文的访谈文件。
+ - business_model_usage 也必须复制 business_model 的连续原文，used_for 按 contract 指明实际受其影响的语义模型、派生模型、维度或指标。不要为装饰溯源而引用无关段落。
++- business_model_usage.quote的来源域只允许输入business_model正文，不能引用本Skill的操作说明、输出契约、你自己生成的解释或其它materials来冒充业务模型原文。优先从材料10的business_model_usage_quote_options逐字复制实际相关句子，其中包括首购观察范围等非P1口径；used_for再填写本次实际生成的对象。辅助SQL如何组织、单位拼写、完整月份及零值分组等工程要求应在实现中落实，不为每条Skill要求制造一条业务模型引文；确需引用清单以外的业务规则时，也必须能在business_model原文中找到完整连续字符串。
+ - 引文是复制字段，不是解释字段。优先逐字复制一条完整原句；多个不连续依据拆成多条source或usage，解释放在描述或constraints中。尤其不要将“或”替换成“与”、补空格、统一标点或重写枚举。最终逐项对照输入的原始字符串，不用语义近似代替连续子串匹配。
+ - 输入材料10_指标来源引用清单.md提供38项目标的sources模板。每个catalog条目的sources先复制catalog_sources_by_metric_id中同ID的数组；六项monthly_paid指标再追加清单中共同的门店与P1来源。保持file、quote值逐字一致，尤其保留分号与逗号，不重新概述定义，不将来源file改为清单文件。模板与当前原文仍须一致，不能因有清单就跳过校验。
+ - P1的business_model_usage可选择清单中已验证的短句，used_for只填本次实际生成的对象；其它必要规则继续引用实际原文。优先绑定承载该规则的派生模型，避免对同一规则反复列出全部下游指标，或为每个指标重复完整来源说明。每条引用保持可追溯，不以重复次数代替证据质量。

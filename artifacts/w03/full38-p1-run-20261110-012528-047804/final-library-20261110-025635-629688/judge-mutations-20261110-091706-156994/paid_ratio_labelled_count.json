@@ -1,0 +1,85 @@
+{
+  "id": "paid_ratio_labelled_count",
+  "source_dataset": "large",
+  "source_case": "single_monthly_paid_repeat_rate",
+  "expected": {
+    "status": "ok",
+    "intent": {
+      "metrics": [
+        "monthly_paid_repeat_rate"
+      ],
+      "start": "2026-04-01",
+      "end": "2026-05-01",
+      "group_by": [],
+      "filters": []
+    },
+    "columns": [
+      "monthly_paid_repeat_rate"
+    ],
+    "rows": [
+      [
+        "0.3327520055807464248343215905"
+      ]
+    ],
+    "units": {
+      "monthly_paid_repeat_rate": "ratio"
+    },
+    "data_version": "qinghe-w03-20260923-large",
+    "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+    "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402"
+  },
+  "actual": {
+    "status": "ok",
+    "intent": {
+      "metrics": [
+        "monthly_paid_repeat_rate"
+      ],
+      "start": "2026-04-01",
+      "end": "2026-05-01",
+      "group_by": [],
+      "filters": []
+    },
+    "sql": "SELECT\n  CAST(SUM(monthly_paid_repeat_buyer_count) AS DOUBLE) / CAST(NULLIF(SUM(monthly_paid_buyer_count), 0) AS DOUBLE) AS monthly_paid_repeat_rate\nFROM \"data\".\"main\".\"monthly_paid_summary\" monthly_paid_model_src_10000\nWHERE DATE_TRUNC('month', month_start) BETWEEN '2026-04-01' AND '2026-04-30'",
+    "columns": [
+      "monthly_paid_repeat_rate"
+    ],
+    "rows": [
+      [
+        0.3327520055807464
+      ]
+    ],
+    "seconds": 0.109,
+    "units": {
+      "monthly_paid_repeat_rate": "count"
+    },
+    "data_version": "qinghe-w03-20260923-large",
+    "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+    "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+    "answer": "青禾2026年4月完整自然月、全门店全渠道汇总，不拆分门店或渠道。月末付费会员复购率为小数比例 0.3327520055807464。口径：月末付费会员复购人数 ÷ 月末付费会员购买人数。本结果按P1暂定口径试算；门店日期规则用于总部月报仍待书面确认。",
+    "question": "核对青禾2026年4月整月报表：只返回月末付费会员复购率的全门店合计，不拆维度。结果使用小数比例。按现有P1暂定试算口径，月末选账户，统计整月全渠道订单，并注明待确认。",
+    "trace_id": "0119526e-d768-4a25-9539-3770cc0bd68d",
+    "elapsed_seconds": 13.046,
+    "model_usage": {
+      "prompt_tokens": 15386,
+      "completion_tokens": 1362,
+      "total_tokens": 16748
+    },
+    "model_calls_with_usage": 2
+  },
+  "should_pass": false,
+  "required_difference": {
+    "kind": "invalid_actual_table",
+    "reason": "Non-integer count or cents"
+  },
+  "verdict": {
+    "passed": false,
+    "differences": [
+      {
+        "kind": "invalid_actual_table",
+        "reason": "Non-integer count or cents"
+      }
+    ]
+  },
+  "rejection_reason_matches_mutation": true,
+  "passed": true
+}

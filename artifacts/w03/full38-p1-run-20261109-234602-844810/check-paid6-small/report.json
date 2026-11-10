@@ -1,0 +1,328 @@
+{
+  "kind": "paid6_independent_csv_p1",
+  "business_confirmation": "pending",
+  "model_called": false,
+  "expected_basis": "materials04 + P1 date rule and card scope; original CSV; hand-checked oracle",
+  "project": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small",
+  "data_version": "qinghe-w03-20260923-small",
+  "catalog_sha256": "72fe4a5533b72533cadbeab87fcf2c89b32a7b1bd03b9d648cea1f63fb70a0f9",
+  "input_sha256": {
+    "/mnt/e/工作/FDE职位攻关/tmp/check_w03_paid6_csv_20261110.py": "e1c0c92914e59d11cd4f6db0986be893fb6475244c9da0e3a1bd66bf323561b6",
+    "/home/yang/FDE/w03-work/fde-agent-w03/customer/w03/check_paid6_inputs.py": "5db8ed5b6b263e1d72d52b03f72a9de60cc1cd573bedbb69c993f9fbf819c1ec",
+    "/home/yang/FDE/w03-work/fde-agent-w03/platform/fde_product/metrics/engine.py": "e8b39da2517a65f6406da4d261173291c795248ea6c62638137e09ce750a98f3",
+    "/home/yang/FDE/w03-work/fde-agent-w03/tools/w03.py": "c34c139e48b33a09de1db3bec9f2cc2f41166de129984698eb69e98979e467c6",
+    "/home/yang/FDE/w03-work/fde-agent-w03/docs/w03/business_model.md": "84d1e43aace4b57e49911cc6167bc6022d78ef5d390d9fe9c982be55d834dcf9",
+    "/home/yang/FDE/w03-work/fde-agent-w03/customer/w03/build-metrics/SKILL.md": "ae9c7422b3a44e6d5577edb4339d578e7db5ace7fe06de9ac208ac9054c69b6d",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/w03/00_材料说明.md": "c60776a6a1c030b02b1ce89f773327871c80bb34dca9c486df43c9acb0a6dc28",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/w03/01_订单日报说明.md": "976fa129493e6bd2861a58d74df2ba3ad4448ea01a2d25651124222a61cebb67",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/w03/02_财务邮件.md": "f81e0ddb5c03dd4eb2d01094816716d8375d03fe883b947ec8297edf8d525557",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/w03/03_会员运营周报.md": "25ab933556bf34bef21b528d4c7838c9baad33ae289d59f09501e765080bb492",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/w03/04_本期统计确认邮件.md": "c4f847fd90fd0765d37ad22f20d4a4eb0bab90f8543ae0f05d7a3cbee104c4be",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/w03/05_数据字典.md": "b4c905ae6d2f4c08e139c695a2868b66ee5047b2b8ea94d6eccba55aebb79c16",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/w03/06_任务清单.md": "ed414526217320c5e9ef049cfc1cfb56b670a5af57a57a9450a1e264cd71904d",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/w03/07_客户内部沟通.md": "916d0f6d78033aff30dc6053cb58d774bfdefe5e3aa9a4e36ca54f143af3b425",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/w03/08_业务目标与工作清单.md": "de9d737c423cc31b2f9d60c9ba8693b9d4257a3aa69b9efedb52674aeb2efe97",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/w03/09_付费月报补访原文.md": "19735f62d2a9adcee07f39c81855859a76dd6b2bf9f64e21d0c66160a7ee21c6",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/w03/10_指标来源引用清单.md": "d4a8adf64eef3e9539f4619708714081fe4e9782143ec590dc9ff5807e2c327f",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/data/small/manifest.json": "b547dfbb713644b7972d4d28e403880b09ae7bf49b0006c6dbc122aea3e30c60",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/data/small/cards.csv": "d27bdabd508d7881a1bea84cb79400c2a770fc1ad42fdb81877163cc018bb8d5",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/data/small/members.csv": "e99b7e82389722b1ae2e4fd267c74dd84bd61dfeabaa161221d7ae44ae955b2f",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/data/small/orders.csv": "c6e0dee6081e7a6f7782b54de78b3182835c46184c8e7569fc23feab8cf3c4f1",
+    "/home/yang/FDE/w03-work/fde-agent-w03/materials/data/small/stores.csv": "e8160804fd485853f6c75d9a095b1ee6f05bbbd40ba851cac84def35488aa41d",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small/dataset.json": "e77a32a0aecdc1aa0aae4e52c56c16b9b4fd9e646647e4d4c60513e2c8532e23",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small/catalog.json": "f41bb2dc4b28afec09f8a69aa66eb85e1aaa0ea3ae734b196f168af94abf76da",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small/models/metrics.yml": "ccd61910804cfb947e689e0319178c26d7c4b41498173a8026c680ccf3eeca45",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small/models/cards.sql": "33aaadccc09f60a3b2e138f4e6ce2e440d72bb2f8568d1bbc09ce4097bf72b30",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small/models/home_store_dimensions.sql": "e948519f792c53bcd74f0c5454a10656d10ac19b28fc6f590aa3988679350eab",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small/models/member_dimensions.sql": "8006bed3a16795594575a56cf181809fac0760cd2415d4f13200ce7e2c6d634f",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small/models/members.sql": "200f92bfca81678f2d473b9af35e78976f38f8ae2b27f7a02d1a371373339cee",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small/models/monthly_order_summary.sql": "f5b277d359464c00889337b5a3afdf657db7a37ec5b93b2a393dd205670fc94a",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small/models/monthly_paid_summary.sql": "c547fb52f8295e4f5d9ecce1d1612a67bc041ce060636a29e116a422a3f7daba",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small/models/order_facts.sql": "97caf4e611c60102984ea9cc99646ecf3f19065ca52f5c06aeea46e3b979d18c",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small/models/orders.sql": "2b74e3e32048ff33e221121a8326a34a255ec75dfa18b201ccecc219b2a0a13c",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small/models/store_dimensions.sql": "e948519f792c53bcd74f0c5454a10656d10ac19b28fc6f590aa3988679350eab",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small/models/stores.sql": "978e7c79f3b3081b0c1153b38897cf4930aedb95e5291be7cdeedb49c5c6b20e",
+    "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261109-234602-844810/project-small/models/time_spine.sql": "27ed91c0947c8b4906c41331bc72e1490b2291ffc04db63893f0f389c1945060"
+  },
+  "self_checks": [
+    "month_end_boundaries_and_card_scope",
+    "multiple_cards_account_dedup",
+    "orders_before_card_start_included",
+    "expired_card_with_another_valid_card",
+    "partial_refund_net_cancelled_full_refund_exclusion",
+    "empty_zero_counts_null_ratios"
+  ],
+  "started_at": "2026-11-10T00:06:48.484220+08:00",
+  "environment": {
+    "python": "3.11.16 (main, Sep 29 2026, 14:59:26) [Clang 22.1.3 ]",
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "packages": {
+      "duckdb": "1.5.5",
+      "dbt-core": "1.12.5",
+      "dbt-metricflow": "0.15.0"
+    }
+  },
+  "comparison_policy": {
+    "integer": "exact",
+    "null": "strict",
+    "absolute_tolerance": "1E-8",
+    "relative_tolerance": "1E-9",
+    "unit_aliases": {
+      "cents/order": "cents_per_order"
+    }
+  },
+  "limitations": [
+    "P1总部适用性待确认",
+    "异常卡由前置检查阻断，本次不验证未决异常业务处理",
+    "结构化查询核验不替代自然语言回归与解释核查"
+  ],
+  "cases": [
+    {
+      "id": "paid_aug",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 5.842,
+      "errors": []
+    },
+    {
+      "id": "paid_jul",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 4.719,
+      "errors": []
+    },
+    {
+      "id": "paid_jun",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 4.575,
+      "errors": []
+    },
+    {
+      "id": "paid_jul_aug",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 4.81,
+      "errors": []
+    },
+    {
+      "id": "paid_all_covered_months",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 4.593,
+      "errors": []
+    },
+    {
+      "id": "paid_zero_buyers",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 4.422,
+      "errors": []
+    },
+    {
+      "id": "reject_partial_start",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 4.141,
+      "errors": []
+    },
+    {
+      "id": "reject_partial_end",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 3.916,
+      "errors": []
+    },
+    {
+      "id": "reject_group_day",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 4.277,
+      "errors": []
+    },
+    {
+      "id": "reject_group_store",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 3.622,
+      "errors": []
+    },
+    {
+      "id": "reject_group_channel",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 3.731,
+      "errors": []
+    },
+    {
+      "id": "reject_paid_filter_store",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 3.692,
+      "errors": []
+    },
+    {
+      "id": "reject_paid_filter_channel",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 3.679,
+      "errors": []
+    },
+    {
+      "id": "reject_multimonth_total",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 3.672,
+      "errors": []
+    },
+    {
+      "id": "reject_outside_coverage",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 3.764,
+      "errors": []
+    },
+    {
+      "id": "clarify_missing_start",
+      "passed": true,
+      "checked_metrics": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "elapsed_seconds": 3.664,
+      "errors": []
+    },
+    {
+      "id": "reject_undefined_metric",
+      "passed": true,
+      "checked_metrics": [
+        "w03_undefined_metric_probe"
+      ],
+      "elapsed_seconds": 3.632,
+      "errors": []
+    },
+    {
+      "id": "reject_nonexistent_filter_value",
+      "passed": true,
+      "checked_metrics": [
+        "order_count"
+      ],
+      "elapsed_seconds": 3.641,
+      "errors": []
+    }
+  ],
+  "complete": true,
+  "passed": true,
+  "elapsed_seconds": 74.49,
+  "input_changed_during_run": [],
+  "finished_at": "2026-11-10T00:08:03.922311+08:00"
+}

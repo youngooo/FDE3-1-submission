@@ -1,0 +1,53 @@
+{
+  "changes": [
+    {
+      "path": "docs/w03/course_material_request_draft.md",
+      "before": "4ed17830f619fc7f1e654555ebf17fad119a146163aaf4dd61b97b8a031f0e78",
+      "after": "121374e40fd5f9c624e80628937a37a38aa99374ba768eca0b96585efc21d91b"
+    },
+    {
+      "path": "docs/w03/metric_decisions.md",
+      "before": "2e66d438a5141b88f1cfa5219d8bff3ce410db28ea6f8ecdfc2d9a9d238bc23b",
+      "after": "b9bf2c6d6526fa3f279a87c6dfced70726209ab38c82ffde0dc268b9474f2599"
+    },
+    {
+      "path": "docs/w03/interview_notes.md",
+      "before": "b0316d5b8c4c5ccedda97e31db02c7b5c7fd5cbb25c9583cd84a602d9a1ddc65",
+      "after": "ebb12409b761d852549ad8ed55ec403e7e00155d267d80b41ae7f546626dc871"
+    },
+    {
+      "path": "docs/w03/model_changes.md",
+      "before": "dd7a393451330c65b15530079a2d3fe32f3a3649f924abc202207411a3e88486",
+      "after": "8f53a1633129d324833aedea8ef04a78cd3a4dc51ca033c5af3f8072c87e0cd3"
+    },
+    {
+      "path": "docs/w03/sow.md",
+      "before": "99fc491d3ab6c063a379e1b1e06b9872b80e87ae86052c15f62e5c6313608b97",
+      "after": "1d15e8d30cde2dd12a20fbc722015dda978c2a666b32e4b4baa6634fd2a95a07"
+    },
+    {
+      "path": "docs/w03/sow_review_notes.md",
+      "before": "b589a652ff8cca3901ce817f3b3e0973571b4c5d6c0a81c2dd41a5d9e123f9b8",
+      "after": "2ff20e3ef390c8d36f3b46d763e3e0e59d2d297b2a53595e295eef07b4f2f946"
+    },
+    {
+      "path": "docs/w03/submission_overview.txt",
+      "before": "a5f66b3ce2459c432cd9b53cc69290c7eeddba6626b4bd03a09a6ec649ff5a54",
+      "after": "2d3bb6f4fdf30ad8225d8691d43a59281d5522e87c9372a3182a5d3b3f989545"
+    },
+    {
+      "path": "artifacts/w03/submission_status.json",
+      "before": "762e9a876e3490c989bc04a45e868c3582992c8feef36ff2293b9f4728cfac59",
+      "after": "069853b27ff48568740f8b41285c6741262d312e782a9db2ae805cee080f078a"
+    },
+    {
+      "path": "docs/w03/teacher_feedback_check.md",
+      "before": "32fb0ef21ab573e88ff3e12240675d46dfe0bae17abe1fc03b2bbf26c8b634cc",
+      "after": "0904bab5e6c944540aeb68ec632772f9819615b7d5419a01099e85b9b5932b00"
+    }
+  ],
+  "build_inputs_changed": false,
+  "model_called": false,
+  "query_executed": false,
+  "new_business_confirmation": false
+}

@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_paid_repeat_buyer_count"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(monthly_paid_repeat_buyer_count) AS monthly_paid_repeat_buyer_count\nFROM \"data\".\"main\".\"monthly_paid_summary\" monthly_paid_model_src_10000\nWHERE DATE_TRUNC('month', month_start) BETWEEN '2026-06-01' AND '2026-06-30'",
+  "columns": [
+    "monthly_paid_repeat_buyer_count"
+  ],
+  "rows": [
+    [
+      1276
+    ]
+  ],
+  "seconds": 0.078,
+  "units": {
+    "monthly_paid_repeat_buyer_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "统计范围为青禾客户范围内 2026 年 6 月完整自然月、全渠道、全门店汇总，不按门店或渠道拆分。按现有 P1 暂定试算口径，月末付费会员复购人数为 1276 个 CRM 会员账户。该指标口径为：月末符合付费资格，且同一自然月至少有两笔有效订单的不同账户数。本结果按 P1 暂定口径试算；门店日期规则用于总部月报仍待书面确认。",
+  "question": "帮我查青禾2026年6月的月末付费会员复购人数，我需要整月全门店总数，不需要分组明细。按现有P1暂定试算口径，月末选账户，统计整月全渠道订单，并注明待确认。",
+  "trace_id": "76338d3a-84b7-44d0-9cb2-81c2cb32ed77",
+  "elapsed_seconds": 11.419,
+  "model_usage": {
+    "prompt_tokens": 14943,
+    "completion_tokens": 1142,
+    "total_tokens": 16085
+  },
+  "model_calls_with_usage": 2
+}

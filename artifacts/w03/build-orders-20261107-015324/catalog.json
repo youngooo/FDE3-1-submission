@@ -1,0 +1,64 @@
+[
+  {
+    "id": "order_count",
+    "name": "创建订单数",
+    "aliases": [],
+    "unit": "count",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "按下单日期统计全部订单，每个订单号一次，包含取消单。"
+      }
+    ],
+    "constraints": [
+      "统计全部订单，每个订单号一次，包含取消单。"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "valid_order_count",
+    "name": "有效订单数",
+    "aliases": [],
+    "unit": "count",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "状态为 paid 且实付金额减退款金额大于零的订单数；取消和全退不计。"
+      },
+      {
+        "file": "02_财务邮件.md",
+        "quote": "有效订单是 paid 状态且实付大于累计退款；取消、全额退款不计有效购买。"
+      }
+    ],
+    "constraints": [
+      "状态必须为 paid；实付减退款大于零；取消与全额退款不计。"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  },
+  {
+    "id": "net_sales_cents",
+    "name": "净销售额",
+    "aliases": [],
+    "unit": "cents",
+    "sources": [
+      {
+        "file": "01_订单日报说明.md",
+        "quote": "paid 订单实付减退款后合计；取消单不计；按原订单下单日期归属；单位分。"
+      },
+      {
+        "file": "02_财务邮件.md",
+        "quote": "退款按原订单日期归属。金额为整数分，展示元需换算。"
+      }
+    ],
+    "constraints": [
+      "仅 paid 订单；取消单不计；退款按原订单下单日期归属；底层金额为整数分。"
+    ],
+    "query_policy": {
+      "full_month_only": false
+    }
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "status": "unsupported",
+  "reason": "“仅筛选订单状态为取消”与所请求指标的口径冲突：有效订单数只统计支付后实付减退款仍大于 0 的订单，净销售额不计取消单，因此在取消单集合上有效订单数和净销售额恒为 0，有效订单均额因分母为 0 而无法定义；取消率也需以全部创建订单数为分母，不能只在取消订单内计算。建议改为不筛选订单状态来查询这些指标，或单独查询取消订单数。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "“仅筛选订单状态为取消”与所请求指标的口径冲突：有效订单数只统计支付后实付减退款仍大于 0 的订单，净销售额不计取消单，因此在取消单集合上有效订单数和净销售额恒为 0，有效订单均额因分母为 0 而无法定义；取消率也需以全部创建订单数为分母，不能只在取消订单内计算。建议改为不筛选订单状态来查询这些指标，或单独查询取消订单数。",
+    "metrics": [
+      "valid_order_count",
+      "net_sales_cents",
+      "avg_order_value",
+      "cancel_rate"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": [
+      {
+        "field": "order__status",
+        "op": "eq",
+        "value": "cancelled"
+      }
+    ]
+  },
+  "question": "青禾2026年8月，仅筛选订单状态cancelled（取消），汇总有效订单数、净销售额、有效订单均额及取消率。金额保留分，均额分/单，比率保留小数。",
+  "trace_id": "95704713-a8c8-4ad2-a4f2-432d66e98755",
+  "elapsed_seconds": 34.875,
+  "model_usage": {
+    "prompt_tokens": 10626,
+    "completion_tokens": 4496,
+    "total_tokens": 15122
+  },
+  "model_calls_with_usage": 1
+}

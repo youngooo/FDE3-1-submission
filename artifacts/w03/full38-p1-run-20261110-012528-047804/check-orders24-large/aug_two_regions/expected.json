@@ -1,0 +1,290 @@
+[
+  {
+    "group": [
+      "华东",
+      "华东"
+    ],
+    "metrics": {
+      "order_count": 3764,
+      "paid_order_count": 3443,
+      "valid_order_count": 3270,
+      "cancelled_order_count": 321,
+      "refund_order_count": 504,
+      "partial_refund_order_count": 331,
+      "full_refund_order_count": 173,
+      "payment_cents": 61964952,
+      "refund_cents": 5975655,
+      "net_sales_cents": 55989297,
+      "gross_cents": 68809555,
+      "discount_cents": 6844603,
+      "buyer_count": 2576,
+      "refund_buyer_count": 484,
+      "selling_store_count": 8,
+      "valid_order_items": 13096,
+      "avg_order_value": "17122.10917431192660550458716",
+      "avg_buyer_value": "21734.97554347826086956521739",
+      "purchase_frequency": "1.269409937888198757763975155",
+      "refund_amount_rate": "0.09643604662196785047134386548",
+      "cancel_rate": "0.08528161530286928799149840595",
+      "refund_order_rate": "0.1463839674702294510601219866",
+      "discount_rate": "0.09947169401110063856683857351",
+      "items_per_order": "4.004892966360856269113149847"
+    }
+  },
+  {
+    "group": [
+      "华东",
+      "华北"
+    ],
+    "metrics": {
+      "order_count": 3735,
+      "paid_order_count": 3453,
+      "valid_order_count": 3262,
+      "cancelled_order_count": 282,
+      "refund_order_count": 534,
+      "partial_refund_order_count": 343,
+      "full_refund_order_count": 191,
+      "payment_cents": 62805848,
+      "refund_cents": 6499633,
+      "net_sales_cents": 56306215,
+      "gross_cents": 69696201,
+      "discount_cents": 6890353,
+      "buyer_count": 2560,
+      "refund_buyer_count": 509,
+      "selling_store_count": 8,
+      "valid_order_items": 13320,
+      "avg_order_value": "17261.25536480686695278969957",
+      "avg_buyer_value": "21994.615234375",
+      "purchase_frequency": "1.27421875",
+      "refund_amount_rate": "0.1034877038838803673186611540",
+      "cancel_rate": "0.07550200803212851405622489960",
+      "refund_order_rate": "0.1546481320590790616854908775",
+      "discount_rate": "0.09886267689109769411965510143",
+      "items_per_order": "4.083384426732066217044757817"
+    }
+  },
+  {
+    "group": [
+      "华东",
+      "华南"
+    ],
+    "metrics": {
+      "order_count": 3880,
+      "paid_order_count": 3582,
+      "valid_order_count": 3375,
+      "cancelled_order_count": 298,
+      "refund_order_count": 549,
+      "partial_refund_order_count": 342,
+      "full_refund_order_count": 207,
+      "payment_cents": 63985780,
+      "refund_cents": 6789379,
+      "net_sales_cents": 57196401,
+      "gross_cents": 71202765,
+      "discount_cents": 7216985,
+      "buyer_count": 2621,
+      "refund_buyer_count": 519,
+      "selling_store_count": 8,
+      "valid_order_items": 13927,
+      "avg_order_value": "16947.08177777777777777777778",
+      "avg_buyer_value": "21822.35826020602823349866463",
+      "purchase_frequency": "1.287676459366653948874475391",
+      "refund_amount_rate": "0.1061076226624103042894843198",
+      "cancel_rate": "0.07680412371134020618556701031",
+      "refund_order_rate": "0.1532663316582914572864321608",
+      "discount_rate": "0.1013582127042397861936962701",
+      "items_per_order": "4.126518518518518518518518519"
+    }
+  },
+  {
+    "group": [
+      "华北",
+      "华东"
+    ],
+    "metrics": {
+      "order_count": 3827,
+      "paid_order_count": 3505,
+      "valid_order_count": 3335,
+      "cancelled_order_count": 322,
+      "refund_order_count": 524,
+      "partial_refund_order_count": 354,
+      "full_refund_order_count": 170,
+      "payment_cents": 62835514,
+      "refund_cents": 5749724,
+      "net_sales_cents": 57085790,
+      "gross_cents": 69843445,
+      "discount_cents": 7007931,
+      "buyer_count": 2620,
+      "refund_buyer_count": 503,
+      "selling_store_count": 8,
+      "valid_order_items": 13249,
+      "avg_order_value": "17117.17841079460269865067466",
+      "avg_buyer_value": "21788.46946564885496183206107",
+      "purchase_frequency": "1.272900763358778625954198473",
+      "refund_amount_rate": "0.09150436805530070144727390946",
+      "cancel_rate": "0.08413901228116017768487065587",
+      "refund_order_rate": "0.1495007132667617689015691869",
+      "discount_rate": "0.1003377052778539202927347012",
+      "items_per_order": "3.972713643178410794602698651"
+    }
+  },
+  {
+    "group": [
+      "华北",
+      "华北"
+    ],
+    "metrics": {
+      "order_count": 3801,
+      "paid_order_count": 3501,
+      "valid_order_count": 3315,
+      "cancelled_order_count": 300,
+      "refund_order_count": 523,
+      "partial_refund_order_count": 337,
+      "full_refund_order_count": 186,
+      "payment_cents": 63608220,
+      "refund_cents": 6074753,
+      "net_sales_cents": 57533467,
+      "gross_cents": 70730019,
+      "discount_cents": 7121799,
+      "buyer_count": 2615,
+      "refund_buyer_count": 498,
+      "selling_store_count": 8,
+      "valid_order_items": 13310,
+      "avg_order_value": "17355.49532428355957767722474",
+      "avg_buyer_value": "22001.32581261950286806883365",
+      "purchase_frequency": "1.267686424474187380497131931",
+      "refund_amount_rate": "0.09550264101086306140935872754",
+      "cancel_rate": "0.07892659826361483820047355959",
+      "refund_order_rate": "0.1493858897457869180234218795",
+      "discount_rate": "0.1006899065020751655672537003",
+      "items_per_order": "4.015082956259426847662141780"
+    }
+  },
+  {
+    "group": [
+      "华北",
+      "华南"
+    ],
+    "metrics": {
+      "order_count": 3835,
+      "paid_order_count": 3517,
+      "valid_order_count": 3336,
+      "cancelled_order_count": 318,
+      "refund_order_count": 540,
+      "partial_refund_order_count": 359,
+      "full_refund_order_count": 181,
+      "payment_cents": 64206119,
+      "refund_cents": 6924241,
+      "net_sales_cents": 57281878,
+      "gross_cents": 71343983,
+      "discount_cents": 7137864,
+      "buyer_count": 2601,
+      "refund_buyer_count": 518,
+      "selling_store_count": 8,
+      "valid_order_items": 13363,
+      "avg_order_value": "17170.82673860911270983213429",
+      "avg_buyer_value": "22023.02114571318723567858516",
+      "purchase_frequency": "1.282583621683967704728950404",
+      "refund_amount_rate": "0.1078439424130276430506569008",
+      "cancel_rate": "0.08292046936114732724902216428",
+      "refund_order_rate": "0.1535399488200170599943133352",
+      "discount_rate": "0.1000485773271167100384625288",
+      "items_per_order": "4.005695443645083932853717026"
+    }
+  },
+  {
+    "group": [
+      "华南",
+      "华东"
+    ],
+    "metrics": {
+      "order_count": 3897,
+      "paid_order_count": 3576,
+      "valid_order_count": 3404,
+      "cancelled_order_count": 321,
+      "refund_order_count": 536,
+      "partial_refund_order_count": 364,
+      "full_refund_order_count": 172,
+      "payment_cents": 64858654,
+      "refund_cents": 6380199,
+      "net_sales_cents": 58478455,
+      "gross_cents": 72131900,
+      "discount_cents": 7273246,
+      "buyer_count": 2667,
+      "refund_buyer_count": 516,
+      "selling_store_count": 8,
+      "valid_order_items": 13535,
+      "avg_order_value": "17179.33460634547591069330200",
+      "avg_buyer_value": "21926.67979002624671916010499",
+      "purchase_frequency": "1.276340457442819647544056993",
+      "refund_amount_rate": "0.09837082033802304932199178848",
+      "cancel_rate": "0.08237105465742879137798306390",
+      "refund_order_rate": "0.1498881431767337807606263982",
+      "discount_rate": "0.1008325858600702324491660417",
+      "items_per_order": "3.976204465334900117508813161"
+    }
+  },
+  {
+    "group": [
+      "华南",
+      "华北"
+    ],
+    "metrics": {
+      "order_count": 3847,
+      "paid_order_count": 3565,
+      "valid_order_count": 3368,
+      "cancelled_order_count": 282,
+      "refund_order_count": 553,
+      "partial_refund_order_count": 356,
+      "full_refund_order_count": 197,
+      "payment_cents": 63920022,
+      "refund_cents": 6520762,
+      "net_sales_cents": 57399260,
+      "gross_cents": 71088640,
+      "discount_cents": 7168618,
+      "buyer_count": 2649,
+      "refund_buyer_count": 533,
+      "selling_store_count": 8,
+      "valid_order_items": 13432,
+      "avg_order_value": "17042.53562945368171021377672",
+      "avg_buyer_value": "21668.27482068705171762929407",
+      "purchase_frequency": "1.271423178557946394865987165",
+      "refund_amount_rate": "0.1020143891690149918909602378",
+      "cancel_rate": "0.07330387314790746035872108136",
+      "refund_order_rate": "0.1551192145862552594670406732",
+      "discount_rate": "0.1008405562407720839785372178",
+      "items_per_order": "3.988123515439429928741092637"
+    }
+  },
+  {
+    "group": [
+      "华南",
+      "华南"
+    ],
+    "metrics": {
+      "order_count": 3720,
+      "paid_order_count": 3422,
+      "valid_order_count": 3268,
+      "cancelled_order_count": 298,
+      "refund_order_count": 455,
+      "partial_refund_order_count": 301,
+      "full_refund_order_count": 154,
+      "payment_cents": 62085537,
+      "refund_cents": 5434980,
+      "net_sales_cents": 56650557,
+      "gross_cents": 68916737,
+      "discount_cents": 6831200,
+      "buyer_count": 2577,
+      "refund_buyer_count": 436,
+      "selling_store_count": 8,
+      "valid_order_items": 12978,
+      "avg_order_value": "17334.93176254589963280293758",
+      "avg_buyer_value": "21983.14202561117578579743888",
+      "purchase_frequency": "1.268141249514939852541715173",
+      "refund_amount_rate": "0.08754019474777193277719414749",
+      "cancel_rate": "0.08010752688172043010752688172",
+      "refund_order_rate": "0.1329631794272355347749853887",
+      "discount_rate": "0.09912251068996490649288865780",
+      "items_per_order": "3.971236230110159118727050184"
+    }
+  }
+]

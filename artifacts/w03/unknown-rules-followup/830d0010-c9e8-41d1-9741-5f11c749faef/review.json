@@ -1,0 +1,23 @@
+{
+  "trace_id": "830d0010-c9e8-41d1-9741-5f11c749faef",
+  "review_method": "AI辅助原文与运行记录核查，不是自动语义判定",
+  "no_unconfirmed_90_day_rule": true,
+  "distinguishes_purchase_behavior_from_churn": true,
+  "no_query_executed_in_result": true,
+  "independent_new_session": false,
+  "history_messages": 5,
+  "contains_output_validation_retry": true,
+  "limitations": [
+    "最终回答未把90天写成青禾规则；业务讨论项如新客保护期不作为客户已确认规则。",
+    "历史含年份澄清及本轮无工具证据回答被校验拒绝后的重试，不能记为一次无重试的新会话通过。",
+    "历史首次回答称90天为常见业务经验说法，未有客户来源，不采用该泛化说法；最终工具理由未重复这一说法。",
+    "结果依据主要为指标目录，不能据此证明完整业务模型理解。"
+  ],
+  "all_test_requirements_passed": false,
+  "model_called_by_archiver": false,
+  "source_sha256": {
+    "result.json": "cf2b279c95ebcdb2b941eb4698141fa1c6e04ca74a6a379c97eddd4f451f30d8",
+    "intent-trace.json": "e04efa288ba487fbaa25e538fe9890dda46fc186fe2256a175ac0f5141a51b87",
+    "intent-context-summary.json": "26e39138a50c28d33e053fcf779be71a4e66de645055c11e63439fca92cb8353"
+  }
+}

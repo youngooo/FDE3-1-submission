@@ -1,0 +1,23 @@
+{
+  "version": "w02-extractor-0.1.0",
+  "scope_id": "qinghe",
+  "sources": [
+    "artifacts/w02/sources/W3-interview-6a832f80-2ad2-570d-81ca-498c37232f54-transcript.json",
+    "artifacts/w02/sources/W3-interview-cbdcc091-2cd3-5097-9f2f-6dc11bed9da9-transcript.json",
+    "artifacts/w02/sources/W3-interview-02aa10bb-0ff5-5c9b-96b9-d87fbb93892f-transcript.json"
+  ],
+  "prompt": "customer/w02/extraction_prompt.txt",
+  "focus_questions": [
+    "本期总部运营月报纳入和排除哪些卡产品？依据是什么，哪些原因仍未知？",
+    "会员等级、购卡实付金额与付费资格分别是什么关系？有哪些明确限制？",
+    "同一账户多张卡时怎样判断资格、计算人数和累计订单？各说法适用什么业务范围？",
+    "权益开始日、计划结束日、提前终止日及空终止字段分别有哪些明确说法？是谁说明、适用于什么场景？",
+    "门店规则是否已被确认适用于本期总部月报？两个结束日期组合规则是否已确认？区分角色回答与访谈者提出的理解。",
+    "运营、IT、门店分别能确认或配合什么？哪些资料尚未取得，核实对象和记录要求是什么？",
+    "本轮哪些证据补充或修订了 W02 的未知？哪些仍未决？不同角色的范围差异、无法确认和相互转介应怎样如实记录？"
+  ],
+  "batch_chars": 6000,
+  "max_batches": 24,
+  "reconcile_chars": 96000,
+  "profile": "deepseek-json"
+}

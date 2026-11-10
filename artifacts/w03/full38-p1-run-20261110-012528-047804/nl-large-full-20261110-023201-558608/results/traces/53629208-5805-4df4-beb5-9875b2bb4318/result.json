@@ -1,0 +1,24 @@
+{
+  "status": "unsupported",
+  "reason": "月末付费会员购买人数仅支持完整自然月、全渠道、全门店口径，多月必须按月分别展示，不能将2026年5月和6月合并为一行或跨月加总去重人数。可改为单月全范围汇总，或按5月、6月分别展示。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "月末付费会员购买人数仅支持完整自然月、全渠道、全门店口径，多月必须按月分别展示，不能将2026年5月和6月合并为一行或跨月加总去重人数。可改为单月全范围汇总，或按5月、6月分别展示。",
+    "metrics": [
+      "monthly_paid_buyer_count"
+    ],
+    "start": "2026-05-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "把青禾2026年5月和6月的P1月末付费会员购买人数汇总成一行，我不要逐月结果。",
+  "trace_id": "53629208-5805-4df4-beb5-9875b2bb4318",
+  "elapsed_seconds": 2.375,
+  "model_usage": {
+    "prompt_tokens": 12549,
+    "completion_tokens": 320,
+    "total_tokens": 12869
+  },
+  "model_calls_with_usage": 1
+}

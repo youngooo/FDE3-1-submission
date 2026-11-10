@@ -1,0 +1,52 @@
+[
+  {
+    "path": "artifacts/w03/submission_status.json",
+    "before": "069853b27ff48568740f8b41285c6741262d312e782a9db2ae805cee080f078a",
+    "after": "04212830bfd465dbe8d38836a225ffffd6c63cc927872cf845e027e2f8278708"
+  },
+  {
+    "path": "docs/w03/submission_overview.txt",
+    "before": "2d3bb6f4fdf30ad8225d8691d43a59281d5522e87c9372a3182a5d3b3f989545",
+    "after": "1ff8ae96948eee631929eb22122445f097cc0d2815b8ee95b73e9bab199e7d89"
+  },
+  {
+    "path": "docs/w03/model_changes.md",
+    "before": "8f53a1633129d324833aedea8ef04a78cd3a4dc51ca033c5af3f8072c87e0cd3",
+    "after": "335780370180b727d216305782f2dfbd10506836baf263385f41b1beff59fbcd"
+  },
+  {
+    "path": "docs/w03/sow.md",
+    "before": "1d15e8d30cde2dd12a20fbc722015dda978c2a666b32e4b4baa6634fd2a95a07",
+    "after": "c6299d7b29ce588d82eafc60587fc03096313ad43685ca5b7f60c36b5a9a91e0"
+  },
+  {
+    "path": "docs/w03/teacher_feedback_check.md",
+    "before": "0904bab5e6c944540aeb68ec632772f9819615b7d5419a01099e85b9b5932b00",
+    "after": "8e0dbed4e45825e5058fe867867dc64c685bbb7efeaabb1455ceef51a02187d9"
+  },
+  {
+    "path": "docs/w03/framework_changes.md",
+    "before": "3b42a7eed5e038477dbdd76bdc84c58059235bd92109513830baef32d8261d2d",
+    "after": "7aa9db917492b0cc4377b5200f6066ef958600d7634157bc82ea5e2036a0350a"
+  },
+  {
+    "path": "customer/w03/test_entrypoints.txt",
+    "before": "cd806624dcc89b2b4081e4f002288b5679cb8f082d7a36702131311c5a17b59a",
+    "after": "31a72af39a7eed3e1e691dd01b737a063ed998d74be3bdb91361411bd3091c64"
+  },
+  {
+    "path": "docs/w03/metric_decisions.md",
+    "before": "b9bf2c6d6526fa3f279a87c6dfced70726209ab38c82ffde0dc268b9474f2599",
+    "after": "0cd74be27732a4cbd3826a3ef878edb042ff7d8a22f4641220a475768d650284"
+  },
+  {
+    "path": "docs/w03/interview_notes.md",
+    "before": "ebb12409b761d852549ad8ed55ec403e7e00155d267d80b41ae7f546626dc871",
+    "after": "999c7fe6d4eed9567f14a025e2f9782c2bee3d6a50c4793aa277f959f0021220"
+  },
+  {
+    "path": "docs/w03/sow_review_notes.md",
+    "before": "2ff20e3ef390c8d36f3b46d763e3e0e59d2d297b2a53595e295eef07b4f2f946",
+    "after": "1f7170cc33089e861ce31e3f6b50efe71167c5549bf12c494c4e1aab05e5da79"
+  }
+]

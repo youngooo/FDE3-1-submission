@@ -1,0 +1,71 @@
+{
+  "kind": "unknown_business_rules_manual_review",
+  "date": "2026-11-08",
+  "review_method": "AI辅助对照实际result与必要输入上下文，不是自动语义判定器",
+  "execution_design": "第三题历史含前两题；本轮不属于三次相互独立的新会话测试",
+  "all_requirements_passed": false,
+  "model_called_by_archiver": false,
+  "queries_reexecuted": false,
+  "cases": [
+    {
+      "trace_id": "8d1c128d-a7b2-4a1f-ad65-3cfcb86fe820",
+      "focus": "久未回购阈值",
+      "no_fabricated_threshold": true,
+      "needs_improvement": [
+        "将复购率与复购会员判定一起概括为至少两单，未说明比率分母；拒答主要基于目录缺定义，不能据此认定完整业务理解已验证"
+      ]
+    },
+    {
+      "trace_id": "ef323c22-55dc-4dad-98db-3b4a9ed9145c",
+      "focus": "两类会员相加",
+      "no_unsupported_addition": true,
+      "needs_improvement": [
+        "未充分解释两类身份潜在重叠及统计时点、范围和去重条件；目录不支持不能等同于客户业务关系不存在"
+      ]
+    },
+    {
+      "trace_id": "3bf41168-a750-4ce1-8b04-f582c29cf14c",
+      "focus": "复购变化归因",
+      "no_unsupported_causal_claim": true,
+      "needs_improvement": [
+        "原始用户问题与历史未给年份，工具意图直接选2026，应核对并补年份澄清",
+        "回答未明确数据为合成测试集",
+        "传入问数工具的问题增加了提供两月数据的要求，应区分用户原问题与工具改写，不能冒充原问句"
+      ]
+    }
+  ],
+  "source_results": {
+    "8d1c128d-a7b2-4a1f-ad65-3cfcb86fe820": {
+      "path": ".runtime/product/metric-runs/8d1c128d-a7b2-4a1f-ad65-3cfcb86fe820/result.json",
+      "sha256": "2f0511658cf6175ecee9df47b42efe7b5caf258a64e94939f109a7ceaff9f158"
+    },
+    "ef323c22-55dc-4dad-98db-3b4a9ed9145c": {
+      "path": ".runtime/product/metric-runs/ef323c22-55dc-4dad-98db-3b4a9ed9145c/result.json",
+      "sha256": "cf6a5468a25dca095a96e8622f0b6ca666de4091719605442d91113945a6eff6"
+    },
+    "3bf41168-a750-4ce1-8b04-f582c29cf14c": {
+      "path": ".runtime/product/metric-runs/3bf41168-a750-4ce1-8b04-f582c29cf14c/result.json",
+      "sha256": "c0439206f08715584f0c95b2210cd6472f93b855c293dc2b7349831085da312b"
+    }
+  },
+  "third_case_input_observations": {
+    "user_messages": [
+      "青禾多少天没购买就算久未回购？",
+      "青禾的免费注册会员数与付费会员数相加，就是会员总数吗？",
+      "青禾7月到8月复购率发生变化，能说明这个助手提升了复购吗？"
+    ],
+    "tool_question": "青禾7月到8月复购率发生变化，能说明这个助手提升了复购吗？请给出7月与8月的月内复购率数据并判断能否归因到助手。",
+    "customer_context": {
+      "customer": "青禾",
+      "statistics_unit": "CRM 会员账户",
+      "scope": "本周合成测试库"
+    },
+    "synthetic": true,
+    "reference_date": "2026-09-01",
+    "coverage": [
+      "2024-09-01",
+      "2026-09-01"
+    ],
+    "note": "输入存在reference_date=2026-09-01，但并非用户对年份的明确确认。此记录不声称已定位具体代码根因。"
+  }
+}

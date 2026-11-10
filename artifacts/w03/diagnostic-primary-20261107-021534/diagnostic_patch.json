@@ -1,0 +1,19 @@
+{
+  "kind": "manual_diagnostic_patch",
+  "source_candidate": "artifacts/w03/build-base16-homefix-20261107-020844/candidate",
+  "changes": [
+    {
+      "model": "order_store_dim",
+      "entity": "store",
+      "before": "unique",
+      "after": "primary"
+    },
+    {
+      "model": "member_home_store_dim",
+      "entity": "home_store",
+      "before": "unique",
+      "after": "primary"
+    }
+  ],
+  "note": "人工修正的诊断副本，不能冒充模型直接生成的定稿库"
+}

@@ -1,0 +1,9 @@
+[0m17:13:52  Running with dbt=1.12.5
+[0m17:13:52  Registered adapter: duckdb=1.11.0
+[0m17:13:53  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m17:13:54  [[33mWARNING[0m]: Duplicate dimension + primary entity pairing detected, dimension + primary entity pairings must be unique. Semantic model `orders_lifecycle_sm` has a primary entity of `order` and dimension `ordered_at`, but this pairing is already in use on semantic model `orders_sm`.
+[0m17:13:54  [[33mWARNING[0m]: Duplicate dimension + primary entity pairing detected, dimension + primary entity pairings must be unique. Semantic model `orders_lifecycle_sm` has a primary entity of `order` and dimension `channel`, but this pairing is already in use on semantic model `orders_sm`.
+[0m17:13:54  [[33mWARNING[0m]: Duplicate dimension + primary entity pairing detected, dimension + primary entity pairings must be unique. Semantic model `orders_lifecycle_sm` has a primary entity of `order` and dimension `status`, but this pairing is already in use on semantic model `orders_sm`.
+[0m17:13:54  [[31mERROR[0m]: Encountered an error:
+Parsing Error
+  Semantic Manifest validation failed.

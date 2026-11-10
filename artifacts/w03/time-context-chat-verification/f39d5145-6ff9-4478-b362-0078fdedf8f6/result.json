@@ -1,0 +1,26 @@
+{
+  "status": "clarify",
+  "reason": "无法确定“7月和8月”的年份，请确认是2025年、2026年还是其他年份。确认后可按完整自然月分别展示月内复购率；“青禾”仅作为当前数据集，不作为门店筛选。",
+  "intent": {
+    "status": "clarify",
+    "reason": "无法确定“7月和8月”的年份，请确认是2025年、2026年还是其他年份。确认后可按完整自然月分别展示月内复购率；“青禾”仅作为当前数据集，不作为门店筛选。",
+    "metrics": [
+      "monthly_repeat_rate"
+    ],
+    "start": "",
+    "end": "",
+    "group_by": [
+      "metric_time__month"
+    ],
+    "filters": []
+  },
+  "question": "青禾7月和8月的月内复购率分别是多少？",
+  "trace_id": "f39d5145-6ff9-4478-b362-0078fdedf8f6",
+  "elapsed_seconds": 3.707,
+  "model_usage": {
+    "prompt_tokens": 10980,
+    "completion_tokens": 468,
+    "total_tokens": 11448
+  },
+  "model_calls_with_usage": 1
+}

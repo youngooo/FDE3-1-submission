@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "discount_rate"
+    ],
+    "start": "2026-05-01",
+    "end": "2026-06-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(SUM(CASE WHEN status = 'paid' THEN gross_cents - paid_cents ELSE 0 END) AS DOUBLE) / CAST(NULLIF(SUM(CASE WHEN status = 'paid' THEN gross_cents ELSE 0 END), 0) AS DOUBLE) AS discount_rate\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-05-01' AND '2026-05-31'",
+  "columns": [
+    "discount_rate"
+  ],
+  "rows": [
+    [
+      0.09886615345916308
+    ]
+  ],
+  "seconds": 0.106,
+  "units": {
+    "discount_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "青禾2026年5月、汇总全部门店，优惠率为 0.09886615345916308（小数比例）。统计口径为：优惠金额÷支付订单原价金额；本月分母不为零，因此该比率已计算得出。",
+  "question": "青禾2026年5月，优惠率是多少？仅这一项，汇总全部门店。结果使用小数比例。",
+  "trace_id": "56c335c3-b6ab-493b-a99c-eb50af0a4cde",
+  "elapsed_seconds": 5.887,
+  "model_usage": {
+    "prompt_tokens": 15129,
+    "completion_tokens": 376,
+    "total_tokens": 15505
+  },
+  "model_calls_with_usage": 2
+}

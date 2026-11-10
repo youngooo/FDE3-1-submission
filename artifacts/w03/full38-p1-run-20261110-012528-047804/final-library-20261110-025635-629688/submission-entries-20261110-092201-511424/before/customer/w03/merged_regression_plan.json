@@ -1,0 +1,27 @@
+{
+  "kind": "current_merged_library_regression_plan",
+  "library": "artifacts/w03/library",
+  "library_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "metrics": 32,
+  "final_38_acceptance": false,
+  "entries": [
+    {
+      "dataset": "small",
+      "project": ".runtime/qinghe-merged-small-20261108-170704",
+      "cases": "artifacts/w03/merged-regression-preparation-20261108-170704/small/tests-general32.json",
+      "cases_sha256": "4fc25f5ef2a141dd7bc00990948230f072624ea5c5a5cc09d98865a6c1caf357",
+      "cases_total": 54,
+      "data_version": "qinghe-w03-20260923-small",
+      "status": "prepared_not_executed"
+    },
+    {
+      "dataset": "large",
+      "project": ".runtime/qinghe-merged-large-20261108-170704",
+      "cases": "artifacts/w03/merged-regression-preparation-20261108-170704/large/tests-general32.json",
+      "cases_sha256": "a072ffd785696c6ee1ab68e8f934a5721e7a51c68956e3c957e89c7afb4abc0c",
+      "cases_total": 53,
+      "data_version": "qinghe-w03-20260923-large",
+      "status": "prepared_not_executed"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+--- before/customer/w03/build-metrics/SKILL.md
++++ after/customer/w03/build-metrics/SKILL.md
+@@ -32,6 +32,7 @@
+ ## 原生语义模型与 SQL
+ 
+ - 按 native_format 和 contract 输出完整的 dbt semantic_models、measures 与 metrics。每个模型包含 name、model、entities、dimensions；有时间聚合的模型设置 defaults.agg_time_dimension，时间维度按实际日或月粒度声明。
++- MetricFlow保留名metric_time用于查询层的统一时间接口，不能将其声明为semantic_models[].dimensions[].name。订单模型使用ordered_at，账户注册模型使用registered_at，月度模型使用month_start等非保留的实际时间维度名称；各模型defaults.agg_time_dimension必须指向本模型已声明的时间维度，维度expr指向实际存在的日期列。不能只改维度名而遗漏默认聚合时间引用。查询入口的metric_time或metric_time__month仍可保留，不把查询层名字直接复制成语义维度声明；这一修正不改变日期字段、粒度或统计口径。
+ - model 使用 ref('模型名')。model_sql 的键为派生模型名，值为 DuckDB 兼容的 SELECT 或 WITH 查询；通过 {{ ref('orders') }} 等引用接入表或已定义派生模型。
+ - 不重定义 orders、members、stores、cards、time_spine，不直接访问 CSV、绝对路径、网络、数据库附件或环境变量。不要生成 DDL、DML、dbt config 宏或其他副作用操作。
+ - 所有模型名、metric 名、measure 名采用小写字母开头的字母数字下划线名称；measure 名在整个输出内唯一。引用的 measure、模型、列及依赖必须存在。

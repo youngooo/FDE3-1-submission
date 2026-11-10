@@ -1,0 +1,23 @@
+{
+  "status": "ok",
+  "source": "/home/yang/FDE/fde-student-w01-0.2.0/artifacts/w01/W1-interview-281b9453-5038-51af-b702-53d73ce8016c-public.json",
+  "source_sha256": "18ef61b56dbd18ce3b28c1f36c823a2e6716bdb92e8dc3c198b9805717252777",
+  "source_week": 1,
+  "message_ids": [
+    "MSG-00517",
+    "MSG-00519"
+  ],
+  "archive": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/four-quarter-source-review-20261108-152215",
+  "documents": {
+    "interview_notes.md": {
+      "before": "d9ab3e01a2f9cccad45aaf86a49924024c27ff14092b162d69868c97d0051bb6",
+      "after": "31f75b58697b0db2a3c28031ef3c0174ff9e6a215366df6a8f9cf860558d397e"
+    },
+    "model_changes.md": {
+      "before": "09daebc95a1caf1f2eb2bc0c60240494ed8c32bcd44ca34c873e24126404d244",
+      "after": "ea9a927f0d3bd66175093ae739319c67b66b5d7da302c42702b31ad48e2c32a9"
+    }
+  },
+  "model_called": false,
+  "business_questions_resolved": false
+}

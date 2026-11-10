@@ -1,0 +1,10 @@
+--- before/customer/w03/build-metrics/SKILL.md
++++ after/customer/w03/build-metrics/SKILL.md
+@@ -20,6 +20,7 @@
+ - P1的business_model_usage可选择清单中已验证的短句，used_for只填本次实际生成的对象；其它必要规则继续引用实际原文。优先绑定承载该规则的派生模型，避免对同一规则反复列出全部下游指标，或为每个指标重复完整来源说明。每条引用保持可追溯，不以重复次数代替证据质量。
+ - catalog 填写真实名称、有限且无歧义的别名、单位、来源、适用限制。金额底层保留分，unit 使用 cents；数量用 count，比率用 ratio；其他单位准确写明。展示换算不改变底层计算。
+ - 为保持生成批次一致，分／单写 cents_per_order，分／账户写 cents_per_account，单／账户写 orders_per_account，件／单写 items_per_order。这些名称仅规定目录中的单位拼写，不改变计算尺度；分与元、比例与百分数不是同一单位。
++- 有效订单商品件数 valid_order_items 属于数量指标，catalog.unit 必须写 count，不能写 items、件或 quantity。商品件数这一业务含义写在名称和描述中；原始 quantity 的合计规则不变。注意它与单均商品件数 items_per_order 不同，后者 unit 仍为 items_per_order。返回前核对这两个目录单位，不能通过修改数值或公式弥补单位拼写错误。
+ 
+ ## 定义与粒度
+ 

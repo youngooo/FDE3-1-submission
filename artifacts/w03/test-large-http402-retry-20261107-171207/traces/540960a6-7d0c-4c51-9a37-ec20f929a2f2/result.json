@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "cancel_rate"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(SUM(CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END) AS DOUBLE) / CAST(NULLIF(SUM(1), 0) AS DOUBLE) AS cancel_rate\nFROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "cancel_rate"
+  ],
+  "rows": [
+    [
+      0.07992770943858217
+    ]
+  ],
+  "seconds": 0.17,
+  "units": {
+    "cancel_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f",
+  "answer": "青禾在2026年8月（2026-08-01含至2026-09-01不含）的全门店取消率为7.99%（小数比例0.07992770943858217）。口径为：按原订单下单日期归属，聚合后以取消订单数除以创建订单数；分母为零时未定义，本次结果非零。结果按全门店汇总，不按门店或其他维度分组。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的取消率，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。",
+  "trace_id": "540960a6-7d0c-4c51-9a37-ec20f929a2f2",
+  "elapsed_seconds": 9.739,
+  "model_usage": {
+    "prompt_tokens": 11752,
+    "completion_tokens": 839,
+    "total_tokens": 12591
+  },
+  "model_calls_with_usage": 2
+}

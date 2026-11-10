@@ -1,0 +1,10 @@
+{
+  "status": "error",
+  "code": "MODEL_HTTP_402",
+  "reason": "本次调用未完成，请查看运行记录；不能把失败当成零。",
+  "question": "看青禾2026年8月：一共创建了多少笔订单，其中扣除退款后仍有正金额的已支付订单多少笔，净销售额合计多少分？取消单也算创建订单，全门店汇总。",
+  "trace_id": "381ae1ff-f035-4b07-ba6d-aeb0824301ec",
+  "elapsed_seconds": 0.532,
+  "model_usage": {},
+  "model_calls_with_usage": 0
+}

@@ -1,0 +1,10 @@
+{
+  "status": "error",
+  "code": "MODEL_HTTP_402",
+  "reason": "本次调用未完成，请查看运行记录；不能把失败当成零。",
+  "question": "青禾在2024-09-01含至2026-09-01不含，按注册日期统计注册会员数，并按会员等级分组。",
+  "trace_id": "64077f08-767c-4d74-8a84-4c1ca3e3b9b6",
+  "elapsed_seconds": 0.504,
+  "model_usage": {},
+  "model_calls_with_usage": 0
+}

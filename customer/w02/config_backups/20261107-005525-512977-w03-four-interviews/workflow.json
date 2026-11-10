@@ -1,0 +1,9 @@
+{
+  "version": "w02-workflow-0.1.0",
+  "goal": "依据本轮 W03 小林、老周、陈姐三份实际访谈，核查并补充本期总部运营月报的付费会员业务认识：卡产品范围、会员等级与购卡金额的作用、账户与多卡关系、指定日期的有效资格及核实职责。区分总部月报口径与门店办卡用卡规则，保留各自来源和适用范围。日期端点在总部月报中的适用性、两个结束日期的组合若无明确依据，继续列为未决；访谈者提出的算法不作为客户确认。沿用仍适用的 W02 内容，不因本轮未提及而删除旧规则；按新证据修订相应未知，保留未解决问题与下一步。不得将角色陈述写成已执行验证、正式批准或已取得资料。",
+  "extraction_config": "customer/w02/extraction.json",
+  "skill": "customer/w02/skills/extract-business/SKILL.md",
+  "business_model": "docs/w03/business_model.md",
+  "notes": "docs/w03/interview_notes.md",
+  "max_steps": 24
+}

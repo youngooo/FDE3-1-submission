@@ -1,0 +1,2 @@
+{"build_request_policy": {"gateway_cache_bypass": true, "wire_format": "gateway-extra-body-v1", "request_profile": "compatible", "max_tokens": 32768, "retry_max_tokens": 65536, "timeout": 600.0, "retry_timeout": 900.0, "token_limit_field": "max_tokens"}}
+{"status": "error", "code": "DBT_BUILD_FAILED: /home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-010249-095854/build/validation-project/build.log"}

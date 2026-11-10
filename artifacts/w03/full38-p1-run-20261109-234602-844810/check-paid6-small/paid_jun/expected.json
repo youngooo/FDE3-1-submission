@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "months": {
+    "2026-06-01": {
+      "monthly_paid_buyer_count": 1,
+      "monthly_paid_order_count": 1,
+      "monthly_paid_sales_cents": 2000,
+      "monthly_paid_repeat_buyer_count": 0,
+      "monthly_paid_repeat_rate": "0",
+      "monthly_paid_avg_order_value": "2000"
+    }
+  },
+  "reason_contains": null
+}

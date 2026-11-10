@@ -1,0 +1,7 @@
+{
+  "id": "aug_home_store",
+  "passed": true,
+  "expected_groups": 3,
+  "checked_metrics": 24,
+  "errors": []
+}

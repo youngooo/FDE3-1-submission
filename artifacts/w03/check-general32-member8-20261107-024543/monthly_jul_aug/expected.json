@@ -1,0 +1,25 @@
+{
+  "status": "ok",
+  "groups": [
+    {
+      "group": [
+        "2026-07-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 11,
+        "monthly_repeat_buyer_count": 1,
+        "monthly_repeat_rate": "0.09090909090909090909090909091"
+      }
+    },
+    {
+      "group": [
+        "2026-08-01"
+      ],
+      "metrics": {
+        "monthly_buyer_count": 15,
+        "monthly_repeat_buyer_count": 12,
+        "monthly_repeat_rate": "0.8"
+      }
+    }
+  ]
+}

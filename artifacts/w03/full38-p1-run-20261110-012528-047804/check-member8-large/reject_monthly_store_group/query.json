@@ -1,0 +1,13 @@
+{
+  "metrics": [
+    "monthly_buyer_count",
+    "monthly_repeat_buyer_count",
+    "monthly_repeat_rate"
+  ],
+  "start": "2026-06-01",
+  "end": "2026-07-01",
+  "group_by": [
+    "store"
+  ],
+  "filters": []
+}

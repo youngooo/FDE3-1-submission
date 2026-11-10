@@ -1,0 +1,51 @@
+{
+  "changes": [
+    {
+      "path": "docs/w03/model_changes.md",
+      "before": "335780370180b727d216305782f2dfbd10506836baf263385f41b1beff59fbcd",
+      "after": "8ad16fd7b43152f3f18b029d356ea2ec7acc28b85f6b79d11f9187e36f0e7142"
+    },
+    {
+      "path": "docs/w03/interview_notes.md",
+      "before": "999c7fe6d4eed9567f14a025e2f9782c2bee3d6a50c4793aa277f959f0021220",
+      "after": "8fb2c8f9b9d994454a8cbf34c0ea991a2694a419daedd756d903276dec51aa57"
+    },
+    {
+      "path": "docs/w03/metric_decisions.md",
+      "before": "0cd74be27732a4cbd3826a3ef878edb042ff7d8a22f4641220a475768d650284",
+      "after": "653cc1aec6c29c0eda27e6408891973e779b3ff84ce85bb3895359225f3bdad9"
+    },
+    {
+      "path": "docs/w03/sow.md",
+      "before": "9f4490631ae81db8c5c7be370d88c204ef78b2fe2df3e68fe8bf55f1b4a746ed",
+      "after": "52f43229e5d3756ce79e2f8c413c31cffba11fc253b4f03252656fbb3668ef3f"
+    },
+    {
+      "path": "docs/w03/submission_overview.txt",
+      "before": "1ff8ae96948eee631929eb22122445f097cc0d2815b8ee95b73e9bab199e7d89",
+      "after": "7ba99b026ac6b9ff1ac8cb66fa7a039af3c319ce36c2acd32d449642ebe34888"
+    },
+    {
+      "path": "docs/w03/teacher_feedback_check.md",
+      "before": "8e0dbed4e45825e5058fe867867dc64c685bbb7efeaabb1455ceef51a02187d9",
+      "after": "c7b1191b9b3ffbf2fa297970417d1cfff651b62d43bb769fce165381d2289c90"
+    },
+    {
+      "path": "docs/w03/course_material_request_draft.md",
+      "before": "121374e40fd5f9c624e80628937a37a38aa99374ba768eca0b96585efc21d91b",
+      "after": "1235263292499681b1d440d71c0d2a85acf4382146cf886c16ecdf09d85f2c8c"
+    }
+  ],
+  "protected_unchanged": {
+    "docs/w03/business_model.md": "84d1e43aace4b57e49911cc6167bc6022d78ef5d390d9fe9c982be55d834dcf9",
+    "customer/w03/build-metrics/SKILL.md": "fb11e4b176529e89ce52feaf6120b08f4c5fcb3ec22765d10c88a3eaf1d79e48",
+    "materials/w03/09_付费月报补访原文.md": "19735f62d2a9adcee07f39c81855859a76dd6b2bf9f64e21d0c66160a7ee21c6",
+    "materials/w03/10_指标来源引用清单.md": "ee4a05c0440329147aeba28a20705619c3e3034af49c70fc75c14a5cb59c8372",
+    "artifacts/w03/library/catalog.json": "e0cff6cd4228d52aa8c4c8edafa340fda9b7d46c6c330c30c48395b0d988a21f",
+    "artifacts/w03/library/metrics.yml": "d241a49720bfa33a32de7101c4f340238d679b04e6423c996c94a33c53c5e7df",
+    "artifacts/w03/metric_test_report.json": "c6a3487893fd50c040d87a8195a63af1836178d33d1438e2dd39d6e8aa5f2eb5",
+    "product/w03_answer_prompt.txt": "efdf2213c26abfba3bf6c646361b8fd49cbdabad811ae1c20f09bb9dcfa835c2"
+  },
+  "sow_links": 3,
+  "history_and_ai_disclosures_preserved": true
+}

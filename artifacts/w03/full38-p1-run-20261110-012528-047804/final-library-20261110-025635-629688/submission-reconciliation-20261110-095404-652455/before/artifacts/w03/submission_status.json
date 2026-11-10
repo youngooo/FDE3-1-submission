@@ -1,0 +1,72 @@
+{
+  "kind": "incomplete_w03_stage_delivery",
+  "date": "2026-11-08",
+  "metrics_defined": 32,
+  "metrics_target": 38,
+  "missing_metrics": [
+    "monthly_paid_avg_order_value",
+    "monthly_paid_buyer_count",
+    "monthly_paid_order_count",
+    "monthly_paid_repeat_buyer_count",
+    "monthly_paid_repeat_rate",
+    "monthly_paid_sales_cents"
+  ],
+  "library": "artifacts/w03/library",
+  "library_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "library_creation": "tools/w03.py merge --inputs artifacts/w03/build-general32-normalized-20261107-023808 --data materials/data/small --output artifacts/w03/library",
+  "library_validation_passed": true,
+  "final_report_available": true,
+  "final_38_acceptance": false,
+  "historical_reports": [
+    {
+      "path": "artifacts/w03/test-general32-full-20261107-162320/metric_test_report.json",
+      "passed": 53,
+      "total": 54,
+      "catalog_hashes": [
+        "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635"
+      ],
+      "matches_merged_library": false
+    },
+    {
+      "path": "artifacts/w03/test-general32-large-current-20261107-173736/metric_test_report.json",
+      "passed": 53,
+      "total": 53,
+      "catalog_hashes": [
+        "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+      ],
+      "matches_merged_library": false
+    }
+  ],
+  "model_called_this_closeout": false,
+  "query_reexecuted_this_closeout": false,
+  "sow_text_review": {
+    "version": "v0.11-reviewed",
+    "student_reviewed": true,
+    "customer_approval": false,
+    "record": "artifacts/w03/sow-user-review-20261108-170441/review.json"
+  },
+  "canonical_report_scope": "32-metric stage report; not complete 38 acceptance",
+  "current_library_regressions": [
+    {
+      "dataset": "small",
+      "report": "artifacts/w03/test-merged-small-20261108-171135-587239/metric_test_report.json",
+      "sha256": "41c7c74698de6f277bb214768c2b16e1e5ae04560691e35cc99d1a3fa65936dd",
+      "passed": 54,
+      "total": 54,
+      "data_version": "qinghe-w03-20260923-small",
+      "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62"
+    },
+    {
+      "dataset": "large",
+      "report": "artifacts/w03/test-merged-large-20261108-172233-494027/metric_test_report.json",
+      "sha256": "e78e109b6ea7235c630d4c28a5adea109b4a8c57397bb354b7b220b73f67edb1",
+      "passed": 53,
+      "total": 53,
+      "data_version": "qinghe-w03-20260923-large",
+      "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62"
+    }
+  ],
+  "canonical_report": "artifacts/w03/metric_test_report.json",
+  "canonical_report_sha256": "41c7c74698de6f277bb214768c2b16e1e5ae04560691e35cc99d1a3fa65936dd",
+  "answer_review": "artifacts/w03/merged-regression-review-20261108-173356/answer_review.json"
+}

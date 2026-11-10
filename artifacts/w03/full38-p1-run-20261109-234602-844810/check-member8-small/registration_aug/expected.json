@@ -1,0 +1,11 @@
+{
+  "status": "ok",
+  "groups": [
+    {
+      "group": [],
+      "metrics": {
+        "new_member_count": 0
+      }
+    }
+  ]
+}

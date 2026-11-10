@@ -1,0 +1,616 @@
+[
+  {
+    "id": "single_first_order_sales_cents",
+    "question": "请只查询青禾2026年8月的观测期首单净销售额，全门店汇总，不分组。金额按分返回。首单先在完整测试覆盖历史的有效订单中确定，再筛选查询月份。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "first_order_sales_cents"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "group_by": [],
+        "filters": []
+      },
+      "columns": [
+        "first_order_sales_cents"
+      ],
+      "rows": [
+        [
+          12800
+        ]
+      ],
+      "units": {
+        "first_order_sales_cents": "cents"
+      },
+      "data_version": "qinghe-w03-20260923-small",
+      "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+      "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39"
+    },
+    "expected_source": {
+      "materials": [
+        "03_会员运营周报.md",
+        "05_数据字典.md"
+      ],
+      "method": "Original CSV independent oracle; whole-history first-order ranking; paid qualification under provisional P1; no generated SQL or actual results used.",
+      "family": "first"
+    },
+    "answer_review_requirements": [
+      "回答数值、单位、分组、日期与执行结果一致"
+    ]
+  },
+  {
+    "id": "single_first_buyer_count",
+    "question": "请只查询青禾2026年8月的观测期首购会员数，全门店汇总，不分组。首单先在完整测试覆盖历史的有效订单中确定，再筛选查询月份。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "first_buyer_count"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "group_by": [],
+        "filters": []
+      },
+      "columns": [
+        "first_buyer_count"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ],
+      "units": {
+        "first_buyer_count": "count"
+      },
+      "data_version": "qinghe-w03-20260923-small",
+      "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+      "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39"
+    },
+    "expected_source": {
+      "materials": [
+        "03_会员运营周报.md",
+        "05_数据字典.md"
+      ],
+      "method": "Original CSV independent oracle; whole-history first-order ranking; paid qualification under provisional P1; no generated SQL or actual results used.",
+      "family": "first"
+    },
+    "answer_review_requirements": [
+      "回答数值、单位、分组、日期与执行结果一致"
+    ]
+  },
+  {
+    "id": "single_first_order_count",
+    "question": "请只查询青禾2026年8月的观测期首单数，全门店汇总，不分组。首单先在完整测试覆盖历史的有效订单中确定，再筛选查询月份。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "first_order_count"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "group_by": [],
+        "filters": []
+      },
+      "columns": [
+        "first_order_count"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ],
+      "units": {
+        "first_order_count": "count"
+      },
+      "data_version": "qinghe-w03-20260923-small",
+      "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+      "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39"
+    },
+    "expected_source": {
+      "materials": [
+        "03_会员运营周报.md",
+        "05_数据字典.md"
+      ],
+      "method": "Original CSV independent oracle; whole-history first-order ranking; paid qualification under provisional P1; no generated SQL or actual results used.",
+      "family": "first"
+    },
+    "answer_review_requirements": [
+      "回答数值、单位、分组、日期与执行结果一致"
+    ]
+  },
+  {
+    "id": "single_repeat_order_count",
+    "question": "请只查询青禾2026年8月的观测期后续购买订单数，全门店汇总，不分组。首单先在完整测试覆盖历史的有效订单中确定，再筛选查询月份。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "repeat_order_count"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "group_by": [],
+        "filters": []
+      },
+      "columns": [
+        "repeat_order_count"
+      ],
+      "rows": [
+        [
+          22
+        ]
+      ],
+      "units": {
+        "repeat_order_count": "count"
+      },
+      "data_version": "qinghe-w03-20260923-small",
+      "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+      "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39"
+    },
+    "expected_source": {
+      "materials": [
+        "03_会员运营周报.md",
+        "05_数据字典.md"
+      ],
+      "method": "Original CSV independent oracle; whole-history first-order ranking; paid qualification under provisional P1; no generated SQL or actual results used.",
+      "family": "first"
+    },
+    "answer_review_requirements": [
+      "回答数值、单位、分组、日期与执行结果一致"
+    ]
+  },
+  {
+    "id": "first_home_store",
+    "question": "青禾2026年8月按会员归属门店编号列出观测期首购会员数、观测期首单净销售额、观测期首单数、观测期后续购买订单数；完整有效历史先排序，金额分。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "first_buyer_count",
+          "first_order_sales_cents",
+          "first_order_count",
+          "repeat_order_count"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "group_by": [
+          "home_store"
+        ],
+        "filters": []
+      },
+      "columns": [
+        "home_store",
+        "first_buyer_count",
+        "first_order_sales_cents",
+        "first_order_count",
+        "repeat_order_count"
+      ],
+      "rows": [
+        [
+          "S01",
+          3,
+          7400,
+          3,
+          10
+        ],
+        [
+          "S02",
+          2,
+          5400,
+          2,
+          12
+        ],
+        [
+          "S03",
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "units": {
+        "first_buyer_count": "count",
+        "first_order_sales_cents": "cents",
+        "first_order_count": "count",
+        "repeat_order_count": "count"
+      },
+      "data_version": "qinghe-w03-20260923-small",
+      "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+      "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39"
+    },
+    "expected_source": {
+      "materials": [
+        "03_会员运营周报.md",
+        "05_数据字典.md"
+      ],
+      "method": "Original CSV independent oracle; whole-history first-order ranking; paid qualification under provisional P1; no generated SQL or actual results used.",
+      "family": "first"
+    },
+    "answer_review_requirements": [
+      "回答数值、单位、分组、日期与执行结果一致"
+    ]
+  },
+  {
+    "id": "single_valid_order_items",
+    "question": "请只查询青禾2026年8月的有效订单商品件数，全门店汇总，不分组。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "valid_order_items"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "group_by": [],
+        "filters": []
+      },
+      "columns": [
+        "valid_order_items"
+      ],
+      "rows": [
+        [
+          33
+        ]
+      ],
+      "units": {
+        "valid_order_items": "count"
+      },
+      "data_version": "qinghe-w03-20260923-small",
+      "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+      "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39"
+    },
+    "expected_source": {
+      "materials": [
+        "01_订单日报说明.md",
+        "02_财务邮件.md",
+        "05_数据字典.md"
+      ],
+      "method": "Original CSV independent oracle; whole-history first-order ranking; paid qualification under provisional P1; no generated SQL or actual results used.",
+      "family": "orders"
+    },
+    "answer_review_requirements": [
+      "回答数值、单位、分组、日期与执行结果一致"
+    ]
+  },
+  {
+    "id": "paid_coverage",
+    "question": "青禾2024年9月至2026年8月，每个自然月分别列出月末付费会员购买人数、月末付费会员有效订单数、月末付费会员净销售额、月末付费会员复购人数、月末付费会员复购率、月末付费会员订单均额，按现有P1暂定试算，全门店全渠道，金额分、均额分/单、比例小数。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "monthly_paid_buyer_count",
+          "monthly_paid_order_count",
+          "monthly_paid_sales_cents",
+          "monthly_paid_repeat_buyer_count",
+          "monthly_paid_repeat_rate",
+          "monthly_paid_avg_order_value"
+        ],
+        "start": "2024-09-01",
+        "end": "2026-09-01",
+        "group_by": [
+          "metric_time__month"
+        ],
+        "filters": []
+      },
+      "columns": [
+        "metric_time__month",
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "rows": [
+        [
+          "2024-09-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2024-10-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2024-11-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2024-12-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2025-01-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2025-02-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2025-03-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2025-04-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2025-05-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2025-06-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2025-07-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2025-08-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2025-09-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2025-10-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2025-11-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2025-12-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2026-01-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2026-02-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2026-03-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2026-04-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2026-05-01",
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        [
+          "2026-06-01",
+          1,
+          1,
+          2000,
+          0,
+          "0",
+          "2000"
+        ],
+        [
+          "2026-07-01",
+          6,
+          6,
+          15500,
+          0,
+          "0",
+          "2583.333333333333333333333333"
+        ],
+        [
+          "2026-08-01",
+          6,
+          10,
+          47550,
+          4,
+          "0.6666666666666666666666666667",
+          "4755"
+        ]
+      ],
+      "units": {
+        "monthly_paid_buyer_count": "count",
+        "monthly_paid_order_count": "count",
+        "monthly_paid_sales_cents": "cents",
+        "monthly_paid_repeat_buyer_count": "count",
+        "monthly_paid_repeat_rate": "ratio",
+        "monthly_paid_avg_order_value": "cents_per_order"
+      },
+      "data_version": "qinghe-w03-20260923-small",
+      "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+      "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39"
+    },
+    "expected_source": {
+      "materials": [
+        "04_本期统计确认邮件.md",
+        "09_付费月报补访原文.md",
+        "business_model.md:R11(P1)"
+      ],
+      "method": "Original CSV independent oracle; whole-history first-order ranking; paid qualification under provisional P1; no generated SQL or actual results used.",
+      "family": "paid"
+    },
+    "answer_review_requirements": [
+      "回答数值、单位、分组、日期与执行结果一致",
+      "保留P1暂定试算及总部适用性待书面确认，不把试算称为已确认总部制度"
+    ]
+  },
+  {
+    "id": "paid_paraphrase",
+    "question": "青禾2026年8月，按P1在月末挑出有资格账户，再看他们整月全渠道全门店的有效购买：买过的账户数、订单笔数、净额、至少买两次的账户数、后者占购买账户的比例、每单平均净额是多少？金额分、均额分/单。",
+    "expected": {
+      "status": "ok",
+      "intent": {
+        "metrics": [
+          "monthly_paid_buyer_count",
+          "monthly_paid_order_count",
+          "monthly_paid_sales_cents",
+          "monthly_paid_repeat_buyer_count",
+          "monthly_paid_repeat_rate",
+          "monthly_paid_avg_order_value"
+        ],
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "group_by": [],
+        "filters": []
+      },
+      "columns": [
+        "monthly_paid_buyer_count",
+        "monthly_paid_order_count",
+        "monthly_paid_sales_cents",
+        "monthly_paid_repeat_buyer_count",
+        "monthly_paid_repeat_rate",
+        "monthly_paid_avg_order_value"
+      ],
+      "rows": [
+        [
+          6,
+          10,
+          47550,
+          4,
+          "0.6666666666666666666666666667",
+          "4755"
+        ]
+      ],
+      "units": {
+        "monthly_paid_buyer_count": "count",
+        "monthly_paid_order_count": "count",
+        "monthly_paid_sales_cents": "cents",
+        "monthly_paid_repeat_buyer_count": "count",
+        "monthly_paid_repeat_rate": "ratio",
+        "monthly_paid_avg_order_value": "cents_per_order"
+      },
+      "data_version": "qinghe-w03-20260923-small",
+      "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+      "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39"
+    },
+    "expected_source": {
+      "materials": [
+        "04_本期统计确认邮件.md",
+        "09_付费月报补访原文.md",
+        "business_model.md:R11(P1)"
+      ],
+      "method": "Original CSV independent oracle; whole-history first-order ranking; paid qualification under provisional P1; no generated SQL or actual results used.",
+      "family": "paid"
+    },
+    "answer_review_requirements": [
+      "回答数值、单位、分组、日期与执行结果一致",
+      "保留P1暂定试算及总部适用性待书面确认，不把试算称为已确认总部制度"
+    ]
+  }
+]

@@ -1,0 +1,369 @@
+{
+  "kind": "ai_assisted_answer_review",
+  "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-large-full-20261110-023201-558608/results/metric_test_report.json",
+  "report_sha256": "b28cf9a2a0718a816e9a68752db67a99e8641c0b86571d8fdab6c09d53ceff41",
+  "structured_passed": 67,
+  "structured_total": 67,
+  "answer_passed": 66,
+  "answer_needs_fix": 1,
+  "reviewed_by": "assistant; all 67 actual answers/reasons and structured results read",
+  "human_signoff": false,
+  "business_confirmation": "pending",
+  "final_acceptance": false,
+  "issue": {
+    "id": "single_first_order_sales_cents",
+    "actual_excerpt": "按订单号顺序确定每个账户的第一笔有效订单",
+    "expected": "按下单日期排序，同一天再按订单号排序；先定全覆盖首单，再筛窗口。",
+    "numeric_result_correct": true,
+    "defect": "ordering explanation omits the primary date key"
+  },
+  "nonblocking_notes": [
+    {
+      "ids": [
+        "single_cancelled_order_count",
+        "orders_by_member__tier",
+        "reject_outside_coverage"
+      ],
+      "note": "部分日期范围未明确右端点不含；查询月份或超覆盖结论正确。"
+    }
+  ],
+  "cases": [
+    {
+      "id": "single_order_count",
+      "status": "pass",
+      "actual_text_sha256": "cc342f3ce28977d43d57601781412d5abc2fca4344ea75a9a91a091f36bfe54b"
+    },
+    {
+      "id": "single_paid_order_count",
+      "status": "pass",
+      "actual_text_sha256": "6bb367b53a68cafa8ad0353a870976c90bc6514d800bcb6fa3b1bdfe33904531"
+    },
+    {
+      "id": "single_valid_order_count",
+      "status": "pass",
+      "actual_text_sha256": "b343624af658e1a80d14c9e960fc6a7d5e62d183ca04f3dc6e0bdabeb1e218ae"
+    },
+    {
+      "id": "single_cancelled_order_count",
+      "status": "pass",
+      "actual_text_sha256": "cb5f533dcb775759ba6b18dd0d7cefb5eecaa03f6c244905db9ae43ca0c22ded"
+    },
+    {
+      "id": "single_refund_order_count",
+      "status": "pass",
+      "actual_text_sha256": "152539ea3b48d0c1dc6a830d9edab76564d35603d06446cb9cda946cace6ca8c"
+    },
+    {
+      "id": "single_partial_refund_order_count",
+      "status": "pass",
+      "actual_text_sha256": "12a847ecf0d68024eea429b8d0612fae020248a62fe00ed3a4cb5719df708b80"
+    },
+    {
+      "id": "single_full_refund_order_count",
+      "status": "pass",
+      "actual_text_sha256": "a6fa6401d137e5e9dedc2e2576436d32b0c293e4f678f89ec7d15c0bcc986ec9"
+    },
+    {
+      "id": "single_payment_cents",
+      "status": "pass",
+      "actual_text_sha256": "4eb57758314c8e560ad0241a6059e7871afdda8d54b952500abdfe2a67facfcc"
+    },
+    {
+      "id": "single_refund_cents",
+      "status": "pass",
+      "actual_text_sha256": "df5f47a3bb161493eaa2033876a4b27acf784d42a7d1256f2b639971318f5085"
+    },
+    {
+      "id": "single_net_sales_cents",
+      "status": "pass",
+      "actual_text_sha256": "8232be5718162e029a3e507d817e6ced40f83383d02819ccca61e89b24901c25"
+    },
+    {
+      "id": "single_gross_cents",
+      "status": "pass",
+      "actual_text_sha256": "3db627a28773c097579771643f66a0b94d27c3c4d20e6a6ce86e1d9f3e272f40"
+    },
+    {
+      "id": "single_discount_cents",
+      "status": "pass",
+      "actual_text_sha256": "6760dc9775942564a423bf431f9132992d50630ec713af0a81112ead56f6920e"
+    },
+    {
+      "id": "single_buyer_count",
+      "status": "pass",
+      "actual_text_sha256": "116513c1dd9403b251799721b349117b65e82de336e995b59a31aa9c87ec9956"
+    },
+    {
+      "id": "single_refund_buyer_count",
+      "status": "pass",
+      "actual_text_sha256": "256f50efb104fc71c97f3cd277fa18648169d15f2909b37255dc25ce5e85469f"
+    },
+    {
+      "id": "single_selling_store_count",
+      "status": "pass",
+      "actual_text_sha256": "3521f8a29fd6aa7e3fde0dc4980495118f054e0c0b40b1f26de1626753d307aa"
+    },
+    {
+      "id": "single_valid_order_items",
+      "status": "pass",
+      "actual_text_sha256": "59110a00dfc8a472419a5850d95bb28b757cf0dcc4e2aadd8b3c3266ec3c75bf"
+    },
+    {
+      "id": "single_avg_order_value",
+      "status": "pass",
+      "actual_text_sha256": "918825e20de159968db840ac4444b39d25b781c36bdc41d7d526665da2a43913"
+    },
+    {
+      "id": "single_avg_buyer_value",
+      "status": "pass",
+      "actual_text_sha256": "0aa0a876a8b3f239a85812fac310a347b41752e32ae4781a2881b65b89179604"
+    },
+    {
+      "id": "single_purchase_frequency",
+      "status": "pass",
+      "actual_text_sha256": "38cdc781d6f3eb9ad37d73065e1628692fd348549ee992703ed65fec5031288f"
+    },
+    {
+      "id": "single_refund_amount_rate",
+      "status": "pass",
+      "actual_text_sha256": "f42953cec65c383bcc7b997c9ef00cf70f76cc0232ebda28465b38d666911d32"
+    },
+    {
+      "id": "single_cancel_rate",
+      "status": "pass",
+      "actual_text_sha256": "9204a65d722f2e70051007ce32a2a85474129c005067739bdeb288e8ac429aa5"
+    },
+    {
+      "id": "single_refund_order_rate",
+      "status": "pass",
+      "actual_text_sha256": "fe6bb50666faa214162d76802454ae2a236e40e61baea79c01bc6b07ec46bd7a"
+    },
+    {
+      "id": "single_discount_rate",
+      "status": "pass",
+      "actual_text_sha256": "03afd881df806a6f2640aaf780730c6bfcfdcb80e4983ddcd23bd630264d2076"
+    },
+    {
+      "id": "single_items_per_order",
+      "status": "pass",
+      "actual_text_sha256": "a3ebbdd465963905120fe9c9e79f42e370c83c2e63b9f63eb190acab5284cffb"
+    },
+    {
+      "id": "single_new_member_count",
+      "status": "pass",
+      "actual_text_sha256": "fa12420bdcd5833e004e4368f39808cf509e7273df84ab5cb24607248a44827f"
+    },
+    {
+      "id": "single_first_buyer_count",
+      "status": "pass",
+      "actual_text_sha256": "1c82c3e9a2565f08bb03f6779a76f1d06e4f7ff927eafdb4eadf89f5fb17ddd4"
+    },
+    {
+      "id": "single_first_order_sales_cents",
+      "status": "needs_fix",
+      "actual_text_sha256": "85521f29de88ded533667e13ad2628dd1f698b2fe47c88e9a8d3fd54626f36a3"
+    },
+    {
+      "id": "single_first_order_count",
+      "status": "pass",
+      "actual_text_sha256": "0e937e379b7299d4e2cba935e94a6afb1a491357800b649a07116e31754e9d29"
+    },
+    {
+      "id": "single_repeat_order_count",
+      "status": "pass",
+      "actual_text_sha256": "29bd78ec7e0627fbd2800d147280acf7bb1d5d0fc7723ece305a4ae0eb6c5441"
+    },
+    {
+      "id": "single_monthly_buyer_count",
+      "status": "pass",
+      "actual_text_sha256": "81e8dad9af1c28abd7abe1fcd989bd9a3caef8abaf9e09dfdf38c7f3af7f1afa"
+    },
+    {
+      "id": "single_monthly_repeat_buyer_count",
+      "status": "pass",
+      "actual_text_sha256": "90102e6d4c10efc6f54c24ba66f9ae1f3073ae1433e216e8b6af670af56a1dfc"
+    },
+    {
+      "id": "single_monthly_repeat_rate",
+      "status": "pass",
+      "actual_text_sha256": "98f470072549bb71a9a5eca691f826a30bb7da4ac8a1361ef370f07faef4f9dd"
+    },
+    {
+      "id": "single_monthly_paid_buyer_count",
+      "status": "pass",
+      "actual_text_sha256": "75e6c373c9523ce6fc7ffbf3c0c2594f1c5348a3e7adbecd31edbe8aef414d56"
+    },
+    {
+      "id": "single_monthly_paid_order_count",
+      "status": "pass",
+      "actual_text_sha256": "5c86c214a6a4a8aa4931a527bb3712eb0ed8a994d2a6be378688770d0e8efb79"
+    },
+    {
+      "id": "single_monthly_paid_sales_cents",
+      "status": "pass",
+      "actual_text_sha256": "e8faa428cf0744ce7e14c58b0afbf77abca798759dc68a1b585be337c21dd51c"
+    },
+    {
+      "id": "single_monthly_paid_repeat_buyer_count",
+      "status": "pass",
+      "actual_text_sha256": "3b01aea8b8c3697467cfc41f1c05df2bd23b0ab65404597f97d2d1683aef82ca"
+    },
+    {
+      "id": "single_monthly_paid_repeat_rate",
+      "status": "pass",
+      "actual_text_sha256": "e20ba5ffafc61f26e3b02285e8f5a80e5dab1ab2da40e25406c9daf71b887b7a"
+    },
+    {
+      "id": "single_monthly_paid_avg_order_value",
+      "status": "pass",
+      "actual_text_sha256": "a917cffba759aa3b5df66584135fe73396c01aaa6f04091aa2a6982712c098c7"
+    },
+    {
+      "id": "order_trio",
+      "status": "pass",
+      "actual_text_sha256": "4c0dab2a2a96e92798c35347fa015bc645d3f9afd2b6b41ccf686d9d970627e2"
+    },
+    {
+      "id": "order_paraphrase",
+      "status": "pass",
+      "actual_text_sha256": "1f38f5112a7be6c6cf77ebf09815dfc62f99262276b9051ac8de9f89a0395af2"
+    },
+    {
+      "id": "orders_by_store",
+      "status": "pass",
+      "actual_text_sha256": "55b0e2985e24afba36ca75fafeb981ec25bdf445758c31418b8532175630cfd1"
+    },
+    {
+      "id": "orders_by_home_store",
+      "status": "pass",
+      "actual_text_sha256": "109d6bc1d008ba34fc4a035aeaf2dd063553ef3bbbfe6c03ec0aa83194e199e9"
+    },
+    {
+      "id": "orders_by_order__status",
+      "status": "pass",
+      "actual_text_sha256": "e4c509d0b9c03d17496ad6c967c0d4ee42649dd78dcd438376bbce91ca4cdf03"
+    },
+    {
+      "id": "orders_by_order__channel",
+      "status": "pass",
+      "actual_text_sha256": "b0efc2d4704b52aa969614070b19d5d3f045a8032eb83cd1ab8ac40ddfb7cd8a"
+    },
+    {
+      "id": "orders_by_member__tier",
+      "status": "pass",
+      "actual_text_sha256": "e1fcfad0ac71a974811965b3af8d1628970b44a75fc642159a15fee5710b4e57"
+    },
+    {
+      "id": "orders_two_regions",
+      "status": "pass",
+      "actual_text_sha256": "13c32f2931df07e7cedb1e1e28c1f12b792af5fbc616c581df7119eeb672180b"
+    },
+    {
+      "id": "orders_store_filter",
+      "status": "pass",
+      "actual_text_sha256": "53c87717ced77c27c6f470de11ce6f84ac3beb931d87b8546ec3d39ca5f839ec"
+    },
+    {
+      "id": "cancelled_zero_denominator",
+      "status": "pass",
+      "actual_text_sha256": "47cd782f515c7823508a89ef4a5c5c193cf4ac5c71fa1fca26b8f28c07d0e4de"
+    },
+    {
+      "id": "first_home_store",
+      "status": "pass",
+      "actual_text_sha256": "d7a7720463d616be684017a810f42dbd2ee8a4d8607edb62259deaca8fb920ef"
+    },
+    {
+      "id": "registration_home_store",
+      "status": "pass",
+      "actual_text_sha256": "6a9da9adf7ba883840b0b7538d3752cc71e1186f503f0f6060b9d646b0179936"
+    },
+    {
+      "id": "registration_member__tier",
+      "status": "pass",
+      "actual_text_sha256": "b27d69e9f483ee11816b532b75406f653a80b1936bd672d9a7a0acce886def24"
+    },
+    {
+      "id": "monthly_pair",
+      "status": "pass",
+      "actual_text_sha256": "2ba30588bfc9795e117d30f780528dc1a1ed7c7ce51ca51cca2d894442d1d19b"
+    },
+    {
+      "id": "paid_pair",
+      "status": "pass",
+      "actual_text_sha256": "5d7b0fc2de27d69fb6a778e8e71a72b90d664c9ce77bcd8585d2e2c3ccf575f5"
+    },
+    {
+      "id": "paid_coverage",
+      "status": "pass",
+      "actual_text_sha256": "48d9434602000b69340b72c00acb6bb6d6dce8aa27bbcc1a91e11e2b506562b9"
+    },
+    {
+      "id": "paid_paraphrase",
+      "status": "pass",
+      "actual_text_sha256": "41085ee9280efba99d26b4427ee94e246fc309138f2cabdf9bb87b0745c3d41e"
+    },
+    {
+      "id": "empty_day",
+      "status": "pass",
+      "actual_text_sha256": "715b16286b36c00a1f7837ae3ed62ed4ffb8fcc33b552b62adb597522311fc8e"
+    },
+    {
+      "id": "reject_partial_month",
+      "status": "pass",
+      "actual_text_sha256": "4c2def3244b4418240f86e7d72d9f3cdc0c6f8a90e682d4a8f01b447ef4896f4"
+    },
+    {
+      "id": "reject_monthly_store_group",
+      "status": "pass",
+      "actual_text_sha256": "3b76b7aed125dc71097a21977fd9bdb57aa564f95495bc471f7c80df7bd08b45"
+    },
+    {
+      "id": "reject_paid_partial",
+      "status": "pass",
+      "actual_text_sha256": "9066e5255775e967d6f835d8dd4a84f715333556b4646e81032b2f2415d2e5d5"
+    },
+    {
+      "id": "reject_paid_filter",
+      "status": "pass",
+      "actual_text_sha256": "0791aa0198150310308be926a80e05696ce3c243d39110da8d1f723d08b59c21"
+    },
+    {
+      "id": "reject_paid_group",
+      "status": "pass",
+      "actual_text_sha256": "42c6715351a086efa908310426d71c92db28c22ce614d8dd9585d98aceb571b3"
+    },
+    {
+      "id": "reject_paid_multimonth",
+      "status": "pass",
+      "actual_text_sha256": "4a2f800e1decd68b799312e6f6ff96c06ff21812b1bc92ed2cb39713ed5d6c2e"
+    },
+    {
+      "id": "reject_outside_coverage",
+      "status": "pass",
+      "actual_text_sha256": "07f70f4a96f2eefa98c9d73cc092e39644f74f4e3a3cc35c6d063ec4a9d54890"
+    },
+    {
+      "id": "reject_undefined_metric",
+      "status": "pass",
+      "actual_text_sha256": "e9cc45d8948b6983041df70a6582af94b53561a95d00126ffc2f74c1f34a69db"
+    },
+    {
+      "id": "nonexistent_filter",
+      "status": "pass",
+      "actual_text_sha256": "fb1c0368afa6c05ac91c98f8a1235292f4a111f1184df654d488a679d3218c40"
+    },
+    {
+      "id": "clarify_time",
+      "status": "pass",
+      "actual_text_sha256": "e05b0de78e6a1dacb5f67de6df08e385431b48c29a079ca209c249a0f2e9cd35"
+    },
+    {
+      "id": "clarify_year",
+      "status": "pass",
+      "actual_text_sha256": "180ba53d3872bf5cf16586e937462bc68c720b2aa19a835d8a9eabce66d73b2d"
+    }
+  ],
+  "retest_required": true,
+  "model_called": false
+}

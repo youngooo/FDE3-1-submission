@@ -1,0 +1,238 @@
+version: 2
+semantic_models:
+- name: order_facts
+  description: 订单粒度事实语义模型，一行一笔订单；通过左连接会员表补充会员归属门店，用于订单指标按成交门店与会员归属门店分别分组。
+  model: ref('order_facts')
+  defaults:
+    agg_time_dimension: ordered_at
+  entities:
+  - name: order
+    type: primary
+    expr: order_id
+  - name: member
+    type: foreign
+    expr: member_id
+  - name: store
+    type: foreign
+    expr: store_id
+  - name: home_store
+    type: foreign
+    expr: home_store_id
+  dimensions:
+  - name: ordered_at
+    type: time
+    type_params:
+      time_granularity: day
+  - name: channel
+    type: categorical
+    expr: channel
+  - name: status
+    type: categorical
+    expr: status
+  measures:
+  - name: order_record_count
+    description: 全部订单记录数，按订单号计一次。
+    expr: order_id
+    agg: count
+  - name: paid_order_record_count
+    description: paid 状态订单记录数。
+    expr: CASE WHEN status = 'paid' THEN 1 ELSE 0 END
+    agg: sum
+  - name: valid_order_record_count
+    description: paid 且实付减退款大于零的订单记录数。
+    expr: CASE WHEN status = 'paid' AND paid_cents > refund_cents THEN 1 ELSE 0 END
+    agg: sum
+  - name: cancelled_order_record_count
+    description: cancelled 状态订单记录数。
+    expr: CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END
+    agg: sum
+  - name: refund_order_record_count
+    description: paid 且退款金额大于零的订单记录数。
+    expr: CASE WHEN status = 'paid' AND refund_cents > 0 THEN 1 ELSE 0 END
+    agg: sum
+  - name: partial_refund_order_record_count
+    description: paid 且退款大于零且小于实付的订单记录数。
+    expr: CASE WHEN status = 'paid' AND refund_cents > 0 AND refund_cents < paid_cents
+      THEN 1 ELSE 0 END
+    agg: sum
+  - name: full_refund_order_record_count
+    description: paid 且实付大于零且退款等于实付的订单记录数。
+    expr: CASE WHEN status = 'paid' AND paid_cents > 0 AND refund_cents = paid_cents
+      THEN 1 ELSE 0 END
+    agg: sum
+  - name: paid_amount_cents
+    description: paid 订单实付金额合计，未扣退款，单位分。
+    expr: CASE WHEN status = 'paid' THEN paid_cents ELSE 0 END
+    agg: sum
+  - name: refund_amount_cents
+    description: paid 订单退款金额合计，单位分。
+    expr: CASE WHEN status = 'paid' THEN refund_cents ELSE 0 END
+    agg: sum
+  - name: net_sales_amount_cents
+    description: paid 订单实付减退款后合计，取消单不计，单位分。
+    expr: CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END
+    agg: sum
+  - name: gross_amount_cents
+    description: paid 订单折扣前原价金额合计，单位分。
+    expr: CASE WHEN status = 'paid' THEN gross_cents ELSE 0 END
+    agg: sum
+  - name: discount_amount_cents
+    description: paid 订单原价减实付的优惠金额合计，退款不冲减原优惠金额，单位分。
+    expr: CASE WHEN status = 'paid' THEN gross_cents - paid_cents ELSE 0 END
+    agg: sum
+  - name: valid_buyer_count
+    description: 有有效订单的不同 CRM 会员账户数。
+    expr: CASE WHEN status = 'paid' AND paid_cents > refund_cents THEN member_id ELSE
+      NULL END
+    agg: count_distinct
+  - name: refund_buyer_count
+    description: 发生退款的 paid 订单关联的不同 CRM 会员账户数。
+    expr: CASE WHEN status = 'paid' AND refund_cents > 0 THEN member_id ELSE NULL
+      END
+    agg: count_distinct
+  - name: valid_selling_store_count
+    description: 至少有一笔有效订单的不同订单成交门店数。
+    expr: CASE WHEN status = 'paid' AND paid_cents > refund_cents THEN store_id ELSE
+      NULL END
+    agg: count_distinct
+  - name: valid_order_item_count
+    description: 有效订单中的原始购买件数合计。
+    expr: CASE WHEN status = 'paid' AND paid_cents > refund_cents THEN quantity ELSE
+      0 END
+    agg: sum
+- name: member_accounts
+  description: CRM 会员账户粒度语义模型，一行一个账户；账户不等同于跨系统自然人。
+  model: ref('members')
+  entities:
+  - name: member
+    type: primary
+    expr: member_id
+  dimensions:
+  - name: tier
+    type: categorical
+    expr: tier
+- name: order_store_dim
+  description: 成交门店维度语义模型，提供订单成交门店的地区与名称。
+  model: ref('order_store_dim')
+  entities:
+  - name: store
+    type: primary
+    expr: store_id
+  dimensions:
+  - name: region
+    type: categorical
+    expr: region
+  - name: store_name
+    type: categorical
+    expr: store_name
+- name: member_home_store_dim
+  description: 会员归属门店维度语义模型，提供会员归属门店的地区与名称。
+  model: ref('member_home_store_dim')
+  entities:
+  - name: home_store
+    type: primary
+    expr: home_store_id
+  dimensions:
+  - name: region
+    type: categorical
+    expr: region
+  - name: store_name
+    type: categorical
+    expr: store_name
+metrics:
+- name: order_count
+  label: 创建订单数
+  description: 按下单日期统计全部订单，每个订单号一次，包含取消单。
+  type: simple
+  type_params:
+    measure: order_record_count
+- name: paid_order_count
+  label: 支付订单数
+  description: 状态为 paid 的订单数，包括后来全部退款的订单。
+  type: simple
+  type_params:
+    measure: paid_order_record_count
+- name: valid_order_count
+  label: 有效订单数
+  description: 状态为 paid 且实付金额减退款金额大于零的订单数；取消和全退不计。
+  type: simple
+  type_params:
+    measure: valid_order_record_count
+- name: cancelled_order_count
+  label: 取消订单数
+  description: 状态为 cancelled 的订单数。
+  type: simple
+  type_params:
+    measure: cancelled_order_record_count
+- name: refund_order_count
+  label: 退款订单数
+  description: paid 状态且退款金额大于零的订单数，包括部分退款与全部退款。
+  type: simple
+  type_params:
+    measure: refund_order_record_count
+- name: partial_refund_order_count
+  label: 部分退款订单数
+  description: paid 状态且退款大于零、小于实付金额的订单数。
+  type: simple
+  type_params:
+    measure: partial_refund_order_record_count
+- name: full_refund_order_count
+  label: 全额退款订单数
+  description: paid 状态且实付大于零、退款等于实付的订单数。
+  type: simple
+  type_params:
+    measure: full_refund_order_record_count
+- name: payment_cents
+  label: 实付金额
+  description: paid 订单实付金额合计，尚未扣退款；单位分。
+  type: simple
+  type_params:
+    measure: paid_amount_cents
+- name: refund_cents
+  label: 退款金额
+  description: paid 订单退款金额合计，按原订单下单日期归属，不是现金退款发生日；单位分。
+  type: simple
+  type_params:
+    measure: refund_amount_cents
+- name: net_sales_cents
+  label: 净销售额
+  description: paid 订单实付减退款后合计；取消单不计；按原订单下单日期归属；单位分。
+  type: simple
+  type_params:
+    measure: net_sales_amount_cents
+- name: gross_cents
+  label: 支付订单原价金额
+  description: paid 订单折扣前原价金额合计；单位分。
+  type: simple
+  type_params:
+    measure: gross_amount_cents
+- name: discount_cents
+  label: 优惠金额
+  description: paid 订单原价减实付的金额合计；退款不冲减原优惠金额；单位分。
+  type: simple
+  type_params:
+    measure: discount_amount_cents
+- name: buyer_count
+  label: 购买会员数
+  description: 统计窗口及筛选条件内有有效订单的不同 CRM 会员账户数，不做跨系统自然人去重。
+  type: simple
+  type_params:
+    measure: valid_buyer_count
+- name: refund_buyer_count
+  label: 退款会员数
+  description: 统计窗口内发生退款的 paid 订单关联的不同 CRM 会员账户数。
+  type: simple
+  type_params:
+    measure: refund_buyer_count
+- name: selling_store_count
+  label: 成交门店数
+  description: 窗口内至少有一笔有效订单的不同订单归属门店数。
+  type: simple
+  type_params:
+    measure: valid_selling_store_count
+- name: valid_order_items
+  label: 有效订单商品件数
+  description: 有效订单中的原始购买件数合计；退款金额不能推算退货件数，此项不是净商品销量。
+  type: simple
+  type_params:
+    measure: valid_order_item_count

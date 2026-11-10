@@ -1,0 +1,53 @@
+{
+  "status": "updated",
+  "version": "v0.8-draft",
+  "created_at_utc": "2026-11-07T13:57:11.036048+00:00",
+  "sow": "/home/yang/FDE/w03-work/fde-agent-w03/docs/w03/sow.md",
+  "backup": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/sow-progress-v08/sow.v0.7-before.md",
+  "old_sha256": "1f184f44aa9840f7c3b3c84114d089b4a7102727b1e75960d1694ccd1588b4fa",
+  "new_sha256": "9d2cee6076b38e64f1c8f0fe93c395c845d0d23b473e6964851253d51cd32eb2",
+  "verified_reports": {
+    "artifacts/w03/judge-mutations-20261107-161649/report.json": {
+      "sha256": "46c449862ccc4b225e3c98943b6ce364451b03fb8227c5890d874abd8328340c"
+    },
+    "artifacts/w03/test-general32-full-20261107-162320/metric_test_report.json": {
+      "sha256": "14e1d17d7531f577284d74d8830fcf66949fb22cd304873e9fdc11646dc7ba67"
+    },
+    "artifacts/w03/test-policy-regression-20261107-164103/metric_test_report.json": {
+      "sha256": "37373fb0a5585bf8ccf604b4a1261c9beb931b53c1efe91913a138fd2d43eb3c"
+    },
+    "artifacts/w03/test-general32-large-20261107-164818/metric_test_report.json": {
+      "sha256": "7e509ad7494bbc82ba09e9685a67bbb1806cd72cf45042f74d63f1f8c2caf239"
+    },
+    "artifacts/w03/test-context-reduction-20261107-171050/metric_test_report.json": {
+      "sha256": "daffd934645d05343bc5b77d7334ac79fc4ea33155878a7974e09fee149d81d6"
+    },
+    "artifacts/w03/test-large-model-recovery-20261107-170218/metric_test_report.json": {
+      "sha256": "750e030ef5b4462ef251a2d6f7cd5311d16f9598f3613b949f5b30cc8a2f3df0"
+    },
+    "artifacts/w03/test-general32-large-current-20261107-173736/metric_test_report.json": {
+      "sha256": "19213bef61e3c17580051f2ceda9e232c3958c4b734f1b39754ccc880b9a4fad"
+    },
+    "artifacts/w03/test-general32-large-current-20261107-173736/answer-review-findings.json": {
+      "sha256": "21ab24b395060b215ab79a5d43d06e25df17350ea835b2fe95b007db4a55699f"
+    },
+    "artifacts/w03/answer-display-replay-20261107-210241/answer_replay_report.json": {
+      "sha256": "cb8732aa10fd928607a1c1f488fd08675a13ee755474d1c90a20fd0d38a1857f"
+    },
+    "artifacts/w03/test-answer-display-e2e-20261107-210405/metric_test_report.json": {
+      "sha256": "905418e53d863fd2892306fcf0bc3d3a139c511656f20a04bae11ef04f572298"
+    }
+  },
+  "runtime_snapshot_sha256": {
+    "platform/fde_product/metrics/agent.py": "ddcd3c6042cff81c0e48c66b2700689a6885138fc70f47af63620b39eee4c080",
+    "platform/fde_product/metrics/intent_context.py": "93a9d9a27566c3c736c2e451e9e275510f9a0c9e996728f0ae1dfc916e87db87",
+    "platform/fde_product/metrics/answer_display_facts.py": "a430fe2d2e7926f430bbe93be261623a648c35e541bde60a7d5f86e369fa661b",
+    "product/w03_intent_prompt.txt": "9d11fd46a867b92a3cce6c2f6acb69e099bc881192dff36900461542a777217c",
+    "product/w03_answer_prompt.txt": "d29ef0eccbd8f64aa02eb5aa732669f835d9bff921429452309600e618d98b1e"
+  },
+  "answer_semantics_review_basis": "AI-assisted review of user-supplied outputs, separately from structured checks",
+  "new_customer_confirmation": false,
+  "model_called": false,
+  "query_executed": false,
+  "workflow_restarted": false
+}

@@ -1,0 +1,19 @@
+{
+  "id": "expected_error_state",
+  "category": "positive_control",
+  "should_pass": true,
+  "expected": {
+    "status": "error",
+    "code": "FIXTURE_ERROR"
+  },
+  "actual": {
+    "status": "error",
+    "code": "FIXTURE_ERROR"
+  },
+  "verdict": {
+    "passed": true,
+    "differences": []
+  },
+  "harness_error": null,
+  "passed": true
+}

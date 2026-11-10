@@ -1,0 +1,244 @@
+{
+  "status": "prepared_not_retried",
+  "source_report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/test-general32-large-20261107-164818/metric_test_report.json",
+  "source_report_sha256": "7e509ad7494bbc82ba09e9685a67bbb1806cd72cf45042f74d63f1f8c2caf239",
+  "source_cases": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/cases-general32-large-20261107-164706/tests-general32.json",
+  "source_cases_sha256": "8622c8f1da741001bda71de73964d5c2e3fa8d764e0f922ebee3cae5fc5f462d",
+  "script_sha256": "8407daa00a170f9917826be66d553e0eb29d92e7e87ad1a49537e098c3fc64d9",
+  "total_cases": 53,
+  "source_passed": 16,
+  "retry_cases": 37,
+  "native_probe_case": "single_valid_order_items",
+  "failure_code_counts": {
+    "MODEL_HTTP_402": 37
+  },
+  "failures": [
+    {
+      "id": "single_valid_order_items",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "903bbaab-1c11-499b-9082-5752cc210bad"
+    },
+    {
+      "id": "single_avg_order_value",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "6d242860-8f2c-47ca-bed0-ef6c304b1415"
+    },
+    {
+      "id": "single_avg_buyer_value",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "6cfee8c7-2812-43c9-9699-5cc6ba2da937"
+    },
+    {
+      "id": "single_purchase_frequency",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "4a5c2a90-abd5-47f5-9090-7b9848f3d2a9"
+    },
+    {
+      "id": "single_refund_amount_rate",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "dbc305b1-57ea-4701-8a9c-c516fbf81e5e"
+    },
+    {
+      "id": "single_cancel_rate",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "196045cc-daba-4512-910a-605d5daddda9"
+    },
+    {
+      "id": "single_refund_order_rate",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "26d2ea07-6b90-4814-b87f-94ecb98dbb08"
+    },
+    {
+      "id": "single_discount_rate",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "f79427d2-da6e-416c-80ac-f8c56b149f16"
+    },
+    {
+      "id": "single_items_per_order",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "57e20131-c176-409e-a6dd-374e6c203f30"
+    },
+    {
+      "id": "single_new_member_count",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "3dd21c7c-b397-4f59-b565-68c0cdaf561d"
+    },
+    {
+      "id": "single_first_buyer_count",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "b7bbcb2b-268a-4293-b799-40857b4dc442"
+    },
+    {
+      "id": "single_first_order_sales_cents",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "1a787df3-16a9-4628-8dad-a60282e19fa3"
+    },
+    {
+      "id": "single_first_order_count",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "fb5f69e9-c3bf-4ee7-a98f-748b0c12f206"
+    },
+    {
+      "id": "single_repeat_order_count",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "b938018c-fff0-4c21-96b6-40a22fd2b97b"
+    },
+    {
+      "id": "single_monthly_buyer_count",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "1ff259e1-769c-41f3-aa36-8b501c004479"
+    },
+    {
+      "id": "single_monthly_repeat_buyer_count",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "1c505294-9003-447f-980c-f7a08aa82957"
+    },
+    {
+      "id": "single_monthly_repeat_rate",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "9797a275-0101-4ab8-807e-f31a7a04cd18"
+    },
+    {
+      "id": "aug_order_trio",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "2f262b2e-ee93-4193-9e05-397ee9ca7864"
+    },
+    {
+      "id": "aug_order_trio_paraphrase",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "381ae1ff-f035-4b07-ba6d-aeb0824301ec"
+    },
+    {
+      "id": "aug_trio_by_store",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "ced7e5f1-76fe-4eba-833b-d8afe5d7ce7f"
+    },
+    {
+      "id": "aug_trio_by_home_store",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "7dad2e2b-c680-40f6-a29d-4fb0d05cb2c7"
+    },
+    {
+      "id": "aug_trio_by_order__status",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "eb592bad-5687-4f07-9d54-b0778855f24a"
+    },
+    {
+      "id": "aug_trio_by_order__channel",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "2f9f4137-66f5-4d7f-8a7c-89420f45a34d"
+    },
+    {
+      "id": "aug_trio_by_member__tier",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "b581a8a1-e977-4763-a3a5-a17591c91c75"
+    },
+    {
+      "id": "aug_two_region_groups",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "4b76bd69-fa50-47fc-b205-5e3e4748262a"
+    },
+    {
+      "id": "aug_store_s01_filter",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "883811ee-94db-412c-b794-6bd161e9e375"
+    },
+    {
+      "id": "aug_cancelled_zero_denominator",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "adfc38a7-7a11-4f37-be4d-16372573e283"
+    },
+    {
+      "id": "covered_empty_day",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "2f6df606-b153-4af6-88ac-877c96632c3c"
+    },
+    {
+      "id": "first_aug_store_filter",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "1810a66c-bc86-4dff-8114-4ebf481eba48"
+    },
+    {
+      "id": "first_full_coverage",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "940ecafe-b0bd-41d9-8722-f9de422322bb"
+    },
+    {
+      "id": "registration_by_home_store",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "8502ffde-8c6d-4301-b1ee-f01888b496fc"
+    },
+    {
+      "id": "registration_by_member__tier",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "64077f08-767c-4d74-8a84-4c1ca3e3b9b6"
+    },
+    {
+      "id": "monthly_jul_aug",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "6562c05c-a83d-4b41-b9a7-a2ed8d55f2e6"
+    },
+    {
+      "id": "monthly_aug_paraphrase",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "9c36153f-2e81-4922-9c72-edb89a14b511"
+    },
+    {
+      "id": "reject_partial_month",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "a4d7b03b-ba6e-4313-9f3b-8979fec200a7"
+    },
+    {
+      "id": "reject_outside_coverage",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "e92785d6-e0e5-42bf-adf0-87949eb5c62d"
+    },
+    {
+      "id": "clarify_missing_time",
+      "status": "error",
+      "code": "MODEL_HTTP_402",
+      "trace_id": "22a1d73e-14c6-4015-a81f-7d73dde6e5d9"
+    }
+  ],
+  "expectations_modified": false,
+  "model_called": false,
+  "query_executed": false,
+  "billing_cause": "Provider returned HTTP 402; exact account/billing state must be checked with the configured provider.",
+  "resume_condition": "Resolve provider billing/access first; then run the single model probe before the pending retry batch."
+}

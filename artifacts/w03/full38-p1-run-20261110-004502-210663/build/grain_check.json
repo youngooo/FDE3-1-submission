@@ -1,0 +1,178 @@
+{
+  "passed": true,
+  "items": [
+    {
+      "model": "order_semantic",
+      "check": "primary_key",
+      "columns": [
+        "order_id"
+      ],
+      "rows": 48,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "order_semantic",
+      "entity": "member",
+      "target": "member_semantic",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "order_semantic",
+      "entity": "store",
+      "target": "selling_store_semantic",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "order_semantic",
+      "entity": "home_store",
+      "target": "home_store_semantic",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "member_semantic",
+      "check": "primary_key",
+      "columns": [
+        "member_id"
+      ],
+      "rows": 20,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "member_semantic",
+      "entity": "home_store",
+      "target": "home_store_semantic",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "selling_store_semantic",
+      "check": "primary_key",
+      "columns": [
+        "store_id"
+      ],
+      "rows": 3,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "home_store_semantic",
+      "check": "primary_key",
+      "columns": [
+        "store_id"
+      ],
+      "rows": 3,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "first_order_semantic",
+      "check": "primary_key",
+      "columns": [
+        "order_id"
+      ],
+      "rows": 48,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "first_order_semantic",
+      "entity": "member",
+      "target": "member_semantic",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "first_order_semantic",
+      "entity": "store",
+      "target": "selling_store_semantic",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "first_order_semantic",
+      "entity": "home_store",
+      "target": "home_store_semantic",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "monthly_member_semantic",
+      "check": "primary_key",
+      "columns": [
+        "member_id",
+        "month_start"
+      ],
+      "rows": 29,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "monthly_member_semantic",
+      "check": "primary_key",
+      "columns": [
+        "monthly_account_key"
+      ],
+      "rows": 29,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "monthly_member_semantic",
+      "entity": "member",
+      "target": "member_semantic",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "monthly_paid_semantic",
+      "check": "primary_key",
+      "columns": [
+        "member_id",
+        "month_start"
+      ],
+      "rows": 85,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "monthly_paid_semantic",
+      "check": "primary_key",
+      "columns": [
+        "monthly_paid_account_key"
+      ],
+      "rows": 85,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "monthly_paid_semantic",
+      "entity": "member",
+      "target": "member_semantic",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    }
+  ]
+}

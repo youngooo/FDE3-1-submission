@@ -1,0 +1,103 @@
+{
+  "kind": "general32_stage_archive",
+  "status": "stage_archived_not_final_acceptance",
+  "metrics": [
+    "avg_buyer_value",
+    "avg_order_value",
+    "buyer_count",
+    "cancel_rate",
+    "cancelled_order_count",
+    "discount_cents",
+    "discount_rate",
+    "first_buyer_count",
+    "first_order_count",
+    "first_order_sales_cents",
+    "full_refund_order_count",
+    "gross_cents",
+    "items_per_order",
+    "monthly_buyer_count",
+    "monthly_repeat_buyer_count",
+    "monthly_repeat_rate",
+    "net_sales_cents",
+    "new_member_count",
+    "order_count",
+    "paid_order_count",
+    "partial_refund_order_count",
+    "payment_cents",
+    "purchase_frequency",
+    "refund_amount_rate",
+    "refund_buyer_count",
+    "refund_cents",
+    "refund_order_count",
+    "refund_order_rate",
+    "repeat_order_count",
+    "selling_store_count",
+    "valid_order_count",
+    "valid_order_items"
+  ],
+  "general_metric_count": 32,
+  "paid_monthly_metric_count_completed": 0,
+  "large_structured": {
+    "passed": 53,
+    "total": 53,
+    "scope": "original run before final answer-display patch"
+  },
+  "answer_replay": {
+    "generated": 6,
+    "total": 6,
+    "query_reexecuted": false
+  },
+  "end_to_end": {
+    "passed": 2,
+    "total": 2,
+    "scope": "discount_cents and first_order_count after answer-display patch"
+  },
+  "answer_review": {
+    "method": "AI-assisted review of user-provided output in this conversation",
+    "original_material_issue_cases": [
+      "single_discount_cents",
+      "single_first_order_count"
+    ],
+    "six_replay_answers_reviewed": "no material discrepancy found in supplied output",
+    "two_end_to_end_answers_reviewed": "no material discrepancy found in supplied output",
+    "all_53_answers_regenerated_after_display_patch": false,
+    "not_an_automatic_semantic_judge": true
+  },
+  "evidence": {
+    "large_structured": {
+      "path": "artifacts/w03/test-general32-large-current-20261107-173736/metric_test_report.json",
+      "sha256": "19213bef61e3c17580051f2ceda9e232c3958c4b734f1b39754ccc880b9a4fad"
+    },
+    "answer_review": {
+      "path": "artifacts/w03/test-general32-large-current-20261107-173736/answer-review-findings.json",
+      "sha256": "21ab24b395060b215ab79a5d43d06e25df17350ea835b2fe95b007db4a55699f"
+    },
+    "answer_replay": {
+      "path": "artifacts/w03/answer-display-replay-20261107-210241/answer_replay_report.json",
+      "sha256": "cb8732aa10fd928607a1c1f488fd08675a13ee755474d1c90a20fd0d38a1857f"
+    },
+    "end_to_end": {
+      "path": "artifacts/w03/test-answer-display-e2e-20261107-210405/metric_test_report.json",
+      "sha256": "905418e53d863fd2892306fcf0bc3d3a139c511656f20a04bae11ef04f572298"
+    }
+  },
+  "runtime_customization": {
+    "platform/fde_product/metrics/agent.py": "ddcd3c6042cff81c0e48c66b2700689a6885138fc70f47af63620b39eee4c080",
+    "platform/fde_product/metrics/intent_context.py": "93a9d9a27566c3c736c2e451e9e275510f9a0c9e996728f0ae1dfc916e87db87",
+    "platform/fde_product/metrics/answer_display_facts.py": "a430fe2d2e7926f430bbe93be261623a648c35e541bde60a7d5f86e369fa661b",
+    "product/w03_intent_prompt.txt": "9d11fd46a867b92a3cce6c2f6acb69e099bc881192dff36900461542a777217c",
+    "product/w03_answer_prompt.txt": "d29ef0eccbd8f64aa02eb5aa732669f835d9bff921429452309600e618d98b1e"
+  },
+  "unchanged_checksums": {
+    "platform/fde_product/metrics/engine.py": "e8b39da2517a65f6406da4d261173291c795248ea6c62638137e09ce750a98f3",
+    "customer/w03/judge.py": "33b7eed436f5663f04371ffc2eb456b23451c60b5073d8534e6735a6a466e0fc"
+  },
+  "remaining": [
+    "六项付费月报日期端点、结束日组合、门店规则月报适用性依据",
+    "依据核查后更新模型，构建六项并merge定稿38项库",
+    "定稿库的小样本38项及关键边界校验、规模付费月报校验",
+    "最终证据索引、SOW进度与限制更新、打包和结构预检"
+  ],
+  "model_called": false,
+  "query_executed": false
+}

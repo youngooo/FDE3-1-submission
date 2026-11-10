@@ -1,0 +1,9 @@
+{
+  "id": "reject_undefined_metric",
+  "passed": true,
+  "checked_metrics": [
+    "w03_undefined_metric_probe"
+  ],
+  "elapsed_seconds": 3.89,
+  "errors": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": "reject_partial_month",
+  "passed": true,
+  "checked_metrics": [
+    "monthly_buyer_count",
+    "monthly_repeat_buyer_count",
+    "monthly_repeat_rate"
+  ],
+  "errors": [],
+  "elapsed_seconds": 4.554
+}

@@ -1,0 +1,11 @@
+--- before/customer/w03/build-metrics/SKILL.md
++++ after/customer/w03/build-metrics/SKILL.md
+@@ -76,6 +76,8 @@
+ - 有效订单为status='paid'且paid_cents-refund_cents>0。先按账户、自然月汇总有效单数及净额，再计算购买账户数（至少1单）、复购账户数（至少2单）及各月总量。资格账户总数不等于有购买的资格账户数。
+ - 六项定义映射按材料04：monthly_paid_buyer_count为购买账户数；monthly_paid_order_count为有效单数；monthly_paid_sales_cents为有效订单净额之和，单位cents；monthly_paid_repeat_buyer_count为复购账户数；monthly_paid_repeat_rate为复购账户数除以购买账户数；monthly_paid_avg_order_value为净额除以有效单数，单位cents_per_order。两项比值引用本次生成的对应metric ID，不引用measure ID，零分母保留未定义。
+ - 月模型覆盖接入层time_spine提供的完整测试月份，不写死年份或月份，不仅从有订单或有资格卡的月份生成月集合。覆盖内无合格购买时四项计数/金额为0，两项零分母比值为null；不能为填零将无资格账户的订单纳入，或将覆盖外月份变成0。
++- 完整月份必须保留到六项实际查询的最终语义模型，不能只在资格CTE中生成月份、随后INNER JOIN卡记录而丢失无资格账户的月份。先计算唯一账户月资格及其月内订单，再按月汇总购买账户数、有效单数、有效订单净额、复购账户数；最后以time_spine去重得到的完整month_start集合为左表，LEFT JOIN上述四项月汇总，仅将缺失的四项聚合值COALESCE为0。六项的语义模型绑定此最终月粒度结果，grain_keys使用非空且唯一的month_start；两项比值仍引用对应metric，零分母为null。资格集合可以为空，最终月份集合不能因此为空；不要伪造member_id或把补出的月份行计为购买账户。
++- 检查最终输出：每个覆盖内月份恰好一行，包括完全没有资格账户、或有资格账户但无有效订单的月份；不能在LEFT JOIN后用右表非空条件再次丢月。不依赖查询引擎对无分组聚合补零来代替逐月输出完整性；单月总计与多月逐月结果须一致。
+ - 六项设置query_policy.full_month_only=true，保持全渠道、全门店、多月按月展示。月度派生模型声明真实月粒度或账户月粒度与唯一键，不将member_id单列为跨月唯一实体，不把月去重人数相加冒充跨月人数。
+ - 保持其余32项原有定义和独立条件。全部38项目标应由当前Skill重新生成；发现生成错误时修正输入或Skill后重建，不以修改生成结果的脚本替代可复现构建。生成并编译通过不证明数值正确，也不表示业务确认或正式验收完成。
+ 

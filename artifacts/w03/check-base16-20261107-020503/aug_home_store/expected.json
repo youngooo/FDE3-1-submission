@@ -1,0 +1,71 @@
+[
+  {
+    "group": [
+      "S01"
+    ],
+    "metrics": {
+      "order_count": 16,
+      "paid_order_count": 14,
+      "valid_order_count": 13,
+      "cancelled_order_count": 2,
+      "refund_order_count": 1,
+      "partial_refund_order_count": 0,
+      "full_refund_order_count": 1,
+      "payment_cents": 57400,
+      "refund_cents": 2750,
+      "net_sales_cents": 54650,
+      "gross_cents": 60500,
+      "discount_cents": 3100,
+      "buyer_count": 7,
+      "refund_buyer_count": 1,
+      "selling_store_count": 1,
+      "valid_order_items": 18
+    }
+  },
+  {
+    "group": [
+      "S02"
+    ],
+    "metrics": {
+      "order_count": 15,
+      "paid_order_count": 15,
+      "valid_order_count": 14,
+      "cancelled_order_count": 0,
+      "refund_order_count": 2,
+      "partial_refund_order_count": 1,
+      "full_refund_order_count": 1,
+      "payment_cents": 56650,
+      "refund_cents": 11000,
+      "net_sales_cents": 45650,
+      "gross_cents": 58750,
+      "discount_cents": 2100,
+      "buyer_count": 8,
+      "refund_buyer_count": 2,
+      "selling_store_count": 1,
+      "valid_order_items": 15
+    }
+  },
+  {
+    "group": [
+      "S03"
+    ],
+    "metrics": {
+      "order_count": 1,
+      "paid_order_count": 1,
+      "valid_order_count": 0,
+      "cancelled_order_count": 0,
+      "refund_order_count": 1,
+      "partial_refund_order_count": 0,
+      "full_refund_order_count": 1,
+      "payment_cents": 5000,
+      "refund_cents": 5000,
+      "net_sales_cents": 0,
+      "gross_cents": 5000,
+      "discount_cents": 0,
+      "buyer_count": 0,
+      "refund_buyer_count": 1,
+      "selling_store_count": 0,
+      "valid_order_items": 0
+    }
+  }
+]

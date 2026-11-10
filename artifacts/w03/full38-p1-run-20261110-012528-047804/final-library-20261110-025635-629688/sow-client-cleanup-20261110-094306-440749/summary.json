@@ -1,0 +1,28 @@
+{
+  "kind": "sow_client_body_cleanup",
+  "version": "v0.12-draft",
+  "changes": [
+    {
+      "path": "docs/w03/sow.md",
+      "before": "2cb96116814528879701049908e15b76423dc1a575c3cf8912c6f97a1c5984ba",
+      "after": "99fc491d3ab6c063a379e1b1e06b9872b80e87ae86052c15f62e5c6313608b97"
+    },
+    {
+      "path": "docs/w03/sow_review_notes.md",
+      "before": "93824bcaddf35c49b574543449e90bdcd09ae807a12fd93cc2de26d319c226c0",
+      "after": "b589a652ff8cca3901ce817f3b3e0973571b4c5d6c0a81c2dd41a5d9e123f9b8"
+    },
+    {
+      "path": "docs/w03/model_changes.md",
+      "before": "4e87d9d5df1bdb977cf2b452727024e7335874ffd745fdacf5403d4ba73be749",
+      "after": "d317eb6a0417c4e4f35c0642c4fd4d1e6dc9c9448f712f1ce4cd0e49bc9d28c0"
+    }
+  ],
+  "fee_section_preserved": true,
+  "effect_terms_preserved": true,
+  "model_called": false,
+  "library_changed": false,
+  "chat_binding_changed": false,
+  "business_confirmation": "pending",
+  "new_customer_approval": false
+}

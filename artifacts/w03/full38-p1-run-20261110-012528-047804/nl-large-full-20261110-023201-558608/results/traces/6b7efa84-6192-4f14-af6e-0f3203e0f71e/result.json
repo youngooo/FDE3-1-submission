@@ -1,0 +1,26 @@
+{
+  "status": "unsupported",
+  "reason": "所请求的 2026 年 10 月不在当前数据覆盖范围内；当前数据仅覆盖至 2026-09-01，无法核对创建订单数、有效订单数与净销售额合计。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "所请求的 2026 年 10 月不在当前数据覆盖范围内；当前数据仅覆盖至 2026-09-01，无法核对创建订单数、有效订单数与净销售额合计。",
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-10-01",
+    "end": "2026-11-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "核对青禾2026年10月的创建订单数、有效订单数与净销售额合计。",
+  "trace_id": "6b7efa84-6192-4f14-af6e-0f3203e0f71e",
+  "elapsed_seconds": 3.19,
+  "model_usage": {
+    "prompt_tokens": 12542,
+    "completion_tokens": 371,
+    "total_tokens": 12913
+  },
+  "model_calls_with_usage": 1
+}

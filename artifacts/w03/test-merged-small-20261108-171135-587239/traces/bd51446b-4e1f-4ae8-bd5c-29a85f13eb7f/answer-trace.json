@@ -1,0 +1,81 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "你根据本轮真实执行结果回答问题。解释条件时必须使用字段语义：store、store__region、store__store_name 都表示订单成交门店及其地区/名称；home_store 及其地区/名称才表示会员归属门店。返回 intent 中已有字段筛选就是已经应用的查询条件，不能因没有额外中文同名字段而否认已应用的条件。只能引用结果中的数值；金额以分存储，展示元需除100；比例展示百分数需乘100。用简明业务语言解释统计范围、口径及限制，金额保留两位小数、比例适当四舍五入。不要展示内部 status、intent 等字段名。区分零和未定义。聚合返回零是覆盖内的零；未返回某个分组仅说明该分组未列出，不能称为该指标未定义，也不能推断数据覆盖不足。返回 JSON：{\"answer\":\"...\",\"used_metrics\":[],\"citations\":[\"当前执行结果\"]}。\ncustomer_context 指明当前已加载客户与统计单位，data_context 指明本次测试数据版本和覆盖；本轮成功结果已经处于该客户数据范围。问题中的当前客户名称不是门店筛选值，不能因为没有同名门店筛选而否认结果属于该客户。只说明实际应用的筛选和分组；若用户没有要求某维度，不添加假设性的门店歧义。人数按customer_context统计单位表述为账户，不暗示跨系统自然人已去重。用业务词说明范围，不向用户罗列技术字段ID。\n\n[W03_ANSWER_FIDELITY_V1]\n回答前对照实际结果的每列数值、单位和本轮 definitions。用户明确要求分、分/单、分/账户或小数比例时，优先按其指定单位展示，不能擅自只改成元或百分数。整数金额保留整数分；均额可以有小数，不能套用整数金额的要求。若用户指定原始单位，不额外换算其他单位。\n单位 cents 是分；cents/order 和 cents_per_order 是分/单；cents/account 和 cents_per_account 是分/账户。这些单位改为元、元/单、元/账户时，数值必须先除以100，不能只替换单位文字，也不能声称已换算而保留原数值。ratio 是小数比例；仅当展示百分数时乘以100并加百分号。四舍五入不改变数量级。未明确要求换算且无法可靠核对时保留执行结果原单位，不做换算。\n解释比率时直接写出分子、分母的完整业务名称，严格使用 definitions 中的定义；不要使用容易倒置的“前者除以后者”等指代。月内复购率的分子为月内复购会员数，分母为同月月内购买会员数；不把注册人数、跨月合计或相反的比值作为分母或公式。仅有比率而未返回人数时，可以说明公式，不能编造人数。\n零、null 和拒绝不同：执行成功的零如实展示；null 写“未定义”，依定义解释零分母，不把整条查询说成失败。部分列未定义时仍展示其他已返回列。不要从未返回列猜测具体数值，不添加未请求指标。回答只包含实际范围、数值及必要口径，逐项核对文字中的单位和公式后输出。\n[/W03_ANSWER_FIDELITY_V1]\n\n[W03_DISPLAY_FACTS_V1]\nanswer_display_facts 是由本次真实执行结果用代码计算的展示事实；同一行的 group 与 metrics 对应，不能串行或串组。金额、数量和单位直接使用其中 display_value、display_unit；有 display_rounded 时可以说明约数。若用户要求保留分、分/单、分/账户或小数比例，只展示该单位，不额外附加元或百分比；用户明确要求换算时才能引用 optional_yuan_conversion 或 optional_percent_conversion 的已算好数值，不自行心算、改数字或只改单位。\n计数对象逐指标区分，不能把 customer_context 的 CRM 账户粒度套到所有计数：创建、支付、有效、取消、退款、部分退款、全额退款、观测期首单和后续订单数均是订单，单位单；购买、退款、注册、首购、月内购买、月内复购会员数是账户；成交门店数是门店；有效订单商品件数是件。首购会员数和首单数在本测试可能数值相同，也不能混用对象和单位。\n展示事实不增加查询范围，不是独立正确性证明。口径说明继续以 definitions 为准，不能额外算未请求指标或编造数值。若某列没有确定的业务计数单位，按定义核对，不从客户范围推断。最终逐项核对回答中所有数字、换算和单位是否与展示事实一致。\n[/W03_DISPLAY_FACTS_V1]\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"question\": \"请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的支付订单数，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。\", \"customer_context\": {\"customer\": \"青禾\", \"statistics_unit\": \"CRM 会员账户\", \"scope\": \"本周合成测试库\"}, \"data_context\": {\"seed\": 20260923, \"synthetic\": true, \"counts\": {\"members\": 20, \"orders\": 48, \"stores\": 3, \"cards\": 22}, \"coverage\": [\"2024-09-01\", \"2026-09-01\"], \"sha256\": {\"orders.csv\": \"c6e0dee6081e7a6f7782b54de78b3182835c46184c8e7569fc23feab8cf3c4f1\", \"cards.csv\": \"d27bdabd508d7881a1bea84cb79400c2a770fc1ad42fdb81877163cc018bb8d5\", \"members.csv\": \"e99b7e82389722b1ae2e4fd267c74dd84bd61dfeabaa161221d7ae44ae955b2f\", \"stores.csv\": \"e8160804fd485853f6c75d9a095b1ee6f05bbbd40ba851cac84def35488aa41d\"}, \"id\": \"qinghe-w03-20260923-small\", \"timezone\": \"Asia/Shanghai\", \"reference_date\": \"2026-09-01\", \"generator_version\": \"qinghe-w03-v1\", \"base_seed\": 20260922, \"library_sha256\": \"b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62\"}, \"result\": {\"status\": \"ok\", \"intent\": {\"metrics\": [\"paid_order_count\"], \"start\": \"2026-08-01\", \"end\": \"2026-09-01\", \"group_by\": [], \"filters\": []}, \"columns\": [\"paid_order_count\"], \"rows\": [[30]], \"seconds\": 0.055, \"units\": {\"paid_order_count\": \"count\"}, \"data_version\": \"qinghe-w03-20260923-small\", \"data_sha256\": \"8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6\", \"catalog_sha256\": \"b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62\"}, \"definitions\": [{\"id\": \"paid_order_count\", \"name\": \"支付订单数\", \"aliases\": [], \"unit\": \"count\", \"sources\": [{\"file\": \"01_订单日报说明.md\", \"quote\": \"状态为 paid 的订单数，包括后来全部退款的订单。\"}], \"constraints\": [\"包括后来全额退款的 paid 订单\"], \"query_policy\": {\"full_month_only\": false}}], \"answer_display_facts\": {\"version\": \"answer-display-facts-v1\", \"rows\": [{\"group\": {}, \"metrics\": [{\"metric_id\": \"paid_order_count\", \"name\": \"支付订单数\", \"raw_value\": 30, \"raw_unit\": \"count\", \"display_unit\": \"单\", \"display_value\": \"30\", \"is_undefined\": false, \"display_rounded\": false}]}], \"count_unit_basis\": \"W03 materials 01/03/04: count the metric object, not the customer-context entity.\", \"note\": \"These are renderings of the actual result, not newly queried metrics. Preserve grouping and requested units.\"}}"
+    }
+  ],
+  "model": "deepseek-flash",
+  "reply": {
+    "role": "assistant",
+    "content": "{\"answer\":\"青禾2026年8月（2026-08-01含至2026-09-01不含）全门店支付订单数为30单。按原订单下单日期归属统计；统计口径为状态为paid的订单，包含后来发生全额退款的订单。\",\"used_metrics\":[\"paid_order_count\"],\"citations\":[\"当前执行结果\"]}"
+  },
+  "usage": {
+    "prompt_tokens": 1941,
+    "completion_tokens": 293,
+    "total_tokens": 2234,
+    "completion_tokens_details": {
+      "reasoning_tokens": 212
+    }
+  },
+  "seconds": 2.613,
+  "call": {
+    "policy_version": "gateway-stages-20260922",
+    "attempts": [
+      {
+        "attempt": 1,
+        "request": {
+          "model": "deepseek-flash",
+          "messages": [
+            {
+              "role": "system",
+              "content": "你根据本轮真实执行结果回答问题。解释条件时必须使用字段语义：store、store__region、store__store_name 都表示订单成交门店及其地区/名称；home_store 及其地区/名称才表示会员归属门店。返回 intent 中已有字段筛选就是已经应用的查询条件，不能因没有额外中文同名字段而否认已应用的条件。只能引用结果中的数值；金额以分存储，展示元需除100；比例展示百分数需乘100。用简明业务语言解释统计范围、口径及限制，金额保留两位小数、比例适当四舍五入。不要展示内部 status、intent 等字段名。区分零和未定义。聚合返回零是覆盖内的零；未返回某个分组仅说明该分组未列出，不能称为该指标未定义，也不能推断数据覆盖不足。返回 JSON：{\"answer\":\"...\",\"used_metrics\":[],\"citations\":[\"当前执行结果\"]}。\ncustomer_context 指明当前已加载客户与统计单位，data_context 指明本次测试数据版本和覆盖；本轮成功结果已经处于该客户数据范围。问题中的当前客户名称不是门店筛选值，不能因为没有同名门店筛选而否认结果属于该客户。只说明实际应用的筛选和分组；若用户没有要求某维度，不添加假设性的门店歧义。人数按customer_context统计单位表述为账户，不暗示跨系统自然人已去重。用业务词说明范围，不向用户罗列技术字段ID。\n\n[W03_ANSWER_FIDELITY_V1]\n回答前对照实际结果的每列数值、单位和本轮 definitions。用户明确要求分、分/单、分/账户或小数比例时，优先按其指定单位展示，不能擅自只改成元或百分数。整数金额保留整数分；均额可以有小数，不能套用整数金额的要求。若用户指定原始单位，不额外换算其他单位。\n单位 cents 是分；cents/order 和 cents_per_order 是分/单；cents/account 和 cents_per_account 是分/账户。这些单位改为元、元/单、元/账户时，数值必须先除以100，不能只替换单位文字，也不能声称已换算而保留原数值。ratio 是小数比例；仅当展示百分数时乘以100并加百分号。四舍五入不改变数量级。未明确要求换算且无法可靠核对时保留执行结果原单位，不做换算。\n解释比率时直接写出分子、分母的完整业务名称，严格使用 definitions 中的定义；不要使用容易倒置的“前者除以后者”等指代。月内复购率的分子为月内复购会员数，分母为同月月内购买会员数；不把注册人数、跨月合计或相反的比值作为分母或公式。仅有比率而未返回人数时，可以说明公式，不能编造人数。\n零、null 和拒绝不同：执行成功的零如实展示；null 写“未定义”，依定义解释零分母，不把整条查询说成失败。部分列未定义时仍展示其他已返回列。不要从未返回列猜测具体数值，不添加未请求指标。回答只包含实际范围、数值及必要口径，逐项核对文字中的单位和公式后输出。\n[/W03_ANSWER_FIDELITY_V1]\n\n[W03_DISPLAY_FACTS_V1]\nanswer_display_facts 是由本次真实执行结果用代码计算的展示事实；同一行的 group 与 metrics 对应，不能串行或串组。金额、数量和单位直接使用其中 display_value、display_unit；有 display_rounded 时可以说明约数。若用户要求保留分、分/单、分/账户或小数比例，只展示该单位，不额外附加元或百分比；用户明确要求换算时才能引用 optional_yuan_conversion 或 optional_percent_conversion 的已算好数值，不自行心算、改数字或只改单位。\n计数对象逐指标区分，不能把 customer_context 的 CRM 账户粒度套到所有计数：创建、支付、有效、取消、退款、部分退款、全额退款、观测期首单和后续订单数均是订单，单位单；购买、退款、注册、首购、月内购买、月内复购会员数是账户；成交门店数是门店；有效订单商品件数是件。首购会员数和首单数在本测试可能数值相同，也不能混用对象和单位。\n展示事实不增加查询范围，不是独立正确性证明。口径说明继续以 definitions 为准，不能额外算未请求指标或编造数值。若某列没有确定的业务计数单位，按定义核对，不从客户范围推断。最终逐项核对回答中所有数字、换算和单位是否与展示事实一致。\n[/W03_DISPLAY_FACTS_V1]\n"
+            },
+            {
+              "role": "user",
+              "content": "{\"question\": \"请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的支付订单数，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。\", \"customer_context\": {\"customer\": \"青禾\", \"statistics_unit\": \"CRM 会员账户\", \"scope\": \"本周合成测试库\"}, \"data_context\": {\"seed\": 20260923, \"synthetic\": true, \"counts\": {\"members\": 20, \"orders\": 48, \"stores\": 3, \"cards\": 22}, \"coverage\": [\"2024-09-01\", \"2026-09-01\"], \"sha256\": {\"orders.csv\": \"c6e0dee6081e7a6f7782b54de78b3182835c46184c8e7569fc23feab8cf3c4f1\", \"cards.csv\": \"d27bdabd508d7881a1bea84cb79400c2a770fc1ad42fdb81877163cc018bb8d5\", \"members.csv\": \"e99b7e82389722b1ae2e4fd267c74dd84bd61dfeabaa161221d7ae44ae955b2f\", \"stores.csv\": \"e8160804fd485853f6c75d9a095b1ee6f05bbbd40ba851cac84def35488aa41d\"}, \"id\": \"qinghe-w03-20260923-small\", \"timezone\": \"Asia/Shanghai\", \"reference_date\": \"2026-09-01\", \"generator_version\": \"qinghe-w03-v1\", \"base_seed\": 20260922, \"library_sha256\": \"b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62\"}, \"result\": {\"status\": \"ok\", \"intent\": {\"metrics\": [\"paid_order_count\"], \"start\": \"2026-08-01\", \"end\": \"2026-09-01\", \"group_by\": [], \"filters\": []}, \"columns\": [\"paid_order_count\"], \"rows\": [[30]], \"seconds\": 0.055, \"units\": {\"paid_order_count\": \"count\"}, \"data_version\": \"qinghe-w03-20260923-small\", \"data_sha256\": \"8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6\", \"catalog_sha256\": \"b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62\"}, \"definitions\": [{\"id\": \"paid_order_count\", \"name\": \"支付订单数\", \"aliases\": [], \"unit\": \"count\", \"sources\": [{\"file\": \"01_订单日报说明.md\", \"quote\": \"状态为 paid 的订单数，包括后来全部退款的订单。\"}], \"constraints\": [\"包括后来全额退款的 paid 订单\"], \"query_policy\": {\"full_month_only\": false}}], \"answer_display_facts\": {\"version\": \"answer-display-facts-v1\", \"rows\": [{\"group\": {}, \"metrics\": [{\"metric_id\": \"paid_order_count\", \"name\": \"支付订单数\", \"raw_value\": 30, \"raw_unit\": \"count\", \"display_unit\": \"单\", \"display_value\": \"30\", \"is_undefined\": false, \"display_rounded\": false}]}], \"count_unit_basis\": \"W03 materials 01/03/04: count the metric object, not the customer-context entity.\", \"note\": \"These are renderings of the actual result, not newly queried metrics. Preserve grouping and requested units.\"}}"
+            }
+          ],
+          "stream": false,
+          "max_tokens": 8192
+        },
+        "timeout_seconds": 180.0,
+        "max_tokens": 8192,
+        "usage": {
+          "prompt_tokens": 1941,
+          "completion_tokens": 293,
+          "total_tokens": 2234,
+          "prompt_tokens_details": {
+            "cached_tokens": 896
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 212
+          },
+          "prompt_cache_hit_tokens": 896,
+          "prompt_cache_miss_tokens": 1045
+        },
+        "trace_ids": {},
+        "response_id": "e573a555-30f8-4153-8281-22b4c5025fc9",
+        "http_status": 200,
+        "finish_reason": "stop",
+        "response": {
+          "role": "assistant",
+          "content": "{\"answer\":\"青禾2026年8月（2026-08-01含至2026-09-01不含）全门店支付订单数为30单。按原订单下单日期归属统计；统计口径为状态为paid的订单，包含后来发生全额退款的订单。\",\"used_metrics\":[\"paid_order_count\"],\"citations\":[\"当前执行结果\"]}"
+        },
+        "seconds": 2.613
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1941,
+      "completion_tokens": 293,
+      "total_tokens": 2234,
+      "completion_tokens_details": {
+        "reasoning_tokens": 212
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "refund_buyer_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  COUNT(DISTINCT CASE WHEN status = 'paid' AND refund_cents > 0 THEN member_id ELSE NULL END) AS refund_buyer_count\nFROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "refund_buyer_count"
+  ],
+  "rows": [
+    [
+      4
+    ]
+  ],
+  "seconds": 0.053,
+  "units": {
+    "refund_buyer_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "answer": "青禾在2026年8月（2026-08-01含至2026-09-01不含）的退款会员数为4个CRM会员账户。统计口径为：统计窗口内发生退款的已支付订单所关联的不同会员账户去重计数，按原订单下单日期归属；范围为全门店，不按门店或其他维度分组。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的退款会员数，全门店，不按维度分组。按原订单下单日期归属。金额的查询结果保留整数分，均额使用分/单或分/账户，比率保留小数比例。",
+  "trace_id": "90c8e13c-4c29-465c-915a-eb66d550ca22",
+  "elapsed_seconds": 9.087,
+  "model_usage": {
+    "prompt_tokens": 12984,
+    "completion_tokens": 738,
+    "total_tokens": 13722
+  },
+  "model_calls_with_usage": 2
+}

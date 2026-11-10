@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "groups": [
+    {
+      "group": [],
+      "metrics": {
+        "first_buyer_count": 18,
+        "first_order_sales_cents": 41800,
+        "first_order_count": 18,
+        "repeat_order_count": 24
+      }
+    }
+  ]
+}

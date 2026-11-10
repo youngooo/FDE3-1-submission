@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_buyer_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  COUNT(DISTINCT member_id) AS monthly_buyer_count\nFROM \"data\".\"main\".\"member_month_activity\" member_month_activity_semantic_src_10000\nWHERE DATE_TRUNC('month', month_date) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "monthly_buyer_count"
+  ],
+  "rows": [
+    [
+      16504
+    ]
+  ],
+  "seconds": 0.222,
+  "units": {
+    "monthly_buyer_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f",
+  "answer": "在青禾当前客户数据范围内，统计2026年8月完整自然月（2026-08-01含至2026-09-01不含）、全门店口径下，月内至少有一笔有效订单的购买会员数；人数按CRM会员账户去重，未按任何维度分组。结果为16,504个账户。本次执行结果未返回复购率指标，因此不提供复购率数值。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的月内购买会员数，全门店，不按维度分组。按完整自然月统计，人数按CRM账户去重，复购率保留小数比例。",
+  "trace_id": "8742b856-5b0d-4d23-aba7-e4e471e355fb",
+  "elapsed_seconds": 7.62,
+  "model_usage": {
+    "prompt_tokens": 11783,
+    "completion_tokens": 592,
+    "total_tokens": 12375
+  },
+  "model_calls_with_usage": 2
+}

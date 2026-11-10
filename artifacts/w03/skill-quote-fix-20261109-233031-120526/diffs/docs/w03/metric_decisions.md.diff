@@ -1,0 +1,17 @@
+--- before/docs/w03/metric_decisions.md
++++ after/docs/w03/metric_decisions.md
+@@ -184,3 +184,14 @@
+ 原失败输入、响应、候选和日志保持原样：[构建日志](../../artifacts/w03/full38-p1-run-20261109-230916-522467/build/validation-project/build.log)、[来源检查](../../artifacts/w03/full38-p1-run-20261109-230916-522467/build/source_check.json)。未执行的粒度、维度和MetricFlow校验不记为通过。此问题属于生成定义使用了保留名，不据此认定课程框架存在缺陷。
+ 
+ 当前仅修正上游Skill，未修补生成YAML/SQL，尚未重新构建或回归。Skill变更后需重新记录前置检查与输入版本，再完整重建38项；P1总部适用性仍待书面确认。原32项库与报告不变。
++
++
++## 2026-11-09 全量重建失败：一处业务模型引文改字
++
++运行full38-p1-run-20261109-232118-670379耗时382.44秒，生成38项候选、指标unresolved为空。候选时间维度已使用ordered_at、registered_at、month_start，未再声明metric_time；但本轮在来源检查阶段停止，尚不能声称dbt或MetricFlow验证通过。
++
++source_check.json仅报告一条business_model_usage引文错误：输入原文为“悦享年卡或家庭季卡”，生成引文变成“悦享年卡与家庭季卡”。其它来源引文未被本轮检查报告判错。保留原业务模型、原始材料及失败响应，不更改源文迎合错误引用，不修改校验器，也不修补生成响应。
++
++本次只在Skill增加短句逐字复制要求和已核对的P1原文示例。示例仍须在实际输入中逐字存在，不能代替来源。修改后重新记录数据前置检查，再完整重建；新一轮构建及独立数值回归尚未执行，实际已交付库仍为原32项版本。
++
++证据：[来源检查](../../artifacts/w03/full38-p1-run-20261109-232118-670379/build/source_check.json)、[失败运行摘要](../../artifacts/w03/full38-p1-run-20261109-232118-670379/run_summary.json)。

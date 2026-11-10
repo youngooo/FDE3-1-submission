@@ -1,0 +1,4 @@
+usage: w03.py [-h]
+              {init,doctor,_inspect-worker,build,merge,load,activate,query,_query-worker,test,check}
+              ...
+w03.py: error: unrecognized arguments: -B /home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-cases-20261110-015853-130933/scripts/judge_w03_full38_20261110.py

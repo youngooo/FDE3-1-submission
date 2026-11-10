@@ -1,0 +1,50 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "first_buyer_count",
+      "first_order_count",
+      "first_order_sales_cents",
+      "repeat_order_count"
+    ],
+    "start": "2024-09-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  COUNT(DISTINCT CASE WHEN valid_order_seq = 1 THEN member_id ELSE NULL END) AS first_buyer_count\n  , SUM(CASE WHEN valid_order_seq = 1 THEN 1 ELSE 0 END) AS first_order_count\n  , SUM(CASE WHEN valid_order_seq = 1 THEN paid_cents - refund_cents ELSE 0 END) AS first_order_sales_cents\n  , SUM(CASE WHEN valid_order_seq >= 2 THEN 1 ELSE 0 END) AS repeat_order_count\nFROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2024-09-01' AND '2026-08-31'",
+  "columns": [
+    "first_buyer_count",
+    "first_order_count",
+    "first_order_sales_cents",
+    "repeat_order_count"
+  ],
+  "rows": [
+    [
+      29995,
+      29995,
+      509041734,
+      231900
+    ]
+  ],
+  "seconds": 0.225,
+  "units": {
+    "first_buyer_count": "count",
+    "first_order_count": "count",
+    "first_order_sales_cents": "cents",
+    "repeat_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f",
+  "answer": "在青禾当前客户、全门店汇总、2024-09-01（含）至2026-09-01（不含）的测试覆盖期内：观测期首购会员数为 29,995 个 CRM 会员账户；观测期首单数为 29,995 单；观测期首单净销售额为 509,041,734 分；观测期后续购买订单数为 231,900 单。口径说明：首购会员数和首单数均先在全部测试覆盖历史中按账户确定第一笔有效订单，再筛选落入该查询窗口的记录，不代表终身首购；首单净销售额取这些首单的净销售额，按首单日期归属，同日按订单号排序；后续购买订单数为各账户全测试覆盖期内第二笔及以后有效订单按订单日期落入窗口的订单数，不是月内复购人数。",
+  "question": "青禾在2024-09-01含至2026-09-01不含的测试覆盖期内，观测期首购会员数、观测期首单数、观测期首单净销售额、观测期后续购买订单数分别是多少？全门店汇总，金额保留分。",
+  "trace_id": "9e15d077-687b-4eb9-bc7a-047ea1c3c938",
+  "elapsed_seconds": 10.127,
+  "model_usage": {
+    "prompt_tokens": 12901,
+    "completion_tokens": 1227,
+    "total_tokens": 14128
+  },
+  "model_calls_with_usage": 2
+}

@@ -1,0 +1,14 @@
+{
+  "metrics": [
+    "first_buyer_count",
+    "first_order_sales_cents",
+    "first_order_count",
+    "repeat_order_count"
+  ],
+  "start": "2026-08-01",
+  "end": "2026-09-01",
+  "group_by": [
+    "store"
+  ],
+  "filters": []
+}

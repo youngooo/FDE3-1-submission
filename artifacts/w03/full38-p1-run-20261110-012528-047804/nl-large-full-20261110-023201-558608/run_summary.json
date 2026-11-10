@@ -1,0 +1,21 @@
+{
+  "status": "structured_passed_pending_answer_review",
+  "dataset": "large",
+  "stage": "full",
+  "total": 67,
+  "started_at": "2026-11-10T02:32:01.569078+08:00",
+  "business_confirmation": "pending",
+  "answer_review_required": true,
+  "final_acceptance": false,
+  "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/nl-large-full-20261110-023201-558608/results/metric_test_report.json",
+  "exit_code": 0,
+  "passed": 67,
+  "complete": true,
+  "inputs_match": true,
+  "result_library_binding": true,
+  "rejudge_consistent": true,
+  "input_changed_during_run": [],
+  "failed_cases": [],
+  "elapsed_seconds": 641.539,
+  "finished_at": "2026-11-10T02:42:59.986130+08:00"
+}

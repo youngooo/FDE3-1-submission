@@ -1,0 +1,10 @@
+[0m15:16:39  Running with dbt=1.12.5
+[0m15:16:39  Registered adapter: duckdb=1.11.0
+[0m15:16:39  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:16:41  [[33mWARNING[0m]: Invalid name `metric_time` - this name is reserved by MetricFlow. Reason: Used as the query input for creating time series metrics from measures with different time dimension names.
+[0m15:16:41  [[33mWARNING[0m]: Invalid name `metric_time` - this name is reserved by MetricFlow. Reason: Used as the query input for creating time series metrics from measures with different time dimension names.
+[0m15:16:41  [[33mWARNING[0m]: Invalid name `metric_time` - this name is reserved by MetricFlow. Reason: Used as the query input for creating time series metrics from measures with different time dimension names.
+[0m15:16:41  [[33mWARNING[0m]: Invalid name `metric_time` - this name is reserved by MetricFlow. Reason: Used as the query input for creating time series metrics from measures with different time dimension names.
+[0m15:16:41  [[31mERROR[0m]: Encountered an error:
+Parsing Error
+  Semantic Manifest validation failed.

@@ -1,0 +1,40 @@
+{
+  "passed": false,
+  "errors": [
+    {
+      "model_usage": {
+        "quote": "设D为统计自然月最后一天。对卡种属于悦享年卡与家庭季卡、日期完整且顺序正常的卡，暂定同时满足以下条件时在D有效：",
+        "used_for": [
+          {
+            "kind": "derived_model",
+            "name": "paid_month_summary"
+          },
+          {
+            "kind": "metric",
+            "name": "monthly_paid_buyer_count"
+          },
+          {
+            "kind": "metric",
+            "name": "monthly_paid_order_count"
+          },
+          {
+            "kind": "metric",
+            "name": "monthly_paid_sales_cents"
+          },
+          {
+            "kind": "metric",
+            "name": "monthly_paid_repeat_buyer_count"
+          },
+          {
+            "kind": "metric",
+            "name": "monthly_paid_repeat_rate"
+          },
+          {
+            "kind": "metric",
+            "name": "monthly_paid_avg_order_value"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "net_sales_cents"
+    ],
+    "start": "2026-04-01",
+    "end": "2026-05-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END) AS net_sales_cents\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-04-01' AND '2026-04-30'",
+  "columns": [
+    "net_sales_cents"
+  ],
+  "rows": [
+    [
+      336560571
+    ]
+  ],
+  "seconds": 0.102,
+  "units": {
+    "net_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "按青禾当前客户数据范围核对，2026年4月整月全门店净销售额合计为 336560571 分。统计范围未拆门店或其它维度；口径为已支付订单实付金额减退款后合计，取消订单不计，并按原订单下单日期归属到2026年4月。本结果基于本周合成测试库。",
+  "question": "核对青禾2026年4月整月报表：只返回净销售额的全门店合计，不拆维度。金额按分返回。",
+  "trace_id": "ffd70cd4-0bab-4b99-b469-1503ec3c881d",
+  "elapsed_seconds": 7.545,
+  "model_usage": {
+    "prompt_tokens": 15136,
+    "completion_tokens": 536,
+    "total_tokens": 15672
+  },
+  "model_calls_with_usage": 2
+}

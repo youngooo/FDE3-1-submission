@@ -1,0 +1,167 @@
+--- before/artifacts/w03/submission_status.json
++++ after/artifacts/w03/submission_status.json
+@@ -1,72 +1,114 @@
+ {
+-  "kind": "incomplete_w03_stage_delivery",
+-  "date": "2026-11-08",
+-  "metrics_defined": 32,
++  "kind": "w03_38_metric_delivery_pending_business_and_chat",
++  "date": "2026-11-10",
++  "metrics_defined": 38,
+   "metrics_target": 38,
+-  "missing_metrics": [
+-    "monthly_paid_avg_order_value",
++  "missing_metrics": [],
++  "provisional_metrics": [
+     "monthly_paid_buyer_count",
+     "monthly_paid_order_count",
++    "monthly_paid_sales_cents",
+     "monthly_paid_repeat_buyer_count",
+     "monthly_paid_repeat_rate",
+-    "monthly_paid_sales_cents"
++    "monthly_paid_avg_order_value"
+   ],
+   "library": "artifacts/w03/library",
+-  "library_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+-  "library_creation": "tools/w03.py merge --inputs artifacts/w03/build-general32-normalized-20261107-023808 --data materials/data/small --output artifacts/w03/library",
++  "library_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
++  "library_creation": "Current Skill full38 build followed by official single-input merge; executable definitions byte-identical",
++  "build_run": "artifacts/w03/full38-p1-run-20261110-012528-047804",
++  "build_elapsed_seconds": 150.739,
+   "library_validation_passed": true,
+-  "final_report_available": true,
+-  "final_38_acceptance": false,
+-  "historical_reports": [
+-    {
+-      "path": "artifacts/w03/test-general32-full-20261107-162320/metric_test_report.json",
+-      "passed": 53,
+-      "total": 54,
+-      "catalog_hashes": [
+-        "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635"
+-      ],
+-      "matches_merged_library": false
+-    },
+-    {
+-      "path": "artifacts/w03/test-general32-large-current-20261107-173736/metric_test_report.json",
+-      "passed": 53,
+-      "total": 53,
+-      "catalog_hashes": [
+-        "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+-      ],
+-      "matches_merged_library": false
+-    }
+-  ],
+-  "model_called_this_closeout": false,
+-  "query_reexecuted_this_closeout": false,
+-  "sow_text_review": {
+-    "version": "v0.11-reviewed",
+-    "student_reviewed": true,
+-    "customer_approval": false,
+-    "record": "artifacts/w03/sow-user-review-20261108-170441/review.json"
++  "numeric_verification": {
++    "small": "49/49",
++    "large": "48/48",
++    "scope": "independent raw CSV checks on build library; executable definitions match merged library",
++    "summary": "artifacts/w03/full38-p1-run-20261110-012528-047804/numeric-verification-20261110-014924-111593/summary.json"
+   },
+-  "canonical_report_scope": "32-metric stage report; not complete 38 acceptance",
+   "current_library_regressions": [
+     {
+       "dataset": "small",
+-      "report": "artifacts/w03/test-merged-small-20261108-171135-587239/metric_test_report.json",
+-      "sha256": "41c7c74698de6f277bb214768c2b16e1e5ae04560691e35cc99d1a3fa65936dd",
+-      "passed": 54,
+-      "total": 54,
++      "cases": "customer/w03/tests-small.json",
++      "cases_sha256": "b83b234e4ad1c8f7b24f05bf8f4df0ff14ecdbb1f8a67cb61924eee045494f8d",
++      "cases_total": 69,
++      "project": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-small",
++      "execution_report": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-small-full-20261110-030115-607746/results/metric_test_report.json",
++      "execution_report_sha256": "e138b94e36418215f9245a557b23812f994998519f0f4e2e881ac52508e9e228",
++      "execution_passed": 69,
+       "data_version": "qinghe-w03-20260923-small",
+-      "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62"
++      "answer_review": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/regression-verification-20261110-090359-069796/answer_reviews.json",
++      "answer_state": "one_original_formula_explanation_corrected_and_retested",
++      "correction_retest": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-small-paid-formula-20261110-031651-683666/results/metric_test_report.json",
++      "status": "executed"
+     },
+     {
+       "dataset": "large",
+-      "report": "artifacts/w03/test-merged-large-20261108-172233-494027/metric_test_report.json",
+-      "sha256": "e78e109b6ea7235c630d4c28a5adea109b4a8c57397bb354b7b220b73f67edb1",
+-      "passed": 53,
+-      "total": 53,
++      "cases": "customer/w03/tests-large.json",
++      "cases_sha256": "6df3ade68f736b65b2cebd3d0cda5b9b402d3448c1b3c3456af3ff2a837d34bd",
++      "cases_total": 67,
++      "project": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/project-large",
++      "execution_report": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-large-full-20261110-031957-483250/results/metric_test_report.json",
++      "execution_report_sha256": "c6a3487893fd50c040d87a8195a63af1836178d33d1438e2dd39d6e8aa5f2eb5",
++      "execution_passed": 67,
+       "data_version": "qinghe-w03-20260923-large",
+-      "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62"
++      "answer_review": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/regression-verification-20261110-090359-069796/answer_reviews.json",
++      "answer_state": "full_review_passed_with_notes",
++      "correction_retest": null,
++      "status": "executed"
+     }
+   ],
+   "canonical_report": "artifacts/w03/metric_test_report.json",
+-  "canonical_report_sha256": "41c7c74698de6f277bb214768c2b16e1e5ae04560691e35cc99d1a3fa65936dd",
+-  "answer_review": "artifacts/w03/merged-regression-review-20261108-173356/answer_review.json"
++  "canonical_report_sha256": "c6a3487893fd50c040d87a8195a63af1836178d33d1438e2dd39d6e8aa5f2eb5",
++  "canonical_report_scope": "Latest-prompt large full67 raw report",
++  "final_report_available": true,
++  "final_38_acceptance": false,
++  "small_latest_prompt_scope": "9 real targeted retests after original full69; not a new full69 execution",
++  "judge_controls": {
++    "positive": "10/10",
++    "negative": "30/30 rejected with matching reasons",
++    "report": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/judge-mutations-20261110-091706-156994/report.json"
++  },
++  "environment": {
++    "python": "3.11.16 (main, Sep 29 2026, 14:59:26) [Clang 22.1.3 ]",
++    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35",
++    "packages": {
++      "dbt-core": "1.12.5",
++      "dbt-duckdb": "1.11.0",
++      "dbt-metricflow": "0.15.0",
++      "metricflow": "0.213.0",
++      "duckdb": "1.5.5",
++      "PyYAML": "6.0.3"
++    },
++    "model_name": "deepseek-flash"
++  },
++  "framework_changes": "docs/w03/framework_changes.md",
++  "runtime_restore": {
++    "passed": true,
++    "cases_passed": 6,
++    "manifest": "artifacts/w03/runtime-customization-current/manifest.json"
++  },
++  "sow_text_review": {
++    "version": "v0.12-draft",
++    "student_reviewed_current_version": false,
++    "customer_approval": false,
++    "prior_v011_review_retained": true
++  },
++  "business_confirmation": "pending",
++  "course_material_request": {
++    "status": "draft_not_sent",
++    "draft": "docs/w03/course_material_request_draft.md",
++    "reply_received": false
++  },
++  "chat": {
++    "status": "old32_binding_pending_switch_and_fresh_session",
++    "project": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/build-general32-normalized-20261107-023808/validation-project",
++    "service_observed_running": true
++  },
++  "remaining": [
++    "Send course fact-supplement request and archive actual reply; HQ business confirmation remains pending",
++    "Stop chat service before activating validated38 project; restart and verify fresh-session behavior",
++    "Teacher review and final business acceptance are not established by precheck"
++  ],
++  "previous_status_archive": "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/submission-reconciliation-20261110-095404-652455/before/artifacts/w03/submission_status.json",
++  "model_called_this_closeout": false,
++  "query_reexecuted_this_closeout": false
+ }

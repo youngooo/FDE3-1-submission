@@ -1,0 +1,8 @@
+[0m18:10:26  Running with dbt=1.12.5
+[0m18:10:27  Registered adapter: duckdb=1.11.0
+[0m18:10:27  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m18:10:28  [[33mWARNING[0m]: The semantic model order_store_dim contains dimensions, but it does not define a primary entity. Either add an entity with type PRIMARY or set a value for the primary_entity key.
+[0m18:10:28  [[33mWARNING[0m]: The semantic model member_home_store_dim contains dimensions, but it does not define a primary entity. Either add an entity with type PRIMARY or set a value for the primary_entity key.
+[0m18:10:28  [[31mERROR[0m]: Encountered an error:
+Parsing Error
+  Semantic Manifest validation failed.

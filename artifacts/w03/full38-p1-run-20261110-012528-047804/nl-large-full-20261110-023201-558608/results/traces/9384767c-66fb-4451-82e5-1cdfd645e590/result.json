@@ -1,0 +1,134 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "new_member_count"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [
+      "home_store"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  home_store_id AS home_store\n  , COUNT(DISTINCT member_id) AS new_member_count\nFROM \"data\".\"main\".\"members\" member_model_src_10000\nWHERE DATE_TRUNC('day', registered_at) BETWEEN '2026-06-01' AND '2026-06-30'\nGROUP BY\n  home_store_id",
+  "columns": [
+    "home_store",
+    "new_member_count"
+  ],
+  "rows": [
+    [
+      "S05",
+      67
+    ],
+    [
+      "S19",
+      52
+    ],
+    [
+      "S16",
+      43
+    ],
+    [
+      "S11",
+      59
+    ],
+    [
+      "S15",
+      47
+    ],
+    [
+      "S08",
+      73
+    ],
+    [
+      "S23",
+      51
+    ],
+    [
+      "S12",
+      49
+    ],
+    [
+      "S17",
+      40
+    ],
+    [
+      "S04",
+      52
+    ],
+    [
+      "S20",
+      46
+    ],
+    [
+      "S21",
+      50
+    ],
+    [
+      "S22",
+      63
+    ],
+    [
+      "S18",
+      54
+    ],
+    [
+      "S13",
+      51
+    ],
+    [
+      "S02",
+      62
+    ],
+    [
+      "S24",
+      57
+    ],
+    [
+      "S01",
+      56
+    ],
+    [
+      "S07",
+      56
+    ],
+    [
+      "S03",
+      58
+    ],
+    [
+      "S09",
+      52
+    ],
+    [
+      "S10",
+      58
+    ],
+    [
+      "S06",
+      56
+    ],
+    [
+      "S14",
+      64
+    ]
+  ],
+  "seconds": 0.047,
+  "units": {
+    "new_member_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "统计青禾2026年6月按注册日期新注册的CRM会员账户数，并按会员归属门店编号分组；数量单位为个CRM会员账户。\n\n| 会员归属门店编号 | 新注册CRM账户数 |\n|---|---:|\n| S05 | 67 |\n| S19 | 52 |\n| S16 | 43 |\n| S11 | 59 |\n| S15 | 47 |\n| S08 | 73 |\n| S23 | 51 |\n| S12 | 49 |\n| S17 | 40 |\n| S04 | 52 |\n| S20 | 46 |\n| S21 | 50 |\n| S22 | 63 |\n| S18 | 54 |\n| S13 | 51 |\n| S02 | 62 |\n| S24 | 57 |\n| S01 | 56 |\n| S07 | 56 |\n| S03 | 58 |\n| S09 | 52 |\n| S10 | 58 |\n| S06 | 56 |\n| S14 | 64 |",
+  "question": "青禾2026年6月新注册CRM账户有多少？以注册日期筛选，分会员归属门店编号列出。",
+  "trace_id": "9384767c-66fb-4451-82e5-1cdfd645e590",
+  "elapsed_seconds": 9.767,
+  "model_usage": {
+    "prompt_tokens": 16687,
+    "completion_tokens": 1087,
+    "total_tokens": 17774
+  },
+  "model_calls_with_usage": 2
+}

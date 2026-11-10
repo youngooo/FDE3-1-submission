@@ -1,0 +1,75 @@
+{
+  "kind": "official_merged38_regression_evidence",
+  "library": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/library",
+  "library_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "full_regressions": {
+    "small": "69/69",
+    "large": "67/67"
+  },
+  "targeted_retest": {
+    "small": "9/9"
+  },
+  "runs": [
+    {
+      "dataset": "small",
+      "stage": "full",
+      "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-small-full-20261110-030115-607746/results/metric_test_report.json",
+      "report_sha256": "e138b94e36418215f9245a557b23812f994998519f0f4e2e881ac52508e9e228",
+      "structured_passed": 69,
+      "total": 69,
+      "elapsed_seconds": 591.564,
+      "prompt_sha256": "2df23fb50a2e1af0ba0eedc525a76db13283ca43e7ab799964803f0973c1e8cc",
+      "plan": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/plan.json",
+      "full_metric_coverage": 38
+    },
+    {
+      "dataset": "small",
+      "stage": "paid-formula",
+      "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-small-paid-formula-20261110-031651-683666/results/metric_test_report.json",
+      "report_sha256": "b93805c04aa1c1a93dd791dade3e18f8ed2a57b0e839e13e5bac722299f89993",
+      "structured_passed": 9,
+      "total": 9,
+      "elapsed_seconds": 111.048,
+      "prompt_sha256": "efdf2213c26abfba3bf6c646361b8fd49cbdabad811ae1c20f09bb9dcfa835c2",
+      "plan": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/answer-paid-formula-fix-20261110-031428-025216/plan.json",
+      "full_metric_coverage": null
+    },
+    {
+      "dataset": "large",
+      "stage": "full",
+      "report": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-large-full-20261110-031957-483250/results/metric_test_report.json",
+      "report_sha256": "c6a3487893fd50c040d87a8195a63af1836178d33d1438e2dd39d6e8aa5f2eb5",
+      "structured_passed": 67,
+      "total": 67,
+      "elapsed_seconds": 636.536,
+      "prompt_sha256": "efdf2213c26abfba3bf6c646361b8fd49cbdabad811ae1c20f09bb9dcfa835c2",
+      "plan": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/answer-paid-formula-fix-20261110-031428-025216/plan.json",
+      "full_metric_coverage": 38
+    }
+  ],
+  "original_full_execution_total": 136,
+  "original_full_execution_passed": 136,
+  "all_small_cases_executed_on_latest_prompt": false,
+  "large_full_executed_on_latest_prompt": true,
+  "small_answer_defect": "paid_pair used ordinary monthly formula in prose; corrected prompt, 9 original cases rerun and reviewed",
+  "small_original_report_preserved": true,
+  "full_small_report_not_spliced": true,
+  "answer_review": "small original 68 pass + one corrected in real retest; large all 67 reviewed with nonblocking notes",
+  "current_answer_prompt_sha256": "efdf2213c26abfba3bf6c646361b8fd49cbdabad811ae1c20f09bb9dcfa835c2",
+  "metric_count_per_dataset": 38,
+  "source_expectations": "Original CSV independently recomputed for final library; no observed answer used as expected value",
+  "model_called": false,
+  "query_executed": false,
+  "human_signoff": false,
+  "business_confirmation": "pending",
+  "final_acceptance": false,
+  "remaining": [
+    "正式报告和用例入口尚未替换",
+    "聊天绑定尚未切换",
+    "判定器错误注入复核、框架改动说明和SOW整理尚待完成",
+    "总部P1适用性仍待书面确认"
+  ],
+  "archive": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/regression-verification-20261110-090359-069796/evidence.tar.gz",
+  "archive_sha256": "626297afd5b4dee323ca08e89c706f1d9c510b9495482dc0beb7037389315e1f",
+  "archived_file_count": 654
+}

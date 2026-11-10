@@ -1,0 +1,4 @@
+{
+  "status": "unsupported",
+  "reason": "所选月度指标跨月查询必须按月展示"
+}

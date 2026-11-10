@@ -1,0 +1,10 @@
+{
+  "status": "error",
+  "code": "MODEL_HTTP_402",
+  "reason": "本次调用未完成，请查看运行记录；不能把失败当成零。",
+  "question": "青禾的净销售额是多少？",
+  "trace_id": "22a1d73e-14c6-4015-a81f-7d73dde6e5d9",
+  "elapsed_seconds": 0.608,
+  "model_usage": {},
+  "model_calls_with_usage": 0
+}

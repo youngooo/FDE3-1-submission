@@ -1,0 +1,188 @@
+{
+  "kind": "w03_followup_source_archive",
+  "created_at": "2026-11-09T22:37:50.528331+08:00",
+  "files": [
+    {
+      "source_path": "/mnt/d/下载/W3-interview-02aa10bb-0ff5-5c9b-96b9-d87fbb93892f-transcript (2).json",
+      "filename": "W3-interview-02aa10bb-0ff5-5c9b-96b9-d87fbb93892f-transcript (2).json",
+      "sha256": "be4ecfa36a583951236c5208697f5e7bb9cd875b99ec09c8ecdff0c94611a7bf",
+      "bytes": 3210,
+      "role_id": "ROLE-CHEN",
+      "meeting_id": "02aa10bb-0ff5-5c9b-96b9-d87fbb93892f",
+      "origin": "live",
+      "week": 3,
+      "state": "ended",
+      "message_count": 5,
+      "message_ids": [
+        "MSG-04162",
+        "MSG-04163",
+        "MSG-04164",
+        "MSG-04854",
+        "MSG-04855"
+      ],
+      "current_followup_message_ids": [
+        "MSG-04854",
+        "MSG-04855"
+      ],
+      "archived_path": "artifacts/w03/followup-sources-20261109-223750-528331/W3-interview-02aa10bb-0ff5-5c9b-96b9-d87fbb93892f-transcript (2).json"
+    },
+    {
+      "source_path": "/mnt/d/下载/W3-interview-06fd5679-d230-5250-a877-0d60a3f880ed-transcript.json",
+      "filename": "W3-interview-06fd5679-d230-5250-a877-0d60a3f880ed-transcript.json",
+      "sha256": "e2d93c11aa77bbbb8a0155616f5ed7a82bb4f75bbc6e6aedc7d6ca8f57487724",
+      "bytes": 2634,
+      "role_id": "ROLE-CHEN",
+      "meeting_id": "06fd5679-d230-5250-a877-0d60a3f880ed",
+      "origin": "live",
+      "week": 3,
+      "state": "active",
+      "message_count": 5,
+      "message_ids": [
+        "MSG-04867",
+        "MSG-04868",
+        "MSG-04869",
+        "MSG-04870",
+        "MSG-04871"
+      ],
+      "current_followup_message_ids": [
+        "MSG-04867",
+        "MSG-04868",
+        "MSG-04869",
+        "MSG-04870",
+        "MSG-04871"
+      ],
+      "archived_path": "artifacts/w03/followup-sources-20261109-223750-528331/W3-interview-06fd5679-d230-5250-a877-0d60a3f880ed-transcript.json"
+    },
+    {
+      "source_path": "/mnt/d/下载/W3-interview-6ce5833c-5351-54bc-9fd7-b36474544983-transcript (3).json",
+      "filename": "W3-interview-6ce5833c-5351-54bc-9fd7-b36474544983-transcript (3).json",
+      "sha256": "eb53f5d611e6d5de8576c2ca503f7b7940f9c75998626fb58b230911afa114ec",
+      "bytes": 19705,
+      "role_id": "ROLE-WANG",
+      "meeting_id": "6ce5833c-5351-54bc-9fd7-b36474544983",
+      "origin": "live",
+      "week": 3,
+      "state": "ended",
+      "message_count": 26,
+      "message_ids": [
+        "MSG-04167",
+        "MSG-04168",
+        "MSG-04169",
+        "MSG-04170",
+        "MSG-04171",
+        "MSG-04172",
+        "MSG-04173",
+        "MSG-04174",
+        "MSG-04175",
+        "MSG-04176",
+        "MSG-04177",
+        "MSG-04265",
+        "MSG-04266",
+        "MSG-04270",
+        "MSG-04272",
+        "MSG-04273",
+        "MSG-04276",
+        "MSG-04277",
+        "MSG-04282",
+        "MSG-04283",
+        "MSG-04290",
+        "MSG-04291",
+        "MSG-04863",
+        "MSG-04864",
+        "MSG-04865",
+        "MSG-04866"
+      ],
+      "current_followup_message_ids": [
+        "MSG-04863",
+        "MSG-04864",
+        "MSG-04865",
+        "MSG-04866"
+      ],
+      "archived_path": "artifacts/w03/followup-sources-20261109-223750-528331/W3-interview-6ce5833c-5351-54bc-9fd7-b36474544983-transcript (3).json"
+    },
+    {
+      "source_path": "/mnt/d/下载/W3-interview-cbdcc091-2cd3-5097-9f2f-6dc11bed9da9-transcript (2).json",
+      "filename": "W3-interview-cbdcc091-2cd3-5097-9f2f-6dc11bed9da9-transcript (2).json",
+      "sha256": "232cacce995bbbccfd7f2184034002e359950a8b67837f21a7292c3adcff9c49",
+      "bytes": 10699,
+      "role_id": "ROLE-ZHOU",
+      "meeting_id": "cbdcc091-2cd3-5097-9f2f-6dc11bed9da9",
+      "origin": "live",
+      "week": 3,
+      "state": "active",
+      "message_count": 15,
+      "message_ids": [
+        "MSG-04157",
+        "MSG-04158",
+        "MSG-04159",
+        "MSG-04160",
+        "MSG-04161",
+        "MSG-04485",
+        "MSG-04486",
+        "MSG-04602",
+        "MSG-04603",
+        "MSG-04604",
+        "MSG-04605",
+        "MSG-04858",
+        "MSG-04859",
+        "MSG-04872",
+        "MSG-04873"
+      ],
+      "current_followup_message_ids": [
+        "MSG-04858",
+        "MSG-04859",
+        "MSG-04872",
+        "MSG-04873"
+      ],
+      "archived_path": "artifacts/w03/followup-sources-20261109-223750-528331/W3-interview-cbdcc091-2cd3-5097-9f2f-6dc11bed9da9-transcript (2).json"
+    },
+    {
+      "source_path": "/mnt/d/下载/W3-interview-6a832f80-2ad2-570d-81ca-498c37232f54-transcript (2).json",
+      "filename": "W3-interview-6a832f80-2ad2-570d-81ca-498c37232f54-transcript (2).json",
+      "sha256": "e89b5d5e3bbb7f81639cc9123eb49ab91c4a4472349a247fb951a153658dde7c",
+      "bytes": 10723,
+      "role_id": "ROLE-LIN",
+      "meeting_id": "6a832f80-2ad2-570d-81ca-498c37232f54",
+      "origin": "live",
+      "week": 3,
+      "state": "active",
+      "message_count": 19,
+      "message_ids": [
+        "MSG-04150",
+        "MSG-04151",
+        "MSG-04152",
+        "MSG-04153",
+        "MSG-04154",
+        "MSG-04155",
+        "MSG-04156",
+        "MSG-04165",
+        "MSG-04166",
+        "MSG-04483",
+        "MSG-04484",
+        "MSG-04598",
+        "MSG-04599",
+        "MSG-04600",
+        "MSG-04601",
+        "MSG-04615",
+        "MSG-04616",
+        "MSG-04856",
+        "MSG-04857"
+      ],
+      "current_followup_message_ids": [
+        "MSG-04856",
+        "MSG-04857"
+      ],
+      "archived_path": "artifacts/w03/followup-sources-20261109-223750-528331/W3-interview-6a832f80-2ad2-570d-81ca-498c37232f54-transcript (2).json"
+    }
+  ],
+  "missing_original_message_ids": [],
+  "archive_verified": true,
+  "unique_message_count": 70,
+  "notes": [
+    "原始文件按字节保存，没有改写、裁剪或重新序列化。",
+    "导出中的 origin=live 是文件自述；本次核对未独立验证服务端身份。",
+    "缺失消息仅有聊天转录，不计作本目录已归档原始导出。",
+    "同会话旧消息保留，不计为本轮新增访谈；active 状态不作已结束表述。",
+    "本步骤只归档，不更新业务模型、Skill、构建配置或指标库。"
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "question": "青禾2026年7月和8月两个完整自然月（2026-07-01含至2026-09-01不含），全门店按月分别列出月内购买会员数、月内复购会员数、月内复购率，不合并月份，复购率保留小数比例。",
+  "customer_context": {
+    "customer": "青禾",
+    "statistics_unit": "CRM 会员账户",
+    "scope": "本周合成测试库"
+  },
+  "data_context": {
+    "seed": 20260923,
+    "synthetic": true,
+    "counts": {
+      "members": 30000,
+      "orders": 300000,
+      "stores": 24,
+      "cards": 38891
+    },
+    "coverage": [
+      "2024-09-01",
+      "2026-09-01"
+    ],
+    "sha256": {
+      "orders.csv": "15fe0a98b1f34f1e2f7ce100a1ebb74d8f2cffa5023d0a93c7d07e959ffdd4b3",
+      "cards.csv": "2cd90f4f709906c6b0e3c72de5b9347fe1118eabaa0fcdad30cf96951d66622a",
+      "members.csv": "30835528d521255ce72bda232c1c6090b3dcbb0f6a7872ee230382615f158af7",
+      "stores.csv": "d392d07b0f447a06fdf183860f040d79341a5daa787bc0fc4b400cda8f3675bd"
+    },
+    "id": "qinghe-w03-20260923-large",
+    "timezone": "Asia/Shanghai",
+    "reference_date": "2026-09-01",
+    "generator_version": "qinghe-w03-v1",
+    "base_seed": 20260922,
+    "library_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+  },
+  "result": {
+    "status": "ok",
+    "intent": {
+      "metrics": [
+        "monthly_buyer_count",
+        "monthly_repeat_buyer_count",
+        "monthly_repeat_rate"
+      ],
+      "start": "2026-07-01",
+      "end": "2026-09-01",
+      "group_by": [
+        "metric_time__month"
+      ],
+      "filters": []
+    },
+    "columns": [
+      "metric_time__month",
+      "monthly_buyer_count",
+      "monthly_repeat_buyer_count",
+      "monthly_repeat_rate"
+    ],
+    "rows": [
+      [
+        "2026-07-01 00:00:00",
+        16436,
+        7388,
+        0.4495010951569725
+      ],
+      [
+        "2026-08-01 00:00:00",
+        16504,
+        7302,
+        0.44243819680077556
+      ]
+    ],
+    "seconds": 0.392,
+    "units": {
+      "monthly_buyer_count": "count",
+      "monthly_repeat_buyer_count": "count",
+      "monthly_repeat_rate": "ratio"
+    },
+    "data_version": "qinghe-w03-20260923-large",
+    "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+    "catalog_sha256": "2778ddc8e0fbaff9a3a8ca86b3cd59167cf6ca0d64f764c7eca452e7283b333f"
+  },
+  "definitions": [
+    {
+      "id": "monthly_buyer_count",
+      "name": "月内购买会员数",
+      "aliases": [],
+      "unit": "count",
+      "sources": [
+        {
+          "file": "03_会员运营周报.md",
+          "quote": "同一自然月有至少一笔有效订单的账户数，仅整月、全门店口径；允许连续整月按月分别展示，不能跨月直接加总当人数。"
+        }
+      ],
+      "constraints": [
+        "仅完整自然月",
+        "全门店口径",
+        "多月按月分别展示",
+        "不能跨月直接加总当人数"
+      ],
+      "query_policy": {
+        "full_month_only": true
+      }
+    },
+    {
+      "id": "monthly_repeat_buyer_count",
+      "name": "月内复购会员数",
+      "aliases": [],
+      "unit": "count",
+      "sources": [
+        {
+          "file": "03_会员运营周报.md",
+          "quote": "同一自然月有至少两笔有效订单的账户数，仅整月、全门店口径；不能由全量订单行上的简单条件代替。"
+        }
+      ],
+      "constraints": [
+        "仅完整自然月",
+        "全门店口径",
+        "同一账户同一自然月至少两笔有效订单"
+      ],
+      "query_policy": {
+        "full_month_only": true
+      }
+    },
+    {
+      "id": "monthly_repeat_rate",
+      "name": "月内复购率",
+      "aliases": [],
+      "unit": "ratio",
+      "sources": [
+        {
+          "file": "03_会员运营周报.md",
+          "quote": "同一自然月的月内复购会员数除以月内购买会员数，仅整月、全门店口径；分母零时未定义；跨多月查询必须按月展示。"
+        }
+      ],
+      "constraints": [
+        "仅完整自然月",
+        "全门店口径",
+        "分母为零时未定义",
+        "跨多月查询必须按月展示"
+      ],
+      "query_policy": {
+        "full_month_only": true
+      }
+    }
+  ],
+  "answer_display_facts": {
+    "version": "answer-display-facts-v1",
+    "rows": [
+      {
+        "group": {
+          "metric_time__month": "2026-07-01 00:00:00"
+        },
+        "metrics": [
+          {
+            "metric_id": "monthly_buyer_count",
+            "name": "月内购买会员数",
+            "raw_value": 16436,
+            "raw_unit": "count",
+            "display_unit": "个CRM会员账户",
+            "display_value": "16436",
+            "is_undefined": false,
+            "display_rounded": false
+          },
+          {
+            "metric_id": "monthly_repeat_buyer_count",
+            "name": "月内复购会员数",
+            "raw_value": 7388,
+            "raw_unit": "count",
+            "display_unit": "个CRM会员账户",
+            "display_value": "7388",
+            "is_undefined": false,
+            "display_rounded": false
+          },
+          {
+            "metric_id": "monthly_repeat_rate",
+            "name": "月内复购率",
+            "raw_value": 0.4495010951569725,
+            "raw_unit": "ratio",
+            "display_unit": "小数比例",
+            "display_value": "0.4495010951569725",
+            "is_undefined": false,
+            "display_rounded": false,
+            "optional_percent_conversion": {
+              "value": "44.95",
+              "unit": "%",
+              "use_only_if_user_requests_percent": true
+            }
+          }
+        ]
+      },
+      {
+        "group": {
+          "metric_time__month": "2026-08-01 00:00:00"
+        },
+        "metrics": [
+          {
+            "metric_id": "monthly_buyer_count",
+            "name": "月内购买会员数",
+            "raw_value": 16504,
+            "raw_unit": "count",
+            "display_unit": "个CRM会员账户",
+            "display_value": "16504",
+            "is_undefined": false,
+            "display_rounded": false
+          },
+          {
+            "metric_id": "monthly_repeat_buyer_count",
+            "name": "月内复购会员数",
+            "raw_value": 7302,
+            "raw_unit": "count",
+            "display_unit": "个CRM会员账户",
+            "display_value": "7302",
+            "is_undefined": false,
+            "display_rounded": false
+          },
+          {
+            "metric_id": "monthly_repeat_rate",
+            "name": "月内复购率",
+            "raw_value": 0.44243819680077556,
+            "raw_unit": "ratio",
+            "display_unit": "小数比例",
+            "display_value": "0.44243819680077556",
+            "is_undefined": false,
+            "display_rounded": false,
+            "optional_percent_conversion": {
+              "value": "44.24",
+              "unit": "%",
+              "use_only_if_user_requests_percent": true
+            }
+          }
+        ]
+      }
+    ],
+    "count_unit_basis": "W03 materials 01/03/04: count the metric object, not the customer-context entity.",
+    "note": "These are renderings of the actual result, not newly queried metrics. Preserve grouping and requested units."
+  }
+}

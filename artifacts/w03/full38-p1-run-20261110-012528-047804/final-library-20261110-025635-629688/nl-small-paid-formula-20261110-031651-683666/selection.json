@@ -1,0 +1,19 @@
+{
+  "source_cases": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/nl-cases-20261110-030006-750246/small/tests.json",
+  "source_sha256": "b83b234e4ad1c8f7b24f05bf8f4df0ff14ecdbb1f8a67cb61924eee045494f8d",
+  "selected_ids": [
+    "paid_pair",
+    "single_monthly_repeat_rate",
+    "monthly_pair",
+    "single_monthly_paid_repeat_rate",
+    "single_monthly_paid_avg_order_value",
+    "paid_coverage",
+    "paid_paraphrase",
+    "single_avg_order_value",
+    "paid_zero_month"
+  ],
+  "expected_values_changed": false,
+  "purpose": "Retest paid-formula explanations and related answer behavior after prompt correction",
+  "prompt_sha256": "efdf2213c26abfba3bf6c646361b8fd49cbdabad811ae1c20f09bb9dcfa835c2",
+  "full_suite_rerun": false
+}

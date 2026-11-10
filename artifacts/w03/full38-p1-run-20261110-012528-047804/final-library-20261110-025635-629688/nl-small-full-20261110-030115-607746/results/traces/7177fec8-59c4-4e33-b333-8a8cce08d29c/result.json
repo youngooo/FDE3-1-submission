@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "cancelled_order_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END) AS cancelled_order_count\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "cancelled_order_count"
+  ],
+  "rows": [
+    [
+      2
+    ]
+  ],
+  "seconds": 0.053,
+  "units": {
+    "cancelled_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "青禾在2026年8月（2026-08-01至2026-09-01）的全门店取消订单数为 **2单**。统计口径为状态为 cancelled 的订单数，按全部成交门店汇总，未按门店分组。",
+  "question": "请只查询青禾2026年8月的取消订单数，全门店汇总，不分组。",
+  "trace_id": "7177fec8-59c4-4e33-b333-8a8cce08d29c",
+  "elapsed_seconds": 5.041,
+  "model_usage": {
+    "prompt_tokens": 14619,
+    "completion_tokens": 316,
+    "total_tokens": 14935
+  },
+  "model_calls_with_usage": 2
+}

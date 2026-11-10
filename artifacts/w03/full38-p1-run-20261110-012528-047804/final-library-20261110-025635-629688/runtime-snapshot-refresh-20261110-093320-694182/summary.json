@@ -1,0 +1,20 @@
+{
+  "kind": "runtime_snapshot_refresh",
+  "backup": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/runtime-snapshot-refresh-20261110-093320-694182/before-runtime-customization-current",
+  "manifest_sha256": "284d9fc30ac406c6513836f868645989c09200f0783c7d30852bfe3fe43d7fa9",
+  "changes": [
+    "files/product/w03_answer_prompt.txt",
+    "diffs/product/w03_answer_prompt.txt.diff",
+    "manifest.json",
+    "restore_check.json",
+    "RESTORE.txt"
+  ],
+  "documents": [
+    "docs/w03/framework_changes.md",
+    "docs/w03/model_changes.md"
+  ],
+  "model_called": false,
+  "live_runtime_changed": false,
+  "chat_binding_changed": false,
+  "business_confirmation": "pending"
+}

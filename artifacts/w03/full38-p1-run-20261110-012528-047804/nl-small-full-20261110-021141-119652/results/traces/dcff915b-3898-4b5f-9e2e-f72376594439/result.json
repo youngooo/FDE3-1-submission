@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "valid_order_items"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN quantity ELSE 0 END) AS valid_order_items\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "valid_order_items"
+  ],
+  "rows": [
+    [
+      33
+    ]
+  ],
+  "seconds": 0.045,
+  "units": {
+    "valid_order_items": "count"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "青禾2026年8月（2026-08-01至2026-09-01）全门店汇总、不分组：有效订单商品件数为33件。该口径为有效订单中的原始购买件数合计；退款金额不能推算退货件数，因此不是净商品销量。",
+  "question": "请只查询青禾2026年8月的有效订单商品件数，全门店汇总，不分组。",
+  "trace_id": "dcff915b-3898-4b5f-9e2e-f72376594439",
+  "elapsed_seconds": 6.834,
+  "model_usage": {
+    "prompt_tokens": 14372,
+    "completion_tokens": 592,
+    "total_tokens": 14964
+  },
+  "model_calls_with_usage": 2
+}

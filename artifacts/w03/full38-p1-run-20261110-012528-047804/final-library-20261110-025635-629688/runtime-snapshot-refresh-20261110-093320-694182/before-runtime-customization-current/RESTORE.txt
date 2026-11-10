@@ -1,0 +1,29 @@
+W03 运行定制恢复说明（阶段提交）
+
+用途：在原始 fde-student-w03-0.1.0-c16 工程上恢复本作业六个运行文件。
+包不是独立工程，不含密钥、数据、虚拟环境或查询数据库。默认只检查，--apply才写入。
+原始包SHA256：b8a5f58ae404cbc7c2fb3884d923ff94d7820c50d98aa5f51c784ee7eeb5fc7e
+
+步骤：
+1. 新建目录解压课程c16工程，按课程说明建立Python 3.11环境和依赖。
+2. 将作业包中的docs/customer/artifacts按原相对路径放入该工程。不要用旧快照覆盖本快照。
+3. 停止该工程正在运行的Agent服务。在工程根目录检查：
+   .venv/bin/python customer/w03/restore_runtime.py --workspace .
+4. 若显示ready或already_current且无错误，执行：
+   .venv/bin/python customer/w03/restore_runtime.py --workspace . --apply
+   原文件备份至artifacts/w03/runtime-restore-backup-时间-编号/before，plan.json记录新建文件与哈希。
+   TARGET_VERSION_MISMATCH或BASELINE_GUARD_MISMATCH时停止，核对工程版本或已有修改；不强行覆盖。
+5. 单独按课程说明配置模型，通过doctor检查。恢复脚本不配置或读取密钥。
+6. 本阶段32项库尚位于artifacts/w03/build-general32-normalized-20261107-023808；正式library另待收尾。
+   使用课程原始small/large数据，通过tools/w03.py load加载该库到两个不同的新项目目录。
+   按customer/w03/test_entrypoints.txt生成绑定对应项目版本的独立用例并运行测试。
+   原validation-project和.runtime项目不打包；不能直接照搬旧机器的绝对路径。
+7. 只有需要聊天演示时才activate所选项目并重启服务。恢复补丁本身不会切换活动项目。
+
+六文件：agent.py（上下文及展示模块接入）、integration.py（工具问句时间忠实性）、
+intent_context.py（大枚举输入精简）、answer_display_facts.py（确定性单位展示），以及两份问数提示词。
+原始差异见diffs，精确哈希见manifest.json。旧补丁和失败证据保留，不必再按旧脚本逐次叠加。
+
+验证范围：原始基线只读检查、未知修改拒绝、准确恢复及备份、重复执行、当前工程快照一致性，5项离线检查通过。
+没有运行新模型查询，不表示全部32项在最后版本上已重新回归，更不代表38项验收。
+六项付费会员资格仍待确认；本恢复包不补造日期算法。

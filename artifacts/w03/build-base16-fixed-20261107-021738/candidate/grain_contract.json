@@ -1,0 +1,14 @@
+{
+  "order": [
+    "order_id"
+  ],
+  "member": [
+    "member_id"
+  ],
+  "store": [
+    "store_id"
+  ],
+  "home_store": [
+    "home_store_id"
+  ]
+}

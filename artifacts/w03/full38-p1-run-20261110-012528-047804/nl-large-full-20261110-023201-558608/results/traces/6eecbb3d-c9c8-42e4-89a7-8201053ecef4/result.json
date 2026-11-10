@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "cancel_rate"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(SUM(CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END) AS DOUBLE) / CAST(NULLIF(SUM(1), 0) AS DOUBLE) AS cancel_rate\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-06-01' AND '2026-06-30'",
+  "columns": [
+    "cancel_rate"
+  ],
+  "rows": [
+    [
+      0.07910850671582828
+    ]
+  ],
+  "seconds": 0.115,
+  "units": {
+    "cancel_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "answer": "青禾2026年6月整月、全部成交门店汇总（未按门店分组）的取消率为 0.07910850671582828（约 0.0791），即按小数比例展示。口径为取消订单数除以创建订单数；本次分母非零，结果正常计算。统计对象为订单，不涉及会员账户去重。",
+  "question": "帮我查青禾2026年6月的取消率，我需要整月全门店总数，不需要分组明细。结果使用小数比例。",
+  "trace_id": "6eecbb3d-c9c8-42e4-89a7-8201053ecef4",
+  "elapsed_seconds": 8.389,
+  "model_usage": {
+    "prompt_tokens": 14730,
+    "completion_tokens": 757,
+    "total_tokens": 15487
+  },
+  "model_calls_with_usage": 2
+}

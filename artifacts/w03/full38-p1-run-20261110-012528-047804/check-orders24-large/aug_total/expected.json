@@ -1,0 +1,31 @@
+[
+  {
+    "group": [],
+    "metrics": {
+      "order_count": 34306,
+      "paid_order_count": 31564,
+      "valid_order_count": 29933,
+      "cancelled_order_count": 2742,
+      "refund_order_count": 4718,
+      "partial_refund_order_count": 3087,
+      "full_refund_order_count": 1631,
+      "payment_cents": 570270646,
+      "refund_cents": 56349326,
+      "net_sales_cents": 513921320,
+      "gross_cents": 633763245,
+      "discount_cents": 63492599,
+      "buyer_count": 16504,
+      "refund_buyer_count": 4173,
+      "selling_store_count": 24,
+      "valid_order_items": 120210,
+      "avg_order_value": "17169.05488925266428356663215",
+      "avg_buyer_value": "31139.19777023751817741153660",
+      "purchase_frequency": "1.813681531749878817256422685",
+      "refund_amount_rate": "0.09881154920956601367835440017",
+      "cancel_rate": "0.07992770943858217221477292602",
+      "refund_order_rate": "0.1494740843999493093397541503",
+      "discount_rate": "0.1001834667770927611934958456",
+      "items_per_order": "4.015968997427588280493101259"
+    }
+  }
+]

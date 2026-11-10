@@ -1,0 +1,198 @@
+{
+  "status": "ok",
+  "groups": [
+    {
+      "group": [
+        "S01"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S02"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S03"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S04"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S05"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S06"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S07"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S08"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S09"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S10"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S11"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S12"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S13"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S14"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S15"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S16"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S17"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S18"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S19"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S20"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S21"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S22"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S23"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    },
+    {
+      "group": [
+        "S24"
+      ],
+      "metrics": {
+        "new_member_count": 1250
+      }
+    }
+  ],
+  "reason_contains": null
+}

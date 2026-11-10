@@ -1,0 +1,9 @@
+{
+  "id": "registration_tier",
+  "expected_status": "ok",
+  "passed": true,
+  "checked_metrics": [
+    "new_member_count"
+  ],
+  "errors": []
+}

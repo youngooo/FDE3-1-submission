@@ -1,0 +1,8 @@
+--- before/customer/w03/test_entrypoints.txt
++++ after/customer/w03/test_entrypoints.txt
+@@ -6,4 +6,4 @@
+ 只读预检：.venv/bin/python -B customer/w03/run_merged_regression.py --dataset small（或large）
+ 真实复跑：上面命令加 --run，将调用模型；输出新目录，不覆盖历史报告。
+ 更换工作目录后，先依课程README用正式库和对应CSV加载新项目，再更新计划的项目路径；不能沿用不匹配的项目或数据。
+-总部确认、框架改动说明、SOW整理与聊天绑定仍须单独处理。预检通过不是客户验收。
++框架说明、最新恢复快照与SOW客户正文已整理。总部确认、课程补充材料申请发送及聊天绑定与新会话演示仍待完成。预检通过不是客户验收。

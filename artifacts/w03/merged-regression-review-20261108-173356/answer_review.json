@@ -1,0 +1,997 @@
+{
+  "kind": "merged_general32_answer_review",
+  "scope": "107 actual answers, 32 general metrics; no six paid metrics",
+  "method": "AI-assisted item-by-item reading, not an automatic semantic judge or a user sign-off",
+  "reports": [
+    {
+      "dataset": "small",
+      "report": "artifacts/w03/test-merged-small-20261108-171135-587239/metric_test_report.json",
+      "sha256": "41c7c74698de6f277bb214768c2b16e1e5ae04560691e35cc99d1a3fa65936dd",
+      "passed": 54,
+      "total": 54,
+      "data_version": "qinghe-w03-20260923-small",
+      "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62"
+    },
+    {
+      "dataset": "large",
+      "report": "artifacts/w03/test-merged-large-20261108-172233-494027/metric_test_report.json",
+      "sha256": "e78e109b6ea7235c630d4c28a5adea109b4a8c57397bb354b7b220b73f67edb1",
+      "passed": 53,
+      "total": 53,
+      "data_version": "qinghe-w03-20260923-large",
+      "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62"
+    }
+  ],
+  "cases_reviewed": 107,
+  "material_result_mismatches_observed": 0,
+  "wording_notes_count": 5,
+  "cases": [
+    {
+      "dataset": "small",
+      "case_id": "single_order_count",
+      "trace_id": "96d4e325-100f-4d8a-9a6f-d1b74044197b",
+      "answer_sha256": "f3fb24055fe45299b7dabf5ab6d1598fb8a78cf2c8a4e7ec569b33a1ae0604f3",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_paid_order_count",
+      "trace_id": "bd51446b-4e1f-4ae8-bd5c-29a85f13eb7f",
+      "answer_sha256": "e7ab831af0518c594093b3fdaf51a43f83400abf8978ebc92b4f2eb80e44d93e",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_valid_order_count",
+      "trace_id": "0e4b6628-e020-4459-80ee-b3f28ca14715",
+      "answer_sha256": "30fa4df4f33d3250f54dd73ce9dd0fccbc81addf1d49b12ec4c88532f123af98",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_cancelled_order_count",
+      "trace_id": "1a4fe6ef-8f71-4214-be6f-e0d2457a6785",
+      "answer_sha256": "4e7d8736a2987b6747985f2a06a5a0f3d9c8a8f9d6acae54607d124cf26f2fee",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_refund_order_count",
+      "trace_id": "3edfcbc1-3fe5-4bc7-847d-eb07137acec0",
+      "answer_sha256": "46c5ab3626f1255e36b18d93337f66074a19900db90441b5779cf04145690938",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_partial_refund_order_count",
+      "trace_id": "e3ac0a74-72e5-434e-a30f-534ef485f5e5",
+      "answer_sha256": "48ad69bfbd7d23a5e7bfea6bae654ce2c1a341d438b829e799fe197f5cff69e8",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_full_refund_order_count",
+      "trace_id": "f4a6cc1c-7e1b-4880-b94b-d48d481a26ce",
+      "answer_sha256": "554fcaa8c3e4a56f72eb5f9385976bad95445d8f088371a988dbca8187a653f7",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_payment_cents",
+      "trace_id": "6d60d6c4-c49d-434b-beee-f6c331cbcea6",
+      "answer_sha256": "4be36b03e841b00452794cd77bb954a3c2fba0034475944412aa8e9c842c532c",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_refund_cents",
+      "trace_id": "e5bee5d7-ce75-4c82-8864-72688e1c68c2",
+      "answer_sha256": "f48fcf844128f7726900739df521065e5bf4e5bd4d9ec4effd2546394b2728ec",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_net_sales_cents",
+      "trace_id": "f4d2ba1a-e0ac-4995-b538-2ff4eb1f56fb",
+      "answer_sha256": "25ceca80949d8919fc84c9afa57ce40212c1a71fbd5fb8bcb362d850ecc88fcb",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_gross_cents",
+      "trace_id": "cd61ecff-ccae-4db6-9e43-dbc2d8bb9359",
+      "answer_sha256": "34000f139cd44bedb84558d2b16da7fe84c240c38cc510d2a42ec90256c778f8",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_discount_cents",
+      "trace_id": "ee96f048-408b-4eb1-b5e7-cc226e0d7556",
+      "answer_sha256": "746dba8cfad40d97a77135cac8f15dc80c1bcc514e65c505f674e22a2a3ab3c8",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_buyer_count",
+      "trace_id": "bc61071b-4337-4230-b8ff-bcf4cd9b63da",
+      "answer_sha256": "741a0571022f99e237d49bd63a4647c16fd226842b0d54cc942c57c721346e48",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_refund_buyer_count",
+      "trace_id": "90c8e13c-4c29-465c-915a-eb66d550ca22",
+      "answer_sha256": "4f763535260ec4271cc990987d2c73a1fa60d5adb7e79ee284b34d2c9c8e12d6",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_selling_store_count",
+      "trace_id": "18cd7599-c57b-495b-85dc-d0c3d5d3a078",
+      "answer_sha256": "387b93b098d4efe42fd547a3eaa0c34ad2eac4feafda688f333a4f5ff1e4c388",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_valid_order_items",
+      "trace_id": "ad108113-a642-4199-b8c0-579bb7374307",
+      "answer_sha256": "86197e99374dc21642bacb04b49eab7dda27beb955a83e1965eba0dee3abc4bd",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_avg_order_value",
+      "trace_id": "4b0babab-a424-4143-83c8-4f0883b74f3f",
+      "answer_sha256": "c620b8672d3930b56e61452c8b0e9dd3bc12fb1cfe66238c671d6b6877bbe969",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_avg_buyer_value",
+      "trace_id": "b193e370-5210-4032-bb9c-163c351ba4c7",
+      "answer_sha256": "83f39bbb170f6e2f27ffc1f5c926335bdfbc3b97dba25711798e7d17c052ab86",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_purchase_frequency",
+      "trace_id": "74feb56f-5239-4486-9d9f-fde30fcf6a5e",
+      "answer_sha256": "c608cf79c699bf2e8fd3b6a5141f4a5d31095e7c8446071f9943903046647908",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_refund_amount_rate",
+      "trace_id": "f6b10895-b755-4a9e-b23f-6bad4600472f",
+      "answer_sha256": "17dc8c63c6243205f099602f77dae64385c56516ca8b6c0969d718783f57d46c",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_cancel_rate",
+      "trace_id": "055e6980-3738-45e2-85ad-3b4ed0566b05",
+      "answer_sha256": "3012616c76eea8bf77f8c7e3b07d5692495386e3c37c34d6b51693c40b1d2013",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_refund_order_rate",
+      "trace_id": "6e7a286b-fc46-4b8d-9997-462b585d2971",
+      "answer_sha256": "3e0138cec45453bde55539fd6db6324c56c3c44138771bfb8c6801541d2a1162",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_discount_rate",
+      "trace_id": "b53006e3-0098-4dc4-b38d-10dc3fab231f",
+      "answer_sha256": "661fa90af9d37766666241b6382d733d5429ed85b9452c9e3f8df8ed02c33cd1",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_items_per_order",
+      "trace_id": "16697cc0-58bf-4a1a-bd1d-70b0cef6f0e8",
+      "answer_sha256": "5cae882d05b19c9bf542e0569ec5b464f613c2ef6460cc00308b7d1da675b45f",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_new_member_count",
+      "trace_id": "5ef17ab6-7f2b-49ae-89f5-db75fd8e0dea",
+      "answer_sha256": "c4b9249aaba55b1ad0b43bcaf672ff1ea18d223456dc77f9d61c0de6eeee8ae1",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_first_buyer_count",
+      "trace_id": "8aeeb09f-a73c-4038-bfe4-fe81a8f5cb77",
+      "answer_sha256": "00f5185503b54f09d24e99842b2e9500cd08b9fe7e390b77a4205717ecdc54a5",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_first_order_sales_cents",
+      "trace_id": "7ff8d368-e9f9-4063-910c-5e83f125c6b7",
+      "answer_sha256": "1a02624bfc28b3ed1b83db15e1d868524d186b9f4053235787696a87c4682597",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_first_order_count",
+      "trace_id": "329d823e-8ad0-4446-b398-b647ca4bb5f6",
+      "answer_sha256": "1121108799c2f7877f8eb037ef0e5cd0d2a1066c5b8c2648b86e5b8c1b681074",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_repeat_order_count",
+      "trace_id": "6bf87be8-7f40-4300-b664-e445336e90bc",
+      "answer_sha256": "637999b6f6cb6154404433361005a8d7fe6e659efc5525d50ffca23d36a592ee",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_monthly_buyer_count",
+      "trace_id": "6eff03de-760d-4581-ae1b-d089df2b01b4",
+      "answer_sha256": "9314632e5f39b1953e2e923878e6d540b915a52aa1ba27a86440a14ae9906797",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_monthly_repeat_buyer_count",
+      "trace_id": "27635237-8e06-436b-a4a6-d6c89138c267",
+      "answer_sha256": "8f83af690c1b3b513f58554e5497c786c21581a0a6a35ef3724849b2fce732a7",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "回答12个账户正确，但“按月内购买会员的CRM账户去重”没有直接重述至少两笔有效订单；建议说明复购阈值。未将购买人数误作复购人数。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "single_monthly_repeat_rate",
+      "trace_id": "76442e59-464a-4dea-ab8f-b31c16629c7c",
+      "answer_sha256": "9f86ad687b441e607852692b9164e8e9846edf876857d79241195da9d7616615",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "aug_order_trio",
+      "trace_id": "296c9ea9-77b1-4371-99a8-1baedecd6899",
+      "answer_sha256": "3557bb2aa943e91f57e288140b5a71dd302720188b62c363f60c18520d9820c1",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "aug_order_trio_paraphrase",
+      "trace_id": "faf443f2-0bbb-49cd-a54f-2f9286b6c962",
+      "answer_sha256": "4e344bf6e4eba0ca1e134a52f4f055c60610152c5e8d6eeeae45d37a7260ed8a",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "aug_trio_by_store",
+      "trace_id": "58a1f9e0-9153-4e11-a4b3-436aae8a8003",
+      "answer_sha256": "41a8e02519fdd39df6e8d96fb0acbc19eb001f48bdf1d237fe4c03ed08abf259",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "aug_trio_by_home_store",
+      "trace_id": "a61fe874-7e4a-4c87-b8b3-0fa99b27e644",
+      "answer_sha256": "27489f075335e23b6b9ffb544942f0c4447e7c087e30374b4140c161114ab1a8",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "aug_trio_by_order__status",
+      "trace_id": "8d9d0c26-52c0-4423-934c-84a99c3d4309",
+      "answer_sha256": "9e7b9f487f2b45ccadce024820988eaf512dab1a2ec8e5b72e06937477f01036",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "aug_trio_by_order__channel",
+      "trace_id": "e0bec106-86ca-4b95-8e0a-78cfd2291ffe",
+      "answer_sha256": "ed35b2f6e75395bc990fdf3c068e00a03f9fb6b4df41de80fc1066f061f0fc34",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "aug_trio_by_member__tier",
+      "trace_id": "82bc62d4-3c90-4ce8-ab50-0fe3965d3d4f",
+      "answer_sha256": "8e937009b9cc869033d7026cb69f7c5f5954c3b0598842d4eb6419e5266d22c2",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "aug_two_region_groups",
+      "trace_id": "1a347a84-677e-4615-8ff3-93601f7e80dd",
+      "answer_sha256": "f640bc347809225317f111b216fc9393a60a112b4816041dc29a921e97635909",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "aug_store_s01_filter",
+      "trace_id": "9e0ed21a-5e4e-4b9c-97a0-eb01b64954b3",
+      "answer_sha256": "ab43be2dc795b9448ece771d3bfe297c0bdfef09a02c218e9a1f6337cca41bbc",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "aug_cancelled_zero_denominator",
+      "trace_id": "71f999b4-ec23-4a4f-b425-9b0b8e8aee66",
+      "answer_sha256": "586a192747ef9f7727d9acdcd0b31785fad9f8642ffd78c16d1cd3e4b3441ea1",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "covered_empty_day",
+      "trace_id": "3bc0766b-c4e6-43d1-8095-8621856db07c",
+      "answer_sha256": "78cab4dbeeaa0cc55d526ebd08eb7094c81533cda89d2ee2afacf3be47c18319",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "first_aug_store_filter",
+      "trace_id": "dc7e84ab-597a-4904-9b1e-d26c7e7d13d8",
+      "answer_sha256": "8dd12c9cab999f9708d85111aadc8b69f2a56b43ddfaf3dcaeef264dee7b7c64",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "开头统称统计单位为CRM会员账户过于宽泛；后文逐项明确3个账户、3单、7400分、10单，未发生单位数值混用。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "first_full_coverage",
+      "trace_id": "fc3f1241-ee7f-4bf6-bcae-c19045bad2e4",
+      "answer_sha256": "f3c1ee843ef3dc94ae7f9d2f8d63c8feb1b4e3e286c1efd4635093cae506d9f1",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "registration_by_home_store",
+      "trace_id": "a771d907-b759-4b0e-820d-5149795ab721",
+      "answer_sha256": "150b81e3d0455bf31bab5c48ff97ea1e230d125def21568a963889ca51a971bf",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "registration_by_member__tier",
+      "trace_id": "e0f2d737-61c5-4a54-8d49-4d88e146f722",
+      "answer_sha256": "57e3cf10a7cee170dced96214547b30f129f6c69d3d3a5103249896a286b0f47",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "monthly_jul_aug",
+      "trace_id": "14071ce3-f257-4e77-9a82-f6c758800d82",
+      "answer_sha256": "3004c67a39d12c2279c99970df839c2a8447abe577f08283d535e8257f0c45a5",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "monthly_aug_paraphrase",
+      "trace_id": "730d323c-4816-4c8d-aac3-62bb1f8978ad",
+      "answer_sha256": "f711caef9f3d5564d1b5310c155e8f9a8790c50cb2866239e8979d2d08906381",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "covered_empty_month",
+      "trace_id": "7cd87499-4872-465a-8542-507db174d242",
+      "answer_sha256": "f2436b6cb7b2c4d58a95900a3576419176c9d9eda12d7233e068dbc57bd867e6",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "reject_partial_month",
+      "trace_id": "8e1bb0b0-1b13-4b03-bc89-7ce6cad4a242",
+      "answer_sha256": "a9b183c7fee11b0b9ef0dd67b576842297b315fa2864aa845948ad1277cc92ca",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "reject_monthly_store_group",
+      "trace_id": "92ef3edb-3b32-40ca-a2a1-994d0329c61f",
+      "answer_sha256": "147425a8bd54243c89c950cc12d94ff9cc99e186fbcac56a2ac8e63673b79670",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "reject_outside_coverage",
+      "trace_id": "c19d93ee-4c03-474e-afd2-c5d393f4593d",
+      "answer_sha256": "459273084a0e2556df656dd7f6f03cfd2de7ee09e76e346d21dd4ee08479d51e",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "small",
+      "case_id": "clarify_missing_time",
+      "trace_id": "9bbfdbc8-56f1-4052-9877-f5b659711101",
+      "answer_sha256": "0fd52b3e0ccdf2c8d5486f5e973adf557a41787ae95b8bb329ce04ee05991e76",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_order_count",
+      "trace_id": "50124cb8-3b0e-44f7-b153-333db08c4fcb",
+      "answer_sha256": "83b0dcdd74c62191ee1084bd255cacd0d4638112e72110c148781f1e8666d0f9",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_paid_order_count",
+      "trace_id": "4d2ad140-026c-4665-97fc-f88164209c73",
+      "answer_sha256": "5ed61a27ecec6e41d06ce316047dc9741fd9905f28bed2efe083506c890b1d41",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_valid_order_count",
+      "trace_id": "83c2af50-6092-4d43-975e-cf15e99fad73",
+      "answer_sha256": "0a465c0b4e9a783c549594c07129b918997c372e3f2e6c14ee433d8e6d9652c3",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_cancelled_order_count",
+      "trace_id": "7ab3c4e8-1125-4ef8-89e8-b4b5cb808548",
+      "answer_sha256": "89d19213d6485a46ac6982e75fc075546166e7fa3a1b014fac9a3a1344e40f03",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_refund_order_count",
+      "trace_id": "decac2af-3d14-48a9-a3c0-813cde4825ab",
+      "answer_sha256": "684c73403efb1079e1adb2b5e59ef5a7d6bdf149d160ea8cd0aace1b71f6684f",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_partial_refund_order_count",
+      "trace_id": "3d8b6317-c1cf-4498-a5bc-28652b296127",
+      "answer_sha256": "e405612e8f416823ad7542edfc2e38f7665ba7724756d5f349c0f8575a29ba8f",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_full_refund_order_count",
+      "trace_id": "fa9c1332-d713-4b74-89a2-e1dd379315b3",
+      "answer_sha256": "3809c41f97a83a3e0b48a1021c2dfe25761a4d84cb8a72675154de1b75a21ba8",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_payment_cents",
+      "trace_id": "6f147154-e017-40da-a301-ee6d184dc5d9",
+      "answer_sha256": "a1727030fe030c6a97538f1068eeeebb812c09aa43ef90b6acac70b7797b99d4",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_refund_cents",
+      "trace_id": "472aa8dc-6afd-4fa3-a50e-52acee9043a1",
+      "answer_sha256": "bf081fe196aa2a848fbc9fa2dfdb8514aac558bb981e18f51647ff46b4bcdda2",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_net_sales_cents",
+      "trace_id": "6b3d5290-18fa-43c4-960a-6c3edbf279c3",
+      "answer_sha256": "bb7149194d8b4900c906a7a8627cc5a028986e5fa9066b7dfd1b0f6747a00eca",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_gross_cents",
+      "trace_id": "efd0f0c8-d957-474b-b983-a3a908cd18c8",
+      "answer_sha256": "a5e2f739fed29f035ecf727fa9e059d33da9a9d851dfe3aecffe167654c4306b",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_discount_cents",
+      "trace_id": "7c69128b-a8fb-4be9-abe1-f1d7cb9eaa46",
+      "answer_sha256": "1aa46f62d51cbc4cfa225630b55acbdf91085b5444b7072848846c041d333464",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_buyer_count",
+      "trace_id": "6fb7e380-0025-43a3-9585-431cdadafe45",
+      "answer_sha256": "11afde5a3bf8a76d94326d12086622c31f4d90035053ed4e1cce8a5d7f56b0ff",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_refund_buyer_count",
+      "trace_id": "a1d5467a-d78a-4134-90ff-3c31b41a1f05",
+      "answer_sha256": "8b1d89bc2d4750511f59d769a9b60d57dda2f316cedf457212f6b809437443ad",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_selling_store_count",
+      "trace_id": "4ae229d6-3f94-49c1-bc57-51072630d503",
+      "answer_sha256": "bb34b36e13fed8a56a4ed0cfc2c74f8eef9eceae47ec5d9c8d1bf6312b3c2085",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_valid_order_items",
+      "trace_id": "ae663013-f819-46d8-a3f6-02785421be82",
+      "answer_sha256": "dbbd78afd0022ed76e2855521da56680217aefdf98fffee1ddb97aa67e6a6a3e",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_avg_order_value",
+      "trace_id": "acb2a1c8-6d45-465f-9815-95c38c5cbbca",
+      "answer_sha256": "511fee15f872fca1efabb7992a351fe1787d1d2dd0d0702acc8ca365e1b5d401",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "“不能进一步拆解或校验”应限定为本次返回未含分子分母，不能解释为系统不具备独立校验能力。结果与公式正确。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_avg_buyer_value",
+      "trace_id": "ff2ccd30-5c68-4af9-9c5b-595d12ff787f",
+      "answer_sha256": "36a5a99d9ac9ecd75bbde1eba0abee5743c98e49385a2ab24ce0a5e9b01a0dd4",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_purchase_frequency",
+      "trace_id": "a6f6e348-62cf-4898-a2f6-8d731748f4bb",
+      "answer_sha256": "dd382b4e96d67bc6a65c3b5d8cc1585c89d09351aa34f339a5ff96e59002f526",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_refund_amount_rate",
+      "trace_id": "61abb378-f73d-4bf2-9042-923f680de78e",
+      "answer_sha256": "f30c814429275e192817b8757eddbad1f9de675bd069758bab9b9a4ad80215f8",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_cancel_rate",
+      "trace_id": "e817201a-4544-4fe3-ab2e-987d11316a69",
+      "answer_sha256": "07cd153fdaf417c1e016b122a63ff2c3f7b6e5cddbca5655f09c06e05590f7b0",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_refund_order_rate",
+      "trace_id": "fd465178-2210-4b73-83d7-c80ba8862c36",
+      "answer_sha256": "9dade149d875a66c09bce578a90e86f3b25e916c8f11264cf7a5932b8c61311d",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_discount_rate",
+      "trace_id": "448cf173-af62-4b8a-b8e1-b6e1ebdf126e",
+      "answer_sha256": "b5c2c073911c980f8cc40d68f55e27466e305d7ad28b318dc4e3d5dd8cf684f6",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_items_per_order",
+      "trace_id": "54bf833d-06c8-4592-895b-d0bd0e485ad0",
+      "answer_sha256": "c5e50ce67e53672804a74148bad07ad3a5e93af2279ef38616a04676dbf2f0cb",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_new_member_count",
+      "trace_id": "3969f572-b6f7-43f3-9ff4-039b9601cb4b",
+      "answer_sha256": "940a05e3513a35df69c14d13319f32037dc74a079cb78fa3d18d7990ee097b8e",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_first_buyer_count",
+      "trace_id": "f14a75bb-6669-409e-8250-2200258ba43a",
+      "answer_sha256": "fafdfee0a9ff4f82e23d542093df84acf4b161c8c09941cf2a6cb430c43bcab4",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_first_order_sales_cents",
+      "trace_id": "1f09b6e0-7933-4c34-8c91-3bb3207152b0",
+      "answer_sha256": "0b77d76a16a09a846128568a62c3a56fbf880f5f8615115a7c4380233b978b9f",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_first_order_count",
+      "trace_id": "4acd11fa-86ba-48f9-b0ba-b4fbcd65b549",
+      "answer_sha256": "0e18e6181fc764c2ed9f5848f07903ee7bec63ee3bb40cd5b96139f247464a2e",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_repeat_order_count",
+      "trace_id": "7b80af73-5e30-4783-a329-290d2af180d6",
+      "answer_sha256": "bd4f58c18ad3f6fa3804b1fe4f63a1d503e310a2e27bd09617c2bf5225ebcc8d",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_monthly_buyer_count",
+      "trace_id": "b55b7f6d-3e6d-42bd-9a9e-64715cd58c4f",
+      "answer_sha256": "4cbc18254c850b8c415cb573aa3c9ab8e6144fb4e86ea0e062cd9509f81d8c0b",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_monthly_repeat_buyer_count",
+      "trace_id": "f2a7d23c-7af8-45c9-aeb5-18fbd429ee9f",
+      "answer_sha256": "71466248079c490c058639035aff7fa97ff568d0c58c7986016777675f93d4a4",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "未返回分母是本次只查复购人数造成；“没有可用的分母”宜改为本轮未查询分母，不代表已知复购率能力不可用。7302账户及至少两笔定义正确。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "single_monthly_repeat_rate",
+      "trace_id": "a2369eec-29cc-4044-b9c3-347e2aa4c05f",
+      "answer_sha256": "1357a48c8f84250764c55c9db187bb67ab9ad36167df6ac2fb1085f72d5813ca",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "aug_order_trio",
+      "trace_id": "0d312ea7-ff69-402b-9c95-26fb7edf328f",
+      "answer_sha256": "2fcaf827dca6d2903d593b2182761362de4dd5ad055404ea8fdca16db6814da4",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "aug_order_trio_paraphrase",
+      "trace_id": "29a5531c-c7ab-41f9-99af-af69975ac1e8",
+      "answer_sha256": "14acc796655f432fcc4f6cb14286b1b0d93dcc02b000f5e5f00a8cf65d03ae4a",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "aug_trio_by_store",
+      "trace_id": "664d5852-d1bd-49cf-8167-bdec6ca65049",
+      "answer_sha256": "06ce2db37cfe1648af27f0e63b63eee767716bd120dc86b8c13518af7594b9d2",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "aug_trio_by_home_store",
+      "trace_id": "29269673-dcbf-4b85-8455-4e756c9ee93d",
+      "answer_sha256": "92d5fb631dbbf862e4cad640ec1cabb5d16bf6811e5dcaf4f6e8779f4539e76e",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "aug_trio_by_order__status",
+      "trace_id": "687d1580-eb17-4036-905f-428222521a81",
+      "answer_sha256": "7cad3115d4a5e22d326cb0fd90d49812067b276d5f44fddfa3f611a9d38965e1",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "aug_trio_by_order__channel",
+      "trace_id": "e8de5ba6-d8fa-4b74-b9ba-ea38e1b9be76",
+      "answer_sha256": "47d0011ef54f901b9ee75e56b7527ac807c92958f15b22801f87e649929958bd",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "文字写2026-08-01至2026-09-01未明确结束日不含，但同时明确2026年8月，意图与SQL为正确半开区间；建议补充端点表述。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "aug_trio_by_member__tier",
+      "trace_id": "cd6c8169-4806-4ac7-bfdd-a19b3b0e0943",
+      "answer_sha256": "1f5dbb8a1226c206ad6f249c74394123538ad03f611b9afe2144eac71c57928e",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "aug_two_region_groups",
+      "trace_id": "840fcbf8-e855-4300-8c10-6262202f3635",
+      "answer_sha256": "e5e3e64b6d46d3eb6aa60d215452628756e9fab59651ca8ec98277307409a50d",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "aug_store_s01_filter",
+      "trace_id": "d08b1678-d367-40e6-bcf0-59d5cf1e5e45",
+      "answer_sha256": "f43ef428501ca0f863f7411a7cbb9ec80373b495ebb58ddcefed7af479cfed20",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "aug_cancelled_zero_denominator",
+      "trace_id": "7cc5599b-62b1-4798-8375-9d80ae4690ea",
+      "answer_sha256": "acd9fde5e9762b529953e508ab11430184b86eed1d2927dc86b9e208c76cb645",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "covered_empty_day",
+      "trace_id": "775756b5-128f-4462-be97-97c029e55603",
+      "answer_sha256": "28c1b042dbaf62c7dbbda0ce40763142baea05e6c81ac1ff91642efadbea2410",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "first_aug_store_filter",
+      "trace_id": "225acd4a-de23-4486-b6b3-2b41c33fc4e2",
+      "answer_sha256": "b0e179250430678c2f75fa4390fc8cfc41b4cb28747c2581a76159bd77a89153",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "first_full_coverage",
+      "trace_id": "716a9143-2992-44ed-8b0d-dd04c410c1c4",
+      "answer_sha256": "c700888d659881ce07abcc7e13fca1bf4b6a2284e96a8b63c2a021e3caad860f",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "registration_by_home_store",
+      "trace_id": "7316dcc9-f086-4224-85e7-cf58119c058d",
+      "answer_sha256": "3fccb21e61a0cc4c2f8a30b28f8e9e8a141f941c1edb6285e970ebab02e2a0fc",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "registration_by_member__tier",
+      "trace_id": "e4474895-d622-4db4-b65c-7fcd77874b92",
+      "answer_sha256": "153ff50fd7f30db9709a5efde8782f3eeadd078a9482b02a35e3d8b703e8aea9",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "monthly_jul_aug",
+      "trace_id": "c1b5fb21-edd8-493b-bf40-ced0cea900af",
+      "answer_sha256": "64a99de0b808053bd95f30df681e1236534fabb9a4b584f295887492244ef657",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "monthly_aug_paraphrase",
+      "trace_id": "e285ac59-1deb-4226-b1fd-40398669bdd8",
+      "answer_sha256": "3cbeb6f73da362775daf5e264f71f73f5b6420ce593b6631ed199c8e93bdcf75",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "reject_partial_month",
+      "trace_id": "76065e08-e959-4265-a1c4-e24e525d9897",
+      "answer_sha256": "1328973b61e6a41f1d06aad7cabcfd00b6b4a7db2bbc725f0a2636e5a2596fcb",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "reject_monthly_store_group",
+      "trace_id": "fc6cdc80-43a8-4e0e-91a8-4649b24f5d14",
+      "answer_sha256": "9a81cbf759661a40c99dc53542f1e80e76953dae57c2aebc5b5aee18b63b673a",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "reject_outside_coverage",
+      "trace_id": "473c3346-caad-42fb-8937-8a5b9c672e8e",
+      "answer_sha256": "8e0237fbd8db0656927500d41cb775e8ef90505954eed0fe152996232b5c060d",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    },
+    {
+      "dataset": "large",
+      "case_id": "clarify_missing_time",
+      "trace_id": "f8fa28f4-571c-4173-bd1a-77e51df4810a",
+      "answer_sha256": "0b91d3dea9e6cfb482058442c0a8095de20126983ba216e09c4bb8d6a0f7afab",
+      "review_method": "AI-assisted direct reading of report question/result/answer",
+      "material_result_mismatch_observed": false,
+      "note": "本次逐项核对未发现数值、单位、筛选分组或解释改变查询结论的问题。"
+    }
+  ],
+  "original_answers_modified": false,
+  "queries_reexecuted_during_review": false,
+  "model_called_during_review": false,
+  "final_38_acceptance": false
+}

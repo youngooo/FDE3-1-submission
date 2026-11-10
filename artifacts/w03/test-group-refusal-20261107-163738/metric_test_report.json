@@ -1,0 +1,180 @@
+{
+  "contract_version": "w03-0.1.0",
+  "complete": true,
+  "passed": 4,
+  "total": 4,
+  "cases": [
+    {
+      "id": "reject_monthly_store_group",
+      "question": "请将青禾2026年8月完整自然月的月内复购率按订单成交门店编号分组返回。",
+      "expected": {
+        "status": "unsupported",
+        "intent": {
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "filters": []
+        }
+      },
+      "actual": {
+        "status": "unsupported",
+        "reason": "月内复购率（monthly_repeat_rate）的查询策略限定为「仅完整自然月、全门店口径」，其可分组维度只包含会员归属门店、会员归属地区、会员等级、会员账户和统计月，不包含「成交门店」（store）。因此无法按订单成交门店编号分组返回该指标。可将分组维度改为会员归属门店（home_store）后再查询。",
+        "intent": {
+          "status": "unsupported",
+          "reason": "月内复购率（monthly_repeat_rate）的查询策略限定为「仅完整自然月、全门店口径」，其可分组维度只包含会员归属门店、会员归属地区、会员等级、会员账户和统计月，不包含「成交门店」（store）。因此无法按订单成交门店编号分组返回该指标。可将分组维度改为会员归属门店（home_store）后再查询。",
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [],
+          "filters": []
+        },
+        "question": "请将青禾2026年8月完整自然月的月内复购率按订单成交门店编号分组返回。",
+        "trace_id": "2e3ac504-1b41-49fc-92b9-a6f49516ad23",
+        "elapsed_seconds": 2.394,
+        "model_usage": {
+          "prompt_tokens": 9374,
+          "completion_tokens": 318,
+          "total_tokens": 9692
+        },
+        "model_calls_with_usage": 1
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "reject_monthly_home_store_group",
+      "question": "请将青禾2026年8月完整自然月的月内复购率按会员归属门店编号分组返回。",
+      "expected": {
+        "status": "unsupported",
+        "intent": {
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "filters": []
+        }
+      },
+      "actual": {
+        "status": "unsupported",
+        "reason": "所选指标只支持完整自然月、全门店全渠道",
+        "intent": {
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [
+            "home_store"
+          ],
+          "filters": []
+        },
+        "question": "请将青禾2026年8月完整自然月的月内复购率按会员归属门店编号分组返回。",
+        "trace_id": "6f9767ed-45ae-41f1-b8f9-acd7504979b4",
+        "elapsed_seconds": 5.526,
+        "model_usage": {
+          "prompt_tokens": 9374,
+          "completion_tokens": 500,
+          "total_tokens": 9874
+        },
+        "model_calls_with_usage": 1
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "reject_monthly_member__tier_group",
+      "question": "请将青禾2026年8月完整自然月的月内复购率按会员等级分组返回。",
+      "expected": {
+        "status": "unsupported",
+        "intent": {
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "filters": []
+        }
+      },
+      "actual": {
+        "status": "unsupported",
+        "reason": "所选指标只支持完整自然月、全门店全渠道",
+        "intent": {
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [
+            "member__tier"
+          ],
+          "filters": []
+        },
+        "question": "请将青禾2026年8月完整自然月的月内复购率按会员等级分组返回。",
+        "trace_id": "3c8338e8-22b5-4713-a060-6251461defdf",
+        "elapsed_seconds": 4.287,
+        "model_usage": {
+          "prompt_tokens": 9372,
+          "completion_tokens": 242,
+          "total_tokens": 9614
+        },
+        "model_calls_with_usage": 1
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    },
+    {
+      "id": "reject_monthly_member_group",
+      "question": "请将青禾2026年8月完整自然月的月内复购率按会员账户ID分组返回。",
+      "expected": {
+        "status": "unsupported",
+        "intent": {
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "filters": []
+        }
+      },
+      "actual": {
+        "status": "unsupported",
+        "reason": "所选指标只支持完整自然月、全门店全渠道",
+        "intent": {
+          "metrics": [
+            "monthly_repeat_rate"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "group_by": [
+            "member"
+          ],
+          "filters": []
+        },
+        "question": "请将青禾2026年8月完整自然月的月内复购率按会员账户ID分组返回。",
+        "trace_id": "8ea6e373-e242-47fe-9cd1-945d4fd15f06",
+        "elapsed_seconds": 5.537,
+        "model_usage": {
+          "prompt_tokens": 9373,
+          "completion_tokens": 442,
+          "total_tokens": 9815
+        },
+        "model_calls_with_usage": 1
+      },
+      "comparison": {
+        "passed": true,
+        "differences": []
+      }
+    }
+  ]
+}

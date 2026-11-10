@@ -1,0 +1,36 @@
+{
+  "status": "applied",
+  "kind": "bounded_model_enum_context",
+  "project": "/home/yang/FDE/w03-work/fde-agent-w03/.runtime/qinghe-general32-large-20261107-164548",
+  "source_trace": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/test-large-model-recovery-20261107-170218/traces/d2b716c2-289e-4258-b29b-bc4732e6382c/intent-trace.json",
+  "source_trace_sha256": "3e748ffd814875c0b099cf0c073500fafbd255ff89697017c86021c94f6a44f6",
+  "source_cases_sha256": "1059dad3ccf9f99648fdf7cea9075ead9507d9cd9b19c34b24d87d1a04f9ff22",
+  "dataset_sha256": "6a3371104fb74c081fee14869d1566e0f8de08c489820ccff3fc7eb47a86245e",
+  "dimensions_sha256": "82cecc5ebb4012950b5f04b7a46c26569091e3c40ba228e4d8af9efe1e1a2164",
+  "engine_sha256": "e8b39da2517a65f6406da4d261173291c795248ea6c62638137e09ce750a98f3",
+  "agent_before_sha256": "3ab4718e816c786c29c9a705ca5d05f9207ddbd685e4ab178df1e86b229937b7",
+  "agent_after_sha256": "8007c981b30a628817b1500986295654b5841a16b9cc84e7b89d3fd0c59c434e",
+  "prompt_before_sha256": "7091a8f4e0ed16278a2471d5321aaeff3008d21ec684d38faf92985867dc7815",
+  "prompt_after_sha256": "a7700edf0afca90acd8443c01f4c8d46d8461e02f2a6bdc349f1459dcf499170",
+  "helper_sha256": "93a9d9a27566c3c736c2e451e9e275510f9a0c9e996728f0ae1dfc916e87db87",
+  "helper_previously_existed": false,
+  "patch_script_sha256": "1461ef0ffe3b22fa4334142ae95fb3dd632c786b8dd4f9a63212ec34feeed399",
+  "offline_checks": 18,
+  "probe_cases": 2,
+  "payload_chars_before": 627149,
+  "payload_chars_after": 28099,
+  "historical_intent_usage": {
+    "prompt_tokens": 310326,
+    "completion_tokens": 183,
+    "total_tokens": 310509,
+    "completion_tokens_details": {
+      "reasoning_tokens": 114
+    }
+  },
+  "model_called": false,
+  "query_executed": false,
+  "engine_modified": false,
+  "full_dimension_file_modified": false,
+  "actual_token_saving": "not_measured_until_real_probe",
+  "scope_note": "Product context and prompt customization; metric definitions and independent expected values unchanged."
+}

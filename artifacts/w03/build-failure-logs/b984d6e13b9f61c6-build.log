@@ -1,0 +1,35 @@
+[0m15:52:04  Running with dbt=1.12.5
+[0m15:52:05  Registered adapter: duckdb=1.11.0
+[0m15:52:05  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:52:07  Found 11 models, 38 metrics, 500 macros, 6 semantic models
+[0m15:52:07  
+[0m15:52:07  Concurrency: 1 threads (target='dev')
+[0m15:52:07  
+[0m15:52:07  1 of 11 START sql view model main.cards ........................................ [RUN]
+[0m15:52:07  1 of 11 OK created sql view model main.cards ................................... [[32mOK[0m in 0.07s]
+[0m15:52:07  2 of 11 START sql view model main.members ...................................... [RUN]
+[0m15:52:07  2 of 11 OK created sql view model main.members ................................. [[32mOK[0m in 0.03s]
+[0m15:52:07  3 of 11 START sql view model main.orders ....................................... [RUN]
+[0m15:52:07  3 of 11 OK created sql view model main.orders .................................. [[32mOK[0m in 0.03s]
+[0m15:52:07  4 of 11 START sql view model main.stores ....................................... [RUN]
+[0m15:52:07  4 of 11 OK created sql view model main.stores .................................. [[32mOK[0m in 0.03s]
+[0m15:52:07  5 of 11 START sql view model main.time_spine ................................... [RUN]
+[0m15:52:07  5 of 11 OK created sql view model main.time_spine .............................. [[32mOK[0m in 0.05s]
+[0m15:52:07  6 of 11 START sql view model main.member_dimensions ............................ [RUN]
+[0m15:52:07  6 of 11 OK created sql view model main.member_dimensions ....................... [[32mOK[0m in 0.02s]
+[0m15:52:07  7 of 11 START sql view model main.order_facts .................................. [RUN]
+[0m15:52:07  7 of 11 OK created sql view model main.order_facts ............................. [[32mOK[0m in 0.03s]
+[0m15:52:07  8 of 11 START sql view model main.home_store_dimensions ........................ [RUN]
+[0m15:52:07  8 of 11 OK created sql view model main.home_store_dimensions ................... [[32mOK[0m in 0.03s]
+[0m15:52:07  9 of 11 START sql view model main.store_dimensions ............................. [RUN]
+[0m15:52:07  9 of 11 OK created sql view model main.store_dimensions ........................ [[32mOK[0m in 0.02s]
+[0m15:52:07  10 of 11 START sql view model main.monthly_order_summary ....................... [RUN]
+[0m15:52:07  10 of 11 OK created sql view model main.monthly_order_summary .................. [[32mOK[0m in 0.03s]
+[0m15:52:07  11 of 11 START sql view model main.monthly_paid_summary ........................ [RUN]
+[0m15:52:08  11 of 11 OK created sql view model main.monthly_paid_summary ................... [[32mOK[0m in 0.03s]
+[0m15:52:08  
+[0m15:52:08  Finished running 11 view models in 0 hours 0 minutes and 0.55 seconds (0.55s).
+[0m15:52:08  
+[0m15:52:08  [32mCompleted successfully[0m
+[0m15:52:08  
+[0m15:52:08  Done. PASS=11 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=11

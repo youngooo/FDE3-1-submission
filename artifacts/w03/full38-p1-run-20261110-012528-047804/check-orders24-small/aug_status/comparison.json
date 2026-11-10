@@ -1,0 +1,7 @@
+{
+  "id": "aug_status",
+  "passed": true,
+  "expected_groups": 2,
+  "checked_metrics": 24,
+  "errors": []
+}

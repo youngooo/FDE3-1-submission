@@ -1,0 +1,111 @@
+{
+  "kind": "incremental_orders24_csv_check",
+  "expected_basis": "Customer materials 01/02/05; original CSV; no generated SQL used",
+  "script_sha256": {
+    "check_orders24.py": "ec32f57a64052448c48bb64dc50b196106c0c1a71200b789b47c1a27cec979f4",
+    "check_base16.py": "6654a383173cfb8b00d251482698ed12b88f1fc6fa79f334f31b40579750381a"
+  },
+  "source_sha256": {
+    "orders.csv": "c6e0dee6081e7a6f7782b54de78b3182835c46184c8e7569fc23feab8cf3c4f1",
+    "cards.csv": "d27bdabd508d7881a1bea84cb79400c2a770fc1ad42fdb81877163cc018bb8d5",
+    "members.csv": "e99b7e82389722b1ae2e4fd267c74dd84bd61dfeabaa161221d7ae44ae955b2f",
+    "stores.csv": "e8160804fd485853f6c75d9a095b1ee6f05bbbd40ba851cac84def35488aa41d"
+  },
+  "project": "/home/yang/FDE/w03-work/fde-agent-w03/artifacts/w03/full38-p1-run-20261110-012528-047804/project-small",
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39",
+  "comparison_policy": {
+    "integers": "exact",
+    "null": "strict",
+    "unit_spelling_aliases": {
+      "cents/order": "cents_per_order",
+      "cents/account": "cents_per_account",
+      "orders/account": "orders_per_account",
+      "items/order": "items_per_order"
+    },
+    "ratio_abs_tolerance": "1E-8",
+    "ratio_rel_tolerance": "1E-9"
+  },
+  "cases": [
+    {
+      "id": "aug_total",
+      "passed": true,
+      "expected_groups": 1,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "jul_total",
+      "passed": true,
+      "expected_groups": 1,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "coverage_total",
+      "passed": true,
+      "expected_groups": 1,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "aug_store",
+      "passed": true,
+      "expected_groups": 2,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "aug_home_store",
+      "passed": true,
+      "expected_groups": 3,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "aug_status",
+      "passed": true,
+      "expected_groups": 2,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "aug_channel",
+      "passed": true,
+      "expected_groups": 2,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "aug_tier",
+      "passed": true,
+      "expected_groups": 3,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "aug_two_regions",
+      "passed": true,
+      "expected_groups": 3,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "aug_cancelled_only",
+      "passed": true,
+      "expected_groups": 1,
+      "checked_metrics": 24,
+      "errors": []
+    },
+    {
+      "id": "covered_empty_day",
+      "passed": true,
+      "expected_groups": 1,
+      "checked_metrics": 24,
+      "errors": []
+    }
+  ],
+  "passed": true,
+  "complete": true
+}

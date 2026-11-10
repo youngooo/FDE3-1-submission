@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "new_member_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(1) AS new_member_count\nFROM \"data\".\"main\".\"members\" members_semantic_src_10000\nWHERE DATE_TRUNC('day', registered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "new_member_count"
+  ],
+  "rows": [
+    [
+      0
+    ]
+  ],
+  "seconds": 0.03,
+  "units": {
+    "new_member_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "answer": "青禾在 2026 年 8 月（2026-08-01 含至 2026-09-01 不含）的注册会员数为 0 个 CRM 会员账户。统计范围为全部门店、不按维度分组，口径为按账户注册日期统计新注册的 CRM 账户。该结果为覆盖范围内的实际零值，并非未定义；注册会员数按 CRM 账户计数，不等同于自然人数。",
+  "question": "请只查询青禾2026年8月（2026-08-01含至2026-09-01不含）的注册会员数，全门店，不按维度分组。按账户注册日期统计。",
+  "trace_id": "3969f572-b6f7-43f3-9ff4-039b9601cb4b",
+  "elapsed_seconds": 6.671,
+  "model_usage": {
+    "prompt_tokens": 13237,
+    "completion_tokens": 406,
+    "total_tokens": 13643
+  },
+  "model_calls_with_usage": 2
+}

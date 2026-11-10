@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "intent": {
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "expected_basis": "按业务材料定义，直接读取原始 orders.csv 独立计算",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "0ed48b808fff20205c0ae4eb69e8bed886212fb477d4bb1f697138371b3fac0e",
+  "checks": [
+    {
+      "metric_id": "order_count",
+      "expected": 32,
+      "actual": 32,
+      "passed": true
+    },
+    {
+      "metric_id": "valid_order_count",
+      "expected": 27,
+      "actual": 27,
+      "passed": true
+    },
+    {
+      "metric_id": "net_sales_cents",
+      "expected": 100300,
+      "actual": 100300,
+      "passed": true
+    }
+  ]
+}

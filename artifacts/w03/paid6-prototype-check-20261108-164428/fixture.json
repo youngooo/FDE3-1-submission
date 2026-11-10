@@ -1,0 +1,159 @@
+{
+  "kind": "hand_authored_test_fixture_not_customer_confirmation",
+  "member_ids": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "orders": [
+    {
+      "order_id": "J1",
+      "member_id": "A",
+      "ordered_at": "2026-07-31",
+      "paid_cents": 300,
+      "refund_cents": 0,
+      "status": "paid",
+      "store_id": "X",
+      "channel": "门店"
+    },
+    {
+      "order_id": "J2",
+      "member_id": "C",
+      "ordered_at": "2026-07-01",
+      "paid_cents": 100,
+      "refund_cents": 0,
+      "status": "paid",
+      "store_id": "X",
+      "channel": "门店"
+    },
+    {
+      "order_id": "A1",
+      "member_id": "A",
+      "ordered_at": "2026-08-01",
+      "paid_cents": 1000,
+      "refund_cents": 0,
+      "status": "paid",
+      "store_id": "X",
+      "channel": "门店"
+    },
+    {
+      "order_id": "A2",
+      "member_id": "A",
+      "ordered_at": "2026-08-31",
+      "paid_cents": 1500,
+      "refund_cents": 500,
+      "status": "paid",
+      "store_id": "Y",
+      "channel": "小程序"
+    },
+    {
+      "order_id": "B1",
+      "member_id": "B",
+      "ordered_at": "2026-08-10",
+      "paid_cents": 500,
+      "refund_cents": 0,
+      "status": "paid",
+      "store_id": "X",
+      "channel": "门店"
+    },
+    {
+      "order_id": "C1",
+      "member_id": "C",
+      "ordered_at": "2026-08-15",
+      "paid_cents": 900,
+      "refund_cents": 0,
+      "status": "paid",
+      "store_id": "X",
+      "channel": "门店"
+    },
+    {
+      "order_id": "D1",
+      "member_id": "D",
+      "ordered_at": "2026-08-16",
+      "paid_cents": 0,
+      "refund_cents": 0,
+      "status": "cancelled",
+      "store_id": "X",
+      "channel": "门店"
+    },
+    {
+      "order_id": "D2",
+      "member_id": "D",
+      "ordered_at": "2026-08-17",
+      "paid_cents": 600,
+      "refund_cents": 600,
+      "status": "paid",
+      "store_id": "X",
+      "channel": "门店"
+    },
+    {
+      "order_id": "S1",
+      "member_id": "A",
+      "ordered_at": "2026-09-01",
+      "paid_cents": 999,
+      "refund_cents": 0,
+      "status": "paid",
+      "store_id": "X",
+      "channel": "门店"
+    }
+  ],
+  "eligibility": [
+    {
+      "month": "2026-07-01",
+      "member_id": "A",
+      "eligible": false
+    },
+    {
+      "month": "2026-07-01",
+      "member_id": "B",
+      "eligible": false
+    },
+    {
+      "month": "2026-07-01",
+      "member_id": "C",
+      "eligible": true
+    },
+    {
+      "month": "2026-07-01",
+      "member_id": "D",
+      "eligible": false
+    },
+    {
+      "month": "2026-07-01",
+      "member_id": "E",
+      "eligible": false
+    },
+    {
+      "month": "2026-08-01",
+      "member_id": "A",
+      "eligible": true
+    },
+    {
+      "month": "2026-08-01",
+      "member_id": "B",
+      "eligible": true
+    },
+    {
+      "month": "2026-08-01",
+      "member_id": "C",
+      "eligible": false
+    },
+    {
+      "month": "2026-08-01",
+      "member_id": "D",
+      "eligible": true
+    },
+    {
+      "month": "2026-08-01",
+      "member_id": "E",
+      "eligible": true
+    }
+  ],
+  "coverage": [
+    "2026-07-01",
+    "2026-10-01"
+  ],
+  "note": "资格布尔值由测试作者指定，不来自青禾卡规则；无卡类型、端点或结束日组合算法。"
+}

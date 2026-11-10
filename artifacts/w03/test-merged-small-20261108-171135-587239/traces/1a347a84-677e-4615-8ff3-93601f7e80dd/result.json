@@ -1,0 +1,67 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "store__region",
+      "home_store__region"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  home_stores_src_10000.region AS home_store__region\n  , selling_stores_src_10000.region AS store__region\n  , SUM(subq_5.__order_count) AS order_count\n  , SUM(subq_5.__valid_order_count) AS valid_order_count\n  , SUM(subq_5.__net_sales_cents) AS net_sales_cents\nFROM (\n  SELECT\n    store_id AS store\n    , home_store_id AS home_store\n    , 1 AS __order_count\n    , CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END AS __valid_order_count\n    , CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END AS __net_sales_cents\n  FROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_5\nLEFT OUTER JOIN\n  \"data\".\"main\".\"stores\" home_stores_src_10000\nON\n  subq_5.home_store = home_stores_src_10000.store_id\nLEFT OUTER JOIN\n  \"data\".\"main\".\"stores\" selling_stores_src_10000\nON\n  subq_5.store = selling_stores_src_10000.store_id\nGROUP BY\n  home_stores_src_10000.region\n  , selling_stores_src_10000.region",
+  "columns": [
+    "home_store__region",
+    "store__region",
+    "order_count",
+    "valid_order_count",
+    "net_sales_cents"
+  ],
+  "rows": [
+    [
+      "华北",
+      "华南",
+      1,
+      0,
+      0
+    ],
+    [
+      "华东",
+      "华东",
+      16,
+      13,
+      54650
+    ],
+    [
+      "华南",
+      "华南",
+      15,
+      14,
+      45650
+    ]
+  ],
+  "seconds": 0.08,
+  "units": {
+    "order_count": "count",
+    "valid_order_count": "count",
+    "net_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62",
+  "answer": "青禾当前客户范围内，2026年8月按下单日期统计，并按“会员归属门店地区”和“订单成交门店地区”同时分组，结果如下：\n\n| 会员归属门店地区 | 订单成交门店地区 | 创建订单数 | 有效订单数 | 净销售额 |\n|---|---|---:|---:|---:|\n| 华北 | 华南 | 1单 | 0单 | 0分 |\n| 华东 | 华东 | 16单 | 13单 | 54650分 |\n| 华南 | 华南 | 15单 | 14单 | 45650分 |\n\n口径说明：创建订单数按下单日期统计全部订单，每个订单号计一次，包含取消单；有效订单数为状态为 paid 且实付金额减退款金额大于零的订单数，取消与全额退款不计；净销售额为 paid 订单实付减退款后的合计，取消单不计，单位为分。表中零值为统计范围内的实际零值。",
+  "question": "青禾2026年8月，同时按订单成交门店地区和会员归属门店地区分组，列出创建订单数、有效订单数、净销售额，金额保留分。",
+  "trace_id": "1a347a84-677e-4615-8ff3-93601f7e80dd",
+  "elapsed_seconds": 10.943,
+  "model_usage": {
+    "prompt_tokens": 13849,
+    "completion_tokens": 1109,
+    "total_tokens": 14958
+  },
+  "model_calls_with_usage": 2
+}

@@ -1,0 +1,9 @@
+{
+  "metrics": [
+    "new_member_count"
+  ],
+  "start": "2026-08-01",
+  "end": "2026-09-01",
+  "group_by": [],
+  "filters": []
+}

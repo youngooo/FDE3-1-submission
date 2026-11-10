@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "paid_order_count"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN status = 'paid' THEN 1 ELSE 0 END) AS paid_order_count\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "paid_order_count"
+  ],
+  "rows": [
+    [
+      30
+    ]
+  ],
+  "seconds": 0.047,
+  "units": {
+    "paid_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "青禾在2026年8月（2026-08-01至2026-08-31）的全门店汇总支付订单数为30单。统计状态为已支付的订单，包括后来发生全部退款的订单；按全部成交门店汇总，未按门店分组。本轮为合成测试数据，覆盖青禾相关数据范围。",
+  "question": "请只查询青禾2026年8月的支付订单数，全门店汇总，不分组。",
+  "trace_id": "35c06b78-fb05-4dcd-8f44-7aecf55f3763",
+  "elapsed_seconds": 5.521,
+  "model_usage": {
+    "prompt_tokens": 14616,
+    "completion_tokens": 294,
+    "total_tokens": 14910
+  },
+  "model_calls_with_usage": 2
+}

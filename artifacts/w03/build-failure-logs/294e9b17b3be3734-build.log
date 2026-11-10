@@ -1,0 +1,35 @@
+[0m16:49:38  Running with dbt=1.12.5
+[0m16:49:39  Registered adapter: duckdb=1.11.0
+[0m16:49:39  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m16:49:40  Found 11 models, 38 metrics, 500 macros, 7 semantic models
+[0m16:49:40  
+[0m16:49:40  Concurrency: 1 threads (target='dev')
+[0m16:49:40  
+[0m16:49:41  1 of 11 START sql view model main.cards ........................................ [RUN]
+[0m16:49:41  1 of 11 OK created sql view model main.cards ................................... [[32mOK[0m in 0.06s]
+[0m16:49:41  2 of 11 START sql view model main.members ...................................... [RUN]
+[0m16:49:41  2 of 11 OK created sql view model main.members ................................. [[32mOK[0m in 0.02s]
+[0m16:49:41  3 of 11 START sql view model main.orders ....................................... [RUN]
+[0m16:49:41  3 of 11 OK created sql view model main.orders .................................. [[32mOK[0m in 0.02s]
+[0m16:49:41  4 of 11 START sql view model main.stores ....................................... [RUN]
+[0m16:49:41  4 of 11 OK created sql view model main.stores .................................. [[32mOK[0m in 0.06s]
+[0m16:49:41  5 of 11 START sql view model main.time_spine ................................... [RUN]
+[0m16:49:41  5 of 11 OK created sql view model main.time_spine .............................. [[32mOK[0m in 0.02s]
+[0m16:49:41  6 of 11 START sql view model main.monthly_member_orders ........................ [RUN]
+[0m16:49:41  6 of 11 OK created sql view model main.monthly_member_orders ................... [[32mOK[0m in 0.03s]
+[0m16:49:41  7 of 11 START sql view model main.order_facts .................................. [RUN]
+[0m16:49:41  7 of 11 OK created sql view model main.order_facts ............................. [[32mOK[0m in 0.02s]
+[0m16:49:41  8 of 11 START sql view model main.monthly_paid_eligibility ..................... [RUN]
+[0m16:49:41  8 of 11 OK created sql view model main.monthly_paid_eligibility ................ [[32mOK[0m in 0.02s]
+[0m16:49:41  9 of 11 START sql view model main.order_sequence ............................... [RUN]
+[0m16:49:41  9 of 11 OK created sql view model main.order_sequence .......................... [[32mOK[0m in 0.02s]
+[0m16:49:41  10 of 11 START sql view model main.monthly_paid_account ........................ [RUN]
+[0m16:49:41  10 of 11 OK created sql view model main.monthly_paid_account ................... [[32mOK[0m in 0.02s]
+[0m16:49:41  11 of 11 START sql view model main.order_first_history ......................... [RUN]
+[0m16:49:41  11 of 11 OK created sql view model main.order_first_history .................... [[32mOK[0m in 0.02s]
+[0m16:49:41  
+[0m16:49:41  Finished running 11 view models in 0 hours 0 minutes and 0.47 seconds (0.47s).
+[0m16:49:41  
+[0m16:49:41  [32mCompleted successfully[0m
+[0m16:49:41  
+[0m16:49:41  Done. PASS=11 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=11

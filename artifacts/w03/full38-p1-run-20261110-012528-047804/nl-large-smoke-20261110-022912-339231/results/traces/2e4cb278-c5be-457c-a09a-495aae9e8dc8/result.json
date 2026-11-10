@@ -1,0 +1,24 @@
+{
+  "status": "unsupported",
+  "reason": "当前数据集的成交门店编号只有 S01–S24，没有您指定的 S888888；按您的要求不能改用其他门店编号，因此该查询无法执行。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "当前数据集的成交门店编号只有 S01–S24，没有您指定的 S888888；按您的要求不能改用其他门店编号，因此该查询无法执行。",
+    "metrics": [
+      "order_count"
+    ],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "限定青禾成交门店编号S888888，给我2026年6月创建订单数；不要猜成其他编号。",
+  "trace_id": "2e4cb278-c5be-457c-a09a-495aae9e8dc8",
+  "elapsed_seconds": 2.768,
+  "model_usage": {
+    "prompt_tokens": 12549,
+    "completion_tokens": 327,
+    "total_tokens": 12876
+  },
+  "model_calls_with_usage": 1
+}

@@ -1,0 +1,100 @@
+{
+  "passed": true,
+  "items": [
+    {
+      "model": "orders_semantic",
+      "check": "primary_key",
+      "columns": [
+        "order_id"
+      ],
+      "rows": 48,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "orders_semantic",
+      "entity": "member",
+      "target": "members_semantic",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "orders_semantic",
+      "entity": "store",
+      "target": "selling_stores",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "orders_semantic",
+      "entity": "home_store",
+      "target": "home_stores",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "members_semantic",
+      "check": "primary_key",
+      "columns": [
+        "member_id"
+      ],
+      "rows": 20,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "members_semantic",
+      "entity": "home_store",
+      "target": "home_stores",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "selling_stores",
+      "check": "primary_key",
+      "columns": [
+        "store_id"
+      ],
+      "rows": 3,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "home_stores",
+      "check": "primary_key",
+      "columns": [
+        "store_id"
+      ],
+      "rows": 3,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "member_month_activity_semantic",
+      "check": "primary_key",
+      "columns": [
+        "member_month_key"
+      ],
+      "rows": 29,
+      "null_rows": 0,
+      "duplicate_rows": 0,
+      "passed": true
+    },
+    {
+      "model": "member_month_activity_semantic",
+      "entity": "member",
+      "target": "members_semantic",
+      "check": "foreign_key",
+      "unmatched_rows": 0,
+      "passed": true
+    }
+  ]
+}

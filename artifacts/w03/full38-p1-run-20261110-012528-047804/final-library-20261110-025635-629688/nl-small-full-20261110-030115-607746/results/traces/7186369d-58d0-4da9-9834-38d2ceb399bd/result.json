@@ -1,0 +1,56 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "order__status"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  order__status\n  , SUM(__order_count) AS order_count\n  , SUM(__valid_order_count) AS valid_order_count\n  , SUM(__net_sales_cents) AS net_sales_cents\nFROM (\n  SELECT\n    status AS order__status\n    , 1 AS __order_count\n    , CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END AS __valid_order_count\n    , CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END AS __net_sales_cents\n  FROM \"data\".\"main\".\"order_fact\" order_model_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_7\nGROUP BY\n  order__status",
+  "columns": [
+    "order__status",
+    "order_count",
+    "valid_order_count",
+    "net_sales_cents"
+  ],
+  "rows": [
+    [
+      "cancelled",
+      2,
+      0,
+      0
+    ],
+    [
+      "paid",
+      30,
+      27,
+      100300
+    ]
+  ],
+  "seconds": 0.066,
+  "units": {
+    "order_count": "count",
+    "valid_order_count": "count",
+    "net_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "统计2026年8月按下单日期、在青禾客户数据范围内按订单状态汇总。创建订单数按全部订单计数，包含取消单；有效订单数为状态为已支付且实付金额减退款金额大于零的订单数；净销售额为已支付订单实付减退款后的合计，取消单不计，金额按分展示。\n\n| 订单状态 | 创建订单数（单） | 有效订单数（单） | 净销售额（分） |\n|---|---:|---:|---:|\n| 已取消 | 2 | 0 | 0 |\n| 已支付 | 30 | 27 | 100300 |\n\n已取消组的有效订单数和净销售额均为统计范围内的实际零值，不是未定义。结果仅列出已取消和已支付两组，其他状态未列出，不据此推断覆盖不足。",
+  "question": "青禾2026年8月按订单状态分组列出创建订单数、有效订单数、净销售额，金额分。",
+  "trace_id": "7186369d-58d0-4da9-9834-38d2ceb399bd",
+  "elapsed_seconds": 12.309,
+  "model_usage": {
+    "prompt_tokens": 15269,
+    "completion_tokens": 1442,
+    "total_tokens": 16711
+  },
+  "model_calls_with_usage": 2
+}

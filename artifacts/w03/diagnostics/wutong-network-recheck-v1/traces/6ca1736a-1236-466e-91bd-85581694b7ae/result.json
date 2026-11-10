@@ -1,0 +1,14 @@
+{
+  "status": "error",
+  "code": "MODEL_TIMEOUT",
+  "reason": "本次调用未完成，请查看运行记录；不能把失败当成零。",
+  "question": "2026 年 7 月梧桐书店月内大额会员数是多少？",
+  "trace_id": "6ca1736a-1236-466e-91bd-85581694b7ae",
+  "elapsed_seconds": 190.266,
+  "model_usage": {
+    "prompt_tokens": 3067,
+    "completion_tokens": 232,
+    "total_tokens": 3299
+  },
+  "model_calls_with_usage": 1
+}

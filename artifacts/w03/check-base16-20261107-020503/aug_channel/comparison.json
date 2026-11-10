@@ -1,0 +1,7 @@
+{
+  "id": "aug_channel",
+  "passed": true,
+  "expected_groups": 2,
+  "checked_metrics": 16,
+  "errors": []
+}

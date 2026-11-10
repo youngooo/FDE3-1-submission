@@ -1,0 +1,19 @@
+{
+  "artifacts/w03/build-base16-20261107-015944/validation-project/build.log": "artifacts/w03/build-failure-logs/3319c8079ce69cb9-build.log",
+  "artifacts/w03/build-base16-fixed-20261107-021738/validation-project/build.log": "artifacts/w03/build-failure-logs/5b7f8794e3b23f05-build.log",
+  "artifacts/w03/build-base16-homefix-20261107-020844/validation-project/build.log": "artifacts/w03/build-failure-logs/97ba6274329a2ec1-build.log",
+  "artifacts/w03/build-general32-20261107-022839/validation-project/build.log": "artifacts/w03/build-failure-logs/e1338a5cdc3976f1-build.log",
+  "artifacts/w03/build-general32-normalized-20261107-023808/validation-project/build.log": "artifacts/w03/build-failure-logs/51c4f93241cdc83e-build.log",
+  "artifacts/w03/build-orders-20261107-015324/validation-project/build.log": "artifacts/w03/build-failure-logs/9a2ced21464836cb-build.log",
+  "artifacts/w03/build-orders24-20261107-022109/validation-project/build.log": "artifacts/w03/build-failure-logs/6d9fe9d419af57d0-build.log",
+  "artifacts/w03/diagnostic-primary-20261107-021534/validation-project/build.log": "artifacts/w03/build-failure-logs/9980459e608e4b33-build.log",
+  "artifacts/w03/full38-p1-run-20261109-230916-522467/build/validation-project/build.log": "artifacts/w03/build-failure-logs/f2edc86c265efb63-build.log",
+  "artifacts/w03/full38-p1-run-20261109-234602-844810/build/validation-project/build.log": "artifacts/w03/build-failure-logs/b984d6e13b9f61c6-build.log",
+  "artifacts/w03/full38-p1-run-20261110-001429-000470/build/validation-project/build.log": "artifacts/w03/build-failure-logs/f6e5b4b0ca8bba73-build.log",
+  "artifacts/w03/full38-p1-run-20261110-004502-210663/build/validation-project/build.log": "artifacts/w03/build-failure-logs/294e9b17b3be3734-build.log",
+  "artifacts/w03/full38-p1-run-20261110-010249-095854/build/validation-project/build.log": "artifacts/w03/build-failure-logs/60f4ea81b1e2f760-build.log",
+  "artifacts/w03/full38-p1-run-20261110-010844-438195/build/validation-project/build.log": "artifacts/w03/build-failure-logs/e6f68316aec2b41c-build.log",
+  "artifacts/w03/full38-p1-run-20261110-012528-047804/build/validation-project/build.log": "artifacts/w03/build-failure-logs/f67cea91cbf3de62-build.log",
+  "artifacts/w03/full38-p1-run-20261110-012528-047804/final-library-20261110-025635-629688/library-before/validation-project/build.log": "artifacts/w03/build-failure-logs/47166c402c00e700-build.log",
+  "artifacts/w03/library/validation-project/build.log": "artifacts/w03/build-failure-logs/e68a5352e5d43481-build.log"
+}

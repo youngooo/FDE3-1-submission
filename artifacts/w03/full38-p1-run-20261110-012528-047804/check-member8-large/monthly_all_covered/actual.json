@@ -1,0 +1,178 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "monthly_buyer_count",
+      "monthly_repeat_buyer_count",
+      "monthly_repeat_rate"
+    ],
+    "start": "2024-09-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "metric_time__month"
+    ],
+    "filters": []
+  },
+  "sql": "WITH sma_10002_cte AS (\n  SELECT\n    DATE_TRUNC('month', month_start) AS metric_time__month\n    , CASE WHEN valid_order_count >= 1 THEN 1 ELSE 0 END AS __monthly_buyer_count\n    , CASE WHEN valid_order_count >= 2 THEN 1 ELSE 0 END AS __monthly_repeat_buyer_count\n  FROM \"data\".\"main\".\"monthly_member_activity\" monthly_member_model_src_10000\n)\n\nSELECT\n  COALESCE(subq_8.metric_time__month, subq_14.metric_time__month) AS metric_time__month\n  , MAX(subq_8.monthly_buyer_count) AS monthly_buyer_count\n  , MAX(subq_8.monthly_repeat_buyer_count) AS monthly_repeat_buyer_count\n  , MAX(CAST(subq_14.monthly_repeat_buyer_count AS DOUBLE) / CAST(NULLIF(subq_14.monthly_buyer_count, 0) AS DOUBLE)) AS monthly_repeat_rate\nFROM (\n  SELECT\n    metric_time__month\n    , SUM(__monthly_buyer_count) AS monthly_buyer_count\n    , SUM(__monthly_repeat_buyer_count) AS monthly_repeat_buyer_count\n  FROM sma_10002_cte\n  WHERE metric_time__month BETWEEN '2024-09-01' AND '2026-08-31'\n  GROUP BY\n    metric_time__month\n) subq_8\nFULL OUTER JOIN (\n  SELECT\n    metric_time__month\n    , SUM(__monthly_repeat_buyer_count) AS monthly_repeat_buyer_count\n    , SUM(__monthly_buyer_count) AS monthly_buyer_count\n  FROM sma_10002_cte\n  WHERE metric_time__month BETWEEN '2024-09-01' AND '2026-08-31'\n  GROUP BY\n    metric_time__month\n) subq_14\nON\n  subq_8.metric_time__month = subq_14.metric_time__month\nGROUP BY\n  COALESCE(subq_8.metric_time__month, subq_14.metric_time__month)",
+  "columns": [
+    "metric_time__month",
+    "monthly_buyer_count",
+    "monthly_repeat_buyer_count",
+    "monthly_repeat_rate"
+  ],
+  "rows": [
+    [
+      "2026-07-01 00:00:00",
+      16436,
+      7388,
+      0.4495010951569725
+    ],
+    [
+      "2026-03-01 00:00:00",
+      12381,
+      4022,
+      0.3248525967207818
+    ],
+    [
+      "2025-06-01 00:00:00",
+      4852,
+      976,
+      0.20115416323165705
+    ],
+    [
+      "2026-05-01 00:00:00",
+      14792,
+      5658,
+      0.3825040562466198
+    ],
+    [
+      "2025-12-01 00:00:00",
+      9242,
+      2511,
+      0.27169443843323954
+    ],
+    [
+      "2025-07-01 00:00:00",
+      5687,
+      1293,
+      0.22736064708985404
+    ],
+    [
+      "2026-04-01 00:00:00",
+      13265,
+      4532,
+      0.3416509611760271
+    ],
+    [
+      "2025-10-01 00:00:00",
+      7654,
+      1930,
+      0.2521557355631043
+    ],
+    [
+      "2024-11-01 00:00:00",
+      1104,
+      164,
+      0.14855072463768115
+    ],
+    [
+      "2025-11-01 00:00:00",
+      8436,
+      2095,
+      0.24834044570886676
+    ],
+    [
+      "2025-01-01 00:00:00",
+      2119,
+      362,
+      0.1708352996696555
+    ],
+    [
+      "2026-08-01 00:00:00",
+      16504,
+      7302,
+      0.44243819680077556
+    ],
+    [
+      "2024-10-01 00:00:00",
+      649,
+      93,
+      0.14329738058551617
+    ],
+    [
+      "2026-06-01 00:00:00",
+      15981,
+      6552,
+      0.4099868593955322
+    ],
+    [
+      "2025-02-01 00:00:00",
+      2429,
+      397,
+      0.1634417455743104
+    ],
+    [
+      "2026-02-01 00:00:00",
+      10613,
+      3027,
+      0.285216244228776
+    ],
+    [
+      "2025-09-01 00:00:00",
+      6810,
+      1565,
+      0.22980910425844348
+    ],
+    [
+      "2026-01-01 00:00:00",
+      10401,
+      2951,
+      0.2837227189693299
+    ],
+    [
+      "2024-12-01 00:00:00",
+      1571,
+      271,
+      0.17250159134309356
+    ],
+    [
+      "2025-05-01 00:00:00",
+      4229,
+      887,
+      0.20974225585244738
+    ],
+    [
+      "2025-08-01 00:00:00",
+      6196,
+      1376,
+      0.22207876049063913
+    ],
+    [
+      "2025-03-01 00:00:00",
+      3168,
+      568,
+      0.17929292929292928
+    ],
+    [
+      "2025-04-01 00:00:00",
+      3608,
+      681,
+      0.18874722838137473
+    ],
+    [
+      "2024-09-01 00:00:00",
+      216,
+      22,
+      0.10185185185185185
+    ]
+  ],
+  "seconds": 0.126,
+  "units": {
+    "monthly_buyer_count": "count",
+    "monthly_repeat_buyer_count": "count",
+    "monthly_repeat_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "47b7b147de84852f44e67a530d38c13bb141e9def4a5f2d36daa2956fa01cf39"
+}

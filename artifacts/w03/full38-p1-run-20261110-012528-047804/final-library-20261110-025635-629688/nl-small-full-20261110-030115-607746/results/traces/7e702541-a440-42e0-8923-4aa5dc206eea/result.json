@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "discount_rate"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  CAST(SUM(CASE WHEN status = 'paid' THEN gross_cents - paid_cents ELSE 0 END) AS DOUBLE) / CAST(NULLIF(SUM(CASE WHEN status = 'paid' THEN gross_cents ELSE 0 END), 0) AS DOUBLE) AS discount_rate\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "discount_rate"
+  ],
+  "rows": [
+    [
+      0.041851106639839035
+    ]
+  ],
+  "seconds": 0.06,
+  "units": {
+    "discount_rate": "ratio"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "青禾2026年8月（2026-08-01至2026-09-01）全门店汇总、不分组口径下，优惠率为 0.041851106639839035（小数比例）。口径为：优惠金额除以支付订单原价金额；本次结果已返回，说明分母非零。该结果为全门店汇总值，未按门店拆分。",
+  "question": "请只查询青禾2026年8月的优惠率，全门店汇总，不分组。结果使用小数比例。",
+  "trace_id": "7e702541-a440-42e0-8923-4aa5dc206eea",
+  "elapsed_seconds": 9.31,
+  "model_usage": {
+    "prompt_tokens": 14681,
+    "completion_tokens": 884,
+    "total_tokens": 15565
+  },
+  "model_calls_with_usage": 2
+}

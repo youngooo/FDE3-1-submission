@@ -1,0 +1,25 @@
+{
+  "trace_id": "f39d5145-6ff9-4478-b362-0078fdedf8f6",
+  "source": ".runtime/product/metric-runs/f39d5145-6ff9-4478-b362-0078fdedf8f6/result.json",
+  "source_sha256": "156d013746f64776fa6f2b9c517c308fc88dfb1a4de107ed1ff91f95ba031669",
+  "status": "verified",
+  "original_question_preserved": true,
+  "history_only_current_user": true,
+  "clarify_with_empty_dates": true,
+  "no_sql_or_rows": true,
+  "model_called": false,
+  "document_updates": {
+    "interview_notes.md": {
+      "before_sha256": "56795625ef75823761e718cb8c953e30cdd7fd719ffdf9f3ef2373b41043ee48",
+      "after_sha256": "d9ab3e01a2f9cccad45aaf86a49924024c27ff14092b162d69868c97d0051bb6"
+    },
+    "model_changes.md": {
+      "before_sha256": "22c7409cd041553617019092f10ef1a4f6dee5507dec90c100c2a6e9d7b6bf9d",
+      "after_sha256": "09daebc95a1caf1f2eb2bc0c60240494ed8c32bcd44ca34c873e24126404d244"
+    },
+    "metric_decisions.md": {
+      "before_sha256": "e0858e89892d5008aa8071b13f2567160947cb7edcdc704e47b5f8b6a9cbd7c9",
+      "after_sha256": "1c1fe80df37d3e45ca82e013a1078cb0e2bcd15ca67c43c029f9df8e53e7ed29"
+    }
+  }
+}

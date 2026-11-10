@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-08",
+  "source_kind": "user_pasted_interview_replies",
+  "export_verified": false,
+  "message_ids": null,
+  "decision": "六项付费指标缺乏总部月报资格日期依据，待后续确认；不计入完成指标，不缩减38项目标。",
+  "changes": {
+    "docs/w03/metric_decisions.md": {
+      "before_sha256": "0a956589d8a2e770d8cafd4e053a952d2a274af96698a57fc129e578a41c0c47",
+      "after_sha256": "33e92765c838183b1b0880546bd342b542a01aa430344f6439cc13ccc418d0c6"
+    },
+    "docs/w03/sow.md": {
+      "before_sha256": "9d2cee6076b38e64f1c8f0fe93c395c845d0d23b473e6964851253d51cd32eb2",
+      "after_sha256": "c0a440d75e0e0aa70316fa7eaed812f0aa14e4ac9abf56cad81bef3c8ae0e81e"
+    }
+  },
+  "model_called": false,
+  "queries_executed": false,
+  "business_model_changed": false,
+  "metrics_library_changed": false
+}

@@ -1,0 +1,22 @@
+{
+  "message": {
+    "role": "assistant",
+    "content": "材料已读取。现在按配置实际提取候选。",
+    "tool_calls": [
+      {
+        "index": 0,
+        "id": "call_00_n6oPmocIQ8vrU9EUw9tO6906",
+        "type": "function",
+        "function": {
+          "name": "extract_candidates",
+          "arguments": "{}"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "prompt_tokens": 14199,
+    "completion_tokens": 38,
+    "total_tokens": 14237
+  }
+}

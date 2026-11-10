@@ -1,0 +1,14 @@
+{
+  "id": "covered_empty_day",
+  "passed": false,
+  "expected_groups": 1,
+  "checked_metrics": 24,
+  "errors": [
+    {
+      "kind": "unit_mismatch",
+      "metric_id": "valid_order_items",
+      "expected": "count",
+      "actual": "items"
+    }
+  ]
+}

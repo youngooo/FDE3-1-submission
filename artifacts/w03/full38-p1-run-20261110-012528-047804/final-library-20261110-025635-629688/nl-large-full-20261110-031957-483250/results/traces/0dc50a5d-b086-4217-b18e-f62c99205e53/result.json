@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "cancelled_order_count"
+    ],
+    "start": "2026-04-01",
+    "end": "2026-05-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END) AS cancelled_order_count\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-04-01' AND '2026-04-30'",
+  "columns": [
+    "cancelled_order_count"
+  ],
+  "rows": [
+    [
+      1802
+    ]
+  ],
+  "seconds": 0.122,
+  "units": {
+    "cancelled_order_count": "count"
+  },
+  "data_version": "qinghe-w03-20260923-large",
+  "data_sha256": "0074e7f764c63e836617aecb0e217aa3b5cc0cf9ede557179ad46b077dcf8ba8",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "青禾2026年4月整月、全门店合计的取消订单数为1802单，未拆分门店等维度。取消订单数按状态为取消的订单计数。",
+  "question": "核对青禾2026年4月整月报表：只返回取消订单数的全门店合计，不拆维度。",
+  "trace_id": "0dc50a5d-b086-4217-b18e-f62c99205e53",
+  "elapsed_seconds": 6.469,
+  "model_usage": {
+    "prompt_tokens": 15076,
+    "completion_tokens": 379,
+    "total_tokens": 15455
+  },
+  "model_calls_with_usage": 2
+}

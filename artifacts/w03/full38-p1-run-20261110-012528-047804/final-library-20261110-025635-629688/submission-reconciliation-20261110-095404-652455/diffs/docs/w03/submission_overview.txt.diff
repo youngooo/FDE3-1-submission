@@ -1,0 +1,113 @@
+--- before/docs/w03/submission_overview.txt
++++ after/docs/w03/submission_overview.txt
+@@ -1,59 +1,59 @@
+-W03 作业交付总览：32项阶段成果，六项待确认
+-整理日期：2026-11-08
++W03 作业交付总览：38项工程交付，六项P1总部适用性待确认
++更新日期：2026-11-10
+ 
+-请先阅读本文件。本包不是38项全部完成或验收通过的提交。
+-当前阶段库已按课程merge命令生成至artifacts/w03/library，32项，结构/粒度/维度检查通过。
+-库版本：b7dcfba9dc5046dcf60a8a8668ce2aa4cb5d23f9a0670930c020c21bc5894e62
+-六项付费月报因总部月报资格日期、结束日期组合及适用依据缺失，仍未构建为可验收指标。
+-人工资格聚合原型12/12只验证公式，不确认真实资格、不计入38项完成数。
++一、当前结果及边界
++当前业务模型v0.7和Skill完整构建38项，再由课程merge定稿。没有通过脚本修补生成SQL来获得本轮定稿。
++六项付费月报已实现并通过暂定口径下验证，总部日期规则适用性待书面确认；不称业务依据已齐或正式验收通过。
++正式库版本：3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402
++原始构建和失败历史保留；当前状态以本总览及submission_status.json为准，历史run_summary按当时阶段解释，不修改历史事实。
+ 
+-一、主要交付入口
+-docs/w03/business_model.md：W03业务模型v0.6。
+-docs/w03/model_changes.md：承接W02、分类复核及本轮修改记录。
+-docs/w03/interview_notes.md：实际访谈、原始来源、七组28条核查与后续补访。
+-docs/w03/sow.md：v0.11-reviewed，学员已审阅并认可的作业提交版；王经理反馈和修订已有记录，仍非客户合同或正式验收批准。
+-docs/w03/metric_decisions.md：指标依据、限制、失败修复及未决项。
+-customer/w03/build-metrics/SKILL.md：实际构建方法；原始构建及修正记录在artifacts/w03。
+-artifacts/w03/library/：merge生成的32项阶段交付库，不是完整38项定稿库。
+-customer/w03/tests.json / tests-large.json：54条小样本、53条规模用例；从原始CSV独立生成。
+-customer/w03/test_entrypoints.json：上述用例已绑定本次merge新版本，并对应新执行的小样本54/54、规模53/53报告。
+-customer/w03/judge.py：确定性判定器；已有8个正向控制、34个错误变体证据。
+-artifacts/w03/runtime-customization-current/：最新六文件运行快照、差异和恢复说明。
+-customer/w03/restore_runtime.py：默认只读核对，--apply才备份并恢复。
+-artifacts/w03/submission_status.json：当前状态及缺失六项清单。
++二、主要入口
++docs/w03/business_model.md：业务模型v0.7及P1依据边界。
++docs/w03/model_changes.md、interview_notes.md、metric_decisions.md：最新摘要及保留的历史过程。
++docs/w03/sow.md：v0.12-draft客户正文，责任、费用与观察方案保留，未增加批准。
++docs/w03/framework_changes.md：六文件为什么改、具体影响和验证边界。
++docs/w03/course_material_request_draft.md：待发送补充事实申请，非已确认来源。
++customer/w03/build-metrics/SKILL.md：本轮实际构建方法。
++artifacts/w03/library：官方merge的38项正式测试库。
++customer/w03/tests.json与tests-large.json：默认规模67条；tests-small.json：小样本69条。
++customer/w03/judge_full38.py：可移植判定入口，依赖同目录judge.py。
++customer/w03/test_entrypoints.json、merged_regression_plan.json：数据、项目、用例、报告和版本对应。
++artifacts/w03/metric_test_report.json：最新提示规模67条完整执行报告，按字节复制，无拼接。
++artifacts/w03/runtime-customization-current：六文件最新快照、原始c16差异和6项离线恢复检查。
+ 
+-二、当前交付库的真实回归与解释核查
+-小样本54/54、规模53/53结构化通过，均绑定本次merge库。
+-小样本原始报告已按字节复制至artifacts/w03/metric_test_report.json；规模原始报告保留。
+-107条实际回答经AI辅助逐项阅读，未发现改变查询结论的数值、单位或分组错误，保留5处措辞备注。
+-本核查不是自动语义判定或学员逐条签署；原回答未修改。详细证据见artifacts/w03/submission_status.json。
+-历史53/54失败、9/9定点修复、旧规模53/53、6条回放、2条复测及年份修复等继续留存，不与本次成绩混淆。
++三、环境和耗时
++运行环境：Python 3.11.16；Linux WSL2，内核5.15.167.4，glibc2.35；模型deepseek-flash。
++依赖：dbt-core 1.12.5，dbt-duckdb 1.11.0，dbt-metricflow 0.15.0，metricflow 0.213.0，duckdb 1.5.5，PyYAML 6.0.3。
++完整38项构建：150.739秒；官方merge：11.458秒。
++独立CSV核查：小样本49/49、规模48/48，各覆盖38项。数值核查针对构建库，官方merge执行定义与其一致。
++小样本24订单/8会员/6付费检查的终端墙钟时间：54.553 / 84.261 / 86.198秒。
++规模24订单/8会员/6付费检查的终端墙钟时间：60.685 / 95.829 / 83.117秒。
++上述墙钟来自保存的用户终端记录；脚本自身耗时如有另在原报告保留，不混作模型响应时间或费用。
++正式库自然语言小样本69/69：591.564秒；规模67/67：636.536秒；小样本公式修正后9/9定向复测：111.048秒。
++小样本完整执行曾有一处文字公式问题，修正后9条真实复测单列，不能说最新提示完整重跑69条。
++规模67条为最新提示完整执行，解释逐条核查并保留非阻断措辞备注。
++两套问句无完全相同句子、月份有变化，包含不存在门店编号和未定义净利润请求。
++判定器10个正向对照通过，30个错误注入被拒且理由匹配。这不是40次真实问数。
++环境原件和逐轮耗时见对应运行目录environment.json、run_summary.json；索引见test_entrypoints.json及submission_status.json。
+ 
+-三、当前未完成项
+-1. 补齐六项资格依据后实现并验证全部38项；当前仍为32/38。
+-2. 增补六项后必须重新merge、加载、生成独立期望，完成相应大小样本回归和解释核查，不能沿用当前32项报告冒充38项。
+-3. 老周MSG-04605仍待最新导出核验；已有粘贴来源明确标注，不用作已确认规则。
+-费用、正式批准、真实效果基线和历史会员统计可继续列待确认，不编造承诺。
+-本周未通过不阻断下周材料开放，核心缺项须在答辩前补齐；本包不声称已满足全部评分要求。
++四、复现与复跑
++按课程c16原工程准备Python环境、依赖和原始small/large数据，将提交文件按相对路径放入工作副本。
++先按artifacts/w03/runtime-customization-current/RESTORE.txt恢复六个运行文件；不要用旧快照覆盖最新提示。
++本包不应包含密钥、虚拟环境或旧机器数据库。新环境需要重新load；以下项目目录应不存在，重复运行另换目录。
+ 
+-四、解压和复现
+-先解压课程原始c16工程，再将本包按原路径放入工作副本；不要覆盖本人W02已提交目录。
+-本包不含.venv、.runtime、validation-project、规模数据和密钥。docs/w02的两份原件仅为引用核查附件，未修改。
+-恢复运行定制见artifacts/w03/runtime-customization-current/RESTORE.txt。
+-以下命令在准备好课程Python3.11环境与数据后、工程根目录执行：
++.venv/bin/python -B tools/w03.py load --library artifacts/w03/library --data materials/data/small --project .runtime/qinghe-submit38-small-v1
++.venv/bin/python -B tools/w03.py load --library artifacts/w03/library --data materials/data/large --project .runtime/qinghe-submit38-large-v1
+ 
+-.venv/bin/python customer/w03/restore_runtime.py --workspace .
+-.venv/bin/python customer/w03/restore_runtime.py --workspace . --apply
+-.venv/bin/python tools/w03.py load --library artifacts/w03/library --data materials/data/small --project .runtime/qinghe-submit-small-v1
+-.venv/bin/python customer/w03/make_tests_general32.py --data materials/data/small --project .runtime/qinghe-submit-small-v1 --output artifacts/w03/cases-submit-small-v1
+-.venv/bin/python tools/w03.py load --library artifacts/w03/library --data materials/data/large --project .runtime/qinghe-submit-large-v1
+-.venv/bin/python customer/w03/make_tests_general32.py --data materials/data/large --project .runtime/qinghe-submit-large-v1 --output artifacts/w03/cases-submit-large-v1
++以下真实复跑将调用模型，须配置环境；保持用例、数据和库版本一致，输出新目录，原报告不覆盖：
++.venv/bin/python -B tools/w03.py test --project .runtime/qinghe-submit38-small-v1 --cases customer/w03/tests-small.json --output artifacts/w03/retest-submit38-small-v1 --judge-command .venv/bin/python customer/w03/judge_full38.py
++.venv/bin/python -B tools/w03.py test --project .runtime/qinghe-submit38-large-v1 --cases customer/w03/tests-large.json --output artifacts/w03/retest-submit38-large-v1 --judge-command .venv/bin/python customer/w03/judge_full38.py
+ 
+-以上新目录需不存在；若重复执行，换版本路径。load和生成期望不调用模型。
+-下列为重新复现时的测试命令，需要自行配置模型并产生调用费用；已有当前库真实报告随包提供：
+-.venv/bin/python tools/w03.py test --project .runtime/qinghe-submit-small-v1 --cases artifacts/w03/cases-submit-small-v1/tests-general32.json --output artifacts/w03/test-submit-small-v1 --judge-command .venv/bin/python customer/w03/judge.py
+-.venv/bin/python tools/w03.py test --project .runtime/qinghe-submit-large-v1 --cases artifacts/w03/cases-submit-large-v1/tests-general32.json --output artifacts/w03/test-submit-large-v1 --judge-command .venv/bin/python customer/w03/judge.py
++现有工作区可先只读运行customer/w03/run_merged_regression.py --dataset small（或large），加--run才执行。
++迁移后若使用该封装入口，需将merged_regression_plan.json的项目相对路径指向实际新建项目，不能把旧机路径当新项目。
++真实复跑后的结构化结果和回答解释仍须核对，不自动替换正式报告或声称业务已确认。
+ 
+-这两轮仍只有32项，不能补足六项缺口。聊天演示另需activate相应项目再启动服务。
+-结构预检：.venv/bin/python tools/w03.py check --workspace 解压目录
+-当前预检needs_revision：指标库和测试均只覆盖32/38项。报告文件及新库匹配已通过。详见artifacts/w03/precheck.json。
++五、未决事项
++1. 课程事实补充申请目前仅有待发送稿，未取得总部书面确认或课程补充答复。
++2. 原聊天入口仍绑定32项历史项目。先停止聊天服务，再activate经验证的38项项目，重启服务并用新会话核查；当前测试不代替这一步。
++3. 费用、正式批准、真实效果基线和历史经营统计继续待确认。
++课程结构预检已通过，但不代表教师复核、客户验收或正式上线批准。

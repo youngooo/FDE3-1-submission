@@ -1,0 +1,22 @@
+{
+  "status": "unsupported",
+  "reason": "当前指标目录只提供订单、销售、退款、会员与复购类指标，没有成本或净利润指标，无法核对“扣除所有成本后的净利润金额”；按你的要求也不能用销售额代替。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "当前指标目录只提供订单、销售、退款、会员与复购类指标，没有成本或净利润指标，无法核对“扣除所有成本后的净利润金额”；按你的要求也不能用销售额代替。",
+    "metrics": [],
+    "start": "2026-06-01",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "核对青禾2026年6月扣除所有成本后的净利润金额，不能用销售额代替。",
+  "trace_id": "8d099d90-9183-4d3f-89f0-a2ec3ececf88",
+  "elapsed_seconds": 1.388,
+  "model_usage": {
+    "prompt_tokens": 12542,
+    "completion_tokens": 169,
+    "total_tokens": 12711
+  },
+  "model_calls_with_usage": 1
+}

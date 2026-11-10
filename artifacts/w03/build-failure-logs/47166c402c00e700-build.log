@@ -1,0 +1,27 @@
+[0m08:57:00  Running with dbt=1.12.5
+[0m08:57:00  Registered adapter: duckdb=1.11.0
+[0m08:57:00  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m08:57:02  Found 7 models, 32 metrics, 500 macros, 5 semantic models
+[0m08:57:02  
+[0m08:57:02  Concurrency: 1 threads (target='dev')
+[0m08:57:02  
+[0m08:57:02  1 of 7 START sql view model main.cards ......................................... [RUN]
+[0m08:57:03  1 of 7 OK created sql view model main.cards .................................... [[32mOK[0m in 0.11s]
+[0m08:57:03  2 of 7 START sql view model main.members ....................................... [RUN]
+[0m08:57:03  2 of 7 OK created sql view model main.members .................................. [[32mOK[0m in 0.03s]
+[0m08:57:03  3 of 7 START sql view model main.orders ........................................ [RUN]
+[0m08:57:03  3 of 7 OK created sql view model main.orders ................................... [[32mOK[0m in 0.04s]
+[0m08:57:03  4 of 7 START sql view model main.stores ........................................ [RUN]
+[0m08:57:03  4 of 7 OK created sql view model main.stores ................................... [[32mOK[0m in 0.03s]
+[0m08:57:03  5 of 7 START sql view model main.time_spine .................................... [RUN]
+[0m08:57:03  5 of 7 OK created sql view model main.time_spine ............................... [[32mOK[0m in 0.03s]
+[0m08:57:03  6 of 7 START sql view model main.orders_enriched ............................... [RUN]
+[0m08:57:03  6 of 7 OK created sql view model main.orders_enriched .......................... [[32mOK[0m in 0.03s]
+[0m08:57:03  7 of 7 START sql view model main.member_month_activity ......................... [RUN]
+[0m08:57:03  7 of 7 OK created sql view model main.member_month_activity .................... [[32mOK[0m in 0.03s]
+[0m08:57:03  
+[0m08:57:03  Finished running 7 view models in 0 hours 0 minutes and 0.48 seconds (0.48s).
+[0m08:57:03  
+[0m08:57:03  [32mCompleted successfully[0m
+[0m08:57:03  
+[0m08:57:03  Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=7

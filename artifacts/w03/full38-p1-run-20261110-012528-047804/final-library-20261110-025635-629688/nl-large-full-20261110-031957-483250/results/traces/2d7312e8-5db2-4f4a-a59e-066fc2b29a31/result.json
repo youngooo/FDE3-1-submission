@@ -1,0 +1,24 @@
+{
+  "status": "unsupported",
+  "reason": "月末付费会员购买人数（P1 试算）仅支持完整自然月、全渠道、全门店口径，不支持排除月初或按非完整月区间统计。请求的 2026 年 6 月 2 日至月末属于不完整自然月，因此无法执行。",
+  "intent": {
+    "status": "unsupported",
+    "reason": "月末付费会员购买人数（P1 试算）仅支持完整自然月、全渠道、全门店口径，不支持排除月初或按非完整月区间统计。请求的 2026 年 6 月 2 日至月末属于不完整自然月，因此无法执行。",
+    "metrics": [
+      "monthly_paid_buyer_count"
+    ],
+    "start": "2026-06-02",
+    "end": "2026-07-01",
+    "group_by": [],
+    "filters": []
+  },
+  "question": "按P1试算青禾2026年6月，排除1日，仅查2日至月末的月末付费会员购买人数。",
+  "trace_id": "2d7312e8-5db2-4f4a-a59e-066fc2b29a31",
+  "elapsed_seconds": 2.428,
+  "model_usage": {
+    "prompt_tokens": 12550,
+    "completion_tokens": 370,
+    "total_tokens": 12920
+  },
+  "model_calls_with_usage": 1
+}

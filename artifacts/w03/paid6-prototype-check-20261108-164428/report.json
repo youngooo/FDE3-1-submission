@@ -1,0 +1,267 @@
+{
+  "kind": "paid6_aggregation_fixture_check",
+  "passed": true,
+  "cases_passed": 12,
+  "cases_total": 12,
+  "scope": "人工账户月资格夹具下六项聚合，不验证青禾资格规则，不是最终38项验收",
+  "expected_basis": "手工列示订单及预先固定算术期望，不使用实际结果倒填",
+  "model_called": false,
+  "production_query_executed": false,
+  "eligibility_rules_verified": false,
+  "script_sha256": {
+    "paid6_prototype.py": "545bcdf5b6bfae60f56d3ab1c0a9bfa5a6b7c253496a86f5cd5e4841eb66a923",
+    "check_paid6_prototype.py": "89f86c203e311764ae2782fcbb69d520ab0e96c7fd2551c820654a0fcd7fd776"
+  },
+  "cases": [
+    {
+      "id": "two_months_separate_all_stores_channels",
+      "passed": true,
+      "expected": [
+        {
+          "month": "2026-07-01",
+          "monthly_paid_buyer_count": 1,
+          "monthly_paid_order_count": 1,
+          "monthly_paid_sales_cents": 100,
+          "monthly_paid_repeat_buyer_count": 0,
+          "monthly_paid_repeat_rate": 0.0,
+          "monthly_paid_avg_order_value": 100.0
+        },
+        {
+          "month": "2026-08-01",
+          "monthly_paid_buyer_count": 2,
+          "monthly_paid_order_count": 3,
+          "monthly_paid_sales_cents": 2500,
+          "monthly_paid_repeat_buyer_count": 1,
+          "monthly_paid_repeat_rate": 0.5,
+          "monthly_paid_avg_order_value": 833.3333333333334
+        }
+      ],
+      "actual": {
+        "kind": "paid6_aggregation_prototype",
+        "eligibility_calculated_by_module": false,
+        "business_eligibility_verified": false,
+        "start": "2026-07-01",
+        "end": "2026-09-01",
+        "coverage": [
+          "2026-07-01",
+          "2026-10-01"
+        ],
+        "units": {
+          "monthly_paid_buyer_count": "count",
+          "monthly_paid_order_count": "count",
+          "monthly_paid_sales_cents": "cents",
+          "monthly_paid_repeat_buyer_count": "count",
+          "monthly_paid_repeat_rate": "ratio",
+          "monthly_paid_avg_order_value": "cents_per_order"
+        },
+        "rows": [
+          {
+            "month": "2026-07-01",
+            "monthly_paid_buyer_count": 1,
+            "monthly_paid_order_count": 1,
+            "monthly_paid_sales_cents": 100,
+            "monthly_paid_repeat_buyer_count": 0,
+            "monthly_paid_repeat_rate": 0.0,
+            "monthly_paid_avg_order_value": 100.0
+          },
+          {
+            "month": "2026-08-01",
+            "monthly_paid_buyer_count": 2,
+            "monthly_paid_order_count": 3,
+            "monthly_paid_sales_cents": 2500,
+            "monthly_paid_repeat_buyer_count": 1,
+            "monthly_paid_repeat_rate": 0.5,
+            "monthly_paid_avg_order_value": 833.3333333333334
+          }
+        ]
+      },
+      "differences": []
+    },
+    {
+      "id": "august_full_month_includes_first_and_last_day",
+      "passed": true,
+      "expected": [
+        {
+          "month": "2026-08-01",
+          "monthly_paid_buyer_count": 2,
+          "monthly_paid_order_count": 3,
+          "monthly_paid_sales_cents": 2500,
+          "monthly_paid_repeat_buyer_count": 1,
+          "monthly_paid_repeat_rate": 0.5,
+          "monthly_paid_avg_order_value": 833.3333333333334
+        }
+      ],
+      "actual": {
+        "kind": "paid6_aggregation_prototype",
+        "eligibility_calculated_by_module": false,
+        "business_eligibility_verified": false,
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "coverage": [
+          "2026-07-01",
+          "2026-10-01"
+        ],
+        "units": {
+          "monthly_paid_buyer_count": "count",
+          "monthly_paid_order_count": "count",
+          "monthly_paid_sales_cents": "cents",
+          "monthly_paid_repeat_buyer_count": "count",
+          "monthly_paid_repeat_rate": "ratio",
+          "monthly_paid_avg_order_value": "cents_per_order"
+        },
+        "rows": [
+          {
+            "month": "2026-08-01",
+            "monthly_paid_buyer_count": 2,
+            "monthly_paid_order_count": 3,
+            "monthly_paid_sales_cents": 2500,
+            "monthly_paid_repeat_buyer_count": 1,
+            "monthly_paid_repeat_rate": 0.5,
+            "monthly_paid_avg_order_value": 833.3333333333334
+          }
+        ]
+      },
+      "differences": []
+    },
+    {
+      "id": "known_no_eligible_accounts_zero_counts_null_ratios",
+      "passed": true,
+      "expected": [
+        {
+          "month": "2026-08-01",
+          "monthly_paid_buyer_count": 0,
+          "monthly_paid_order_count": 0,
+          "monthly_paid_sales_cents": 0,
+          "monthly_paid_repeat_buyer_count": 0,
+          "monthly_paid_repeat_rate": null,
+          "monthly_paid_avg_order_value": null
+        }
+      ],
+      "actual": {
+        "kind": "paid6_aggregation_prototype",
+        "eligibility_calculated_by_module": false,
+        "business_eligibility_verified": false,
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "coverage": [
+          "2026-07-01",
+          "2026-10-01"
+        ],
+        "units": {
+          "monthly_paid_buyer_count": "count",
+          "monthly_paid_order_count": "count",
+          "monthly_paid_sales_cents": "cents",
+          "monthly_paid_repeat_buyer_count": "count",
+          "monthly_paid_repeat_rate": "ratio",
+          "monthly_paid_avg_order_value": "cents_per_order"
+        },
+        "rows": [
+          {
+            "month": "2026-08-01",
+            "monthly_paid_buyer_count": 0,
+            "monthly_paid_order_count": 0,
+            "monthly_paid_sales_cents": 0,
+            "monthly_paid_repeat_buyer_count": 0,
+            "monthly_paid_repeat_rate": null,
+            "monthly_paid_avg_order_value": null
+          }
+        ]
+      },
+      "differences": []
+    },
+    {
+      "id": "eligible_account_cancelled_and_full_refund_only",
+      "passed": true,
+      "expected": [
+        {
+          "month": "2026-08-01",
+          "monthly_paid_buyer_count": 0,
+          "monthly_paid_order_count": 0,
+          "monthly_paid_sales_cents": 0,
+          "monthly_paid_repeat_buyer_count": 0,
+          "monthly_paid_repeat_rate": null,
+          "monthly_paid_avg_order_value": null
+        }
+      ],
+      "actual": {
+        "kind": "paid6_aggregation_prototype",
+        "eligibility_calculated_by_module": false,
+        "business_eligibility_verified": false,
+        "start": "2026-08-01",
+        "end": "2026-09-01",
+        "coverage": [
+          "2026-07-01",
+          "2026-10-01"
+        ],
+        "units": {
+          "monthly_paid_buyer_count": "count",
+          "monthly_paid_order_count": "count",
+          "monthly_paid_sales_cents": "cents",
+          "monthly_paid_repeat_buyer_count": "count",
+          "monthly_paid_repeat_rate": "ratio",
+          "monthly_paid_avg_order_value": "cents_per_order"
+        },
+        "rows": [
+          {
+            "month": "2026-08-01",
+            "monthly_paid_buyer_count": 0,
+            "monthly_paid_order_count": 0,
+            "monthly_paid_sales_cents": 0,
+            "monthly_paid_repeat_buyer_count": 0,
+            "monthly_paid_repeat_rate": null,
+            "monthly_paid_avg_order_value": null
+          }
+        ]
+      },
+      "differences": []
+    },
+    {
+      "id": "missing_eligibility_not_false",
+      "expected_error": "ELIGIBILITY_INCOMPLETE",
+      "actual_error": "ELIGIBILITY_INCOMPLETE",
+      "passed": true
+    },
+    {
+      "id": "unknown_eligibility_not_false",
+      "expected_error": "ELIGIBILITY_UNRESOLVED",
+      "actual_error": "ELIGIBILITY_UNRESOLVED",
+      "passed": true
+    },
+    {
+      "id": "duplicate_card_like_account_rows_rejected",
+      "expected_error": "DUPLICATE_ACCOUNT_MONTH_ELIGIBILITY",
+      "actual_error": "DUPLICATE_ACCOUNT_MONTH_ELIGIBILITY",
+      "passed": true
+    },
+    {
+      "id": "duplicate_orders_not_silently_summed",
+      "expected_error": "INVALID_OR_DUPLICATE_ORDER_ID",
+      "actual_error": "INVALID_OR_DUPLICATE_ORDER_ID",
+      "passed": true
+    },
+    {
+      "id": "partial_month_rejected",
+      "expected_error": "FULL_MONTH_RANGE_REQUIRED",
+      "actual_error": "FULL_MONTH_RANGE_REQUIRED",
+      "passed": true
+    },
+    {
+      "id": "outside_coverage_not_zero",
+      "expected_error": "OUTSIDE_DECLARED_COVERAGE",
+      "actual_error": "OUTSIDE_DECLARED_COVERAGE",
+      "passed": true
+    },
+    {
+      "id": "refund_above_payment_rejected",
+      "expected_error": "INVALID_CENTS",
+      "actual_error": "INVALID_CENTS",
+      "passed": true
+    },
+    {
+      "id": "no_qualification_ledger_not_zero",
+      "expected_error": "ELIGIBILITY_INCOMPLETE",
+      "actual_error": "ELIGIBILITY_INCOMPLETE",
+      "passed": true
+    }
+  ]
+}

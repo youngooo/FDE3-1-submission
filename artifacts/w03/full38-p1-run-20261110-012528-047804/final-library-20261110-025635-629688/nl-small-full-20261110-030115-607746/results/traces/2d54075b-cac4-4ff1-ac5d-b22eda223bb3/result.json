@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "first_order_sales_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [],
+    "filters": []
+  },
+  "sql": "SELECT\n  SUM(CASE WHEN valid_order_seq = 1 THEN paid_cents - refund_cents ELSE 0 END) AS first_order_sales_cents\nFROM \"data\".\"main\".\"order_fact\" order_model_src_10000\nWHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'",
+  "columns": [
+    "first_order_sales_cents"
+  ],
+  "rows": [
+    [
+      12800
+    ]
+  ],
+  "seconds": 0.041,
+  "units": {
+    "first_order_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3726e776ada7b75ed778b3d6c49f42bff2a766d560dbf96036ffa61cd2953402",
+  "answer": "在青禾当前测试数据范围内，统计2026年8月的观测期首单净销售额：先在全测试覆盖期内对每个CRM会员账户的有效订单按日期、同日订单号排序，确定首笔有效订单，再筛选首单日期落在2026年8月的订单并汇总净销售额。全门店汇总、不分组，金额按分展示，结果为12800分。",
+  "question": "请只查询青禾2026年8月的观测期首单净销售额，全门店汇总，不分组。金额按分返回。首单先在完整测试覆盖历史的有效订单中确定，再筛选查询月份。",
+  "trace_id": "2d54075b-cac4-4ff1-ac5d-b22eda223bb3",
+  "elapsed_seconds": 9.111,
+  "model_usage": {
+    "prompt_tokens": 14750,
+    "completion_tokens": 771,
+    "total_tokens": 15521
+  },
+  "model_calls_with_usage": 2
+}

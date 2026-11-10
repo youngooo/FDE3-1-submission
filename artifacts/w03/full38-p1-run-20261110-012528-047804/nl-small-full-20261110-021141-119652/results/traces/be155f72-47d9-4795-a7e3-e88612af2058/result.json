@@ -1,0 +1,26 @@
+{
+  "status": "clarify",
+  "reason": "“7月和8月”缺少年份，无法确定查询区间；请补充具体年份。",
+  "intent": {
+    "status": "clarify",
+    "reason": "“7月和8月”缺少年份，无法确定查询区间；请补充具体年份。",
+    "metrics": [
+      "monthly_repeat_rate"
+    ],
+    "start": "",
+    "end": "",
+    "group_by": [
+      "metric_time__month"
+    ],
+    "filters": []
+  },
+  "question": "青禾7月和8月按月列出月内复购率。",
+  "trace_id": "be155f72-47d9-4795-a7e3-e88612af2058",
+  "elapsed_seconds": 2.112,
+  "model_usage": {
+    "prompt_tokens": 12241,
+    "completion_tokens": 343,
+    "total_tokens": 12584
+  },
+  "model_calls_with_usage": 1
+}

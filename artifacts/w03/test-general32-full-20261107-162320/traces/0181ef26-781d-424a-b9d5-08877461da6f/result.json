@@ -1,0 +1,62 @@
+{
+  "status": "ok",
+  "intent": {
+    "metrics": [
+      "order_count",
+      "valid_order_count",
+      "net_sales_cents"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "group_by": [
+      "home_store"
+    ],
+    "filters": []
+  },
+  "sql": "SELECT\n  home_store\n  , SUM(__order_count) AS order_count\n  , SUM(__valid_order_count) AS valid_order_count\n  , SUM(__net_sales_cents) AS net_sales_cents\nFROM (\n  SELECT\n    home_store_id AS home_store\n    , 1 AS __order_count\n    , CASE WHEN status = 'paid' AND paid_cents - refund_cents > 0 THEN 1 ELSE 0 END AS __valid_order_count\n    , CASE WHEN status = 'paid' THEN paid_cents - refund_cents ELSE 0 END AS __net_sales_cents\n  FROM \"data\".\"main\".\"orders_enriched\" orders_semantic_src_10000\n  WHERE DATE_TRUNC('day', ordered_at) BETWEEN '2026-08-01' AND '2026-08-31'\n) subq_7\nGROUP BY\n  home_store",
+  "columns": [
+    "home_store",
+    "order_count",
+    "valid_order_count",
+    "net_sales_cents"
+  ],
+  "rows": [
+    [
+      "S02",
+      15,
+      14,
+      45650
+    ],
+    [
+      "S01",
+      16,
+      13,
+      54650
+    ],
+    [
+      "S03",
+      1,
+      0,
+      0
+    ]
+  ],
+  "seconds": 0.093,
+  "units": {
+    "order_count": "count",
+    "valid_order_count": "count",
+    "net_sales_cents": "cents"
+  },
+  "data_version": "qinghe-w03-20260923-small",
+  "data_sha256": "8a295969ec24556ebd7f818506633919e71f840fc86488d53efc185f9768cfe6",
+  "catalog_sha256": "3e6e2b195d000badb5b36b215c4857c6ae11c7643ec0ab865f4faafba8ca9635",
+  "answer": "青禾 2026 年 8 月（按下单日期统计）按会员归属门店编号分组的订单与销售结果如下：\n\n| 会员归属门店编号 | 创建订单数 | 有效订单数 | 净销售额（分） | 净销售额（元） |\n|---|---:|---:|---:|---:|\n| S02 | 15 | 14 | 45,650 | 456.50 |\n| S01 | 16 | 13 | 54,650 | 546.50 |\n| S03 | 1 | 0 | 0 | 0.00 |\n\n口径说明：创建订单数按订单号去重统计，包含取消单；有效订单数为已支付且实付金额减退款金额大于零的订单数，取消单和全额退款不计；净销售额为已支付订单实付减退款后的合计，取消单不计，按下原订单下单日期归属，金额以分展示。以上结果位于青禾当前数据范围内，按会员归属门店编号分组，非按订单成交门店分组；S03 的有效订单数和净销售额为 0，是统计范围内实际为 0。",
+  "question": "青禾2026年8月按会员归属门店编号分组，分别列出创建订单数、有效订单数、净销售额；按下单日期统计，金额保留分。",
+  "trace_id": "0181ef26-781d-424a-b9d5-08877461da6f",
+  "elapsed_seconds": 11.376,
+  "model_usage": {
+    "prompt_tokens": 10737,
+    "completion_tokens": 1228,
+    "total_tokens": 11965
+  },
+  "model_calls_with_usage": 2
+}
